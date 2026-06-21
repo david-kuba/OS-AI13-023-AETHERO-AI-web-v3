@@ -3,12 +3,12 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const analyzeItems = [
-  'E-mail marketing — Klaviyo, Mailchimp, Ecomail — kampane, flowSy, zapnutí, CTR, revenue na odběr',
-  'E-commerce (Shopify, Shoptet) — obchodní výkonnost, sortiment, produkty, objednávky, vrácení',
-  'Google Analytics / GA4 — zdroje návštěvnosti, konverze, akvirační modely, cesty zákazníků',
-  'Google Ads — výkonnost klíčových slov, konverze, kampaně, attributace, roas',
-  'Social Ads — výkonnost kampaní v Meta nebo TikTok; dosah, konverze, CPA, audience insighty, funnel analysis',
-  'A vše automaticky — napojíme se na váš e-shop a s vašimi daty vygenerujeme kompletní analýzu včetně akčního plánu s konkrétními kroky, které přinesou výsledky',
+  'E-mail marketing — Leadhub, Klaviyo, Mailchimp, Ecomail a další. Kampaně, automations, segmenty, open rate, CTR, revenue na email.',
+  'E-shopová platforma — Shoptet, Shopify, WooCommerce — objednávky, zákazníci, produkty, sezónnost, retence, AOV.',
+  'Google Analytics / GA4 — Zdroje návštěvnosti, konverzní cesty, atribuční model, výkon kanálů, chování uživatelů.',
+  'Google Ads — Výkon kampaní, ROAS, search terms, ztracená imprese, příležitosti pro škálování nebo úsporu.',
+  'Meta Ads — Facebook & Instagram — dosah, frekvence, CPM, ROAS, audience overlap, funnel analýza.',
+  'Crawling webu — Pokud data nejsou v exportu — projdeme e-shop nebo web automaticky a vytěžíme produktový katalog, ceny, kategorie, UX vzory.',
 ];
 
 const deliverables = [
@@ -63,8 +63,8 @@ const relatedServices = [
   <section class="section-intro bg-elevated">
     <div class="container">
       <h2 class="intro-heading">Přestaňte hádat,<br /><span class="text-action">ZJISTĚTE PROČ</span></h2>
-      <p class="intro-text">Váš e-shop vám totiž něco říká. Posloucháte ho? Každý e-shop má v sobě a v datech schovaný příběh — kde vydělává, kde krvácí, proč zákazníci zůstávají a jiní odcházejí. Ta data už dávno máte, jen je nikdo nečte. A měl by. Chce to zkušenost a trochu technického know-how, ale pak se s vašimi daty, plány a ochotou AI kvalitní zprostředkujeme s 3m/mes a dalšími i malým klientem a vrátíme vám strategii, která má cíle a každému doporučení kolik to vydělá, kdy to zapnout.</p>
-      <a href="tel:+420776067663" class="btn-action">Chcete analyzovat? Zavolejte, napište</a>
+      <p class="intro-text">Váš e-shop vám totiž něco říká. <strong>Posloucháte ho?</strong> Každý e-shop má v sobě a v datech schovaný příběh — kde vydělává, kde krvácí, proč někteří zákazníci zůstávají a jiní zmizí po prvním nákupu. Ta data už dávno máte, jen je nikdo nečte. A měl by. Chce to zkušenost a trochu technického voo-doo, ale pak se s vašimi daty, plány a ochočenou AI posadíme, propojíme je s čím je potřeba: Google Ads, Analytics, Metou i s mailovým klientem a vrátíme vám strategii, která má čísla u každého doporučení: kolik to vydělá, kolik ušetří, kdy to zapnout.</p>
+      <a href="tel:+420776067663" class="btn-action">CHCETE ANALÝZU? ZAVOLEJTE, NAPIŠTE</a>
     </div>
   </section>
 
@@ -74,8 +74,8 @@ const relatedServices = [
       <div class="two-col-analyze">
         <div>
           <h2 class="section-title">Vaše data říkají víc,<br />než si myslíte</h2>
-          <p class="section-text">API přístup, CSV exporty nebo crawling webu — dokážeme napojit téměř jakýkoliv zdroj dat z vašeho e-shopu. Propojíme data s vašim AI nástrojem a pak po prvním nákupu. A vy pak dostanete konkrétní strategii s kvantifikovaným přínosem.</p>
-          <p class="section-text"><strong>Nejčastěji pracujeme s e-shopy od 3M Kč ročního obratu na Shopteku, Shopify a WooCommerce</strong></p>
+          <p class="section-text">API přístup, CSV exporty nebo crawling webu — dokážeme napojit téměř jakýkoliv zdroj dat. Propojíme data z vašeho e-shopu, emailové kampaně, GAds, Analytiku i sociální sítě. A vy pak dostanete konkrétní strategii s kvantifikovaným přínosem každého doporučení — žádné obecné rady.</p>
+          <p class="section-text"><strong>Nejčastěji pracujeme s e-shopy od 3M Kč ročního obratu na Shoptetu, Shopify a WooCommerce.</strong></p>
           <a href="#jak-to-funguje" class="section-link">Co to jsou? →</a>
         </div>
         <div>
@@ -90,6 +90,23 @@ const relatedServices = [
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <h4 class="testimonials-label">Co na tuhle službu říkají majitelé e-shopů?</h4>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">„Výstup byl kvalitně zpracovaný, přehledný a hlavně plný konkrétních podnětů, které můžeme rovnou využít pro další růst našeho e-shopu. Žádná obecná doporučení, ale řešení šitá nám na míru."</p>
+          <p class="testimonial-author">— <strong>Lucie, majitelka fleppi.cz</strong> · ⭐⭐⭐⭐⭐ Google</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">„Jsem z toho nadšený, protože poprvé mám ucelený obraz o všem, co se v e-shopu děje, na jednom místě. Ta největší pecka je v tom, jak se ty data mezi sebou propojují. Vidím jestli je ten obsah na webu skutečně zaujal a k tomu si přihodím info z mailingu — na co nám lidi nejlépe reagují v e-mailech. Právě tyhle přesahy, kdy vidím celou cestu zákazníka od vyhledávání až po nákup, mi dovolují dělat v Shopify úpravy, které mají hlavu a patu."</p>
+          <p class="testimonial-author">— <strong>Petr, majitel BU1.cz</strong></p>
         </div>
       </div>
     </div>
@@ -162,7 +179,7 @@ const relatedServices = [
   <section class="section-mid bg-secondary">
     <div class="container">
       <h2 class="section-title-center">Zjistěte kde váš e-shop ztrácí zákazníky<br />a jak to otočit</h2>
-      <p class="section-text-center">Napište nám co chcete pochopit, a my vám jedeme a Zbytek nechte na nás.</p>
+      <p class="section-text-center">Napište nám co chcete pochopit, a na čem jedete. Zbytek nechte na nás.</p>
     </div>
   </section>
 
@@ -247,6 +264,12 @@ const relatedServices = [
   .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
   .related-link:hover { color: var(--action); }
 
+  .testimonials-label { font-size: clamp(18px, 2vw, 24px); font-weight: 600; margin-bottom: var(--space-40); text-align: center; }
+  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-40); }
+  .testimonial-card { background: rgb(232, 222, 255); border-radius: var(--radius-md); padding: var(--space-32); }
+  .testimonial-text { font-size: 15px; color: #1a1a2e; line-height: 1.7; margin-bottom: var(--space-16); font-style: italic; }
+  .testimonial-author { font-size: 14px; color: #1a1a2e; opacity: 0.85; }
+
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
@@ -259,6 +282,7 @@ const relatedServices = [
     .output-col { grid-template-columns: 1fr; }
     .steps-grid { grid-template-columns: repeat(2, 1fr); }
     .case-study-wrap { display: none; }
+    .testimonials-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 768px) {
     .steps-grid { grid-template-columns: 1fr; }
