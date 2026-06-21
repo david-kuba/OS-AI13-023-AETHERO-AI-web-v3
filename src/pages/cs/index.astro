@@ -171,6 +171,7 @@ const blogPosts = [
 
   <!-- SERVICE SELECTOR CAROUSEL -->
   <section class="services-section">
+    <div class="services-wide">
     <div class="services-track-wrap" id="services-track-wrap">
       <div class="services-track">
         {services.map((s, i) => (
@@ -191,6 +192,7 @@ const blogPosts = [
           </>
         ))}
       </div>
+    </div>
     </div>
   </section>
 
@@ -445,6 +447,10 @@ const blogPosts = [
     background: #000326;
     padding: 56px 0;
     position: relative;
+  }
+  .services-wide {
+    max-width: 1440px;
+    margin: 0 auto;
   }
   .services-track-wrap {
     overflow-x: auto;
