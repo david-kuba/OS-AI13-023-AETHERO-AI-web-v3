@@ -55,6 +55,12 @@ Po dokončení: přejdi na Milestone 1.4.
 
 ---
 
+## ✅ HOTOVO — Milestone 1.4 — Podstránky CO UMÍME — 2026-06-21
+
+Všech 8 stránek zbuildovalo čistě (11 stránek celkem). Poznámka: /co-umime/potrebuji-brand implementováno best-guess obsahem (živý web vrací 404).
+
+---
+
 ## MILESTONE 1.4 — Podstránky CO UMÍME
 
 Každá podstránka má hero sekci + obsah. Podívej se na živý web před implementací každé z nich.

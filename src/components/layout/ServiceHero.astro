@@ -1,0 +1,96 @@
+---
+export interface Props {
+  label: string;
+  title: string;
+  subtitle: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+420776067663' } = Astro.props;
+---
+
+<section class="service-hero">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="container service-hero-inner">
+    <p class="hero-label">{label}</p>
+    <h1 set:html={title} />
+    <p class="hero-sub">{subtitle}</p>
+    <div class="hero-ctas">
+      <a href={ctaHref} class="btn-primary">{ctaLabel}</a>
+      <a href="/kontakt" class="btn-ghost">Zjistěte jak</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-hero {
+    position: relative;
+    padding: 160px 0 100px;
+    background: var(--bg-primary-alt);
+    overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute;
+    top: -20%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, rgba(9,32,102,0.2) 50%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .service-hero-inner { position: relative; max-width: 720px; }
+  .hero-label {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--action);
+    text-transform: uppercase;
+    margin-bottom: var(--space-24);
+  }
+  h1 {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-24);
+  }
+  .hero-sub {
+    font-size: 20px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-40);
+    max-width: 560px;
+  }
+  .hero-ctas { display: flex; gap: var(--space-16); flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: 14px 32px;
+    background: var(--action);
+    color: var(--bg-elevated);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-base), transform var(--transition-base);
+  }
+  .btn-primary:hover { background: var(--action-hover); transform: translateY(-1px); }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: 14px 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-base), color var(--transition-base);
+  }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+</style>

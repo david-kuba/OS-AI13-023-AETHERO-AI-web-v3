@@ -1,0 +1,139 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import ServiceHero from '../../../components/layout/ServiceHero.astro';
+
+const features = [
+  { title: 'Shopify Sidekick', desc: 'AI asistent přímo v adminu — tvoří produkty, píše popisy, doporučuje SEO úpravy.' },
+  { title: 'Intuitivní administrace', desc: 'Moderní rozhraní ovladatelné bez technických znalostí, k dispozici v češtině.' },
+  { title: 'Mobilní aplikace', desc: 'Sledujte tržby a spravujte objednávky odkudkoli v reálném čase.' },
+  { title: 'Multichannel prodej', desc: 'Instagram, TikTok, Facebook, Google Shopping a Amazon — vše z jednoho adminu.' },
+  { title: 'Analytika a marketing', desc: 'Přehledné dashboardy, sledování trendů a chytrá CRM integrace.' },
+  { title: 'Automatizace', desc: 'Shopify Flow reaguje na chování zákazníků bez manuální práce.' },
+  { title: 'App Store', desc: 'Přes 10 000 aplikací vyvíjených 15+ let — řešení pro každou potřebu.' },
+];
+
+const reasons = [
+  'Jedna z 3 nejpoužívanějších e-commerce platforem na světě',
+  'Rok napřed před evropskou konkurencí v aktualizacích',
+  'Velká mezinárodní firma — nezávislost na jediném dodavateli',
+  'Mezinárodní škálování bez nutnosti migrace',
+  'PCI DSS certifikace a špičkové zabezpečení',
+];
+
+const process = [
+  { step: '01', title: 'Zjistíme vaše plány', desc: 'Probereme požadavky, cíle a harmonogram projektu.' },
+  { step: '02', title: 'Analýza a doporučení', desc: 'Dostanete konkrétní návrh architektury a doporučení.' },
+  { step: '03', title: 'Návrh a smlouva', desc: 'Připravíme nabídku, podepíšeme smlouvu a zahájíme.' },
+  { step: '04', title: 'Spuštění', desc: 'Design, vývoj, testování, spuštění a prvních 30 dní podpory.' },
+  { step: '05', title: 'Rozvoj', desc: 'Dlouhodobé partnerství — správa, optimalizace a růst.' },
+];
+---
+
+<PageLayout title="Nový Shopify e-shop" description="Spustíme váš nový e-shop na Shopify — od návrhu přes vývoj až po první objednávku." lang="cs">
+  <ServiceHero
+    label="Nový e-shop"
+    title="NOVÝ E-SHOP<br /><span style='color:var(--action)'>na Shopify</span>"
+    subtitle="Spusťte svůj e-commerce projekt na mezinárodní superplatformě. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává."
+  />
+
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Proč vám Shopify usnadní život</h2>
+      <div class="features-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-secondary">
+    <div class="container two-col">
+      <div>
+        <h2 class="section-title">Proč Shopify</h2>
+        <ul class="reasons-list">
+          {reasons.map((r) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {r}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Jak spolupráce probíhá</h2>
+        <ol class="process-list">
+          {process.map((p) => (
+            <li class="process-item">
+              <span class="process-step">{p.step}</span>
+              <div>
+                <strong>{p.title}</strong>
+                <p>{p.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Máme si co říct?</h2>
+      <p>Zavolejte nebo napište — první konzultace je zdarma.</p>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
+  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .feature-card {
+    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md); padding: var(--space-24);
+  }
+  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .two-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-80); }
+  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .reasons-list li { display: flex; align-items: flex-start; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-300); }
+  .process-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-24); }
+  .process-item { display: flex; gap: var(--space-16); }
+  .process-step {
+    font-family: var(--font-primary); font-size: 13px; font-weight: 600;
+    color: var(--action); min-width: 28px; padding-top: 2px;
+  }
+  .process-item strong { display: block; font-size: 15px; margin-bottom: 4px; }
+  .process-item p { font-size: var(--text-small); color: var(--neutral-500); }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated);
+    font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md);
+    transition: background var(--transition-base);
+  }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost {
+    display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600;
+    border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base);
+  }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; gap: var(--space-80); } }
+</style>

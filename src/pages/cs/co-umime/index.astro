@@ -1,0 +1,152 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+const services = [
+  {
+    num: '01', title: 'BRAND', subtitle: 'Brand identity pro váš e-shop a digitální zkušenost',
+    desc: 'Tvoříme značky, které si zákazníci pamatují. Vizuální identita, tone of voice a digitální prezentace na míru vašemu projektu.',
+    href: '/co-umime/potrebuji-brand',
+  },
+  {
+    num: '02', title: 'NOVÝ E-SHOP', subtitle: 'Postavíme nový Shopify e-shop od základu',
+    desc: 'Seriózní e-commerce projekt potřebuje zkušeného partnera. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává.',
+    href: '/co-umime/novy-shopify-e-shop',
+  },
+  {
+    num: '03', title: 'PŘECHOD NA SHOPIFY', subtitle: 'Migrace z jiné platformy bez ztráty SEO',
+    desc: 'Narážíte na limity Shoptetu nebo WooCommerce? Přejděte na otevřenou globální platformu navrženu pro růst.',
+    href: '/co-umime/prechod-na-shopify',
+  },
+  {
+    num: '04', title: 'ZAHRANIČNÍ EXPANZE', subtitle: 'Jeden e-shop, celý svět',
+    desc: 'Shopify Markets umožňuje spravovat všechny trhy z jednoho adminu. Jazyky, měny, daně, lokalizace — zvládneme to s vámi.',
+    href: '/co-umime/expanze-do-zahranici',
+  },
+  {
+    num: '05', title: 'ROZVOJ A PODPORA', subtitle: 'Dlouhodobý technický partner pro váš Shopify projekt',
+    desc: 'Spuštění e-shopu není konec, ale začátek. Jsme tu pro technickou podporu, rozšiřování funkcí a dlouhodobý rozvoj.',
+    href: '/co-umime/rozvoj-a-podpora',
+  },
+  {
+    num: '06', title: 'ANALÝZA A STRATEGIE', subtitle: 'Přestaňte hádat — zjistěte proč',
+    desc: 'Data vašeho e-shopu říkají víc, než si myslíte. Analyzujeme GA4, reklamy, emaily a dodáme strategii s konkrétními kroky.',
+    href: '/co-umime/analyza-a-strategie',
+  },
+  {
+    num: '07', title: 'CUSTOM VÝVOJ', subtitle: 'Aplikace a úpravy přesně pro vaše potřeby',
+    desc: 'Standardní řešení nestačí? Vyvíjíme vlastní Shopify aplikace, integrace ERP/CRM a custom úpravy šablon.',
+    href: '/co-umime/custom-vyvoj-a-aplikace',
+  },
+];
+---
+
+<PageLayout title="Co umíme" description="Komplexní Shopify služby od brandingu přes vývoj až po mezinárodní expanzi." lang="cs">
+
+  <section class="co-hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container">
+      <h1>Co umíme</h1>
+      <p class="co-sub">A do čeho se spolu pustíme?</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-list">
+        {services.map((s) => (
+          <a href={s.href} class="service-row">
+            <span class="svc-num">{s.num}</span>
+            <div class="svc-content">
+              <h2 class="svc-title">{s.title}</h2>
+              <p class="svc-subtitle">{s.subtitle}</p>
+              <p class="svc-desc">{s.desc}</p>
+            </div>
+            <svg class="svc-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-section section">
+    <div class="container">
+      <h2 class="section-label">APLIKACE</h2>
+      <div class="apps-grid">
+        <a href="/esyncer" class="app-card">
+          <h3>eSyncer</h3>
+          <p>Import, synchronizace & automatizace produktových dat (nejen) pro Shopify.</p>
+          <span class="app-link">Více o eSyncer →</span>
+        </a>
+        <a href="/ae-translator" class="app-card">
+          <h3>AE Translator</h3>
+          <p>AI překlad obsahu Shopify e-shopu. DeepL, Claude nebo Deep Seek — na výběr.</p>
+          <span class="app-link">Více o AE Translator →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .co-hero {
+    position: relative;
+    padding: 160px 0 80px;
+    background: var(--bg-primary-alt);
+    overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute; top: -20%; right: -5%; width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, transparent 70%);
+    border-radius: 50%; filter: blur(60px); pointer-events: none;
+  }
+  .co-hero .container { position: relative; }
+  .co-hero h1 { font-size: clamp(48px, 6vw, 80px); font-weight: 700; }
+  .co-sub { font-size: var(--text-h3); color: var(--text-secondary); margin-top: var(--space-16); }
+
+  .section { padding: var(--space-120) 0; }
+  .section-label {
+    font-family: var(--font-primary); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.12em; color: var(--action); text-transform: uppercase;
+    margin-bottom: var(--space-40);
+  }
+
+  .services-list { display: flex; flex-direction: column; }
+  .service-row {
+    display: grid;
+    grid-template-columns: 48px 1fr 32px;
+    gap: var(--space-24);
+    align-items: center;
+    padding: var(--space-40) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background var(--transition-base);
+    border-radius: var(--radius-sm);
+    padding-inline: var(--space-16);
+  }
+  .service-row:hover { background: rgba(13,212,205,0.04); }
+  .service-row:hover .svc-arrow { transform: translateX(4px); color: var(--action); }
+  .svc-num { font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+  .svc-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .svc-subtitle { font-size: 15px; color: var(--action); margin-bottom: var(--space-8); }
+  .svc-desc { font-size: var(--text-small); color: var(--neutral-500); line-height: 1.6; }
+  .svc-arrow { color: var(--neutral-700); transition: transform var(--transition-base), color var(--transition-base); flex-shrink: 0; }
+
+  .apps-section { background: var(--bg-secondary); }
+  .apps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
+  .app-card {
+    background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md); padding: var(--space-40);
+    transition: border-color var(--transition-base);
+  }
+  .app-card:hover { border-color: rgba(13,212,205,0.3); }
+  .app-card h3 { font-size: var(--text-h3); font-weight: 600; margin-bottom: var(--space-16); }
+  .app-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; margin-bottom: var(--space-24); }
+  .app-link { color: var(--action); font-size: 14px; font-weight: 500; }
+
+  @media (max-width: 768px) {
+    .service-row { grid-template-columns: 32px 1fr 24px; gap: var(--space-16); padding: var(--space-24) var(--space-8); }
+    .apps-grid { grid-template-columns: 1fr; }
+  }
+</style>
