@@ -1,14 +1,555 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+
+const services = [
+  { num: '01', text: 'Potřebuji vytvořit pro můj projekt', highlight: 'BRAND', href: '/co-umime/potrebuji-brand' },
+  { num: '02', text: 'Chci postavit', highlight: 'NOVÝ SHOPIFY E-SHOP', href: '/co-umime/novy-shopify-e-shop' },
+  { num: '03', text: 'Z jiné platformy', highlight: 'CHCI PŘEJÍT NA SHOPIFY', href: '/co-umime/prechod-na-shopify' },
+  { num: '04', text: 'Máme v plánu', highlight: 'ZAHRANIČNÍ EXPANZI', href: '/co-umime/expanze-do-zahranici' },
+  { num: '05', text: 'Mám e-shop na Shopify a', highlight: 'HLEDÁM POMOC', href: '/co-umime/rozvoj-a-podpora' },
+  { num: '06', text: 'Na Shopify potřebuji úpravy, napojení, či aplikaci', highlight: 'NA MÍRU', href: '/co-umime/custom-vyvoj-a-aplikace' },
+];
+
+const features = [
+  {
+    title: 'Technologie',
+    items: ['Sidekick AI asistent', 'Mobilní aplikace (iOS/Android)', 'Pravidelné technologické aktualizace', 'Stabilita a výkon', 'Certifikace PCI DSS'],
+  },
+  {
+    title: 'Růst',
+    items: ['Globální trhy, více jazyků a měn', 'Škálovatelnost od startupu po enterprise', 'B2B, POS, Shop App integrace', 'Rozšířené zákaznické účty'],
+  },
+  {
+    title: 'Automatizace',
+    items: ['Jednotná správa všech trhů', 'Shopify FLOW a FUNCTIONS', '10 000+ aplikací v App Store', '100 000+ vývojářů a partnerů', 'Centralizovaná správa dat'],
+  },
+  {
+    title: 'Důvěra',
+    items: ['Mattel, Heinz, Gymshark, Kylie Cosmetics', 'Platební brány a ochrana před podvody', 'Vývojové prostředí bez rizika', 'Nativní analytika, GA4, Looker Studio'],
+  },
+];
+
+const allServices = [
+  'Brand / Identity / DX', 'Strategická analýza', 'Výběr Shopify aplikací', 'Výběr a optimalizace šablony',
+  'Napojení mezinárodního e-shopu', 'Překladové služby', 'Export a import dat', 'Konsolidace dat',
+  'Integrace systémů (účetnictví, sklad, CRM)', 'Custom vývoj aplikací', 'Optimalizace a automatizace', 'SEO metadata',
+  'Optimalizace konverzí', 'Optimalizace rychlosti', 'Mapování zákaznické cesty', 'Performance marketing',
+];
+
+const references = [
+  {
+    name: 'BU1.cz / BU1sport.com',
+    desc: 'Mezinárodní Shopify e-shop pro sportovní značku. Nový design, vícejazyčná podpora, expanze na zahraniční trhy.',
+    tag: 'Brankářské rukavice a oblečení',
+    cta: 'Přejít na BU1',
+    href: 'https://bu1.cz',
+  },
+  {
+    name: 'GROOMO.cz',
+    desc: 'Kompletní tvorba brandu a vývoj Shopify e-shopu zaměřeného na profesionální trh péče o psy.',
+    tag: 'Případová studie',
+    cta: 'Případová studie GROOMO.cz',
+    href: '/groomo-cz-na-shopify',
+  },
+];
+
+const blogPosts = [
+  { title: 'Povinné tlačítko v Shopify: nečekejte, až z toho bude problém', time: '7 min', href: '/blog/povinne-tlacitko-shopify' },
+  { title: 'AI SEO — nová tvrdá realita vyhledávání pro e-shopy (2026)', time: '7 min', href: '/blog/ai-seo-2026' },
+  { title: 'Shopify Editions — Zima 2026', time: '5 min', href: '/blog/shopify-editions-zima-2026' },
+  { title: 'Překlad platební metody v Shopify, když Translate & Adapt nepomáhá', time: '3 min', href: '/blog/preklad-platebni-metody-shopify' },
+  { title: 'Jakou e-commerce platformu zvolit? Shopify versus Shoptet', time: '18 min', href: '/blog/shopify-vs-shoptet' },
+];
 ---
 
-<PageLayout title="Česká Shopify agentura" lang="cs">
-  <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 80px;">
-    <div class="container" style="text-align: center;">
-      <h1 style="font-size: var(--text-h1); font-weight: 700; margin-bottom: var(--space-24);">
-        Milestone 1.2 — Layout OK
-      </h1>
-      <p style="color: var(--text-secondary);">Header · Footer · PageLayout · i18n routing</p>
+<PageLayout
+  title="Jsme Shopify specialisté"
+  description="Česká Shopify agentura. Design, strategie a technologie pro váš e-commerce úspěch."
+  lang="cs"
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <p class="hero-label">Česká Shopify agentura</p>
+      <h1>Jsme Shopify<br /><span class="hero-accent">specialisté</span></h1>
+      <p class="hero-sub">Do čeho se spolu pustíme?</p>
+      <a href="/kontakt" class="btn-primary">Začít projekt</a>
     </div>
   </section>
+
+  <!-- SERVICE SELECTOR -->
+  <section class="section services-selector">
+    <div class="container">
+      <ul class="services-grid">
+        {services.map((s) => (
+          <li>
+            <a href={s.href} class="service-card">
+              <span class="service-num">{s.num}</span>
+              <span class="service-text">{s.text} <strong>{s.highlight}</strong></span>
+              <svg class="service-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- VALUE PROP -->
+  <section class="section value-prop">
+    <div class="container">
+      <div class="value-inner">
+        <h2>Shopify dodá technologii,<br /><span class="accent-text">aethero strategii</span></h2>
+        <p class="value-body">
+          Od výběru projektu přes design a vývoj až po první objednávku — a dál.
+          Staráme se o celý životní cyklus vašeho e-shopu tak, aby technologie nikdy nebyla překážka, ale nástroj růstu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES 4-COLUMN -->
+  <section class="section features">
+    <div class="container">
+      <div class="features-grid">
+        {features.map((f) => (
+          <div class="feature-col">
+            <h3 class="feature-title">{f.title}</h3>
+            <ul class="feature-list">
+              {f.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container stats-inner">
+      <div class="stat">
+        <span class="stat-num">4,8 mil.</span>
+        <span class="stat-label">e-shopů fungujících ve světě</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <span class="stat-num">175</span>
+        <span class="stat-label">zemí kde můžete prodávat</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <span class="stat-num">3 500</span>
+        <span class="stat-label">vývojářů z celkových cca 8 000 zaměstnanců</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES BREAKDOWN -->
+  <section class="section services-breakdown">
+    <div class="container">
+      <h2 class="section-title">Co pro vás dokážeme</h2>
+      <ul class="all-services-grid">
+        {allServices.map((s) => (
+          <li class="all-service-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {s}
+          </li>
+        ))}
+      </ul>
+      <div class="services-ctas">
+        <a href="/kontakt" class="btn-primary">Chci konzultaci</a>
+        <a href="/co-umime" class="btn-ghost">Více o tom, jak pracujeme</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="section references">
+    <div class="container">
+      <h2 class="section-title">Reference</h2>
+      <div class="ref-grid">
+        {references.map((r) => (
+          <div class="ref-card">
+            <span class="ref-tag">{r.tag}</span>
+            <h3 class="ref-name">{r.name}</h3>
+            <p class="ref-desc">{r.desc}</p>
+            <a href={r.href} class="ref-link">
+              {r.cta}
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW -->
+  <section class="section blog-preview">
+    <div class="container">
+      <h2 class="section-title">Z blogu</h2>
+      <ul class="blog-list">
+        {blogPosts.map((post) => (
+          <li class="blog-item">
+            <a href={post.href} class="blog-link">
+              <span class="blog-title">{post.title}</span>
+              <span class="blog-meta">{post.time} čtení</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="section footer-cta">
+    <div class="container footer-cta-inner">
+      <h2>Máme spolu co probrat?<br /><span class="accent-text">Dejte vědět.</span></h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact-link">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact-link">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--bg-primary-alt);
+    overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse at center, rgba(203,0,215,0.18) 0%, rgba(9,32,102,0.25) 50%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    padding: 140px 0 100px;
+    max-width: 760px;
+  }
+  .hero-label {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--action);
+    text-transform: uppercase;
+    margin-bottom: var(--space-24);
+  }
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-24);
+  }
+  .hero-accent {
+    color: var(--action);
+  }
+  .hero-sub {
+    font-size: var(--text-h3);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-40);
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: 14px 32px;
+    background: var(--action);
+    color: var(--bg-elevated);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-base), transform var(--transition-base);
+  }
+  .btn-primary:hover {
+    background: var(--action-hover);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: 14px 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-base), color var(--transition-base);
+  }
+  .btn-ghost:hover {
+    border-color: var(--action);
+    color: var(--action);
+  }
+
+  /* SECTIONS */
+  .section { padding: var(--space-120) 0; }
+  .section-title {
+    font-size: var(--text-h2);
+    font-weight: 600;
+    margin-bottom: var(--space-40);
+  }
+
+  /* SERVICE SELECTOR */
+  .services-selector { background: var(--bg-elevated); }
+  .services-grid {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .service-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-24);
+    padding: var(--space-24) var(--space-40);
+    background: var(--bg-secondary);
+    transition: background var(--transition-base);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .service-card:hover { background: rgba(13,212,205,0.06); }
+  .service-card:hover .service-arrow { transform: translateX(4px); color: var(--action); }
+  .service-num {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 28px;
+  }
+  .service-text {
+    flex: 1;
+    font-size: 15px;
+    color: var(--neutral-300);
+  }
+  .service-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  .service-arrow {
+    color: var(--neutral-700);
+    transition: transform var(--transition-base), color var(--transition-base);
+    flex-shrink: 0;
+  }
+
+  /* VALUE PROP */
+  .value-prop { background: var(--bg-primary-alt); }
+  .value-inner { max-width: 680px; }
+  .value-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-24); }
+  .accent-text { color: var(--action); }
+  .value-body { font-size: 18px; color: var(--neutral-300); line-height: 1.7; }
+
+  /* FEATURES */
+  .features { background: var(--bg-elevated); }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-40);
+  }
+  .feature-title {
+    font-family: var(--font-primary);
+    font-size: var(--text-h3);
+    font-weight: 600;
+    color: var(--action);
+    margin-bottom: var(--space-24);
+  }
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .feature-list li {
+    font-size: var(--text-small);
+    color: var(--neutral-300);
+    padding-left: 12px;
+    position: relative;
+  }
+  .feature-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-secondary);
+    font-size: 10px;
+    top: 3px;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--accent-purple);
+    background: linear-gradient(135deg, #6B0075 0%, var(--accent-purple) 50%, #4A0080 100%);
+    padding: var(--space-80) 0;
+  }
+  .stats-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-80);
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: var(--space-8);
+  }
+  .stat-label {
+    font-size: var(--text-small);
+    color: rgba(255,255,255,0.8);
+    max-width: 180px;
+    display: block;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255,255,255,0.25);
+  }
+
+  /* SERVICES BREAKDOWN */
+  .services-breakdown { background: var(--bg-secondary); }
+  .all-services-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-16);
+    margin-bottom: var(--space-40);
+  }
+  .all-service-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--text-small);
+    color: var(--neutral-300);
+  }
+  .services-ctas {
+    display: flex;
+    gap: var(--space-16);
+    flex-wrap: wrap;
+  }
+
+  /* REFERENCES */
+  .references { background: var(--bg-elevated); }
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-24);
+  }
+  .ref-card {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-40);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    transition: border-color var(--transition-base);
+  }
+  .ref-card:hover { border-color: rgba(13,212,205,0.3); }
+  .ref-tag {
+    font-size: 11px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+  .ref-name {
+    font-size: var(--text-h3);
+    font-weight: 600;
+  }
+  .ref-desc { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .ref-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    color: var(--action);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: auto;
+    transition: gap var(--transition-base);
+  }
+  .ref-link:hover { gap: 12px; }
+
+  /* BLOG */
+  .blog-preview { background: var(--bg-primary-alt); }
+  .blog-list { list-style: none; display: flex; flex-direction: column; }
+  .blog-item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .blog-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-24) 0;
+    gap: var(--space-40);
+    transition: color var(--transition-base);
+  }
+  .blog-link:hover .blog-title { color: var(--action); }
+  .blog-title { font-size: 16px; color: var(--text-primary); font-weight: 500; line-height: 1.4; }
+  .blog-meta { font-size: var(--text-small); color: var(--neutral-500); white-space: nowrap; flex-shrink: 0; }
+
+  /* FOOTER CTA */
+  .footer-cta { background: var(--bg-secondary); }
+  .footer-cta-inner { text-align: center; }
+  .footer-cta h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-contacts {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-40);
+    flex-wrap: wrap;
+  }
+  .cta-contact-link {
+    font-size: var(--text-h3);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-weight: 600;
+    transition: color var(--transition-base);
+  }
+  .cta-contact-link:hover { color: var(--action); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .all-services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .all-services-grid { grid-template-columns: 1fr; }
+    .ref-grid { grid-template-columns: 1fr; }
+    .stat-divider { display: none; }
+    .stats-inner { gap: var(--space-40); }
+    .service-card { padding: var(--space-16) var(--space-24); }
+    .blog-link { flex-direction: column; align-items: flex-start; gap: var(--space-8); }
+    .cta-contacts { flex-direction: column; align-items: center; gap: var(--space-16); }
+  }
+</style>

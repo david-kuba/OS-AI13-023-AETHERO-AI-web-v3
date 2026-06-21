@@ -29,6 +29,12 @@ Claude chat (project co-manager) ho průběžně doplňuje.
 
 ---
 
+## ✅ HOTOVO — Milestone 1.3 — Homepage — 2026-06-21
+
+Všechny sekce implementovány: Hero, Service Selector, Value Prop, Features 4-col, Stats Bar, Services Grid, References (BU1+GROOMO), Blog Preview (staticky), Footer CTA.
+
+---
+
 ## MILESTONE 1.3 — Homepage (/)
 
 Implementuj sekce přesně podle www.aethero.cz/. Jdi na web, projdi stránku, pak implementuj.
