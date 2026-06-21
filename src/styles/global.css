@@ -27,8 +27,14 @@ img { max-width: 100%; height: auto; }
   margin: 0 auto;
   padding: 0 var(--space-24);
 }
+.container-extended {
+  max-width: var(--container-extended);
+  margin: 0 auto;
+  padding: 0 var(--space-24);
+}
 /* .container-full = žádný max-width, použij přímo element bez třídy */
 @media (max-width: 480px) {
   .container,
-  .container-wide { padding: 0 16px; }
+  .container-wide,
+  .container-extended { padding: 0 16px; }
 }

@@ -48,6 +48,7 @@
 
   --container-max: 1280px;
   --container-wide: 1440px;
+  --container-extended: 1600px;
   --transition-base: 0.2s ease;
 }
 
