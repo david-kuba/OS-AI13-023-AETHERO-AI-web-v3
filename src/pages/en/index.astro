@@ -170,7 +170,7 @@ const blogPosts = [
 
   <!-- SERVICE SELECTOR CAROUSEL -->
   <section class="services-section">
-    <div class="services-wide">
+    <div class="container-wide">
     <div class="services-track-wrap" id="services-track-wrap">
       <div class="services-track">
         {services.map((s, i) => (
@@ -184,8 +184,10 @@ const blogPosts = [
             </a>
             {i < services.length - 1 && (
               <div class="svc-arrow" aria-hidden="true">
-                <span class="svc-line"></span>
-                <span class="svc-tip">›</span>
+                <svg class="svc-arrow-svg" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="0" y1="8" x2="70" y2="8" stroke="#A081D1" stroke-width="1.5"/>
+                  <polyline points="62,2 76,8 62,14" stroke="#A081D1" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                </svg>
               </div>
             )}
           </>
@@ -447,10 +449,6 @@ const blogPosts = [
     padding: 56px 0;
     position: relative;
   }
-  .services-wide {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
   .services-track-wrap {
     overflow-x: auto;
     overflow-y: visible;
@@ -509,21 +507,13 @@ const blogPosts = [
     display: flex;
     align-items: center;
     align-self: flex-start;
-    padding-top: 110px;
+    padding-top: 102px;
     flex-shrink: 0;
-    gap: 0;
   }
-  .svc-line {
+  .svc-arrow-svg {
+    width: 80px;
+    height: 16px;
     display: block;
-    width: 48px;
-    height: 1px;
-    background: var(--text-secondary);
-  }
-  .svc-tip {
-    color: var(--text-secondary);
-    font-size: 22px;
-    line-height: 1;
-    margin-left: -2px;
   }
 
   /* VALUE PROP */
