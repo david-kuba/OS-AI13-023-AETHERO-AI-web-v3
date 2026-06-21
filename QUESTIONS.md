@@ -48,11 +48,33 @@ AETHERO DESIGN SYSTEM alias, 00 BRAND AE, 01 FAKTURACE, 02 WEB, 03 AE PROJEKTY, 
 
 **Výchozí řešení:** Implementuji podle CLAUDE-CODE-START.md — nested `/co-umime/[slug]`. Jde to jednoduše změnit.
 
-**Odpověď Davida:** [ČEKÁ]
+**Odpověď Davida:** Nested — `/co-umime/[slug]` dle spec. Rozhodnuto 2026-06-21.
 
 ---
 
-*Otázky před startem:*
-- Výše uvedené URL schéma — flat nebo nested?
+## FÁZE 1 SUMMARY — 2026-06-21
 
-→ Doplň odpovědi nebo napiš GO pro start.
+### Stav: ✅ KOMPLETNÍ (8 milestones)
+
+**Build:** 23 stránek, čistý build, 0 chyb.
+
+**Co je hotové:**
+- M1.1: Astro 6 + @storyblok/astro v10 + CF Pages setup, design tokeny ADS v1.1
+- M1.2: Header (fixed/transparent, dropdown, hamburger) + Footer + PageLayout, i18n routing
+- M1.3: CS Homepage — 9 sekcí (Hero, Service Selector, Value Prop, Features, Stats Bar, Services Grid, Reference, Blog Preview, Footer CTA)
+- M1.4: 8 stránek CO UMÍME (/cs/co-umime/ + 7 podstránek) — obsah z live webu
+- M1.5: /cs/esyncer + /cs/ae-translator — kompletní obsah
+- M1.6: /cs/o-nas + /cs/kontakt + blog/[slug] + case study [slug] — statické placeholdery
+- M1.7: SEO — Organization + WebPage JSON-LD na každé stránce, Article na blog, hreflang cs/en/x-default, canonical, OG/Twitter meta, sitemap, robots.txt, llms.txt
+- M1.8: EN i18n — /en/ homepage + /en/co-umime/ + /en/kontakt/ — Header/Footer lang-aware
+
+**Commits (všechny lokální, nepushnuté):** 8 commitů na main branch
+
+**Otevřené body (David rozhodne):**
+1. **Push na main** — 8 commitů čeká. Potřebuji "autorizuji push na main" od Davida.
+2. **Cloudflare Pages deploy** — CF hook zablokován klasifikátorem. Buď David ručně testuje hook, nebo přidá permission do Claude settings.
+3. **Fotky týmu** — /cs/o-nas má placeholder initials (D/B/T). Reálné fotky jsou na: `/Users/davidkuba/Library/CloudStorage/Dropbox/__1 AETHERO/TYM foto alias/`
+4. **Lighthouse audit** — nelze spustit z CLI (bez prohlížeče). Otestovat po deployi na CF Pages.
+5. **Accept-Language redirect** — statický / → /cs/ funguje. EN detekce by potřebovala CF Worker (`functions/_middleware.js`) — připravit v Fázi 2?
+6. **Blog + case studies** — statické placeholdery. Storyblok napojení v Milestone 2.x.
+7. **En podstránky CO UMÍME** — /en/co-umime/ existuje, ale jednotlivé subpage (/en/co-umime/novy-shopify-e-shop aj.) vrací 404 (existují jen v CS). Fáze 2?
