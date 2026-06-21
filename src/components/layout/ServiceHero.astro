@@ -5,8 +5,11 @@ export interface Props {
   subtitle: string;
   ctaLabel?: string;
   ctaHref?: string;
+  lang?: 'cs' | 'en';
 }
-const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+420776067663' } = Astro.props;
+const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+420776067663', lang = 'cs' } = Astro.props;
+const contactHref = `/${lang}/kontakt`;
+const contactLabel = lang === 'en' ? 'Find out how' : 'Zjistěte jak';
 ---
 
 <section class="service-hero">
@@ -17,7 +20,7 @@ const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+42077
     <p class="hero-sub">{subtitle}</p>
     <div class="hero-ctas">
       <a href={ctaHref} class="btn-primary">{ctaLabel}</a>
-      <a href="/kontakt" class="btn-ghost">Zjistěte jak</a>
+      <a href={contactHref} class="btn-ghost">{contactLabel}</a>
     </div>
   </div>
 </section>
