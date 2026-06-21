@@ -171,7 +171,7 @@ const blogPosts = [
 
   <!-- SERVICE SELECTOR CAROUSEL -->
   <section class="services-section">
-    <div class="container-wide">
+    <div class="svc-wide">
     <div class="services-track-wrap" id="services-track-wrap">
       <div class="services-track">
         {services.map((s, i) => (
@@ -450,6 +450,10 @@ const blogPosts = [
     padding: 56px 0;
     position: relative;
   }
+  .svc-wide {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+  }
   .services-track-wrap {
     overflow-x: auto;
     overflow-y: visible;
@@ -523,14 +527,15 @@ const blogPosts = [
     padding: 120px 0;
     text-align: center;
   }
-  .value-inner { max-width: 800px; margin: 0 auto; }
+  .value-inner { max-width: 1200px; margin: 0 auto; }
   .value-heading {
     font-family: var(--font-primary);
-    font-size: clamp(36px, 5.5vw, 70px);
+    font-size: clamp(28px, 3.6vw, 52px);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     color: #fff;
     margin-bottom: 32px;
+    white-space: nowrap;
   }
   .val-shopify { color: var(--accent-shopify); }
   .val-aethero { color: var(--text-secondary); }
