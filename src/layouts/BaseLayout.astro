@@ -1,0 +1,61 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  lang?: string;
+}
+const {
+  title,
+  description = 'Česká digitální agentura. Design, strategie a technologie pro e-commerce.',
+  ogImage = '/og-default.jpg',
+  lang = 'cs',
+} = Astro.props;
+const siteUrl = 'https://aethero.agency';
+const pathWithoutLang = Astro.url.pathname.replace(/^\/(cs|en)/, '') || '/';
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | aethero</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={Astro.url.href} />
+  <link rel="alternate" hreflang="cs" href={`${siteUrl}/cs${pathWithoutLang}`} />
+  <link rel="alternate" hreflang="en" href={`${siteUrl}/en${pathWithoutLang}`} />
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${pathWithoutLang}`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:title" content={`${title} | aethero`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AETHERO s.r.o.",
+    "alternateName": "aethero",
+    "url": siteUrl,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+420776067663",
+      "email": "info@aethero.cz",
+      "areaServed": ["CZ","SK","PL","AT","DE"],
+      "availableLanguage": ["Czech","English"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Budovcova 700/14",
+      "addressLocality": "České Budějovice",
+      "postalCode": "370 01",
+      "addressCountry": "CZ"
+    },
+    "sameAs": ["https://aethero.cz"]
+  })} />
+  <style is:global>@import '/src/styles/global.css';</style>
+</head>
+<body>
+  <slot />
+</body>
+</html>

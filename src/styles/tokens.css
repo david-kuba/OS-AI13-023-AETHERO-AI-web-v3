@@ -1,0 +1,55 @@
+:root {
+  --bg-elevated: #000326;
+  --bg-secondary: #0C0C42;
+  --bg-primary-alt: #030626;
+  --action: #0DD4CD;
+  --action-hover: #16BECF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A081D1;
+  --accent-purple: #CB00D7;
+  --brand-dark: #092066;
+  --neutral-100: #F8F9F9;
+  --neutral-300: #D2D2D2;
+  --neutral-500: #A0A3BD;
+  --neutral-700: #686868;
+  --neutral-900: #171A1C;
+  --semantic-error: #FF5252;
+  --semantic-success: #4ECCA3;
+  --semantic-warning: #FFA940;
+  --semantic-info: #5DADE2;
+  --accent-shopify: #96BF48;
+
+  --font-primary: 'Kanit', system-ui, sans-serif;
+  --font-secondary: 'Montserrat', system-ui, sans-serif;
+  --text-h1: 56px;
+  --text-h2: 40px;
+  --text-h3: 24px;
+  --text-body: 16px;
+  --text-label: 18px;
+  --text-small: 14px;
+
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-40: 40px;
+  --space-80: 80px;
+  --space-120: 120px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.20);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.20);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.35), 0 12px 16px rgba(0,0,0,0.25);
+
+  --container-max: 1280px;
+  --transition-base: 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-80: 48px;
+    --space-120: 64px;
+  }
+}
