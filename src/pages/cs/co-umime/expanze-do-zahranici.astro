@@ -3,14 +3,15 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const features = [
-  { title: 'AI parťák pro lokalizaci obsahu', logo: '/sidekick.png', desc: 'Shopify Sidekick generuje lokalizované popisy produktů, marketingové texty a obsah v jazyce cílového trhu. Méně manuální práce, více relevance pro místní zákazníky.', img: null, reverse: false },
-  { title: 'Shopify Markets — jeden admin, celý svět', desc: 'Správa všech trhů z jediného adminu — ceny v lokálních měnách, subdomény, jazykové varianty, DPH a zákonné požadavky pro každý trh. Bez nutnosti duplicitních e-shopů.', img: '/shopify-premium-story.webp', reverse: true },
-  { title: 'Mezinárodní prodej se Shopify', desc: 'Shopify je od základu navržen pro cross-border commerce. Nativní podpora vícejazyčnosti, multi-měny, lokálních platebních metod a regionálních fulfilment center — vše pod jednou střechou.', img: '/international-sale-shopify.webp', reverse: false },
-  { title: 'Benchmarking výkonu oproti trhu', desc: 'Shopify Store Benchmarks porovnává váš e-shop s podobnými obchody na globálním trhu. Zjistíte kde skutečně stojíte a kde jsou největší příležitosti pro růst na nových trzích.', img: '/store-benchmark.webp', reverse: true },
-  { title: 'B2B expanze bez kompromisů', desc: 'Shopify Plus přináší plnohodnotné B2B funkce pro mezinárodní trhy — vlastní ceníky pro firemní zákazníky, schvalovací procesy, ERP napojení a B2B checkout v každém jazyce a měně.', img: '/b2b-1.webp', reverse: false },
-  { title: 'Měření marketingu napříč trhy', desc: 'Přehled výkonu kampaní na každém trhu zvlášť — Google Ads, Meta, email. Víte přesně, které kanály přinášejí ROI na DE, SK nebo PL trhu a kde optimalizovat rozpočet.', img: '/marketing-measurement.webp', reverse: true },
-  { title: 'Shopify Shop App — v telefonu zákazníků', desc: 'Brandovaná přítomnost v mobilním zařízení zákazníků po celém světě. Notifikace o objednávkách, personalizovaný feed a sledování zásilek — vše bez nutnosti vlastní mobilní aplikace.', img: '/shopify-shop-app.webp', reverse: false },
-  { title: 'Real-time analytika pro každý trh', desc: 'Živá data o výkonu jednotlivých trhů bez denního zpracování — okamžitý přehled konverzí, průměrné hodnoty košíku a chování zákazníků na každém trhu zvlášť.', img: '/analytika.webp', reverse: true },
+  { title: 'Shopify Sidekick AI přímo v e-shopu', logo: '/sidekick.png', desc: 'Sidekick je AI asistent integrovaný do adminu e-shopu a výrazně vám urychlí práci v Shopify. Dokáže provádět operativní úkoly (vytvořit produkt, upravovat kolekce, analyzovat prodeje, připravit reporty), pomůže s marketingem (psaní popisků, e-mailů) a poradí na základě vašich vlastních dat i obecných zkušeností z trhu.', img: null, reverse: false },
+  { title: 'Nabušený „admin"', desc: 'Nebudeme vám nic lakovat na růžovo... postavit e-shop dá práci a ani pak není cesta k úspěchu snadná. Takže v „adminu" budete trávit spoustu času. A hodí se, když je přehledný a drží s vámi krok. Shopify admin umí: analytika, nápovědy, AI která vidí na vaše data a dokáže i poradit podle obecných zkušeností odjinud. A to je jen začátek.', img: '/analytika.webp', reverse: true },
+  { title: 'Postaveno pro mezinárodní prodej', desc: 'Trhy neboli Markets řeší v Shopify nastavení místní měny, platebních metod, jazyků. Další funkce vám pomohou poskytnout globálním zákazníkům důvěrně známé nákupní prostředí, které prokazatelně zvyšuje konverze. Podle trhu lze naladit šablonu, obsah, vybrat výrobky, nastavit ceny. S Shop Pay jim můžete nabídnout jejich platební metody a přizpůsobit i adresy dle zvyklostí.', img: '/international-sale-shopify.webp', reverse: false },
+  { title: 'Možnost sofistikovaného porovnání se s ostatními', desc: 'Shopify vám skrze AI a také díky zabudovaným benchmarkům ukáže jak jsou na tom podobné obchody ve světě. Takže svou výkonnost můžete lépe měřit a využít informace ve svůj prospěch.', img: '/store-benchmark.webp', reverse: true },
+  { title: 'Multichannel marketing', desc: 'Přehledně si organizujte marketingové aktivity napříč e-mailem, sociálními sítěmi, reklamou i organickou návštěvností do ucelených kampaní. Díky přehledným reportům jednotlivých kanálů lépe porozumíte tomu, odkud přichází zákazníci, kolik stojí jejich získání a jaká je návratnost marketingových investic.', img: '/marketing-measurement.webp', reverse: false },
+  { title: 'Real-time přehled o datech e-shopu', desc: 'S Shopify máte okamžitý přehled o tom, jak si váš e-shop skutečně vede – bez čekání na denní přepočty nebo omezené přehledy. Data se aktualizují v reálném čase napříč celým dashboardem i reporty. Přizpůsobte si přehled přesně podle toho, co je pro vás rozhodující, a sledujte klíčové metriky na první pohled.', img: '/real-time-monitoring.png', reverse: true },
+  { title: 'B2B ready', desc: 'Ve verzi Shopify Plus najdete nativní B2B funkcionalitu navrženou pro firmy s vysokým objemem objednávek, složitou cenotvorbou a individuálními obchodními vztahy. Umožňuje pracovat s firemními účty, vlastními ceníky, schvalovacími procesy i opakovanými nákupy v jednom sjednoceném řešení. Chcete menší B2B řešení? To vyřeší aplikace nebo custom vývoj.', img: '/b2b-1.webp', reverse: false },
+  { title: 'Shopify SHOP aplikace, u zákazníka v mobilu', desc: 'Díky Shop aplikaci se vaše značka dostává přímo do mobilních zařízení zákazníků a to po celém světě. Ideální uživatelská zkušenost. Zákazníci mohou jednoduše sledovat objednávky, vracet se k oblíbeným produktům a opakovaně nakupovat bez nutnosti znovu procházet celý nákupní proces.', img: '/shopify-shop-app.webp', reverse: true },
+  { title: 'Automatizace', desc: 'S rostoucím objemem objednávek nedává ruční správa smysl. Automatizace umožňuje převést klíčové procesy — od práce s objednávkami a zákazníky, přes cenotvorbu a zásoby až po marketingové scénáře — do řízených, předvídatelných toků. Výsledkem je menší závislost na manuálních zásazích, nižší chybovost a schopnost škálovat bez neustálého navyšování týmu.', img: '/flow-automation.webp', reverse: false },
 ];
 
 const relatedServices = [
@@ -27,7 +28,7 @@ const relatedServices = [
   <ServiceHero
     label="Mezinárodní expanze"
     title="EXPANZE<br /><span style='color:var(--action)'>DO ZAHRANIČÍ</span>"
-    subtitle="Je čas rozjet to naplno — Evropa? Celý svět? Shopify Markets vám umožní spravovat všechny trhy z jednoho adminu."
+    subtitle="Je čas rozjet to naplno, Evropa? Celý svět? No jasně, jdeme do toho s vámi."
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
     cta2Label="Zjistěte jak"
@@ -39,9 +40,8 @@ const relatedServices = [
   <!-- Intro -->
   <section class="section-intro bg-elevated">
     <div class="container">
-      <h2 class="intro-heading">Prodávejte<br /><span class="text-action">GLOBÁLNĚ</span></h2>
-      <p class="intro-text">Shopify je od základu navržen pro mezinárodní prodej. Jedna platforma s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Vše z jednoho adminu — bez nutnosti duplikovat e-shop pro každý trh.</p>
-      <p class="intro-text">V aethero jsme pomohli klientům rozjet prodej v desítkách zemí. Víme, co funguje a co zbytečně prodražuje čas i peníze.</p>
+      <h2 class="intro-heading">Máte plán na <span class="text-action">EXPANZI DO ZAHRANIČÍ</span>?</h2>
+      <p class="intro-text">S Shopify vám otevřeme cestu k růstu, který na lokálních platformách jednoduše není možný. Učiňte zákazníka z celého světa svým zákazníkem.</p>
       <a href="tel:+420776067663" class="btn-action">Jdeme expandovat?</a>
     </div>
   </section>
@@ -50,9 +50,8 @@ const relatedServices = [
   <section class="section bg-secondary" id="expanze-proc">
     <div class="container two-col">
       <div>
-        <h2 class="section-title">Máte plán na expanzi do zahraničí?</h2>
-        <p class="section-text">Shopify je od základu navržen pro mezinárodní prodej. Získáte jednu globální platformu s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Vše z jednoho adminu.</p>
-        <p class="section-text">V aethero jsme pomohli klientům rozjet prodej v desítkách zemí. Víme, co funguje a co zbytečně prodražuje čas i peníze.</p>
+        <h2 class="section-title">Co vám expanze s Shopify přinese?</h2>
+        <p class="section-text">K dispozici máte vše, co potřebujete proto, abyste svůj e-shop proměnili ve skutečnou globální značku. Zde je jen částečný výčet funkcí, které by vás mohly zaujmout.</p>
       </div>
       <div class="intro-highlights">
         <div class="highlight-item">
@@ -87,6 +86,14 @@ const relatedServices = [
     </section>
   ))}
 
+  <!-- Tady jste na správném místě -->
+  <section class="section bg-secondary">
+    <div class="container" style="text-align: center; max-width: 720px; margin: 0 auto;">
+      <h3 class="tady-heading">Tady jste na správném místě!</h3>
+      <p class="tady-text">U globální expanze není otázkou jestli, ale spíše kdy. Shopify vám dodá technologický základ, díky kterému se budete moci soustředit na růst místo řešení limitů platformy. Je teď ten správný čas a chcete s námi posunout svůj e-shop dál?</p>
+    </div>
+  </section>
+
   <!-- Related -->
   <section class="section bg-elevated">
     <div class="container">
@@ -109,7 +116,7 @@ const relatedServices = [
   <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Jdeme<br />EXPANDOVAT?</h2>
+      <h2>Jdeme EXPANDOVAT?<br />Dejte vědět</h2>
       <div class="cta-contacts">
         <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
         <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
@@ -150,6 +157,9 @@ const relatedServices = [
   .feature-desc { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.75; }
   .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
   .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
+
+  .tady-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-24); }
+  .tady-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; }
 
   .related-services { list-style: none; display: flex; flex-direction: column; }
   .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
