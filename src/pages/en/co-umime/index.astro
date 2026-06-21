@@ -83,6 +83,24 @@ const services = [
     </div>
   </section>
 
+  <section class="apps-section section">
+    <div class="container">
+      <h2 class="section-label">APPS</h2>
+      <div class="apps-grid">
+        <a href="/en/esyncer" class="app-card">
+          <h3>eSyncer</h3>
+          <p>Product data import, sync & automation for Shopify and beyond.</p>
+          <span class="app-link">Learn more →</span>
+        </a>
+        <a href="/en/ae-translator" class="app-card">
+          <h3>AE Translator</h3>
+          <p>AI-powered Shopify content translation. DeepL, Claude or DeepSeek — your choice.</p>
+          <span class="app-link">Learn more →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="section cta-section">
     <div class="container cta-inner">
       <h2>Ready to start?<br /><span class="accent">Let's talk.</span></h2>
@@ -114,7 +132,15 @@ const services = [
   .svc-title { font-family: var(--font-primary); font-size: 20px; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: var(--space-8); transition: color var(--transition-base); }
   .svc-desc { font-size: 15px; color: var(--neutral-300); line-height: 1.6; }
   .svc-arrow { color: var(--neutral-700); transition: transform var(--transition-base), color var(--transition-base); flex-shrink: 0; margin-top: 4px; }
-  .cta-section { background: var(--bg-secondary); }
+  .apps-section { background: var(--bg-secondary); }
+  .section-label { font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-40); }
+  .apps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
+  .app-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); transition: border-color var(--transition-base); }
+  .app-card:hover { border-color: rgba(13,212,205,0.3); }
+  .app-card h3 { font-size: var(--text-h3); font-weight: 600; margin-bottom: var(--space-16); }
+  .app-card p { font-size: 14px; color: var(--neutral-300); line-height: 1.6; margin-bottom: var(--space-24); }
+  .app-link { color: var(--action); font-size: 14px; font-weight: 500; }
+  .cta-section { background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
   .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
