@@ -3,6 +3,13 @@ export interface Props { lang?: string; }
 const { lang = 'cs' } = Astro.props;
 const p = lang === 'en' ? '/en' : '/cs';
 
+// Language switcher: swap /cs/ ↔ /en/ in current path
+const currentPath = Astro.url.pathname;
+const otherLang = lang === 'en' ? 'cs' : 'en';
+const otherPath = lang === 'en'
+  ? currentPath.replace(/^\/en/, '/cs')
+  : currentPath.replace(/^\/cs/, '/en');
+
 const navItems = lang === 'en'
   ? [
       { label: 'HOME', href: `${p}/` },
@@ -62,6 +69,10 @@ const navItems = lang === 'en'
   <div class="container header-inner">
     <a href={`${p}/`} class="logo" aria-label="aethero">
       <img src="/ae-logo.svg" alt="æthero" width="120" height="30" loading="eager" />
+    </a>
+
+    <a href={otherPath} class="lang-switch" aria-label={`Switch to ${otherLang.toUpperCase()}`}>
+      {otherLang.toUpperCase()}
     </a>
 
     <button class="hamburger" id="hamburger" aria-label={lang === 'en' ? 'Open menu' : 'Otevřít menu'} aria-expanded="false" aria-controls="nav-menu">
@@ -141,8 +152,9 @@ const navItems = lang === 'en'
 
   .header-inner {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr auto auto auto;
     align-items: center;
+    gap: 0 16px;
   }
 
   /* Logo */
@@ -157,6 +169,23 @@ const navItems = lang === 'en'
 
   /* Nav */
   nav { grid-column: 2; }
+
+  /* Language switcher */
+  .lang-switch {
+    grid-column: 3;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    opacity: 0.6;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    transition: opacity var(--transition-base), border-color var(--transition-base);
+    white-space: nowrap;
+  }
+  .lang-switch:hover { opacity: 1; border-color: var(--action); }
 
   .nav-list {
     display: flex;
@@ -247,8 +276,9 @@ const navItems = lang === 'en'
 
   /* Mobile */
   @media (max-width: 900px) {
-    .header-inner { grid-template-columns: 1fr auto; }
+    .header-inner { grid-template-columns: 1fr auto auto; gap: 0 12px; }
     .hamburger { display: flex; }
+    .lang-switch { grid-column: 2; font-size: 13px; padding: 3px 8px; }
 
     nav {
       grid-column: 1 / -1;
