@@ -30,15 +30,16 @@ const intentLinks = lang === 'en'
       </a>
       <img src="/shopify-plus-badge.svg" alt="Shopify Plus Partner" class="shopify-badge" width="130" height="45" loading="lazy" />
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    <div class="container">
-      <span>© {new Date().getFullYear()} AETHERO s.r.o. · IČO 05288762</span>
-      <span class="separator">·</span>
-      <a href={`${p}/o-nas`}>{lang === 'en' ? 'About' : 'O nás'}</a>
-      <span class="separator">·</span>
-      <a href={`${p}/kontakt`}>{lang === 'en' ? 'Contact' : 'Kontakt'}</a>
+    <div class="footer-intent">
+      <p class="footer-label">
+        {lang === 'en' ? 'What can we do for you around Shopify?' : 'Co pro vás okolo Shopify můžeme udělat?'}
+      </p>
+      <ul>
+        {intentLinks.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
     </div>
   </div>
 </footer>
@@ -89,27 +90,6 @@ const intentLinks = lang === 'en'
     transition: color var(--transition-base);
   }
   ul a:hover { color: #fff; }
-
-  .footer-bottom {
-    padding: var(--space-24);
-  }
-
-  .footer-bottom .container {
-    display: flex;
-    align-items: center;
-    gap: var(--space-8);
-    font-size: var(--text-small);
-    color: rgba(255,255,255,0.45);
-    flex-wrap: wrap;
-  }
-
-  .footer-bottom a {
-    color: rgba(255,255,255,0.6);
-    transition: color var(--transition-base);
-  }
-  .footer-bottom a:hover { color: var(--action); }
-
-  .separator { opacity: 0.4; }
 
   @media (max-width: 768px) {
     .footer-inner {
