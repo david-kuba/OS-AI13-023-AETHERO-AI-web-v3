@@ -63,13 +63,13 @@ const allServices = [
 ];
 
 const services = [
-  { num: '01', pre: 'I need to create a', title: 'BRAND', label: 'Brand & Identity', href: '/en/co-umime/potrebuji-brand' },
-  { num: '02', pre: 'I want to build a', title: 'NEW SHOPIFY STORE', label: 'New Shopify Store', href: '/en/co-umime/novy-shopify-e-shop' },
-  { num: '03', pre: 'From another platform I want to', title: 'MIGRATE TO SHOPIFY', label: 'Migration to Shopify', href: '/en/co-umime/prechod-na-shopify' },
-  { num: '04', pre: "We're planning", title: 'INTERNATIONAL EXPANSION', label: 'International Expansion', href: '/en/co-umime/expanze-do-zahranici' },
-  { num: '05', pre: 'I have a Shopify store and', title: 'NEED SUPPORT', label: 'Development & Support', href: '/en/co-umime/rozvoj-a-podpora' },
-  { num: '06', pre: 'I need custom Shopify tweaks, integrations or a', title: 'CUSTOM APP', label: 'Custom Development', href: '/en/co-umime/custom-vyvoj-a-aplikace' },
-  { num: '07', pre: "My store isn't growing and I need", title: 'ANALYTICS & STRATEGY', label: 'Analytics & Strategy', href: '/en/co-umime/analyza-a-strategie' },
+  { num: '01', pre: 'I need to<br />create a', title: 'BRAND', label: 'Brand & Identity', href: '/en/co-umime/potrebuji-brand' },
+  { num: '02', pre: 'I want<br />to build a', title: 'NEW SHOPIFY STORE', label: 'New Shopify Store', href: '/en/co-umime/novy-shopify-e-shop' },
+  { num: '03', pre: 'From another<br />platform I want to', title: 'MIGRATE TO SHOPIFY', label: 'Migration to Shopify', href: '/en/co-umime/prechod-na-shopify' },
+  { num: '04', pre: "We're<br />planning", title: 'INTERNATIONAL EXPANSION', label: 'International Expansion', href: '/en/co-umime/expanze-do-zahranici' },
+  { num: '05', pre: 'I have a Shopify<br />store and', title: 'NEED SUPPORT', label: 'Development & Support', href: '/en/co-umime/rozvoj-a-podpora' },
+  { num: '06', pre: 'I need custom<br />Shopify tweaks<br />or a', title: 'CUSTOM APP', label: 'Custom Development', href: '/en/co-umime/custom-vyvoj-a-aplikace' },
+  { num: '07', pre: "My store isn't<br />growing — I need", title: 'ANALYTICS & STRATEGY', label: 'Analytics & Strategy', href: '/en/co-umime/analyza-a-strategie' },
 ];
 
 const blogPosts = [
@@ -177,7 +177,7 @@ const blogPosts = [
             <a href={s.href} class="service-item">
               <div class="service-content">
                 <span class="service-num">{s.num}</span>
-                <p class="service-text">{s.pre}</p>
+                <p class="service-text" set:html={s.pre}></p>
                 <h3 class="service-title">{s.title} →</h3>
               </div>
             </a>
@@ -463,9 +463,9 @@ const blogPosts = [
   .service-item {
     display: flex;
     flex-direction: column;
-    min-width: 480px;
+    min-width: 380px;
     scroll-snap-align: start;
-    padding: 40px 48px;
+    padding: 40px 40px;
     color: #fff;
     cursor: pointer;
     transition: opacity 0.2s;
