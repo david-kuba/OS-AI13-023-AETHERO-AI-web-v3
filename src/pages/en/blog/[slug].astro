@@ -1,0 +1,74 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  // TODO: Connect to Storyblok in Milestone 2.x
+  return [
+    {
+      params: { slug: 'shopify-mandatory-button' },
+      props: { title: 'Mandatory Button in Shopify: Don\'t Wait Until It Becomes a Problem', readTime: '7 min', date: '2026-05-01', perex: 'How to correctly set up the mandatory button in Shopify and avoid compliance issues.', content: 'Article content will be added. Storyblok CMS integration in Milestone 2.x.' },
+    },
+    {
+      params: { slug: 'ai-seo-2026' },
+      props: { title: 'AI SEO — The New Hard Reality of Search for E-shops (2026)', readTime: '7 min', date: '2026-01-15', perex: 'How artificial intelligence is changing SEO and what it means for your e-shop.', content: 'Article content will be added. Storyblok CMS integration in Milestone 2.x.' },
+    },
+    {
+      params: { slug: 'shopify-editions-winter-2026' },
+      props: { title: 'Shopify Editions — Winter 2026', readTime: '5 min', date: '2025-12-10', perex: 'Overview of the most important updates from Shopify Editions Winter 2026.', content: 'Article content will be added. Storyblok CMS integration in Milestone 2.x.' },
+    },
+    {
+      params: { slug: 'shopify-vs-shoptet' },
+      props: { title: 'Which E-commerce Platform to Choose? Shopify vs Shoptet', readTime: '18 min', date: '2025-06-01', perex: 'Detailed comparison of Shopify and Shoptet for the Central European market.', content: 'Article content will be added. Storyblok CMS integration in Milestone 2.x.' },
+    },
+  ];
+}
+
+const { title, readTime, date, perex, content } = Astro.props;
+const dateFormatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<PageLayout {title} description={perex} lang="en">
+
+  <article class="blog-article">
+    <header class="article-hero">
+      <div class="hero-blob" aria-hidden="true"></div>
+      <div class="container article-hero-inner">
+        <div class="article-meta">
+          <time datetime={date}>{dateFormatted}</time>
+          <span class="read-time">{readTime} read</span>
+        </div>
+        <h1>{title}</h1>
+        <p class="article-perex">{perex}</p>
+      </div>
+    </header>
+
+    <section class="article-body">
+      <div class="container article-content">
+        <p class="placeholder-note">{content}</p>
+      </div>
+    </section>
+  </article>
+
+</PageLayout>
+
+<style>
+  .article-hero {
+    position: relative; overflow: hidden;
+    background: var(--bg-elevated);
+    padding: 160px 0 80px;
+  }
+  .hero-blob {
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(160,129,209,0.15) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .article-hero-inner { max-width: 800px; }
+  .article-meta { display: flex; gap: 16px; margin-bottom: 24px; font-size: 14px; color: rgba(255,255,255,0.5); }
+  .read-time::before { content: '·'; margin-right: 16px; }
+  .article-hero h1 { font-size: clamp(36px,5vw,64px); font-weight: 700; line-height: 1.1; margin-bottom: 24px; }
+  .article-perex { font-size: 20px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .article-body { padding: var(--space-120) 0; background: var(--bg-elevated); }
+  .article-content { max-width: 800px; }
+  .placeholder-note { font-size: 18px; color: var(--neutral-500); font-style: italic; }
+</style>

@@ -1,0 +1,96 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import ServiceHero from '../../../components/layout/ServiceHero.astro';
+
+const steps = [
+  { step: '01', title: 'Start', desc: 'Migration decision, scope definition and timeline planning.' },
+  { step: '02', title: 'Preparation', desc: 'Joint migration planning — data map, URL structure, SEO audit.' },
+  { step: '03', title: 'Data & SEO', desc: 'Input validation, output configuration, redirect preparation.' },
+  { step: '04', title: 'Migration to Shopify', desc: 'Implementation, testing and go-live.' },
+];
+
+const features = [
+  { title: 'Multichannel from One Place', desc: 'Sell across all channels from a single admin.' },
+  { title: 'Social Commerce', desc: 'Native integration with Instagram, TikTok and YouTube.' },
+  { title: 'App Store Ecosystem', desc: 'A full ecosystem of apps built for performance.' },
+  { title: 'Product Taxonomy', desc: 'Advanced product organisation across channels and markets.' },
+  { title: 'Shopify Shop App', desc: 'Mobile shopping for customers, natively.' },
+  { title: 'B2B Solution', desc: 'Enterprise features for B2B customers in Shopify Plus.' },
+];
+---
+
+<PageLayout title="Migration to Shopify" description="Migrate from any platform to Shopify without losing SEO rankings or customer data." lang="en">
+  <ServiceHero
+    label="Migration"
+    title="MIGRATION<br /><span style='color:var(--action)'>TO SHOPIFY</span>"
+    subtitle="Hitting the limits of your current platform? Shopify is an open global platform built for growth — and we will move you there safely."
+  />
+
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Migration in 4 steps</h2>
+      <div class="steps-list">
+        {steps.map((s) => (
+          <div class="step-item">
+            <span class="step-num">{s.step}</span>
+            <div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">What you gain on Shopify</h2>
+      <div class="features-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Ready to move?</h2>
+      <p>We will assess your current setup for free and propose a migration plan.</p>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
+  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .steps-list { display: flex; flex-direction: column; gap: var(--space-24); }
+  .step-item { display: flex; align-items: flex-start; gap: var(--space-24); }
+  .step-num { font-size: 48px; font-weight: 700; color: var(--text-secondary); line-height: 1; flex-shrink: 0; width: 80px; }
+  .step-item h3 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .step-item p { color: var(--neutral-300); font-size: 16px; }
+  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
+  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
+  .feature-card h3 { font-size: 20px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .step-num { font-size: 32px; width: 48px; } }
+</style>

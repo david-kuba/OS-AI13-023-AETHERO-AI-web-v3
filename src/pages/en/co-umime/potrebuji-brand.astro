@@ -1,0 +1,76 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import ServiceHero from '../../../components/layout/ServiceHero.astro';
+
+const points = [
+  { title: 'Visual Identity', desc: 'Logo, colours, typography and a brand manual — the foundation everything is built on.' },
+  { title: 'Tone of Voice', desc: 'How your brand speaks to customers — from product descriptions to email campaigns.' },
+  { title: 'Digital Experience', desc: 'How your brand translates into your store — UX, UI and the customer journey.' },
+  { title: 'Brand Materials', desc: 'Social media templates, email headers, business cards and presentations.' },
+];
+---
+
+<PageLayout title="Brand & Identity" description="We craft visual identities and digital experiences for e-commerce projects on Shopify." lang="en">
+  <ServiceHero
+    label="Brand & Identity"
+    title="I need a <span style='color:var(--action)'>BRAND</span>"
+    subtitle="A strong brand is not a luxury — it is the foundation of every successful e-shop. We will create an identity that wins and keeps customers."
+    ctaLabel="Let's talk"
+    ctaHref="tel:+420776067663"
+  />
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What a brand project includes</h2>
+      <div class="points-grid">
+        {points.map((p) => (
+          <div class="point-card">
+            <h3>{p.title}</h3>
+            <p>{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Let's get started</h2>
+      <p>Write to us or call — the first consultation is free.</p>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .section { padding: var(--space-120) 0; background: var(--bg-elevated); }
+  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .points-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
+  .point-card {
+    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md); padding: var(--space-40);
+  }
+  .point-card h3 { font-size: var(--text-h3); font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .point-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated);
+    font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md);
+    transition: background var(--transition-base);
+  }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost {
+    display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600;
+    border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base);
+  }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  @media (max-width: 768px) { .points-grid { grid-template-columns: 1fr; } }
+</style>

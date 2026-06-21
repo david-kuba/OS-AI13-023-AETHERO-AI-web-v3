@@ -1,0 +1,70 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  // TODO: Connect to Storyblok in Milestone 2.x
+  return [
+    {
+      params: { slug: 'groomo-cz-na-shopify' },
+      props: {
+        title: 'GROOMO.cz — from zero to Shopify',
+        category: 'Case Study',
+        client: 'GROOMO.cz',
+        tags: ['Brand', 'Shopify', 'E-shop'],
+        perex: 'Complete brand creation and Shopify e-shop development focused on the professional dog grooming market.',
+        content: 'Case study content will be added. Storyblok CMS integration in Milestone 2.x.',
+      },
+    },
+  ];
+}
+
+const { title, category, client, tags, perex, content } = Astro.props;
+---
+
+<PageLayout {title} description={perex} lang="en">
+
+  <section class="case-hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container case-hero-inner">
+      <p class="case-label">{category}</p>
+      <h1>{title}</h1>
+      <p class="case-perex">{perex}</p>
+      <div class="case-meta">
+        <span class="meta-client">{client}</span>
+        {tags.map((tag: string) => <span class="meta-tag">{tag}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-elevated">
+    <div class="container case-body">
+      <p class="placeholder-note">{content}</p>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .case-hero {
+    position: relative; overflow: hidden;
+    background: var(--bg-elevated);
+    padding: 160px 0 80px;
+  }
+  .hero-blob {
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(160,129,209,0.18) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .case-hero-inner { max-width: 800px; }
+  .case-label { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: var(--action); margin-bottom: 16px; text-transform: uppercase; }
+  .case-hero h1 { font-size: clamp(40px,6vw,80px); font-weight: 700; line-height: 1.1; margin-bottom: 24px; }
+  .case-perex { font-size: 22px; color: rgba(255,255,255,0.75); line-height: 1.5; margin-bottom: 32px; }
+  .case-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .meta-client { font-size: 16px; font-weight: 600; color: #fff; }
+  .meta-tag { font-size: 13px; padding: 4px 12px; background: rgba(13,212,205,0.1); border: 1px solid rgba(13,212,205,0.25); border-radius: 100px; color: var(--action); }
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .case-body { max-width: 800px; }
+  .placeholder-note { font-size: 18px; color: var(--neutral-500); font-style: italic; }
+</style>

@@ -1,0 +1,119 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import ServiceHero from '../../../components/layout/ServiceHero.astro';
+
+const features = [
+  { title: 'Shopify Sidekick', desc: 'AI assistant built right into the admin — creates products, writes descriptions, suggests SEO improvements.' },
+  { title: 'Intuitive Admin', desc: 'Modern interface operable without technical skills, available in multiple languages.' },
+  { title: 'Mobile App', desc: 'Track revenue and manage orders from anywhere, in real time.' },
+  { title: 'Multichannel Selling', desc: 'Instagram, TikTok, Facebook, Google Shopping and Amazon — all from one admin.' },
+  { title: 'Analytics & Marketing', desc: 'Clear dashboards, trend tracking and smart CRM integration.' },
+  { title: 'Automation', desc: 'Shopify Flow responds to customer behaviour without manual work.' },
+  { title: 'App Store', desc: 'Over 10,000 apps built across 15+ years — a solution for every need.' },
+];
+
+const reasons = [
+  'One of the 3 most-used e-commerce platforms in the world',
+  'A year ahead of European competitors in platform updates',
+  'Large international company — no single-vendor dependency',
+  'International scaling without migration',
+  'PCI DSS certified with enterprise-grade security',
+];
+
+const process = [
+  { step: '01', title: 'Discovery', desc: 'We discuss your requirements, goals and project timeline.' },
+  { step: '02', title: 'Analysis & Recommendation', desc: 'You receive a concrete architecture proposal and our recommendations.' },
+  { step: '03', title: 'Proposal & Contract', desc: 'We prepare an offer, sign the contract and get started.' },
+  { step: '04', title: 'Launch', desc: 'Design, development, testing, launch and 30 days of post-launch support.' },
+  { step: '05', title: 'Growth', desc: 'Long-term partnership — management, optimisation and growth.' },
+];
+---
+
+<PageLayout title="New Shopify Store" description="We design and build new Shopify e-shops from scratch — fast, scalable and future-ready." lang="en">
+  <ServiceHero
+    label="New Shopify Store"
+    title="NEW <span style='color:var(--action)'>SHOPIFY STORE</span>"
+    subtitle="We handle the entire process from store selection through design and development to the first order — and beyond. Your technology will never be a barrier."
+    ctaLabel="Let's talk"
+    ctaHref="tel:+420776067663"
+  />
+
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Why Shopify?</h2>
+      <ul class="reasons-list">
+        {reasons.map((r) => <li>{r}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">What you get</h2>
+      <div class="features-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">How we work</h2>
+      <div class="process-list">
+        {process.map((p) => (
+          <div class="process-step">
+            <span class="step-num">{p.step}</span>
+            <div>
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Ready to build?</h2>
+      <p>Write to us or call — the first consultation is free.</p>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
+  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .reasons-list li { padding: 16px 24px; background: var(--bg-secondary); border-left: 3px solid var(--action); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 18px; }
+  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
+  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
+  .feature-card h3 { font-size: 20px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .process-list { display: flex; flex-direction: column; gap: var(--space-24); }
+  .process-step { display: flex; align-items: flex-start; gap: var(--space-24); }
+  .step-num { font-size: 48px; font-weight: 700; color: var(--text-secondary); line-height: 1; flex-shrink: 0; width: 80px; }
+  .process-step h3 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .process-step p { color: var(--neutral-300); font-size: 16px; }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .step-num { font-size: 32px; width: 48px; } }
+</style>

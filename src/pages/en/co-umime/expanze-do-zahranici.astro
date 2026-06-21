@@ -1,0 +1,91 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import ServiceHero from '../../../components/layout/ServiceHero.astro';
+
+const steps = [
+  { step: '01', title: 'Market Entry Strategy', desc: 'Selecting priority markets, validating potential and building the business case.' },
+  { step: '02', title: 'Solution Architecture', desc: 'Designing the Shopify structure, integrations and technical architecture.' },
+  { step: '03', title: 'Localisation & Compliance', desc: 'Content, payment methods, taxes, legislation and language variants.' },
+  { step: '04', title: 'Launch & Scaling', desc: 'Market launch and systematic growth.' },
+];
+
+const capabilities = [
+  'Shopify Markets — manage all markets from one admin',
+  'Multicurrency and multilanguage natively',
+  'B2B solution for enterprise clients (Shopify Plus)',
+  'Localised payment methods per country',
+  'AI Sidekick for content localisation',
+  'Shopify Shop App for mobile customers',
+  'Real-time analytics and dashboards',
+  'Process automation via Shopify Flow',
+];
+---
+
+<PageLayout title="International Expansion" description="One Shopify store, the whole world. We help you expand into international markets." lang="en">
+  <ServiceHero
+    label="International Expansion"
+    title="INTERNATIONAL<br /><span style='color:var(--action)'>EXPANSION</span>"
+    subtitle="Time to go full throttle — Europe, the world? Shopify Markets lets you manage all markets from one admin. We handle the tech, you focus on business."
+  />
+
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Expansion in 4 steps</h2>
+      <div class="steps-list">
+        {steps.map((s) => (
+          <div class="step-item">
+            <span class="step-num">{s.step}</span>
+            <div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">What Shopify enables internationally</h2>
+      <ul class="capabilities-list">
+        {capabilities.map((c) => <li>{c}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Ready to go global?</h2>
+      <p>Let's map out your expansion plan together.</p>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
+  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .steps-list { display: flex; flex-direction: column; gap: var(--space-24); }
+  .step-item { display: flex; align-items: flex-start; gap: var(--space-24); }
+  .step-num { font-size: 48px; font-weight: 700; color: var(--text-secondary); line-height: 1; flex-shrink: 0; width: 80px; }
+  .step-item h3 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .step-item p { color: var(--neutral-300); font-size: 16px; }
+  .capabilities-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .capabilities-list li { padding: 16px 24px; background: var(--bg-elevated); border-left: 3px solid var(--action); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 16px; }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  @media (max-width: 768px) { .capabilities-list { grid-template-columns: 1fr; } .step-num { font-size: 32px; width: 48px; } }
+</style>
