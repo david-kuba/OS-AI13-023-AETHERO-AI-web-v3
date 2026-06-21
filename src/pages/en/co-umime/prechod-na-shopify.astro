@@ -29,14 +29,12 @@ const features = [
   <section class="section bg-elevated">
     <div class="container">
       <h2 class="section-title">Migration in 4 steps</h2>
-      <div class="steps-list">
+      <div class="steps-grid">
         {steps.map((s) => (
-          <div class="step-item">
+          <div class="step-card">
             <span class="step-num">{s.step}</span>
-            <div>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
           </div>
         ))}
       </div>
@@ -74,16 +72,16 @@ const features = [
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .steps-list { display: flex; flex-direction: column; gap: var(--space-24); }
-  .step-item { display: flex; align-items: flex-start; gap: var(--space-24); }
-  .step-num { font-size: 48px; font-weight: 700; color: var(--text-secondary); line-height: 1; flex-shrink: 0; width: 80px; }
-  .step-item h3 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
-  .step-item p { color: var(--neutral-300); font-size: 16px; }
-  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
-  .feature-card h3 { font-size: 20px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
+  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
+  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
   .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
   .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
@@ -92,5 +90,6 @@ const features = [
   .btn-primary:hover { background: var(--action-hover); }
   .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .step-num { font-size: 32px; width: 48px; } }
+  @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } }
 </style>

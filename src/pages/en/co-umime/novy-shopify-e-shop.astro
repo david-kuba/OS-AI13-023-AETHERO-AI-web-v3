@@ -66,10 +66,10 @@ const process = [
       <h2 class="section-title">How we work</h2>
       <div class="process-list">
         {process.map((p) => (
-          <div class="process-step">
-            <span class="step-num">{p.step}</span>
+          <div class="process-item">
+            <span class="process-step">{p.step}</span>
             <div>
-              <h3>{p.title}</h3>
+              <strong>{p.title}</strong>
               <p>{p.desc}</p>
             </div>
           </div>
@@ -95,18 +95,18 @@ const process = [
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-  .reasons-list li { padding: 16px 24px; background: var(--bg-secondary); border-left: 3px solid var(--action); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 18px; }
-  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
-  .feature-card h3 { font-size: 20px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .reasons-list li { display: flex; align-items: flex-start; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-300); }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
   .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .process-list { display: flex; flex-direction: column; gap: var(--space-24); }
-  .process-step { display: flex; align-items: flex-start; gap: var(--space-24); }
-  .step-num { font-size: 48px; font-weight: 700; color: var(--text-secondary); line-height: 1; flex-shrink: 0; width: 80px; }
-  .process-step h3 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
-  .process-step p { color: var(--neutral-300); font-size: 16px; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .process-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-24); }
+  .process-item { display: flex; gap: var(--space-16); }
+  .process-step { font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); min-width: 28px; padding-top: 2px; flex-shrink: 0; }
+  .process-item strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .process-item p { font-size: var(--text-small); color: var(--neutral-500); }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
   .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
@@ -115,5 +115,6 @@ const process = [
   .btn-primary:hover { background: var(--action-hover); }
   .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .step-num { font-size: 32px; width: 48px; } }
+  @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
 </style>
