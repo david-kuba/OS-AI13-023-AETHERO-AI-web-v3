@@ -1,18 +1,58 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title: string;
   description?: string;
   ogImage?: string;
   lang?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 const {
   title,
   description = 'Česká digitální agentura. Design, strategie a technologie pro e-commerce.',
   ogImage = '/og-default.jpg',
   lang = 'cs',
+  jsonLd,
 } = Astro.props;
 const siteUrl = 'https://aethero.agency';
 const pathWithoutLang = Astro.url.pathname.replace(/^\/(cs|en)/, '') || '/';
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AETHERO s.r.o.",
+  "alternateName": "aethero",
+  "url": siteUrl,
+  "logo": `${siteUrl}/favicon.svg`,
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+420776067663",
+    "email": "info@aethero.cz",
+    "areaServed": ["CZ","SK","PL","AT","DE"],
+    "availableLanguage": ["Czech","English"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Budovcova 700/14",
+    "addressLocality": "České Budějovice",
+    "postalCode": "370 01",
+    "addressCountry": "CZ"
+  },
+  "sameAs": ["https://aethero.cz"]
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": `${title} | aethero`,
+  "description": description,
+  "url": Astro.url.href,
+  "inLanguage": lang === 'cs' ? 'cs-CZ' : 'en-US',
+  "publisher": { "@type": "Organization", "name": "AETHERO s.r.o.", "url": siteUrl }
+};
+
+const schemas = [orgSchema, webPageSchema, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -31,29 +71,12 @@ const pathWithoutLang = Astro.url.pathname.replace(/^\/(cs|en)/, '') || '/';
   <meta property="og:description" content={description} />
   <meta property="og:image" content={`${siteUrl}${ogImage}`} />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AETHERO s.r.o.",
-    "alternateName": "aethero",
-    "url": siteUrl,
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+420776067663",
-      "email": "info@aethero.cz",
-      "areaServed": ["CZ","SK","PL","AT","DE"],
-      "availableLanguage": ["Czech","English"]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Budovcova 700/14",
-      "addressLocality": "České Budějovice",
-      "postalCode": "370 01",
-      "addressCountry": "CZ"
-    },
-    "sameAs": ["https://aethero.cz"]
-  })} />
-  <style is:global>@import '/src/styles/global.css';</style>
+  <meta name="twitter:title" content={`${title} | aethero`} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+  {schemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
 </head>
 <body>
   <slot />

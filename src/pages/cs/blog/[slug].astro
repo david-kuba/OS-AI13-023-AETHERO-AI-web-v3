@@ -29,9 +29,27 @@ export async function getStaticPaths() {
 
 const { title, readTime, date, perex, content } = Astro.props;
 const dateFormatted = new Date(date).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": perex,
+  "datePublished": date,
+  "inLanguage": "cs-CZ",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AETHERO s.r.o.",
+    "url": "https://aethero.agency"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "AETHERO s.r.o."
+  }
+};
 ---
 
-<PageLayout {title} description={perex} lang="cs">
+<PageLayout {title} description={perex} lang="cs" jsonLd={articleSchema}>
 
   <section class="blog-hero">
     <div class="container blog-hero-inner">

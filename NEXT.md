@@ -114,6 +114,14 @@ Po dokončení: přejdi na Milestone 1.7.
 
 ---
 
+## ✅ HOTOVO — Milestone 1.7 — SEO/GEO/AIO vrstva — 2026-06-21
+
+Organization + WebPage JSON-LD na každé stránce. Article JSON-LD na blog. hreflang cs/en/x-default.
+Canonical URLs, OG + Twitter meta. Sitemap generován. robots.txt + llms.txt z M1.1.
+Lighthouse: nelze spustit z CLI (bez prohlížeče), ověřit po push na CF Pages.
+
+---
+
 ## MILESTONE 1.7 — SEO / GEO / AIO vrstva
 
 - [ ] JSON-LD na každé stránce (Organization na všech, Article na blogu, FAQ kde je FAQ sekce)
