@@ -25,7 +25,10 @@ const services = lang === 'en'
 <footer>
   <div class="container footer-inner">
     <div class="footer-brand">
-      <a href={`${p}/`} class="logo" aria-label="aethero">æthero</a>
+      <a href={`${p}/`} class="logo" aria-label="aethero">
+        <img src="/ae-logo.svg" alt="æthero" width="120" height="30" loading="lazy" />
+      </a>
+      <img src="/shopify-plus-badge.svg" alt="Shopify Plus Partner" class="shopify-badge" width="120" height="40" loading="lazy" />
       <p class="tagline">
         {lang === 'en'
           ? <>Czech Shopify Agency.<br />Design, strategy, technology.</>
@@ -63,9 +66,8 @@ const services = lang === 'en'
 
 <style>
   footer {
-    background: var(--bg-secondary);
+    background: #000326;
     border-top: 1px solid rgba(255,255,255,0.06);
-    margin-top: var(--space-120);
   }
 
   .footer-inner {
@@ -75,14 +77,9 @@ const services = lang === 'en'
     padding: var(--space-80) var(--space-24);
   }
 
-  .logo {
-    font-family: var(--font-primary);
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-primary);
-    display: block;
-    margin-bottom: var(--space-16);
-  }
+  .logo { display: block; margin-bottom: var(--space-16); }
+  .logo img { opacity: 0.9; }
+  .shopify-badge { display: block; margin-bottom: var(--space-16); opacity: 0.6; filter: brightness(0) invert(1); }
 
   .tagline {
     font-size: var(--text-small);
