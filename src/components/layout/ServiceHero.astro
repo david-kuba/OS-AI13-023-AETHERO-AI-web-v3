@@ -17,6 +17,9 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
 ---
 
 <section class={`service-hero${image ? ' service-hero--with-image' : ''}`}>
+  <div class="hero-bg-image" aria-hidden="true">
+    <img src="/ae-bgr-w-glass-b-2x-v3.webp" alt="" loading="eager" />
+  </div>
   <div class="hero-blob" aria-hidden="true"></div>
   <div class={`container${image ? ' service-hero-split' : ' service-hero-inner'}`}>
     <div class="hero-text">
@@ -40,8 +43,21 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
   .service-hero {
     position: relative;
     padding: 160px 0 100px;
-    background: var(--bg-primary-alt);
+    background: #07051B;
     overflow: hidden;
+  }
+  .hero-bg-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
   .hero-blob {
     position: absolute;
@@ -54,11 +70,12 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
     filter: blur(60px);
     pointer-events: none;
   }
-  .service-hero-inner { position: relative; max-width: 720px; }
+  .service-hero-inner { position: relative; z-index: 1; max-width: 720px; }
 
   /* Split layout — text left, image right */
   .service-hero-split {
     position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
