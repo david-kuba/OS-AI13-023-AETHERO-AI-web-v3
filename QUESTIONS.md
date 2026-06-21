@@ -90,6 +90,18 @@ AETHERO DESIGN SYSTEM alias, 00 BRAND AE, 01 FAKTURACE, 02 WEB, 03 AE PROJEKTY, 
 
 ---
 
+## 2026-06-21 — Tým fotky: složka "TYM foto alias" neexistuje
+
+**Kontext:** NEXT.md říká fotky jsou na `/Users/davidkuba/Library/CloudStorage/Dropbox/__1 AETHERO/TYM foto alias/`. Složka neexistuje (pravděpodobně alias/shortcut v Dropboxu, který nemá lokální kopii).
+
+**Otázka:** Kde jsou reálné fotky týmu (David, Bára, Tom)? Případně je přidat ručně do `/public/team/`.
+
+**Výchozí řešení:** /cs/o-nas má placeholder initials (D, B, T). Placeholdery fungují, nepozastavuje to nic jiného.
+
+**Odpověď Davida:** [ČEKÁ]
+
+---
+
 ## FÁZE 1 SUMMARY — 2026-06-21
 
 ### Stav: ✅ KOMPLETNÍ (8 milestones)
