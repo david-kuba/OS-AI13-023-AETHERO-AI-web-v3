@@ -1,0 +1,148 @@
+---
+const services = [
+  { label: 'Potřebuji brand', href: '/co-umime/potrebuji-brand' },
+  { label: 'Nový Shopify e-shop', href: '/co-umime/novy-shopify-e-shop' },
+  { label: 'Přechod na Shopify', href: '/co-umime/prechod-na-shopify' },
+  { label: 'Expanze do zahraničí', href: '/co-umime/expanze-do-zahranici' },
+  { label: 'Rozvoj a podpora', href: '/co-umime/rozvoj-a-podpora' },
+  { label: 'Analýza a strategie', href: '/co-umime/analyza-a-strategie' },
+];
+---
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="aethero">æthero</a>
+      <p class="tagline">Česká Shopify agentura.<br />Design, strategie, technologie.</p>
+    </div>
+
+    <div class="footer-services">
+      <p class="footer-label">CO UMÍME</p>
+      <ul>
+        {services.map((s) => (
+          <li><a href={s.href}>{s.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <p class="footer-label">KONTAKT</p>
+      <a href="mailto:info@aethero.cz" class="contact-link">info@aethero.cz</a>
+      <a href="tel:+420776067663" class="contact-link">+420 776 067 663</a>
+      <p class="address">Budovcova 700/14<br />370 01 České Budějovice</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© {new Date().getFullYear()} AETHERO s.r.o. · IČO 05288762</span>
+      <span class="separator">·</span>
+      <a href="/o-nas">O nás</a>
+      <span class="separator">·</span>
+      <a href="/kontakt">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: var(--space-120);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: var(--space-80);
+    padding: var(--space-80) var(--space-24);
+  }
+
+  .logo {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: var(--space-16);
+  }
+
+  .tagline {
+    font-size: var(--text-small);
+    color: var(--neutral-500);
+    line-height: 1.6;
+  }
+
+  .footer-label {
+    font-family: var(--font-primary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-16);
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  ul a {
+    font-size: var(--text-small);
+    color: var(--neutral-300);
+    transition: color var(--transition-base);
+  }
+  ul a:hover { color: var(--action); }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-link {
+    font-size: var(--text-small);
+    color: var(--neutral-300);
+    transition: color var(--transition-base);
+  }
+  .contact-link:hover { color: var(--action); }
+
+  .address {
+    font-size: var(--text-small);
+    color: var(--neutral-500);
+    line-height: 1.6;
+    margin-top: var(--space-8);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: var(--space-24);
+  }
+
+  .footer-bottom .container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-size: var(--text-small);
+    color: var(--neutral-700);
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom a {
+    color: var(--neutral-500);
+    transition: color var(--transition-base);
+  }
+  .footer-bottom a:hover { color: var(--action); }
+
+  .separator { opacity: 0.4; }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-40);
+      padding: var(--space-40) var(--space-24);
+    }
+  }
+</style>
