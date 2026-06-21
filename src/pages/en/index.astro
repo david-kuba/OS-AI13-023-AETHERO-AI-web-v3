@@ -170,17 +170,6 @@ const blogPosts = [
 
   <!-- SERVICE SELECTOR CAROUSEL -->
   <section class="services-section">
-    <div class="container services-header">
-      <span class="services-label">What we do</span>
-      <div class="services-controls">
-        <button class="ctrl-btn ctrl-prev" id="ctrl-prev" aria-label="Previous">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button class="ctrl-btn ctrl-next" id="ctrl-next" aria-label="Next">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </div>
     <div class="services-track-wrap" id="services-track-wrap">
       <div class="services-track">
         {services.map((s, i) => (
@@ -368,14 +357,21 @@ const blogPosts = [
 </PageLayout>
 
 <script>
-  // Service carousel scroll
-  const trackWrap = document.getElementById('services-track-wrap');
-  const prevBtn = document.getElementById('ctrl-prev');
-  const nextBtn = document.getElementById('ctrl-next');
-  if (trackWrap && nextBtn && prevBtn) {
-    const scrollAmt = 360;
-    nextBtn.addEventListener('click', () => trackWrap.scrollBy({ left: scrollAmt, behavior: 'smooth' }));
-    prevBtn.addEventListener('click', () => trackWrap.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
+  // Auto-scroll carousel
+  const trackWrap = document.getElementById('services-track-wrap') as HTMLElement | null;
+  if (trackWrap) {
+    const step = 380;
+    let pos = 0;
+    setInterval(() => {
+      const maxScroll = trackWrap.scrollWidth - trackWrap.clientWidth;
+      if (pos + step >= maxScroll) {
+        pos = 0;
+        trackWrap.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        pos += step;
+        trackWrap.scrollTo({ left: pos, behavior: 'smooth' });
+      }
+    }, 3000);
   }
 </script>
 
@@ -446,7 +442,7 @@ const blogPosts = [
   /* SERVICES CAROUSEL */
   .services-section {
     background: #000326;
-    padding: 48px 0 56px;
+    padding: 56px 0;
     position: relative;
   }
   .services-track-wrap {
@@ -523,35 +519,6 @@ const blogPosts = [
     line-height: 1;
     margin-left: -2px;
   }
-  .services-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
-  }
-  .services-label {
-    font-family: var(--font-primary);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-  .services-controls {
-    display: flex;
-    gap: 12px;
-  }
-  .ctrl-btn {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .ctrl-btn:hover { border-color: var(--action); background: rgba(13,212,205,0.1); }
 
   /* VALUE PROP */
   .value-prop {
