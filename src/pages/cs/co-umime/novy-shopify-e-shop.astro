@@ -4,17 +4,17 @@ import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const features = [
   {
-    title: 'AI parťák přímo v e-shopu',
+    title: 'AI parťák, přímo v e-shopu',
     logo: '/shopify-sidekick-logo2.webp',
-    desc: 'Shopify Sidekick je AI asistent přímo v adminu. Tvoří produkty, píše popisy, doporučuje SEO úpravy a odpovídá na otázky o vašem obchodě. Dostupný 24/7 bez nutnosti technických znalostí.',
-    img: null,
+    desc: 'Sidekick je AI asistent integrovaný do adminu e-shopu a výrazně vám urychlí práci v Shopify. Dokáže provádět operativní úkoly (vytvořit produkt, upravovat kolekce, analyzovat prodeje, připraví reporty), pomůže s marketingem (psaní popisků, e-mailů, SEO doporučení), umí navrhovat a aplikovat úpravy storefrontu včetně změn vzhledu nebo upravovat téma podle zadání včetně tvorby Liquid kódu. Sidekick umí vysvětlit, jak fungují nastavení v adminu, doporučit kroky pro růst e-shopu, automatizovat procesy a navrhovat best practices. Odpovědi personalizuje podle prodejů, zákazníků a specifické konfigurace vašeho obchodu.',
+    img: '/shopify-premium-story.webp',
     reverse: false,
   },
   {
     title: 'Přehledná a moderní administrace',
     logo: null,
-    desc: 'Moderní rozhraní ovladatelné bez technických znalostí. Dostupné v češtině, přehledné a rychlé. Správa produktů, objednávek, zákazníků a analytiky na jednom místě. Zvládne to každý.',
-    img: '/shopify-premium-story.webp',
+    desc: 'Administrační prostředí, ve kterém se zorientuješ během chvíle – i bez technických znalostí. Produkty, objednávky, platby i obsah se spravuje z jednoho místa, jednoduše a logicky. Místo složitého systému dostanete nástroj, který dává kontrolu nad e-shopem hned od prvního dne. A nebojte, můžete ji používat i v češtině.',
+    img: null,
     reverse: true,
   },
   {
@@ -25,14 +25,14 @@ const features = [
     reverse: false,
   },
   {
-    title: 'Možnost prodávat tam, kde to žije',
+    title: 'Možnost prodávat tam, kde to žije',
     logo: null,
     desc: 'Instagram, TikTok, Facebook, Google Shopping, Amazon — vše napojené na jediný Shopify admin. Jeden sklad, jedna pravda o zásobách, jedno centrum pro všechny objednávky.',
     img: '/prodej-kdekoliv.webp',
     reverse: true,
   },
   {
-    title: 'Analytika a marketing',
+    title: 'Analytika, marketing',
     logo: null,
     desc: 'Přehledné dashboardy, sledování trendů a chytrá segmentace zákazníků. Shopify Email, SMS marketing a integrace s Google Analytics, Meta Ads nebo Klaviyo — vše bez složitého nastavování.',
     img: '/data-marketing.webp',
@@ -46,10 +46,10 @@ const features = [
     reverse: true,
   },
   {
-    title: 'Shopify App Store',
+    title: 'Shopify App Store',
     logo: null,
-    desc: 'Přes 10 000 aplikací vyvíjených 15+ let — řešení pro každou potřebu. Recenze, fulfilment, věrnostní programy, B2B, subscriptions a stovky integrací. Hotové do minut.',
-    img: '/shopify-apps.webp',
+    desc: 'Apps.shopify.com — ekosystém, do kterého už někdo investoval miliony hodin. Shopify App Store není „jen seznam doplňků". Je to jeden z největších e-commerce ekosystémů na světě — místo, kde vývojáři, technologické firmy a samotné Shopify posledních více než 15 let systematicky řeší problémy, které by vás jinak stály měsíce vývoje, testování a ladění. Najdete tu přes deset tisíc aplikací, které rozšiřují Shopify prakticky o cokoliv, co vás napadne.',
+    img: '/aplikace.webp',
     reverse: false,
   },
 ];
@@ -159,7 +159,7 @@ const relatedServices = [
   <section class="section bg-secondary">
     <div class="container two-col-groomo">
       <div>
-        <h2 class="section-title">PROČ sázet na platformě Shopify?</h2>
+        <h2 class="section-title">PROČ začít na platformě Shopify?</h2>
         <p class="section-text">Pojď nám říct proč nejpopulárnější e-commerce platforma na světě je ideální volbou pro vaše podnikání — bez ohledu na velikost ani produkty.</p>
         <ul class="reasons-list">
           {reasons.map((r) => (
