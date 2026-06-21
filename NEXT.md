@@ -79,6 +79,12 @@ Po dokončení: přejdi na Milestone 1.5.
 
 ---
 
+## ✅ HOTOVO — Milestone 1.5 — Aplikace — 2026-06-21
+
+/cs/esyncer a /cs/ae-translator — obě zbuildovány. Kontakt na Báru (bara@aethero.cz, +420 776 325 440) z live webu.
+
+---
+
 ## MILESTONE 1.5 — Aplikace
 
 - [ ] /esyncer — stránka eSyncer aplikace
