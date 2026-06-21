@@ -246,7 +246,7 @@ const blogPosts = [
 
   <!-- STATS BAR -->
   <section class="stats-bar">
-    <div class="container stats-inner">
+    <div class="stats-inner">
       <div class="stat">
         <span class="stat-num">4,8 mil</span>
         <span class="stat-label">e-shopů fungujících ve světě</span>
@@ -267,7 +267,7 @@ const blogPosts = [
   <section class="ae-services">
     <div class="container">
       <div class="ae-services-header">
-        <img src="/ae-znak.svg" alt="aethero" class="ae-znak" width="64" height="64" loading="lazy" />
+        <img src="/ae-znak.svg" alt="aethero" class="ae-znak" width="120" height="120" loading="lazy" />
         <h2 class="ae-services-title">KOMPLEXNÍ POMOC PŘI TVORBĚ SHOPIFY E-SHOPU<br />NA VŠECH ÚROVNÍCH</h2>
       </div>
       <div class="ae-services-grid">
@@ -336,19 +336,9 @@ const blogPosts = [
 
   <!-- BLOG -->
   <section class="blog-section">
-    <div class="container blog-header">
+    <div class="container">
       <h2 class="section-heading">Blog</h2>
-      <div class="blog-controls">
-        <button class="blog-ctrl blog-ctrl--prev" id="blog-prev" aria-label="Předchozí">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button class="blog-ctrl blog-ctrl--next" id="blog-next" aria-label="Další">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </div>
-    <div class="blog-track-wrap" id="blog-track-wrap">
-      <div class="blog-track">
+      <div class="blog-grid">
         {blogPosts.map((post) => (
           <a href={post.href} class="blog-card">
             <div class="blog-card-img">
@@ -387,15 +377,6 @@ const blogPosts = [
     const scrollAmt = 360;
     nextBtn.addEventListener('click', () => trackWrap.scrollBy({ left: scrollAmt, behavior: 'smooth' }));
     prevBtn.addEventListener('click', () => trackWrap.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
-  }
-  // Blog carousel scroll
-  const blogWrap = document.getElementById('blog-track-wrap');
-  const blogPrev = document.getElementById('blog-prev');
-  const blogNext = document.getElementById('blog-next');
-  if (blogWrap && blogPrev && blogNext) {
-    const scrollAmt = 364;
-    blogNext.addEventListener('click', () => blogWrap.scrollBy({ left: scrollAmt, behavior: 'smooth' }));
-    blogPrev.addEventListener('click', () => blogWrap.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
   }
 </script>
 
@@ -643,6 +624,7 @@ const blogPosts = [
     justify-content: space-between;
     gap: 40px;
     flex-wrap: wrap;
+    padding: 0 80px;
   }
   .stat {
     flex: 1;
@@ -676,14 +658,14 @@ const blogPosts = [
     border-top: 1px solid rgba(255,255,255,0.06);
   }
   .ae-services-header { text-align: center; margin-bottom: 56px; }
-  .ae-znak { margin: 0 auto 24px; display: block; width: 80px; height: 80px; }
+  .ae-znak { margin: 0 auto 24px; display: block; width: 120px; height: 120px; }
   .ae-services-title {
     font-family: var(--font-primary);
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: normal;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     color: #fff;
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .ae-services-grid {
     display: grid;
@@ -697,12 +679,13 @@ const blogPosts = [
   .ae-service-icon { width: 36px; height: 36px; flex-shrink: 0; opacity: 0.8; }
   .ae-service-label {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text-secondary);
     margin-bottom: 4px;
+    line-height: 1.3;
   }
-  .ae-service-desc { font-size: 13px; font-weight: 500; color: #fff; line-height: 1.5; }
+  .ae-service-desc { font-size: 14px; font-weight: 500; color: #fff; line-height: 1.6; }
   .ae-services-ctas {
     display: flex;
     gap: 16px;
@@ -738,7 +721,7 @@ const blogPosts = [
 
   /* REFERENCES */
   .references {
-    background: #0C0C42;
+    background: #000326;
     padding: 100px 0;
   }
   .section-heading {
@@ -784,42 +767,14 @@ const blogPosts = [
   /* BLOG */
   .blog-section {
     background: #000326;
-    padding: 100px 0 0;
+    padding: 100px 0;
     border-top: 1px solid rgba(255,255,255,0.06);
   }
-  .blog-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 48px;
-  }
-  .blog-controls { display: flex; gap: 12px; }
-  .blog-ctrl {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: transparent;
-    color: #fff;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: border-color 0.2s, background 0.2s;
-    flex-shrink: 0;
-  }
-  .blog-ctrl:hover { border-color: var(--action); background: rgba(13,212,205,0.1); }
-  .blog-track-wrap {
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding: 0 40px 100px;
-  }
-  .blog-track-wrap::-webkit-scrollbar { display: none; }
-  .blog-track {
-    display: flex;
-    gap: 24px;
-    width: max-content;
+  .blog-section .section-heading { margin-bottom: 48px; }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
   }
   .blog-card {
     display: flex;
@@ -831,9 +786,6 @@ const blogPosts = [
     color: #fff;
     transition: border-color 0.2s;
     text-decoration: none;
-    min-width: 340px;
-    max-width: 340px;
-    scroll-snap-align: start;
   }
   .blog-card:hover { border-color: rgba(13,212,205,0.25); }
   .blog-card-img {
@@ -854,9 +806,9 @@ const blogPosts = [
     padding: 3px 8px;
     border-radius: 100px;
   }
-  .blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-  .blog-ago { font-size: 12px; color: rgba(255,255,255,0.65); font-weight: 500; }
-  .blog-title { font-size: 15px; font-weight: 600; line-height: 1.4; color: #fff; }
+  .blog-card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .blog-ago { font-size: 11px; color: rgba(255,255,255,0.65); font-weight: 500; }
+  .blog-title { font-size: 14px; font-weight: 600; line-height: 1.4; color: #fff; }
 
   /* ZKUŠENOSTI */
   .zkusenosti {
@@ -924,6 +876,8 @@ const blogPosts = [
   @media (max-width: 1100px) {
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .ae-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: repeat(3, 1fr); }
+    .stats-inner { padding: 0 40px; }
   }
   @media (max-width: 768px) {
     .hero-inner { grid-template-columns: 1fr; padding-top: 100px; }
@@ -932,11 +886,12 @@ const blogPosts = [
     .features-grid { grid-template-columns: 1fr; }
     .ae-services-grid { grid-template-columns: 1fr; }
     .ref-grid { grid-template-columns: 1fr; }
-    .stats-inner { flex-direction: column; text-align: center; }
+    .stats-inner { flex-direction: column; text-align: center; padding: 0 24px; }
     .shopify-stats-logo { margin: 0 auto; }
     .footer-cta-contacts { flex-direction: column; align-items: center; gap: 16px; }
     .service-item { min-width: 280px; }
     .ae-services-ctas { flex-direction: column; align-items: center; }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 480px) {
     .hero-inner { padding-top: 80px; padding-bottom: 40px; }
@@ -952,13 +907,14 @@ const blogPosts = [
     .stat-num { font-size: 28px; }
     .stat-label { font-size: 15px; }
     .ae-services { padding: 60px 0; }
-    .ae-services-title { font-size: 16px; }
+    .ae-services-title { font-size: 20px; }
     .references { padding: 60px 0; }
     .ref-card { padding: 24px 20px; }
     .zkusenosti { padding: 60px 0; }
     .zk-logos { gap: 20px; }
     .zk-logo-text { font-size: 16px; }
     .blog-section { padding: 60px 0; }
+    .blog-grid { grid-template-columns: 1fr; }
     .footer-cta { padding: 60px 0; }
     .footer-cta-contacts { gap: 12px; }
   }
