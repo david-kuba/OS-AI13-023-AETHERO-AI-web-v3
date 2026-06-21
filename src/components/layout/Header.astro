@@ -60,7 +60,9 @@ const navItems = lang === 'en'
 
 <header id="site-header">
   <div class="container header-inner">
-    <a href={`${p}/`} class="logo" aria-label="aethero">æthero</a>
+    <a href={`${p}/`} class="logo" aria-label="aethero">
+      <img src="/ae-logo.svg" alt="æthero" width="120" height="30" loading="eager" />
+    </a>
 
     <button class="hamburger" id="hamburger" aria-label={lang === 'en' ? 'Open menu' : 'Otevřít menu'} aria-expanded="false" aria-controls="nav-menu">
       <span></span>
@@ -147,14 +149,12 @@ const navItems = lang === 'en'
 
   /* Logo */
   .logo {
-    font-family: var(--font-primary);
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
     flex-shrink: 0;
     transition: opacity var(--transition-base);
+    display: flex;
+    align-items: center;
   }
+  .logo img { display: block; }
   .logo:hover { opacity: 0.85; }
 
   /* Nav */
