@@ -66,20 +66,10 @@ const navItems = lang === 'en'
 ---
 
 <header id="site-header">
-  <div class="container header-inner">
+  <div class="header-inner container">
     <a href={`${p}/`} class="logo" aria-label="aethero">
       <img src="/ae-logo.svg" alt="æthero" width="120" height="30" loading="eager" />
     </a>
-
-    <a href={otherPath} class="lang-switch" aria-label={`Switch to ${otherLang.toUpperCase()}`}>
-      {otherLang.toUpperCase()}
-    </a>
-
-    <button class="hamburger" id="hamburger" aria-label={lang === 'en' ? 'Open menu' : 'Otevřít menu'} aria-expanded="false" aria-controls="nav-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
 
     <nav id="nav-menu" role="navigation" aria-label={lang === 'en' ? 'Main navigation' : 'Hlavní navigace'}>
       <ul class="nav-list">
@@ -87,6 +77,11 @@ const navItems = lang === 'en'
           <li class={item.dropdown ? 'has-dropdown' : ''}>
             <a href={item.href} class="nav-link">
               {item.label}
+              {item.dropdown && (
+                <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              )}
             </a>
             {item.dropdown && (
               <ul class="dropdown">
@@ -97,8 +92,24 @@ const navItems = lang === 'en'
             )}
           </li>
         ))}
+        <!-- mobile-only lang switch inside nav overlay -->
+        <li class="mobile-lang-li">
+          <a href={otherPath} class="mobile-lang-link" aria-label={`Switch to ${otherLang.toUpperCase()}`}>
+            {otherLang.toUpperCase()}
+          </a>
+        </li>
       </ul>
     </nav>
+
+    <a href={otherPath} class="lang-switch" aria-label={`Switch to ${otherLang.toUpperCase()}`}>
+      {otherLang.toUpperCase()}
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label={lang === 'en' ? 'Open menu' : 'Otevřít menu'} aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 
@@ -132,6 +143,15 @@ const navItems = lang === 'en'
       document.body.style.overflow = '';
     });
   });
+
+  // Desktop dropdown: keyboard accessibility (Escape closes)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.has-dropdown').forEach((el) => {
+        (el as HTMLElement).blur();
+      });
+    }
+  });
 </script>
 
 <style>
@@ -140,58 +160,48 @@ const navItems = lang === 'en'
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 1000;
     transition: background var(--transition-base), box-shadow var(--transition-base);
-    padding: 22px 0;
+    padding: 16px 0;
   }
 
   header.scrolled {
-    background: var(--bg-elevated);
-    box-shadow: var(--shadow-md);
+    background: rgba(0, 3, 38, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.07);
   }
 
   .header-inner {
     display: grid;
-    grid-template-columns: 1fr auto auto auto;
+    grid-template-columns: auto 1fr auto auto;
     align-items: center;
-    gap: 0 16px;
+    gap: 0 24px;
   }
 
   /* Logo */
   .logo {
-    flex-shrink: 0;
-    transition: opacity var(--transition-base);
     display: flex;
     align-items: center;
+    flex-shrink: 0;
+    transition: opacity var(--transition-base);
   }
   .logo img { display: block; }
-  .logo:hover { opacity: 0.85; }
+  .logo:hover { opacity: 0.8; }
 
-  /* Nav */
-  nav { grid-column: 2; }
-
-  /* Language switcher */
-  .lang-switch {
-    grid-column: 3;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-primary);
-    opacity: 0.6;
-    padding: 4px 10px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 4px;
-    transition: opacity var(--transition-base), border-color var(--transition-base);
-    white-space: nowrap;
+  /* Nav — col 2 (1fr, center) */
+  nav {
+    display: flex;
+    justify-content: center;
   }
-  .lang-switch:hover { opacity: 1; border-color: var(--action); }
 
   .nav-list {
     display: flex;
     align-items: center;
     gap: 0;
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   li { position: relative; }
@@ -199,34 +209,56 @@ const navItems = lang === 'en'
   .nav-link {
     display: flex;
     align-items: center;
-    padding: 0 30px;
+    gap: 4px;
+    padding: 8px 16px;
     font-family: var(--font-primary);
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.06em;
     color: var(--text-primary);
     transition: color var(--transition-base);
     white-space: nowrap;
-    line-height: 26px;
+    line-height: 1.4;
   }
-  .nav-link:hover {
-    color: var(--action);
+  .nav-link:hover { color: var(--action); }
+
+  .nav-chevron {
+    opacity: 0.5;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    flex-shrink: 0;
+  }
+  .has-dropdown:hover .nav-chevron,
+  .has-dropdown:focus-within .nav-chevron {
+    transform: rotate(180deg);
+    opacity: 1;
   }
 
-  /* Dropdown */
+  /* Dropdown — bridged gap so submenu is always clickable */
+  .has-dropdown { position: relative; }
+
+  /* Invisible bridge between nav-link and dropdown — prevents hover gap */
+  .has-dropdown::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+
   .dropdown {
     display: none;
     position: absolute;
-    top: calc(100% + 8px);
+    top: calc(100% + 6px);
     left: 0;
     min-width: 220px;
-    background: var(--bg-secondary);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #0a0d3a;
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-lg);
-    padding: var(--space-8) 0;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+    padding: 6px 0;
     list-style: none;
-    z-index: 200;
+    z-index: 500;
   }
   .has-dropdown:hover .dropdown,
   .has-dropdown:focus-within .dropdown {
@@ -235,21 +267,36 @@ const navItems = lang === 'en'
 
   .dropdown-link {
     display: block;
-    padding: 4px 30px;
-    font-size: 18px;
+    padding: 8px 20px;
+    font-size: 14px;
     font-family: var(--font-primary);
     font-weight: 500;
-    color: var(--text-primary);
-    line-height: 26px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
     transition: color var(--transition-base), background var(--transition-base);
     white-space: nowrap;
   }
   .dropdown-link:hover {
     color: var(--action);
-    background: rgba(13,212,205,0.07);
+    background: rgba(13,212,205,0.08);
   }
 
-  /* Hamburger */
+  /* Language switcher — col 3 */
+  .lang-switch {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.7);
+    padding: 5px 10px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 4px;
+    transition: color var(--transition-base), border-color var(--transition-base);
+    white-space: nowrap;
+  }
+  .lang-switch:hover { color: #fff; border-color: var(--action); }
+
+  /* Hamburger — col 4, hidden on desktop */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -258,8 +305,6 @@ const navItems = lang === 'en'
     border: none;
     cursor: pointer;
     padding: 8px;
-    z-index: 110;
-    justify-self: end;
   }
   .hamburger span {
     display: block;
@@ -274,37 +319,54 @@ const navItems = lang === 'en'
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile */
-  @media (max-width: 900px) {
-    .header-inner { grid-template-columns: 1fr auto auto; gap: 0 12px; }
-    .hamburger { display: flex; }
-    .lang-switch { grid-column: 2; font-size: 13px; padding: 3px 8px; }
+  /* Mobile lang switch inside nav — hidden on desktop */
+  .mobile-lang-li { display: none; }
 
+  /* ─── MOBILE ≤ 900px ─── */
+  @media (max-width: 900px) {
+    .header-inner {
+      grid-template-columns: 1fr auto auto;
+      gap: 0 12px;
+      position: relative; /* creates stacking context so children sit above nav overlay */
+      z-index: 2;
+    }
+
+    .hamburger { display: flex; }
+
+    /* Collapse desktop lang-switch — mobile has it inside nav */
+    .lang-switch { display: none; }
+
+    /* Nav overlay */
     nav {
-      grid-column: 1 / -1;
       position: fixed;
       inset: 0;
-      background: var(--bg-elevated);
+      background: rgba(0, 3, 38, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: center;
       transform: translateX(100%);
       transition: transform 0.3s ease;
+      z-index: 1; /* within header stacking context — below header-inner (z-index: 2) */
+      justify-self: unset;
     }
     nav.open { transform: translateX(0); }
 
     .nav-list {
       flex-direction: column;
       align-items: center;
-      gap: var(--space-8);
+      gap: 4px;
     }
 
     .nav-link {
-      font-size: 24px;
-      padding: 12px 20px;
-      line-height: 1.4;
+      font-size: 26px;
+      font-weight: 600;
+      padding: 10px 24px;
+      justify-content: center;
     }
 
+    /* Dropdowns always visible and expanded in mobile */
     .dropdown {
       position: static;
       display: block;
@@ -312,16 +374,40 @@ const navItems = lang === 'en'
       border: none;
       box-shadow: none;
       padding: 0;
-      margin-top: var(--space-8);
+      margin-top: 4px;
+      min-width: unset;
     }
-
-    /* Always show dropdowns expanded in mobile overlay */
-    .has-dropdown .dropdown { display: block; }
+    .has-dropdown::after { display: none; }
+    .nav-chevron { display: none; }
 
     .dropdown-link {
-      font-size: 16px;
+      font-size: 15px;
       text-align: center;
-      color: var(--neutral-500);
+      color: rgba(255,255,255,0.55);
+      padding: 5px 20px;
     }
+    .dropdown-link:hover { color: var(--action); background: transparent; }
+
+    /* Mobile lang switch visible inside nav */
+    .mobile-lang-li {
+      display: flex;
+      margin-top: 24px;
+    }
+    .mobile-lang-link {
+      font-family: var(--font-primary);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.5);
+      padding: 6px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 4px;
+      transition: color var(--transition-base), border-color var(--transition-base);
+    }
+    .mobile-lang-link:hover { color: #fff; border-color: var(--action); }
+  }
+
+  @media (max-width: 480px) {
+    .nav-link { font-size: 22px; padding: 8px 20px; }
   }
 </style>
