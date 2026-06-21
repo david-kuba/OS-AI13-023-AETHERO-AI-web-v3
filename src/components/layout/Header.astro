@@ -131,7 +131,7 @@ const navItems = lang === 'en'
     right: 0;
     z-index: 100;
     transition: background var(--transition-base), box-shadow var(--transition-base);
-    padding: var(--space-16) 0;
+    padding: 22px 0;
   }
 
   header.scrolled {
@@ -178,7 +178,7 @@ const navItems = lang === 'en'
     color: var(--text-primary);
     transition: color var(--transition-base);
     white-space: nowrap;
-    line-height: 56px;
+    line-height: 26px;
   }
   .nav-link:hover {
     color: var(--action);
@@ -206,11 +206,12 @@ const navItems = lang === 'en'
 
   .dropdown-link {
     display: block;
-    padding: 10px var(--space-16);
-    font-size: 14px;
-    font-family: var(--font-secondary);
+    padding: 4px 30px;
+    font-size: 18px;
+    font-family: var(--font-primary);
     font-weight: 500;
-    color: var(--neutral-300);
+    color: var(--text-primary);
+    line-height: 26px;
     transition: color var(--transition-base), background var(--transition-base);
     white-space: nowrap;
   }

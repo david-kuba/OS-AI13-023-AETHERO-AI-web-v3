@@ -98,7 +98,7 @@ const blogPosts = [
             <span class="hero-rotate">specialisté</span>
           </span>
         </h1>
-        <a href="/cs/kontakt" class="btn-hero">DO ČEHO SE SPOLU PUSTÍME?</a>
+        <a href="/cs/kontakt" class="btn-hero">Do čeho se spolu pustíme?</a>
       </div>
       <div class="hero-right" aria-hidden="true">
         <img src="/hero-glass.webp" alt="" width="704" height="630" class="hero-shape" loading="eager" />
@@ -210,8 +210,8 @@ const blogPosts = [
         ))}
       </div>
       <div class="ae-services-ctas">
-        <a href="/cs/kontakt" class="btn-teal">CHCI KONZULTACI</a>
-        <a href="/cs/co-umime" class="btn-outline">VÍCE O TOM JAK PRACUJEME</a>
+        <a href="/cs/kontakt" class="btn-teal">Chci konzultaci</a>
+        <a href="/cs/co-umime" class="btn-outline">Více o tom jak pracujeme</a>
       </div>
     </div>
   </section>
@@ -229,7 +229,7 @@ const blogPosts = [
               <span class="ref-img-label">Brankářské rukavice<br />a oblečení</span>
             </div>
           </div>
-          <a href="https://bu1.cz" target="_blank" rel="noopener" class="btn-outline ref-cta">PŘEJÍT NA BU1</a>
+          <a href="https://bu1.cz" target="_blank" rel="noopener" class="btn-outline ref-cta">Přejít na BU1</a>
         </div>
         <div class="ref-card">
           <p class="ref-desc">GROOMO vzniklo jako kompletní projekt v naší produkci — od tvorby značky až po vývoj Shopify e-shopu. Celý ekosystém značky stojí na touze i schopnosti pomoci, lásce ke psům a profesionalitě.</p>
@@ -239,7 +239,7 @@ const blogPosts = [
               <span class="ref-img-label">Pro groomery,<br />profi páníčky a paničky</span>
             </div>
           </div>
-          <a href="/cs/groomo-cz-na-shopify" class="btn-outline ref-cta">PŘÍPADOVÁ STUDIE GROOMO.CZ</a>
+          <a href="/cs/groomo-cz-na-shopify" class="btn-outline ref-cta">Případová studie GROOMO.cz</a>
         </div>
       </div>
     </div>
@@ -376,8 +376,9 @@ const blogPosts = [
     color: #fff;
     font-family: var(--font-primary);
     font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     border-radius: 6px;
     transition: border-color 0.2s, background 0.2s;
     white-space: nowrap;
@@ -597,28 +598,30 @@ const blogPosts = [
   }
   .btn-teal {
     display: inline-flex; align-items: center;
-    padding: 14px 32px;
-    background: var(--action);
-    color: #000;
+    padding: 6px 26px;
+    background: #fff;
+    color: var(--brand-dark);
     font-family: var(--font-primary);
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.08em;
-    border-radius: 100px;
-    transition: background 0.2s;
+    font-size: 16px; font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
   }
-  .btn-teal:hover { background: #0AB8B1; }
+  .btn-teal:hover { background: var(--neutral-100); }
   .btn-outline {
     display: inline-flex; align-items: center;
-    padding: 13px 32px;
-    border: 2px solid rgba(255,255,255,0.3);
+    padding: 6px 26px;
+    border: 2px solid #fff;
     color: #fff;
     font-family: var(--font-primary);
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 0.08em;
-    border-radius: 100px;
-    transition: border-color 0.2s;
+    font-size: 16px; font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: border-color 0.2s, color 0.2s;
   }
-  .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); color: rgba(255,255,255,0.85); }
 
   /* REFERENCES */
   .references {

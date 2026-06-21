@@ -156,7 +156,52 @@ Po dokončení: projekt Fáze 1 hotov. Zapiš do QUESTIONS.md summary a čekej n
 
 ---
 
-## HOTOVÉ
+---
+
+## ✅ HOTOVO — Visual Audit + Design System — 2026-06-21
+
+- [x] Visual audit CS homepage vs. www.aethero.cz — pixel-perfect
+- [x] .zk-heading: 70px → 40px, line-height 1.4 → 1.1
+- [x] .footer-cta-heading: 52px → 70px, weight 700 → 600, line-height 1.4
+- [x] .footer-cta-link: 24px → 40px, barva → var(--action) #0DD4CD
+- [x] Footer brand: logo + badge flex row (bylo stacked), odstraněn filter
+- [x] /design-system stránka vytvořena (Logo, Barvy, Typografie, Spacing, Komponenty)
+- [x] Commit: 1b01173 — pushed to main
+- [x] Notion: project card + session log vytvořeny
+  - Project card: https://app.notion.com/p/386c2dd1066081f7bec2c0cb810af113
+  - Session log: https://app.notion.com/p/386c2dd10660814b9d95c5f7e24dc697
+
+---
+
+## FÁZE 2 — Iterace visual audit (probíhá)
+
+### 2.1 — Mobile audit
+- [ ] Porovnat mobile layout vs. live www.aethero.cz (375px, 768px)
+- [ ] Header hamburger menu — velikost, animace
+- [ ] Hero sekce mobile
+- [ ] Stats bar mobile
+- [ ] Services grid mobile (4col → 1/2col)
+- [ ] Footer mobile layout
+
+### 2.2 — Tým fotky
+- [ ] /cs/o-nas: nahradit placeholder initials reálnými fotkami
+- [ ] Fotky jsou na: /Users/davidkuba/Library/CloudStorage/Dropbox/__1 AETHERO/TYM foto alias/
+- [ ] Optimalizovat pro web (WebP, max 400×400)
+
+### 2.3 — EN subpages
+- [ ] /en/co-umime/[slug] — přeložit všech 7 podstránek (CS existují, EN vrací 404)
+
+### 2.4 — CF Worker + doména
+- [ ] functions/_middleware.js — Accept-Language redirect CS/EN
+- [ ] Napojit aethero.agency na CF Pages
+
+### 2.5 — Storyblok (Fáze 2)
+- [ ] Blog: napojit Storyblok stories
+- [ ] Case studies: dynamické stránky
+
+---
+
+## HOTOVÉ (tracking)
 
 - [x] CLAUDE-CODE-START.md — 2026-06-21
 - [x] QUESTIONS.md — 2026-06-21
