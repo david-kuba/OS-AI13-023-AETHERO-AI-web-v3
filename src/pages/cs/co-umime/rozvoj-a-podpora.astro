@@ -2,35 +2,14 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const services = [
-  {
-    title: 'Technický support & troubleshooting',
-    desc: 'Řešení složitých chyb v Liquid šablonách, vlastních aplikacích a Shopify Functions — zaměřujeme se na příčiny, ne symptomy.',
-  },
-  {
-    title: 'Rozšiřování funkcí & custom vývoj',
-    desc: 'Nové funkcionality na míru — pokročilá práce s produkty, cenová logika, úpravy checkoutu, vlastní aplikace.',
-  },
-  {
-    title: 'Integrace & systémová architektura',
-    desc: 'ERP, CRM, sklady, logistika — navrhujeme a implementujeme robustní integrace bez vendor lock-in.',
-  },
-  {
-    title: 'Shopify Markets',
-    desc: 'Technické nastavení mezinárodních trhů — měny, jazyky, domény, daně, doprava a platby.',
-  },
-  {
-    title: 'Výkon, stabilita & škálování',
-    desc: 'Rychlost šablony, správa zátěže aplikací, Core Web Vitals a stabilita pro velký provoz.',
-  },
-  {
-    title: 'Design & UX s technickým přesahem',
-    desc: 'Designové změny, UX optimalizace a implementace design systému — od úprav šablony po custom řešení.',
-  },
-  {
-    title: 'Technické konzultace',
-    desc: 'Audity, code reviews, architektonické poradenství a strategické plánování pro dlouhodobý rozvoj.',
-  },
+const features = [
+  { title: 'Technický support & troubleshooting', desc: 'Řešíme komplexní technické problémy v Liquid šablonách, vlastních aplikacích a napojených systémech. Identifikujeme příčiny chyb, ne jen příznaky.', img: '/support.jpg', reverse: false },
+  { title: 'Rozšiřování funkcionalit & custom vývoj', desc: 'Vývíjíme nové funkce přesně na míru — pokročilá práce s produkty, cenovadlogika, úpravy checkoutu, vlastní aplikace i plně custom řešení na Shopify Functions.', img: '/custom.webp', reverse: true },
+  { title: 'Integrace & systémová architektura', desc: 'Navrhujeme a implementujeme robustní integrace na ERP, CRM, sklady a logistické systémy. Automatizujeme datové toky bez vendor lock-in a bez zbytečné duplikace dat.', img: '/system1.webp', reverse: false },
+  { title: 'Nastavení Shopify Markets pro mezinárodní expanzi', desc: 'Technické nastavení Markets od základu — ceny v lokálních měnách, domény a subdomény, jazykové varianty, zákonné požadavky a platební metody pro každý trh.', img: '/shopify-international.webp', reverse: true },
+  { title: 'Výkon, stabilita & škálování', desc: 'Výkon Shopify obchodu neběží sám od sebe. Optimalizujeme Core Web Vitals a celkovou stabilitu za výzvy v situacích, kdy zákazník e-shop přetíží na výzvu a provoz.', img: '/vykon.webp', reverse: false },
+  { title: 'Design & UX podpora s technickým přesahem', desc: 'Pomůžeme s úpravami designu, UX optimalizací a evoluci design systému vašeho Shopify projektu. Od úprav šablony po celou implementaci nového design systému.', img: '/ux-we-do.webp', reverse: true },
+  { title: 'Technické konzultace i dlouhodobý support', desc: 'Jsme váš technický partner pro kontinuální rozvoj — ad-hoc audity, code reviews, architektonické poradenství a stabilní zázemí pro váš Shopify projekt na dálku.', img: '/longtime-support.jpg', reverse: false },
 ];
 
 const relatedServices = [
@@ -43,122 +22,62 @@ const relatedServices = [
 ];
 ---
 
-<PageLayout title="Rozvoj a podpora" description="Dlouhodobý technický partner pro váš Shopify projekt. Spuštění e-shopu je jen začátek — jsme tu pro rozvoj, integrace i support." lang="cs">
+<PageLayout title="Rozvoj a podpora | aethero" description="Dlouhodobý technický partner pro váš Shopify projekt. Jsme tu pro support, rozvoj, integrace i strategii." lang="cs">
   <ServiceHero
     label="Rozvoj a podpora"
     title="ROZVOJ<br /><span style='color:var(--action)'>A PODPORA</span>"
-    subtitle="Rozvoj Shopify projektu nekončí spuštěním — začíná. Chybí vám lidé, čas nebo know-how? Jsme tu."
+    subtitle="Shopify projekt? Jsme připraveni, kde je třeba pomoci? Chybí vám lidé, čas, znalosti? Napište, zavolejte."
     ctaLabel="Zavolejme si"
-    ctaHref="/cs/kontakt"
+    ctaHref="tel:+420776067663"
     cta2Label="Zjistěte jak"
-    cta2Href="#jak-pracujeme"
+    cta2Href="#co-udelame"
+    image="/lifebuoy.webp"
+    imageAlt="Rozvoj a podpora Shopify"
   />
 
-  <!-- S čím vám pomůžeme -->
-  <section class="section bg-elevated">
+  <!-- Intro -->
+  <section class="section-intro bg-elevated">
     <div class="container">
-      <h2 class="section-title">S čím vám pomůžeme na Shopify projektu</h2>
-      <p class="section-text">
-        Technická podpora není jen o hašení požárů. Je to dlouhodobé partnerství zaměřené na optimalizaci výkonu, nové funkce, integrace a strategická rozhodnutí. Tutoriály někdy nestačí — a přesně pro ty momenty jsme tu.
-      </p>
-      <div class="services-grid">
-        {services.map((s) => (
-          <div class="service-card">
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
-      </div>
+      <h2 class="intro-heading"><span class="text-action">S ČÍM CHCETE POMOCI</span><br />na Shopify projektu?</h2>
+      <p class="intro-text">Někdy hledání videa k řešení problému prostě nestačí a je potřeba hlubší technický vhled, zkušenost z více reálných projektů a tím možnost říct šéfů souřadnic.</p>
+      <p class="intro-text">Chceme abyste věděli, že ani po pár letech nemáme na šéfy a když to pojde pomůžeme vám. Vím, že se ne vždy najdeme updated v e-shopu. Shopify měl, at už je to optimalizace výkonu, nové funkce (Shopify Markets nebo třeba nové funkce pro B2B zákazníky), technologické systémy, a ty nemáme ani strategické a ucelené šéfy.</p>
+      <a href="#co-udelame" class="intro-link">Tak pojďme na to →</a>
     </div>
   </section>
 
-  <!-- Jak pracujeme -->
-  <section class="section" id="jak-pracujeme">
-    <div class="container">
-      <h2 class="section-title">Jak spolupráce vypadá</h2>
-      <div class="steps-grid">
-        <div class="step-card">
-          <span class="step-num">01</span>
-          <h3>Zjistíme potřeby</h3>
-          <p>Probereme váš projekt, technický stack a co vás trápí nebo kam chcete růst. Bez zbytečného sales pitche.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">02</span>
-          <h3>Navrhneme plán</h3>
-          <p>Připravíme konkrétní kroky — prioritizované podle dopadu na byznys. Žádné vágní roadmapy.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">03</span>
-          <h3>Spustíme spolupráci</h3>
-          <p>Pracujeme ve sprintech, pravidelně reportujeme a přizpůsobujeme se vašemu tempu a kapacitám.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">04</span>
-          <h3>Dlouhodobě roste</h3>
-          <p>Nejsme jen dodavatelé — jsme technický partner, který zná váš byznys a roste s vámi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proč aethero -->
+  <!-- Co pro vás uděláme -->
   <section class="section bg-secondary">
     <div class="container">
-      <h2 class="section-title">Proč s námi</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Hloubkové znalosti Shopify</h3>
-          <p>Nejsme generalisté. Shopify je naše primární platforma — Liquid, Shopify Functions, Checkout Extensibility, Hydrogen, Oxygen.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Reálné projekty za sebou</h3>
-          <p>Přinášíme zkušenosti z desítek e-shopů různých velikostí — od lokálních brandů po mezinárodní expanze.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Transparentní komunikace</h3>
-          <p>Víte co děláme, proč to děláme a kolik to stojí. Žádné překvapení na faktuře.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Flexibilní model spolupráce</h3>
-          <p>Retainer, projekt nebo ad-hoc — zvolíme model, který sedí vašim potřebám a cashflow.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Rychlá odezva</h3>
-          <p>Kritické problémy řešíme přednostně. Máme nastavené procesy pro urgentní situace.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Strategický přesah</h3>
-          <p>Nezabýváme se jen kódem — myslíme i na byznys cíle, UX a dlouhodobou architekturu vašeho e-shopu.</p>
-        </div>
-      </div>
+      <h2 class="section-title" id="co-udelame">Co pro vás můžeme v rámci naší technické podpory udělat</h2>
     </div>
   </section>
 
-  <!-- Highlight CTA -->
-  <section class="highlight-section">
-    <div class="container highlight-inner">
-      <div class="highlight-text">
-        <h2>Pomůžeme?<br /><span style="color:var(--action)">Dejte vědět.</span></h2>
-        <p>Nemáte čas, lidi nebo know-how? Přesně pro to jsme tu. Přinášíme hloubkové technické znalosti podložené skutečnými projekty.</p>
-        <div class="cta-links">
-          <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-          <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+  <!-- Feature sections -->
+  {features.map((f) => (
+    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
+      <div class="container feature-inner">
+        <div class="feature-text">
+          <h2 class="feature-title">{f.title}</h2>
+          <p class="feature-desc">{f.desc}</p>
+        </div>
+        <div class="feature-img-wrap">
+          <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
-  <!-- Related services -->
+  <!-- Related -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title related-title">Další služby</h2>
+      <h2 class="section-title">Další služby</h2>
       <ul class="related-services">
         {relatedServices.map((s) => (
           <li>
             <a href={s.href} class="related-link">
               <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
           </li>
@@ -167,86 +86,57 @@ const relatedServices = [
     </div>
   </section>
 
-  <!-- CTA section -->
+  <!-- CTA -->
   <section class="cta-section">
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Připraveni začít?</h2>
-        <p>Ozvěte se nám a probereme, jak vám můžeme pomoci s rozvojem vašeho Shopify projektu.</p>
-        <div class="cta-links">
-          <a href="/cs/kontakt" class="btn-primary">Zavolejme si</a>
-          <a href="/cs/co-umime" class="btn-ghost">Všechny služby</a>
-        </div>
+    <div class="container cta-inner">
+      <h2>Pomůžeme?<br />Dejte vědět</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
 </PageLayout>
 
 <style>
+  .section-intro { padding: var(--space-120) 0; }
+  .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); max-width: 760px; }
+  .text-action { color: var(--action); }
+  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-24); }
+  .intro-link { display: inline-block; margin-top: var(--space-24); color: var(--action); font-size: 16px; font-weight: 600; text-decoration: none; }
+  .intro-link:hover { opacity: 0.75; }
+
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
+  .section-title { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-40); text-align: center; }
 
-  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-40); max-width: 720px; }
+  .feature-section { padding: var(--space-120) 0; }
+  .feature-section:nth-child(odd) { background: var(--bg-elevated); }
+  .feature-section:nth-child(even) { background: var(--bg-secondary); }
+  .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
+  .feature-section--reverse .feature-inner { direction: rtl; }
+  .feature-section--reverse .feature-text,
+  .feature-section--reverse .feature-img-wrap { direction: ltr; }
+  .feature-title { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); color: var(--action); }
+  .feature-desc { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.75; }
+  .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
+  .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
 
-  /* Services grid */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .service-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .service-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .service-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-
-  /* Steps grid */
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-
-  /* Features grid */
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-
-  /* Highlight section */
-  .highlight-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
-  .highlight-inner { max-width: 640px; }
-  .highlight-text h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-24); }
-  .highlight-text p { font-size: 18px; color: var(--neutral-300); line-height: 1.7; margin-bottom: var(--space-40); }
-
-  /* Related services */
-  .related-title { margin-bottom: var(--space-24); }
-  .related-services { list-style: none; display: flex; flex-direction: column; padding: 0; margin: 0; }
+  .related-services { list-style: none; display: flex; flex-direction: column; }
   .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
   .related-link:hover { color: var(--action); }
 
-  /* CTA section */
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact:hover { opacity: 0.7; }
 
-  /* Shared buttons and links */
-  .cta-links { display: flex; gap: var(--space-16); flex-wrap: wrap; }
-  .cta-inner .cta-links { justify-content: center; }
-
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); text-decoration: none; }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); text-decoration: none; }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-
-  /* Responsive */
   @media (max-width: 1024px) {
-    .steps-grid { grid-template-columns: repeat(2, 1fr); }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .two-col { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 768px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .related-grid { grid-template-columns: 1fr; }
+    .feature-inner { grid-template-columns: 1fr; }
+    .feature-section--reverse .feature-inner { direction: ltr; }
+    .feature-img-wrap { display: none; }
   }
 </style>

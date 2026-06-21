@@ -2,20 +2,22 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const steps = [
-  { step: '01', title: 'Start', desc: 'Rozhodnutí o migraci, definice rozsahu a harmonogramu.' },
-  { step: '02', title: 'Příprava', desc: 'Společné plánování migrace — datová mapa, URL struktura, SEO audit.' },
-  { step: '03', title: 'Data a SEO', desc: 'Ověření vstupů, konfigurace výstupů, příprava redirectů pro zachování SEO.' },
-  { step: '04', title: 'Migrace na Shopify', desc: 'Brand, narativ, barvy a digitální přítomnost — implementace, testování, spuštění.' },
+const checkItems = [
+  'Multi-měna a vícejazyčnost bez pluginů',
+  'Integrace ERP, CRM a logistiky',
+  'Zachování SEO a URL struktury',
+  'Online + offline přes Shopify POS',
+  'Automatizace procesů přes Shopify Flow',
+  'Mezinárodní expanze bez migrace platformy',
 ];
 
 const features = [
-  { title: 'Multichannel z jednoho místa', desc: 'Prodávejte z jedné administrace napříč všemi kanály a sklady v reálném čase.' },
-  { title: 'Sociální sítě', desc: 'Přímý prodej přes Instagram, TikTok a YouTube s unifikovanou správou kampaní.' },
-  { title: 'App Store ekosystém', desc: 'Plnohodnotný ekosystém aplikací na oficiálních API a webhooks pro škálování.' },
-  { title: 'Produktová taxonomie', desc: 'Pokročilá organizace produktů napříč kanály a trhy s podporou automatizace.' },
-  { title: 'Shopify Shop App', desc: 'Mobilní nakupování pro zákazníky — nativně, jedním klikem.' },
-  { title: 'B2B řešení', desc: 'Enterprise funkce pro B2B zákazníky v Shopify Plus — vlastní ceny, firemní účty, ERP.' },
+  { title: 'Multichannel integrace', desc: 'Prodávejte z jedné administrace napříč všemi kanály — Instagram, TikTok, Google Shopping, Amazon. Jeden sklad, jedna pravda o zásobách, vše ze Shopify adminu.', img: '/shopify-chanels.webp', reverse: false },
+  { title: 'Integrace na sociální sítě', desc: 'Přímý prodej přes Instagram, TikTok, Facebook a YouTube. Unifikovaná správa kampaní, produktů a objednávek z jednoho místa. Zákazník nakupuje tam, kde je.', img: '/fbandinsta.webp', reverse: true },
+  { title: 'Shopify App Store', desc: 'Přes 10 000 aplikací pro každou potřebu — od recenzí a věrnostních programů po fulfilment a B2B. Hotové integrace, které fungují okamžitě.', img: '/aplikace.webp', reverse: false },
+  { title: 'Taxonomie a kategorizace', desc: 'Pokročilá organizace produktů s Shopify produktovou taxonomií — přes 10 000 standardizovaných kategorií. Lepší vyhledávání, SEO a zákaznická zkušenost.', img: '/shopify-produkt-taxonomy.webp', reverse: true },
+  { title: 'Ukažte to v appce celému světu', desc: 'Shopify Shop App dává zákazníkům brandovanou mobilní zkušenost. Notifikace, sledování objednávek, personalizovaný feed — v telefonu každého zákazníka.', img: '/shopapp.webp', reverse: false },
+  { title: 'B2B profi řešení', desc: 'Shopify Plus umožňuje plnohodnotné B2B funkce — vlastní ceníky, firemní účty, schvalovací procesy, ERP napojení a B2B checkout. Enterprise funkce bez enterprise ceny.', img: '/b2b.webp', reverse: true },
 ];
 
 const relatedServices = [
@@ -28,54 +30,86 @@ const relatedServices = [
 ];
 ---
 
-<PageLayout title="Přechod na Shopify" description="Migrujte z jiné platformy na Shopify bez ztráty SEO a zákaznických dat." lang="cs">
+<PageLayout title="Přechod na Shopify | aethero" description="Migrujte z Shoptetu, WooCommerce nebo jiné platformy na Shopify bez ztráty SEO, dat a zákazníků." lang="cs">
   <ServiceHero
     label="Migrace"
     title="PŘECHOD<br /><span style='color:var(--action)'>NA SHOPIFY</span>"
-    subtitle="Váháte? Chcete poradit? Nebo už jste rozhodnutí? Tak pojďme na to."
+    subtitle="Váháte? Chcete poradit? Nebo už jste rozhodnutí? Tak pojďme na to s vámi."
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
     cta2Label="Zjistěte jak"
-    cta2Href="#jak-migrace-probiha"
+    cta2Href="#proc-migrace"
+    image="/donut.webp"
+    imageAlt="Přechod na Shopify"
   />
 
-  <section class="section bg-elevated">
+  <!-- Intro -->
+  <section class="section-intro bg-elevated">
     <div class="container">
-      <h2 class="section-title">Odstartujeme váš PŘECHOD NA SHOPIFY</h2>
-      <p class="section-text">Narážíte na limity Shoptetu nebo WooCommerce? Shopify je otevřená globální platforma navržená pro růst — multi-měna, vícejazyčnost, integrace externích systémů, propojení online i offline prodeje přes POS, plná kontrola nad funkcionalitou, výkonem a designem, AI nástroje pro automatizaci a neustálé aktualizace platformy z komunity vývojářů.</p>
+      <h2 class="intro-heading">Odstartujeme váš<br /><span class="text-action">PŘECHOD NA SHOPIFY</span></h2>
+      <p class="intro-text">Narážíte na limity Shoptetu nebo WooCommerce? Shopify je otevřená globální platforma navržená pro růst — multi-měna, vícejazyčnost, integrace externích systémů a propojení online i offline prodeje přes POS.</p>
+      <p class="intro-text">Pomůžeme vám přejít plynule — se zachováním SEO, dat i zákaznické zkušenosti.</p>
+      <a href="tel:+420776067663" class="btn-action">Zavolejme si zdarma</a>
+      <p class="intro-text intro-text--spaced">Spolupracujeme s e-shopy od startupů po velké hráče. Přecházíme z různých platforem — Shoptet, WooCommerce, Magento nebo custom řešení. Víme, na co si dát pozor a jak neztrácet čas ani peníze.</p>
+      <a href="#proc-migrace" class="intro-link">Ano, chceme migrovat →</a>
     </div>
   </section>
 
-  <section class="section bg-secondary" id="jak-migrace-probiha">
-    <div class="container">
-      <h2 class="section-title">Jak migrace probíhá</h2>
-      <div class="steps-grid">
-        {steps.map((s) => (
-          <div class="step-card">
-            <span class="step-num">{s.step}</span>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
+  <!-- 2-col: text + checklist -->
+  <section class="section bg-secondary" id="proc-migrace">
+    <div class="container two-col-check">
+      <div>
+        <h2 class="section-title">Shopify Edition Zima 2026</h2>
+        <p class="section-text">Shopify vydává velké funkční updaty 2× ročně. Každé vydání přináší nové funkce pro obchodníky, vývojáře i zákazníky — a Shopify vás neúčtuje zvlášť za upgrade. Na to jste s jinými platformami zvyklí?</p>
+        <div class="edition-img-wrap">
+          <img src="/shopify-update-winter-2026.webp" alt="Shopify Edition Zima 2026" class="edition-img" loading="lazy" />
+        </div>
+        <p class="section-text">Jako Shopify partner dostáváme přístup k novinkám dřív než ostatní — a přenášíme je přímo do vašeho e-shopu. <a href="https://www.shopify.com/editions" target="_blank" rel="noopener" class="section-link">Shopify Editions Zima 2026</a> nám na to nové nabídku dáváme přímo do vašeho projektu.</p>
+      </div>
+      <div>
+        <h2 class="section-title">Jak to začít</h2>
+        <ul class="check-list">
+          {checkItems.map((c) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{c}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Funkce co vás potěší</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
-      </div>
+    <div class="container" style="margin-top: var(--space-64); text-align: center;">
+      <a href="tel:+420776067663" class="btn-action">Ozvěte se nám</a>
     </div>
   </section>
 
-  <section class="section bg-secondary">
+  <!-- Feature heading -->
+  <section class="section-heading bg-elevated">
+    <div class="container">
+      <h2 class="feature-section-heading">Funkce co vás potěší:</h2>
+      <p class="section-text">Pokud se chcete standardních e-shopů pohybujete ze světa dat, tak tyto funkce a možnosti, které jsou rovnou v základu, určitě oceníte</p>
+    </div>
+  </section>
+
+  <!-- Feature sections -->
+  {features.map((f) => (
+    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
+      <div class="container feature-inner">
+        <div class="feature-text">
+          <h2 class="feature-title">{f.title}</h2>
+          <p class="feature-desc">{f.desc}</p>
+        </div>
+        <div class="feature-img-wrap">
+          <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Related -->
+  <section class="section bg-elevated">
     <div class="container">
       <h2 class="section-title">Další služby</h2>
       <ul class="related-services">
@@ -83,8 +117,8 @@ const relatedServices = [
           <li>
             <a href={s.href} class="related-link">
               <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
           </li>
@@ -93,104 +127,74 @@ const relatedServices = [
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Připraveni na přechod?</h2>
-      <p>Probereme váš projekt a navrhneme postup — první konzultace zdarma.</p>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      <h2>Je na čase to rozjet?<br />Dejte vědět</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
 </PageLayout>
 
 <style>
+  .section-intro { padding: var(--space-120) 0; }
+  .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); max-width: 760px; }
+  .text-action { color: var(--action); }
+  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-16); }
+  .intro-text--spaced { margin-top: var(--space-40); }
+  .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin: var(--space-32) 0; transition: background var(--transition-base); }
+  .btn-action:hover { background: var(--action-hover); }
+  .intro-link { display: inline-block; margin-top: var(--space-24); color: var(--action); font-size: 16px; font-weight: 600; text-decoration: none; }
+  .intro-link:hover { opacity: 0.75; }
+
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
+  .section-link { color: var(--action); text-decoration: none; font-weight: 600; }
+  .section-link:hover { opacity: 0.75; }
 
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card {
-    background: var(--bg-secondary);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-md);
-    padding: var(--space-24);
-  }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .two-col-check { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .edition-img-wrap { margin-bottom: var(--space-24); }
+  .edition-img { width: 100%; max-width: 400px; height: auto; border-radius: var(--radius-md); display: block; }
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 16px; padding-top: var(--space-8); }
+  .check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .check-list svg { flex-shrink: 0; margin-top: 2px; }
 
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card {
-    background: var(--bg-elevated);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-md);
-    padding: var(--space-24);
-  }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .section-heading { padding: var(--space-80) 0 var(--space-40); }
+  .feature-section-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-16); }
 
-  .related-services { list-style: none; display: flex; flex-direction: column; padding: 0; margin: 0; }
-  .related-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-16) 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 15px;
-    color: var(--neutral-300);
-    transition: color var(--transition-base);
-    text-decoration: none;
-  }
+  .feature-section { padding: var(--space-120) 0; }
+  .feature-section:nth-child(odd) { background: var(--bg-elevated); }
+  .feature-section:nth-child(even) { background: var(--bg-secondary); }
+  .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
+  .feature-section--reverse .feature-inner { direction: rtl; }
+  .feature-section--reverse .feature-text,
+  .feature-section--reverse .feature-img-wrap { direction: ltr; }
+  .feature-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); }
+  .feature-desc { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; }
+  .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
+  .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
+
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
   .related-link:hover { color: var(--action); }
 
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-
-  .btn-primary {
-    display: inline-flex;
-    padding: 14px 32px;
-    background: var(--action);
-    color: var(--bg-elevated);
-    font-family: var(--font-primary);
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: var(--radius-md);
-    transition: background var(--transition-base);
-    text-decoration: none;
-  }
-  .btn-primary:hover { background: var(--action-hover); }
-
-  .btn-ghost {
-    display: inline-flex;
-    padding: 14px 32px;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text-primary);
-    font-family: var(--font-primary);
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: var(--radius-md);
-    transition: border-color var(--transition-base), color var(--transition-base);
-    text-decoration: none;
-  }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact:hover { opacity: 0.7; }
 
   @media (max-width: 1024px) {
-    .steps-grid { grid-template-columns: repeat(2, 1fr); }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .two-col { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 768px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .related-grid { grid-template-columns: 1fr; }
+    .two-col-check { grid-template-columns: 1fr; }
+    .feature-inner { grid-template-columns: 1fr; }
+    .feature-section--reverse .feature-inner { direction: ltr; }
+    .feature-img-wrap { display: none; }
   }
 </style>
