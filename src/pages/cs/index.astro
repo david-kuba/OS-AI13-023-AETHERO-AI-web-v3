@@ -445,7 +445,7 @@ const blogPosts = [
     font-size: 40px;
     font-weight: 600;
     line-height: 1.1;
-    color: #fff;
+    color: var(--action);
     margin: 4px 0 8px;
   }
   .service-link {
@@ -513,8 +513,8 @@ const blogPosts = [
   }
   .feature-col-title {
     font-family: var(--font-primary);
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 400;
     letter-spacing: 0.08em;
     color: #fff;
     margin-bottom: 28px;
@@ -526,9 +526,9 @@ const blogPosts = [
   .feature-icon { width: 36px; height: 36px; flex-shrink: 0; opacity: 0.9; }
   .feature-label {
     display: block;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-secondary);
     margin-bottom: 2px;
   }
   .feature-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
@@ -555,7 +555,13 @@ const blogPosts = [
     line-height: 1;
     margin-bottom: 6px;
   }
-  .stat-label { font-size: 13px; color: var(--stats-num-color); opacity: 0.6; line-height: 1.4; }
+  .stat-label {
+    font-family: var(--font-secondary);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--stats-num-color);
+    line-height: 1.4;
+  }
   .shopify-stats-logo { width: 80px; height: auto; opacity: 0.35; flex-shrink: 0; }
 
   /* AE SERVICES */
@@ -584,9 +590,9 @@ const blogPosts = [
   .ae-service-icon { width: 36px; height: 36px; flex-shrink: 0; opacity: 0.8; }
   .ae-service-label {
     display: block;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-secondary);
     margin-bottom: 4px;
   }
   .ae-service-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
