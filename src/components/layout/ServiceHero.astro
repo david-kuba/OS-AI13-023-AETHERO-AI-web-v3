@@ -8,22 +8,31 @@ export interface Props {
   cta2Label?: string;
   cta2Href?: string;
   lang?: 'cs' | 'en';
+  image?: string;
+  imageAlt?: string;
 }
-const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+420776067663', cta2Label, cta2Href, lang = 'cs' } = Astro.props;
+const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+420776067663', cta2Label, cta2Href, lang = 'cs', image, imageAlt = '' } = Astro.props;
 const contactHref = cta2Href || `/${lang}/kontakt`;
 const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte jak');
 ---
 
-<section class="service-hero">
+<section class={`service-hero${image ? ' service-hero--with-image' : ''}`}>
   <div class="hero-blob" aria-hidden="true"></div>
-  <div class="container service-hero-inner">
-    <p class="hero-label">{label}</p>
-    <h1 set:html={title} />
-    <p class="hero-sub">{subtitle}</p>
-    <div class="hero-ctas">
-      <a href={ctaHref} class="btn-primary">{ctaLabel}</a>
-      <a href={contactHref} class="btn-ghost">{contactLabel}</a>
+  <div class={`container${image ? ' service-hero-split' : ' service-hero-inner'}`}>
+    <div class="hero-text">
+      <p class="hero-label">{label}</p>
+      <h1 set:html={title} />
+      <p class="hero-sub">{subtitle}</p>
+      <div class="hero-ctas">
+        <a href={ctaHref} class="btn-primary">{ctaLabel}</a>
+        <a href={contactHref} class="btn-ghost">{contactLabel}</a>
+      </div>
     </div>
+    {image && (
+      <div class="hero-image-wrap" aria-hidden="true">
+        <img src={image} alt={imageAlt} class="hero-image" loading="eager" />
+      </div>
+    )}
   </div>
 </section>
 
@@ -46,6 +55,35 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
     pointer-events: none;
   }
   .service-hero-inner { position: relative; max-width: 720px; }
+
+  /* Split layout — text left, image right */
+  .service-hero-split {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .service-hero--with-image { padding-bottom: 0; }
+  .hero-text { position: relative; }
+  .hero-image-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 40px;
+  }
+  .hero-image {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 40px 80px rgba(203,0,215,0.25));
+  }
+
+  @media (max-width: 900px) {
+    .service-hero-split { grid-template-columns: 1fr; }
+    .hero-image-wrap { display: none; }
+  }
   .hero-label {
     font-family: var(--font-primary);
     font-size: 12px;
