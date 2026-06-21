@@ -95,6 +95,13 @@ Po dokončení: přejdi na Milestone 1.6.
 
 ---
 
+## ✅ HOTOVO — Milestone 1.6 — Ostatní stránky — 2026-06-21
+
+21 stránek zbuildováno. Blog slug staticky, case study GROOMO staticky. Storyblok napojení v M2.x.
+Poznámka: tým fotky zatím placeholder initials (David/D, Bára/B, Tom/T) — přidat reálné fotky z Dropboxu.
+
+---
+
 ## MILESTONE 1.6 — Ostatní stránky
 
 - [ ] /o-nas — tým (David, Bára, Tom), fotky z __1 AETHERO Dropbox složky pokud existují

@@ -1,0 +1,145 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const team = [
+  {
+    name: 'David',
+    role: 'Design & Business Development',
+    desc: 'Primární kontakt pro nové projekty. Stará se o design, strategii a rozvoj nových klientských vztahů.',
+    email: 'david@aethero.cz',
+    phone: '+420 776 067 663',
+  },
+  {
+    name: 'Bára',
+    role: 'Coding, UX/UI & Project Management',
+    desc: 'Zajišťuje, aby všechno dávalo smysl. Kombinuje vývoj, uživatelský zážitek a koordinaci projektů s trvale skvělou náladou.',
+    email: 'bara@aethero.cz',
+  },
+  {
+    name: 'Tom',
+    role: 'Design, Video & Motion',
+    desc: 'Grafika, video, 3D a motion design. Stará se o vizuální stránku produktů a prémiový estetický zážitek.',
+  },
+];
+---
+
+<PageLayout title="O nás" description="Jsme malý tým s velkými zkušenostmi. Poznali jsme se na projektech a rozhodli se to zprofesionalizovat." lang="cs">
+
+  <section class="o-nas-hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container">
+      <h1>O nás</h1>
+      <p class="hero-sub">
+        Tým, který se potkal na projektech a rozhodl se to zprofesionalizovat.
+        Přinášíme pár desítek let zkušeností v oboru — a děláme jenom to, co nás baví.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Tým</h2>
+      <div class="team-grid">
+        {team.map((member) => (
+          <div class="team-card">
+            <div class="team-avatar" aria-hidden="true">
+              <span>{member.name[0]}</span>
+            </div>
+            <h3 class="team-name">{member.name}</h3>
+            <p class="team-role">{member.role}</p>
+            <p class="team-desc">{member.desc}</p>
+            <div class="team-contacts">
+              {member.email && <a href={`mailto:${member.email}`} class="contact-pill">{member.email}</a>}
+              {member.phone && <a href={`tel:${member.phone.replace(/\s/g, '')}`} class="contact-pill">{member.phone}</a>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-secondary">
+    <div class="container story-inner">
+      <h2 class="section-title">Jak to u nás funguje</h2>
+      <div class="story-text">
+        <p>
+          Nejsme velká agentura s desítkami zaměstnanců a neosobními procesy.
+          Jsme malý tým, kde každý projekt řeší člověk s reálnými zkušenostmi — ne junior, který se teprve učí.
+        </p>
+        <p>
+          Shopify jsme si zvolili záměrně — věříme, že je to nejlepší platforma pro vážné e-commerce projekty.
+          A protože se specializujeme, víme o ní víc než generalisté.
+        </p>
+        <p>
+          Pracujeme s klienty dlouhodobě. Spuštění e-shopu je začátek spolupráce, ne konec projektu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Zavolejte, napište!<br /><span style="color:var(--action)">Nekoušeme.</span></h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .o-nas-hero {
+    position: relative; padding: 160px 0 80px;
+    background: var(--bg-primary-alt); overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute; top: -20%; right: -5%; width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, transparent 70%);
+    border-radius: 50%; filter: blur(60px); pointer-events: none;
+  }
+  .o-nas-hero .container { position: relative; }
+  .o-nas-hero h1 { font-size: clamp(48px, 6vw, 80px); font-weight: 700; }
+  .hero-sub { font-size: 20px; color: var(--text-secondary); margin-top: var(--space-24); max-width: 600px; line-height: 1.6; }
+
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
+  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .team-card {
+    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md); padding: var(--space-40);
+    display: flex; flex-direction: column; gap: var(--space-16);
+  }
+  .team-avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-dark), var(--accent-purple));
+    display: flex; align-items: center; justify-content: center;
+  }
+  .team-avatar span { font-family: var(--font-primary); font-size: 24px; font-weight: 700; color: #fff; }
+  .team-name { font-size: 22px; font-weight: 700; }
+  .team-role { font-size: var(--text-small); color: var(--action); font-weight: 500; }
+  .team-desc { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; flex: 1; }
+  .team-contacts { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
+  .contact-pill { font-size: 13px; color: var(--neutral-500); transition: color var(--transition-base); }
+  .contact-pill:hover { color: var(--action); }
+
+  .story-inner { max-width: 680px; }
+  .story-text { display: flex; flex-direction: column; gap: var(--space-24); }
+  .story-text p { font-size: 18px; color: var(--neutral-300); line-height: 1.7; }
+
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-elevated); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
+  .cta-link { font-size: var(--text-h3); color: var(--text-primary); font-family: var(--font-primary); font-weight: 600; transition: color var(--transition-base); }
+  .cta-link:hover { color: var(--action); }
+
+  @media (max-width: 768px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .cta-contacts { flex-direction: column; align-items: center; gap: var(--space-16); }
+  }
+</style>

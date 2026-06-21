@@ -1,0 +1,87 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  // TODO: Napojit na Storyblok v Milestone 2.x
+  return [
+    {
+      params: { slug: 'povinne-tlacitko-shopify' },
+      props: { title: 'Povinné tlačítko v Shopify: nečekejte, až z toho bude problém', readTime: '7 min', date: '2026-05-01', perex: 'Jak správně nastavit povinné tlačítko v Shopify a vyhnout se problémům.', content: 'Obsah článku bude doplněn. Napojení na Storyblok CMS v Milestone 2.x.' },
+    },
+    {
+      params: { slug: 'ai-seo-2026' },
+      props: { title: 'AI SEO — nová tvrdá realita vyhledávání pro e-shopy (2026)', readTime: '7 min', date: '2026-01-15', perex: 'Jak umělá inteligence mění SEO a co to znamená pro váš e-shop.', content: 'Obsah článku bude doplněn. Napojení na Storyblok CMS v Milestone 2.x.' },
+    },
+    {
+      params: { slug: 'shopify-editions-zima-2026' },
+      props: { title: 'Shopify Editions — Zima 2026', readTime: '5 min', date: '2025-12-10', perex: 'Přehled nejdůležitějších novinek ze Shopify Editions Winter 2026.', content: 'Obsah článku bude doplněn. Napojení na Storyblok CMS v Milestone 2.x.' },
+    },
+    {
+      params: { slug: 'preklad-platebni-metody-shopify' },
+      props: { title: 'Překlad platební metody v Shopify, když Translate & Adapt nepomáhá', readTime: '3 min', date: '2025-10-05', perex: 'Praktický návod jak přeložit platební metody v Shopify mimo standardní nástroje.', content: 'Obsah článku bude doplněn. Napojení na Storyblok CMS v Milestone 2.x.' },
+    },
+    {
+      params: { slug: 'shopify-vs-shoptet' },
+      props: { title: 'Jakou e-commerce platformu zvolit? Shopify versus Shoptet', readTime: '18 min', date: '2025-06-01', perex: 'Detailní srovnání Shopify a Shoptetu pro český trh.', content: 'Obsah článku bude doplněn. Napojení na Storyblok CMS v Milestone 2.x.' },
+    },
+  ];
+}
+
+const { title, readTime, date, perex, content } = Astro.props;
+const dateFormatted = new Date(date).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<PageLayout {title} description={perex} lang="cs">
+
+  <section class="blog-hero">
+    <div class="container blog-hero-inner">
+      <div class="blog-meta">
+        <span>{dateFormatted}</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>{readTime} čtení</span>
+      </div>
+      <h1>{title}</h1>
+      <p class="blog-perex">{perex}</p>
+    </div>
+  </section>
+
+  <article class="section bg-elevated">
+    <div class="container article-inner">
+      <div class="article-body">
+        <p>{content}</p>
+      </div>
+    </div>
+  </article>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Máme spolu co probrat?</h2>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="/kontakt" class="btn-ghost">Kontakt</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .blog-hero { background: var(--bg-secondary); padding: 160px 0 80px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .blog-hero-inner { max-width: 760px; }
+  .blog-meta { display: flex; align-items: center; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-500); margin-bottom: var(--space-24); }
+  .dot { opacity: 0.4; }
+  .blog-hero h1 { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); }
+  .blog-perex { font-size: 20px; color: var(--text-secondary); line-height: 1.6; }
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .article-inner { max-width: 760px; }
+  .article-body { font-size: 18px; color: var(--neutral-300); line-height: 1.8; }
+  .cta-section { padding: var(--space-80) 0; background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+</style>

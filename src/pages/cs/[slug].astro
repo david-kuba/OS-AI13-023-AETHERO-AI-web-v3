@@ -1,0 +1,80 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  // TODO: Napojit na Storyblok v Milestone 2.x
+  // Prozatím statické případové studie jako placeholders
+  return [
+    {
+      params: { slug: 'groomo-cz-na-shopify' },
+      props: {
+        title: 'GROOMO.cz — od nuly na Shopify',
+        category: 'Případová studie',
+        client: 'GROOMO.cz',
+        tags: ['Brand', 'Shopify', 'E-shop'],
+        perex: 'Kompletní tvorba brandu a vývoj Shopify e-shopu zaměřeného na profesionální trh péče o psy.',
+        content: 'Případová studie bude doplněna. Napojení na Storyblok CMS v Milestone 2.x.',
+      },
+    },
+  ];
+}
+
+const { title, category, client, tags, perex, content } = Astro.props;
+---
+
+<PageLayout {title} description={perex} lang="cs">
+
+  <section class="case-hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container case-hero-inner">
+      <p class="case-label">{category}</p>
+      <h1>{title}</h1>
+      <p class="case-perex">{perex}</p>
+      <div class="case-tags">
+        {tags.map((tag: string) => <span class="tag">{tag}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <article class="section bg-elevated">
+    <div class="container article-inner">
+      <p class="article-content">{content}</p>
+    </div>
+  </article>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Podobný projekt?</h2>
+      <p>Napište nám — probereme váš záměr.</p>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="/kontakt" class="btn-ghost">Kontakt</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .case-hero { position: relative; padding: 160px 0 80px; background: var(--bg-primary-alt); overflow: hidden; }
+  .hero-blob { position: absolute; top: -20%; right: -5%; width: 500px; height: 500px; background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+  .case-hero-inner { position: relative; max-width: 760px; }
+  .case-label { font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-24); }
+  .case-hero h1 { font-size: clamp(40px, 5vw, 64px); font-weight: 700; margin-bottom: var(--space-24); }
+  .case-perex { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-24); }
+  .case-tags { display: flex; gap: var(--space-8); flex-wrap: wrap; }
+  .tag { padding: 6px 14px; background: rgba(13,212,205,0.1); border: 1px solid rgba(13,212,205,0.2); border-radius: 20px; font-size: 13px; color: var(--action); }
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .article-inner { max-width: 760px; }
+  .article-content { font-size: 18px; color: var(--neutral-300); line-height: 1.8; }
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+</style>
