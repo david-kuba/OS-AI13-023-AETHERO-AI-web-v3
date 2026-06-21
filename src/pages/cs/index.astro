@@ -2,12 +2,12 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 
 const services = [
-  { num: '01', text: 'Potřebuji vytvořit pro můj projekt', highlight: 'BRAND', href: '/co-umime/potrebuji-brand' },
-  { num: '02', text: 'Chci postavit', highlight: 'NOVÝ SHOPIFY E-SHOP', href: '/co-umime/novy-shopify-e-shop' },
-  { num: '03', text: 'Z jiné platformy', highlight: 'CHCI PŘEJÍT NA SHOPIFY', href: '/co-umime/prechod-na-shopify' },
-  { num: '04', text: 'Máme v plánu', highlight: 'ZAHRANIČNÍ EXPANZI', href: '/co-umime/expanze-do-zahranici' },
-  { num: '05', text: 'Mám e-shop na Shopify a', highlight: 'HLEDÁM POMOC', href: '/co-umime/rozvoj-a-podpora' },
-  { num: '06', text: 'Na Shopify potřebuji úpravy, napojení, či aplikaci', highlight: 'NA MÍRU', href: '/co-umime/custom-vyvoj-a-aplikace' },
+  { num: '01', text: 'Potřebuji vytvořit pro můj projekt', highlight: 'BRAND', href: '/cs/co-umime/potrebuji-brand' },
+  { num: '02', text: 'Chci postavit', highlight: 'NOVÝ SHOPIFY E-SHOP', href: '/cs/co-umime/novy-shopify-e-shop' },
+  { num: '03', text: 'Z jiné platformy', highlight: 'CHCI PŘEJÍT NA SHOPIFY', href: '/cs/co-umime/prechod-na-shopify' },
+  { num: '04', text: 'Máme v plánu', highlight: 'ZAHRANIČNÍ EXPANZI', href: '/cs/co-umime/expanze-do-zahranici' },
+  { num: '05', text: 'Mám e-shop na Shopify a', highlight: 'HLEDÁM POMOC', href: '/cs/co-umime/rozvoj-a-podpora' },
+  { num: '06', text: 'Na Shopify potřebuji úpravy, napojení, či aplikaci', highlight: 'NA MÍRU', href: '/cs/co-umime/custom-vyvoj-a-aplikace' },
 ];
 
 const features = [
@@ -49,16 +49,16 @@ const references = [
     desc: 'Kompletní tvorba brandu a vývoj Shopify e-shopu zaměřeného na profesionální trh péče o psy.',
     tag: 'Případová studie',
     cta: 'Případová studie GROOMO.cz',
-    href: '/groomo-cz-na-shopify',
+    href: '/cs/groomo-cz-na-shopify',
   },
 ];
 
 const blogPosts = [
-  { title: 'Povinné tlačítko v Shopify: nečekejte, až z toho bude problém', time: '7 min', href: '/blog/povinne-tlacitko-shopify' },
-  { title: 'AI SEO — nová tvrdá realita vyhledávání pro e-shopy (2026)', time: '7 min', href: '/blog/ai-seo-2026' },
-  { title: 'Shopify Editions — Zima 2026', time: '5 min', href: '/blog/shopify-editions-zima-2026' },
-  { title: 'Překlad platební metody v Shopify, když Translate & Adapt nepomáhá', time: '3 min', href: '/blog/preklad-platebni-metody-shopify' },
-  { title: 'Jakou e-commerce platformu zvolit? Shopify versus Shoptet', time: '18 min', href: '/blog/shopify-vs-shoptet' },
+  { title: 'Povinné tlačítko v Shopify: nečekejte, až z toho bude problém', time: '7 min', href: '/cs/blog/povinne-tlacitko-shopify' },
+  { title: 'AI SEO — nová tvrdá realita vyhledávání pro e-shopy (2026)', time: '7 min', href: '/cs/blog/ai-seo-2026' },
+  { title: 'Shopify Editions — Zima 2026', time: '5 min', href: '/cs/blog/shopify-editions-zima-2026' },
+  { title: 'Překlad platební metody v Shopify, když Translate & Adapt nepomáhá', time: '3 min', href: '/cs/blog/preklad-platebni-metody-shopify' },
+  { title: 'Jakou e-commerce platformu zvolit? Shopify versus Shoptet', time: '18 min', href: '/cs/blog/shopify-vs-shoptet' },
 ];
 ---
 
@@ -75,7 +75,7 @@ const blogPosts = [
       <p class="hero-label">Česká Shopify agentura</p>
       <h1>Jsme Shopify<br /><span class="hero-accent">specialisté</span></h1>
       <p class="hero-sub">Do čeho se spolu pustíme?</p>
-      <a href="/kontakt" class="btn-primary">Začít projekt</a>
+      <a href="/cs/kontakt" class="btn-primary">Začít projekt</a>
     </div>
   </section>
 
@@ -164,8 +164,8 @@ const blogPosts = [
         ))}
       </ul>
       <div class="services-ctas">
-        <a href="/kontakt" class="btn-primary">Chci konzultaci</a>
-        <a href="/co-umime" class="btn-ghost">Více o tom, jak pracujeme</a>
+        <a href="/cs/kontakt" class="btn-primary">Chci konzultaci</a>
+        <a href="/cs/co-umime" class="btn-ghost">Více o tom, jak pracujeme</a>
       </div>
     </div>
   </section>
@@ -234,18 +234,18 @@ const blogPosts = [
   }
   .hero-blob {
     position: absolute;
-    top: -20%;
-    right: -10%;
+    top: 5%;
+    right: -5%;
     width: 700px;
     height: 700px;
-    background: radial-gradient(ellipse at center, rgba(203,0,215,0.18) 0%, rgba(9,32,102,0.25) 50%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(203,0,215,0.28) 0%, rgba(9,32,102,0.30) 45%, transparent 70%);
     border-radius: 50%;
-    filter: blur(60px);
+    filter: blur(80px);
     pointer-events: none;
   }
   .hero-inner {
     position: relative;
-    padding: 140px 0 100px;
+    padding: clamp(100px, 15vh, 160px) 0 60px;
     max-width: 760px;
   }
   .hero-label {
