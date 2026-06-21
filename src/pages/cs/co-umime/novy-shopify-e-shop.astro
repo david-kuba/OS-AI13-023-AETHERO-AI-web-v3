@@ -3,42 +3,66 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const features = [
-  { title: 'Shopify Sidekick', desc: 'AI asistent přímo v adminu — tvoří produkty, píše popisy, doporučuje SEO úpravy.' },
-  { title: 'Intuitivní administrace', desc: 'Moderní rozhraní ovladatelné bez technických znalostí, k dispozici v češtině.' },
-  { title: 'Mobilní aplikace', desc: 'Sledujte tržby a spravujte objednávky odkudkoli v reálném čase.' },
-  { title: 'Multichannel prodej', desc: 'Instagram, TikTok, Facebook, Google Shopping a Amazon — vše z jednoho adminu.' },
-  { title: 'Analytika a marketing', desc: 'Přehledné dashboardy, sledování trendů a chytrá CRM integrace.' },
-  { title: 'Automatizace', desc: 'Shopify Flow reaguje na chování zákazníků bez manuální práce.' },
-  { title: 'App Store', desc: 'Přes 10 000 aplikací vyvíjených 15+ let — řešení pro každou potřebu.' },
+  { title: 'Shopify Sidekick', desc: 'AI asistent přímo v adminu — tvoří produkty, píše popisy, doporučuje SEO úpravy bez nutnosti technických znalostí.' },
+  { title: 'Intuitivní administrace', desc: 'Moderní rozhraní ovladatelné bez technických znalostí, k dispozici v češtině. Zvládne to každý.' },
+  { title: 'Mobilní aplikace', desc: 'Sledujte tržby, spravujte objednávky a reagujte na zákazníky odkudkoli v reálném čase.' },
+  { title: 'Multichannel prodej', desc: 'Instagram, TikTok, Facebook, Google Shopping a Amazon — vše z jednoho adminu, jedna pravda.' },
+  { title: 'Analytika a marketing', desc: 'Přehledné dashboardy, sledování trendů, chytrá CRM integrace a reporty, které dávají smysl.' },
+  { title: 'Automatizace (Flow)', desc: 'Shopify Flow reaguje na chování zákazníků bez manuální práce — tagy, emaily, slevy automaticky.' },
+  { title: 'App Store', desc: 'Přes 10 000 aplikací vyvíjených 15+ let — řešení pro každou potřebu a integraci.' },
+  { title: 'PCI DSS zabezpečení', desc: 'Nejvyšší certifikace zabezpečení plateb. Shopify řeší compliance za vás.' },
+  { title: 'Mezinárodní škálování', desc: 'Markets pro lokalizaci, víceměnové platby a vícejazyčný obsah — bez migrace.' },
 ];
 
 const reasons = [
   'Jedna z 3 nejpoužívanějších e-commerce platforem na světě',
-  'Rok napřed před evropskou konkurencí v aktualizacích',
-  'Velká mezinárodní firma — nezávislost na jediném dodavateli',
-  'Mezinárodní škálování bez nutnosti migrace',
-  'PCI DSS certifikace a špičkové zabezpečení',
+  'Rok napřed před evropskou konkurencí v aktualizacích a funkcích',
+  'Velká mezinárodní firma — nezávislost na jediném lokálním dodavateli',
+  'Mezinárodní škálování bez nutnosti migrace platforem',
+  'PCI DSS certifikace a špičkové zabezpečení v základu',
+  'Shopify Plus pro enterprise s dedikovaným supportem',
+  'Komunita partnerů a agentur po celém světě',
 ];
 
 const process = [
-  { step: '01', title: 'Zjistíme vaše plány', desc: 'Probereme požadavky, cíle a harmonogram projektu.' },
-  { step: '02', title: 'Analýza a doporučení', desc: 'Dostanete konkrétní návrh architektury a doporučení.' },
-  { step: '03', title: 'Návrh a smlouva', desc: 'Připravíme nabídku, podepíšeme smlouvu a zahájíme.' },
-  { step: '04', title: 'Spuštění', desc: 'Design, vývoj, testování, spuštění a prvních 30 dní podpory.' },
-  { step: '05', title: 'Rozvoj', desc: 'Dlouhodobé partnerství — správa, optimalizace a růst.' },
+  { step: '01', title: 'Zjistíme vaše plány', desc: 'Probereme požadavky, cíle, časový harmonogram a rozpočet projektu bez zbytečného salesu.' },
+  { step: '02', title: 'Analýza a doporučení', desc: 'Dostanete konkrétní návrh architektury, tech stacku a doporučení pro váš segment.' },
+  { step: '03', title: 'Návrh a smlouva', desc: 'Připravíme nabídku, podepíšeme smlouvu a definujeme milníky. Jasná pravidla hry.' },
+  { step: '04', title: 'Design, vývoj a spuštění', desc: 'UX/UI design, frontend vývoj, integrace, testování a ostrý launch se 30denní podporou.' },
+  { step: '05', title: 'Rozvoj a partnerství', desc: 'Dlouhodobá spolupráce — správa, optimalizace, A/B testy a kontinuální růst.' },
+];
+
+const deliverables = [
+  { title: 'Vlastní design', desc: 'Unikátní vizuální identita přizpůsobená vašemu brandu — žádné generické šablony.' },
+  { title: 'Migrace dat', desc: 'Produkty, zákazníci, objednávky — přeneseme vše bez ztráty dat.' },
+  { title: 'Platební brány', desc: 'Shopify Payments, GoPay, ComGate nebo Stripe podle vašich potřeb.' },
+  { title: 'SEO základ', desc: 'Správná URL struktura, meta tagy, schema markup a rychlost — od první stránky.' },
+  { title: 'Integrace', desc: 'ERP, CRM, účetnictví, dopravci — napojíme to, co používáte.' },
+  { title: 'Školení týmu', desc: 'Váš tým bude vědět, jak e-shop spravovat samostatně. Dokumentace included.' },
+];
+
+const relatedServices = [
+  { href: '/cs/co-umime/potrebuji-brand', label: 'Potřebuji brand' },
+  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
+  { href: '/cs/co-umime/expanze-do-zahranici', label: 'Expanze do zahraničí' },
+  { href: '/cs/co-umime/rozvoj-a-podpora', label: 'Rozvoj a podpora' },
+  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
+  { href: '/cs/co-umime/custom-vyvoj-a-aplikace', label: 'Custom vývoj a aplikace' },
 ];
 ---
 
-<PageLayout title="Nový Shopify e-shop" description="Spustíme váš nový e-shop na Shopify — od návrhu přes vývoj až po první objednávku." lang="cs">
+<PageLayout title="Nový Shopify e-shop | aethero" description="Spustíme váš nový e-shop na Shopify — od návrhu přes vývoj až po první objednávku. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává." lang="cs">
   <ServiceHero
     label="Nový e-shop"
     title="NOVÝ E-SHOP<br /><span style='color:var(--action)'>na Shopify</span>"
     subtitle="Spusťte svůj e-commerce projekt na mezinárodní superplatformě. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává."
   />
 
+  <!-- Proč Shopify usnadní život -->
   <section class="section bg-elevated">
     <div class="container">
       <h2 class="section-title">Proč vám Shopify usnadní život</h2>
+      <p class="section-text">Shopify není jen e-shopová platforma. Je to ekosystém nástrojů, které rostou s vámi — od prvního produktu po mezinárodní expanzi.</p>
       <div class="features-grid">
         {features.map((f) => (
           <div class="feature-card">
@@ -50,23 +74,42 @@ const process = [
     </div>
   </section>
 
+  <!-- Co získáte -->
   <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Co získáte v každém projektu</h2>
+      <p class="section-text">Nezávisle na velikosti projektu dodáváme kompletní balíček — od designu po byznys integraci.</p>
+      <div class="features-grid">
+        {deliverables.map((d) => (
+          <div class="feature-card feature-card--alt">
+            <h3>{d.title}</h3>
+            <p>{d.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Proč Shopify + Jak spolupráce probíhá -->
+  <section class="section bg-elevated">
     <div class="container two-col">
       <div>
-        <h2 class="section-title">Proč Shopify</h2>
+        <h2 class="section-title">Proč Shopify?</h2>
+        <p class="section-text" style="font-size: 16px;">Tohle je platforma, která nám dává spaní v klidu. Tady je proč ji doporučujeme každému klientovi.</p>
         <ul class="reasons-list">
           {reasons.map((r) => (
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              {r}
+              <span>{r}</span>
             </li>
           ))}
         </ul>
       </div>
       <div>
         <h2 class="section-title">Jak spolupráce probíhá</h2>
+        <p class="section-text" style="font-size: 16px;">Bez zbytečné byrokracie. Jasný proces, jasné milníky, jasné výstupy.</p>
         <ol class="process-list">
           {process.map((p) => (
             <li class="process-item">
@@ -82,10 +125,65 @@ const process = [
     </div>
   </section>
 
+  <!-- Kroky spuštění -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Od nápadu ke spuštění</h2>
+      <p class="section-text">Průměrná doba spuštění nového e-shopu je 6–12 týdnů. Komplexní projekty s vlastním designem a integracemi 3–6 měsíců.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-num">01 / Discovery</span>
+          <h3>Byznys analýza</h3>
+          <p>Zmapujeme vaše produkty, zákazníky, konkurenci a technické požadavky. Výstup: brief a doporučení architektury.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">02 / Design</span>
+          <h3>UX/UI návrh</h3>
+          <p>Wireframy, prototypy a finální design systém. Navrhujeme pro konverze, ne jen pro vizuál.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">03 / Vývoj</span>
+          <h3>Build & integrace</h3>
+          <p>Shopify theme development, aplikace, platební brány, ERP/CRM napojení a testování napříč zařízeními.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">04 / Launch</span>
+          <h3>Spuštění a podpora</h3>
+          <p>Ostrý provoz, monitoring, školení týmu a 30 dní podpory po spuštění. Nejste sami.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Další služby -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <div class="related-wrapper">
+        <div class="related-header">
+          <h2 class="section-title" style="margin-bottom: 0;">Další služby</h2>
+          <p class="related-sub">E-shop je jen začátek. Co dalšího umíme?</p>
+        </div>
+        <ul class="related-services">
+          {relatedServices.map((s) => (
+            <li>
+              <a href={s.href} class="related-link">
+                <span>{s.label}</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
       <h2>Máme si co říct?</h2>
-      <p>Zavolejte nebo napište — první konzultace je zdarma.</p>
+      <p>První konzultace je zdarma a bez závazků. Zavolejte nebo napište — odpovídáme do 24 hodin.</p>
       <div class="cta-links">
         <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
         <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
@@ -99,41 +197,119 @@ const process = [
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
+
+  /* Features grid */
   .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .feature-card {
-    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-md); padding: var(--space-24);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-24);
+  }
+  .feature-card--alt {
+    background: var(--bg-elevated);
   }
   .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
   .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* Two column layout */
   .two-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-80); }
-  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .reasons-list li { display: flex; align-items: flex-start; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-300); }
-  .process-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-24); }
+
+  /* Reasons list */
+  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: var(--space-24); }
+  .reasons-list li { display: flex; align-items: flex-start; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-300); line-height: 1.5; }
+  .reasons-list svg { flex-shrink: 0; margin-top: 2px; }
+
+  /* Process list */
+  .process-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-24); margin-top: var(--space-24); }
   .process-item { display: flex; gap: var(--space-16); }
   .process-step {
-    font-family: var(--font-primary); font-size: 13px; font-weight: 600;
-    color: var(--action); min-width: 28px; padding-top: 2px;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--action);
+    min-width: 28px;
+    padding-top: 2px;
+    flex-shrink: 0;
   }
-  .process-item strong { display: block; font-size: 15px; margin-bottom: 4px; }
-  .process-item p { font-size: var(--text-small); color: var(--neutral-500); }
+  .process-item strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
+  .process-item p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; margin: 0; }
+
+  /* Steps grid */
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
+  .step-card {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-24);
+  }
+  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); color: var(--text-primary); }
+  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; margin: 0; }
+
+  /* Related services */
+  .related-wrapper { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-80); align-items: start; }
+  .related-sub { color: var(--neutral-300); font-size: var(--text-small); margin-top: var(--space-16); }
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-16) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 15px;
+    color: var(--neutral-300);
+    transition: color var(--transition-base);
+    text-decoration: none;
+  }
+  .related-link:hover { color: var(--action); }
+
+  /* CTA */
   .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
   .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
   .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+
+  /* Buttons */
   .btn-primary {
-    display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated);
-    font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md);
+    display: inline-flex;
+    padding: 14px 32px;
+    background: var(--action);
+    color: var(--bg-elevated);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
     transition: background var(--transition-base);
+    text-decoration: none;
   }
   .btn-primary:hover { background: var(--action-hover); }
   .btn-ghost {
-    display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600;
-    border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base);
+    display: inline-flex;
+    padding: 14px 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-base), color var(--transition-base);
+    text-decoration: none;
   }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; gap: var(--space-80); } }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .two-col { grid-template-columns: 1fr; gap: var(--space-80); }
+    .related-wrapper { grid-template-columns: 1fr; gap: var(--space-40); }
+  }
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .related-wrapper { grid-template-columns: 1fr; }
+  }
 </style>

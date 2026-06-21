@@ -4,18 +4,25 @@ import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const services = [
   { title: 'Úpravy šablon (Liquid)', desc: 'UX/CRO vylepšení, custom sekce, design změny bez omezení.' },
-  { title: 'Shopify Functions', desc: 'Custom logika checkoutu, slevy, doprava, B2B pravidla.' },
+  { title: 'Shopify Functions', desc: 'Custom logika checkoutu, slevy, doprava, B2B pravidla přesně na míru.' },
   { title: 'API integrace', desc: 'ERP, CRM, WMS, dopravci, fakturace, PIM — napojíme co potřebujete.' },
   { title: 'Vlastní aplikace', desc: 'Private/public Shopify apps, admin nástroje, zákaznické dashboardy.' },
   { title: 'Datové workflows', desc: 'Importy, exporty, validace dat a plná automatizace procesů.' },
 ];
 
-const examples = [
-  'Import feedů od dodavatelů s automatickou synchronizací',
-  'B2B cenová logika a zákaznické skupiny',
-  'Lokalizovaná pravidla dopravy a plateb dle země',
-  'ERP/WMS integrace v reálném čase',
-  'Interní admin dashboardy pro operativní tým',
+const whenCustom = [
+  'Lokální specifika, netypická data nebo složitější proces',
+  'ERP, sklad či dodavatel s nestandardními daty',
+  'Vlastní logika košíku, dopravy, slev nebo B2B pravidla',
+  'Lokální požadavky (CZ/SK i zahraniční)',
+  'Automatizace šetřící čas a snižující chyby',
+];
+
+const steps = [
+  { num: '01', title: 'Rychlý audit & definice požadavků', desc: 'Porozumíme vašemu problému dřív, než navrhneme řešení.' },
+  { num: '02', title: 'Návrh řešení', desc: 'Appka, modifikace nebo integrace — s odůvodněním proč právě to.' },
+  { num: '03', title: 'MVP', desc: 'První verze přinášející reálnou hodnotu bez zbytečné komplexity.' },
+  { num: '04', title: 'Iterace & škálování', desc: 'Ladíme a rozvíjíme podle toho, co funguje v praxi.' },
 ];
 
 const apps = [
@@ -30,21 +37,62 @@ const apps = [
     href: '/cs/ae-translator',
   },
 ];
+
+const relatedServices = [
+  { href: '/cs/co-umime/potrebuji-brand', label: 'Potřebuji brand' },
+  { href: '/cs/co-umime/novy-shopify-e-shop', label: 'Nový Shopify e-shop' },
+  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
+  { href: '/cs/co-umime/expanze-do-zahranici', label: 'Expanze do zahraničí' },
+  { href: '/cs/co-umime/rozvoj-a-podpora', label: 'Rozvoj a podpora' },
+  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
+];
 ---
 
 <PageLayout title="Custom vývoj a aplikace" description="Vlastní Shopify aplikace, integrace a úpravy šablon přesně pro vaše potřeby." lang="cs">
   <ServiceHero
     label="Custom vývoj"
     title="APLIKACE &<br /><span style='color:var(--action)'>CUSTOM VÝVOJ</span>"
-    subtitle="Standardní řešení nestačí? Vyvíjíme vlastní Shopify aplikace, integrace a custom úpravy — nejdřív porozumíme, pak řešíme."
+    subtitle="Vyčerpali jste všechny možnosti standardních aplikací? Nebo máte netypický požadavek? Pojďme na to."
+    cta1={{ label: 'Zavolejme si', href: 'tel:+420776067663' }}
+    cta2={{ label: 'Zjistěte jak', href: '#jak-to-delame' }}
   />
 
+  <!-- Section 1: Potřebujete appku nebo custom úpravu? -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <div class="intro-wrap">
+        <h2 class="section-title">Potřebujete appku nebo custom úpravu?</h2>
+        <p class="section-text">Popis toho, co potřebujete, bývá přímočarý. Implementace někdy méně. Naší prací je pomoct vám problém definovat a pak dodat řešení — bez zbytečné komplexity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Kdy je čas na custom? -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Kdy je čas na custom?</h2>
+      <ul class="when-list">
+        {whenCustom.map((item) => (
+          <li class="when-item">
+            <span class="when-check">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 3: Co umíme vyvinout -->
   <section class="section bg-elevated">
     <div class="container">
       <h2 class="section-title">Co umíme vyvinout</h2>
       <div class="services-grid">
         {services.map((s) => (
-          <div class="service-card">
+          <div class="feature-card">
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
           </div>
@@ -53,28 +101,37 @@ const apps = [
     </div>
   </section>
 
-  <section class="section bg-secondary">
+  <!-- Section 4: Jak to děláme + Naše vlastní aplikace -->
+  <section class="section bg-secondary" id="jak-to-delame">
     <div class="container two-col">
       <div>
-        <h2 class="section-title">Typické "složitější oříšky"</h2>
-        <ul class="examples-list">
-          {examples.map((e) => (
-            <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              {e}
-            </li>
+        <h2 class="section-title">Jak to děláme</h2>
+        <div class="process-list">
+          {steps.map((step) => (
+            <div class="process-item">
+              <span class="step-num">{step.num}</span>
+              <div>
+                <h3 class="process-title">{step.title}</h3>
+                <p class="process-desc">{step.desc}</p>
+              </div>
+            </div>
           ))}
-        </ul>
+          <div class="process-item process-item--last">
+            <span class="step-num">05</span>
+            <div>
+              <h3 class="process-title">Dlouhodobá podpora</h3>
+              <p class="process-desc">Jsme tu i po launchi — monitoring, opravy, rozvoj.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
         <h2 class="section-title">Naše vlastní aplikace</h2>
         <div class="apps-list">
           {apps.map((a) => (
             <a href={a.href} class="app-item">
-              <strong>{a.name}</strong>
-              <p>{a.desc}</p>
+              <strong class="app-name">{a.name}</strong>
+              <p class="app-desc">{a.desc}</p>
               <span class="app-link">Zjistit více →</span>
             </a>
           ))}
@@ -83,10 +140,37 @@ const apps = [
     </div>
   </section>
 
+  <!-- Related Services -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <div class="related-wrap">
+        <div class="related-left">
+          <h2 class="section-title" style="margin-bottom: var(--space-8);">Další služby</h2>
+          <p class="related-sub">Co dalšího umíme</p>
+        </div>
+        <div class="related-right">
+          <ul class="related-services">
+            {relatedServices.map((s) => (
+              <li>
+                <a href={s.href} class="related-link">
+                  <span>{s.label}</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
       <h2>Nejdřív porozumět, pak řešit</h2>
-      <p>Popište nám váš problém — navrheme řešení bez zbytečné komplexity.</p>
+      <p>Popište nám váš problém — navrhneme řešení bez zbytečné komplexity.</p>
       <div class="cta-links">
         <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
         <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
@@ -100,19 +184,48 @@ const apps = [
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
+
+  .intro-wrap { max-width: 720px; }
+
+  /* When custom checklist */
+  .when-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+  .when-item { display: flex; align-items: flex-start; gap: var(--space-16); padding: var(--space-16) 0; border-left: 2px solid var(--action); padding-left: var(--space-24); margin-bottom: 12px; background: var(--bg-elevated); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+  .when-check { flex-shrink: 0; display: flex; align-items: center; margin-top: 2px; }
+
+  /* Services / features grid */
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .service-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .service-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .service-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* Two col layout */
   .two-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-80); }
-  .examples-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .examples-list li { display: flex; align-items: flex-start; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-300); }
+
+  /* Process list */
+  .process-list { display: flex; flex-direction: column; gap: 0; }
+  .process-item { display: flex; gap: var(--space-16); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .process-item--last { border-bottom: none; }
+  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); flex-shrink: 0; width: 28px; padding-top: 2px; }
+  .process-title { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
+  .process-desc { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* Apps list */
   .apps-list { display: flex; flex-direction: column; gap: var(--space-16); }
   .app-item { display: block; background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); transition: border-color var(--transition-base); }
   .app-item:hover { border-color: rgba(13,212,205,0.3); }
-  .app-item strong { display: block; font-size: 16px; margin-bottom: 6px; }
-  .app-item p { font-size: var(--text-small); color: var(--neutral-300); margin-bottom: var(--space-8); }
+  .app-name { display: block; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .app-desc { font-size: var(--text-small); color: var(--neutral-300); margin-bottom: var(--space-8); }
   .app-link { font-size: 13px; color: var(--action); }
+
+  /* Related services */
+  .related-wrap { display: grid; grid-template-columns: 280px 1fr; gap: var(--space-80); align-items: start; }
+  .related-sub { font-size: var(--text-small); color: var(--neutral-300); }
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); }
+  .related-link:hover { color: var(--action); }
+
+  /* CTA */
   .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
@@ -122,6 +235,19 @@ const apps = [
   .btn-primary:hover { background: var(--action-hover); }
   .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } }
-  @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .two-col { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .related-wrap { grid-template-columns: 1fr; gap: var(--space-40); }
+  }
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .related-wrap { grid-template-columns: 1fr; }
+  }
 </style>

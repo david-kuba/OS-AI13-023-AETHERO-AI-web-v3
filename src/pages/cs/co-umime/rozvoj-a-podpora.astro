@@ -3,26 +3,64 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const services = [
-  { title: 'Technická podpora', desc: 'Řešení chyb v Liquid šablonách, vlastních aplikacích a integraci třetích stran.' },
-  { title: 'Rozšiřování funkcí', desc: 'Nové funkcionality na míru — přesně to, co váš e-shop potřebuje.' },
-  { title: 'Systémové integrace', desc: 'ERP, CRM, logistické platformy a fakturační systémy napojené bez problémů.' },
-  { title: 'Shopify Markets', desc: 'Nastavení a správa mezinárodních trhů z jednoho adminu.' },
-  { title: 'Výkonová optimalizace', desc: 'Rychlost, Core Web Vitals a škálování e-shopu pro rostoucí provoz.' },
-  { title: 'Design a UX podpora', desc: 'Technická implementace designových změn a UX vylepšení.' },
-  { title: 'Long-term konzultace', desc: 'Code reviews, architektonické poradenství a strategické plánování.' },
+  {
+    title: 'Technický support & troubleshooting',
+    desc: 'Řešení složitých chyb v Liquid šablonách, vlastních aplikacích a Shopify Functions — zaměřujeme se na příčiny, ne symptomy.',
+  },
+  {
+    title: 'Rozšiřování funkcí & custom vývoj',
+    desc: 'Nové funkcionality na míru — pokročilá práce s produkty, cenová logika, úpravy checkoutu, vlastní aplikace.',
+  },
+  {
+    title: 'Integrace & systémová architektura',
+    desc: 'ERP, CRM, sklady, logistika — navrhujeme a implementujeme robustní integrace bez vendor lock-in.',
+  },
+  {
+    title: 'Shopify Markets',
+    desc: 'Technické nastavení mezinárodních trhů — měny, jazyky, domény, daně, doprava a platby.',
+  },
+  {
+    title: 'Výkon, stabilita & škálování',
+    desc: 'Rychlost šablony, správa zátěže aplikací, Core Web Vitals a stabilita pro velký provoz.',
+  },
+  {
+    title: 'Design & UX s technickým přesahem',
+    desc: 'Designové změny, UX optimalizace a implementace design systému — od úprav šablony po custom řešení.',
+  },
+  {
+    title: 'Technické konzultace',
+    desc: 'Audity, code reviews, architektonické poradenství a strategické plánování pro dlouhodobý rozvoj.',
+  },
+];
+
+const relatedServices = [
+  { href: '/cs/co-umime/potrebuji-brand', label: 'Potřebuji brand' },
+  { href: '/cs/co-umime/novy-shopify-e-shop', label: 'Nový Shopify e-shop' },
+  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
+  { href: '/cs/co-umime/expanze-do-zahranici', label: 'Expanze do zahraničí' },
+  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
+  { href: '/cs/co-umime/custom-vyvoj-a-aplikace', label: 'Custom vývoj a aplikace' },
 ];
 ---
 
-<PageLayout title="Rozvoj a podpora" description="Dlouhodobý technický partner pro váš Shopify projekt. Spuštění je jen začátek." lang="cs">
+<PageLayout title="Rozvoj a podpora" description="Dlouhodobý technický partner pro váš Shopify projekt. Spuštění e-shopu je jen začátek — jsme tu pro rozvoj, integrace i support." lang="cs">
   <ServiceHero
     label="Rozvoj a podpora"
     title="ROZVOJ<br /><span style='color:var(--action)'>A PODPORA</span>"
-    subtitle="Rozvoj Shopify projektů nekončí spuštěním e-shopu — začíná. Jsme tu pro vás jako technický partner na dlouhou cestu."
+    subtitle="Rozvoj Shopify projektu nekončí spuštěním — začíná. Chybí vám lidé, čas nebo know-how? Jsme tu."
+    ctaLabel="Zavolejme si"
+    ctaHref="/cs/kontakt"
+    cta2Label="Zjistěte jak"
+    cta2Href="#jak-pracujeme"
   />
 
+  <!-- S čím vám pomůžeme -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">S čím vám pomůžeme</h2>
+      <h2 class="section-title">S čím vám pomůžeme na Shopify projektu</h2>
+      <p class="section-text">
+        Technická podpora není jen o hašení požárů. Je to dlouhodobé partnerství zaměřené na optimalizaci výkonu, nové funkce, integrace a strategická rozhodnutí. Tutoriály někdy nestačí — a přesně pro ty momenty jsme tu.
+      </p>
       <div class="services-grid">
         {services.map((s) => (
           <div class="service-card">
@@ -34,6 +72,69 @@ const services = [
     </div>
   </section>
 
+  <!-- Jak pracujeme -->
+  <section class="section" id="jak-pracujeme">
+    <div class="container">
+      <h2 class="section-title">Jak spolupráce vypadá</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <h3>Zjistíme potřeby</h3>
+          <p>Probereme váš projekt, technický stack a co vás trápí nebo kam chcete růst. Bez zbytečného sales pitche.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <h3>Navrhneme plán</h3>
+          <p>Připravíme konkrétní kroky — prioritizované podle dopadu na byznys. Žádné vágní roadmapy.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <h3>Spustíme spolupráci</h3>
+          <p>Pracujeme ve sprintech, pravidelně reportujeme a přizpůsobujeme se vašemu tempu a kapacitám.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">04</span>
+          <h3>Dlouhodobě roste</h3>
+          <p>Nejsme jen dodavatelé — jsme technický partner, který zná váš byznys a roste s vámi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proč aethero -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Proč s námi</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Hloubkové znalosti Shopify</h3>
+          <p>Nejsme generalisté. Shopify je naše primární platforma — Liquid, Shopify Functions, Checkout Extensibility, Hydrogen, Oxygen.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Reálné projekty za sebou</h3>
+          <p>Přinášíme zkušenosti z desítek e-shopů různých velikostí — od lokálních brandů po mezinárodní expanze.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Transparentní komunikace</h3>
+          <p>Víte co děláme, proč to děláme a kolik to stojí. Žádné překvapení na faktuře.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Flexibilní model spolupráce</h3>
+          <p>Retainer, projekt nebo ad-hoc — zvolíme model, který sedí vašim potřebám a cashflow.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Rychlá odezva</h3>
+          <p>Kritické problémy řešíme přednostně. Máme nastavené procesy pro urgentní situace.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Strategický přesah</h3>
+          <p>Nezabýváme se jen kódem — myslíme i na byznys cíle, UX a dlouhodobou architekturu vašeho e-shopu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlight CTA -->
   <section class="highlight-section">
     <div class="container highlight-inner">
       <div class="highlight-text">
@@ -46,25 +147,106 @@ const services = [
       </div>
     </div>
   </section>
+
+  <!-- Related services -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title related-title">Další služby</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
+          <li>
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Připraveni začít?</h2>
+        <p>Ozvěte se nám a probereme, jak vám můžeme pomoci s rozvojem vašeho Shopify projektu.</p>
+        <div class="cta-links">
+          <a href="/cs/kontakt" class="btn-primary">Zavolejme si</a>
+          <a href="/cs/co-umime" class="btn-ghost">Všechny služby</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </PageLayout>
 
 <style>
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
+
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-40); max-width: 720px; }
+
+  /* Services grid */
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .service-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
   .service-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
   .service-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* Steps grid */
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
+  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
+  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* Features grid */
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* Highlight section */
   .highlight-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
   .highlight-inner { max-width: 640px; }
   .highlight-text h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-24); }
   .highlight-text p { font-size: 18px; color: var(--neutral-300); line-height: 1.7; margin-bottom: var(--space-40); }
+
+  /* Related services */
+  .related-title { margin-bottom: var(--space-24); }
+  .related-services { list-style: none; display: flex; flex-direction: column; padding: 0; margin: 0; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
+  .related-link:hover { color: var(--action); }
+
+  /* CTA section */
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
+
+  /* Shared buttons and links */
   .cta-links { display: flex; gap: var(--space-16); flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .cta-inner .cta-links { justify-content: center; }
+
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); text-decoration: none; }
   .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); text-decoration: none; }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .two-col { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+  }
 </style>

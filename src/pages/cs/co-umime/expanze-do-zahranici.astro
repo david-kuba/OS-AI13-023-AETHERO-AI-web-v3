@@ -3,34 +3,55 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const steps = [
-  { step: '01', title: 'Strategie vstupu na trh', desc: 'Výběr prioritních zemí, validace potenciálu a business case.' },
-  { step: '02', title: 'Architektura řešení', desc: 'Návrh Shopify struktury, integrace a technická architektura.' },
-  { step: '03', title: 'Lokalizace a compliance', desc: 'Obsah, platební metody, daně, legislativa a jazykové mutace.' },
-  { step: '04', title: 'Launch a škálování', desc: 'Uvedení na trh a systematický growth.' },
+  { step: '01', title: 'Strategie vstupu na trh', desc: 'Výběr prioritních trhů, validace potenciálu a sestavení business case.' },
+  { step: '02', title: 'Architektura řešení', desc: 'Návrh Shopify struktury, integrace a technické architektury pro mezinárodní provoz.' },
+  { step: '03', title: 'Lokalizace & compliance', desc: 'Obsah, platební metody, daně, legislativa a jazykové varianty pro každý trh.' },
+  { step: '04', title: 'Spuštění & škálování', desc: 'Spuštění na trhu a systematický růst s měřením výkonu.' },
 ];
 
-const capabilities = [
-  'Shopify Markets pro správu všech trhů z jednoho adminu',
-  'Multicurrency a multilanguage nativně',
-  'B2B řešení pro enterprise klienty (Shopify Plus)',
-  'Lokalizace platebních metod dle země',
-  'AI Sidekick pro lokalizaci obsahu',
-  'Shopify Shop App pro mobilní zákazníky',
-  'Reálná analytika a dashboardy',
-  'Automatizace procesů přes Shopify Flow',
+const features = [
+  { title: 'Shopify Markets', desc: 'Správa všech trhů z jednoho adminu — ceny, jazyky, domény, DPH.' },
+  { title: 'Multi-měna a vícejazyčnost', desc: 'Nativní podpora všech světových měn a jazyků bez externích pluginů.' },
+  { title: 'B2B řešení', desc: 'Enterprise funkce pro B2B zákazníky v Shopify Plus — schvalovací procesy, vlastní ceníky.' },
+  { title: 'Lokalizované platební metody', desc: 'iDEAL, Klarna, Bancontact, BLIK — správná platba pro každý trh.' },
+  { title: 'AI Sidekick pro lokalizaci', desc: 'Generování lokalizovaného obsahu, popisků a marketingových textů pomocí AI.' },
+  { title: 'Shopify Shop App', desc: 'Brandovaná přítomnost v mobilním zařízení zákazníků po celém světě.' },
+  { title: 'Real-time analytika', desc: 'Živá data napříč trhy bez denního zpracování — okamžitý přehled výkonu.' },
+  { title: 'Shopify Flow', desc: 'Automatizace procesů — objednávky, zákazníci, ceny, zásoby, marketing.' },
+  { title: 'Konkurenční benchmarking', desc: 'AI srovnání výkonu s podobnými obchody na globálním trhu.' },
+];
+
+const relatedServices = [
+  { href: '/cs/co-umime/potrebuji-brand', label: 'Potřebuji brand' },
+  { href: '/cs/co-umime/novy-shopify-e-shop', label: 'Nový Shopify e-shop' },
+  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
+  { href: '/cs/co-umime/rozvoj-a-podpora', label: 'Rozvoj a podpora' },
+  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
+  { href: '/cs/co-umime/custom-vyvoj-a-aplikace', label: 'Custom vývoj a aplikace' },
 ];
 ---
 
-<PageLayout title="Expanze do zahraničí" description="Jeden Shopify e-shop, celý svět. Pomůžeme vám s expanzí na zahraniční trhy." lang="cs">
+<PageLayout title="Expanze do zahraničí" description="Jeden Shopify e-shop, celý svět. Pomůžeme vám s expanzí na zahraniční trhy pomocí Shopify Markets." lang="cs">
   <ServiceHero
     label="Mezinárodní expanze"
     title="EXPANZE<br /><span style='color:var(--action)'>DO ZAHRANIČÍ</span>"
-    subtitle="Je čas rozjet to naplno — Evropa, celý svět? Shopify Markets umožňuje spravovat všechny trhy z jednoho adminu. Postaráme se o techniku, vy o byznys."
+    subtitle="Je čas rozjet to naplno — Evropa? Celý svět? Shopify Markets vám umožní spravovat všechny trhy z jednoho adminu."
+    ctaLabel="Zavolejme si"
+    ctaHref="tel:+420776067663"
+    cta2Label="Zjistěte jak"
+    cta2Href="#expanze-kroky"
   />
 
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">4 kroky k expanzi</h2>
+      <h2 class="section-title">Máte plán na expanzi do zahraničí?</h2>
+      <p class="section-text">Shopify je od základu navržen pro mezinárodní prodej. Získáte jednu globální platformu s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Všechno z jednoho adminu.</p>
+    </div>
+  </section>
+
+  <section class="section bg-secondary" id="expanze-kroky">
+    <div class="container">
+      <h2 class="section-title">Expanze ve 4 krocích</h2>
       <div class="steps-grid">
         {steps.map((s) => (
           <div class="step-card">
@@ -43,16 +64,32 @@ const capabilities = [
     </div>
   </section>
 
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Co vám expanze se Shopify přinese</h2>
+      <div class="features-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="section bg-secondary">
     <div class="container">
-      <h2 class="section-title">Co pro vás zajistíme</h2>
-      <ul class="cap-list">
-        {capabilities.map((c) => (
+      <h2 class="section-title">Další služby</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
           <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            {c}
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
           </li>
         ))}
       </ul>
@@ -61,11 +98,11 @@ const capabilities = [
 
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Máte plán na expanzi?</h2>
-      <p>Zavolejte nebo napište — probereme váš trh a navrhneme postup.</p>
+      <h2>Jdeme expandovat?</h2>
+      <p>Zmapujeme váš expanzní plán společně — první konzultace zdarma.</p>
       <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+        <a href="tel:+420776067663" class="btn-primary">Zavolejme si</a>
+        <a href="mailto:info@aethero.cz" class="btn-ghost">info@aethero.cz</a>
       </div>
     </div>
   </section>
@@ -76,22 +113,34 @@ const capabilities = [
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
+
   .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
   .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
   .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
   .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
   .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .cap-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-16); }
-  .cap-list li { display: flex; align-items: flex-start; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-300); }
+
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
+  .related-link:hover { color: var(--action); }
+
   .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
   .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
   .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); text-decoration: none; }
   .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); text-decoration: none; }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .cap-list { grid-template-columns: 1fr; } }
-  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } }
+
+  @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } .services-grid { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } }
 </style>

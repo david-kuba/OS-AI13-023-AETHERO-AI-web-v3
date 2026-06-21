@@ -2,15 +2,33 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const points = [
-  { title: 'Vizuální identita', desc: 'Logo, barvy, typografie a grafický manuál — základ, ze kterého vše vychází.' },
-  { title: 'Tone of voice', desc: 'Jak vaše značka mluví se zákazníky — od produktových popisků po emailové kampaně.' },
-  { title: 'Digital experience', desc: 'Jak se brand promítá do e-shopu — UX, UI a zákaznická cesta.' },
-  { title: 'Brandové materiály', desc: 'Šablony pro sociální sítě, emailové hlavičky, vizitky a prezentace.' },
+const steps = [
+  { num: '01', title: 'Discovery workshop', desc: 'Projdeme vaše hodnoty, cílovou skupinu, konkurenci a positioning. Základ pro všechna rozhodnutí.' },
+  { num: '02', title: 'Vizuální identita', desc: 'Logo, barvy, typografie a grafický manuál. Unikátní vizuální jazyk, který odlišuje vaši značku.' },
+  { num: '03', title: 'Tone of voice', desc: 'Jak vaše značka mluví — od produktových popisků přes email kampaně až po zákaznickou podporu.' },
+  { num: '04', title: 'Implementace', desc: 'Brand přeneseme do e-shopu — UX, UI a zákaznická cesta v souladu s identitou značky.' },
+];
+
+const features = [
+  { title: 'Logo & vizuální systém', desc: 'Primární a sekundární logo, varianty pro světlé i tmavé pozadí, favicon a aplikační ikony. Vše v potřebných formátech.' },
+  { title: 'Barevná paleta & typografie', desc: 'Primární a doplňkové barvy s přesným definováním pro web i tisk. Typografická hierarchie pro všechny kanály.' },
+  { title: 'Brand manuál', desc: 'Závazný dokument s pravidly použití. Každý dodavatel a zaměstnanec ví, jak se značkou pracovat.' },
+  { title: 'Tone of voice', desc: 'Styl komunikace, klíčová sdělení, příklady textů. Váš brand mluví konzistentně na všech kanálech.' },
+  { title: 'Brandové šablony', desc: 'Šablony pro sociální sítě, emailové hlavičky, bannery, vizitky a prezentace. Ušetříte hodiny práce.' },
+  { title: 'E-shop design', desc: 'Brand promítnutý do Shopify e-shopu — UX design, výběr nebo úprava tématu, klíčové stránky.' },
+];
+
+const relatedServices = [
+  { href: '/cs/co-umime/novy-shopify-e-shop', label: 'Nový Shopify e-shop' },
+  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
+  { href: '/cs/co-umime/expanze-do-zahranici', label: 'Expanze do zahraničí' },
+  { href: '/cs/co-umime/rozvoj-a-podpora', label: 'Rozvoj a podpora' },
+  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
+  { href: '/cs/co-umime/custom-vyvoj-a-aplikace', label: 'Custom vývoj a aplikace' },
 ];
 ---
 
-<PageLayout title="Potřebuji brand" description="Vytvoříme vizuální identitu a digitální zkušenost pro váš e-commerce projekt." lang="cs">
+<PageLayout title="Potřebuji brand" description="Vytvoříme vizuální identitu a digitální zkušenost pro váš e-commerce projekt. Brand, který si zákazníky získá a udrží." lang="cs">
   <ServiceHero
     label="Brand & Identity"
     title="Potřebuji <span style='color:var(--action)'>BRAND</span>"
@@ -19,24 +37,146 @@ const points = [
     ctaHref="tel:+420776067663"
   />
 
+  <!-- Intro section -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <div class="two-col">
+        <div class="intro-text">
+          <h2 class="section-title">Brand je víc než logo</h2>
+          <p class="section-text">
+            Zákazníci si nevybírají produkt — vybírají si značku. Ta musí být jasně definovaná,
+            vizuálně konzistentní a komunikovat hodnoty, které rezonují s vaší cílovou skupinou.
+          </p>
+          <p class="section-text">
+            V aethero projektujeme brand komplexně: od strategie přes vizuální identitu až po implementaci
+            do e-shopu. Výsledkem je ucelená značka připravená na růst.
+          </p>
+        </div>
+        <div class="intro-highlights">
+          <div class="highlight-item">
+            <span class="highlight-num">3–6</span>
+            <span class="highlight-label">týdnů od kickoff po finální manuál</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-num">100%</span>
+            <span class="highlight-label">originální identita na míru vašemu byznysu</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-num">1</span>
+            <span class="highlight-label">dedikovaný tým pro brand i e-shop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process steps -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Co zahrnuje brand projekt</h2>
-      <div class="points-grid">
-        {points.map((p) => (
-          <div class="point-card">
-            <h3>{p.title}</h3>
-            <p>{p.desc}</p>
+      <h2 class="section-title">Jak to děláme</h2>
+      <div class="steps-grid">
+        {steps.map((s) => (
+          <div class="step-card">
+            <span class="step-num">{s.num}</span>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- Features/deliverables -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Co dostanete</h2>
+      <div class="features-grid">
+        {features.map((f) => (
+          <div class="feature-card">
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why brand matters for e-commerce -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2 class="section-title">Proč investovat do brandu?</h2>
+          <p class="section-text">
+            E-shopy bez silné identity soupeří pouze cenou. Značky s jasnou identitou si budují
+            loajální zákazníky, kteří se vracejí — a doporučují vás dál.
+          </p>
+          <p class="section-text">
+            Konzistentní vizuální identita zvyšuje důvěryhodnost a konverzní poměr. Zákazníci
+            nakupují u značek, kterým věří.
+          </p>
+        </div>
+        <div class="benefit-list">
+          <div class="benefit-item">
+            <span class="benefit-icon">→</span>
+            <div>
+              <strong>Vyšší marže</strong>
+              <p>Silná značka ospravedlňuje prémiovou cenu. Přestanete soutěžit jen cenou.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">→</span>
+            <div>
+              <strong>Vyšší konverze</strong>
+              <p>Zákazníci nakupují u e-shopů, které vypadají profesionálně a důvěryhodně.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">→</span>
+            <div>
+              <strong>Loajální zákazníci</strong>
+              <p>Lidé se vracejí ke značkám, se kterými se ztotožňují. Brand buduje komunitu.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">→</span>
+            <div>
+              <strong>Snazší marketing</strong>
+              <p>Jasná identita zjednodušuje tvorbu obsahu, reklam i spolupráci s influencery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <div class="related-wrapper">
+        <div class="related-header">
+          <h2 class="section-title">Další služby</h2>
+          <p class="section-text">Brand je začátek. Pomůžeme vám s celou e-commerce cestou.</p>
+        </div>
+        <ul class="related-services">
+          {relatedServices.map((s) => (
+            <li>
+              <a href={s.href} class="related-link">
+                <span>{s.label}</span>
+                <span class="related-arrow">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Pojďme to rozjet</h2>
-      <p>Napište nám nebo zavolejte — první konzultace je zdarma.</p>
+      <h2>Pojďme vytvořit značku,<br />na kterou budete hrdí</h2>
+      <p>První konzultace je zdarma. Zavolejte nebo napište — ozve se vám David.</p>
       <div class="cta-links">
         <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
         <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
@@ -46,31 +186,74 @@ const points = [
 </PageLayout>
 
 <style>
-  .section { padding: var(--space-120) 0; background: var(--bg-elevated); }
+  /* ── Base sections ── */
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
+
+  /* ── Section titles & text ── */
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .points-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
-  .point-card {
-    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-md); padding: var(--space-24);
-  }
-  .point-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .point-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
+
+  /* ── Two-column layout ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+
+  /* ── Intro highlights ── */
+  .intro-highlights { display: flex; flex-direction: column; gap: var(--space-40); padding-top: var(--space-8); }
+  .highlight-item { display: flex; flex-direction: column; gap: var(--space-8); border-left: 2px solid var(--action); padding-left: var(--space-24); }
+  .highlight-num { font-size: 48px; font-weight: 700; color: var(--action); line-height: 1; }
+  .highlight-label { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+  /* ── Steps grid ── */
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
+  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
+  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* ── Features grid ── */
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+
+  /* ── Benefit list ── */
+  .benefit-list { display: flex; flex-direction: column; gap: var(--space-24); }
+  .benefit-item { display: flex; gap: var(--space-16); align-items: flex-start; }
+  .benefit-icon { color: var(--action); font-size: 20px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+  .benefit-item strong { display: block; font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
+  .benefit-item p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; margin: 0; }
+
+  /* ── Related services ── */
+  .related-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .related-services { list-style: none; display: flex; flex-direction: column; padding: 0; margin: 0; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); text-decoration: none; transition: color var(--transition-base); }
+  .related-link:hover { color: var(--action); }
+  .related-arrow { color: var(--action); font-size: 18px; }
+
+  /* ── CTA section ── */
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
   .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
   .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated);
-    font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md);
-    transition: background var(--transition-base);
-  }
+
+  /* ── Buttons ── */
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); text-decoration: none; transition: background var(--transition-base); }
   .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost {
-    display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600;
-    border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base);
-  }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); text-decoration: none; transition: border-color var(--transition-base), color var(--transition-base); }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 768px) { .points-grid { grid-template-columns: 1fr; } }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .two-col { grid-template-columns: 1fr; }
+    .related-wrapper { grid-template-columns: 1fr; gap: var(--space-40); }
+  }
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .related-wrapper { grid-template-columns: 1fr; }
+  }
 </style>
