@@ -29,9 +29,27 @@ export async function getStaticPaths() {
 
 const { title, readTime, date, perex, content } = Astro.props;
 const dateFormatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": perex,
+  "datePublished": date,
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "AETHERO s.r.o.",
+    "url": "https://aethero.agency"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "AETHERO s.r.o."
+  }
+};
 ---
 
-<PageLayout {title} description={perex} lang="en">
+<PageLayout {title} description={perex} lang="en" jsonLd={articleSchema}>
 
   <article class="blog-article">
     <header class="article-hero">
@@ -78,7 +96,7 @@ const dateFormatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeri
     border-radius: 50%; pointer-events: none;
   }
   .article-hero-inner { max-width: 760px; }
-  .article-meta { display: flex; gap: 16px; margin-bottom: 24px; font-size: 14px; color: rgba(255,255,255,0.5); }
+  .article-meta { display: flex; gap: 16px; margin-bottom: 24px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); }
   .read-time::before { content: '·'; margin-right: 16px; }
   .article-hero h1 { font-size: clamp(36px,5vw,64px); font-weight: 700; line-height: 1.1; margin-bottom: 24px; }
   .article-perex { font-size: 20px; color: rgba(255,255,255,0.75); line-height: 1.5; }

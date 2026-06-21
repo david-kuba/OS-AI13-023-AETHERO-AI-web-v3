@@ -461,11 +461,12 @@ const blogPosts = [
     min-width: 340px;
     scroll-snap-align: start;
     border-right: 1px solid rgba(255,255,255,0.08);
-    padding: 40px 40px 40px 0;
+    padding: 40px;
     color: #fff;
     transition: opacity 0.2s;
   }
   .service-item:first-child { padding-left: 0; }
+  .service-item:last-child { border-right: none; }
   .service-item:hover { opacity: 0.85; }
   .service-content { display: flex; flex-direction: column; gap: 8px; }
   .service-num {
@@ -706,7 +707,7 @@ const blogPosts = [
     flex-direction: column;
     gap: 24px;
   }
-  .ref-desc { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; margin: 0; }
+  .ref-desc { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.88); line-height: 1.65; margin: 0; }
   .ref-link-inline { color: var(--action); text-decoration: underline; text-underline-offset: 2px; }
   .ref-img-wrap {
     position: relative;
