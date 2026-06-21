@@ -398,6 +398,15 @@ const blogPosts = [
     background-repeat: no-repeat;
     z-index: 0;
   }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background: linear-gradient(to bottom, transparent 0%, #000326 100%);
+  }
   .hero-inner {
     position: relative;
     z-index: 1;
