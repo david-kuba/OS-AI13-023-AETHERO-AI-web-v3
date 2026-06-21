@@ -63,13 +63,13 @@ const allServices = [
 ];
 
 const services = [
-  { num: '01', pre: 'Potřebuji vytvořit<br />pro můj projekt', title: 'BRAND', label: 'Potřebuji brand', href: '/cs/co-umime/potrebuji-brand' },
-  { num: '02', pre: 'Chci<br />postavit', title: 'NOVÝ SHOPIFY E-SHOP', label: 'Nový Shopify e-shop', href: '/cs/co-umime/novy-shopify-e-shop' },
-  { num: '03', pre: 'Z jiné<br />platformy', title: 'CHCI PŘEJÍT NA SHOPIFY', label: 'Přechod na Shopify', href: '/cs/co-umime/prechod-na-shopify' },
-  { num: '04', pre: 'Máme<br />v plánu', title: 'ZAHRANIČNÍ EXPANZI', label: 'Expanze do zahraničí', href: '/cs/co-umime/expanze-do-zahranici' },
-  { num: '05', pre: 'Mám e-shop<br />na Shopify a', title: 'HLEDÁM POMOC', label: 'Rozvoj a podpora', href: '/cs/co-umime/rozvoj-a-podpora' },
-  { num: '06', pre: 'Na Shopify potřebuji<br />úpravy, napojení,<br />či aplikaci', title: 'NA MÍRU', label: 'Custom vývoj a aplikace', href: '/cs/co-umime/custom-vyvoj-a-aplikace' },
-  { num: '07', pre: 'Nevím proč e-shop<br />neroste — chci', title: 'ANALÝZU A STRATEGII', label: 'Analýza a strategie', href: '/cs/co-umime/analyza-a-strategie' },
+  { num: '01', pre: 'Potřebuji vytvořit<br />pro můj projekt', title: 'BRAND →', label: 'Potřebuji brand', href: '/cs/co-umime/potrebuji-brand' },
+  { num: '02', pre: 'Chci<br />postavit', title: 'NOVÝ SHOPIFY<br />E-SHOP →', label: 'Nový Shopify e-shop', href: '/cs/co-umime/novy-shopify-e-shop' },
+  { num: '03', pre: 'Z jiné<br />platformy', title: 'CHCI PŘEJÍT<br />NA SHOPIFY →', label: 'Přechod na Shopify', href: '/cs/co-umime/prechod-na-shopify' },
+  { num: '04', pre: 'Máme<br />v plánu', title: 'ZAHRANIČNÍ<br />EXPANZI →', label: 'Expanze do zahraničí', href: '/cs/co-umime/expanze-do-zahranici' },
+  { num: '05', pre: 'Mám e-shop<br />na Shopify a', title: 'HLEDÁM<br />POMOC →', label: 'Rozvoj a podpora', href: '/cs/co-umime/rozvoj-a-podpora' },
+  { num: '06', pre: 'Na Shopify potřebuji<br />úpravy, napojení,<br />či aplikaci', title: 'NA MÍRU →', label: 'Custom vývoj a aplikace', href: '/cs/co-umime/custom-vyvoj-a-aplikace' },
+  { num: '07', pre: 'Nevím proč e-shop<br />neroste — chci', title: 'ANALÝZU<br />A STRATEGII →', label: 'Analýza a strategie', href: '/cs/co-umime/analyza-a-strategie' },
 ];
 
 const blogPosts = [
@@ -179,7 +179,7 @@ const blogPosts = [
               <div class="service-content">
                 <span class="service-num">{s.num}</span>
                 <p class="service-text" set:html={s.pre}></p>
-                <h3 class="service-title">{s.title} →</h3>
+                <h3 class="service-title" set:html={s.title}></h3>
               </div>
             </a>
             {i < services.length - 1 && (
@@ -483,15 +483,15 @@ const blogPosts = [
   }
   .service-text {
     font-family: var(--font-primary);
-    font-size: 54px;
+    font-size: 48px;
     font-weight: 600;
     color: #fff;
-    line-height: 65px;
+    line-height: 58px;
     margin: 0;
   }
   .service-title {
     font-family: var(--font-primary);
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 900;
     line-height: 1.1;
     color: var(--action);
@@ -499,7 +499,6 @@ const blogPosts = [
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
-    white-space: nowrap;
   }
   .svc-arrow {
     display: flex;

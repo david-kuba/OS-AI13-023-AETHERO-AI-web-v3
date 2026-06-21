@@ -63,13 +63,13 @@ const allServices = [
 ];
 
 const services = [
-  { num: '01', pre: 'I need to<br />create a', title: 'BRAND', label: 'Brand & Identity', href: '/en/co-umime/potrebuji-brand' },
-  { num: '02', pre: 'I want<br />to build a', title: 'NEW SHOPIFY STORE', label: 'New Shopify Store', href: '/en/co-umime/novy-shopify-e-shop' },
-  { num: '03', pre: 'From another<br />platform I want to', title: 'MIGRATE TO SHOPIFY', label: 'Migration to Shopify', href: '/en/co-umime/prechod-na-shopify' },
-  { num: '04', pre: "We're<br />planning", title: 'INTERNATIONAL EXPANSION', label: 'International Expansion', href: '/en/co-umime/expanze-do-zahranici' },
-  { num: '05', pre: 'I have a Shopify<br />store and', title: 'NEED SUPPORT', label: 'Development & Support', href: '/en/co-umime/rozvoj-a-podpora' },
-  { num: '06', pre: 'I need custom<br />Shopify tweaks<br />or a', title: 'CUSTOM APP', label: 'Custom Development', href: '/en/co-umime/custom-vyvoj-a-aplikace' },
-  { num: '07', pre: "My store isn't<br />growing — I need", title: 'ANALYTICS & STRATEGY', label: 'Analytics & Strategy', href: '/en/co-umime/analyza-a-strategie' },
+  { num: '01', pre: 'I need to<br />create a', title: 'BRAND →', label: 'Brand & Identity', href: '/en/co-umime/potrebuji-brand' },
+  { num: '02', pre: 'I want<br />to build a', title: 'NEW SHOPIFY<br />STORE →', label: 'New Shopify Store', href: '/en/co-umime/novy-shopify-e-shop' },
+  { num: '03', pre: 'From another<br />platform I want to', title: 'MIGRATE<br />TO SHOPIFY →', label: 'Migration to Shopify', href: '/en/co-umime/prechod-na-shopify' },
+  { num: '04', pre: "We're<br />planning", title: 'INTERNATIONAL<br />EXPANSION →', label: 'International Expansion', href: '/en/co-umime/expanze-do-zahranici' },
+  { num: '05', pre: 'I have a Shopify<br />store and', title: 'NEED<br />SUPPORT →', label: 'Development & Support', href: '/en/co-umime/rozvoj-a-podpora' },
+  { num: '06', pre: 'I need custom<br />Shopify tweaks<br />or a', title: 'CUSTOM APP →', label: 'Custom Development', href: '/en/co-umime/custom-vyvoj-a-aplikace' },
+  { num: '07', pre: "My store isn't<br />growing — I need", title: 'ANALYTICS<br />& STRATEGY →', label: 'Analytics & Strategy', href: '/en/co-umime/analyza-a-strategie' },
 ];
 
 const blogPosts = [
@@ -178,7 +178,7 @@ const blogPosts = [
               <div class="service-content">
                 <span class="service-num">{s.num}</span>
                 <p class="service-text" set:html={s.pre}></p>
-                <h3 class="service-title">{s.title} →</h3>
+                <h3 class="service-title" set:html={s.title}></h3>
               </div>
             </a>
             {i < services.length - 1 && (
@@ -482,15 +482,15 @@ const blogPosts = [
   }
   .service-text {
     font-family: var(--font-primary);
-    font-size: 54px;
+    font-size: 48px;
     font-weight: 600;
     color: #fff;
-    line-height: 65px;
+    line-height: 58px;
     margin: 0;
   }
   .service-title {
     font-family: var(--font-primary);
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 900;
     line-height: 1.1;
     color: var(--action);
@@ -498,7 +498,6 @@ const blogPosts = [
     text-decoration: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
-    white-space: nowrap;
   }
   .svc-arrow {
     display: flex;
