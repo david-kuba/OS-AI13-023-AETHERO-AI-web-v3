@@ -188,13 +188,12 @@ Po dokončení: projekt Fáze 1 hotov. Zapiš do QUESTIONS.md summary a čekej n
 - [x] Build: stále 39 pages, functions/ je pure CF Pages middleware
 - [ ] Napojit aethero.agency na CF Pages — čeká na CF dashboard nastavení (David)
 
-### 2.1 — Mobile audit
-- [ ] Porovnat mobile layout vs. live www.aethero.cz (375px, 768px)
-- [ ] Header hamburger menu — velikost, animace
-- [ ] Hero sekce mobile
-- [ ] Stats bar mobile
-- [ ] Services grid mobile (4col → 1/2col)
-- [ ] Footer mobile layout
+### ✅ 2.1 — Mobile audit — HOTOVO 2026-06-21
+- [x] 480px breakpoint na CS+EN homepage (hero, carousel, stats, sekce padding)
+- [x] ServiceHero komponenta — 768px + 480px fix (všechny podstránky)
+- [x] o-nas + kontakt CS+EN — hero padding + font-size
+- [x] Gridy: všechny 4col → 2col → 1col správně
+- [x] Commits: a2d5ca9, beba6a5, 8408a44
 
 ### 2.2 — Tým fotky (BLOCKER — čeká na Davida)
 - [ ] /cs/o-nas + /en/o-nas: nahradit placeholder initials reálnými fotkami
