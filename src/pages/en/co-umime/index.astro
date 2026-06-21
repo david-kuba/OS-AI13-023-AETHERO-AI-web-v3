@@ -1,0 +1,125 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+
+const services = [
+  {
+    num: '01',
+    label: 'Brand & Identity',
+    desc: 'We create brand identity for new and growing Shopify businesses — from visual language to strategy.',
+    href: '/en/co-umime/potrebuji-brand',
+  },
+  {
+    num: '02',
+    label: 'New Shopify Store',
+    desc: 'We build custom Shopify stores from scratch — responsive design, custom theme, full setup.',
+    href: '/en/co-umime/novy-shopify-e-shop',
+  },
+  {
+    num: '03',
+    label: 'Migration to Shopify',
+    desc: 'We migrate your store from Magento, WooCommerce, PrestaShop or any other platform to Shopify.',
+    href: '/en/co-umime/prechod-na-shopify',
+  },
+  {
+    num: '04',
+    label: 'International Expansion',
+    desc: 'We set up Shopify Markets, multilingual stores, and localized checkout for new markets.',
+    href: '/en/co-umime/expanze-do-zahranici',
+  },
+  {
+    num: '05',
+    label: 'Development & Support',
+    desc: 'Ongoing development, bug fixes, performance optimizations, and monthly Shopify support.',
+    href: '/en/co-umime/rozvoj-a-podpora',
+  },
+  {
+    num: '06',
+    label: 'Strategy & Analytics',
+    desc: 'UX audits, conversion rate optimization, analytics setup, and e-commerce strategy.',
+    href: '/en/co-umime/analyza-a-strategie',
+  },
+  {
+    num: '07',
+    label: 'Custom Development & Apps',
+    desc: 'Private Shopify apps, API integrations, custom checkout extensions, and headless builds.',
+    href: '/en/co-umime/custom-vyvoj-a-aplikace',
+  },
+];
+---
+
+<PageLayout
+  title="Our Services"
+  description="Shopify services from a specialist agency — brand, new store, migration, expansion, support, strategy, and custom development."
+  lang="en"
+>
+
+  <section class="services-hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container">
+      <p class="hero-label">What we do</p>
+      <h1>Shopify services<br /><span class="accent">from specialists</span></h1>
+      <p class="hero-sub">From brand creation to custom app development — we cover the full Shopify lifecycle.</p>
+    </div>
+  </section>
+
+  <section class="section bg-elevated">
+    <div class="container">
+      <ul class="services-list">
+        {services.map((s) => (
+          <li>
+            <a href={s.href} class="service-row">
+              <span class="svc-num">{s.num}</span>
+              <div class="svc-content">
+                <strong class="svc-title">{s.label}</strong>
+                <p class="svc-desc">{s.desc}</p>
+              </div>
+              <svg class="svc-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container cta-inner">
+      <h2>Ready to start?<br /><span class="accent">Let's talk.</span></h2>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="/en/kontakt" class="btn-ghost">Contact</a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .services-hero { position: relative; padding: 160px 0 80px; background: var(--bg-primary-alt); overflow: hidden; }
+  .hero-blob { position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+  .services-hero .container { position: relative; }
+  .hero-label { font-family: var(--font-primary); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-16); }
+  .services-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; margin-bottom: var(--space-24); line-height: 1.1; }
+  .accent { color: var(--action); }
+  .hero-sub { font-size: 20px; color: var(--text-secondary); max-width: 560px; line-height: 1.6; }
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .services-list { list-style: none; display: flex; flex-direction: column; }
+  .service-row { display: flex; align-items: flex-start; gap: var(--space-24); padding: var(--space-32) 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: background var(--transition-base); }
+  .service-row:hover .svc-title { color: var(--action); }
+  .service-row:hover .svc-arrow { transform: translateX(4px); color: var(--action); }
+  .svc-num { font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 28px; padding-top: 3px; }
+  .svc-content { flex: 1; }
+  .svc-title { font-family: var(--font-primary); font-size: 20px; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: var(--space-8); transition: color var(--transition-base); }
+  .svc-desc { font-size: 15px; color: var(--neutral-300); line-height: 1.6; }
+  .svc-arrow { color: var(--neutral-700); transition: transform var(--transition-base), color var(--transition-base); flex-shrink: 0; margin-top: 4px; }
+  .cta-section { background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+</style>

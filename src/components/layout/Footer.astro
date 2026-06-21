@@ -1,23 +1,40 @@
 ---
-const services = [
-  { label: 'Potřebuji brand', href: '/co-umime/potrebuji-brand' },
-  { label: 'Nový Shopify e-shop', href: '/co-umime/novy-shopify-e-shop' },
-  { label: 'Přechod na Shopify', href: '/co-umime/prechod-na-shopify' },
-  { label: 'Expanze do zahraničí', href: '/co-umime/expanze-do-zahranici' },
-  { label: 'Rozvoj a podpora', href: '/co-umime/rozvoj-a-podpora' },
-  { label: 'Analýza a strategie', href: '/co-umime/analyza-a-strategie' },
-];
+export interface Props { lang?: string; }
+const { lang = 'cs' } = Astro.props;
+const p = lang === 'en' ? '/en' : '/cs';
+
+const services = lang === 'en'
+  ? [
+      { label: 'Brand & Identity', href: `${p}/co-umime/potrebuji-brand` },
+      { label: 'New Shopify Store', href: `${p}/co-umime/novy-shopify-e-shop` },
+      { label: 'Migration to Shopify', href: `${p}/co-umime/prechod-na-shopify` },
+      { label: 'International Expansion', href: `${p}/co-umime/expanze-do-zahranici` },
+      { label: 'Development & Support', href: `${p}/co-umime/rozvoj-a-podpora` },
+      { label: 'Strategy & Analytics', href: `${p}/co-umime/analyza-a-strategie` },
+    ]
+  : [
+      { label: 'Potřebuji brand', href: `${p}/co-umime/potrebuji-brand` },
+      { label: 'Nový Shopify e-shop', href: `${p}/co-umime/novy-shopify-e-shop` },
+      { label: 'Přechod na Shopify', href: `${p}/co-umime/prechod-na-shopify` },
+      { label: 'Expanze do zahraničí', href: `${p}/co-umime/expanze-do-zahranici` },
+      { label: 'Rozvoj a podpora', href: `${p}/co-umime/rozvoj-a-podpora` },
+      { label: 'Analýza a strategie', href: `${p}/co-umime/analyza-a-strategie` },
+    ];
 ---
 
 <footer>
   <div class="container footer-inner">
     <div class="footer-brand">
-      <a href="/" class="logo" aria-label="aethero">æthero</a>
-      <p class="tagline">Česká Shopify agentura.<br />Design, strategie, technologie.</p>
+      <a href={`${p}/`} class="logo" aria-label="aethero">æthero</a>
+      <p class="tagline">
+        {lang === 'en'
+          ? <>Czech Shopify Agency.<br />Design, strategy, technology.</>
+          : <>Česká Shopify agentura.<br />Design, strategie, technologie.</>}
+      </p>
     </div>
 
     <div class="footer-services">
-      <p class="footer-label">CO UMÍME</p>
+      <p class="footer-label">{lang === 'en' ? 'SERVICES' : 'CO UMÍME'}</p>
       <ul>
         {services.map((s) => (
           <li><a href={s.href}>{s.label}</a></li>
@@ -26,7 +43,7 @@ const services = [
     </div>
 
     <div class="footer-contact">
-      <p class="footer-label">KONTAKT</p>
+      <p class="footer-label">{lang === 'en' ? 'CONTACT' : 'KONTAKT'}</p>
       <a href="mailto:info@aethero.cz" class="contact-link">info@aethero.cz</a>
       <a href="tel:+420776067663" class="contact-link">+420 776 067 663</a>
       <p class="address">Budovcova 700/14<br />370 01 České Budějovice</p>
@@ -37,9 +54,9 @@ const services = [
     <div class="container">
       <span>© {new Date().getFullYear()} AETHERO s.r.o. · IČO 05288762</span>
       <span class="separator">·</span>
-      <a href="/o-nas">O nás</a>
+      <a href={`${p}/o-nas`}>{lang === 'en' ? 'About' : 'O nás'}</a>
       <span class="separator">·</span>
-      <a href="/kontakt">Kontakt</a>
+      <a href={`${p}/kontakt`}>{lang === 'en' ? 'Contact' : 'Kontakt'}</a>
     </div>
   </div>
 </footer>

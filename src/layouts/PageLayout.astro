@@ -14,9 +14,9 @@ const { title, description, ogImage, lang } = Astro.props;
 ---
 
 <BaseLayout {title} {description} {ogImage} {lang}>
-  <Header />
+  <Header lang={lang} />
   <main>
     <slot />
   </main>
-  <Footer />
+  <Footer lang={lang} />
 </BaseLayout>

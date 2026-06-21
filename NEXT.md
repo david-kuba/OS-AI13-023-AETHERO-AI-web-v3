@@ -136,6 +136,15 @@ Po dokončení: přejdi na Milestone 1.8.
 
 ---
 
+## ✅ HOTOVO — Milestone 1.8 — i18n EN verze — 2026-06-21
+
+EN homepage (/en/), EN co-umime (/en/co-umime/), EN kontakt (/en/kontakt/) — 23 pages built.
+Header a Footer jsou lang-aware (přepínají EN/CS texty a href dle prop).
+Accept-Language redirect: statický / → /cs/ 301 funguje. Accept-Language detekce by potřebovala
+CF Worker (functions/_middleware.js) — možné, ale CF Pages connection ještě není otestovaná.
+
+---
+
 ## MILESTONE 1.8 — i18n EN verze
 
 - [ ] EN překlad: homepage + /co-umime + /kontakt (MVP, zbytek later)

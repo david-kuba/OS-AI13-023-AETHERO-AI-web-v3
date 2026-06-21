@@ -1,0 +1,98 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const services = [
+  { label: 'I need a brand', href: '/en/co-umime/potrebuji-brand' },
+  { label: 'I want a new Shopify store', href: '/en/co-umime/novy-shopify-e-shop' },
+  { label: 'I want to migrate to Shopify', href: '/en/co-umime/prechod-na-shopify' },
+  { label: 'We are planning international expansion', href: '/en/co-umime/expanze-do-zahranici' },
+  { label: 'Looking for a development partner', href: '/en/co-umime/rozvoj-a-podpora' },
+  { label: 'I need custom development or an app', href: '/en/co-umime/custom-vyvoj-a-aplikace' },
+];
+---
+
+<PageLayout title="Contact" description="Call or write. We don't bite. info@aethero.cz · +420 776 067 663" lang="en">
+
+  <section class="kontakt-hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container">
+      <h1>Call, write!</h1>
+      <p class="hero-sub">We don't bite. At least we'll get to know each other.</p>
+    </div>
+  </section>
+
+  <section class="section bg-elevated">
+    <div class="container kontakt-grid">
+
+      <div class="contact-main">
+        <div class="contact-item">
+          <p class="contact-label">EMAIL</p>
+          <a href="mailto:info@aethero.cz" class="contact-value">info@aethero.cz</a>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">PHONE</p>
+          <a href="tel:+420776067663" class="contact-value">+420 776 067 663</a>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">CORRESPONDENCE ADDRESS</p>
+          <address class="contact-address">
+            Budovcova 700/14<br />
+            370 01 České Budějovice, CZ
+          </address>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">BILLING ADDRESS</p>
+          <address class="contact-address">
+            Kurzova 2222/16<br />
+            155 00 Praha 5, CZ
+          </address>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">COMPANY</p>
+          <p class="contact-address">AETHERO s.r.o. · IČO: 05288762</p>
+        </div>
+      </div>
+
+      <div class="contact-services">
+        <p class="services-label">WHAT CAN WE DO FOR YOU?</p>
+        <ul class="services-list">
+          {services.map((s) => (
+            <li>
+              <a href={s.href} class="service-link">
+                {s.label}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .kontakt-hero { position: relative; padding: 160px 0 80px; background: var(--bg-primary-alt); overflow: hidden; }
+  .hero-blob { position: absolute; top: -20%; right: -5%; width: 500px; height: 500px; background: radial-gradient(ellipse, rgba(13,212,205,0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+  .kontakt-hero .container { position: relative; }
+  .kontakt-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; }
+  .hero-sub { font-size: 22px; color: var(--text-secondary); margin-top: var(--space-16); }
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); }
+  .contact-main { display: flex; flex-direction: column; gap: var(--space-40); }
+  .contact-label { font-family: var(--font-primary); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--text-secondary); text-transform: uppercase; margin-bottom: var(--space-8); }
+  .contact-value { font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: var(--text-primary); transition: color var(--transition-base); }
+  .contact-value:hover { color: var(--action); }
+  .contact-address { font-style: normal; font-size: 16px; color: var(--neutral-300); line-height: 1.6; }
+  .services-label { font-family: var(--font-primary); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-24); }
+  .services-list { list-style: none; display: flex; flex-direction: column; }
+  .service-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); gap: var(--space-16); transition: color var(--transition-base); }
+  .service-link:hover { color: var(--action); }
+  .service-link svg { flex-shrink: 0; opacity: 0.5; transition: opacity var(--transition-base), transform var(--transition-base); }
+  .service-link:hover svg { opacity: 1; transform: translateX(3px); }
+  @media (max-width: 768px) { .kontakt-grid { grid-template-columns: 1fr; } }
+</style>

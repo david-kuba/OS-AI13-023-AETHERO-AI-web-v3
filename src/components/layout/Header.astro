@@ -1,43 +1,74 @@
 ---
-const navItems = [
-  { label: 'ÚVOD', href: '/' },
-  {
-    label: 'CO UMÍME',
-    href: '/co-umime',
-    dropdown: [
-      { label: 'Potřebuji brand', href: '/co-umime/potrebuji-brand' },
-      { label: 'Nový Shopify e-shop', href: '/co-umime/novy-shopify-e-shop' },
-      { label: 'Přechod na Shopify', href: '/co-umime/prechod-na-shopify' },
-      { label: 'Expanze do zahraničí', href: '/co-umime/expanze-do-zahranici' },
-      { label: 'Rozvoj a podpora', href: '/co-umime/rozvoj-a-podpora' },
-      { label: 'Analýza a strategie', href: '/co-umime/analyza-a-strategie' },
-      { label: 'Custom vývoj a aplikace', href: '/co-umime/custom-vyvoj-a-aplikace' },
-    ],
-  },
-  {
-    label: 'APLIKACE',
-    href: '#',
-    dropdown: [
-      { label: 'eSyncer', href: '/esyncer' },
-      { label: 'AE Translator', href: '/ae-translator' },
-    ],
-  },
-  { label: 'O NÁS', href: '/o-nas' },
-  { label: 'KONTAKT', href: '/kontakt' },
-];
+export interface Props { lang?: string; }
+const { lang = 'cs' } = Astro.props;
+const p = lang === 'en' ? '/en' : '/cs';
+
+const navItems = lang === 'en'
+  ? [
+      { label: 'HOME', href: `${p}/` },
+      {
+        label: 'SERVICES',
+        href: `${p}/co-umime`,
+        dropdown: [
+          { label: 'Brand & Identity', href: `${p}/co-umime/potrebuji-brand` },
+          { label: 'New Shopify Store', href: `${p}/co-umime/novy-shopify-e-shop` },
+          { label: 'Migration to Shopify', href: `${p}/co-umime/prechod-na-shopify` },
+          { label: 'International Expansion', href: `${p}/co-umime/expanze-do-zahranici` },
+          { label: 'Development & Support', href: `${p}/co-umime/rozvoj-a-podpora` },
+          { label: 'Strategy & Analytics', href: `${p}/co-umime/analyza-a-strategie` },
+          { label: 'Custom Development', href: `${p}/co-umime/custom-vyvoj-a-aplikace` },
+        ],
+      },
+      {
+        label: 'APPS',
+        href: '#',
+        dropdown: [
+          { label: 'eSyncer', href: `${p}/esyncer` },
+          { label: 'AE Translator', href: `${p}/ae-translator` },
+        ],
+      },
+      { label: 'ABOUT', href: `${p}/o-nas` },
+      { label: 'CONTACT', href: `${p}/kontakt` },
+    ]
+  : [
+      { label: 'ÚVOD', href: `${p}/` },
+      {
+        label: 'CO UMÍME',
+        href: `${p}/co-umime`,
+        dropdown: [
+          { label: 'Potřebuji brand', href: `${p}/co-umime/potrebuji-brand` },
+          { label: 'Nový Shopify e-shop', href: `${p}/co-umime/novy-shopify-e-shop` },
+          { label: 'Přechod na Shopify', href: `${p}/co-umime/prechod-na-shopify` },
+          { label: 'Expanze do zahraničí', href: `${p}/co-umime/expanze-do-zahranici` },
+          { label: 'Rozvoj a podpora', href: `${p}/co-umime/rozvoj-a-podpora` },
+          { label: 'Analýza a strategie', href: `${p}/co-umime/analyza-a-strategie` },
+          { label: 'Custom vývoj a aplikace', href: `${p}/co-umime/custom-vyvoj-a-aplikace` },
+        ],
+      },
+      {
+        label: 'APLIKACE',
+        href: '#',
+        dropdown: [
+          { label: 'eSyncer', href: `${p}/esyncer` },
+          { label: 'AE Translator', href: `${p}/ae-translator` },
+        ],
+      },
+      { label: 'O NÁS', href: `${p}/o-nas` },
+      { label: 'KONTAKT', href: `${p}/kontakt` },
+    ];
 ---
 
 <header id="site-header">
   <div class="container header-inner">
-    <a href="/" class="logo" aria-label="aethero — domů">æthero</a>
+    <a href={`${p}/`} class="logo" aria-label="aethero">æthero</a>
 
-    <button class="hamburger" id="hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-menu">
+    <button class="hamburger" id="hamburger" aria-label={lang === 'en' ? 'Open menu' : 'Otevřít menu'} aria-expanded="false" aria-controls="nav-menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <nav id="nav-menu" role="navigation" aria-label="Hlavní navigace">
+    <nav id="nav-menu" role="navigation" aria-label={lang === 'en' ? 'Main navigation' : 'Hlavní navigace'}>
       <ul class="nav-list">
         {navItems.map((item) => (
           <li class={item.dropdown ? 'has-dropdown' : ''}>

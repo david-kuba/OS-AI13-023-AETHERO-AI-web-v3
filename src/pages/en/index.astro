@@ -1,14 +1,129 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+
+const services = [
+  { num: '01', text: 'I need to create a', highlight: 'BRAND', href: '/en/what-we-do/brand' },
+  { num: '02', text: 'I want to build a', highlight: 'NEW SHOPIFY STORE', href: '/en/what-we-do/new-shopify-store' },
+  { num: '03', text: 'I want to', highlight: 'MIGRATE TO SHOPIFY', href: '/en/what-we-do/migrate-to-shopify' },
+  { num: '04', text: "We're planning", highlight: 'INTERNATIONAL EXPANSION', href: '/en/what-we-do/international-expansion' },
+  { num: '05', text: 'I have a Shopify store and', highlight: 'NEED SUPPORT', href: '/en/what-we-do/development-support' },
+  { num: '06', text: 'I need custom development or a', highlight: 'SHOPIFY APP', href: '/en/what-we-do/custom-development' },
+];
 ---
 
-<PageLayout title="Czech Shopify Agency" lang="en">
-  <section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 80px;">
-    <div class="container" style="text-align: center;">
-      <h1 style="font-size: var(--text-h1); font-weight: 700; margin-bottom: var(--space-24);">
-        Milestone 1.2 — Layout OK
-      </h1>
-      <p style="color: var(--text-secondary);">Header · Footer · PageLayout · i18n routing</p>
+<PageLayout
+  title="Czech Shopify Agency"
+  description="Czech Shopify agency. Design, strategy and technology for your e-commerce success."
+  lang="en"
+>
+
+  <section class="hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <p class="hero-label">Czech Shopify Agency</p>
+      <h1>We are Shopify<br /><span class="hero-accent">specialists</span></h1>
+      <p class="hero-sub">What shall we tackle together?</p>
+      <a href="/en/contact" class="btn-primary">Start a project</a>
     </div>
   </section>
+
+  <section class="section services-selector">
+    <div class="container">
+      <ul class="services-grid">
+        {services.map((s) => (
+          <li>
+            <a href={s.href} class="service-card">
+              <span class="service-num">{s.num}</span>
+              <span class="service-text">{s.text} <strong>{s.highlight}</strong></span>
+              <svg class="service-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section value-prop">
+    <div class="container">
+      <div class="value-inner">
+        <h2>Shopify provides the technology,<br /><span class="accent-text">aethero the strategy</span></h2>
+        <p class="value-body">
+          From project selection through design and development to your first order — and beyond.
+          We manage the full lifecycle of your e-shop so technology is never an obstacle, but a growth tool.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="container stats-inner">
+      <div class="stat">
+        <span class="stat-num">4.8M</span>
+        <span class="stat-label">stores operating worldwide</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <span class="stat-num">175</span>
+        <span class="stat-label">countries where you can sell</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat">
+        <span class="stat-num">3,500</span>
+        <span class="stat-label">developers out of ~8,000 employees</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section footer-cta">
+    <div class="container footer-cta-inner">
+      <h2>Have something to discuss?<br /><span class="accent-text">Let us know.</span></h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact-link">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact-link">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
+
+<style>
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: var(--bg-primary-alt); overflow: hidden; }
+  .hero-blob { position: absolute; top: -20%; right: -10%; width: 700px; height: 700px; background: radial-gradient(ellipse at center, rgba(203,0,215,0.18) 0%, rgba(9,32,102,0.25) 50%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+  .hero-inner { position: relative; padding: 140px 0 100px; max-width: 760px; }
+  .hero-label { font-family: var(--font-primary); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-24); }
+  .hero h1 { font-size: clamp(48px, 7vw, 80px); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-24); }
+  .hero-accent { color: var(--action); }
+  .hero-sub { font-size: var(--text-h3); color: var(--text-secondary); margin-bottom: var(--space-40); }
+  .btn-primary { display: inline-flex; align-items: center; gap: var(--space-8); padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base), transform var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); transform: translateY(-1px); }
+  .section { padding: var(--space-120) 0; }
+  .services-selector { background: var(--bg-elevated); }
+  .services-grid { list-style: none; display: flex; flex-direction: column; gap: 1px; border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); overflow: hidden; }
+  .service-card { display: flex; align-items: center; gap: var(--space-24); padding: var(--space-24) var(--space-40); background: var(--bg-secondary); transition: background var(--transition-base); border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .service-card:hover { background: rgba(13,212,205,0.06); }
+  .service-card:hover .service-arrow { transform: translateX(4px); color: var(--action); }
+  .service-num { font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 28px; }
+  .service-text { flex: 1; font-size: 15px; color: var(--neutral-300); }
+  .service-text strong { color: var(--text-primary); font-weight: 600; }
+  .service-arrow { color: var(--neutral-700); transition: transform var(--transition-base), color var(--transition-base); flex-shrink: 0; }
+  .value-prop { background: var(--bg-primary-alt); }
+  .value-inner { max-width: 680px; }
+  .value-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-24); }
+  .accent-text { color: var(--action); }
+  .value-body { font-size: 18px; color: var(--neutral-300); line-height: 1.7; }
+  .stats-bar { background: linear-gradient(135deg, #6B0075 0%, var(--accent-purple) 50%, #4A0080 100%); padding: var(--space-80) 0; }
+  .stats-inner { display: flex; align-items: center; justify-content: center; gap: var(--space-80); flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat-num { display: block; font-family: var(--font-primary); font-size: 48px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: var(--space-8); }
+  .stat-label { font-size: var(--text-small); color: rgba(255,255,255,0.8); max-width: 180px; display: block; }
+  .stat-divider { width: 1px; height: 60px; background: rgba(255,255,255,0.25); }
+  .footer-cta { background: var(--bg-secondary); }
+  .footer-cta-inner { text-align: center; }
+  .footer-cta h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
+  .cta-contact-link { font-size: var(--text-h3); color: var(--text-primary); font-family: var(--font-primary); font-weight: 600; transition: color var(--transition-base); }
+  .cta-contact-link:hover { color: var(--action); }
+  @media (max-width: 768px) { .service-card { padding: var(--space-16) var(--space-24); } .stat-divider { display: none; } .stats-inner { gap: var(--space-40); } .cta-contacts { flex-direction: column; align-items: center; gap: var(--space-16); } }
+</style>
