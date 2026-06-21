@@ -52,6 +52,44 @@ AETHERO DESIGN SYSTEM alias, 00 BRAND AE, 01 FAKTURACE, 02 WEB, 03 AE PROJEKTY, 
 
 ---
 
+---
+
+## 2026-06-21 — Logo soubor: ae-logo.svg vs ae-logo2-longfull-wh.svg
+
+**Kontext:** Živý web www.aethero.cz načítá logo ze souboru `ae-logo2-longfull-wh.svg` (přirozená velikost 300×76px). V projektu máme `/public/ae-logo.svg` (246×62px). Vizuálně jsou podobné — oba mají text "æthero" v bílé.
+
+**Otázka:** Je `ae-logo.svg` v projektu správný soubor, nebo máme použít jinou variantu?
+
+**Výchozí řešení:** Používám `ae-logo.svg` co máme v `/public/`. Pokud chceš přesný soubor z živého webu, pošli mi `ae-logo2-longfull-wh.svg` a vyměním.
+
+**Odpověď Davida:** [ČEKÁ]
+
+---
+
+## 2026-06-21 — Zkušenosti sekce: loga klientů
+
+**Kontext:** Živý web má sekci "Zkušenosti" s bílými PNG/SVG logy klientů v řadě: Genkia, BU1, GROOMO, Havana Club, E.on, Jan Becher Pernod Ricard, Air Bank.
+
+**Otázka:** Kde jsou soubory s logy klientů? Mají být SVG/PNG v `/public/logos/`? Nebo mám zatím nechat textové placeholdery?
+
+**Výchozí řešení:** Sekce je v kódu s textovými placeholdery (`<span class="zk-logo-text">Genkia</span>` atd.) — vypadá přijatelně, ale bez obrázků.
+
+**Odpověď Davida:** [ČEKÁ]
+
+---
+
+## 2026-06-21 — Design system stránka
+
+**Kontext:** Vytvořil jsem `/design-system` stránku (localhost:4321/design-system#web-v31) analogicky jako u foxy beauty. Neznal jsem přesnou strukturu foxy beauty verze — vytvořil jsem ji od začátku s: Logo, Barvy, Typografie, Spacing, Komponenty.
+
+**Otázka:** Chceš přidat nebo změnit obsah design system stránky? Případně ji také zveřejnit pod `/cs/design-system` nebo nechat bez jazykového prefixu?
+
+**Výchozí řešení:** Stránka je dostupná na `/design-system` (bez jazykového prefixu) — vývojářský nástroj, ne veřejná stránka.
+
+**Odpověď Davida:** [ČEKÁ]
+
+---
+
 ## FÁZE 1 SUMMARY — 2026-06-21
 
 ### Stav: ✅ KOMPLETNÍ (8 milestones)

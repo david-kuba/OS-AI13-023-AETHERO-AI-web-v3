@@ -63,12 +63,12 @@ const allServices = [
 ];
 
 const services = [
-  { num: '01', pre: 'Potřebuji vytvořit pro můj projekt', highlight: 'BRAND', href: '/cs/co-umime/potrebuji-brand', img: '/sq-fial-01.webp' },
-  { num: '02', pre: 'Chci postavit', highlight: 'NOVÝ SHOPIFY E-SHOP', href: '/cs/co-umime/novy-shopify-e-shop', img: '/sq-fial-02.webp' },
-  { num: '03', pre: 'Z jiné platformy', highlight: 'CHCI PŘEJÍT NA SHOPIFY', href: '/cs/co-umime/prechod-na-shopify', img: '/sq-fial-03.webp' },
-  { num: '04', pre: 'Máme v plánu', highlight: 'ZAHRANIČNÍ EXPANZI', href: '/cs/co-umime/expanze-do-zahranici', img: '/sq-fial-04.webp' },
-  { num: '05', pre: 'Mám e-shop na Shopify a', highlight: 'HLEDÁM POMOC', href: '/cs/co-umime/rozvoj-a-podpora', img: '/sq-fial-05.webp' },
-  { num: '06', pre: 'Na Shopify potřebuji úpravy, napojení, či aplikaci', highlight: 'NA MÍRU', href: '/cs/co-umime/custom-vyvoj-a-aplikace', img: '/sq-fial-06.webp' },
+  { num: '01', pre: 'Potřebuji vytvořit pro můj projekt', title: 'BRAND', label: 'Potřebuji brand', href: '/cs/co-umime/potrebuji-brand' },
+  { num: '02', pre: 'Chci postavit', title: 'NOVÝ SHOPIFY E-SHOP', label: 'Nový Shopify e-shop', href: '/cs/co-umime/novy-shopify-e-shop' },
+  { num: '03', pre: 'Z jiné platformy', title: 'CHCI PŘEJÍT NA SHOPIFY', label: 'Přechod na Shopify', href: '/cs/co-umime/prechod-na-shopify' },
+  { num: '04', pre: 'Máme v plánu', title: 'ZAHRANIČNÍ EXPANZI', label: 'Expanze do zahraničí', href: '/cs/co-umime/expanze-do-zahranici' },
+  { num: '05', pre: 'Mám e-shop na Shopify a', title: 'HLEDÁM POMOC', label: 'Rozvoj a podpora', href: '/cs/co-umime/rozvoj-a-podpora' },
+  { num: '06', pre: 'Na Shopify potřebuji úpravy, napojení, či aplikaci', title: 'NA MÍRU', label: 'Custom vývoj a aplikace', href: '/cs/co-umime/custom-vyvoj-a-aplikace' },
 ];
 
 const blogPosts = [
@@ -92,7 +92,8 @@ const blogPosts = [
     <div class="container hero-inner">
       <div class="hero-left">
         <h1 class="hero-heading">
-          Jsme Shopify<br />
+          Jsme<br />
+          Shopify<br />
           <span class="hero-rotate-wrapper" aria-live="polite">
             <span class="hero-rotate">specialisté</span>
           </span>
@@ -111,13 +112,11 @@ const blogPosts = [
       <div class="services-track" id="services-track">
         {services.map((s) => (
           <a href={s.href} class="service-item">
-            <div class="service-img-wrap">
-              <img src={s.img} alt="" width="400" height="400" loading="lazy" />
-            </div>
             <div class="service-content">
               <span class="service-num">{s.num}</span>
               <p class="service-text">{s.pre}</p>
-              <span class="service-link">{s.highlight} →</span>
+              <h3 class="service-title">{s.title}</h3>
+              <span class="service-link">{s.label}</span>
             </div>
           </a>
         ))}
@@ -246,6 +245,23 @@ const blogPosts = [
     </div>
   </section>
 
+  <!-- ZKUŠENOSTI -->
+  <section class="zkusenosti">
+    <div class="container zk-inner">
+      <h2 class="zk-heading">Zkušenosti</h2>
+      <p class="zk-body">Za dobu, kdy pracujeme v tomto oboru, jsme společně nashromáždili působivou sbírku klientů a tím i zkušeností. Pracovali jsme na mnoha na různých projektech, takže veselé historky o spolupráci s nadnárodními a jinými firmami, spolu můžem klidně probrat u kafe ;-D</p>
+      <div class="zk-logos">
+        <span class="zk-logo-text">Genkia</span>
+        <span class="zk-logo-text">BU1</span>
+        <span class="zk-logo-text">GROOMO</span>
+        <span class="zk-logo-text">Havana Club</span>
+        <span class="zk-logo-text">e·on</span>
+        <span class="zk-logo-text">Jan Becher</span>
+        <span class="zk-logo-text">air/bank</span>
+      </div>
+    </div>
+  </section>
+
   <!-- BLOG -->
   <section class="blog-section">
     <div class="container">
@@ -339,12 +355,11 @@ const blogPosts = [
   .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
   .hero-heading {
     font-family: var(--font-primary);
-    font-size: clamp(48px, 6.5vw, 88px);
-    font-weight: 800;
-    line-height: 1.05;
+    font-size: clamp(56px, 7.8vw, 100px);
+    font-weight: 700;
+    line-height: 1.15;
     color: #fff;
     margin-bottom: 40px;
-    letter-spacing: -0.02em;
   }
   .hero-rotate-wrapper { display: block; overflow: hidden; }
   .hero-rotate {
@@ -356,19 +371,18 @@ const blogPosts = [
   .btn-hero {
     display: inline-flex;
     align-items: center;
-    padding: 16px 32px;
-    border: 2px solid rgba(255,255,255,0.6);
+    padding: 9px 35px;
+    border: 2px solid #fff;
     color: #fff;
     font-family: var(--font-primary);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    border-radius: 100px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
     transition: border-color 0.2s, background 0.2s;
-    text-transform: uppercase;
     white-space: nowrap;
   }
-  .btn-hero:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+  .btn-hero:hover { background: rgba(255,255,255,0.1); }
   .hero-right { display: flex; justify-content: center; align-items: center; }
   .hero-shape {
     width: 100%;
@@ -405,29 +419,19 @@ const blogPosts = [
     min-width: 340px;
     scroll-snap-align: start;
     border-right: 1px solid rgba(255,255,255,0.08);
-    padding: 0 40px 40px 0;
+    padding: 40px 40px 40px 0;
     color: #fff;
     transition: opacity 0.2s;
   }
   .service-item:first-child { padding-left: 0; }
   .service-item:hover { opacity: 0.85; }
-  .service-img-wrap {
-    width: 100%;
-    aspect-ratio: 1;
-    max-width: 200px;
-    margin-bottom: 24px;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
   .service-content { display: flex; flex-direction: column; gap: 8px; }
   .service-num {
     font-family: var(--font-primary);
     font-size: clamp(60px, 8vw, 100px);
-    font-weight: 900;
-    color: #0C0C42;
+    font-weight: 700;
+    color: var(--text-secondary);
     line-height: 1;
-    letter-spacing: -0.04em;
   }
   .service-text {
     font-size: 14px;
@@ -435,13 +439,21 @@ const blogPosts = [
     line-height: 1.4;
     margin: 0;
   }
+  .service-title {
+    font-family: var(--font-primary);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+    margin: 4px 0 8px;
+  }
   .service-link {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 600;
+    letter-spacing: 0.08em;
     color: var(--action);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-transform: uppercase;
   }
   .services-controls {
     display: flex;
@@ -470,18 +482,18 @@ const blogPosts = [
   .value-inner { max-width: 800px; margin: 0 auto; }
   .value-heading {
     font-family: var(--font-primary);
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 700;
-    line-height: 1.25;
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 600;
+    line-height: 1.2;
     color: #fff;
     margin-bottom: 32px;
   }
   .val-shopify { color: #9CFF2B; }
   .val-aethero { color: #7C3AED; }
   .value-body {
-    font-size: 18px;
+    font-size: 22px;
     color: rgba(255,255,255,0.75);
-    line-height: 1.7;
+    line-height: 1.4;
     margin-bottom: 48px;
   }
   .value-purple { color: #7C3AED; }
@@ -538,11 +550,11 @@ const blogPosts = [
     font-family: var(--font-primary);
     font-size: clamp(28px, 4vw, 48px);
     font-weight: 700;
-    color: rgba(60, 30, 100, 0.6);
+    color: var(--stats-num-color);
     line-height: 1;
     margin-bottom: 6px;
   }
-  .stat-label { font-size: 13px; color: rgba(60, 30, 100, 0.5); line-height: 1.4; }
+  .stat-label { font-size: 13px; color: var(--stats-num-color); opacity: 0.6; line-height: 1.4; }
   .shopify-stats-logo { width: 80px; height: auto; opacity: 0.35; flex-shrink: 0; }
 
   /* AE SERVICES */
@@ -615,11 +627,11 @@ const blogPosts = [
   }
   .section-heading {
     font-family: var(--font-primary);
-    font-size: clamp(32px, 4vw, 56px);
-    font-weight: 700;
+    font-size: clamp(40px, 5.5vw, 70px);
+    font-weight: 600;
     color: #fff;
     margin-bottom: 56px;
-    letter-spacing: -0.02em;
+    line-height: 1.4;
   }
   .ref-grid {
     display: grid;
@@ -698,6 +710,44 @@ const blogPosts = [
   .blog-title { font-size: 15px; font-weight: 600; line-height: 1.4; color: #fff; }
   .blog-card:last-child { grid-column: span 1; }
 
+  /* ZKUŠENOSTI */
+  .zkusenosti {
+    background: #000326;
+    padding: 100px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .zk-inner { text-align: center; }
+  .zk-heading {
+    font-family: var(--font-primary);
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+  .zk-body {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto 64px;
+  }
+  .zk-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+  .zk-logo-text {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
   /* FOOTER CTA */
   .footer-cta {
     background: #16BECF;
@@ -706,18 +756,18 @@ const blogPosts = [
   .footer-cta-inner { text-align: center; }
   .footer-cta-heading {
     font-family: var(--font-primary);
-    font-size: clamp(28px, 4vw, 52px);
-    font-weight: 700;
+    font-size: clamp(32px, 5.5vw, 70px);
+    font-weight: 600;
     color: #fff;
     margin-bottom: 40px;
-    letter-spacing: -0.02em;
+    line-height: 1.4;
   }
   .footer-cta-contacts { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
   .footer-cta-link {
     font-family: var(--font-primary);
-    font-size: clamp(16px, 2.5vw, 24px);
+    font-size: clamp(20px, 3vw, 40px);
     font-weight: 600;
-    color: rgba(0,50,60,0.7);
+    color: var(--action);
     transition: color 0.2s;
   }
   .footer-cta-link:hover { color: #fff; }

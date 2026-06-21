@@ -3,22 +3,22 @@ export interface Props { lang?: string; }
 const { lang = 'cs' } = Astro.props;
 const p = lang === 'en' ? '/en' : '/cs';
 
-const services = lang === 'en'
+const intentLinks = lang === 'en'
   ? [
-      { label: 'Brand & Identity', href: `${p}/co-umime/potrebuji-brand` },
-      { label: 'New Shopify Store', href: `${p}/co-umime/novy-shopify-e-shop` },
-      { label: 'Migration to Shopify', href: `${p}/co-umime/prechod-na-shopify` },
-      { label: 'International Expansion', href: `${p}/co-umime/expanze-do-zahranici` },
-      { label: 'Development & Support', href: `${p}/co-umime/rozvoj-a-podpora` },
-      { label: 'Strategy & Analytics', href: `${p}/co-umime/analyza-a-strategie` },
+      { label: 'I need a brand', href: `${p}/co-umime/potrebuji-brand` },
+      { label: "I'm planning a new Shopify store", href: `${p}/co-umime/novy-shopify-e-shop` },
+      { label: 'I want to migrate to Shopify', href: `${p}/co-umime/prechod-na-shopify` },
+      { label: "We're considering international expansion", href: `${p}/co-umime/expanze-do-zahranici` },
+      { label: "I'm looking for a growth partner", href: `${p}/co-umime/rozvoj-a-podpora` },
+      { label: 'I need custom development or an app', href: `${p}/co-umime/custom-vyvoj-a-aplikace` },
     ]
   : [
       { label: 'Potřebuji brand', href: `${p}/co-umime/potrebuji-brand` },
-      { label: 'Nový Shopify e-shop', href: `${p}/co-umime/novy-shopify-e-shop` },
-      { label: 'Přechod na Shopify', href: `${p}/co-umime/prechod-na-shopify` },
-      { label: 'Expanze do zahraničí', href: `${p}/co-umime/expanze-do-zahranici` },
-      { label: 'Rozvoj a podpora', href: `${p}/co-umime/rozvoj-a-podpora` },
-      { label: 'Analýza a strategie', href: `${p}/co-umime/analyza-a-strategie` },
+      { label: 'Přemýšlím o novém Shopify e-shopu', href: `${p}/co-umime/novy-shopify-e-shop` },
+      { label: 'Chci přejít na Shopify', href: `${p}/co-umime/prechod-na-shopify` },
+      { label: 'Zvažujeme zahraniční expanzi', href: `${p}/co-umime/expanze-do-zahranici` },
+      { label: 'Hledám partnera pro rozvoj či podporu', href: `${p}/co-umime/rozvoj-a-podpora` },
+      { label: 'Potřebuji custom úpravy či aplikace', href: `${p}/co-umime/custom-vyvoj-a-aplikace` },
     ];
 ---
 
@@ -26,30 +26,20 @@ const services = lang === 'en'
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href={`${p}/`} class="logo" aria-label="aethero">
-        <img src="/ae-logo.svg" alt="æthero" width="120" height="30" loading="lazy" />
+        <img src="/ae-logo.svg" alt="æthero" width="140" height="35" loading="lazy" />
       </a>
-      <img src="/shopify-plus-badge.svg" alt="Shopify Plus Partner" class="shopify-badge" width="120" height="40" loading="lazy" />
-      <p class="tagline">
-        {lang === 'en'
-          ? <>Czech Shopify Agency.<br />Design, strategy, technology.</>
-          : <>Česká Shopify agentura.<br />Design, strategie, technologie.</>}
-      </p>
+      <img src="/shopify-plus-badge.svg" alt="Shopify Plus Partner" class="shopify-badge" width="130" height="45" loading="lazy" />
     </div>
 
-    <div class="footer-services">
-      <p class="footer-label">{lang === 'en' ? 'SERVICES' : 'CO UMÍME'}</p>
+    <div class="footer-intent">
+      <p class="footer-label">
+        {lang === 'en' ? 'What can we do for you around Shopify?' : 'Co pro vás okolo Shopify můžeme udělat?'}
+      </p>
       <ul>
-        {services.map((s) => (
-          <li><a href={s.href}>{s.label}</a></li>
+        {intentLinks.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
         ))}
       </ul>
-    </div>
-
-    <div class="footer-contact">
-      <p class="footer-label">{lang === 'en' ? 'CONTACT' : 'KONTAKT'}</p>
-      <a href="mailto:info@aethero.cz" class="contact-link">info@aethero.cz</a>
-      <a href="tel:+420776067663" class="contact-link">+420 776 067 663</a>
-      <p class="address">Budovcova 700/14<br />370 01 České Budějovice</p>
     </div>
   </div>
 
@@ -72,63 +62,45 @@ const services = lang === 'en'
 
   .footer-inner {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: var(--space-80);
     padding: var(--space-80) var(--space-24);
+    align-items: start;
   }
 
-  .logo { display: block; margin-bottom: var(--space-16); }
+  .footer-brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .logo { display: flex; align-items: center; }
   .logo img { opacity: 0.9; }
-  .shopify-badge { display: block; margin-bottom: var(--space-16); opacity: 0.6; filter: brightness(0) invert(1); }
-
-  .tagline {
-    font-size: var(--text-small);
-    color: var(--neutral-500);
-    line-height: 1.6;
-  }
+  .shopify-badge { display: block; opacity: 0.75; }
 
   .footer-label {
-    font-family: var(--font-primary);
-    font-size: 11px;
+    font-family: var(--font-secondary);
+    font-size: 15px;
     font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--text-secondary);
+    color: #fff;
     margin-bottom: var(--space-16);
+    line-height: 1.4;
   }
 
   ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   ul a {
     font-size: var(--text-small);
-    color: var(--neutral-300);
+    color: var(--action);
     transition: color var(--transition-base);
   }
-  ul a:hover { color: var(--action); }
-
-  .footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .contact-link {
-    font-size: var(--text-small);
-    color: var(--neutral-300);
-    transition: color var(--transition-base);
-  }
-  .contact-link:hover { color: var(--action); }
-
-  .address {
-    font-size: var(--text-small);
-    color: var(--neutral-500);
-    line-height: 1.6;
-    margin-top: var(--space-8);
-  }
+  ul a:hover { color: #fff; }
 
   .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.06);

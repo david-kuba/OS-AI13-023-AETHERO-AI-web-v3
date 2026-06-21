@@ -1,0 +1,766 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Design System — aethero web v3.1" lang="cs">
+  <div class="ds-page">
+
+    <!-- NAV -->
+    <nav class="ds-nav">
+      <a href="/" class="ds-nav-logo">← web</a>
+      <div class="ds-nav-links">
+        <a href="#web-v31">web-v3.1</a>
+        <a href="#colors">Barvy</a>
+        <a href="#typography">Typografie</a>
+        <a href="#spacing">Spacing</a>
+        <a href="#components">Komponenty</a>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="ds-header">
+      <div class="ds-header-inner">
+        <div>
+          <p class="ds-label">Design System</p>
+          <h1 class="ds-title">aethero web</h1>
+          <p class="ds-version" id="web-v31">v3.1</p>
+        </div>
+        <div class="ds-header-meta">
+          <div class="ds-meta-item">
+            <span class="ds-meta-label">Fonts</span>
+            <span class="ds-meta-val">Kanit + Montserrat</span>
+          </div>
+          <div class="ds-meta-item">
+            <span class="ds-meta-label">Framework</span>
+            <span class="ds-meta-val">Astro 6 / SSG</span>
+          </div>
+          <div class="ds-meta-item">
+            <span class="ds-meta-label">Deploy</span>
+            <span class="ds-meta-val">Cloudflare Pages</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="ds-main">
+
+      <!-- LOGO -->
+      <section class="ds-section" id="logo">
+        <h2 class="ds-section-title">Logo</h2>
+        <div class="ds-logo-grid">
+          <div class="ds-logo-swatch ds-bg-dark">
+            <img src="/ae-logo.svg" alt="æthero" height="40" />
+            <span class="ds-swatch-label">Na tmavém pozadí</span>
+          </div>
+          <div class="ds-logo-swatch ds-bg-teal">
+            <img src="/ae-logo.svg" alt="æthero" height="40" />
+            <span class="ds-swatch-label">Na teal pozadí</span>
+          </div>
+          <div class="ds-logo-swatch ds-bg-white">
+            <img src="/ae-logo.svg" alt="æthero" height="40" style="filter: invert(1) brightness(0);" />
+            <span class="ds-swatch-label ds-label-dark">Na bílém pozadí</span>
+          </div>
+          <div class="ds-logo-swatch ds-bg-dark" style="align-items: flex-start; gap: 16px;">
+            <img src="/ae-logo.svg" alt="æthero" height="28" />
+            <img src="/shopify-plus-badge.svg" alt="Shopify Plus Partner" height="28" style="filter: brightness(0) invert(1);" />
+            <span class="ds-swatch-label">Logo + badge (footer)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLORS -->
+      <section class="ds-section" id="colors">
+        <h2 class="ds-section-title">Barvy</h2>
+
+        <h3 class="ds-subsection-title">Brand</h3>
+        <div class="ds-color-row">
+          <div class="ds-color-chip" style="background: #000326;">
+            <span class="ds-color-name">bg-elevated</span>
+            <span class="ds-color-hex">#000326</span>
+          </div>
+          <div class="ds-color-chip" style="background: #0C0C42;">
+            <span class="ds-color-name">bg-secondary</span>
+            <span class="ds-color-hex">#0C0C42</span>
+          </div>
+          <div class="ds-color-chip" style="background: #030626;">
+            <span class="ds-color-name">bg-primary-alt</span>
+            <span class="ds-color-hex">#030626</span>
+          </div>
+          <div class="ds-color-chip" style="background: #171A1C;">
+            <span class="ds-color-name">neutral-900 (hero)</span>
+            <span class="ds-color-hex">#171A1C</span>
+          </div>
+          <div class="ds-color-chip" style="background: #092066;">
+            <span class="ds-color-name">brand-dark / stats</span>
+            <span class="ds-color-hex">#092066</span>
+          </div>
+        </div>
+
+        <h3 class="ds-subsection-title">Akcenty</h3>
+        <div class="ds-color-row">
+          <div class="ds-color-chip" style="background: #0DD4CD;">
+            <span class="ds-color-name">action (teal)</span>
+            <span class="ds-color-hex">#0DD4CD</span>
+          </div>
+          <div class="ds-color-chip" style="background: #16BECF;">
+            <span class="ds-color-name">action-hover / footer-cta</span>
+            <span class="ds-color-hex">#16BECF</span>
+          </div>
+          <div class="ds-color-chip" style="background: #A081D1;">
+            <span class="ds-color-name">text-secondary / stats-bar</span>
+            <span class="ds-color-hex">#A081D1</span>
+          </div>
+          <div class="ds-color-chip" style="background: #CB00D7;">
+            <span class="ds-color-name">accent-purple</span>
+            <span class="ds-color-hex">#CB00D7</span>
+          </div>
+          <div class="ds-color-chip" style="background: #96BF48;">
+            <span class="ds-color-name">accent-shopify</span>
+            <span class="ds-color-hex">#96BF48</span>
+          </div>
+        </div>
+
+        <h3 class="ds-subsection-title">Neutralní</h3>
+        <div class="ds-color-row">
+          <div class="ds-color-chip ds-color-light" style="background: #F8F9F9;">
+            <span class="ds-color-name">neutral-100</span>
+            <span class="ds-color-hex">#F8F9F9</span>
+          </div>
+          <div class="ds-color-chip ds-color-light" style="background: #D2D2D2;">
+            <span class="ds-color-name">neutral-300</span>
+            <span class="ds-color-hex">#D2D2D2</span>
+          </div>
+          <div class="ds-color-chip ds-color-light" style="background: #A0A3BD;">
+            <span class="ds-color-name">neutral-500</span>
+            <span class="ds-color-hex">#A0A3BD</span>
+          </div>
+          <div class="ds-color-chip" style="background: #686868;">
+            <span class="ds-color-name">neutral-700</span>
+            <span class="ds-color-hex">#686868</span>
+          </div>
+        </div>
+
+        <h3 class="ds-subsection-title">Sémantické</h3>
+        <div class="ds-color-row">
+          <div class="ds-color-chip" style="background: #FF5252;">
+            <span class="ds-color-name">error</span>
+            <span class="ds-color-hex">#FF5252</span>
+          </div>
+          <div class="ds-color-chip" style="background: #4ECCA3;">
+            <span class="ds-color-name">success</span>
+            <span class="ds-color-hex">#4ECCA3</span>
+          </div>
+          <div class="ds-color-chip" style="background: #FFA940;">
+            <span class="ds-color-name">warning</span>
+            <span class="ds-color-hex">#FFA940</span>
+          </div>
+          <div class="ds-color-chip" style="background: #5DADE2;">
+            <span class="ds-color-name">info</span>
+            <span class="ds-color-hex">#5DADE2</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TYPOGRAPHY -->
+      <section class="ds-section" id="typography">
+        <h2 class="ds-section-title">Typografie</h2>
+
+        <div class="ds-type-specimens">
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>--text-h1</code><br />
+              Kanit 700 · 100px · lh 1.15
+            </div>
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(40px,6vw,100px); font-weight: 700; line-height: 1.15; color: #fff;">Jsme<br />Shopify<br />specialisté</span>
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>--text-h2</code><br />
+              Kanit 600 · 70px · lh 1.4
+            </div>
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(32px,4.5vw,70px); font-weight: 600; line-height: 1.4; color: #fff;">Reference</span>
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>--text-h2-vp</code><br />
+              Kanit 600 · 54px · lh 1.2<br />
+              <em>Value prop sekce</em>
+            </div>
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(28px,3.5vw,54px); font-weight: 600; line-height: 1.2; color: #fff;">Shopify dodá technologii,<br /><em style="color: #7C3AED;">aethero</em> strategii.</span>
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>--text-h3</code><br />
+              Kanit 600 · 40px · lh 1.1<br />
+              <em>Service carousel titles</em>
+            </div>
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(24px,3vw,40px); font-weight: 600; line-height: 1.1; color: #fff;">NOVÝ SHOPIFY<br />E-SHOP</span>
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>--text-section-body</code><br />
+              Montserrat 400 · 22px · lh 1.4<br />
+              <em>Value prop, sekce tělo</em>
+            </div>
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 400; line-height: 1.4; color: rgba(255,255,255,0.75);">Od výběru projektu přes design a vývoj<br />až po první objednávku — a dál.</span>
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>--text-nav</code><br />
+              Kanit 500 · 20px · ls 0.06em
+            </div>
+            <div class="ds-type-preview ds-bg-dark" style="gap: 0;">
+              {['ÚVOD', 'CO UMÍME', 'APLIKACE', 'O NÁS', 'KONTAKT'].map(item => (
+                <span style="font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 500; letter-spacing: 0.06em; color: #fff; padding: 0 30px;">{item}</span>
+              ))}
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>--text-small</code><br />
+              Montserrat 400 · 14px
+            </div>
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #A0A3BD;">Česká Shopify agentura. Design, strategie, technologie.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPACING -->
+      <section class="ds-section" id="spacing">
+        <h2 class="ds-section-title">Spacing</h2>
+        <div class="ds-spacing-grid">
+          {[
+            { name: '--space-8', val: '8px' },
+            { name: '--space-16', val: '16px' },
+            { name: '--space-24', val: '24px' },
+            { name: '--space-40', val: '40px' },
+            { name: '--space-80', val: '80px (mob: 48px)' },
+            { name: '--space-120', val: '120px (mob: 64px)' },
+          ].map(s => (
+            <div class="ds-spacing-item">
+              <div class="ds-spacing-bar" style={`width: ${s.val.split('px')[0].replace('(','').trim()}px; max-width: 100%;`}></div>
+              <code>{s.name}</code>
+              <span class="ds-spacing-val">{s.val}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- COMPONENTS -->
+      <section class="ds-section" id="components">
+        <h2 class="ds-section-title">Komponenty</h2>
+
+        <!-- Buttons -->
+        <h3 class="ds-subsection-title">Tlačítka</h3>
+        <div class="ds-component-row ds-bg-dark" style="padding: 40px; gap: 20px; flex-wrap: wrap;">
+          <a href="#" class="btn-hero-demo">DO ČEHO SE SPOLU PUSTÍME?</a>
+          <a href="#" class="btn-teal-demo">CHCI KONZULTACI</a>
+          <a href="#" class="btn-outline-demo">VÍCE O TOM JAK PRACUJEME</a>
+          <a href="#" class="btn-ref-demo">PŘEJÍT NA BU1</a>
+        </div>
+        <div class="ds-component-notes">
+          <code>.btn-hero</code> — 22px Kanit 600, border 2px solid white, radius 6px, pad 9px 35px<br />
+          <code>.btn-teal</code> — 13px Kanit 700, bg #0DD4CD, color #000, radius 100px, pad 14px 32px<br />
+          <code>.btn-outline</code> — 13px Kanit 700, border 2px rgba(255,255,255,0.3), radius 100px<br />
+          <code>.btn-ref</code> (reference CTA) — outline, align-self flex-start
+        </div>
+
+        <!-- Header -->
+        <h3 class="ds-subsection-title">Header</h3>
+        <div class="ds-component-row" style="background: transparent; border: 1px solid rgba(255,255,255,0.06); padding: 0; overflow: hidden; border-radius: 8px;">
+          <div style="background: transparent; padding: 16px 40px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%;">
+            <img src="/ae-logo.svg" alt="æthero" height="28" />
+            <div style="display: flex; gap: 0;">
+              {['ÚVOD', 'CO UMÍME', 'APLIKACE', 'O NÁS', 'KONTAKT'].map(item => (
+                <span style="font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.06em; color: #fff; padding: 0 20px; white-space: nowrap;">{item}</span>
+              ))}
+            </div>
+            <div></div>
+          </div>
+        </div>
+        <div class="ds-component-notes">
+          Fixed, transparent → solid (bg-elevated) on scroll · Logo left · Nav centered via grid 1fr/auto/1fr · 56px height
+        </div>
+
+        <!-- Stats Bar -->
+        <h3 class="ds-subsection-title">Stats Bar</h3>
+        <div class="ds-component-row" style="background: #A081D1; padding: 48px 40px; gap: 60px; flex-wrap: wrap; justify-content: space-around;">
+          {[
+            { num: '4,8 mil', label: 'e-shopů fungujících ve světě' },
+            { num: '175 zemí', label: 'kde můžete prodávat' },
+            { num: '3 500 vývojářů', label: 'z celkových cca 8 000 zaměstnanců' },
+          ].map(s => (
+            <div style="text-align: left;">
+              <div style="font-family: 'Kanit', sans-serif; font-size: clamp(24px,3vw,48px); font-weight: 700; color: #092066; line-height: 1;">{s.num}</div>
+              <div style="font-size: 13px; color: #092066; opacity: 0.6; margin-top: 6px;">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div class="ds-component-notes">
+          bg: #A081D1 (--text-secondary) · čísla: #092066 (--stats-num-color) · Kanit 700 48px
+        </div>
+
+        <!-- Footer CTA -->
+        <h3 class="ds-subsection-title">Footer CTA</h3>
+        <div class="ds-component-row" style="background: #16BECF; padding: 80px 40px; flex-direction: column; align-items: center; text-align: center; gap: 32px;">
+          <div style="font-family: 'Kanit', sans-serif; font-size: clamp(24px,4vw,52px); font-weight: 700; color: #fff; line-height: 1.2;">Máme spolu co probrat? Dejte vědět</div>
+          <div style="display: flex; gap: 48px; flex-wrap: wrap; justify-content: center;">
+            <span style="font-family: 'Kanit', sans-serif; font-size: 22px; font-weight: 600; color: rgba(0,50,60,0.7); text-decoration: underline;">info@aethero.cz</span>
+            <span style="font-family: 'Kanit', sans-serif; font-size: 22px; font-weight: 600; color: rgba(0,50,60,0.7); text-decoration: underline;">+420 776 067 663</span>
+          </div>
+        </div>
+        <div class="ds-component-notes">
+          bg: #16BECF (--action-hover) · H2: Kanit 700 · kontakty: Kanit 600 22px · color: rgba(0,50,60,0.7) (tmavá teal)
+        </div>
+
+        <!-- Radii -->
+        <h3 class="ds-subsection-title">Border-radius</h3>
+        <div class="ds-component-row" style="background: transparent; padding: 0; gap: 24px; flex-wrap: wrap;">
+          <div style="background: #0C0C42; border-radius: 6px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 12px; color: #fff;">6px<br/>btn-hero</span>
+          </div>
+          <div style="background: #0C0C42; border-radius: 10px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 12px; color: #fff;">10px<br/>dropdown</span>
+          </div>
+          <div style="background: #0C0C42; border-radius: 12px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 12px; color: #fff;">12px<br/>img cards</span>
+          </div>
+          <div style="background: #0C0C42; border-radius: 16px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 12px; color: #fff;">16px<br/>ref cards</span>
+          </div>
+          <div style="background: #0C0C42; border-radius: 100px; width: 120px; height: 60px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 12px; color: #fff;">100px<br/>btn-teal</span>
+          </div>
+        </div>
+
+        <!-- Shadows -->
+        <h3 class="ds-subsection-title">Shadows</h3>
+        <div class="ds-component-row" style="background: #0C0C42; padding: 40px; gap: 32px; flex-wrap: wrap;">
+          {[
+            { name: '--shadow-sm', val: '0 1px 2px rgba(0,0,0,0.20)', shadow: '0 1px 2px rgba(0,0,0,0.20)' },
+            { name: '--shadow-md', val: '0 4px 8px + 1px 2px', shadow: '0 4px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15)' },
+            { name: '--shadow-lg', val: '0 12px 24px + 4px 8px', shadow: '0 12px 24px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.20)' },
+            { name: '--shadow-xl', val: '0 24px 48px + 12px 16px', shadow: '0 24px 48px rgba(0,0,0,0.35), 0 12px 16px rgba(0,0,0,0.25)' },
+          ].map(s => (
+            <div style={`background: #171A1C; border-radius: 10px; padding: 24px 32px; box-shadow: ${s.shadow}; text-align: center;`}>
+              <code style="font-size: 11px; color: #0DD4CD;">{s.name}</code>
+              <p style="font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px;">{s.val}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Motion -->
+        <h3 class="ds-subsection-title">Motion / Transition</h3>
+        <div class="ds-component-notes" style="margin-top: 0;">
+          <code>--transition-base: 0.2s ease</code> — používáno na: color, background, opacity, border-color, transform<br />
+          Hero rotate: fade-out 0.3s ease (opacity + translateY 8px)<br />
+          Mobile nav: translateX 0.3s ease<br />
+          Hamburger spans: transform + opacity 0.25s ease
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="ds-footer">
+      <span>aethero web design system · v3.1 · 2026</span>
+    </footer>
+
+  </div>
+</BaseLayout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+  :root {
+    --ds-bg: #0A0A1A;
+    --ds-surface: #12122A;
+    --ds-border: rgba(255,255,255,0.06);
+    --ds-text: #fff;
+    --ds-muted: rgba(255,255,255,0.45);
+    --ds-accent: #0DD4CD;
+    --ds-purple: #A081D1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--ds-bg); color: var(--ds-text); }
+
+  .ds-page {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--ds-bg);
+    color: var(--ds-text);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  .ds-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,26,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ds-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 48px;
+    gap: 40px;
+  }
+  .ds-nav-logo {
+    font-size: 13px;
+    color: var(--ds-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .ds-nav-logo:hover { color: var(--ds-text); }
+  .ds-nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .ds-nav-links a {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ds-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .ds-nav-links a:hover { color: var(--ds-accent); }
+
+  /* HEADER */
+  .ds-header {
+    padding: 80px 40px 60px;
+    border-bottom: 1px solid var(--ds-border);
+    background: linear-gradient(180deg, rgba(13,212,205,0.04) 0%, transparent 100%);
+  }
+  .ds-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .ds-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ds-accent);
+    margin-bottom: 12px;
+  }
+  .ds-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+  }
+  .ds-version {
+    font-family: 'Kanit', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--ds-purple);
+    margin-top: 8px;
+  }
+  .ds-header-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+  .ds-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .ds-meta-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ds-muted);
+    min-width: 80px;
+  }
+  .ds-meta-val {
+    font-size: 13px;
+    font-family: 'Kanit', sans-serif;
+    color: #fff;
+  }
+
+  /* MAIN */
+  .ds-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* SECTIONS */
+  .ds-section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--ds-border);
+  }
+  .ds-section-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ds-accent);
+    margin-bottom: 40px;
+  }
+  .ds-subsection-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ds-muted);
+    margin: 48px 0 16px;
+  }
+  .ds-subsection-title:first-of-type { margin-top: 0; }
+
+  /* LOGO */
+  .ds-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .ds-logo-swatch {
+    border-radius: 10px;
+    padding: 32px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border: 1px solid var(--ds-border);
+  }
+  .ds-bg-dark { background: #000326; }
+  .ds-bg-teal { background: #16BECF; }
+  .ds-bg-white { background: #fff; }
+  .ds-swatch-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+  }
+  .ds-label-dark { color: rgba(0,0,0,0.4); }
+
+  /* COLORS */
+  .ds-color-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .ds-color-chip {
+    border-radius: 10px;
+    padding: 40px 16px 12px;
+    min-width: 140px;
+    border: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .ds-color-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+  }
+  .ds-color-hex {
+    font-family: 'Kanit', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+  .ds-color-light .ds-color-name { color: rgba(0,0,0,0.6); }
+  .ds-color-light .ds-color-hex { color: rgba(0,0,0,0.35); }
+
+  /* TYPOGRAPHY */
+  .ds-type-specimens {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .ds-type-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .ds-type-meta {
+    font-size: 12px;
+    color: var(--ds-muted);
+    line-height: 1.6;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .ds-type-meta code {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ds-accent);
+    font-family: monospace;
+  }
+  .ds-type-meta em {
+    font-style: italic;
+    color: var(--ds-muted);
+    font-size: 11px;
+  }
+  .ds-type-preview {
+    border-radius: 10px;
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid var(--ds-border);
+    overflow: hidden;
+  }
+
+  /* SPACING */
+  .ds-spacing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .ds-spacing-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .ds-spacing-bar {
+    height: 20px;
+    background: linear-gradient(90deg, var(--ds-accent), var(--ds-purple));
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .ds-spacing-item code {
+    font-size: 12px;
+    color: var(--ds-accent);
+    min-width: 120px;
+    font-family: monospace;
+  }
+  .ds-spacing-val {
+    font-size: 12px;
+    color: var(--ds-muted);
+  }
+
+  /* COMPONENTS */
+  .ds-component-row {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--ds-border);
+    overflow: hidden;
+  }
+  .ds-component-notes {
+    font-size: 12px;
+    color: var(--ds-muted);
+    line-height: 1.7;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--ds-border);
+  }
+  .ds-component-notes code {
+    color: var(--ds-accent);
+    font-family: monospace;
+  }
+
+  /* Demo buttons */
+  .btn-hero-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 35px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    transition: background 0.2s;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .btn-hero-demo:hover { background: rgba(255,255,255,0.1); }
+  .btn-teal-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 32px;
+    background: #0DD4CD;
+    color: #000;
+    font-family: 'Kanit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 100px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-outline-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 32px;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 100px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .btn-ref-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 32px;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 100px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* FOOTER */
+  .ds-footer {
+    border-top: 1px solid var(--ds-border);
+    padding: 24px 40px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ds-muted);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .ds-logo-grid { grid-template-columns: repeat(2, 1fr); }
+    .ds-type-row { grid-template-columns: 1fr; }
+    .ds-type-meta { padding: 16px 0 0; }
+    .ds-nav { padding: 0 20px; }
+    .ds-main { padding: 0 20px 60px; }
+    .ds-header { padding: 40px 20px; }
+  }
+</style>
