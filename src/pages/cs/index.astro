@@ -171,6 +171,17 @@ const blogPosts = [
 
   <!-- SERVICE SELECTOR CAROUSEL -->
   <section class="services-section">
+    <div class="container services-header">
+      <span class="services-label">Co umíme</span>
+      <div class="services-controls">
+        <button class="ctrl-btn ctrl-prev" id="ctrl-prev" aria-label="Předchozí">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="ctrl-btn ctrl-next" id="ctrl-next" aria-label="Další">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
     <div class="services-track-wrap" id="services-track-wrap">
       <div class="services-track">
         {services.map((s) => (
@@ -184,14 +195,6 @@ const blogPosts = [
           </a>
         ))}
       </div>
-    </div>
-    <div class="services-controls">
-      <button class="ctrl-btn ctrl-prev" id="ctrl-prev" aria-label="Předchozí">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <button class="ctrl-btn ctrl-next" id="ctrl-next" aria-label="Další">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
     </div>
   </section>
 
@@ -521,11 +524,23 @@ const blogPosts = [
     color: #fff;
     text-transform: uppercase;
   }
+  .services-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  .services-label {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
   .services-controls {
     display: flex;
     gap: 12px;
-    justify-content: flex-end;
-    padding: 24px 40px 0;
   }
   .ctrl-btn {
     width: 44px; height: 44px;
@@ -642,7 +657,7 @@ const blogPosts = [
     border-top: 1px solid rgba(255,255,255,0.06);
   }
   .ae-services-header { text-align: center; margin-bottom: 56px; }
-  .ae-znak { margin: 0 auto 24px; display: block; }
+  .ae-znak { margin: 0 auto 24px; display: block; width: 80px; height: 80px; }
   .ae-services-title {
     font-family: var(--font-primary);
     font-size: 22px;
