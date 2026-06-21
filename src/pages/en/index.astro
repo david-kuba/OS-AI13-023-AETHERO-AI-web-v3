@@ -172,7 +172,7 @@ const blogPosts = [
   <section class="services-section">
     <div class="svc-wide">
     <div class="services-track-wrap" id="services-track-wrap">
-      <div class="services-track">
+      <div class="services-track" id="services-track">
         {services.map((s, i) => (
           <>
             <a href={s.href} class="service-item">
@@ -361,38 +361,25 @@ const blogPosts = [
 </PageLayout>
 
 <script>
-  // Auto-scroll carousel
+  const track = document.getElementById('services-track') as HTMLElement | null;
   const trackWrap = document.getElementById('services-track-wrap') as HTMLElement | null;
-  if (trackWrap) {
-    const step = 380;
-    const DURATION = 1200;
+  if (track && trackWrap) {
+    const STEP = 568;
     const INTERVAL = 5000;
-    let pos = 0;
-
-    function easeInOut(t: number) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
-
-    function smoothScroll(target: number) {
-      const start = trackWrap.scrollLeft;
-      const change = target - start;
-      const startTime = performance.now();
-      function step(now: number) {
-        const p = Math.min((now - startTime) / DURATION, 1);
-        trackWrap.scrollLeft = start + change * easeInOut(p);
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
+    let offset = 0;
 
     setInterval(() => {
-      const maxScroll = trackWrap.scrollWidth - trackWrap.clientWidth;
-      if (pos + step >= maxScroll) {
-        pos = 0;
+      const maxOffset = track.scrollWidth - trackWrap.clientWidth;
+      offset += STEP;
+      if (offset > maxOffset) {
+        offset = 0;
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        track.offsetWidth;
+        requestAnimationFrame(() => { track.style.transition = ''; });
       } else {
-        pos += step;
+        track.style.transform = `translateX(-${offset}px)`;
       }
-      smoothScroll(pos);
     }, INTERVAL);
   }
 </script>
@@ -431,8 +418,8 @@ const blogPosts = [
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 40px;
-    padding-top: 80px;
-    padding-bottom: 60px;
+    padding-top: 155px;
+    padding-bottom: 135px;
   }
   .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
   .hero-heading {
@@ -481,25 +468,20 @@ const blogPosts = [
     margin: 0 auto;
   }
   .services-track-wrap {
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    overflow: hidden;
     padding: 0 40px;
   }
-  .services-track-wrap::-webkit-scrollbar { display: none; }
   .services-track {
     display: flex;
     gap: 0;
     width: max-content;
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
   }
   .service-item {
     display: flex;
     flex-direction: column;
     min-width: 520px;
-    scroll-snap-align: start;
     padding: 40px 48px;
     color: #fff;
     cursor: pointer;
