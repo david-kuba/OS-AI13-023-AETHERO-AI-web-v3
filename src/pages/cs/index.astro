@@ -207,7 +207,7 @@ const blogPosts = [
         Staráme se o celý životní cyklus vašeho e-shopu tak,<br />
         <span class="value-purple">aby technologie nikdy nebyla překážka, ale nástroj růstu.</span>
       </p>
-      <img src="/icons/shopify-monotone-white.svg" alt="Shopify" class="shopify-icon" width="60" height="64" loading="lazy" />
+      <img src="/shopify-white.png" alt="Shopify" class="shopify-icon" loading="lazy" />
     </div>
   </section>
 
@@ -250,7 +250,7 @@ const blogPosts = [
         <span class="stat-num">3 500 vývojářů</span>
         <span class="stat-label">z celkových cca 8 000 zaměstnanců</span>
       </div>
-      <img src="/shopify-white.png" alt="Shopify" class="shopify-stats-logo" width="140" height="40" loading="lazy" />
+      <img src="/icons/shopify-monotone-white.svg" alt="Shopify" class="shopify-stats-logo" loading="lazy" />
     </div>
   </section>
 
@@ -483,6 +483,7 @@ const blogPosts = [
     border-right: 1px solid rgba(255,255,255,0.08);
     padding: 40px;
     color: #fff;
+    cursor: pointer;
     transition: opacity 0.2s;
   }
   .service-item:first-child { padding-left: 0; }
@@ -497,9 +498,10 @@ const blogPosts = [
     line-height: 1;
   }
   .service-text {
+    font-family: var(--font-primary);
     font-size: 14px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+    color: #fff;
     line-height: 1.4;
     margin: 0;
   }
@@ -561,7 +563,7 @@ const blogPosts = [
     margin-bottom: 48px;
   }
   .value-purple { color: var(--text-secondary); }
-  .shopify-icon { opacity: 0.85; }
+  .shopify-icon { width: 200px; height: auto; opacity: 0.9; margin-top: 16px; }
 
   /* FEATURES */
   .features {
@@ -594,7 +596,7 @@ const blogPosts = [
     color: var(--text-secondary);
     margin-bottom: 2px;
   }
-  .feature-desc { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.72); line-height: 1.5; }
+  .feature-desc { font-size: 13px; font-weight: 500; color: #fff; line-height: 1.5; }
 
   /* STATS BAR */
   .stats-bar {
@@ -631,7 +633,7 @@ const blogPosts = [
     color: var(--stats-num-color);
     line-height: 1.4;
   }
-  .shopify-stats-logo { width: 140px; height: auto; opacity: 0.9; flex-shrink: 0; }
+  .shopify-stats-logo { width: 160px; height: auto; opacity: 0.9; flex-shrink: 0; }
 
   /* AE SERVICES */
   .ae-services {
@@ -666,7 +668,7 @@ const blogPosts = [
     color: var(--text-secondary);
     margin-bottom: 4px;
   }
-  .ae-service-desc { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.72); line-height: 1.5; }
+  .ae-service-desc { font-size: 13px; font-weight: 500; color: #fff; line-height: 1.5; }
   .ae-services-ctas {
     display: flex;
     gap: 16px;
