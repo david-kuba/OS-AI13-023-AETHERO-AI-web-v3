@@ -2,75 +2,167 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const points = [
-  { title: 'Visual Identity', desc: 'Logo, colours, typography and a brand manual — the foundation everything is built on.' },
-  { title: 'Tone of Voice', desc: 'How your brand speaks to customers — from product descriptions to email campaigns.' },
-  { title: 'Digital Experience', desc: 'How your brand translates into your store — UX, UI and the customer journey.' },
-  { title: 'Brand Materials', desc: 'Social media templates, email headers, business cards and presentations.' },
+const workCards = [
+  { title: 'Brand, Identity, DX', desc: 'Brand, colours, fonts, the entire digital experience — a coherent whole that makes sense to people and to your store.' },
+  { title: 'Theme', desc: 'Professional selection and configuration of a Shopify theme. Speed, CTAs, layouts, blocks, variants and brand alignment.' },
+  { title: 'Content & presentation', desc: 'Visual and content foundations. Brand templates, product content and launch visuals tied to the store.' },
+  { title: 'Functionality & conversion', desc: 'Product pages, collections, upsell, cross-sell and UX logic. We design Shopify to sell — not just to look good.' },
+  { title: 'Growth through marketing', desc: 'Preparation for performance campaigns and expansion. SEO, analytics, localisation, marketing tool integration and further growth.' },
+];
+
+const relatedServices = [
+  { href: '/en/co-umime/novy-shopify-e-shop', label: 'New Shopify store' },
+  { href: '/en/co-umime/prechod-na-shopify', label: 'Migration to Shopify' },
+  { href: '/en/co-umime/expanze-do-zahranici', label: 'International expansion' },
+  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
+  { href: '/en/co-umime/analyza-a-strategie', label: 'Strategy & analytics' },
+  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
 ];
 ---
 
-<PageLayout title="Brand & Identity" description="We craft visual identities and digital experiences for e-commerce projects on Shopify." lang="en">
-  <ServiceHero lang="en"
+<PageLayout title="I need a brand | aethero" description="We build brands that resonate across cultures. Brand, visual identity and digital experience for your Shopify store." lang="en">
+  <ServiceHero
+    lang="en"
     label="Brand & Identity"
     title="I need a <span style='color:var(--action)'>BRAND</span>"
-    subtitle="A strong brand is not a luxury — it is the foundation of every successful e-shop. We will create an identity that wins and keeps customers."
+    subtitle="And through it — a place in the minds and hearts of customers"
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
+    image="/triangle.webp"
+    imageAlt="Brand and visual identity"
   />
 
-  <section class="section">
+  <!-- Intro hero text -->
+  <section class="section bg-elevated">
+    <div class="container intro-wrap">
+      <h2 class="section-title">We build BRANDS that resonate across cultures</h2>
+      <h3 class="intro-sub">The ultimate solution we offer is building a complete brand together. It is neither easy nor cheap — but it is a proven path that works.</h3>
+      <a href="tel:+420776067663" class="intro-link">Let's get to it ➝</a>
+    </div>
+  </section>
+
+  <!-- Brand pillar -->
+  <section class="section bg-secondary">
     <div class="container">
-      <h2 class="section-title">What a brand project includes</h2>
-      <div class="points-grid">
-        {points.map((p) => (
-          <div class="point-card">
-            <h3>{p.title}</h3>
-            <p>{p.desc}</p>
+      <h3 class="pillar-heading">BRAND is the first pillar of your success.</h3>
+      <div class="brand-text-col">
+        <p class="section-text">You might wonder why we are talking about something that seems so ordinary, even basic — BRAND? Because you can intentionally build it small and simple, but you must never build it wrong and then show it to the world. Here, the rule applies in full: you will not get a second chance to make a first impression.</p>
+        <p class="section-text">Your BRAND is the energy of the entire e-commerce machine. And just like electricity, it will not forgive a serious mistake. BRAND is an absolutely essential ingredient — you need to take it seriously if you want to succeed.</p>
+        <p class="section-text">Name, symbol — logo, domain, typography, colours... That is the part that is easy to talk about, yet so much harder to get right. And then there is the second area — the parts of the brand that can be described in lofty terms, but which emerge from deeper insight and feeling, and must be encoded into the company through a consistent approach to the brand: communication, values, vision, internal culture, people's motivation (the kind that will shine through in the long-term success of the company) and much more.</p>
+      </div>
+      <blockquote class="ogilvy-quote">„A brand is what remains when the factory burns down..." <cite>— David Ogilvy</cite></blockquote>
+    </div>
+  </section>
+
+  <!-- What we can work on together -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="work-heading">WHAT WE CAN — WORK ON TOGETHER</h2>
+      <div class="work-grid">
+        {workCards.map((c) => (
+          <div class="work-card">
+            <h3 class="work-card-title">{c.title}</h3>
+            <p class="work-card-desc">{c.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
+  <!-- Why you should not do it alone -->
+  <section class="section bg-secondary">
+    <div class="container brand-analogy">
+      <h3 class="analogy-heading">And why do we think you definitely should not do this alone?</h3>
+      <p class="section-text">Building a brand is like building a new house. At first glance, everything seems obvious to everyone. After all, everyone knows there will be a kitchen and a bathroom. But it is only when you start figuring out "how to fit out that kitchen, connect it to the dining room, and at the same time find the right tile style for the bathroom and the right type of bathtub..." — that is when it really gets demanding. And then you wish you had help at hand!</p>
+      <p class="section-text"><strong>And that is exactly why we are here.</strong></p>
+      <a href="tel:+420776067663" class="intro-link">get in touch with us ➝</a>
+    </div>
+  </section>
+
+  <!-- Muhtar Kent quote -->
+  <section class="section bg-elevated quote-section">
+    <div class="container">
+      <blockquote class="kent-quote">"A brand is a promise. And a great brand is a promise kept."<cite>— Muhtar Kent</cite></blockquote>
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">What else can we do for you around Shopify?</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
+          <li>
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Let's get started</h2>
-      <p>Write to us or call — the first consultation is free.</p>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      <h2>Brand, design — shall we talk?<br />Get in touch</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
 </PageLayout>
 
 <style>
-  .section { padding: var(--space-120) 0; background: var(--bg-elevated); }
+  .section { padding: var(--space-120) 0; }
+  .bg-elevated { background: var(--bg-elevated); }
+  .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .points-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
-  .point-card {
-    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-md); padding: var(--space-24);
-  }
-  .point-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .point-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: var(--space-24); max-width: 760px; }
+
+  .intro-wrap { max-width: 800px; }
+  .intro-sub { font-size: clamp(18px, 2vw, 24px); font-weight: 400; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: var(--space-32); }
+  .intro-link { display: inline-block; color: var(--action); font-size: 16px; font-weight: 600; text-decoration: none; }
+  .intro-link:hover { opacity: 0.75; }
+
+  .pillar-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-40); color: var(--action); }
+  .brand-text-col { max-width: 760px; }
+
+  .ogilvy-quote { margin-top: var(--space-64); font-size: clamp(18px, 2vw, 24px); font-style: italic; color: rgba(255,255,255,0.9); border-left: 3px solid var(--action); padding-left: var(--space-32); line-height: 1.5; }
+  .ogilvy-quote cite { display: block; font-size: 14px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-16); }
+
+  .work-heading { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; letter-spacing: 0.05em; margin-bottom: var(--space-48); color: var(--action); text-transform: uppercase; }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .work-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .work-card-title { font-size: 16px; font-weight: 700; color: var(--action); margin-bottom: var(--space-12); }
+  .work-card-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  .brand-analogy { max-width: 760px; }
+  .analogy-heading { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; margin-bottom: var(--space-32); }
+
+  .quote-section { padding: var(--space-80) 0; }
+  .kent-quote { font-size: clamp(20px, 2.5vw, 32px); font-style: italic; color: rgba(255,255,255,0.9); text-align: center; line-height: 1.5; max-width: 720px; margin: 0 auto; }
+  .kent-quote cite { display: block; font-size: 16px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-24); }
+
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
+  .related-link:hover { color: var(--action); }
+
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated);
-    font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md);
-    transition: background var(--transition-base);
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; }
+  .cta-contact:hover { opacity: 0.7; }
+
+  @media (max-width: 1024px) {
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
   }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost {
-    display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2);
-    color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600;
-    border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base);
+  @media (max-width: 768px) {
+    .work-grid { grid-template-columns: 1fr; }
   }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 768px) { .points-grid { grid-template-columns: 1fr; } }
 </style>

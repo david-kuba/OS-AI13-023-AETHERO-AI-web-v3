@@ -3,118 +3,345 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 const features = [
-  { title: 'Shopify Sidekick', desc: 'AI assistant built right into the admin — creates products, writes descriptions, suggests SEO improvements.' },
-  { title: 'Intuitive Admin', desc: 'Modern interface operable without technical skills, available in multiple languages.' },
-  { title: 'Mobile App', desc: 'Track revenue and manage orders from anywhere, in real time.' },
-  { title: 'Multichannel Selling', desc: 'Instagram, TikTok, Facebook, Google Shopping and Amazon — all from one admin.' },
-  { title: 'Analytics & Marketing', desc: 'Clear dashboards, trend tracking and smart CRM integration.' },
-  { title: 'Automation', desc: 'Shopify Flow responds to customer behaviour without manual work.' },
-  { title: 'App Store', desc: 'Over 10,000 apps built across 15+ years — a solution for every need.' },
+  {
+    title: 'AI partner, right in your store',
+    logo: '/shopify-sidekick-logo2.webp',
+    desc: 'Sidekick is an AI assistant integrated into the store admin that significantly speeds up your work in Shopify. It can handle operational tasks (create products, edit collections, analyse sales, prepare reports), help with marketing (writing descriptions, emails, SEO recommendations), propose and apply storefront modifications including appearance changes or edit the theme to order including Liquid code generation. Sidekick can explain how settings work in the admin, recommend steps for store growth, automate processes and suggest best practices. Answers are personalised based on your sales, customers and your store\'s specific configuration.',
+    img: '/shopify-premium-story.webp',
+    reverse: false,
+  },
+  {
+    title: 'A clear and modern admin',
+    logo: null,
+    desc: 'An admin environment you get oriented in within minutes — even without technical knowledge. Products, orders, payments and content are all managed from one place, simply and logically. Instead of a complex system you get a tool that puts you in control of your store from day one. And don\'t worry — you can use it in English too.',
+    img: null,
+    reverse: true,
+  },
+  {
+    title: 'Manage your store in the app',
+    logo: null,
+    desc: 'The Shopify mobile app lets you manage the entire store from your phone. Track revenue in real time, process orders, respond to customers and monitor performance from anywhere in the world.',
+    img: '/appka.webp',
+    reverse: false,
+  },
+  {
+    title: 'Sell where life happens',
+    logo: null,
+    desc: 'Instagram, TikTok, Facebook, Google Shopping, Amazon — all connected to a single Shopify admin. One warehouse, one source of truth for inventory, one hub for all orders.',
+    img: '/prodej-kdekoliv.webp',
+    reverse: true,
+  },
+  {
+    title: 'Analytics, marketing',
+    logo: null,
+    desc: 'Clear dashboards, trend tracking and smart customer segmentation. Shopify Email, SMS marketing and integrations with Google Analytics, Meta Ads or Klaviyo — all without complex setup.',
+    img: '/data-marketing.webp',
+    reverse: false,
+  },
+  {
+    title: 'Automation',
+    logo: null,
+    desc: 'Shopify Flow responds to customer behaviour automatically. Order tagging, email sequences, discounts, warehouse notifications — set it once, then it runs without you.',
+    img: '/flow-automation.webp',
+    reverse: true,
+  },
+  {
+    title: 'Shopify App Store',
+    logo: null,
+    desc: 'Apps.shopify.com — an ecosystem into which someone has already invested millions of hours. The Shopify App Store is not "just a list of add-ons". It is one of the largest e-commerce ecosystems in the world — a place where developers, technology companies and Shopify itself have spent the last 15+ years systematically solving problems that would otherwise cost you months of development, testing and fine-tuning. You will find over ten thousand apps that extend Shopify with practically anything you can think of.',
+    img: '/aplikace.webp',
+    reverse: false,
+  },
 ];
 
 const reasons = [
   'One of the 3 most-used e-commerce platforms in the world',
-  'A year ahead of European competitors in platform updates',
-  'Large international company — no single-vendor dependency',
-  'International scaling without migration',
-  'PCI DSS certified with enterprise-grade security',
+  'A year ahead of European competitors in updates and features',
+  'Large international company — no dependence on a single local vendor',
+  'International scaling without platform migration',
+  'PCI DSS certified with top-tier security built in',
+  'Shopify Plus for enterprise with dedicated support',
+  'Community of partners and agencies worldwide',
 ];
 
-const process = [
-  { step: '01', title: 'Discovery', desc: 'We discuss your requirements, goals and project timeline.' },
-  { step: '02', title: 'Analysis & Recommendation', desc: 'You receive a concrete architecture proposal and our recommendations.' },
-  { step: '03', title: 'Proposal & Contract', desc: 'We prepare an offer, sign the contract and get started.' },
-  { step: '04', title: 'Launch', desc: 'Design, development, testing, launch and 30 days of post-launch support.' },
-  { step: '05', title: 'Growth', desc: 'Long-term partnership — management, optimisation and growth.' },
+const capabilities = [
+  'Product, collection and pricing management',
+  'Orders, inventory and carriers',
+  'Customers and CRM',
+  'Payment gateways and checkout',
+  'SEO and marketing tools',
+  'Analytics and reports',
+  'Apps and integrations',
+  'Multi-language and multi-currency',
+];
+
+const relatedServices = [
+  { href: '/en/co-umime/potrebuji-brand', label: 'I need a brand' },
+  { href: '/en/co-umime/prechod-na-shopify', label: 'Migration to Shopify' },
+  { href: '/en/co-umime/expanze-do-zahranici', label: 'International expansion' },
+  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
+  { href: '/en/co-umime/analyza-a-strategie', label: 'Strategy & analytics' },
+  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
 ];
 ---
 
-<PageLayout title="New Shopify Store" description="We design and build new Shopify e-shops from scratch — fast, scalable and future-ready." lang="en">
-  <ServiceHero lang="en"
-    label="New Shopify Store"
-    title="NEW <span style='color:var(--action)'>SHOPIFY STORE</span>"
-    subtitle="We handle the entire process from store selection through design and development to the first order — and beyond. Your technology will never be a barrier."
+<PageLayout title="New Shopify Store | aethero" description="We launch your new store on Shopify — from design through development to the first order. We skip the dead ends and launch a store that sells." lang="en">
+  <ServiceHero
+    lang="en"
+    label="New store"
+    title="NEW STORE<br /><span style='color:var(--action)'>ON SHOPIFY</span>"
+    subtitle="Launch your e-commerce project on the international super-platform. We skip the dead ends and launch a store that sells."
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
+    cta2Label="Find out how"
+    cta2Href="#shopify-why"
+    image="/infinity.webp"
+    imageAlt="Shopify store by aethero"
   />
 
+  <!-- Let's launch your new store -->
+  <section class="section-intro bg-elevated">
+    <div class="container">
+      <h2 class="intro-heading">Let's launch your<br /><span class="text-action">NEW STORE</span> on Shopify</h2>
+      <p class="intro-text">Everything starts the same — a great idea and a vague notion of how to launch it. Will you build it alone or with us? If you think Shopify is too big for you, we will convince you otherwise.</p>
+      <a href="tel:+420776067663" class="btn-action">Free call</a>
+      <p class="intro-text intro-text--spaced">If you are serious about your project, we know what to do. We love working with people who come with plans — not with questions about whether it is even possible.</p>
+      <p class="intro-text">We bring the experience and intuition. You bring the goal and we find the path.</p>
+      <a href="#shopify-why" class="intro-link">Let's get to it →</a>
+    </div>
+  </section>
+
+  <!-- What do we get with Shopify? -->
+  <section class="section bg-secondary" id="shopify-why">
+    <div class="container">
+      <div class="two-col-capabilities">
+        <div>
+          <h2 class="section-title">Wondering what we get with Shopify?</h2>
+          <p class="section-text">A modern e-commerce platform backed by tens of millions of merchants and years of development — technological infrastructure, global distribution, PCI DSS compliance and over 10,000 apps.</p>
+          <p class="section-text">Shopify invests tens of billions of dollars annually in infrastructure. Which means you are not affected by outages, security incidents or falling behind the competition.</p>
+          <a href="#features" class="section-link">What are those? →</a>
+        </div>
+        <ul class="capability-list" id="features">
+          {capabilities.map((c) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{c}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature sections - alternating image/text -->
+  {features.map((f) => (
+    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
+      <div class="container feature-inner">
+        <div class="feature-text">
+          {f.logo && <img src={f.logo} alt={f.title} class="feature-logo" loading="lazy" />}
+          <h2 class="feature-title">{f.title}</h2>
+          <p class="feature-desc">{f.desc}</p>
+        </div>
+        {f.img && (
+          <div class="feature-img-wrap">
+            <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />
+          </div>
+        )}
+        {!f.img && (
+          <div class="feature-img-wrap feature-img-wrap--empty"></div>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <!-- Why Shopify + Groomo -->
+  <section class="section bg-secondary">
+    <div class="container two-col-groomo">
+      <div>
+        <h2 class="section-title">WHY start on the Shopify platform?</h2>
+        <p class="section-text">Let us tell you why the most popular e-commerce platform in the world is the ideal choice for your business — regardless of size or products.</p>
+        <ul class="reasons-list">
+          {reasons.map((r) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="groomo-wrap">
+        <a href="/en/zkusenosti" class="groomo-card">
+          <img src="/groomo-ref-na-vysku.webp" alt="Groomo — case study" class="groomo-img" loading="lazy" />
+          <div class="groomo-label">
+            <span class="groomo-tag">Case Study</span>
+            <p>From brand to store — how we built Groomo on Shopify</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other services -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">Why Shopify?</h2>
-      <ul class="reasons-list">
-        {reasons.map((r) => <li>{r}</li>)}
+      <h2 class="section-title">Other services</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
+          <li>
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </section>
 
-  <section class="section bg-secondary">
-    <div class="container">
-      <h2 class="section-title">What you get</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">How we work</h2>
-      <div class="process-list">
-        {process.map((p) => (
-          <div class="process-item">
-            <span class="process-step">{p.step}</span>
-            <div>
-              <strong>{p.title}</strong>
-              <p>{p.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Ready to build?</h2>
-      <p>Write to us or call — the first consultation is free.</p>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      <h2>Already decided?<br />Get in touch:</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
 </PageLayout>
 
 <style>
+  /* Intro section */
+  .section-intro { padding: var(--space-120) 0; }
+  .intro-heading {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: var(--space-40);
+    max-width: 760px;
+  }
+  .text-action { color: var(--action); }
+  .intro-text {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    max-width: 720px;
+    margin-bottom: var(--space-16);
+  }
+  .intro-text--spaced { margin-top: var(--space-40); }
+  .btn-action {
+    display: inline-flex;
+    padding: 16px 40px;
+    background: var(--action);
+    color: #000;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    margin: var(--space-32) 0;
+    transition: background var(--transition-base);
+  }
+  .btn-action:hover { background: var(--action-hover); }
+  .intro-link {
+    display: inline-block;
+    margin-top: var(--space-24);
+    color: var(--action);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity var(--transition-base);
+  }
+  .intro-link:hover { opacity: 0.75; }
+
+  /* Capabilities section */
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .reasons-list li { display: flex; align-items: flex-start; gap: var(--space-8); font-size: var(--text-small); color: var(--neutral-300); }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .process-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-24); }
-  .process-item { display: flex; gap: var(--space-16); }
-  .process-step { font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); min-width: 28px; padding-top: 2px; flex-shrink: 0; }
-  .process-item strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-  .process-item p { font-size: var(--text-small); color: var(--neutral-500); }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
+  .section-link { color: var(--action); font-size: 15px; font-weight: 600; text-decoration: none; }
+  .section-link:hover { opacity: 0.75; }
+  .two-col-capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .capability-list { list-style: none; display: flex; flex-direction: column; gap: 16px; padding-top: var(--space-8); }
+  .capability-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .capability-list svg { flex-shrink: 0; margin-top: 1px; }
+
+  /* Feature sections */
+  .feature-section { padding: var(--space-120) 0; }
+  .feature-section:nth-child(odd) { background: var(--bg-elevated); }
+  .feature-section:nth-child(even) { background: var(--bg-secondary); }
+  .feature-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-80);
+    align-items: center;
+  }
+  .feature-section--reverse .feature-inner { direction: rtl; }
+  .feature-section--reverse .feature-text { direction: ltr; }
+  .feature-section--reverse .feature-img-wrap { direction: ltr; }
+  .feature-logo { display: block; height: 32px; width: auto; margin-bottom: var(--space-24); }
+  .feature-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); }
+  .feature-desc { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; }
+  .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
+  .feature-img-wrap--empty { min-height: 200px; }
+  .feature-img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: var(--radius-md);
+    display: block;
+  }
+
+  /* Why Shopify + Groomo */
+  .two-col-groomo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: var(--space-24); }
+  .reasons-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .reasons-list svg { flex-shrink: 0; margin-top: 2px; }
+  .groomo-wrap { display: flex; align-items: flex-start; }
+  .groomo-card { display: block; text-decoration: none; border-radius: var(--radius-md); overflow: hidden; background: var(--bg-elevated); transition: transform var(--transition-base); }
+  .groomo-card:hover { transform: translateY(-4px); }
+  .groomo-img { display: block; width: 100%; height: auto; }
+  .groomo-label { padding: var(--space-24); }
+  .groomo-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-8); }
+  .groomo-label p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0; }
+
+  /* Related */
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-16) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 15px;
+    color: var(--neutral-300);
+    transition: color var(--transition-base);
+    text-decoration: none;
+  }
+  .related-link:hover { color: var(--action); }
+
+  /* CTA */
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact:hover { opacity: 0.7; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .two-col-capabilities { grid-template-columns: 1fr; }
+    .two-col-groomo { grid-template-columns: 1fr; }
+    .feature-inner { grid-template-columns: 1fr; }
+    .feature-section--reverse .feature-inner { direction: ltr; }
+    .feature-img-wrap { display: none; }
+  }
 </style>

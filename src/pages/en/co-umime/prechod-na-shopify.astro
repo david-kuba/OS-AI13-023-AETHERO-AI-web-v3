@@ -2,94 +2,199 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const steps = [
-  { step: '01', title: 'Start', desc: 'Migration decision, scope definition and timeline planning.' },
-  { step: '02', title: 'Preparation', desc: 'Joint migration planning — data map, URL structure, SEO audit.' },
-  { step: '03', title: 'Data & SEO', desc: 'Input validation, output configuration, redirect preparation.' },
-  { step: '04', title: 'Migration to Shopify', desc: 'Implementation, testing and go-live.' },
+const checkItems = [
+  'Multi-currency and multilanguage without plugins',
+  'ERP, CRM and logistics integrations',
+  'Preserving SEO and URL structure',
+  'Online + offline via Shopify POS',
+  'Process automation via Shopify Flow',
+  'International expansion without platform migration',
 ];
 
 const features = [
-  { title: 'Multichannel from One Place', desc: 'Sell across all channels from a single admin.' },
-  { title: 'Social Commerce', desc: 'Native integration with Instagram, TikTok and YouTube.' },
-  { title: 'App Store Ecosystem', desc: 'A full ecosystem of apps built for performance.' },
-  { title: 'Product Taxonomy', desc: 'Advanced product organisation across channels and markets.' },
-  { title: 'Shopify Shop App', desc: 'Mobile shopping for customers, natively.' },
-  { title: 'B2B Solution', desc: 'Enterprise features for B2B customers in Shopify Plus.' },
+  { title: 'Multichannel integration', desc: 'Sell from a single admin across all channels — Instagram, TikTok, Google Shopping, Amazon. One warehouse, one source of truth for inventory, everything from the Shopify admin.', img: '/shopify-chanels.webp', reverse: false },
+  { title: 'Social media integration', desc: 'Direct selling via Instagram, TikTok, Facebook and YouTube. Unified management of campaigns, products and orders from one place. Customers buy where they already are.', img: '/fbandinsta.webp', reverse: true },
+  { title: 'Taxonomy and categorisation', desc: 'Advanced product organisation with Shopify product taxonomy — over 10,000 standardised categories. Better search, SEO and customer experience.', img: '/shopify-produkt-taxonomy.webp', reverse: false },
+  { title: 'Show it to the world in the app', desc: 'The Shopify Shop App gives customers a branded mobile experience. Notifications, order tracking, personalised feed — in every customer\'s phone.', img: '/shopapp.webp', reverse: true },
+  { title: 'B2B pro solution', desc: 'Shopify Plus enables full B2B functionality — custom price lists, company accounts, approval processes, ERP connection and B2B checkout. Enterprise features without the enterprise price.', img: '/b2b.webp', reverse: false },
+];
+
+const relatedServices = [
+  { href: '/en/co-umime/potrebuji-brand', label: 'I need a brand' },
+  { href: '/en/co-umime/novy-shopify-e-shop', label: 'New Shopify store' },
+  { href: '/en/co-umime/expanze-do-zahranici', label: 'International expansion' },
+  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
+  { href: '/en/co-umime/analyza-a-strategie', label: 'Strategy & analytics' },
+  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
 ];
 ---
 
-<PageLayout title="Migration to Shopify" description="Migrate from any platform to Shopify without losing SEO rankings or customer data." lang="en">
-  <ServiceHero lang="en"
+<PageLayout title="Migration to Shopify | aethero" description="Migrate from Shoptet, WooCommerce or another platform to Shopify without losing SEO, data or customers." lang="en">
+  <ServiceHero
+    lang="en"
     label="Migration"
     title="MIGRATION<br /><span style='color:var(--action)'>TO SHOPIFY</span>"
-    subtitle="Hitting the limits of your current platform? Shopify is an open global platform built for growth — and we will move you there safely."
+    subtitle="Hesitating? Want advice? Or have you already decided? Then let's go."
+    ctaLabel="Let's talk"
+    ctaHref="tel:+420776067663"
+    cta2Label="Find out how"
+    cta2Href="#why-migrate"
+    image="/donut.webp"
+    imageAlt="Migration to Shopify"
   />
 
+  <!-- Intro -->
+  <section class="section-intro bg-elevated">
+    <div class="container">
+      <h2 class="intro-heading">Let's kick off your<br /><span class="text-action">MIGRATION TO SHOPIFY</span></h2>
+      <p class="intro-text">Hitting the limits of Shoptet or WooCommerce? Shopify is an open global platform designed for growth — multi-currency, multilanguage, external system integrations and connecting online and offline sales via POS.</p>
+      <p class="intro-text">We will help you migrate smoothly — preserving your SEO, data and customer experience.</p>
+      <a href="tel:+420776067663" class="btn-action">Free call</a>
+      <p class="intro-text intro-text--spaced">We work with stores from startups to major players. We migrate from various platforms — Shoptet, WooCommerce, Magento or custom solutions. We know what to watch out for and how not to waste time or money.</p>
+      <a href="#why-migrate" class="intro-link">Yes, we want to migrate ➝</a>
+    </div>
+  </section>
+
+  <!-- 2-col: text + checklist -->
+  <section class="section bg-secondary" id="why-migrate">
+    <div class="container two-col-check">
+      <div>
+        <h2 class="section-title">Shopify Edition Winter 2026</h2>
+        <p class="section-text">Shopify releases major feature updates twice a year. Each release brings new features for merchants, developers and customers — and Shopify does not charge you separately for the upgrade. Are you used to that with other platforms?</p>
+        <div class="edition-img-wrap">
+          <img src="/shopify-update-winter-2026.webp" alt="Shopify Edition Winter 2026" class="edition-img" loading="lazy" />
+        </div>
+        <p class="section-text">As a Shopify partner we get access to new features before others — and deliver them directly into your store. <a href="https://www.shopify.com/editions" target="_blank" rel="noopener" class="section-link">Shopify Editions Winter 2026</a> — we bring what's new straight to your project.</p>
+      </div>
+      <div>
+        <h2 class="section-title">How to get started</h2>
+        <ul class="check-list">
+          {checkItems.map((c) => (
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>{c}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top: var(--space-64); text-align: center;">
+      <a href="tel:+420776067663" class="btn-action">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Feature heading -->
+  <section class="section-heading bg-elevated">
+    <div class="container">
+      <h2 class="feature-section-heading">Features you will love:</h2>
+      <p class="section-text">If you have been around standard stores for a while, you will certainly appreciate these features and capabilities that come built-in from the start</p>
+    </div>
+  </section>
+
+  <!-- Feature sections -->
+  {features.map((f) => (
+    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
+      <div class="container feature-inner">
+        <div class="feature-text">
+          <h2 class="feature-title">{f.title}</h2>
+          <p class="feature-desc">{f.desc}</p>
+        </div>
+        <div class="feature-img-wrap">
+          <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Related -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">Migration in 4 steps</h2>
-      <div class="steps-grid">
-        {steps.map((s) => (
-          <div class="step-card">
-            <span class="step-num">{s.step}</span>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
+      <h2 class="section-title">Other services</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
+          <li>
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 
-  <section class="section bg-secondary">
-    <div class="container">
-      <h2 class="section-title">What you gain on Shopify</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Ready to move?</h2>
-      <p>We will assess your current setup for free and propose a migration plan.</p>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      <h2>Time to get going?<br />Get in touch</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
 </PageLayout>
 
 <style>
+  .section-intro { padding: var(--space-120) 0; }
+  .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); max-width: 760px; }
+  .text-action { color: var(--action); }
+  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-16); }
+  .intro-text--spaced { margin-top: var(--space-40); }
+  .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin: var(--space-32) 0; transition: background var(--transition-base); }
+  .btn-action:hover { background: var(--action-hover); }
+  .intro-link { display: inline-block; margin-top: var(--space-24); color: var(--action); font-size: 16px; font-weight: 600; text-decoration: none; }
+  .intro-link:hover { opacity: 0.75; }
+
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
+  .section-link { color: var(--action); text-decoration: none; font-weight: 600; }
+  .section-link:hover { opacity: 0.75; }
+
+  .two-col-check { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .edition-img-wrap { margin-bottom: var(--space-24); }
+  .edition-img { width: 100%; max-width: 400px; height: auto; border-radius: var(--radius-md); display: block; }
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 16px; padding-top: var(--space-8); }
+  .check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .check-list svg { flex-shrink: 0; margin-top: 2px; }
+
+  .section-heading { padding: var(--space-80) 0 var(--space-40); }
+  .feature-section-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-16); }
+
+  .feature-section { padding: var(--space-120) 0; }
+  .feature-section:nth-child(odd) { background: var(--bg-elevated); }
+  .feature-section:nth-child(even) { background: var(--bg-secondary); }
+  .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
+  .feature-section--reverse .feature-inner { direction: rtl; }
+  .feature-section--reverse .feature-text,
+  .feature-section--reverse .feature-img-wrap { direction: ltr; }
+  .feature-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); }
+  .feature-desc { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; }
+  .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
+  .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
+
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
+  .related-link:hover { color: var(--action); }
+
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } }
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact:hover { opacity: 0.7; }
+
+  @media (max-width: 1024px) {
+    .two-col-check { grid-template-columns: 1fr; }
+    .feature-inner { grid-template-columns: 1fr; }
+    .feature-section--reverse .feature-inner { direction: ltr; }
+    .feature-img-wrap { display: none; }
+  }
 </style>

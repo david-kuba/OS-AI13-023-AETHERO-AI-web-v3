@@ -2,89 +2,181 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const steps = [
-  { step: '01', title: 'Market Entry Strategy', desc: 'Selecting priority markets, validating potential and building the business case.' },
-  { step: '02', title: 'Solution Architecture', desc: 'Designing the Shopify structure, integrations and technical architecture.' },
-  { step: '03', title: 'Localisation & Compliance', desc: 'Content, payment methods, taxes, legislation and language variants.' },
-  { step: '04', title: 'Launch & Scaling', desc: 'Market launch and systematic growth.' },
+const features = [
+  { title: 'Shopify Sidekick AI right in your store', logo: '/sidekick.png', desc: 'Sidekick is an AI assistant integrated into the store admin that significantly speeds up your work in Shopify. It can handle operational tasks (create products, edit collections, analyse sales, prepare reports), help with marketing (writing descriptions, emails) and advise based on your own data as well as general market knowledge.', img: null, reverse: false },
+  { title: 'A powerful "admin"', desc: 'We won\'t sugarcoat it — building a store takes work, and even then the road to success is not easy. So you will spend a lot of time in the "admin". And it helps when it is clear and keeps up with you. The Shopify admin has it all: analytics, hints, AI that sees your data and can even advise based on general experience from elsewhere. And that is just the beginning.', img: '/analytika.webp', reverse: true },
+  { title: 'Built for international selling', desc: 'Markets in Shopify handles local currency, payment methods and languages. Additional features help you give global customers a familiar shopping environment that demonstrably increases conversions. You can tune the theme, content, product selection and pricing per market. With Shop Pay you can offer their preferred payment methods and even adapt address formats to local conventions.', img: '/international-sale-shopify.webp', reverse: false },
+  { title: 'Sophisticated benchmarking against others', desc: 'Shopify shows you via AI and built-in benchmarks how similar stores around the world are performing. So you can measure your performance more accurately and use the information to your advantage.', img: '/store-benchmark.webp', reverse: true },
+  { title: 'Multichannel marketing', desc: 'Organise your marketing activities clearly across email, social media, advertising and organic traffic into cohesive campaigns. Clear per-channel reports help you better understand where customers come from, how much it costs to acquire them and what the return on your marketing investment is.', img: '/marketing-measurement.webp', reverse: false },
+  { title: 'Real-time store data overview', desc: 'With Shopify you have an immediate overview of how your store is truly performing — without waiting for daily recalculations or limited reports. Data updates in real time across the whole dashboard and reports. Customise the view to exactly what is decisive for you and monitor key metrics at a glance.', img: '/real-time-monitoring.png', reverse: true },
+  { title: 'B2B ready', desc: 'In Shopify Plus you will find native B2B functionality designed for companies with high order volume, complex pricing and individual business relationships. It enables working with company accounts, custom price lists, approval processes and recurring purchases in one unified solution. Want a smaller B2B solution? That is handled by an app or custom development.', img: '/b2b-1.webp', reverse: false },
+  { title: 'Shopify SHOP app, on your customer\'s phone', desc: 'Thanks to the Shop app, your brand reaches directly into customers\' mobile devices all over the world. An ideal user experience. Customers can easily track orders, return to favourite products and make repeat purchases without having to go through the entire checkout process again.', img: '/shopify-shop-app.webp', reverse: true },
+  { title: 'Automation', desc: 'With growing order volumes, manual management stops making sense. Automation lets you move key processes — from order and customer management through pricing and inventory to marketing scenarios — into controlled, predictable flows. The result is less dependence on manual intervention, lower error rates and the ability to scale without constantly growing the team.', img: '/flow-automation.webp', reverse: false },
 ];
 
-const capabilities = [
-  'Shopify Markets — manage all markets from one admin',
-  'Multicurrency and multilanguage natively',
-  'B2B solution for enterprise clients (Shopify Plus)',
-  'Localised payment methods per country',
-  'AI Sidekick for content localisation',
-  'Shopify Shop App for mobile customers',
-  'Real-time analytics and dashboards',
-  'Process automation via Shopify Flow',
+const relatedServices = [
+  { href: '/en/co-umime/potrebuji-brand', label: 'I need a brand' },
+  { href: '/en/co-umime/novy-shopify-e-shop', label: 'New Shopify store' },
+  { href: '/en/co-umime/prechod-na-shopify', label: 'Migration to Shopify' },
+  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
+  { href: '/en/co-umime/analyza-a-strategie', label: 'Strategy & analytics' },
+  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
 ];
 ---
 
-<PageLayout title="International Expansion" description="One Shopify store, the whole world. We help you expand into international markets." lang="en">
-  <ServiceHero lang="en"
+<PageLayout title="International Expansion | aethero" description="One Shopify store, the whole world. We help you expand into international markets using Shopify Markets." lang="en">
+  <ServiceHero
+    lang="en"
     label="International Expansion"
     title="INTERNATIONAL<br /><span style='color:var(--action)'>EXPANSION</span>"
-    subtitle="Time to go full throttle — Europe, the world? Shopify Markets lets you manage all markets from one admin. We handle the tech, you focus on business."
+    subtitle="Time to go full throttle — Europe? The whole world? Absolutely, we are going in with you."
+    ctaLabel="Let's talk"
+    ctaHref="tel:+420776067663"
+    cta2Label="Find out how"
+    cta2Href="#expansion-why"
+    image="/chain.webp"
+    imageAlt="International expansion"
   />
 
-  <section class="section bg-elevated">
+  <!-- Intro -->
+  <section class="section-intro bg-elevated">
     <div class="container">
-      <h2 class="section-title">Expansion in 4 steps</h2>
-      <div class="steps-grid">
-        {steps.map((s) => (
-          <div class="step-card">
-            <span class="step-num">{s.step}</span>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
+      <h2 class="intro-heading">Do you have a plan for <span class="text-action">INTERNATIONAL EXPANSION</span>?</h2>
+      <p class="intro-text">With Shopify we open the path to growth that simply is not possible on local platforms. Make customers from anywhere in the world your customers.</p>
+      <a href="tel:+420776067663" class="btn-action">Shall we expand?</a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section bg-secondary" id="expansion-why">
+    <div class="container two-col">
+      <div>
+        <h2 class="section-title">What does expansion with Shopify bring you?</h2>
+        <p class="section-text">You have everything you need to turn your store into a true global brand. Here is just a partial list of features that might interest you.</p>
+      </div>
+      <div class="intro-highlights">
+        <div class="highlight-item">
+          <span class="highlight-num">30+</span>
+          <span class="highlight-label">countries available via Shopify Markets from a single admin</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-num">1</span>
+          <span class="highlight-label">platform for the whole world — no migration when scaling</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-num">100%</span>
+          <span class="highlight-label">localisation — language, currency, payments, taxes for each market</span>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Feature sections -->
+  {features.map((f) => (
+    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
+      <div class="container feature-inner">
+        <div class="feature-text">
+          {f.logo && <img src={f.logo} alt={f.title} class="feature-logo" loading="lazy" />}
+          <h2 class="feature-title">{f.title}</h2>
+          <p class="feature-desc">{f.desc}</p>
+        </div>
+        <div class="feature-img-wrap">
+          {f.img && <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- You are in the right place -->
   <section class="section bg-secondary">
+    <div class="container" style="text-align: center; max-width: 720px; margin: 0 auto;">
+      <h3 class="tady-heading">You are in the right place!</h3>
+      <p class="tady-text">When it comes to global expansion, the question is not whether — but when. Shopify gives you the technological foundation so you can focus on growth instead of working around platform limitations. Is now the right time, and do you want to take your store further with us?</p>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">What Shopify enables internationally</h2>
-      <ul class="capabilities-list">
-        {capabilities.map((c) => <li>{c}</li>)}
+      <h2 class="section-title">Other services</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
+          <li>
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Ready to go global?</h2>
-      <p>Let's map out your expansion plan together.</p>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      <h2>Shall we EXPAND?<br />Get in touch</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
 </PageLayout>
 
 <style>
+  .section-intro { padding: var(--space-120) 0; }
+  .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); }
+  .text-action { color: var(--action); }
+  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-24); }
+  .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin-top: var(--space-16); transition: background var(--transition-base); }
+  .btn-action:hover { background: var(--action-hover); }
+
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .capabilities-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .capabilities-list li { padding: 16px 24px; background: var(--bg-elevated); border-left: 3px solid var(--action); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: var(--text-small); }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .section-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; margin-bottom: var(--space-40); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .intro-highlights { display: flex; flex-direction: column; gap: var(--space-40); padding-top: var(--space-8); }
+  .highlight-item { display: flex; flex-direction: column; gap: var(--space-8); border-left: 2px solid var(--action); padding-left: var(--space-24); }
+  .highlight-num { font-size: 48px; font-weight: 700; color: var(--action); line-height: 1; font-family: var(--font-primary); }
+  .highlight-label { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+  .feature-section { padding: var(--space-120) 0; }
+  .feature-section:nth-child(odd) { background: var(--bg-elevated); }
+  .feature-section:nth-child(even) { background: var(--bg-secondary); }
+  .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
+  .feature-section--reverse .feature-inner { direction: rtl; }
+  .feature-section--reverse .feature-text,
+  .feature-section--reverse .feature-img-wrap { direction: ltr; }
+  .feature-logo { height: 48px; width: auto; display: block; margin-bottom: var(--space-24); object-fit: contain; }
+  .feature-title { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); color: var(--action); }
+  .feature-desc { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.75; }
+  .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
+  .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
+
+  .tady-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-24); }
+  .tady-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; }
+
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
+  .related-link:hover { color: var(--action); }
+
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .capabilities-list { grid-template-columns: 1fr; } }
-  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } }
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; }
+  .cta-contact:hover { opacity: 0.7; }
+
+  @media (max-width: 1024px) {
+    .two-col { grid-template-columns: 1fr; }
+    .feature-inner { grid-template-columns: 1fr; }
+    .feature-section--reverse .feature-inner { direction: ltr; }
+    .feature-img-wrap { display: none; }
+  }
 </style>
