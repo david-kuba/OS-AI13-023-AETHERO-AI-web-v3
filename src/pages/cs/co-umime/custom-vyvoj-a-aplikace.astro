@@ -2,40 +2,53 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const services = [
-  { title: 'Úpravy šablon (Liquid)', desc: 'UX/CRO vylepšení, custom sekce, design změny bez omezení.' },
-  { title: 'Shopify Functions', desc: 'Custom logika checkoutu, slevy, doprava, B2B pravidla přesně na míru.' },
-  { title: 'API integrace', desc: 'ERP, CRM, WMS, dopravci, fakturace, PIM — napojíme co potřebujete.' },
-  { title: 'Vlastní aplikace', desc: 'Private/public Shopify apps, admin nástroje, zákaznické dashboardy.' },
-  { title: 'Datové workflows', desc: 'Importy, exporty, validace dat a plná automatizace procesů.' },
+const whenCustom = [
+  'potřebujete napojení na ERP / sklad / dodavatele, ale data jsou „jinačí"',
+  'chcete vlastní logiku v košíku / dopravě / slevách / B2B, kterou univerzální appky neumí',
+  'řešíte lokální požadavky (CZ/SK i širší zahraničí) a nechcete další „lepení páskou"',
+  'potřebujete automatizace, které šetří čas každý den',
 ];
 
-const whenCustom = [
-  'Lokální specifika, netypická data nebo složitější proces',
-  'ERP, sklad či dodavatel s nestandardními daty',
-  'Vlastní logika košíku, dopravy, slev nebo B2B pravidla',
-  'Lokální požadavky (CZ/SK i zahraniční)',
-  'Automatizace šetřící čas a snižující chyby',
+const deliverables = [
+  'Shopify theme úpravy (Liquid, UX/CRO drobnosti, výkon)',
+  'Shopify Functions & checkout logika (slevy, doprava, B2B pravidla – tam, kde to Shopify dovolí)',
+  'Integrace přes API (ERP, CRM, WMS, dopravci, fakturace, PIM…)',
+  'Custom aplikace (private/public), admin nástroje, dashboardy',
+  'Datové toky (importy/exporty, validace, mapování polí, automatizace)',
 ];
 
 const steps = [
-  { num: '01', title: 'Rychlý audit & definice požadavků', desc: 'Porozumíme vašemu problému dřív, než navrhneme řešení.' },
-  { num: '02', title: 'Návrh řešení', desc: 'Appka, modifikace nebo integrace — s odůvodněním proč právě to.' },
-  { num: '03', title: 'MVP', desc: 'První verze přinášející reálnou hodnotu bez zbytečné komplexity.' },
-  { num: '04', title: 'Iterace & škálování', desc: 'Ladíme a rozvíjíme podle toho, co funguje v praxi.' },
+  { num: '01', title: 'Rychlý audit & zadání', desc: 'Co přesně má výsledkem být a jak poznáme, že to funguje.' },
+  { num: '02', title: 'Návrh řešení', desc: 'Varianty: appka vs. úprava vs. integrace (a proč).' },
+  { num: '03', title: 'MVP', desc: 'První verze, co už přináší hodnotu (a je bezpečná pro provoz).' },
+  { num: '04', title: 'Iterace & škálování', desc: 'Doladíme hrany, přidáme automatizace, zrychlíme.' },
+  { num: '05', title: 'Podpora', desc: 'Ať to žije i za 3 měsíce, ne jen v den spuštění.' },
+];
+
+const hardCases = [
+  { title: 'Dodavatelské feedy a importy', desc: 'Když „univerzální" parser nestačí a potřebujete vlastní mapování, pravidla, validaci a dohled.' },
+  { title: 'B2B logika', desc: 'Ceny po přihlášení, individuální ceníky, schvalování objednávek, platební limity.' },
+  { title: 'Doprava & platby', desc: 'Lokálně i mezinárodně: pravidla, která se mění podle země, košíku, skladu, marže.' },
+  { title: 'ERP/WMS integrace', desc: 'Skladové pohyby, fakturace, vratky, stav objednávek – aby data seděla všude.' },
+  { title: 'Admin nástroje', desc: 'Interní dashboardy, které zrychlí práci týmu (a sníží chybovost).' },
+];
+
+const whyUs = [
+  { title: 'Shopify-first přístup', desc: 'Využít maximum z platformy, a custom jen tam, kde to dává smysl.' },
+  { title: 'Poměr cena/výkon', desc: 'Radši chytré řešení než drahá stavba pro stavbu.' },
+  { title: 'E-commerce v DNA', desc: 'Řešíme nejen kód, ale i UX, data a dopady do provozu.' },
+  { title: 'Udržitelnost', desc: 'Ať to není „one-off", ale věc, kterou umíte rozvíjet.' },
+];
+
+const faq = [
+  { q: 'Kolik to stojí?', a: 'To záleží. Jedna drobná úprava může být rychlovka, aplikace je už ale projekt. Po krátkém ujasnění zadání vám dáme varianty a doporučení, co má nejlepší poměr cena/výkon.' },
+  { q: 'Děláte i „jen" konzultaci?', a: 'Ano. Někdy stačí 60–90 minut a máme všichni jasno, co stavět, co koupit jako appku a čemu se vyhnout a proč.' },
+  { q: 'Umíte napojit i něco, co „nemá integraci"?', a: 'Pokud má služba API (nebo aspoň rozumný export/import), většinou se cesta najde.' },
 ];
 
 const apps = [
-  {
-    name: 'eSyncer',
-    desc: 'Import, synchronizace & automatizace produktových dat (nejen) pro Shopify.',
-    href: '/cs/esyncer',
-  },
-  {
-    name: 'AE Translator',
-    desc: 'AI překlad obsahu e-shopu. DeepL, Claude nebo Deep Seek — na výběr.',
-    href: '/cs/ae-translator',
-  },
+  { name: 'eSyncer', desc: 'Chcete snadno spravovat stovky produktů od vašeho dodavatele nebo dokonce od více dodavatelů? eSyncer vaše produktová data automaticky zesynchronizuje mezi datovým zdrojem XML vašeho dodavatele a vaším obchodem Shopify.', href: '/cs/esyncer' },
+  { name: 'AE Translator', desc: 'Překladač nativního, plného exportu textů z Shopify s AI a pravidly. Aplikace využívá nativní Shopify export a import: exportujete produkty, kolekce nebo stránky do formátu CSV nebo ZIP, nahrajete soubor a vše hromadně přeložíte pomocí AI (DeepL, Claude nebo DeepSeek — na výběr).', href: '/cs/ae-translator' },
 ];
 
 const relatedServices = [
@@ -48,11 +61,11 @@ const relatedServices = [
 ];
 ---
 
-<PageLayout title="Custom vývoj a aplikace" description="Vlastní Shopify aplikace, integrace a úpravy šablon přesně pro vaše potřeby." lang="cs">
+<PageLayout title="Custom vývoj a aplikace | aethero" description="Vlastní Shopify aplikace, integrace a úpravy šablon přesně pro vaše potřeby." lang="cs">
   <ServiceHero
     label="Custom vývoj"
     title="APLIKACE &<br /><span style='color:var(--action)'>CUSTOM VÝVOJ</span>"
-    subtitle="Vyčerpali jste všechny možnosti standardních aplikací? Nebo máte netypický požadavek? Pojďme na to."
+    subtitle="Máte pocit, jste vyčerpali všechny možnosti okolo aplikací nebo máte něco atypického? OK, tak pojďme na to!"
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
     cta2Label="Zjistěte jak"
@@ -61,119 +74,154 @@ const relatedServices = [
     imageAlt="Custom vývoj a aplikace pro Shopify"
   />
 
-  <!-- Section 1: Potřebujete appku nebo custom úpravu? -->
+  <!-- Potřebujete APPKU nebo CUSTOM ÚPRAVU? -->
   <section class="section bg-elevated">
-    <div class="container">
-      <div class="intro-wrap">
-        <h2 class="section-title">Potřebujete appku nebo custom úpravu?</h2>
-        <p class="section-text">Popis toho, co potřebujete, bývá přímočarý. Implementace někdy méně. Naší prací je pomoct vám problém definovat a pak dodat řešení — bez zbytečné komplexity.</p>
-      </div>
+    <div class="container intro-wrap">
+      <h2 class="section-title">Potřebujete APPKU nebo CUSTOM ÚPRAVU?</h2>
+      <p class="section-text">Lze říci, že tato část naší práce je, na straně jedné, úžasně jednoduchá — na vysvětlování, ale také dosti nepředvídatelná na straně druhé — při realizaci. V ideálním případě za námi přijdete s definicí problému a odcházíte od nás s řešením. A někde mezitím my to řešení najdeme nebo vytvoříme a vy zaplatíte. Je to srozumitelné? A máte pro nás něco připraveného?</p>
+      <p class="section-text">Zkontrolujeme zda opravdu někde není nějaké řešení hotové a pak společně rozebereme váš problém na kousky, abychom ho mohli vyřešit. Někdy je to jedna drobná úprava, která zvedne konverze. Jindy je to napojení, které vám srovná data v celém provozu. A občas je to aplikace, bez které to prostě nepůjde. Ideálně za námi přijdete s problémem a odcházíte s řešením. Někde mezi tím to spolu rozkreslíme, postavíme, otestujeme a nasadíme.</p>
     </div>
   </section>
 
-  <!-- Section 2: Kdy je čas na custom? -->
+  <!-- Kdy je čas na custom -->
   <section class="section bg-secondary">
     <div class="container">
-      <h2 class="section-title">Kdy je čas na custom?</h2>
+      <h2 class="section-title">Kdy už je čas na „custom" ?</h2>
+      <h3 class="when-subhead">Appka občas nestačí když</h3>
       <ul class="when-list">
         {whenCustom.map((item) => (
           <li class="when-item">
-            <span class="when-check">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <a href="tel:+420776067663" class="btn-action">Super, sem s tím. ➝</a>
+    </div>
+  </section>
+
+  <!-- Custom úpravy, integrace i vlastní aplikace -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Custom úpravy, integrace i vlastní aplikace</h2>
+      <ul class="deliverables-list">
+        {deliverables.map((d) => (
+          <li class="deliverable-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{d}</span>
           </li>
         ))}
       </ul>
     </div>
   </section>
 
-  <!-- Section 3: Co umíme vyvinout -->
-  <section class="section bg-elevated">
+  <!-- Nejdřív porozumět, pak řešit -->
+  <section class="section bg-secondary" id="jak-to-delame">
     <div class="container">
-      <h2 class="section-title">Co umíme vyvinout</h2>
-      <div class="services-grid">
-        {services.map((s) => (
-          <div class="feature-card">
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
+      <h2 class="section-title">Nejdřív porozumět, pak řešit.</h2>
+      <p class="section-text">Aby custom řešení nespálila váš rozpočet ani nervy, držíme se jednoduché logiky: nejprve pochopit problém, pak teprve něco stavět.</p>
+      <div class="process-list">
+        {steps.map((s) => (
+          <div class="process-item">
+            <span class="step-num">{s.num}</span>
+            <div>
+              <h3 class="process-title">{s.title}</h3>
+              <p class="process-desc">{s.desc}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Section 4: Jak to děláme + Naše vlastní aplikace -->
-  <section class="section bg-secondary" id="jak-to-delame">
-    <div class="container two-col">
-      <div>
-        <h2 class="section-title">Jak to děláme</h2>
-        <div class="process-list">
-          {steps.map((step) => (
-            <div class="process-item">
-              <span class="step-num">{step.num}</span>
-              <div>
-                <h3 class="process-title">{step.title}</h3>
-                <p class="process-desc">{step.desc}</p>
-              </div>
-            </div>
-          ))}
-          <div class="process-item process-item--last">
-            <span class="step-num">05</span>
-            <div>
-              <h3 class="process-title">Dlouhodobá podpora</h3>
-              <p class="process-desc">Jsme tu i po launchi — monitoring, opravy, rozvoj.</p>
-            </div>
+  <!-- Typické složitější oříšky -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Typické „složitější oříšky"</h2>
+      <div class="hard-grid">
+        {hardCases.map((h) => (
+          <div class="hard-card">
+            <h3 class="hard-title">{h.title}</h3>
+            <p class="hard-desc">{h.desc}</p>
           </div>
-        </div>
-      </div>
-      <div>
-        <h2 class="section-title">Naše vlastní aplikace</h2>
-        <div class="apps-list">
-          {apps.map((a) => (
-            <a href={a.href} class="app-item">
-              <strong class="app-name">{a.name}</strong>
-              <p class="app-desc">{a.desc}</p>
-              <span class="app-link">Zjistit více →</span>
-            </a>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Related Services -->
+  <!-- Proč s námi -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Proč s námi</h2>
+      <div class="why-grid">
+        {whyUs.map((w) => (
+          <div class="why-card">
+            <h3 class="why-title">{w.title}</h3>
+            <p class="why-desc">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="section bg-elevated">
     <div class="container">
-      <div class="related-wrap">
-        <div class="related-left">
-          <h2 class="section-title" style="margin-bottom: var(--space-8);">Další služby</h2>
-          <p class="related-sub">Co dalšího umíme</p>
-        </div>
-        <div class="related-right">
-          <ul class="related-services">
-            {relatedServices.map((s) => (
-              <li>
-                <a href={s.href} class="related-link">
-                  <span>{s.label}</span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <h2 class="section-title">FAQ (rychle a bez omáčky)</h2>
+      <div class="faq-list">
+        {faq.map((f) => (
+          <div class="faq-item">
+            <p class="faq-q">Otázka: {f.q}</p>
+            <p class="faq-a">Odpověď: {f.a}</p>
+          </div>
+        ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Naše současné aplikace -->
+  <section class="section bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Naše současné aplikace</h2>
+      <div class="apps-list">
+        {apps.map((a) => (
+          <a href={a.href} class="app-card">
+            <strong class="app-name">{a.name}</strong>
+            <p class="app-desc">{a.desc}</p>
+            <span class="app-link">Zjistit více →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Co pro vás okolo Shopify můžeme udělat?</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
+          <li>
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Nejdřív porozumět,<br />pak řešit</h2>
+      <h2>Jdeme spolu něco vytvořit?<br />Dejte vědět</h2>
       <div class="cta-contacts">
         <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
         <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
@@ -187,48 +235,55 @@ const relatedServices = [
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: var(--space-24); max-width: 760px; }
 
-  .intro-wrap { max-width: 720px; }
+  .intro-wrap { max-width: 800px; }
 
-  /* When custom checklist */
-  .when-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-  .when-item { display: flex; align-items: flex-start; gap: var(--space-16); padding: var(--space-16) 0; border-left: 2px solid var(--action); padding-left: var(--space-24); margin-bottom: 12px; background: var(--bg-elevated); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
-  .when-check { flex-shrink: 0; display: flex; align-items: center; margin-top: 2px; }
+  .when-subhead { font-size: 18px; font-weight: 600; color: var(--action); margin-bottom: var(--space-24); }
+  .when-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: var(--space-40); }
+  .when-item { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+  .when-item svg { flex-shrink: 0; margin-top: 3px; }
 
-  /* Services / features grid */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin-top: var(--space-8); transition: background var(--transition-base); }
+  .btn-action:hover { background: var(--action-hover); }
 
-  /* Two col layout */
-  .two-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-80); }
+  .deliverables-list { list-style: none; display: flex; flex-direction: column; gap: 16px; max-width: 760px; }
+  .deliverable-item { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+  .deliverable-item svg { flex-shrink: 0; margin-top: 3px; }
 
-  /* Process list */
-  .process-list { display: flex; flex-direction: column; gap: 0; }
+  .process-list { display: flex; flex-direction: column; gap: 0; max-width: 760px; }
   .process-item { display: flex; gap: var(--space-16); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .process-item--last { border-bottom: none; }
+  .process-item:last-child { border-bottom: none; }
   .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); flex-shrink: 0; width: 28px; padding-top: 2px; }
   .process-title { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
   .process-desc { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
 
-  /* Apps list */
-  .apps-list { display: flex; flex-direction: column; gap: var(--space-16); }
-  .app-item { display: block; background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); transition: border-color var(--transition-base); }
-  .app-item:hover { border-color: rgba(13,212,205,0.3); }
-  .app-name { display: block; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-  .app-desc { font-size: var(--text-small); color: var(--neutral-300); margin-bottom: var(--space-8); }
+  .hard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .hard-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .hard-title { font-size: 15px; font-weight: 600; color: var(--action); margin-bottom: var(--space-12); }
+  .hard-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); max-width: 800px; }
+  .why-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .why-title { font-size: 15px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .why-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  .faq-list { display: flex; flex-direction: column; gap: var(--space-32); max-width: 760px; }
+  .faq-item { border-left: 2px solid var(--action); padding-left: var(--space-24); }
+  .faq-q { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
+  .faq-a { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+
+  .apps-list { display: flex; flex-direction: column; gap: var(--space-16); max-width: 760px; }
+  .app-card { display: block; background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); transition: border-color var(--transition-base); text-decoration: none; }
+  .app-card:hover { border-color: rgba(13,212,205,0.3); }
+  .app-name { display: block; font-size: 16px; font-weight: 700; margin-bottom: var(--space-8); color: var(--text-primary); }
+  .app-desc { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: var(--space-8); line-height: 1.6; }
   .app-link { font-size: 13px; color: var(--action); }
 
-  /* Related services */
-  .related-wrap { display: grid; grid-template-columns: 280px 1fr; gap: var(--space-80); align-items: start; }
-  .related-sub { font-size: var(--text-small); color: var(--neutral-300); }
   .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
   .related-link:hover { color: var(--action); }
 
-  /* CTA */
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
@@ -236,18 +291,11 @@ const relatedServices = [
   .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; }
   .cta-contact:hover { opacity: 0.7; }
 
-  /* Responsive */
   @media (max-width: 1024px) {
-    .steps-grid { grid-template-columns: repeat(2, 1fr); }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .two-col { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .related-wrap { grid-template-columns: 1fr; gap: var(--space-40); }
+    .hard-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 768px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .related-wrap { grid-template-columns: 1fr; }
+    .hard-grid { grid-template-columns: 1fr; }
   }
 </style>
