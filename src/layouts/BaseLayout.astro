@@ -61,6 +61,7 @@ const schemas = [orgSchema, webPageSchema, ...(jsonLd ? (Array.isArray(jsonLd) ?
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} | aethero</title>
   <meta name="description" content={description} />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href={Astro.url.href} />
   <link rel="alternate" hreflang="cs" href={`${siteUrl}/cs${pathWithoutLang}`} />
   <link rel="alternate" hreflang="en" href={`${siteUrl}/en${pathWithoutLang}`} />
