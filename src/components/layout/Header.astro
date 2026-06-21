@@ -21,7 +21,7 @@ const navItems = lang === 'en'
       },
       {
         label: 'APPS',
-        href: '#',
+        href: `${p}/esyncer`,
         dropdown: [
           { label: 'eSyncer', href: `${p}/esyncer` },
           { label: 'AE Translator', href: `${p}/ae-translator` },
@@ -47,7 +47,7 @@ const navItems = lang === 'en'
       },
       {
         label: 'APLIKACE',
-        href: '#',
+        href: `${p}/esyncer`,
         dropdown: [
           { label: 'eSyncer', href: `${p}/esyncer` },
           { label: 'AE Translator', href: `${p}/ae-translator` },
@@ -285,8 +285,8 @@ const navItems = lang === 'en'
       margin-top: var(--space-8);
     }
 
-    .has-dropdown .dropdown { display: none; }
-    .has-dropdown:focus-within .dropdown { display: block; }
+    /* Always show dropdowns expanded in mobile overlay */
+    .has-dropdown .dropdown { display: block; }
 
     .dropdown-link {
       font-size: 16px;
