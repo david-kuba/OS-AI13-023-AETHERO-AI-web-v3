@@ -53,8 +53,12 @@ const relatedServices = [
     label="Custom vývoj"
     title="APLIKACE &<br /><span style='color:var(--action)'>CUSTOM VÝVOJ</span>"
     subtitle="Vyčerpali jste všechny možnosti standardních aplikací? Nebo máte netypický požadavek? Pojďme na to."
-    cta1={{ label: 'Zavolejme si', href: 'tel:+420776067663' }}
-    cta2={{ label: 'Zjistěte jak', href: '#jak-to-delame' }}
+    ctaLabel="Zavolejme si"
+    ctaHref="tel:+420776067663"
+    cta2Label="Zjistěte jak"
+    cta2Href="#jak-to-delame"
+    image="/infinity.webp"
+    imageAlt="Custom vývoj a aplikace pro Shopify"
   />
 
   <!-- Section 1: Potřebujete appku nebo custom úpravu? -->
@@ -169,11 +173,10 @@ const relatedServices = [
   <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Nejdřív porozumět, pak řešit</h2>
-      <p>Popište nám váš problém — navrhneme řešení bez zbytečné komplexity.</p>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="btn-ghost">+420 776 067 663</a>
+      <h2>Nejdřív porozumět,<br />pak řešit</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
@@ -226,15 +229,12 @@ const relatedServices = [
   .related-link:hover { color: var(--action); }
 
   /* CTA */
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; }
+  .cta-contact:hover { opacity: 0.7; }
 
   /* Responsive */
   @media (max-width: 1024px) {
