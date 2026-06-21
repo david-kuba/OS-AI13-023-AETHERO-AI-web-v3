@@ -30,17 +30,6 @@ const intentLinks = lang === 'en'
       </a>
       <img src="/shopify-plus-badge.svg" alt="Shopify Plus Partner" class="shopify-badge" width="130" height="45" loading="lazy" />
     </div>
-
-    <div class="footer-intent">
-      <p class="footer-label">
-        {lang === 'en' ? 'What can we do for you around Shopify?' : 'Co pro vás okolo Shopify můžeme udělat?'}
-      </p>
-      <ul>
-        {intentLinks.map((l) => (
-          <li><a href={l.href}>{l.label}</a></li>
-        ))}
-      </ul>
-    </div>
   </div>
 
   <div class="footer-bottom">
@@ -57,7 +46,6 @@ const intentLinks = lang === 'en'
 <style>
   footer {
     background: #000326;
-    border-top: 1px solid rgba(255,255,255,0.06);
   }
 
   .footer-inner {
@@ -103,7 +91,6 @@ const intentLinks = lang === 'en'
   ul a:hover { color: #fff; }
 
   .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.06);
     padding: var(--space-24);
   }
 
