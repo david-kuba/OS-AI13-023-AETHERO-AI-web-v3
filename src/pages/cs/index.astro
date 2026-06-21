@@ -366,17 +366,35 @@ const blogPosts = [
   const trackWrap = document.getElementById('services-track-wrap') as HTMLElement | null;
   if (trackWrap) {
     const step = 380;
+    const DURATION = 1200;
+    const INTERVAL = 5000;
     let pos = 0;
+
+    function easeInOut(t: number) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    function smoothScroll(target: number) {
+      const start = trackWrap.scrollLeft;
+      const change = target - start;
+      const startTime = performance.now();
+      function step(now: number) {
+        const p = Math.min((now - startTime) / DURATION, 1);
+        trackWrap.scrollLeft = start + change * easeInOut(p);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
     setInterval(() => {
       const maxScroll = trackWrap.scrollWidth - trackWrap.clientWidth;
       if (pos + step >= maxScroll) {
         pos = 0;
-        trackWrap.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
         pos += step;
-        trackWrap.scrollTo({ left: pos, behavior: 'smooth' });
       }
-    }, 3000);
+      smoothScroll(pos);
+    }, INTERVAL);
   }
 </script>
 
