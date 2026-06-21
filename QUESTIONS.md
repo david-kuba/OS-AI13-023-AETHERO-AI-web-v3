@@ -102,6 +102,36 @@ AETHERO DESIGN SYSTEM alias, 00 BRAND AE, 01 FAKTURACE, 02 WEB, 03 AE PROJEKTY, 
 
 ---
 
+## 2026-06-21 — Storyblok: prázdný space, chybí content types
+
+**Kontext:** Space `293337461480339` má jen default "Home" story. Žádné blog posts ani case studies. Kód je připraven, čeká na obsah.
+
+**Co David musí udělat v Storyblok dashboardu** (app.storyblok.com):
+
+1. **Vytvořit content type "blog_post"** s těmito fieldy:
+   - `title` (Text)
+   - `perex` (Textarea)
+   - `content` (Richtext)
+   - `read_time` (Text, např. "7 min")
+   - `category` (Text)
+
+2. **Vytvořit content type "case_study"** s fieldy:
+   - `title` (Text)
+   - `perex` (Textarea)
+   - `content` (Richtext)
+   - `client` (Text)
+   - `cover_image` (Asset)
+
+3. **Nastavit složky:** `blog/` a `reference/` pro organizaci stories
+
+4. **Přidat stories** — pak se automaticky nabuildují jako stránky
+
+**Výchozí řešení:** CS blog stránky jsou statické (5 placeholder článků). Po přidání Storyblok obsahu stačí odkomentovat Storyblok fetch v [slug].astro.
+
+**Odpověď Davida:** [ČEKÁ]
+
+---
+
 ## FÁZE 1 SUMMARY — 2026-06-21
 
 ### Stav: ✅ KOMPLETNÍ (8 milestones)

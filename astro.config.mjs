@@ -11,7 +11,10 @@ export default defineConfig({
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
-      components: {},
+      components: {
+        blog_post: 'storyblok/BlogPost',
+        case_study: 'storyblok/CaseStudy',
+      },
       apiOptions: { region: 'eu' },
     }),
     sitemap({

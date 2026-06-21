@@ -1,8 +1,30 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
+import { useStoryblokApi } from '@storyblok/astro';
 
 export async function getStaticPaths() {
-  // TODO: Napojit na Storyblok v Milestone 2.x
+  // STORYBLOK: odkomentovat až David vytvoří content type "blog_post" v app.storyblok.com
+  // try {
+  //   const storyblok = useStoryblokApi();
+  //   const { data } = await storyblok.get('cdn/stories', {
+  //     version: 'published',
+  //     starts_with: 'blog/',
+  //     content_type: 'blog_post',
+  //   });
+  //   return data.stories.map((story) => ({
+  //     params: { slug: story.slug },
+  //     props: {
+  //       title: story.content.title,
+  //       readTime: story.content.read_time || '5 min',
+  //       date: story.published_at?.split('T')[0] || story.created_at.split('T')[0],
+  //       perex: story.content.perex || '',
+  //       content: story.content.content,
+  //       isStoryblok: true,
+  //     },
+  //   }));
+  // } catch (e) { /* fallthrough to static */ }
+
+  // STATICKÉ placeholdery — zůstávají do napojení Storyblok
   return [
     {
       params: { slug: 'povinne-tlacitko-shopify' },
