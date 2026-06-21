@@ -44,8 +44,27 @@ const relatedServices = [
 
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">Máte plán na expanzi do zahraničí?</h2>
-      <p class="section-text">Shopify je od základu navržen pro mezinárodní prodej. Získáte jednu globální platformu s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Všechno z jednoho adminu.</p>
+      <div class="two-col">
+        <div class="intro-text">
+          <h2 class="section-title">Máte plán na expanzi do zahraničí?</h2>
+          <p class="section-text">Shopify je od základu navržen pro mezinárodní prodej. Získáte jednu globální platformu s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Všechno z jednoho adminu.</p>
+          <p class="section-text">V aethero jsme pomohli klientům rozjet prodej v desítkách zemí. Víme, co funguje a co zbytečně prodražuje čas i peníze.</p>
+        </div>
+        <div class="intro-highlights">
+          <div class="highlight-item">
+            <span class="highlight-num">30+</span>
+            <span class="highlight-label">zemí dostupných přes Shopify Markets z jednoho adminu</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-num">1</span>
+            <span class="highlight-label">platforma pro celý svět — bez migrace při škálování</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-num">100%</span>
+            <span class="highlight-label">lokalizace — jazyk, měna, platby, daně pro každý trh</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -112,6 +131,11 @@ const relatedServices = [
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .intro-highlights { display: flex; flex-direction: column; gap: var(--space-40); padding-top: var(--space-8); }
+  .highlight-item { display: flex; flex-direction: column; gap: var(--space-8); border-left: 2px solid var(--action); padding-left: var(--space-24); }
+  .highlight-num { font-size: 48px; font-weight: 700; color: var(--action); line-height: 1; font-family: var(--font-primary); }
+  .highlight-label { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.5; }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
 
