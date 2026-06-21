@@ -91,13 +91,74 @@ const blogPosts = [
     <div class="hero-bg"></div>
     <div class="container hero-inner">
       <div class="hero-left">
-        <h1 class="hero-heading">
-          We are<br />
-          Shopify<br />
-          <span class="hero-rotate-wrapper" aria-live="polite">
-            <span class="hero-rotate">specialists</span>
-          </span>
-        </h1>
+        <div class="hero-heading">
+          <div class="sp-h1-typer sp-h1-typer--en"
+               style="--speed:85; --back:65; --pause:900; --between:350; --restart:30000;
+                      --l1-sizer:'We are'; --l2-sizer:'Shopify'; --l3-sizer:'specialists';">
+            <style>
+              .sp-h1-typer--en .l1,
+              .sp-h1-typer--en .l2,
+              .sp-h1-typer--en .l3,
+              .sp-h1-typer--en .sizer{ padding-right: 1ch; box-sizing: border-box; }
+              .sp-h1-typer--en{ padding:1rem 0; color:inherit; font-family:inherit; }
+              .sp-h1-typer--en .title{ margin:0; line-height:1.15; font-size:inherit; color:inherit; }
+              .sp-h1-typer--en .row{ display:grid; white-space:normal; word-break:break-word; width:100%; }
+              .sp-h1-typer--en .row > .sizer,
+              .sp-h1-typer--en .row > .live{ grid-area:1/1; }
+              .sp-h1-typer--en .sizer{ visibility:hidden; white-space:normal; word-break:break-word; }
+              .sp-h1-typer--en .live{ display:grid; grid-template-rows:auto auto auto; align-content:start; }
+              .sp-h1-typer--en .l1, .sp-h1-typer--en .l2, .sp-h1-typer--en .l3{ display:block; }
+              .sp-h1-typer--en .l1[data-empty="1"]::after{ content: var(--l1-sizer,'We are'); visibility:hidden; display:block; }
+              .sp-h1-typer--en .l2[data-empty="1"]::after{ content: var(--l2-sizer,'Shopify'); visibility:hidden; display:block; }
+              .sp-h1-typer--en .l3[data-empty="1"]::after{ content: var(--l3-sizer,'specialists'); visibility:hidden; display:block; }
+              .sp-h1-typer--en .caret{ display:inline-block; width:.6ch; margin-left:.1ch; border-right:2px solid currentColor; vertical-align:baseline; animation: spCaretEn 1s steps(1,end) infinite; }
+              @keyframes spCaretEn{ 0%,40%,100%{opacity:1} 50%,90%{opacity:0} }
+              @media (prefers-reduced-motion: reduce){ .sp-h1-typer--en .caret{ animation:none; opacity:1; } }
+            </style>
+            <h1 class="title" aria-live="polite">
+              <span class="row">
+                <span class="sizer">We are<br>Shopify<br>specialists</span>
+                <span class="live">
+                  <span class="l1" data-empty="1"></span>
+                  <span class="l2" data-empty="1"></span>
+                  <span class="l3" data-empty="1"></span>
+                  <span class="caret" aria-hidden="true"></span>
+                </span>
+              </span>
+            </h1>
+            <script>
+              (function(){
+                var script = document.currentScript;
+                var root = (script && script.closest('.sp-h1-typer--en')) || document.querySelector('.sp-h1-typer--en');
+                if(!root || root.dataset.init) return; root.dataset.init = '1';
+                var cs = getComputedStyle(root);
+                function numVar(n,fb){ var v=(cs.getPropertyValue(n)||'').trim(); return v?parseFloat(v):fb; }
+                var SPEED=numVar('--speed',85), BACK=numVar('--back',65), PAUSE=numVar('--pause',900), BETWEEN=numVar('--between',350), RESTART=numVar('--restart',30000);
+                if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ SPEED=BACK=PAUSE=BETWEEN=0; }
+                var l1=root.querySelector('.l1'), l2=root.querySelector('.l2'), l3=root.querySelector('.l3'), caret=root.querySelector('.caret');
+                function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+                function setEmpty(el,isEmpty){ if(isEmpty) el.setAttribute('data-empty','1'); else el.removeAttribute('data-empty'); }
+                function moveCaret(el){ if(!el||!caret) return; if(caret.parentNode!==el) el.appendChild(caret); }
+                async function typeInto(el,text){ moveCaret(el); setEmpty(el,false); for(var i=1;i<=text.length;i++){ el.textContent=text.slice(0,i); if(SPEED) await sleep(SPEED); } }
+                async function eraseAll(el){ moveCaret(el); while(el.textContent.length){ el.textContent=el.textContent.slice(0,-1); if(BACK) await sleep(BACK); } setEmpty(el,true); }
+                function clearLines(){ l1.textContent=''; l2.textContent=''; l3.textContent=''; setEmpty(l1,true); setEmpty(l2,true); setEmpty(l3,true); }
+                async function runOnce(){
+                  clearLines();
+                  await typeInto(l1,'We are'); if(PAUSE) await sleep(PAUSE);
+                  await typeInto(l2,'æthero'); if(PAUSE) await sleep(PAUSE);
+                  await eraseAll(l2); if(BETWEEN) await sleep(BETWEEN);
+                  await typeInto(l2,'Shopify'); if(PAUSE) await sleep(PAUSE);
+                  await typeInto(l3,'partners'); if(PAUSE) await sleep(PAUSE);
+                  await eraseAll(l3); if(BETWEEN) await sleep(BETWEEN);
+                  var words=['experts','developers','designers','analysts','specialists'];
+                  for(var i=0;i<words.length;i++){ await typeInto(l3,words[i]); if(PAUSE) await sleep(PAUSE); await eraseAll(l3); if(BETWEEN) await sleep(BETWEEN); }
+                  await typeInto(l3,'partners'); if(PAUSE) await sleep(PAUSE);
+                }
+                (async function loop(){ while(true){ await runOnce(); if(RESTART>0) await sleep(RESTART); } })();
+              })();
+            </script>
+          </div>
+        </div>
         <a href="/en/kontakt" class="btn-hero">What shall we tackle together?</a>
       </div>
       <div class="hero-right" aria-hidden="true">
@@ -297,21 +358,6 @@ const blogPosts = [
 </PageLayout>
 
 <script>
-  // Hero rotating text
-  const words = ['specialists', 'strategists', 'developers', 'partners'];
-  const rotEl = document.querySelector('.hero-rotate');
-  if (rotEl) {
-    let i = 0;
-    setInterval(() => {
-      i = (i + 1) % words.length;
-      rotEl.classList.add('fade-out');
-      setTimeout(() => {
-        rotEl.textContent = words[i];
-        rotEl.classList.remove('fade-out');
-      }, 300);
-    }, 2800);
-  }
-
   // Service carousel scroll
   const trackWrap = document.getElementById('services-track-wrap');
   const prevBtn = document.getElementById('ctrl-prev');
@@ -360,15 +406,8 @@ const blogPosts = [
     line-height: 1.15;
     letter-spacing: 0.4px;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
-  .hero-rotate-wrapper { display: block; overflow: hidden; }
-  .hero-rotate {
-    display: inline-block;
-    color: var(--action);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .hero-rotate.fade-out { opacity: 0; transform: translateY(8px); }
   .btn-hero {
     display: inline-flex;
     align-items: center;
