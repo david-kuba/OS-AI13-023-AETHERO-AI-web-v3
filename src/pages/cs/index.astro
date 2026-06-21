@@ -184,14 +184,22 @@ const blogPosts = [
     </div>
     <div class="services-track-wrap" id="services-track-wrap">
       <div class="services-track">
-        {services.map((s) => (
-          <a href={s.href} class="service-item">
-            <div class="service-content">
-              <span class="service-num">{s.num}</span>
-              <p class="service-text">{s.pre}</p>
-              <h3 class="service-title">{s.title} →</h3>
-            </div>
-          </a>
+        {services.map((s, i) => (
+          <>
+            <a href={s.href} class="service-item">
+              <div class="service-content">
+                <span class="service-num">{s.num}</span>
+                <p class="service-text">{s.pre}</p>
+                <h3 class="service-title">{s.title} →</h3>
+              </div>
+            </a>
+            {i < services.length - 1 && (
+              <div class="svc-arrow" aria-hidden="true">
+                <span class="svc-line"></span>
+                <span class="svc-tip">›</span>
+              </div>
+            )}
+          </>
         ))}
       </div>
     </div>
@@ -482,14 +490,12 @@ const blogPosts = [
     flex-direction: column;
     min-width: 340px;
     scroll-snap-align: start;
-    border-right: 1px solid rgba(255,255,255,0.08);
     padding: 40px;
     color: #fff;
     cursor: pointer;
     transition: opacity 0.2s;
   }
   .service-item:first-child { padding-left: 0; }
-  .service-item:last-child { border-right: none; }
   .service-item:hover { opacity: 0.85; }
   .service-content { display: flex; flex-direction: column; gap: 8px; }
   .service-num {
@@ -502,7 +508,7 @@ const blogPosts = [
   .service-text {
     font-family: var(--font-primary);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     color: #fff;
     line-height: 1.4;
     margin: 0;
@@ -513,7 +519,30 @@ const blogPosts = [
     font-weight: 600;
     line-height: 1.1;
     color: var(--action);
-    margin: 4px 0 8px;
+    margin: 4px 0 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+  .svc-arrow {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    padding-top: 90px;
+    flex-shrink: 0;
+    gap: 0;
+  }
+  .svc-line {
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: var(--text-secondary);
+  }
+  .svc-tip {
+    color: var(--text-secondary);
+    font-size: 22px;
+    line-height: 1;
+    margin-left: -2px;
   }
   .services-header {
     display: flex;
