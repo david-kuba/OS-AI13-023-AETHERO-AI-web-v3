@@ -1,129 +1,646 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 
+const features = [
+  {
+    title: 'TECHNOLOGY\n& SECURITY',
+    items: [
+      { icon: '/icons/sidekick.svg', label: 'Sidekick', desc: 'Built-in AI assistant in your admin' },
+      { icon: '/icons/phone.svg', label: 'Mobile app', desc: 'iOS and Android — manage your store from anywhere' },
+      { icon: '/icons/procesor.svg', label: 'Cutting-edge technology', desc: 'Major updates every six months' },
+      { icon: '/icons/vykon2.svg', label: 'Stability & performance', desc: 'Shopify handles hosting, security and updates — 100% cloud' },
+      { icon: '/icons/secure.svg', label: 'Security', desc: 'Top certifications including PCI DSS' },
+    ],
+  },
+  {
+    title: 'GROWTH, SCALE\n& EXPANSION',
+    items: [
+      { icon: '/icons/raketa.svg', label: 'Global markets', desc: 'Support for dozens of languages, currencies and regional markets' },
+      { icon: '/icons/analyza.svg', label: 'Startup to enterprise', desc: 'Same platform for small brands and global players (Shopify Plus)' },
+      { icon: '/icons/dataset-1.svg', label: 'B2B, POS, Shop app', desc: 'TikTok, Amazon, Instagram Shop and more' },
+      { icon: '/icons/kosik.svg', label: 'Extended customer accounts', desc: 'B2B buyers get dedicated accounts, pricing and catalogues' },
+    ],
+  },
+  {
+    title: 'AUTOMATION\n& EFFICIENCY',
+    items: [
+      { icon: '/icons/world-point.svg', label: 'All markets in 1 admin', desc: 'No need to go anywhere else' },
+      { icon: '/icons/automa.svg', label: 'Automation', desc: 'Shopify Flow, Shopify Functions' },
+      { icon: '/icons/nastroje.svg', label: 'Extensible & integrable', desc: 'Over 10,000 apps in the App Store' },
+      { icon: '/icons/artboard-2.svg', label: 'Developer & partner community', desc: '100,000+ partner and developer entities' },
+      { icon: '/icons/taska.svg', label: 'Data & management in one place', desc: 'Clear data for fast decisions' },
+    ],
+  },
+  {
+    title: 'TRUST\n& SCALABILITY',
+    items: [
+      { icon: '/icons/artboard-2.svg', label: 'In good company', desc: 'Mattel, Heinz, Gymshark, Kylie Cosmetics, Glossier, Red Bull' },
+      { icon: '/icons/platby.svg', label: 'Fast & trusted payments', desc: 'Shop Payments + gateway support' },
+      { icon: '/icons/otisk.svg', label: 'Enhanced Fraud Protection', desc: 'Higher security for multi-currency stores' },
+      { icon: '/icons/code.svg', label: 'Perfect dev environment', desc: 'Hydrogen, Storefront API, new APIs' },
+      { icon: '/icons/dat-analyt.svg', label: 'Analytics & Insights', desc: 'Built-in reports + GA4, Metabase, Looker Studio' },
+    ],
+  },
+];
+
+const allServices = [
+  { icon: '/icons/blesk.svg', label: 'Brand, Identity, DX', desc: 'Brand narrative, colours, typography, digital presence — it all matters.' },
+  { icon: '/icons/analyza.svg', label: 'Strategic Analysis', desc: 'Market & competitor analysis, SEO audit, keyword research and search trends' },
+  { icon: '/icons/nastroje.svg', label: 'Shopify Apps', desc: 'Selection and detailed setup of apps for shipping, payments, reviews, emails' },
+  { icon: '/icons/vrstvy.svg', label: 'Theme Setup', desc: 'Professional help with theme selection, speed audits, custom tweaks' },
+  { icon: '/icons/world-point.svg', label: 'International Setup', desc: 'Multi-market configuration: markets, currencies, languages' },
+  { icon: '/icons/magic.svg', label: 'Translations', desc: 'Setting up and maintaining translations for multilingual projects' },
+  { icon: '/icons/dataset-1.svg', label: 'Export / Import', desc: 'Complex supplier feed connections, automated XML import/export' },
+  { icon: '/icons/spojit.svg', label: 'Data Consolidation', desc: 'Merge and organise data from multiple sources in one place' },
+  { icon: '/icons/setup.svg', label: 'System Integrations', desc: 'Invoicing, warehouse, CRM, fulfilment, Helios and more' },
+  { icon: '/icons/vyvoj.svg', label: 'Custom App Development', desc: 'Apps that give you and your store unique capabilities, built exactly to spec' },
+  { icon: '/icons/automa.svg', label: 'Optimisation & Automation', desc: 'Shopify Flow, Functions and custom scripts to streamline operations' },
+  { icon: '/icons/zamerovac.svg', label: 'Metafields, Metatags, Filtering', desc: 'Correct data structure and SEO tagging for products' },
+  { icon: '/icons/pocitac.svg', label: 'Conversion', desc: 'Improve store performance through checkout optimisation, CTA and UX' },
+  { icon: '/icons/cas.svg', label: 'Speed', desc: 'A faster store means higher conversion and better SEO' },
+  { icon: '/icons/taska.svg', label: 'Customer Journey', desc: 'Every brand touchpoint must make sense — we map and improve it' },
+  { icon: '/icons/cena.svg', label: 'Performance Marketing', desc: 'Strategy and campaigns that deliver real results with precise GTM measurement' },
+];
+
 const services = [
-  { num: '01', text: 'I need to create a', highlight: 'BRAND', href: '/en/what-we-do/brand' },
-  { num: '02', text: 'I want to build a', highlight: 'NEW SHOPIFY STORE', href: '/en/what-we-do/new-shopify-store' },
-  { num: '03', text: 'I want to', highlight: 'MIGRATE TO SHOPIFY', href: '/en/what-we-do/migrate-to-shopify' },
-  { num: '04', text: "We're planning", highlight: 'INTERNATIONAL EXPANSION', href: '/en/what-we-do/international-expansion' },
-  { num: '05', text: 'I have a Shopify store and', highlight: 'NEED SUPPORT', href: '/en/what-we-do/development-support' },
-  { num: '06', text: 'I need custom development or a', highlight: 'SHOPIFY APP', href: '/en/what-we-do/custom-development' },
+  { num: '01', pre: 'I need to create a', title: 'BRAND', label: 'Brand & Identity', href: '/en/co-umime/potrebuji-brand' },
+  { num: '02', pre: 'I want to build a', title: 'NEW SHOPIFY STORE', label: 'New Shopify Store', href: '/en/co-umime/novy-shopify-e-shop' },
+  { num: '03', pre: 'From another platform I want to', title: 'MIGRATE TO SHOPIFY', label: 'Migration to Shopify', href: '/en/co-umime/prechod-na-shopify' },
+  { num: '04', pre: "We're planning", title: 'INTERNATIONAL EXPANSION', label: 'International Expansion', href: '/en/co-umime/expanze-do-zahranici' },
+  { num: '05', pre: 'I have a Shopify store and', title: 'NEED SUPPORT', label: 'Development & Support', href: '/en/co-umime/rozvoj-a-podpora' },
+  { num: '06', pre: 'I need custom Shopify tweaks, integrations or a', title: 'CUSTOM APP', label: 'Custom Development', href: '/en/co-umime/custom-vyvoj-a-aplikace' },
+];
+
+const blogPosts = [
+  { title: 'Mandatory Button in Shopify: Don\'t Wait Until It Becomes a Problem', time: '7', ago: '1 month ago', href: '/en/blog/shopify-mandatory-button', img: '/blog-01.webp' },
+  { title: 'AI SEO — The New Hard Reality of Search for E-shops (2026)', time: '7', ago: '5 months ago', href: '/en/blog/ai-seo-2026', img: '/blog-02.webp' },
+  { title: 'Shopify Editions — Winter 2026', time: '6', ago: '6 months ago', href: '/en/blog/shopify-editions-winter-2026', img: '/blog-03.webp' },
+  { title: 'Which E-commerce Platform to Choose? Shopify vs Shoptet', time: '18', ago: '1 year ago', href: '/en/blog/shopify-vs-shoptet', img: '/blog-05.webp' },
 ];
 ---
 
 <PageLayout
-  title="Czech Shopify Agency"
+  title="Czech Shopify Agency — aethero"
   description="Czech Shopify agency. Design, strategy and technology for your e-commerce success."
   lang="en"
 >
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="hero-bg"></div>
     <div class="container hero-inner">
-      <p class="hero-label">Czech Shopify Agency</p>
-      <h1>We are Shopify<br /><span class="hero-accent">specialists</span></h1>
-      <p class="hero-sub">What shall we tackle together?</p>
-      <a href="/en/contact" class="btn-primary">Start a project</a>
-    </div>
-  </section>
-
-  <section class="section services-selector">
-    <div class="container">
-      <ul class="services-grid">
-        {services.map((s) => (
-          <li>
-            <a href={s.href} class="service-card">
-              <span class="service-num">{s.num}</span>
-              <span class="service-text">{s.text} <strong>{s.highlight}</strong></span>
-              <svg class="service-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <section class="section value-prop">
-    <div class="container">
-      <div class="value-inner">
-        <h2>Shopify provides the technology,<br /><span class="accent-text">aethero the strategy</span></h2>
-        <p class="value-body">
-          From project selection through design and development to your first order — and beyond.
-          We manage the full lifecycle of your e-shop so technology is never an obstacle, but a growth tool.
-        </p>
+      <div class="hero-left">
+        <h1 class="hero-heading">
+          We are<br />
+          Shopify<br />
+          <span class="hero-rotate-wrapper" aria-live="polite">
+            <span class="hero-rotate">specialists</span>
+          </span>
+        </h1>
+        <a href="/en/kontakt" class="btn-hero">What shall we tackle together?</a>
+      </div>
+      <div class="hero-right" aria-hidden="true">
+        <img src="/hero-glass.webp" alt="" width="704" height="630" class="hero-shape" loading="eager" />
       </div>
     </div>
   </section>
 
+  <!-- SERVICE SELECTOR CAROUSEL -->
+  <section class="services-section">
+    <div class="services-track-wrap">
+      <div class="services-track" id="services-track">
+        {services.map((s) => (
+          <a href={s.href} class="service-item">
+            <div class="service-content">
+              <span class="service-num">{s.num}</span>
+              <p class="service-text">{s.pre}</p>
+              <h3 class="service-title">{s.title}</h3>
+              <span class="service-link">{s.label}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="services-controls">
+      <button class="ctrl-btn ctrl-prev" id="ctrl-prev" aria-label="Previous">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="ctrl-btn ctrl-next" id="ctrl-next" aria-label="Next">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- VALUE PROP -->
+  <section class="value-prop">
+    <div class="container value-inner">
+      <p class="value-heading">
+        <span class="val-shopify">Shopify</span> provides the technology,<br />
+        <span class="val-aethero">aethero</span> the strategy.
+      </p>
+      <p class="value-body">
+        From project selection through design and development to your first order — and beyond.
+        We manage the full lifecycle of your e-shop so technology is<br />
+        <span class="value-purple">never an obstacle, but a growth tool.</span>
+      </p>
+      <img src="/icons/shopify-monotone-white.svg" alt="Shopify" class="shopify-icon" width="60" height="64" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- FEATURES 4-COL -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        {features.map((col) => (
+          <div class="feature-col">
+            <h3 class="feature-col-title">{col.title}</h3>
+            <ul class="feature-list">
+              {col.items.map((item) => (
+                <li class="feature-item">
+                  <img src={item.icon} alt="" width="36" height="36" loading="lazy" class="feature-icon" />
+                  <div>
+                    <strong class="feature-label">{item.label}</strong>
+                    <span class="feature-desc">{item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
   <section class="stats-bar">
     <div class="container stats-inner">
       <div class="stat">
         <span class="stat-num">4.8M</span>
         <span class="stat-label">stores operating worldwide</span>
       </div>
-      <div class="stat-divider" aria-hidden="true"></div>
       <div class="stat">
-        <span class="stat-num">175</span>
-        <span class="stat-label">countries where you can sell</span>
+        <span class="stat-num">175 countries</span>
+        <span class="stat-label">where you can sell</span>
       </div>
-      <div class="stat-divider" aria-hidden="true"></div>
       <div class="stat">
-        <span class="stat-num">3,500</span>
-        <span class="stat-label">developers out of ~8,000 employees</span>
+        <span class="stat-num">3,500 devs</span>
+        <span class="stat-label">out of ~8,000 Shopify employees</span>
+      </div>
+      <img src="/shopify-white.png" alt="Shopify" class="shopify-stats-logo" width="120" height="127" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- AE SERVICES SECTION -->
+  <section class="ae-services">
+    <div class="container">
+      <div class="ae-services-header">
+        <img src="/ae-znak.svg" alt="aethero" class="ae-znak" width="64" height="64" loading="lazy" />
+        <h2 class="ae-services-title">COMPREHENSIVE SHOPIFY SUPPORT<br />AT EVERY LEVEL</h2>
+      </div>
+      <div class="ae-services-grid">
+        {allServices.map((s) => (
+          <div class="ae-service-item">
+            <img src={s.icon} alt="" width="36" height="36" loading="lazy" class="ae-service-icon" />
+            <div>
+              <strong class="ae-service-label">{s.label}</strong>
+              <span class="ae-service-desc">{s.desc}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="ae-services-ctas">
+        <a href="/en/kontakt" class="btn-teal">Book a consultation</a>
+        <a href="/en/co-umime" class="btn-outline">How we work</a>
       </div>
     </div>
   </section>
 
-  <section class="section footer-cta">
+  <!-- REFERENCES -->
+  <section class="references">
+    <div class="container">
+      <h2 class="section-heading">References</h2>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <p class="ref-desc">For <a href="https://bu1.cz" target="_blank" rel="noopener" class="ref-link-inline">BU1.cz</a> we built an international Shopify store with a modern design focused on user experience. The solution supports multilingual selling and is ready for rapid growth.</p>
+          <div class="ref-img-wrap">
+            <img src="/ref-bu1.webp" alt="BU1 – Goalkeeper gloves and sportswear" width="800" height="450" loading="lazy" class="ref-img" />
+            <div class="ref-img-overlay">
+              <span class="ref-img-label">Goalkeeper gloves<br />and sportswear</span>
+            </div>
+          </div>
+          <a href="https://bu1.cz" target="_blank" rel="noopener" class="btn-outline ref-cta">Visit BU1</a>
+        </div>
+        <div class="ref-card">
+          <p class="ref-desc">GROOMO was built entirely in-house — from brand creation to Shopify development. The whole brand ecosystem is rooted in genuine passion, love for dogs and professionalism.</p>
+          <div class="ref-img-wrap">
+            <img src="/ref-groomo.webp" alt="GROOMO – For groomers and dog lovers" width="800" height="450" loading="lazy" class="ref-img" />
+            <div class="ref-img-overlay">
+              <span class="ref-img-label">For groomers<br />and dog lovers</span>
+            </div>
+          </div>
+          <a href="/en/groomo-cz-na-shopify" class="btn-outline ref-cta">GROOMO.cz Case Study</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="zkusenosti">
+    <div class="container zk-inner">
+      <h2 class="zk-heading">Experience</h2>
+      <p class="zk-body">Over the years we have worked in this industry, we have built up an impressive roster of clients and the experience that comes with it. We have worked on many diverse projects, so the stories about collaborating with multinationals and others — we can happily share over coffee ;-D</p>
+      <div class="zk-logos">
+        <span class="zk-logo-text">Genkia</span>
+        <span class="zk-logo-text">BU1</span>
+        <span class="zk-logo-text">GROOMO</span>
+        <span class="zk-logo-text">Havana Club</span>
+        <span class="zk-logo-text">e·on</span>
+        <span class="zk-logo-text">Jan Becher</span>
+        <span class="zk-logo-text">air/bank</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog-section">
+    <div class="container">
+      <h2 class="section-heading">Blog</h2>
+      <div class="blog-grid">
+        {blogPosts.map((post) => (
+          <a href={post.href} class="blog-card">
+            <div class="blog-card-img">
+              <img src={post.img} alt={post.title} width="837" height="450" loading="lazy" />
+              <span class="blog-time">⏱{post.time} min.</span>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-ago">{post.ago}</span>
+              <h3 class="blog-title">{post.title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="footer-cta">
     <div class="container footer-cta-inner">
-      <h2>Have something to discuss?<br /><span class="accent-text">Let us know.</span></h2>
-      <div class="cta-contacts">
-        <a href="mailto:info@aethero.cz" class="cta-contact-link">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="cta-contact-link">+420 776 067 663</a>
+      <h2 class="footer-cta-heading">Have something to discuss? Let us know</h2>
+      <div class="footer-cta-contacts">
+        <a href="mailto:info@aethero.cz" class="footer-cta-link">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="footer-cta-link">+420 776 067 663</a>
       </div>
     </div>
   </section>
 
 </PageLayout>
 
+<script>
+  // Hero rotating text
+  const words = ['specialists', 'strategists', 'developers', 'partners'];
+  const rotEl = document.querySelector('.hero-rotate');
+  if (rotEl) {
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % words.length;
+      rotEl.classList.add('fade-out');
+      setTimeout(() => {
+        rotEl.textContent = words[i];
+        rotEl.classList.remove('fade-out');
+      }, 300);
+    }, 2800);
+  }
+
+  // Service carousel scroll
+  const track = document.getElementById('services-track');
+  const prevBtn = document.getElementById('ctrl-prev');
+  const nextBtn = document.getElementById('ctrl-next');
+  if (track && nextBtn && prevBtn) {
+    const scrollBy = 360;
+    nextBtn.addEventListener('click', () => track.scrollBy({ left: scrollBy, behavior: 'smooth' }));
+    prevBtn.addEventListener('click', () => track.scrollBy({ left: -scrollBy, behavior: 'smooth' }));
+  }
+</script>
+
 <style>
-  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: var(--bg-primary-alt); overflow: hidden; }
-  .hero-blob { position: absolute; top: -20%; right: -10%; width: 700px; height: 700px; background: radial-gradient(ellipse at center, rgba(203,0,215,0.18) 0%, rgba(9,32,102,0.25) 50%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-  .hero-inner { position: relative; padding: 140px 0 100px; max-width: 760px; }
-  .hero-label { font-family: var(--font-primary); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-24); }
-  .hero h1 { font-size: clamp(48px, 7vw, 80px); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-24); }
-  .hero-accent { color: var(--action); }
-  .hero-sub { font-size: var(--text-h3); color: var(--text-secondary); margin-bottom: var(--space-40); }
-  .btn-primary { display: inline-flex; align-items: center; gap: var(--space-8); padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base), transform var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); transform: translateY(-1px); }
-  .section { padding: var(--space-120) 0; }
-  .services-selector { background: var(--bg-elevated); }
-  .services-grid { list-style: none; display: flex; flex-direction: column; gap: 1px; border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); overflow: hidden; }
-  .service-card { display: flex; align-items: center; gap: var(--space-24); padding: var(--space-24) var(--space-40); background: var(--bg-secondary); transition: background var(--transition-base); border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .service-card:hover { background: rgba(13,212,205,0.06); }
-  .service-card:hover .service-arrow { transform: translateX(4px); color: var(--action); }
-  .service-num { font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 28px; }
-  .service-text { flex: 1; font-size: 15px; color: var(--neutral-300); }
-  .service-text strong { color: var(--text-primary); font-weight: 600; }
-  .service-arrow { color: var(--neutral-700); transition: transform var(--transition-base), color var(--transition-base); flex-shrink: 0; }
-  .value-prop { background: var(--bg-primary-alt); }
-  .value-inner { max-width: 680px; }
-  .value-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-24); }
-  .accent-text { color: var(--action); }
-  .value-body { font-size: 18px; color: var(--neutral-300); line-height: 1.7; }
-  .stats-bar { background: linear-gradient(135deg, #6B0075 0%, var(--accent-purple) 50%, #4A0080 100%); padding: var(--space-80) 0; }
-  .stats-inner { display: flex; align-items: center; justify-content: center; gap: var(--space-80); flex-wrap: wrap; }
-  .stat { text-align: center; }
-  .stat-num { display: block; font-family: var(--font-primary); font-size: 48px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: var(--space-8); }
-  .stat-label { font-size: var(--text-small); color: rgba(255,255,255,0.8); max-width: 180px; display: block; }
-  .stat-divider { width: 1px; height: 60px; background: rgba(255,255,255,0.25); }
-  .footer-cta { background: var(--bg-secondary); }
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background-color: #171A1C;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-80);
+    padding: 120px 0 80px;
+  }
+  .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
+  .hero-heading {
+    font-size: clamp(56px, 7vw, 100px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.4px;
+    margin-bottom: var(--space-40);
+  }
+  .hero-rotate-wrapper { display: block; overflow: hidden; }
+  .hero-rotate { display: block; color: var(--action); transition: opacity 0.3s ease; }
+  .hero-rotate.fade-out { opacity: 0; }
+  .btn-hero {
+    display: inline-flex; align-items: center;
+    padding: 14px 32px;
+    background: var(--action); color: var(--brand-dark);
+    font-family: var(--font-primary); font-size: 16px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: 6px;
+    transition: background var(--transition-base), transform var(--transition-base);
+  }
+  .btn-hero:hover { background: var(--action-hover); transform: translateY(-1px); }
+  .hero-right { display: flex; justify-content: center; align-items: center; }
+  .hero-shape { width: 100%; max-width: 560px; height: auto; }
+
+  /* SERVICE SELECTOR */
+  .services-section {
+    background: var(--bg-elevated);
+    padding: var(--space-80) 0 var(--space-40);
+    overflow: hidden;
+  }
+  .services-track-wrap { overflow: hidden; }
+  .services-track {
+    display: flex;
+    gap: var(--space-16);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 var(--space-80);
+    scrollbar-width: none;
+  }
+  .services-track::-webkit-scrollbar { display: none; }
+  .service-item {
+    flex: 0 0 340px;
+    scroll-snap-align: start;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: var(--space-40);
+    display: block;
+    transition: border-color var(--transition-base);
+    min-width: 280px;
+  }
+  .service-item:hover { border-color: var(--action); }
+  .service-content { display: flex; flex-direction: column; gap: 8px; }
+  .service-num { font-size: 13px; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.08em; }
+  .service-text { font-size: 15px; color: rgba(255,255,255,0.6); margin: 0; }
+  .service-title { font-size: 18px; font-weight: 700; color: var(--action); margin: 0; line-height: 1.2; }
+  .service-link {
+    font-size: 16px; font-weight: 500;
+    letter-spacing: 0.06em; color: #fff;
+    margin-top: var(--space-8);
+  }
+  .services-controls {
+    display: flex; justify-content: flex-end; gap: var(--space-8);
+    padding: var(--space-16) var(--space-80) 0;
+  }
+  .ctrl-btn {
+    width: 40px; height: 40px;
+    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 50%; color: var(--text-primary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color var(--transition-base), color var(--transition-base);
+  }
+  .ctrl-btn:hover { border-color: var(--action); color: var(--action); }
+
+  /* VALUE PROP */
+  .value-prop {
+    background: var(--bg-primary-alt);
+    padding: var(--space-120) 0;
+  }
+  .value-inner { max-width: 800px; margin: 0 auto; }
+  .value-heading {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: var(--space-24);
+  }
+  .val-shopify { color: var(--accent-shopify); font-weight: 700; }
+  .val-aethero { color: var(--text-secondary); font-weight: 700; }
+  .value-body {
+    font-size: 20px; line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: var(--space-40);
+  }
+  .value-purple { color: var(--text-secondary); }
+  .shopify-icon { opacity: 0.4; }
+
+  /* FEATURES */
+  .features { background: var(--bg-elevated); padding: var(--space-120) 0; }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-40);
+  }
+  .feature-col-title {
+    font-size: 16px; font-weight: 400;
+    letter-spacing: 0.08em; color: var(--text-secondary);
+    white-space: pre-line;
+    margin-bottom: var(--space-24);
+    line-height: 1.4;
+  }
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-16); }
+  .feature-item { display: flex; gap: var(--space-16); align-items: flex-start; }
+  .feature-icon { flex-shrink: 0; margin-top: 2px; opacity: 0.85; }
+  .feature-label {
+    display: block;
+    font-size: 15px; color: var(--text-primary); font-weight: 500;
+    margin-bottom: 4px; line-height: 1.3;
+  }
+  .feature-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.4; }
+
+  /* STATS */
+  .stats-bar {
+    background: linear-gradient(135deg, #360038 0%, #5B1A6A 30%, #090a5c 70%, #060838 100%);
+    padding: var(--space-80) 0;
+  }
+  .stats-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--space-40);
+    flex-wrap: wrap;
+  }
+  .stat { text-align: left; }
+  .stat-num {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: var(--space-8);
+  }
+  .stat-label {
+    font-family: var(--font-secondary);
+    font-size: 22px; font-weight: 700;
+    color: rgba(255,255,255,0.75);
+    max-width: 180px; display: block;
+  }
+  .shopify-stats-logo { opacity: 0.9; }
+
+  /* AE SERVICES */
+  .ae-services { background: var(--bg-secondary); padding: var(--space-120) 0; }
+  .ae-services-header {
+    display: flex; align-items: center; gap: var(--space-24);
+    margin-bottom: var(--space-80);
+  }
+  .ae-znak { opacity: 0.9; }
+  .ae-services-title {
+    font-size: 22px; font-weight: 400; color: #fff; line-height: 1.4;
+  }
+  .ae-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-24);
+    margin-bottom: var(--space-80);
+  }
+  .ae-service-item { display: flex; gap: var(--space-16); align-items: flex-start; }
+  .ae-service-icon { flex-shrink: 0; margin-top: 2px; opacity: 0.85; }
+  .ae-service-label {
+    display: block; font-size: 15px; color: var(--text-secondary);
+    font-weight: 500; margin-bottom: 4px;
+  }
+  .ae-service-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.4; }
+  .ae-services-ctas {
+    display: flex; gap: var(--space-16); flex-wrap: wrap;
+  }
+  .btn-teal {
+    display: inline-flex; padding: 6px 26px;
+    background: #fff; color: var(--brand-dark);
+    font-family: var(--font-primary); font-size: 16px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: 6px;
+    transition: background var(--transition-base);
+  }
+  .btn-teal:hover { background: rgba(255,255,255,0.9); }
+  .btn-outline {
+    display: inline-flex; padding: 6px 26px;
+    border: 2px solid #fff; color: #fff;
+    font-family: var(--font-primary); font-size: 16px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border-radius: 6px;
+    transition: border-color var(--transition-base), color var(--transition-base);
+  }
+  .btn-outline:hover { border-color: var(--action); color: var(--action); }
+
+  /* REFERENCES */
+  .references { background: var(--bg-elevated); padding: var(--space-120) 0; }
+  .section-heading { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-40); }
+  .ref-card { display: flex; flex-direction: column; gap: var(--space-24); }
+  .ref-desc { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+  .ref-link-inline { color: var(--action); font-weight: 600; }
+  .ref-link-inline:hover { text-decoration: underline; }
+  .ref-img-wrap {
+    position: relative; border-radius: var(--radius-md); overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+  .ref-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ref-img-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    display: flex; align-items: flex-end; padding: var(--space-16);
+  }
+  .ref-img-label { color: #fff; font-size: 14px; font-weight: 600; line-height: 1.4; }
+  .ref-cta { margin-top: auto; }
+
+  /* ZKUŠENOSTI */
+  .zkusenosti { background: var(--bg-secondary); padding: var(--space-120) 0; }
+  .zk-inner { text-align: center; }
+  .zk-heading {
+    font-size: clamp(28px,4vw,40px); font-weight: 700;
+    line-height: 1.1; margin-bottom: var(--space-24);
+  }
+  .zk-body {
+    font-size: 18px; color: #fff; line-height: 1.4;
+    max-width: 740px; margin: 0 auto var(--space-40);
+  }
+  .zk-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-40); }
+  .zk-logo-text {
+    font-size: 20px; font-weight: 700; letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.3);
+    transition: color var(--transition-base);
+  }
+  .zk-logo-text:hover { color: rgba(255,255,255,0.7); }
+
+  /* BLOG */
+  .blog-section { background: var(--bg-elevated); padding: var(--space-120) 0; }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-24);
+  }
+  .blog-card { display: flex; flex-direction: column; gap: var(--space-16); transition: opacity var(--transition-base); }
+  .blog-card:hover { opacity: 0.85; }
+  .blog-card-img {
+    position: relative; border-radius: var(--radius-md); overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+  .blog-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .blog-time {
+    position: absolute; top: var(--space-8); right: var(--space-8);
+    font-size: 12px; background: rgba(0,0,0,0.6);
+    color: #fff; padding: 2px 8px; border-radius: 100px;
+  }
+  .blog-card-body { display: flex; flex-direction: column; gap: var(--space-8); }
+  .blog-ago { font-size: 12px; color: rgba(255,255,255,0.45); }
+  .blog-title { font-size: 16px; font-weight: 600; line-height: 1.4; color: var(--text-primary); }
+
+  /* FOOTER CTA */
+  .footer-cta { background: var(--bg-secondary); padding: var(--space-120) 0; }
   .footer-cta-inner { text-align: center; }
-  .footer-cta h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
-  .cta-contact-link { font-size: var(--text-h3); color: var(--text-primary); font-family: var(--font-primary); font-weight: 600; transition: color var(--transition-base); }
-  .cta-contact-link:hover { color: var(--action); }
-  @media (max-width: 768px) { .service-card { padding: var(--space-16) var(--space-24); } .stat-divider { display: none; } .stats-inner { gap: var(--space-40); } .cta-contacts { flex-direction: column; align-items: center; gap: var(--space-16); } }
+  .footer-cta-heading {
+    font-size: clamp(36px,5vw,70px);
+    font-weight: 600; line-height: 1.15;
+    margin-bottom: var(--space-40);
+  }
+  .footer-cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
+  .footer-cta-link {
+    font-size: clamp(24px,3vw,40px); color: var(--brand-dark);
+    font-family: var(--font-primary); font-weight: 600;
+    transition: color var(--transition-base);
+  }
+  .footer-cta-link:hover { color: var(--action); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .ae-services-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero-right { display: none; }
+    .hero-heading { font-size: clamp(40px, 10vw, 64px); }
+    .features-grid { grid-template-columns: 1fr; }
+    .ae-services-grid { grid-template-columns: 1fr; }
+    .ref-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .stats-inner { flex-direction: column; text-align: center; }
+    .shopify-stats-logo { margin: 0 auto; }
+    .footer-cta-contacts { flex-direction: column; align-items: center; gap: 16px; }
+    .service-item { min-width: 280px; }
+    .ae-services-ctas { flex-direction: column; align-items: center; }
+  }
 </style>
