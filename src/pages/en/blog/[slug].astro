@@ -17,6 +17,10 @@ export async function getStaticPaths() {
       props: { title: 'Shopify Editions — Winter 2026', readTime: '5 min', date: '2025-12-10', perex: 'Overview of the most important updates from Shopify Editions Winter 2026.', content: 'Article content will be added. Storyblok CMS integration in Milestone 2.x.' },
     },
     {
+      params: { slug: 'translating-payment-methods-shopify' },
+      props: { title: "Translating Payment Methods in Shopify When Translate & Adapt Doesn't Help", readTime: '3 min', date: '2025-10-05', perex: 'A practical guide to translating payment methods in Shopify outside of standard tools.', content: 'Article content will be added. Storyblok CMS integration in Milestone 2.x.' },
+    },
+    {
       params: { slug: 'shopify-vs-shoptet' },
       props: { title: 'Which E-commerce Platform to Choose? Shopify vs Shoptet', readTime: '18 min', date: '2025-06-01', perex: 'Detailed comparison of Shopify and Shoptet for the Central European market.', content: 'Article content will be added. Storyblok CMS integration in Milestone 2.x.' },
     },
@@ -64,7 +68,7 @@ const dateFormatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeri
 <style>
   .article-hero {
     position: relative; overflow: hidden;
-    background: var(--bg-elevated);
+    background: var(--bg-secondary);
     padding: 160px 0 80px;
   }
   .hero-blob {
@@ -73,7 +77,7 @@ const dateFormatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeri
     background: radial-gradient(circle, rgba(160,129,209,0.15) 0%, transparent 70%);
     border-radius: 50%; pointer-events: none;
   }
-  .article-hero-inner { max-width: 800px; }
+  .article-hero-inner { max-width: 760px; }
   .article-meta { display: flex; gap: 16px; margin-bottom: 24px; font-size: 14px; color: rgba(255,255,255,0.5); }
   .read-time::before { content: '·'; margin-right: 16px; }
   .article-hero h1 { font-size: clamp(36px,5vw,64px); font-weight: 700; line-height: 1.1; margin-bottom: 24px; }
