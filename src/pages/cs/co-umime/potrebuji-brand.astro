@@ -2,20 +2,12 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const steps = [
-  { num: '01', title: 'Discovery workshop', desc: 'Projdeme vaše hodnoty, cílovou skupinu, konkurenci a positioning. Základ pro všechna rozhodnutí.' },
-  { num: '02', title: 'Vizuální identita', desc: 'Logo, barvy, typografie a grafický manuál. Unikátní vizuální jazyk, který odlišuje vaši značku.' },
-  { num: '03', title: 'Tone of voice', desc: 'Jak vaše značka mluví — od produktových popisků přes email kampaně až po zákaznickou podporu.' },
-  { num: '04', title: 'Implementace', desc: 'Brand přeneseme do e-shopu — UX, UI a zákaznická cesta v souladu s identitou značky.' },
-];
-
-const features = [
-  { title: 'Logo & vizuální systém', desc: 'Primární a sekundární logo, varianty pro světlé i tmavé pozadí, favicon a aplikační ikony. Vše v potřebných formátech.' },
-  { title: 'Barevná paleta & typografie', desc: 'Primární a doplňkové barvy s přesným definováním pro web i tisk. Typografická hierarchie pro všechny kanály.' },
-  { title: 'Brand manuál', desc: 'Závazný dokument s pravidly použití. Každý dodavatel a zaměstnanec ví, jak se značkou pracovat.' },
-  { title: 'Tone of voice', desc: 'Styl komunikace, klíčová sdělení, příklady textů. Váš brand mluví konzistentně na všech kanálech.' },
-  { title: 'Brandové šablony', desc: 'Šablony pro sociální sítě, emailové hlavičky, bannery, vizitky a prezentace. Ušetříte hodiny práce.' },
-  { title: 'E-shop design', desc: 'Brand promítnutý do Shopify e-shopu — UX design, výběr nebo úprava tématu, klíčové stránky.' },
+const workCards = [
+  { title: 'Brand, Identita, DX', desc: 'Značka, barvy, fonty, celá digitální zkušenost, souhra která dává smysl lidem i e-shopu.' },
+  { title: 'Šablona — Theme', desc: 'Profesionální výběr a nastavení Shopify šablony. Rychlost, CTA, layouty, bloky, varianty a propojení s brandem.' },
+  { title: 'Obsah & prezentace', desc: 'Vizuální a obsahové podklady. Brandové šablony, produktový obsah, launch vizuály s návazností na e-shop.' },
+  { title: 'Funkčnost & konverze', desc: 'Produktové stránky, kolekce, upsell, cross-sell a UX logika. Navrhujeme Shopify tak, aby prodával, ne jen vypadal dobře.' },
+  { title: 'Růst skrze marketing', desc: 'Příprava pro výkonové kampaně a expanzi. SEO, analytika, lokalizace, napojení na marketingové nástroje a další růst.' },
 ];
 
 const relatedServices = [
@@ -28,156 +20,94 @@ const relatedServices = [
 ];
 ---
 
-<PageLayout title="Potřebuji brand" description="Vytvoříme vizuální identitu a digitální zkušenost pro váš e-commerce projekt. Brand, který si zákazníky získá a udrží." lang="cs">
+<PageLayout title="Potřebuji brand | aethero" description="Budujeme brandy, které rezonují napříč kulturami. Značka, vizuální identita a digitální zkušenost pro váš Shopify e-shop." lang="cs">
   <ServiceHero
     label="Brand & Identity"
     title="Potřebuji <span style='color:var(--action)'>BRAND</span>"
-    subtitle="Silná značka není luxus — je to základ každého úspěšného e-shopu. Vytvoříme identitu, která si zákazníky získá a udrží."
+    subtitle="A skrze něj i místo v myslích a srdcích zákazníků"
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
     image="/triangle.webp"
     imageAlt="Brand a vizuální identita"
   />
 
-  <!-- Intro section -->
+  <!-- Intro hero text -->
   <section class="section bg-elevated">
-    <div class="container">
-      <div class="two-col">
-        <div class="intro-text">
-          <h2 class="section-title">Brand je víc než logo</h2>
-          <p class="section-text">
-            Zákazníci si nevybírají produkt — vybírají si značku. Ta musí být jasně definovaná,
-            vizuálně konzistentní a komunikovat hodnoty, které rezonují s vaší cílovou skupinou.
-          </p>
-          <p class="section-text">
-            V aethero projektujeme brand komplexně: od strategie přes vizuální identitu až po implementaci
-            do e-shopu. Výsledkem je ucelená značka připravená na růst.
-          </p>
-        </div>
-        <div class="intro-highlights">
-          <div class="highlight-item">
-            <span class="highlight-num">3–6</span>
-            <span class="highlight-label">týdnů od kickoff po finální manuál</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-num">100%</span>
-            <span class="highlight-label">originální identita na míru vašemu byznysu</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-num">1</span>
-            <span class="highlight-label">dedikovaný tým pro brand i e-shop</span>
-          </div>
-        </div>
-      </div>
+    <div class="container intro-wrap">
+      <h2 class="section-title">Budujeme BRANDY, které rezonují napříč kulturami</h2>
+      <h3 class="intro-sub">Ultimátním řešením které nabízíme, je společná příprava dotaženého brandu. Nejde ani o snadné ani levné řešení, ale je to ověřená a fungující cesta.</h3>
+      <a href="tel:+420776067663" class="intro-link">Tak pojďme na to ➝</a>
     </div>
   </section>
 
-  <!-- Process steps -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Jak to děláme</h2>
-      <div class="steps-grid">
-        {steps.map((s) => (
-          <div class="step-card">
-            <span class="step-num">{s.num}</span>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Features/deliverables -->
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Co dostanete</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Why brand matters for e-commerce -->
+  <!-- Brand pillar -->
   <section class="section bg-secondary">
     <div class="container">
-      <div class="two-col">
-        <div>
-          <h2 class="section-title">Proč investovat do brandu?</h2>
-          <p class="section-text">
-            E-shopy bez silné identity soupeří pouze cenou. Značky s jasnou identitou si budují
-            loajální zákazníky, kteří se vracejí — a doporučují vás dál.
-          </p>
-          <p class="section-text">
-            Konzistentní vizuální identita zvyšuje důvěryhodnost a konverzní poměr. Zákazníci
-            nakupují u značek, kterým věří.
-          </p>
-        </div>
-        <div class="benefit-list">
-          <div class="benefit-item">
-            <span class="benefit-icon">→</span>
-            <div>
-              <strong>Vyšší marže</strong>
-              <p>Silná značka ospravedlňuje prémiovou cenu. Přestanete soutěžit jen cenou.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-icon">→</span>
-            <div>
-              <strong>Vyšší konverze</strong>
-              <p>Zákazníci nakupují u e-shopů, které vypadají profesionálně a důvěryhodně.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-icon">→</span>
-            <div>
-              <strong>Loajální zákazníci</strong>
-              <p>Lidé se vracejí ke značkám, se kterými se ztotožňují. Brand buduje komunitu.</p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-icon">→</span>
-            <div>
-              <strong>Snazší marketing</strong>
-              <p>Jasná identita zjednodušuje tvorbu obsahu, reklam i spolupráci s influencery.</p>
-            </div>
-          </div>
-        </div>
+      <h3 class="pillar-heading">BRAND, je prvním pilířem vašeho úspěchu.</h3>
+      <div class="brand-text-col">
+        <p class="section-text">Ptáte se proč tu řešíme takovou obyčejnou a zdálo by se možná i základní věc, jako je BRAND? Protože ho můžete záměrně stvořit malý a prostinký, ale nesmíte ho postavit špatně a pak ho ukázat světu. Zde naplno platí, že nedostanete druhou šanci učinit první dojem.</p>
+        <p class="section-text">Váš BRAND je energií celého e-commerce stroje. A stejně jako například elektřina, vám neodpustí hrubou chybu. BRAND je naprosto zásadní ingrediencí a musíte ho brát vážně, chcete-li mít úspěch.</p>
+        <p class="section-text">Název, znak — logo, doména, typografie, barvy... To je ta část, o které se snadno mluví, ale o to je těžší je ji nastavit správně. A pak je tu ta druhá oblast, kde jsou části brandu, které se dají vznosně popisovat, ale vznikají na základě hlubšího vhledu, pocitů a je nutné je skrze konzistentní přístup k brandu zakódovat do firmy: komunikace, hodnoty, vize, vnitřní kultura firmy, motivace lidí (ta která se odrazí na dlouhodobém záři firmy) a mnoho dalších částí.</p>
       </div>
+      <blockquote class="ogilvy-quote">„ Brand je to, co vám zůstane, když vám shoří továrna... " <cite>— David Ogilvy</cite></blockquote>
+    </div>
+  </section>
+
+  <!-- Na čem můžeme spolu pracovat -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="work-heading">NA ČEM MŮŽEME SPOLU — PRACOVAT</h2>
+      <div class="work-grid">
+        {workCards.map((c) => (
+          <div class="work-card">
+            <h3 class="work-card-title">{c.title}</h3>
+            <p class="work-card-desc">{c.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- A proč si myslíme -->
+  <section class="section bg-secondary">
+    <div class="container brand-analogy">
+      <h3 class="analogy-heading">A proč si myslíme, že v tom určitě nemáte být sami?</h3>
+      <p class="section-text">Tvorba brandu, je jako stavba nového domu. Na první pohled je všem všechno jasné. Každý přece ví, že budete mít kuchyň i koupelnu. Ale až teprve ve chvíli, kdy začnete zjišťovat „jak tu kuchyň vybavit, propojit s jídelnou a k tomu zkoušíte najít správný styl obložení koupelny i vhodný typ vany...", tak tehdy to začne být doopravdy náročné... A pak si přejete mít pomoc nadosah!</p>
+      <p class="section-text"><strong>No a od toho tu jsme my.</strong></p>
+      <a href="tel:+420776067663" class="intro-link">ozvěte se nám ➝</a>
+    </div>
+  </section>
+
+  <!-- Muhtar Kent quote -->
+  <section class="section bg-elevated quote-section">
+    <div class="container">
+      <blockquote class="kent-quote">„Značka je slib. A dobrá značka je slib, který je vždy dodržen"<cite>— Muhtar Kent</cite></blockquote>
     </div>
   </section>
 
   <!-- Related services -->
-  <section class="section bg-elevated">
+  <section class="section bg-secondary">
     <div class="container">
-      <div class="related-wrapper">
-        <div class="related-header">
-          <h2 class="section-title">Další služby</h2>
-          <p class="section-text">Brand je začátek. Pomůžeme vám s celou e-commerce cestou.</p>
-        </div>
-        <ul class="related-services">
-          {relatedServices.map((s) => (
-            <li>
-              <a href={s.href} class="related-link">
-                <span>{s.label}</span>
-                <span class="related-arrow">→</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h2 class="section-title">Co pro vás okolo Shopify můžeme udělat?</h2>
+      <ul class="related-services">
+        {relatedServices.map((s) => (
+          <li>
+            <a href={s.href} class="related-link">
+              <span>{s.label}</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Pojďme vytvořit značku,<br />na kterou budete hrdí</h2>
+      <h2>Brand, design, máme co probrat?<br />Dejte vědět</h2>
       <div class="cta-contacts">
         <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
         <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
@@ -187,52 +117,40 @@ const relatedServices = [
 </PageLayout>
 
 <style>
-  /* ── Base sections ── */
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-
-  /* ── Section titles & text ── */
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: var(--space-24); max-width: 760px; }
 
-  /* ── Two-column layout ── */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .intro-wrap { max-width: 800px; }
+  .intro-sub { font-size: clamp(18px, 2vw, 24px); font-weight: 400; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: var(--space-32); }
+  .intro-link { display: inline-block; color: var(--action); font-size: 16px; font-weight: 600; text-decoration: none; }
+  .intro-link:hover { opacity: 0.75; }
 
-  /* ── Intro highlights ── */
-  .intro-highlights { display: flex; flex-direction: column; gap: var(--space-40); padding-top: var(--space-8); }
-  .highlight-item { display: flex; flex-direction: column; gap: var(--space-8); border-left: 2px solid var(--action); padding-left: var(--space-24); }
-  .highlight-num { font-size: 48px; font-weight: 700; color: var(--action); line-height: 1; }
-  .highlight-label { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+  .pillar-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-40); color: var(--action); }
+  .brand-text-col { max-width: 760px; }
 
-  /* ── Steps grid ── */
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .ogilvy-quote { margin-top: var(--space-64); font-size: clamp(18px, 2vw, 24px); font-style: italic; color: rgba(255,255,255,0.9); border-left: 3px solid var(--action); padding-left: var(--space-32); line-height: 1.5; }
+  .ogilvy-quote cite { display: block; font-size: 14px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-16); }
 
-  /* ── Features grid ── */
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .work-heading { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; letter-spacing: 0.05em; margin-bottom: var(--space-48); color: var(--action); text-transform: uppercase; }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+  .work-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .work-card-title { font-size: 16px; font-weight: 700; color: var(--action); margin-bottom: var(--space-12); }
+  .work-card-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
-  /* ── Benefit list ── */
-  .benefit-list { display: flex; flex-direction: column; gap: var(--space-24); }
-  .benefit-item { display: flex; gap: var(--space-16); align-items: flex-start; }
-  .benefit-icon { color: var(--action); font-size: 20px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
-  .benefit-item strong { display: block; font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .benefit-item p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; margin: 0; }
+  .brand-analogy { max-width: 760px; }
+  .analogy-heading { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; margin-bottom: var(--space-32); }
 
-  /* ── Related services ── */
-  .related-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .related-services { list-style: none; display: flex; flex-direction: column; padding: 0; margin: 0; }
-  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); text-decoration: none; transition: color var(--transition-base); }
+  .quote-section { padding: var(--space-80) 0; }
+  .kent-quote { font-size: clamp(20px, 2.5vw, 32px); font-style: italic; color: rgba(255,255,255,0.9); text-align: center; line-height: 1.5; max-width: 720px; margin: 0 auto; }
+  .kent-quote cite { display: block; font-size: 16px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-24); }
+
+  .related-services { list-style: none; display: flex; flex-direction: column; }
+  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
   .related-link:hover { color: var(--action); }
-  .related-arrow { color: var(--action); font-size: 18px; }
 
-  /* ── CTA section ── */
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
@@ -240,16 +158,10 @@ const relatedServices = [
   .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; }
   .cta-contact:hover { opacity: 0.7; }
 
-  /* ── Responsive ── */
   @media (max-width: 1024px) {
-    .steps-grid { grid-template-columns: repeat(2, 1fr); }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .two-col { grid-template-columns: 1fr; }
-    .related-wrapper { grid-template-columns: 1fr; gap: var(--space-40); }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .related-wrapper { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr; }
   }
 </style>
