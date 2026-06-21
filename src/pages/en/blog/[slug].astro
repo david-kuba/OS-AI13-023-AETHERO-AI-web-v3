@@ -49,6 +49,16 @@ const dateFormatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeri
     </section>
   </article>
 
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Something to discuss?</h2>
+      <div class="cta-links">
+        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
+        <a href="/en/kontakt" class="btn-ghost">Contact</a>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
 
 <style>
@@ -71,4 +81,12 @@ const dateFormatted = new Date(date).toLocaleDateString('en-GB', { year: 'numeri
   .article-body { padding: var(--space-120) 0; background: var(--bg-elevated); }
   .article-content { max-width: 800px; }
   .placeholder-note { font-size: 18px; color: var(--neutral-500); font-style: italic; }
+  .cta-section { padding: var(--space-80) 0; background: var(--bg-secondary); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
 </style>

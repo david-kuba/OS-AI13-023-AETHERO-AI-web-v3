@@ -87,12 +87,29 @@ const team = [
     </div>
   </section>
 
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Call, write!<br /><span style="color:var(--action)">We don't bite.</span></h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
 
 <style>
+  .cta-section { padding: var(--space-120) 0; background: var(--bg-elevated); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
+  .cta-link { font-size: var(--text-h3); color: var(--text-primary); font-family: var(--font-primary); font-weight: 600; transition: color var(--transition-base); }
+  .cta-link:hover { color: var(--action); }
+
   .o-nas-hero {
     position: relative; overflow: hidden;
-    background: var(--bg-elevated);
+    background: var(--bg-primary-alt);
     padding: 160px 0 80px;
   }
   .hero-blob {
