@@ -2,23 +2,15 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const steps = [
-  { step: '01', title: 'Strategie vstupu na trh', desc: 'Výběr prioritních trhů, validace potenciálu a sestavení business case.' },
-  { step: '02', title: 'Architektura řešení', desc: 'Návrh Shopify struktury, integrace a technické architektury pro mezinárodní provoz.' },
-  { step: '03', title: 'Lokalizace & compliance', desc: 'Obsah, platební metody, daně, legislativa a jazykové varianty pro každý trh.' },
-  { step: '04', title: 'Spuštění & škálování', desc: 'Spuštění na trhu a systematický růst s měřením výkonu.' },
-];
-
 const features = [
-  { title: 'Shopify Markets', desc: 'Správa všech trhů z jednoho adminu — ceny, jazyky, domény, DPH.' },
-  { title: 'Multi-měna a vícejazyčnost', desc: 'Nativní podpora všech světových měn a jazyků bez externích pluginů.' },
-  { title: 'B2B řešení', desc: 'Enterprise funkce pro B2B zákazníky v Shopify Plus — schvalovací procesy, vlastní ceníky.' },
-  { title: 'Lokalizované platební metody', desc: 'iDEAL, Klarna, Bancontact, BLIK — správná platba pro každý trh.' },
-  { title: 'AI Sidekick pro lokalizaci', desc: 'Generování lokalizovaného obsahu, popisků a marketingových textů pomocí AI.' },
-  { title: 'Shopify Shop App', desc: 'Brandovaná přítomnost v mobilním zařízení zákazníků po celém světě.' },
-  { title: 'Real-time analytika', desc: 'Živá data napříč trhy bez denního zpracování — okamžitý přehled výkonu.' },
-  { title: 'Shopify Flow', desc: 'Automatizace procesů — objednávky, zákazníci, ceny, zásoby, marketing.' },
-  { title: 'Konkurenční benchmarking', desc: 'AI srovnání výkonu s podobnými obchody na globálním trhu.' },
+  { title: 'AI parťák pro lokalizaci obsahu', logo: '/sidekick.png', desc: 'Shopify Sidekick generuje lokalizované popisy produktů, marketingové texty a obsah v jazyce cílového trhu. Méně manuální práce, více relevance pro místní zákazníky.', img: null, reverse: false },
+  { title: 'Shopify Markets — jeden admin, celý svět', desc: 'Správa všech trhů z jediného adminu — ceny v lokálních měnách, subdomény, jazykové varianty, DPH a zákonné požadavky pro každý trh. Bez nutnosti duplicitních e-shopů.', img: '/shopify-premium-story.webp', reverse: true },
+  { title: 'Mezinárodní prodej se Shopify', desc: 'Shopify je od základu navržen pro cross-border commerce. Nativní podpora vícejazyčnosti, multi-měny, lokálních platebních metod a regionálních fulfilment center — vše pod jednou střechou.', img: '/international-sale-shopify.webp', reverse: false },
+  { title: 'Benchmarking výkonu oproti trhu', desc: 'Shopify Store Benchmarks porovnává váš e-shop s podobnými obchody na globálním trhu. Zjistíte kde skutečně stojíte a kde jsou největší příležitosti pro růst na nových trzích.', img: '/store-benchmark.webp', reverse: true },
+  { title: 'B2B expanze bez kompromisů', desc: 'Shopify Plus přináší plnohodnotné B2B funkce pro mezinárodní trhy — vlastní ceníky pro firemní zákazníky, schvalovací procesy, ERP napojení a B2B checkout v každém jazyce a měně.', img: '/b2b-1.webp', reverse: false },
+  { title: 'Měření marketingu napříč trhy', desc: 'Přehled výkonu kampaní na každém trhu zvlášť — Google Ads, Meta, email. Víte přesně, které kanály přinášejí ROI na DE, SK nebo PL trhu a kde optimalizovat rozpočet.', img: '/marketing-measurement.webp', reverse: true },
+  { title: 'Shopify Shop App — v telefonu zákazníků', desc: 'Brandovaná přítomnost v mobilním zařízení zákazníků po celém světě. Notifikace o objednávkách, personalizovaný feed a sledování zásilek — vše bez nutnosti vlastní mobilní aplikace.', img: '/shopify-shop-app.webp', reverse: false },
+  { title: 'Real-time analytika pro každý trh', desc: 'Živá data o výkonu jednotlivých trhů bez denního zpracování — okamžitý přehled konverzí, průměrné hodnoty košíku a chování zákazníků na každém trhu zvlášť.', img: '/analytika.webp', reverse: true },
 ];
 
 const relatedServices = [
@@ -31,7 +23,7 @@ const relatedServices = [
 ];
 ---
 
-<PageLayout title="Expanze do zahraničí" description="Jeden Shopify e-shop, celý svět. Pomůžeme vám s expanzí na zahraniční trhy pomocí Shopify Markets." lang="cs">
+<PageLayout title="Expanze do zahraničí | aethero" description="Jeden Shopify e-shop, celý svět. Pomůžeme vám s expanzí na zahraniční trhy pomocí Shopify Markets." lang="cs">
   <ServiceHero
     label="Mezinárodní expanze"
     title="EXPANZE<br /><span style='color:var(--action)'>DO ZAHRANIČÍ</span>"
@@ -39,65 +31,64 @@ const relatedServices = [
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
     cta2Label="Zjistěte jak"
-    cta2Href="#expanze-kroky"
+    cta2Href="#expanze-proc"
+    image="/chain.webp"
+    imageAlt="Expanze do zahraničí"
   />
 
-  <section class="section bg-elevated">
+  <!-- Intro -->
+  <section class="section-intro bg-elevated">
     <div class="container">
-      <div class="two-col">
-        <div class="intro-text">
-          <h2 class="section-title">Máte plán na expanzi do zahraničí?</h2>
-          <p class="section-text">Shopify je od základu navržen pro mezinárodní prodej. Získáte jednu globální platformu s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Všechno z jednoho adminu.</p>
-          <p class="section-text">V aethero jsme pomohli klientům rozjet prodej v desítkách zemí. Víme, co funguje a co zbytečně prodražuje čas i peníze.</p>
+      <h2 class="intro-heading">Prodávejte<br /><span class="text-action">GLOBÁLNĚ</span></h2>
+      <p class="intro-text">Shopify je od základu navržen pro mezinárodní prodej. Jedna platforma s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Vše z jednoho adminu — bez nutnosti duplikovat e-shop pro každý trh.</p>
+      <p class="intro-text">V aethero jsme pomohli klientům rozjet prodej v desítkách zemí. Víme, co funguje a co zbytečně prodražuje čas i peníze.</p>
+      <a href="tel:+420776067663" class="btn-action">Jdeme expandovat?</a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section bg-secondary" id="expanze-proc">
+    <div class="container two-col">
+      <div>
+        <h2 class="section-title">Máte plán na expanzi do zahraničí?</h2>
+        <p class="section-text">Shopify je od základu navržen pro mezinárodní prodej. Získáte jednu globální platformu s podporou více měn, jazyků, B2B integracemi a propojením fyzických prodejen. Vše z jednoho adminu.</p>
+        <p class="section-text">V aethero jsme pomohli klientům rozjet prodej v desítkách zemí. Víme, co funguje a co zbytečně prodražuje čas i peníze.</p>
+      </div>
+      <div class="intro-highlights">
+        <div class="highlight-item">
+          <span class="highlight-num">30+</span>
+          <span class="highlight-label">zemí dostupných přes Shopify Markets z jednoho adminu</span>
         </div>
-        <div class="intro-highlights">
-          <div class="highlight-item">
-            <span class="highlight-num">30+</span>
-            <span class="highlight-label">zemí dostupných přes Shopify Markets z jednoho adminu</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-num">1</span>
-            <span class="highlight-label">platforma pro celý svět — bez migrace při škálování</span>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-num">100%</span>
-            <span class="highlight-label">lokalizace — jazyk, měna, platby, daně pro každý trh</span>
-          </div>
+        <div class="highlight-item">
+          <span class="highlight-num">1</span>
+          <span class="highlight-label">platforma pro celý svět — bez migrace při škálování</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-num">100%</span>
+          <span class="highlight-label">lokalizace — jazyk, měna, platby, daně pro každý trh</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-secondary" id="expanze-kroky">
-    <div class="container">
-      <h2 class="section-title">Expanze ve 4 krocích</h2>
-      <div class="steps-grid">
-        {steps.map((s) => (
-          <div class="step-card">
-            <span class="step-num">{s.step}</span>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
+  <!-- Feature sections -->
+  {features.map((f) => (
+    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
+      <div class="container feature-inner">
+        <div class="feature-text">
+          {f.logo && <img src={f.logo} alt={f.title} class="feature-logo" loading="lazy" />}
+          <h2 class="feature-title">{f.title}</h2>
+          <p class="feature-desc">{f.desc}</p>
+        </div>
+        <div class="feature-img-wrap">
+          {f.img && <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
+  <!-- Related -->
   <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Co vám expanze se Shopify přinese</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section bg-secondary">
     <div class="container">
       <h2 class="section-title">Další služby</h2>
       <ul class="related-services">
@@ -115,56 +106,66 @@ const relatedServices = [
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Jdeme expandovat?</h2>
-      <p>Zmapujeme váš expanzní plán společně — první konzultace zdarma.</p>
-      <div class="cta-links">
-        <a href="tel:+420776067663" class="btn-primary">Zavolejme si</a>
-        <a href="mailto:info@aethero.cz" class="btn-ghost">info@aethero.cz</a>
+      <h2>Jdeme<br />EXPANDOVAT?</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
 </PageLayout>
 
 <style>
+  .section-intro { padding: var(--space-120) 0; }
+  .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); }
+  .text-action { color: var(--action); }
+  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-24); }
+  .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin-top: var(--space-16); transition: background var(--transition-base); }
+  .btn-action:hover { background: var(--action-hover); }
+
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
+  .section-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; margin-bottom: var(--space-40); }
+  .section-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
+
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .intro-highlights { display: flex; flex-direction: column; gap: var(--space-40); padding-top: var(--space-8); }
   .highlight-item { display: flex; flex-direction: column; gap: var(--space-8); border-left: 2px solid var(--action); padding-left: var(--space-24); }
   .highlight-num { font-size: 48px; font-weight: 700; color: var(--action); line-height: 1; font-family: var(--font-primary); }
   .highlight-label { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.5; }
-  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
-  .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: var(--space-24); }
 
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
+  .feature-section { padding: var(--space-120) 0; }
+  .feature-section:nth-child(odd) { background: var(--bg-elevated); }
+  .feature-section:nth-child(even) { background: var(--bg-secondary); }
+  .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
+  .feature-section--reverse .feature-inner { direction: rtl; }
+  .feature-section--reverse .feature-text,
+  .feature-section--reverse .feature-img-wrap { direction: ltr; }
+  .feature-logo { height: 48px; width: auto; display: block; margin-bottom: var(--space-24); object-fit: contain; }
+  .feature-title { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); color: var(--action); }
+  .feature-desc { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.75; }
+  .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
+  .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
 
   .related-services { list-style: none; display: flex; flex-direction: column; }
   .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
   .related-link:hover { color: var(--action); }
 
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-primary-alt); }
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
+  .cta-inner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; color: #000; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: 20px; font-weight: 700; color: #000; text-decoration: none; }
+  .cta-contact:hover { opacity: 0.7; }
 
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); text-decoration: none; }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); text-decoration: none; }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-
-  @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } .services-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } .services-grid { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1024px) {
+    .two-col { grid-template-columns: 1fr; }
+    .feature-inner { grid-template-columns: 1fr; }
+    .feature-section--reverse .feature-inner { direction: ltr; }
+    .feature-img-wrap { display: none; }
+  }
 </style>
