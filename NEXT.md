@@ -175,6 +175,19 @@ Po dokončení: projekt Fáze 1 hotov. Zapiš do QUESTIONS.md summary a čekej n
 
 ## FÁZE 2 — Iterace visual audit (probíhá)
 
+### ✅ 2.3 — EN subpages — HOTOVO 2026-06-21
+- [x] /en/co-umime/{potrebuji-brand,novy-shopify-e-shop,prechod-na-shopify,expanze-do-zahranici,rozvoj-a-podpora,analyza-a-strategie,custom-vyvoj-a-aplikace}
+- [x] /en/esyncer + /en/ae-translator — EN app pages
+- [x] /en/o-nas — EN about page s placeholder initials
+- [x] /en/[slug] — EN case study template (GROOMO)
+- [x] /en/blog/[slug] — EN blog template (4 statické články)
+- [x] Build: 24 → 39 pages — commit 1f1d990
+
+### ✅ 2.4 — CF Worker — HOTOVO 2026-06-21
+- [x] functions/_middleware.js — Accept-Language redirect CS/EN (302, pouze na /)
+- [x] Build: stále 39 pages, functions/ je pure CF Pages middleware
+- [ ] Napojit aethero.agency na CF Pages — čeká na CF dashboard nastavení (David)
+
 ### 2.1 — Mobile audit
 - [ ] Porovnat mobile layout vs. live www.aethero.cz (375px, 768px)
 - [ ] Header hamburger menu — velikost, animace
@@ -183,17 +196,10 @@ Po dokončení: projekt Fáze 1 hotov. Zapiš do QUESTIONS.md summary a čekej n
 - [ ] Services grid mobile (4col → 1/2col)
 - [ ] Footer mobile layout
 
-### 2.2 — Tým fotky
-- [ ] /cs/o-nas: nahradit placeholder initials reálnými fotkami
-- [ ] Fotky jsou na: /Users/davidkuba/Library/CloudStorage/Dropbox/__1 AETHERO/TYM foto alias/
+### 2.2 — Tým fotky (BLOCKER — čeká na Davida)
+- [ ] /cs/o-nas + /en/o-nas: nahradit placeholder initials reálnými fotkami
+- [ ] Složka TYM foto alias nenalezena lokálně — viz QUESTIONS.md
 - [ ] Optimalizovat pro web (WebP, max 400×400)
-
-### 2.3 — EN subpages
-- [ ] /en/co-umime/[slug] — přeložit všech 7 podstránek (CS existují, EN vrací 404)
-
-### 2.4 — CF Worker + doména
-- [ ] functions/_middleware.js — Accept-Language redirect CS/EN
-- [ ] Napojit aethero.agency na CF Pages
 
 ### 2.5 — Storyblok (Fáze 2)
 - [ ] Blog: napojit Storyblok stories
