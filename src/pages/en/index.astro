@@ -326,11 +326,21 @@ const blogPosts = [
 
   <!-- BLOG -->
   <section class="blog-section">
-    <div class="container">
+    <div class="container blog-header">
       <h2 class="section-heading">Blog</h2>
-      <div class="blog-grid">
-        {blogPosts.map((post, i) => (
-          <a href={post.href} class={i === 0 ? 'blog-card blog-card--featured' : 'blog-card'}>
+      <div class="blog-controls">
+        <button class="blog-ctrl blog-ctrl--prev" id="blog-prev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="blog-ctrl blog-ctrl--next" id="blog-next" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="blog-track-wrap" id="blog-track-wrap">
+      <div class="blog-track">
+        {blogPosts.map((post) => (
+          <a href={post.href} class="blog-card">
             <div class="blog-card-img">
               <img src={post.img} alt={post.title} width="837" height="450" loading="lazy" />
               <span class="blog-time">⏱{post.time} min.</span>
@@ -367,6 +377,15 @@ const blogPosts = [
     const scrollAmt = 360;
     nextBtn.addEventListener('click', () => trackWrap.scrollBy({ left: scrollAmt, behavior: 'smooth' }));
     prevBtn.addEventListener('click', () => trackWrap.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
+  }
+  // Blog carousel scroll
+  const blogWrap = document.getElementById('blog-track-wrap');
+  const blogPrev = document.getElementById('blog-prev');
+  const blogNext = document.getElementById('blog-next');
+  if (blogWrap && blogPrev && blogNext) {
+    const scrollAmt = 364;
+    blogNext.addEventListener('click', () => blogWrap.scrollBy({ left: scrollAmt, behavior: 'smooth' }));
+    blogPrev.addEventListener('click', () => blogWrap.scrollBy({ left: -scrollAmt, behavior: 'smooth' }));
   }
 </script>
 
@@ -766,13 +785,42 @@ const blogPosts = [
   /* BLOG */
   .blog-section {
     background: #000326;
-    padding: 100px 0;
+    padding: 100px 0 0;
     border-top: 1px solid rgba(255,255,255,0.06);
   }
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+  .blog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+  .blog-controls { display: flex; gap: 12px; }
+  .blog-ctrl {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+    flex-shrink: 0;
+  }
+  .blog-ctrl:hover { border-color: var(--action); background: rgba(13,212,205,0.1); }
+  .blog-track-wrap {
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 40px 100px;
+  }
+  .blog-track-wrap::-webkit-scrollbar { display: none; }
+  .blog-track {
+    display: flex;
     gap: 24px;
+    width: max-content;
   }
   .blog-card {
     display: flex;
@@ -784,11 +832,11 @@ const blogPosts = [
     color: #fff;
     transition: border-color 0.2s;
     text-decoration: none;
+    min-width: 340px;
+    max-width: 340px;
+    scroll-snap-align: start;
   }
   .blog-card:hover { border-color: rgba(13,212,205,0.25); }
-  .blog-card--featured { grid-column: span 2; }
-  .blog-card--featured .blog-card-img { aspect-ratio: 16/7; }
-  .blog-card--featured .blog-title { font-size: 18px; }
   .blog-card-img {
     position: relative;
     aspect-ratio: 16/9;
@@ -839,7 +887,6 @@ const blogPosts = [
   @media (max-width: 1100px) {
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .ae-services-grid { grid-template-columns: repeat(2, 1fr); }
-    .blog-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) {
     .hero-inner { grid-template-columns: 1fr; padding-top: 100px; }
@@ -848,7 +895,6 @@ const blogPosts = [
     .features-grid { grid-template-columns: 1fr; }
     .ae-services-grid { grid-template-columns: 1fr; }
     .ref-grid { grid-template-columns: 1fr; }
-    .blog-grid { grid-template-columns: 1fr; }
     .stats-inner { flex-direction: column; text-align: center; }
     .shopify-stats-logo { margin: 0 auto; }
     .footer-cta-contacts { flex-direction: column; align-items: center; gap: 16px; }
