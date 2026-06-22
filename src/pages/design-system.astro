@@ -590,22 +590,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <p class="ds-incon-note">Místo těchto tokenů se všude píší hardcoded <code>clamp()</code> hodnoty. Buď tokeny smazat, nebo kód přepsat aby je používal.</p>
 
-        <!-- 3: font-weight outlier -->
-        <h3 class="ds-subsection-title">3 · font-weight 900 — osamocený outlier</h3>
+        <!-- 3: font-weight outlier — VYŘEŠENO -->
+        <h3 class="ds-subsection-title">3 · font-weight 900 — osamocený outlier ✓ vyřešeno</h3>
         <div class="ds-incon-grid">
-          <div class="ds-incon-card ds-incon-bad">
+          <div class="ds-incon-card ds-incon-ok">
             <div class="ds-incon-label">Service title <span class="ds-incon-file">index.astro .service-title</span></div>
             <div class="ds-incon-preview">
-              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 900; color: #fff; text-transform: uppercase;">NOVÝ E-SHOP</span>
+              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 600; color: #fff; text-transform: uppercase;">NOVÝ E-SHOP</span>
             </div>
-            <code>font-weight: 900 ← jediný výskyt</code>
+            <code>font-weight: 600 ← sjednoceno</code>
           </div>
           <div class="ds-incon-card">
-            <div class="ds-incon-label">Všechny ostatní nadpisy</div>
+            <div class="ds-incon-label">Sekční nadpisy (.section-title atd.)</div>
             <div class="ds-incon-preview">
-              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: #fff;">Nadpis sekce</span>
+              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 600; color: #fff;">Nadpis sekce</span>
             </div>
-            <code>font-weight: 700 ← standard</code>
+            <code>font-weight: 600 ← standard</code>
           </div>
         </div>
 
