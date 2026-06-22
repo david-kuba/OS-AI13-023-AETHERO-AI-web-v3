@@ -122,9 +122,21 @@ const navItems = lang === 'en'
   const hamburger = document.getElementById('hamburger')!;
   const navMenu = document.getElementById('nav-menu')!;
 
-  // Transparent → solid on scroll
+  // Transparent → solid on scroll + hide on scroll down (mobile)
+  let lastY = window.scrollY;
   const onScroll = () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 40);
+
+    const menuOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    if (!menuOpen && window.innerWidth <= 900) {
+      if (y > lastY && y > 80) {
+        header.classList.add('nav-hidden');
+      } else if (y < lastY) {
+        header.classList.remove('nav-hidden');
+      }
+    }
+    lastY = y;
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -165,7 +177,7 @@ const navItems = lang === 'en'
     left: 0;
     right: 0;
     z-index: 1000;
-    transition: background var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base);
+    transition: background var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base), transform 0.3s ease;
     padding: 22px 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%);
   }
@@ -173,6 +185,9 @@ const navItems = lang === 'en'
   header.scrolled {
     background: rgba(0, 3, 38, 1);
     padding: 16px 0;
+  }
+  header.nav-hidden {
+    transform: translateY(-100%);
   }
 
   .header-inner {
