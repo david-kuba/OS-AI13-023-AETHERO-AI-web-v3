@@ -93,7 +93,7 @@ const engines = [
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
   .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
   .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
@@ -101,7 +101,7 @@ const engines = [
   .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
   .engines-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .engine-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
-  .engine-card h3 { font-family: var(--font-primary); font-size: var(--text-h3); font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
+  .engine-card h3 { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
   .engine-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
   .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
@@ -109,7 +109,7 @@ const engines = [
   .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
   .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-16); }
+  .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-16); }
   .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
   .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
   .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }

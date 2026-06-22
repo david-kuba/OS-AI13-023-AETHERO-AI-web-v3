@@ -246,7 +246,7 @@ const relatedServices = [
     font-family: var(--font-primary);
     font-size: 15px;
     font-weight: 700;
-    letter-spacing: 0.05em;
+    letter-spacing: 0;
     border-radius: var(--radius-md);
     text-decoration: none;
     margin: var(--space-32) 0;
@@ -268,7 +268,7 @@ const relatedServices = [
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
   .section-link { color: var(--action); font-size: 15px; font-weight: 600; text-decoration: none; }
   .section-link:hover { opacity: 0.75; }
@@ -311,7 +311,7 @@ const relatedServices = [
   .groomo-card:hover { transform: translateY(-4px); }
   .groomo-img { display: block; width: 100%; height: auto; }
   .groomo-label { padding: var(--space-24); }
-  .groomo-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-8); }
+  .groomo-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-8); }
   .groomo-label p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0; }
 
   /* Related */

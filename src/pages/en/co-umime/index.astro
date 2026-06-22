@@ -117,7 +117,7 @@ const services = [
   .services-hero { position: relative; padding: 130px 0 80px; background: var(--bg-primary-alt); overflow: hidden; }
   .hero-blob { position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
   .services-hero .container { position: relative; }
-  .hero-label { font-family: var(--font-primary); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-16); }
+  .hero-label { font-family: var(--font-primary); font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-16); }
   .services-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; margin-bottom: var(--space-24); line-height: 1.1; }
   .accent { color: var(--action); }
   .hero-sub { font-size: 20px; color: var(--text-secondary); max-width: 560px; line-height: 1.6; }
@@ -133,19 +133,25 @@ const services = [
   .svc-desc { font-size: 15px; color: var(--neutral-300); line-height: 1.6; }
   .svc-arrow { color: var(--neutral-700); transition: transform var(--transition-base), color var(--transition-base); flex-shrink: 0; margin-top: 4px; }
   .apps-section { background: var(--bg-secondary); }
-  .section-label { font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-40); }
+  .section-label { font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-40); }
   .apps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
   .app-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); transition: border-color var(--transition-base); }
   .app-card:hover { border-color: rgba(13,212,205,0.3); }
-  .app-card h3 { font-size: var(--text-h3); font-weight: 600; margin-bottom: var(--space-16); }
+  .app-card h3 { font-size: clamp(22px, 3vw, 40px); font-weight: 600; margin-bottom: var(--space-16); }
   .app-card p { font-size: 14px; color: var(--neutral-300); line-height: 1.6; margin-bottom: var(--space-24); }
   .app-link { color: var(--action); font-size: 14px; font-weight: 500; }
   .cta-section { background: var(--bg-primary-alt); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
   .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
   .btn-primary:hover { background: var(--action-hover); }
   .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+  @media (max-width: 768px) {
+    .services-hero { padding: 90px 0 60px; }
+  }
+  @media (max-width: 480px) {
+    .services-hero { padding: 70px 0 48px; }
+  }
 </style>

@@ -67,7 +67,7 @@ const features = [
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
   .feature-card h3 { font-size: 15px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
@@ -76,7 +76,7 @@ const features = [
   .how-text { font-size: 18px; color: var(--neutral-300); line-height: 1.7; margin-bottom: var(--space-40); }
   .how-ctas { display: flex; gap: var(--space-16); flex-wrap: wrap; }
   .how-highlight { background: rgba(13,212,205,0.05); border: 1px solid rgba(13,212,205,0.15); border-radius: var(--radius-md); padding: var(--space-40); }
-  .highlight-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: var(--action); margin-bottom: var(--space-16); }
+  .highlight-label { font-size: 12px; font-weight: 700; letter-spacing: 0; color: var(--action); margin-bottom: var(--space-16); }
   .for-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
   .for-list li { font-size: 16px; padding-left: 20px; position: relative; }
   .for-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); }
