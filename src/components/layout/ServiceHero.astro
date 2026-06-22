@@ -23,7 +23,6 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
   <div class="hero-blob" aria-hidden="true"></div>
   <div class={`container${image ? ' service-hero-split' : ' service-hero-inner'}`}>
     <div class="hero-text">
-      <p class="hero-label">{label}</p>
       <h1 set:html={title} />
       <p class="hero-sub">{subtitle}</p>
       <div class="hero-ctas">
@@ -110,24 +109,17 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
     .service-hero-split { grid-template-columns: 1fr; }
     .hero-image-wrap { display: none; }
   }
-  .hero-label {
-    font-family: var(--font-primary);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: var(--action);
-    text-transform: uppercase;
-    margin-bottom: var(--space-24);
-  }
   h1 {
     font-size: clamp(40px, 5vw, 64px);
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: var(--space-24);
+    color: #fff;
   }
+  h1 :global(span) { color: #fff !important; }
   .hero-sub {
     font-size: 20px;
-    color: var(--text-secondary);
+    color: rgba(255,255,255,0.85);
     line-height: 1.6;
     margin-bottom: var(--space-40);
     max-width: 560px;
