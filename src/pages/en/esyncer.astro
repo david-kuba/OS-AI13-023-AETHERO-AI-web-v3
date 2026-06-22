@@ -52,21 +52,27 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <div class="container">
       <h2 class="section-title">App screenshots</h2>
       <div class="screenshots-grid">
-        <a href="/esyncer-screen-1.png" target="_blank" class="screenshot-link">
+        <a href="/esyncer-screen-1.png" class="screenshot-link">
           <img src="/esyncer-screen-1.png" alt="eSyncer dashboard" loading="lazy" class="screenshot-img" />
         </a>
-        <a href="/esyncer-screen-2.png" target="_blank" class="screenshot-link">
+        <a href="/esyncer-screen-2.png" class="screenshot-link">
           <img src="/esyncer-screen-2.png" alt="eSyncer jobs" loading="lazy" class="screenshot-img" />
         </a>
-        <a href="/esyncer-screen-3.png" target="_blank" class="screenshot-link">
+        <a href="/esyncer-screen-3.png" class="screenshot-link">
           <img src="/esyncer-screen-3.png" alt="eSyncer mappings" loading="lazy" class="screenshot-img" />
         </a>
-        <a href="/esyncer-screen-4.png" target="_blank" class="screenshot-link">
+        <a href="/esyncer-screen-4.png" class="screenshot-link">
           <img src="/esyncer-screen-4.png" alt="eSyncer settings" loading="lazy" class="screenshot-img" />
         </a>
       </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="" alt="" class="lightbox-img" />
+  </div>
 
   <!-- CTA -->
   <section class="cta-section">
@@ -202,6 +208,46 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .screenshot-img { width: 100%; height: auto; display: block; transition: opacity 0.2s; }
   .screenshot-link:hover .screenshot-img { opacity: 0.85; }
 
+  /* ─── LIGHTBOX ─── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  .lightbox.is-open { display: flex; }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+    line-height: 1;
+  }
+  .lightbox-close:hover { border-color: #fff; color: #fff; }
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    cursor: default;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+  }
+
   .cta-section {
     padding: var(--space-120) 0;
     background: #000326;
@@ -229,3 +275,34 @@ import PageLayout from '../../layouts/PageLayout.astro';
     .app-hero-inner { padding-top: 100px; }
   }
 </style>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.screenshot-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const img = link.querySelector('img');
+      openLightbox(link.href, img ? img.alt : '');
+    });
+  });
+
+  lb.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
