@@ -345,6 +345,7 @@ const blogPosts = [
         </div>
       </div>
       <div class="blog-track-wrap">
+        <div class="blog-swipe-hint" id="blog-swipe-hint" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2.5l4.5 4.5L5 11.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="blog-track" id="blog-track">
           {blogPosts.map((post) => (
             <a href={post.href} class="blog-card">
@@ -832,7 +833,33 @@ const blogPosts = [
   }
   .blog-btn:hover:not(:disabled) { border-color: var(--action); color: var(--action); }
   .blog-btn:disabled { opacity: 0.25; cursor: default; }
-  .blog-track-wrap { overflow: hidden; padding: 0 24px; }
+  .blog-track-wrap { overflow: hidden; padding: 0 24px; position: relative; }
+  .blog-swipe-hint {
+    display: none;
+    position: absolute;
+    right: 32px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.75);
+    pointer-events: none;
+    z-index: 10;
+    animation: swipeHint 2.4s ease-in-out infinite;
+    transition: opacity 0.3s;
+  }
+  @media (max-width: 768px) { .blog-swipe-hint { display: flex; } }
+  @keyframes swipeHint {
+    0%, 100% { opacity: 0.45; transform: translateY(-50%) translateX(0); }
+    55%       { opacity: 0.9;  transform: translateY(-50%) translateX(4px); }
+  }
   .blog-track {
     display: flex;
     gap: 16px;
@@ -975,6 +1002,31 @@ const blogPosts = [
   prevBtn.addEventListener('click', () => { if (current > 0) { current--; update(); } });
   nextBtn.addEventListener('click', () => { if (current < maxStep()) { current++; update(); } });
   window.addEventListener('resize', () => { current = Math.min(current, maxStep()); update(); });
+
+  // Touch swipe
+  const hint = document.getElementById('blog-swipe-hint');
+  let tsX = 0, tsY = 0;
+  track.addEventListener('touchstart', e => { tsX = e.touches[0].clientX; tsY = e.touches[0].clientY; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tsX;
+    const dy = e.changedTouches[0].clientY - tsY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0 && current < maxStep()) { current++; update(); }
+      else if (dx > 0 && current > 0) { current--; update(); }
+    }
+  }, { passive: true });
+
+  // Hint visibility
+  const origUpdate = update;
+  function updateWithHint() {
+    origUpdate();
+    if (hint) hint.style.opacity = current >= maxStep() ? '0' : '';
+  }
+  // replace all future calls
+  prevBtn.onclick = () => { if (current > 0) { current--; updateWithHint(); } };
+  nextBtn.onclick = () => { if (current < maxStep()) { current++; updateWithHint(); } };
+  track.addEventListener('touchend', () => { if (hint) hint.style.opacity = current >= maxStep() ? '0' : ''; }, { passive: true });
+
   update();
 })();
 </script>
