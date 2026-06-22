@@ -1,6 +1,5 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import ServiceHero from '../../components/layout/ServiceHero.astro';
 
 const steps = [
   { step: '01', title: 'Export from Shopify', desc: 'Export products, collections or pages to CSV or ZIP format.' },
@@ -26,13 +25,17 @@ const engines = [
 ---
 
 <PageLayout title="AE Translator — AI Translation for Shopify" description="Bulk AI translation of products, collections and pages in Shopify for a fraction of the cost." lang="en">
-  <ServiceHero lang="en"
-    label="App"
-    title="AE Translator"
-    subtitle="Bulk AI translation of Shopify content for a fraction of the cost. Export, translate, reimport — no developer, no waiting."
-    ctaLabel="Write to Bára"
-    ctaHref="mailto:bara@aethero.cz"
-  />
+
+  <!-- HERO -->
+  <section class="app-hero">
+    <div class="app-hero-bg" style="background-image: url('/ae-translator-hero.webp')"></div>
+    <div class="app-hero-overlay"></div>
+    <div class="container app-hero-inner">
+      <img src="/ae-translate-znak.svg" alt="AE Translator" class="app-hero-logo" />
+      <h1>AE<br />TRANSLATOR</h1>
+      <p class="app-hero-sub"><span class="app-hero-sub-hi">AI-powered bulk translation of Shopify content</span><br />for a fraction of the cost.</p>
+    </div>
+  </section>
 
   <section class="section bg-elevated">
     <div class="container">
@@ -90,6 +93,53 @@ const engines = [
 </PageLayout>
 
 <style>
+  /* ─── HERO ─── */
+  .app-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  .app-hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .app-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,3,38,0.75) 100%);
+  }
+  .app-hero-inner {
+    position: relative; z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  .app-hero-logo {
+    width: clamp(120px, 14vw, 220px);
+    height: auto;
+    object-fit: contain;
+  }
+  .app-hero h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(56px, 7.8vw, 100px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0;
+  }
+  .app-hero-sub {
+    font-size: clamp(16px, 2vw, 22px);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    max-width: 640px;
+    margin: 0;
+  }
+  .app-hero-sub-hi { color: var(--action); }
+
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
