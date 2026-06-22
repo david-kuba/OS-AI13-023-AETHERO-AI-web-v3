@@ -11,6 +11,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="ds-nav-links">
         <a href="#web-v31">web-v3.1</a>
         <a href="#colors">Barvy</a>
+        <a href="#rules">Pravidla</a>
         <a href="#typography">Typografie</a>
         <a href="#spacing">Spacing</a>
         <a href="#components">Komponenty</a>
@@ -73,92 +74,333 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section class="ds-section" id="colors">
         <h2 class="ds-section-title">Barvy</h2>
 
-        <h3 class="ds-subsection-title">Brand</h3>
-        <div class="ds-color-row">
-          <div class="ds-color-chip" style="background: #000326;">
-            <span class="ds-color-name">bg-elevated</span>
-            <span class="ds-color-hex">#000326</span>
+        <h3 class="ds-subsection-title">Pozadí</h3>
+        <div class="ds-color-grid">
+          <div class="ds-chip2" style="--chip-bg: #000326;">
+            <div class="ds-chip2-swatch"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--bg-elevated</code>
+                <span class="ds-chip2-hex">#000326</span>
+              </div>
+              <strong class="ds-chip2-name">Hlavní pozadí</strong>
+              <p class="ds-chip2-desc">Základní tmavé pozadí webu. Většina sekcí, karty, dropdowny, header po scrollu.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #0C0C42;">
-            <span class="ds-color-name">bg-secondary</span>
-            <span class="ds-color-hex">#0C0C42</span>
+          <div class="ds-chip2" style="--chip-bg: #000326;">
+            <div class="ds-chip2-swatch" style="background: #000326; border: 1px dashed rgba(255,255,255,0.15);"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--bg-secondary</code>
+                <span class="ds-chip2-hex">#000326</span>
+              </div>
+              <strong class="ds-chip2-name">Alternativní sekce</strong>
+              <p class="ds-chip2-desc">Sudé sekce na Co umíme a service pages — opticky odděluje obsah střídáním. V tuto chvíli stejná hodnota jako bg-elevated.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #030626;">
-            <span class="ds-color-name">bg-primary-alt</span>
-            <span class="ds-color-hex">#030626</span>
+          <div class="ds-chip2" style="--chip-bg: #030626;">
+            <div class="ds-chip2-swatch" style="background: #030626;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--bg-primary-alt</code>
+                <span class="ds-chip2-hex">#030626</span>
+              </div>
+              <strong class="ds-chip2-name">Přechodová tmavá</strong>
+              <p class="ds-chip2-desc">Mezivrstva nebo gradient start. Výjimečné použití.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #171A1C;">
-            <span class="ds-color-name">neutral-900 (hero)</span>
-            <span class="ds-color-hex">#171A1C</span>
+          <div class="ds-chip2" style="--chip-bg: #171A1C;">
+            <div class="ds-chip2-swatch" style="background: #171A1C;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--neutral-900</code>
+                <span class="ds-chip2-hex">#171A1C</span>
+              </div>
+              <strong class="ds-chip2-name">Neutrální tmavá</strong>
+              <p class="ds-chip2-desc">Hero Co umíme, design system. Teplejší (šedavá) než navy pozadí — vhodná pro sekce s fotkou nebo grafickým hereem.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #092066;">
-            <span class="ds-color-name">brand-dark / stats</span>
-            <span class="ds-color-hex">#092066</span>
+          <div class="ds-chip2" style="--chip-bg: #092066;">
+            <div class="ds-chip2-swatch" style="background: #092066;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--brand-dark</code>
+                <span class="ds-chip2-hex">#092066</span>
+              </div>
+              <strong class="ds-chip2-name">Brand Dark</strong>
+              <p class="ds-chip2-desc">Text na světlém nebo barevném pozadí — čísla ve stats baru, kontaktní info v cyan CTA bloku. Nikdy jako pozadí.</p>
+            </div>
           </div>
         </div>
 
         <h3 class="ds-subsection-title">Akcenty</h3>
-        <div class="ds-color-row">
-          <div class="ds-color-chip" style="background: #0DD4CD;">
-            <span class="ds-color-name">action (teal)</span>
-            <span class="ds-color-hex">#0DD4CD</span>
+        <div class="ds-color-grid">
+          <div class="ds-chip2 ds-chip2-accent">
+            <div class="ds-chip2-swatch" style="background: #16BECF;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--action</code>
+                <span class="ds-chip2-hex">#16BECF</span>
+              </div>
+              <strong class="ds-chip2-name">Primární akcent — cyan</strong>
+              <p class="ds-chip2-desc">Výhradně pro klikací prvky: nav linky při hoveru, nadpisy-linky (.t-ac třída), quick-nav, CTA sekce pozadí na app stránkách.</p>
+              <span class="ds-chip2-rule ds-rule-link">📌 Cyan = vždy odkaz nebo CTA</span>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #16BECF;">
-            <span class="ds-color-name">action-hover / footer-cta</span>
-            <span class="ds-color-hex">#16BECF</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #0DD4CD;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--action-hover</code>
+                <span class="ds-chip2-hex">#0DD4CD</span>
+              </div>
+              <strong class="ds-chip2-name">Action hover / Footer CTA bg</strong>
+              <p class="ds-chip2-desc">Hover stav action barvy. Zároveň pozadí footer CTA sekce (Máme spolu co probrat?) a teal tlačítek.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #A081D1;">
-            <span class="ds-color-name">text-secondary / stats-bar</span>
-            <span class="ds-color-hex">#A081D1</span>
+          <div class="ds-chip2 ds-chip2-accent">
+            <div class="ds-chip2-swatch" style="background: #A081D1;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--text-secondary</code>
+                <span class="ds-chip2-hex">#A081D1</span>
+              </div>
+              <strong class="ds-chip2-name">Zvýraznění textu / Stats bar</strong>
+              <p class="ds-chip2-desc">Tučné zvýraznění klíčových frází v popisech sekcí (třída .ac, font-weight 900). Pozadí stats baru na homepage. Nikdy odkaz.</p>
+              <span class="ds-chip2-rule ds-rule-nolink">🚫 Fialová = nikdy odkaz</span>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #CB00D7;">
-            <span class="ds-color-name">accent-purple</span>
-            <span class="ds-color-hex">#CB00D7</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #CB00D7;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--accent-purple</code>
+                <span class="ds-chip2-hex">#CB00D7</span>
+              </div>
+              <strong class="ds-chip2-name">Gradient čísel SVG</strong>
+              <p class="ds-chip2-desc">Výhradně v gradientu číslovacích SVG souborů sekcí (no-01.svg až no-07.svg). V textu na webu nepoužívat — příliš agresivní.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #96BF48;">
-            <span class="ds-color-name">accent-shopify</span>
-            <span class="ds-color-hex">#96BF48</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #96BF48;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--accent-shopify</code>
+                <span class="ds-chip2-hex">#96BF48</span>
+              </div>
+              <strong class="ds-chip2-name">Shopify zelená</strong>
+              <p class="ds-chip2-desc">Pouze pro Shopify branding — badge, ikona, explicitní zmínky o Shopify platformě.</p>
+            </div>
           </div>
         </div>
 
         <h3 class="ds-subsection-title">Neutralní</h3>
-        <div class="ds-color-row">
-          <div class="ds-color-chip ds-color-light" style="background: #F8F9F9;">
-            <span class="ds-color-name">neutral-100</span>
-            <span class="ds-color-hex">#F8F9F9</span>
+        <div class="ds-color-grid">
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #F8F9F9;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--neutral-100</code>
+                <span class="ds-chip2-hex ds-chip2-hex-dark">#F8F9F9</span>
+              </div>
+              <strong class="ds-chip2-name ds-chip2-name-dark">Téměř bílá</strong>
+              <p class="ds-chip2-desc ds-chip2-desc-dark">Text nebo pozadí na světlých prvcích. Zatím nevyužito.</p>
+            </div>
           </div>
-          <div class="ds-color-chip ds-color-light" style="background: #D2D2D2;">
-            <span class="ds-color-name">neutral-300</span>
-            <span class="ds-color-hex">#D2D2D2</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #D2D2D2;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--neutral-300</code>
+                <span class="ds-chip2-hex ds-chip2-hex-dark">#D2D2D2</span>
+              </div>
+              <strong class="ds-chip2-name ds-chip2-name-dark">Světle šedá</strong>
+              <p class="ds-chip2-desc ds-chip2-desc-dark">Sekundární text v kartách — popis pod názvem (app karty, reference karty).</p>
+            </div>
           </div>
-          <div class="ds-color-chip ds-color-light" style="background: #A0A3BD;">
-            <span class="ds-color-name">neutral-500</span>
-            <span class="ds-color-hex">#A0A3BD</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #A0A3BD;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--neutral-500</code>
+                <span class="ds-chip2-hex ds-chip2-hex-dark">#A0A3BD</span>
+              </div>
+              <strong class="ds-chip2-name ds-chip2-name-dark">Středně šedá</strong>
+              <p class="ds-chip2-desc ds-chip2-desc-dark">Muted text — metadata, poznámky, nav linky v klidovém stavu.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #686868;">
-            <span class="ds-color-name">neutral-700</span>
-            <span class="ds-color-hex">#686868</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #686868;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--neutral-700</code>
+                <span class="ds-chip2-hex">#686868</span>
+              </div>
+              <strong class="ds-chip2-name">Tmavě šedá</strong>
+              <p class="ds-chip2-desc">Velmi tlumený text. Zatím minimální využití.</p>
+            </div>
           </div>
         </div>
 
         <h3 class="ds-subsection-title">Sémantické</h3>
-        <div class="ds-color-row">
-          <div class="ds-color-chip" style="background: #FF5252;">
-            <span class="ds-color-name">error</span>
-            <span class="ds-color-hex">#FF5252</span>
+        <div class="ds-color-grid ds-color-grid-4">
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #FF5252;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top"><code>--semantic-error</code><span class="ds-chip2-hex">#FF5252</span></div>
+              <strong class="ds-chip2-name">Chyba</strong>
+              <p class="ds-chip2-desc">Chybové stavy formulářů, upozornění.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #4ECCA3;">
-            <span class="ds-color-name">success</span>
-            <span class="ds-color-hex">#4ECCA3</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #4ECCA3;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top"><code>--semantic-success</code><span class="ds-chip2-hex">#4ECCA3</span></div>
+              <strong class="ds-chip2-name">Úspěch</strong>
+              <p class="ds-chip2-desc">Potvrzení, úspěšný stav.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #FFA940;">
-            <span class="ds-color-name">warning</span>
-            <span class="ds-color-hex">#FFA940</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #FFA940;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top"><code>--semantic-warning</code><span class="ds-chip2-hex">#FFA940</span></div>
+              <strong class="ds-chip2-name">Varování</strong>
+              <p class="ds-chip2-desc">Upozornění, nedokončený stav.</p>
+            </div>
           </div>
-          <div class="ds-color-chip" style="background: #5DADE2;">
-            <span class="ds-color-name">info</span>
-            <span class="ds-color-hex">#5DADE2</span>
+          <div class="ds-chip2">
+            <div class="ds-chip2-swatch" style="background: #5DADE2;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top"><code>--semantic-info</code><span class="ds-chip2-hex">#5DADE2</span></div>
+              <strong class="ds-chip2-name">Info</strong>
+              <p class="ds-chip2-desc">Informační zprávy, tooltips.</p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <!-- PRAVIDLA -->
+      <section class="ds-section" id="rules">
+        <h2 class="ds-section-title">Pravidla barev</h2>
+
+        <div class="ds-rules">
+
+          <div class="ds-rule-card">
+            <div class="ds-rule-pill" style="background: #16BECF; color: #000326;">CYAN</div>
+            <div class="ds-rule-body">
+              <strong>Cyan je vždy klikací prvek</strong>
+              <p>Pokud je něco cyan, musí jít kliknout. Cyan slouží jako vizuální signál interaktivity — uživatel instinktivně ví, že na to může sáhnout.</p>
+              <div class="ds-rule-cols">
+                <div class="ds-rule-ok">
+                  <span class="ds-rule-badge-ok">✓ správně</span>
+                  <ul>
+                    <li>Nav položka při hoveru</li>
+                    <li>Nadpis sekce jako odkaz (.t-ac)</li>
+                    <li>Quick-nav sekce</li>
+                    <li>Pozadí CTA bloku (celý blok je klikací zóna)</li>
+                  </ul>
+                </div>
+                <div class="ds-rule-bad">
+                  <span class="ds-rule-badge-bad">✗ špatně</span>
+                  <ul>
+                    <li>Zvýraznění klíčového slova v textu</li>
+                    <li>Dekorativní label nebo badge</li>
+                    <li>Čísla sekcí nebo ikonky</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-rule-card">
+            <div class="ds-rule-pill" style="background: #A081D1; color: #000326;">FIALOVÁ</div>
+            <div class="ds-rule-body">
+              <strong>Fialová je zvýraznění — nikdy odkaz</strong>
+              <p>Fialová (--text-secondary) označuje důležité fráze v body textu. Je to ekvivalent tučného písma, jen s barvou navíc. Nesmí být zaměnitelná za odkaz.</p>
+              <div class="ds-rule-cols">
+                <div class="ds-rule-ok">
+                  <span class="ds-rule-badge-ok">✓ správně</span>
+                  <ul>
+                    <li>&lt;strong class="ac"&gt; v popisech sekcí Co umíme</li>
+                    <li>Pozadí stats baru</li>
+                  </ul>
+                </div>
+                <div class="ds-rule-bad">
+                  <span class="ds-rule-badge-bad">✗ špatně</span>
+                  <ul>
+                    <li>&lt;a&gt; tag s fialovou barvou</li>
+                    <li>Tlačítko nebo CTA</li>
+                    <li>Nav položka</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-rule-card">
+            <div class="ds-rule-pill" style="background: #fff; color: #000326;">BÍLÁ</div>
+            <div class="ds-rule-body">
+              <strong>Bílá tlačítka = primární akce na tmavém pozadí</strong>
+              <p>Bílé solid tlačítko je nejvýraznější CTA na stránce. Používá se max. jednou za sekci — vždy pro nejdůležitější akci.</p>
+              <div class="ds-rule-cols">
+                <div class="ds-rule-ok">
+                  <span class="ds-rule-badge-ok">✓ správně</span>
+                  <ul>
+                    <li>Hlavní CTA v service sekcích Co umíme</li>
+                    <li>Primární call-to-action na hero</li>
+                  </ul>
+                </div>
+                <div class="ds-rule-bad">
+                  <span class="ds-rule-badge-bad">✗ špatně</span>
+                  <ul>
+                    <li>Dvě bílé tlačítka vedle sebe</li>
+                    <li>Sekundární nebo doplňková akce</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-rule-card">
+            <div class="ds-rule-pill ds-rule-pill-outline">GHOST</div>
+            <div class="ds-rule-body">
+              <strong>Ghost tlačítko = sekundární nebo doplňková akce</strong>
+              <p>Průhledné tlačítko s border (2px solid white nebo rgba). Vždy v páru s primárním tlačítkem nebo samostatně jako méně důležitá akce.</p>
+              <div class="ds-rule-cols">
+                <div class="ds-rule-ok">
+                  <span class="ds-rule-badge-ok">✓ správně</span>
+                  <ul>
+                    <li>Hero sekce — "Jak pracujeme" vedle primárního CTA</li>
+                    <li>Demo tlačítko (DEMO PŘIPRAVUJEME)</li>
+                    <li>Odkaz na PDF nebo externí zdroj</li>
+                  </ul>
+                </div>
+                <div class="ds-rule-bad">
+                  <span class="ds-rule-badge-bad">✗ špatně</span>
+                  <ul>
+                    <li>Ghost jako jediné tlačítko v hero (bez primárního)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-rule-card">
+            <div class="ds-rule-pill" style="background: linear-gradient(135deg,#CB00D7,#A081D1); color: #fff;">GRADIENT</div>
+            <div class="ds-rule-body">
+              <strong>Magenta (#CB00D7) patří jen do SVG čísel</strong>
+              <p>Výrazná neonová magenta se používá pouze v gradientu číslovacích SVG souborů (no-01.svg – no-07.svg). V UI textu nebo komponentách ji nepoužívat — je příliš agresivní a matoucí.</p>
+            </div>
+          </div>
+
+          <div class="ds-rule-card">
+            <div class="ds-rule-pill" style="background: var(--ds-surface); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5);">POZADÍ</div>
+            <div class="ds-rule-body">
+              <strong>Sekce se střídají pro vizuální rytmus</strong>
+              <p>Na Co umíme a service pages se liché a sudé sekce střídají mezi --bg-elevated a --bg-secondary. Vytváří to optický dech bez nutnosti přidávat oddělovače.</p>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -761,33 +1003,166 @@ font-family: var(--font-secondary);</code></pre>
   .ds-label-dark { color: rgba(0,0,0,0.4); }
 
   /* COLORS */
-  .ds-color-row {
-    display: flex;
+  .ds-color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 12px;
-    flex-wrap: wrap;
     margin-bottom: 8px;
   }
-  .ds-color-chip {
+  .ds-color-grid-4 {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+  .ds-chip2 {
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
-    padding: 40px 16px 12px;
-    min-width: 140px;
-    border: 1px solid rgba(255,255,255,0.06);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+  }
+  .ds-chip2-swatch {
+    height: 56px;
+    background: var(--chip-bg, #888);
+    flex-shrink: 0;
+  }
+  .ds-chip2-body {
+    padding: 12px 14px 14px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 1;
   }
-  .ds-color-name {
+  .ds-chip2-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+  .ds-chip2-top code {
     font-size: 11px;
+    color: var(--ds-cyan);
+    background: rgba(22,190,207,0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .ds-chip2-hex {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    font-family: monospace;
+  }
+  .ds-chip2-hex-dark { color: rgba(0,0,0,0.35); }
+  .ds-chip2-name {
+    font-size: 13px;
     font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+  }
+  .ds-chip2-name-dark { color: rgba(0,0,0,0.75); }
+  .ds-chip2-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .ds-chip2-desc-dark { color: rgba(0,0,0,0.45); }
+  .ds-chip2-rule {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+  }
+  .ds-rule-link {
+    background: rgba(22,190,207,0.15);
+    color: var(--ds-cyan);
+  }
+  .ds-rule-nolink {
+    background: rgba(160,129,209,0.15);
+    color: #A081D1;
+  }
+
+  /* RULES */
+  .ds-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ds-rule-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .ds-rule-pill {
+    flex-shrink: 0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .ds-rule-pill-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
     color: rgba(255,255,255,0.7);
   }
-  .ds-color-hex {
-    font-family: 'Kanit', monospace;
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
+  .ds-rule-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
-  .ds-color-light .ds-color-name { color: rgba(0,0,0,0.6); }
-  .ds-color-light .ds-color-hex { color: rgba(0,0,0,0.35); }
+  .ds-rule-body strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+  }
+  .ds-rule-body > p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .ds-rule-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .ds-rule-ok, .ds-rule-bad {
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .ds-rule-ok { border-left: 3px solid #4ECCA3; }
+  .ds-rule-bad { border-left: 3px solid #FF5252; }
+  .ds-rule-badge-ok, .ds-rule-badge-bad {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .ds-rule-badge-ok { color: #4ECCA3; }
+  .ds-rule-badge-bad { color: #FF5252; }
+  .ds-rule-ok ul, .ds-rule-bad ul {
+    margin: 0;
+    padding-left: 14px;
+    color: rgba(255,255,255,0.55);
+  }
+  .ds-rule-ok li, .ds-rule-bad li { margin-bottom: 2px; }
 
   /* TYPOGRAPHY */
   .ds-type-specimens {
