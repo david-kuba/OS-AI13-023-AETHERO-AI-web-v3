@@ -32,9 +32,9 @@ const intentLinks = lang === 'en'
     </div>
 
     <div class="footer-intent">
-      <p class="footer-label">
+      <h5 class="footer-label">
         {lang === 'en' ? 'What can we do for you around Shopify?' : 'Co pro vás okolo Shopify můžeme udělat?'}
-      </p>
+      </h5>
       <ul>
         {intentLinks.map((l) => (
           <li><a href={l.href}>{l.label}</a></li>
