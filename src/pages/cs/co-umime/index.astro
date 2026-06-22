@@ -3,74 +3,124 @@ import PageLayout from '../../../layouts/PageLayout.astro';
 
 const services = [
   {
-    num: '01', title: 'BRAND', subtitle: 'Brand identity pro váš e-shop a digitální zkušenost',
-    desc: 'Tvoříme značky, které si zákazníci pamatují. Vizuální identita, tone of voice a digitální prezentace na míru vašemu projektu.',
+    num: '01',
+    numImg: '/no-01.svg',
+    anchor: 'brand',
+    title: 'Design dýcháme! Vytváříme SHOPIFY BRANDY s&nbsp;DX, na&nbsp;které zákazníci nezapomínají!',
+    desc: 'BRAND E-SHOPU — osobitost, příběh, emoce a slib s vámi spojený a Digital Experience, vše, co o vás svět zjistí, až vás vyhledá na internetu. A je jedno, zda to bude reklama, video, banner, fotka na LinkedIn anebo zapomenutý tweet. To celé s vámi umíme vytvořit a sladit.',
+    cta: 'Chci vědět víc →',
     href: '/cs/co-umime/potrebuji-brand',
   },
   {
-    num: '02', title: 'NOVÝ E-SHOP', subtitle: 'Postavíme nový Shopify e-shop od základu',
-    desc: 'Seriózní e-commerce projekt potřebuje zkušeného partnera. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává.',
+    num: '02',
+    numImg: '/no-02.svg',
+    anchor: 'novy-eshop',
+    title: 'Stavíme parádní e-shopy na&nbsp;SHOPIFY od&nbsp;vzhledu, nastavení, přes spuštění, až&nbsp;po dlouhodobou podporu.',
+    desc: 'Vyberte si Shopify — ten nejlepší nástroj. Bez omezení toho, kde prodáváte a v kolika měnách. Platformu s neskutečnou škálovatelností, podporou a drivem. Shopify je nastaveno tak, aby s vámi rostlo od StartuUpu až po mezinárodní mega projekt!',
+    cta: 'Dobře, chci vědět víc →',
     href: '/cs/co-umime/novy-shopify-e-shop',
   },
   {
-    num: '03', title: 'PŘECHOD NA SHOPIFY', subtitle: 'Migrace z jiné platformy bez ztráty SEO',
-    desc: 'Narážíte na limity Shoptetu nebo WooCommerce? Přejděte na otevřenou globální platformu navrženu pro růst.',
+    num: '03',
+    numImg: '/no-03.svg',
+    anchor: 'prechod',
+    title: 'Odstartujeme vaši MIGRACI NA&nbsp;SHOPIFY. Uvědomujeme si, že&nbsp;je&nbsp;to velké rozhodnutí a&nbsp;nic se nesmí pokazit.',
+    desc: 'Jasně, čím lépe na tom jste nyní, tím větší je to riziko. Ale nebojte, máme pro vás vícero způsobů jak vše bezpečně vyřešit. A stojí to za prozkoumání. Od SEO analýzy přes mapu redirektů, UX design, až po data a propojení na další systémy včetně přímé linky na Shopify.',
+    cta: 'Tak ukažte →',
     href: '/cs/co-umime/prechod-na-shopify',
   },
   {
-    num: '04', title: 'ZAHRANIČNÍ EXPANZE', subtitle: 'Jeden e-shop, celý svět',
-    desc: 'Shopify Markets umožňuje spravovat všechny trhy z jednoho adminu. Jazyky, měny, daně, lokalizace — zvládneme to s vámi.',
+    num: '04',
+    numImg: '/no-04.svg',
+    anchor: 'expanze',
+    title: 'Chystáte EXPANZI DO&nbsp;ZAHRANIČÍ? A máte plán? Můžeme ho spolu odladit a&nbsp;opřít se o&nbsp;možnosti Shopify.',
+    desc: 'To, že v Česku jede e-commerce pořádně, je celkem známá věc. Méně se ví, že máme nejvíc e-shopů na obyvatele v celé Evropě — přes 63 000 obchodů na 10,7 milionu lidí. A přesto jsme dlouho obchodovali hlavně sami sobě. Slovensko bylo druhý krok, zahraničí vzdálený sen. To se mění.',
+    cta: 'Tak ukažte →',
     href: '/cs/co-umime/expanze-do-zahranici',
   },
   {
-    num: '05', title: 'ROZVOJ A PODPORA', subtitle: 'Dlouhodobý technický partner pro váš Shopify projekt',
-    desc: 'Spuštění e-shopu není konec, ale začátek. Jsme tu pro technickou podporu, rozšiřování funkcí a dlouhodobý rozvoj.',
+    num: '05',
+    numImg: '/no-05.svg',
+    anchor: 'rozvoj',
+    title: 'ROZVOJ A&nbsp;PODPORA — ať&nbsp;už potřebujete technickou pomoc, plán anebo jen&nbsp;další ruce, jsme tady.',
+    desc: 'Víme, že ne každý problém má řešení v tutoriálu nebo videu — občas je potřeba hlubší technický vhled, zkušenost z vícero reálných projektů, abyste získali šanci najít další souvislosti. Dejte vědět a najdeme řešení spolu.',
+    cta: 'OK, chci pomoci →',
     href: '/cs/co-umime/rozvoj-a-podpora',
   },
   {
-    num: '06', title: 'ANALÝZA A STRATEGIE', subtitle: 'Přestaňte hádat — zjistěte proč',
-    desc: 'Data vašeho e-shopu říkají víc, než si myslíte. Analyzujeme GA4, reklamy, emaily a dodáme strategii s konkrétními kroky.',
-    href: '/cs/co-umime/analyza-a-strategie',
-  },
-  {
-    num: '07', title: 'CUSTOM VÝVOJ', subtitle: 'Aplikace a úpravy přesně pro vaše potřeby',
-    desc: 'Standardní řešení nestačí? Vyvíjíme vlastní Shopify aplikace, integrace ERP/CRM a custom úpravy šablon.',
+    num: '06',
+    numImg: '/no-06.svg',
+    anchor: 'custom',
+    title: 'CUSTOM ÚPRAVY A&nbsp;APLIKACE — když potřebujete něco nového, lokálního či&nbsp;složitějšího, co zrovna neřeší aplikace.',
+    desc: 'Tahle část naší práce je, na straně jedné, úžasně jednoduchá na vysvětlení, ale také dosti nepředvídatelná na straně druhé. V ideálním případě za námi přijdete s definicí problému a odcházíte od nás s řešením. A někde mezitím my to řešení najdeme nebo vytvoříme a vy zaplatíte.',
+    cta: 'Super, pojďme na to →',
     href: '/cs/co-umime/custom-vyvoj-a-aplikace',
   },
+  {
+    num: '07',
+    numImg: null,
+    anchor: 'analyza',
+    title: 'ANALÝZA A&nbsp;STRATEGIE — přestaňte hádat, zjistěte proč.',
+    desc: 'Data vašeho e-shopu říkají víc, než si myslíte. Analyzujeme GA4, reklamy, emaily a dodáme strategii s konkrétními kroky. Jasné čísla, jasné priority, jasný plán.',
+    cta: 'Chci analýzu →',
+    href: '/cs/co-umime/analyza-a-strategie',
+  },
+];
+
+const quickNav = [
+  { label: 'BRAND', anchor: 'brand' },
+  { label: 'NOVÝ E-SHOP', anchor: 'novy-eshop' },
+  { label: 'PŘECHOD NA SHOPIFY', anchor: 'prechod' },
+  { label: 'ZAHRANIČNÍ EXPANZE', anchor: 'expanze' },
+  { label: 'ROZVOJ & PODPORA', anchor: 'rozvoj' },
+  { label: 'CUSTOM ÚPRAVY', anchor: 'custom' },
 ];
 ---
 
 <PageLayout title="Co umíme" description="Komplexní Shopify služby od brandingu přes vývoj až po mezinárodní expanzi." lang="cs">
 
+  <!-- HERO -->
   <section class="co-hero">
-    <div class="hero-blob" aria-hidden="true"></div>
-    <div class="container">
+    <div class="co-hero-bg"></div>
+    <div class="co-hero-overlay"></div>
+    <div class="container co-hero-inner">
       <h1>Co umíme</h1>
-      <p class="co-sub">A do čeho se spolu pustíme?</p>
+      <a href="#brand" class="co-hero-cta">A do čeho se spolu pustíme?</a>
     </div>
   </section>
 
-  <section class="section">
+  <!-- QUICK NAV -->
+  <nav class="quick-nav" aria-label="Přejít na sekci">
     <div class="container">
-      <div class="services-list">
-        {services.map((s) => (
-          <a href={s.href} class="service-row">
-            <span class="svc-num">{s.num}</span>
-            <div class="svc-content">
-              <h2 class="svc-title">{s.title}</h2>
-              <p class="svc-subtitle">{s.subtitle}</p>
-              <p class="svc-desc">{s.desc}</p>
-            </div>
-            <svg class="svc-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+      <ul class="quick-nav-list">
+        {quickNav.map((item) => (
+          <li><a href={`#${item.anchor}`} class="quick-nav-link">{item.label}</a></li>
         ))}
-      </div>
+      </ul>
     </div>
-  </section>
+  </nav>
 
-  <section class="apps-section section">
+  <!-- SERVICES -->
+  {services.map((s, i) => (
+    <section class={`svc-section ${i % 2 === 0 ? 'svc-even' : 'svc-odd'}`} id={s.anchor}>
+      <div class="container svc-grid">
+        <div class="svc-num-col">
+          {s.numImg
+            ? <img src={s.numImg} alt={`${s.num}`} class="svc-num-img" width="470" height="212" loading="lazy" />
+            : <span class="svc-num-text">{s.num}</span>
+          }
+        </div>
+        <div class="svc-text-col">
+          <h2 class="svc-title" set:html={s.title} />
+          <p class="svc-desc">{s.desc}</p>
+          <a href={s.href} class="svc-cta">{s.cta}</a>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- APPS -->
+  <section class="apps-section">
     <div class="container">
       <h2 class="section-label">APLIKACE</h2>
       <div class="apps-grid">
@@ -81,16 +131,17 @@ const services = [
         </a>
         <a href="/cs/ae-translator" class="app-card">
           <h3>AE Translator</h3>
-          <p>AI překlad obsahu Shopify e-shopu. DeepL, Claude nebo Deep Seek — na výběr.</p>
+          <p>AI překlad obsahu Shopify e-shopu. DeepL, Claude nebo DeepSeek — na výběr.</p>
           <span class="app-link">Více o AE Translator →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section cta-section">
+  <!-- CTA -->
+  <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Nevíte, kde začít?<br /><span style="color:var(--action)">Zavolejte.</span></h2>
+      <h2>Nevíte, kde začít?<br /><span class="cta-accent">Zavolejte.</span></h2>
       <div class="cta-links">
         <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
         <a href="/cs/kontakt" class="btn-ghost">Kontakt</a>
@@ -101,74 +152,225 @@ const services = [
 </PageLayout>
 
 <style>
+  /* ─── HERO ─── */
   .co-hero {
     position: relative;
-    padding: 130px 0 80px;
-    background: var(--bg-primary-alt);
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-end;
     overflow: hidden;
+    background: #171a1c;
   }
-  .hero-blob {
-    position: absolute; top: -20%; right: -5%; width: 500px; height: 500px;
-    background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, transparent 70%);
-    border-radius: 50%; filter: blur(60px); pointer-events: none;
+  .co-hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('/a-multitvar-bgr-v33.webp');
+    background-size: cover;
+    background-position: 52% 100%;
   }
-  .co-hero .container { position: relative; }
-  .co-hero h1 { font-size: clamp(48px, 6vw, 80px); font-weight: 700; }
-  .co-sub { font-size: clamp(22px, 3vw, 40px); color: var(--text-secondary); margin-top: var(--space-16); }
-
-  .section { padding: var(--space-120) 0; }
-  .section-label {
-    font-family: var(--font-primary); font-size: 12px; font-weight: 600;
-    letter-spacing: 0; color: var(--action); text-transform: uppercase;
-    margin-bottom: var(--space-40);
+  .co-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(1,0,19,0) 60%, #000326 95%);
   }
-
-  .services-list { display: flex; flex-direction: column; }
-  .service-row {
-    display: grid;
-    grid-template-columns: 48px 1fr 32px;
-    gap: var(--space-24);
+  .co-hero-inner {
+    position: relative;
+    padding-bottom: 80px;
+  }
+  .co-hero h1 {
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 32px;
+  }
+  .co-hero-cta {
+    display: inline-flex;
     align-items: center;
-    padding: var(--space-40) 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    transition: background var(--transition-base);
-    border-radius: var(--radius-sm);
-    padding-inline: var(--space-16);
+    gap: 8px;
+    padding: 14px 28px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 40px;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    transition: border-color 0.2s, color 0.2s;
   }
-  .service-row:hover { background: rgba(13,212,205,0.04); }
-  .service-row:hover .svc-arrow { transform: translateX(4px); color: var(--action); }
-  .svc-num { font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--text-secondary); }
-  .svc-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
-  .svc-subtitle { font-size: 15px; color: var(--action); margin-bottom: var(--space-8); }
-  .svc-desc { font-size: var(--text-small); color: var(--neutral-500); line-height: 1.6; }
-  .svc-arrow { color: var(--neutral-700); transition: transform var(--transition-base), color var(--transition-base); flex-shrink: 0; }
+  .co-hero-cta:hover { border-color: var(--action); color: var(--action); }
 
-  .apps-section { background: var(--bg-secondary); }
-  .apps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); }
+  /* ─── QUICK NAV ─── */
+  .quick-nav {
+    background: var(--bg-elevated);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 0;
+  }
+  .quick-nav-list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0; padding: 0;
+  }
+  .quick-nav-link {
+    display: block;
+    padding: 18px 20px;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .quick-nav-link:hover { color: var(--action); }
+
+  /* ─── SERVICE SECTIONS ─── */
+  .svc-section {
+    padding: 100px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .svc-section:nth-child(odd) { background: var(--bg-primary); }
+  .svc-section:nth-child(even) { background: #000326; }
+
+  .svc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  /* Even index (0,2,4,6…) = num left, text right */
+  .svc-even .svc-num-col { order: 1; }
+  .svc-even .svc-text-col { order: 2; }
+  /* Odd index (1,3,5…) = text left, num right */
+  .svc-odd .svc-num-col { order: 2; }
+  .svc-odd .svc-text-col { order: 1; }
+
+  .svc-num-img {
+    width: 100%;
+    max-width: 470px;
+    height: auto;
+    display: block;
+  }
+  .svc-even .svc-num-img { margin-left: auto; }
+  .svc-odd .svc-num-img { margin-right: auto; }
+
+  .svc-num-text {
+    font-family: var(--font-primary);
+    font-size: clamp(80px, 12vw, 160px);
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(255,255,255,0.12);
+    display: block;
+  }
+
+  .svc-title {
+    font-family: var(--font-primary);
+    font-size: clamp(22px, 2.4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .svc-desc {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+  .svc-cta {
+    display: inline-flex;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--action);
+    transition: opacity 0.2s;
+  }
+  .svc-cta:hover { opacity: 0.75; }
+
+  /* ─── APPS ─── */
+  .apps-section {
+    background: var(--bg-secondary);
+    padding: 100px 0;
+  }
+  .section-label {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--action);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
   .app-card {
-    background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-md); padding: var(--space-40);
-    transition: border-color var(--transition-base);
+    background: var(--bg-elevated);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: 40px;
+    transition: border-color 0.2s;
   }
   .app-card:hover { border-color: rgba(13,212,205,0.3); }
-  .app-card h3 { font-size: clamp(22px, 3vw, 40px); font-weight: 600; margin-bottom: var(--space-16); }
-  .app-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; margin-bottom: var(--space-24); }
+  .app-card h3 { font-size: clamp(22px, 3vw, 40px); font-weight: 600; margin-bottom: 16px; }
+  .app-card p { font-size: 15px; color: var(--neutral-300); line-height: 1.6; margin-bottom: 24px; }
   .app-link { color: var(--action); font-size: 14px; font-weight: 500; }
 
-  .cta-section { background: var(--bg-primary-alt); padding: var(--space-120) 0; }
-  .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 768px) {
-    .co-hero { padding: 90px 0 60px; }
-    .service-row { grid-template-columns: 32px 1fr 24px; gap: var(--space-16); padding: var(--space-24) var(--space-8); }
-    .apps-grid { grid-template-columns: 1fr; }
+  /* ─── CTA ─── */
+  .cta-section {
+    background: var(--bg-primary-alt);
+    padding: 100px 0;
   }
-  @media (max-width: 480px) {
-    .co-hero { padding: 70px 0 48px; }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: 40px; }
+  .cta-accent { color: var(--action); }
+  .cta-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex;
+    padding: 14px 32px;
+    background: var(--action);
+    color: var(--bg-elevated);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--action-hover); }
+  .btn-ghost {
+    display: inline-flex;
+    padding: 14px 32px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .svc-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .svc-even .svc-num-col,
+    .svc-odd .svc-num-col { order: 1; }
+    .svc-even .svc-text-col,
+    .svc-odd .svc-text-col { order: 2; }
+    .svc-num-img { max-width: 280px; }
+    .svc-section { padding: 60px 0; }
+    .apps-grid { grid-template-columns: 1fr; }
+    .quick-nav-link { font-size: 12px; padding: 14px 12px; }
+  }
+  @media (max-width: 600px) {
+    .co-hero { min-height: 60vh; }
+    .co-hero-inner { padding-bottom: 48px; }
+    .svc-num-img { max-width: 200px; }
+    .svc-section { padding: 48px 0; }
+    .quick-nav-list { gap: 0; }
+    .quick-nav-link { font-size: 11px; padding: 12px 10px; }
   }
 </style>
