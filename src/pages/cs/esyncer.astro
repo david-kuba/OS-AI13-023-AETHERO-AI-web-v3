@@ -1,89 +1,261 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import ServiceHero from '../../components/layout/ServiceHero.astro';
-
-const features = [
-  { title: 'Přesné mapování kategorií', desc: 'Ze zdrojového feedu přímo do struktury vašeho e-shopu.' },
-  { title: 'Manuální doplnění bez konfliktu', desc: 'Přidávejte produkty ručně — import je nepřepíše.' },
-  { title: 'Kompatibilita s dalšími nástroji', desc: 'Funguje vedle ostatních importních nástrojů bez kolizí.' },
-  { title: 'Automatické přiřazování tagů', desc: 'Tagy se přidávají automaticky podle pravidel z feedu.' },
-  { title: 'Automatické mazání/deaktivace', desc: 'Produkt chybí v XML? Automaticky se deaktivuje nebo smaže.' },
-  { title: 'Aktivace dle skladové zásoby', desc: 'Sklad 0 = produkt offline. Sklad > 0 = produkt online. Automaticky.' },
-  { title: 'Plně na míru', desc: 'Každá implementace odpovídá přesně vaší logice a struktuře feedu.' },
-];
 ---
 
-<PageLayout title="eSyncer — import a synchronizace pro Shopify" description="Automatizace importu a synchronizace produktových dat z XML feedů přímo do Shopify." lang="cs">
-  <ServiceHero
-    label="Aplikace"
-    title="eSyncer"
-    subtitle="Import, synchronizace & automatizace (nejen) pro Shopify. S naší appkou potečou vaše aktualizovaná data o produktech bez manuální práce."
-    ctaLabel="bara@aethero.cz"
-    ctaHref="mailto:bara@aethero.cz"
-  />
+<PageLayout title="eSyncer — import a synchronizace pro Shopify" description="Automatizace importu a synchronizace produktových dat z XML feedů přímo do Shopify. Specializujeme se na komplikované feedy." lang="cs">
 
+  <!-- HERO -->
+  <section class="app-hero">
+    <div class="app-hero-bg" style="background-image: url('/header-image-esyncer.webp')"></div>
+    <div class="app-hero-overlay"></div>
+    <div class="container app-hero-inner">
+      <img src="/es-sipky.svg" alt="eSyncer" class="app-hero-logo" />
+      <h1>eSyncer</h1>
+      <p class="app-hero-sub">Import, synchronizace &amp; automatizace (nejen) pro&nbsp;<strong>SHOPIFY</strong></p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">Co eSyncer umí</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
+      <h2 class="intro-heading">S naší appkou potečou vaše aktualizovaná data o&nbsp;produktech z&nbsp;feedu dodavatele přesně tam, kam&nbsp;potřebujete!</h2>
+      <p class="intro-text">Pokud hledáte způsob jak importovat automatizovaně .xml feed, jste tu správně. Víme jak těžké je to nastavit. Naší specializací jsou komplikované .XML feedy, .csv nebo API zdroje pro e-shopy. Importy vyladíme precizně osobně a dál běžíte automaticky.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS + WHY -->
+  <section class="section bg-secondary">
+    <div class="container two-col">
+      <div>
+        <h2 class="section-title">Jaké má řešení výhody?</h2>
+        <ul class="benefit-list">
+          <li>Do vybraných kategorií obchodu se importují přesně vybrané kategorie zdrojů.</li>
+          <li>Další produkty můžete přidat ručně, aniž by došlo ke konfliktu s importovanými produkty.</li>
+          <li>Modul může dále pracovat s jinými importními aplikacemi a s ručně přidanými produkty.</li>
+          <li>Můžete nastavit automatické tagy.</li>
+          <li>Automaticky odstraňte/zakažte produkty, které v XML neexistují.</li>
+          <li>Aplikace deaktivuje produkty, pokud je množství 0 a aktivuje, při počtu produktů vyšší než 0.</li>
+          <li>Řešení lze plně upravit dle vašich dodatečných požadavků.</li>
+        </ul>
+        <a href="https://www.aethero.cz/files/esyncer-shopify-demo.pdf" target="_blank" rel="noopener" class="btn-demo">DEMO</a>
+      </div>
+      <div>
+        <h2 class="section-title">Proč ne vždy čistě automaticky?</h2>
+        <p class="body-text">Existují aplikace s předem nastavenými pravidly pro parsování feedu. Ale co když je ten váš o něco komplikovanější a universální řešení na něj nestačí? Nejlepší způsob, jak vytvořit další funkce synchronizačního nástroje, je ukázat nám zdrojový feed a vzorový produkt, jak chcete, aby ve finále vypadal. Zkopírujeme strukturu a chování takové funkcionality a propojíme ji se synchronizačním nástrojem. Vaše data budou přesně tam, kde je chcete mít.</p>
+        <p class="body-text">Po dokončení počáteční integrace vše zkontrolujete a případně zapracujeme vaše další požadavky. K dispozici je vám vlastní dashboard, který nabízí další možnosti konfigurace a mimo jiné umožňuje sledovat činnost aplikace.</p>
       </div>
     </div>
   </section>
 
-  <section class="section bg-secondary">
-    <div class="container how-inner">
-      <div>
-        <h2 class="section-title">Jak to funguje</h2>
-        <p class="how-text">
-          Nepoužíváme generická přednastavená pravidla — specializujeme se na komplexní XML feedy.
-          Prohlédneme zdrojový feed a požadovaný výstupní formát, celou strukturu replikujeme v synchronizačním nástroji
-          a po integraci dostanete vlastní dashboard pro konfiguraci a monitoring.
-        </p>
-        <div class="how-ctas">
-          <a href="mailto:bara@aethero.cz" class="btn-primary">Napište Báře</a>
-          <a href="tel:+420776325440" class="btn-ghost">+420 776 325 440</a>
-        </div>
-      </div>
-      <div class="how-highlight">
-        <p class="highlight-label">PRO KOHO</p>
-        <ul class="for-list">
-          <li>E-shopy s dodavatelskými XML/CSV feedy</li>
-          <li>Shopify projekty s komplexní produktovou strukturou</li>
-          <li>Klienti potřebující automatizaci bez developerů</li>
-          <li>Projekty kde standardní import nestačí</li>
-        </ul>
+  <!-- SCREENSHOTS -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">Náhledy aplikace</h2>
+      <div class="screenshots-grid">
+        <a href="/esyncer-screen-1.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-1.png" alt="eSyncer dashboard" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/esyncer-screen-2.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-2.png" alt="eSyncer jobs" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/esyncer-screen-3.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-3.png" alt="eSyncer mappings" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/esyncer-screen-4.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-4.png" alt="eSyncer settings" loading="lazy" class="screenshot-img" />
+        </a>
       </div>
     </div>
   </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Máme spolu co probrat?<br />Dejte vědět!</h2>
+      <div class="cta-contacts">
+        <a href="mailto:bara@aethero.cz" class="cta-contact">bara@aethero.cz</a>
+        <a href="tel:+420776325440" class="cta-contact">+420 776 325 440</a>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
 
 <style>
+  /* ─── HERO ─── */
+  .app-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .app-hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .app-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,3,38,0.75) 100%);
+  }
+  .app-hero-inner {
+    position: relative; z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  .app-hero-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  .app-hero h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(56px, 9vw, 130px);
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    margin: 0;
+  }
+  .app-hero-sub {
+    font-size: clamp(18px, 2.5vw, 28px);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+    max-width: 680px;
+    margin: 0;
+  }
+  .app-hero-sub strong { color: var(--action); font-weight: 700; }
+
+  /* ─── SECTIONS ─── */
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 15px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .how-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); }
-  .how-text { font-size: 16px; color: var(--neutral-300); line-height: 1.7; margin-bottom: var(--space-40); }
-  .how-ctas { display: flex; gap: var(--space-16); flex-wrap: wrap; }
-  .how-highlight { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
-  .highlight-label { font-family: var(--font-primary); font-size: 11px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-16); }
-  .for-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .for-list li { font-size: var(--text-small); color: var(--neutral-300); padding-left: 14px; position: relative; }
-  .for-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); font-size: 12px; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } .how-inner { grid-template-columns: 1fr; } }
-  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
+
+  .intro-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(26px, 3.5vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-32);
+    max-width: 900px;
+  }
+  .intro-text {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    max-width: 800px;
+  }
+
+  .section-title {
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 700;
+    color: var(--action);
+    margin-bottom: var(--space-32);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-80);
+    align-items: start;
+  }
+
+  .benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: var(--space-40);
+  }
+  .benefit-list li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+    padding-left: 20px;
+    position: relative;
+  }
+  .benefit-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--action);
+    font-size: 13px;
+  }
+
+  .body-text {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin-bottom: var(--space-24);
+  }
+
+  .btn-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 40px;
+    border: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-md);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-demo:hover { border-color: var(--action); color: var(--action); }
+
+  /* ─── SCREENSHOTS ─── */
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .screenshot-link { display: block; border-radius: var(--radius-md); overflow: hidden; }
+  .screenshot-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+  }
+  .screenshot-link:hover .screenshot-img { transform: scale(1.03); }
+
+  /* ─── CTA ─── */
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: var(--space-40);
+  }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact {
+    font-family: var(--font-primary);
+    font-size: clamp(22px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--brand-dark);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .two-col { grid-template-columns: 1fr; }
+    .screenshots-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .app-hero-inner { padding-top: 100px; }
+    .screenshots-grid { grid-template-columns: 1fr; }
+  }
 </style>

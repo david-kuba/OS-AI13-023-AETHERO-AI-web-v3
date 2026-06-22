@@ -1,121 +1,281 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import ServiceHero from '../../components/layout/ServiceHero.astro';
-
-const steps = [
-  { step: '01', title: 'Export z Shopify', desc: 'Exportujte produkty, kolekce nebo stránky do CSV nebo ZIP formátu.' },
-  { step: '02', title: 'Nahrání do AE Translator', desc: 'Soubor nahrajete do aplikace — bez kódování, bez nastavení.' },
-  { step: '03', title: 'Hromadný AI překlad', desc: 'Zvolíte AI engine a spustíte překlad. DeepL, Claude nebo Deep Seek.' },
-  { step: '04', title: 'Import zpět do Shopify', desc: 'Stáhnete přeložený soubor a reimportujete do Shopify adminu.' },
-];
-
-const features = [
-  { title: 'Výběr AI enginu', desc: 'DeepL, Claude nebo Deep Seek — volíte dle kvality a ceny.' },
-  { title: 'Pay-per-token', desc: 'Platíte jen za tokeny zvoleného AI poskytovatele. Bez předplatného.' },
-  { title: 'Vlastní prompty', desc: 'Nastavíte instrukce pro překlad — tone of voice, terminologie, výjimky.' },
-  { title: 'Vícejazyčný slovník', desc: 'Definujete výrazy, které se nikdy nepřekládají nebo překládají jinak.' },
-  { title: 'Výběrové vynechání', desc: 'Vyloučíte konkrétní hodnoty z překladu — kódy produktů, SKU, URLs.' },
-  { title: 'Automatický překlad URL', desc: 'Handle se automaticky přeloží z přeloženého názvu produktu.' },
-];
-
-const engines = [
-  { name: 'DeepL', desc: 'Nejlepší kvalita pro evropské jazyky. Rychlý a přesný.' },
-  { name: 'Claude', desc: 'Pokročilé instrukce a nuance. Skvělý pro marketing a copywriting.' },
-  { name: 'Deep Seek', desc: 'Cenově nejefektivnější možnost pro velké objemy.' },
-];
 ---
 
-<PageLayout title="AE Translator — AI překlad Shopify e-shopu" description="Hromadný AI překlad produktů, kolekcí a stránek v Shopify za zlomek ceny klasických překladačů." lang="cs">
-  <ServiceHero
-    label="Aplikace"
-    title="AE Translator"
-    subtitle="Hromadný AI překlad Shopify obsahu za zlomek ceny. Exportujte, přeložte, reimportujte — bez vývojáře, bez čekání."
-    ctaLabel="Napište Báře"
-    ctaHref="mailto:bara@aethero.cz"
-  />
+<PageLayout title="AE Translator — AI překlad Shopify e-shopu" description="Hromadný AI překlad produktů, kolekcí a stránek v Shopify za zlomek ceny klasických překladačů. DeepL, Claude nebo DeepSeek." lang="cs">
 
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Jak to funguje</h2>
-      <div class="steps-grid">
-        {steps.map((s) => (
-          <div class="step-card">
-            <span class="step-num">{s.step}</span>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
-      </div>
+  <!-- HERO -->
+  <section class="app-hero">
+    <div class="app-hero-bg" style="background-image: url('/ae-translator-hero.webp')"></div>
+    <div class="app-hero-overlay"></div>
+    <div class="container app-hero-inner">
+      <img src="/ae-translate-znak.svg" alt="AE Translator" class="app-hero-logo" />
+      <h1><span class="h1-label">AE</span><br />TRANSLATOR</h1>
+      <p class="app-hero-sub">Překladač textů nativně exportovaných z Shopify<br />s možností napojení na vlastní AI a vytvořením pravidel</p>
     </div>
   </section>
 
+  <!-- INTRO -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="intro-heading">Překládejte s&nbsp;pomocí AI za&nbsp;zlomek&nbsp;ceny.</h2>
+      <p class="intro-text">Shopify App Store nabízí velké množství překladových aplikací, některé z nich dokonce využívají AI nebo nabízí propojení s překladateli, ovšem cena takového překladu se může blížit vyšším tisícům i desetitisícům, pokud má váš e-shop stovky či tisíce produktů.</p>
+      <p class="intro-text process-text">Naše aplikace využívá nativní Shopify export a import: <strong>exportujete produkty, kolekce nebo stránky do formátu CSV či ZIP, nahrajete soubor a vše hromadně přeložíte pomocí AI</strong> (DeepL, Claude nebo Deep Seek). <strong>Přeložený soubor stáhnete a naimportujete jej zpět do administrace.</strong></p>
+    </div>
+  </section>
+
+  <!-- BENEFITS + WHY -->
   <section class="section bg-secondary">
-    <div class="container">
-      <h2 class="section-title">Podporované AI enginy</h2>
-      <div class="engines-grid">
-        {engines.map((e) => (
-          <div class="engine-card">
-            <h3>{e.name}</h3>
-            <p>{e.desc}</p>
-          </div>
-        ))}
+    <div class="container two-col">
+      <div>
+        <h2 class="section-title">Jaké má naše řešení výhody?</h2>
+        <ul class="benefit-list">
+          <li>Využívá možnosti exportovat obsah celého webu do csv, který vložením do aplikace projde překladem AI</li>
+          <li>Vyberete si model, který chcete na překlad využít</li>
+          <li>Za překlad platíte pouze za cenu tokenu od vámi vybrané služby</li>
+          <li>Vyladíte si uživatelský prompt přesně pro vaše potřeby</li>
+          <li>Snadno v exportovaném souboru hromadně zkontrolujete přeložené hodnoty</li>
+          <li>Jednoduše si nastavíte slovník pro různé jazyky</li>
+          <li>Snadno zakážete překlad určitých hodnot</li>
+          <li>Můžete si zvolit překlad url handles, které se automaticky vytvoří z přeloženého názvu</li>
+        </ul>
+        <p class="extra-note">Pokud chcete použít model, který není v současné nabídce aplikace, ozvěte se nám — přidáme ho.</p>
+        <a href="#" class="btn-demo">DEMO PŘIPRAVUJEME</a>
+      </div>
+      <div>
+        <h2 class="section-title">Proč ne pouze automaticky?</h2>
+        <p class="body-text">AE Translator aplikace si na nic nehraje. Je to šikovná vychytávka, která vám za málo peněz pomůže dosáhnout velkého výsledku. Odladili jsme za vás problémy, které by AI mohlo při překladech způsobovat. Na vás už je doladit si prompt tak, aby odpovídal vašim očekáváním. Dodejte kontext a pravidla, a můžete překládat.</p>
       </div>
     </div>
   </section>
 
+  <!-- SCREENSHOTS -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">Funkce aplikace</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
+      <h2 class="section-title-large">Náhledy aplikace</h2>
+      <div class="screenshots-grid">
+        <a href="/aet-screen-1.png" target="_blank" class="screenshot-link">
+          <img src="/aet-screen-1.png" alt="AE Translator — přehled překladů" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/aet-screen-2.png" target="_blank" class="screenshot-link">
+          <img src="/aet-screen-2.png" alt="AE Translator — nastavení" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/aet-screen-3.png" target="_blank" class="screenshot-link">
+          <img src="/aet-screen-3.png" alt="AE Translator — slovník" loading="lazy" class="screenshot-img" />
+        </a>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Máme spolu co probrat?</h2>
-      <p>Demo připravujeme. Napište Báře — probereme váš projekt a objem překladu.</p>
-      <div class="cta-links">
-        <a href="mailto:bara@aethero.cz" class="btn-primary">bara@aethero.cz</a>
-        <a href="tel:+420776325440" class="btn-ghost">+420 776 325 440</a>
+      <h2>Máme spolu co probrat?<br />Dejte vědět!</h2>
+      <div class="cta-contacts">
+        <a href="mailto:bara@aethero.cz" class="cta-contact">bara@aethero.cz</a>
+        <a href="tel:+420776325440" class="cta-contact">+420 776 325 440</a>
       </div>
     </div>
   </section>
+
 </PageLayout>
 
 <style>
+  /* ─── HERO ─── */
+  .app-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .app-hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .app-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,3,38,0.75) 100%);
+  }
+  .app-hero-inner {
+    position: relative; z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  .app-hero-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  .app-hero h1 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    margin: 0;
+  }
+  .h1-label {
+    font-size: clamp(18px, 3vw, 40px);
+    letter-spacing: 0.15em;
+    color: var(--action);
+    display: block;
+  }
+  .app-hero h1 :not(.h1-label) {
+    font-size: clamp(56px, 9vw, 130px);
+  }
+  .app-hero-sub {
+    font-size: clamp(16px, 2vw, 22px);
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    max-width: 640px;
+    margin: 0;
+  }
+
+  /* ─── SECTIONS ─── */
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 13px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .engines-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .engine-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
-  .engine-card h3 { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .engine-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 15px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+
+  .intro-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(30px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: var(--space-32);
+    text-align: center;
+  }
+  .intro-text {
+    font-size: 17px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    max-width: 800px;
+    margin: 0 auto var(--space-24);
+    text-align: center;
+  }
+  .process-text strong { color: var(--action); }
+
+  .section-title {
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 700;
+    color: var(--action);
+    margin-bottom: var(--space-32);
+  }
+  .section-title-large {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    margin-bottom: var(--space-40);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-80);
+    align-items: start;
+  }
+
+  .benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: var(--space-32);
+  }
+  .benefit-list li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+    padding-left: 20px;
+    position: relative;
+  }
+  .benefit-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--action);
+    font-size: 13px;
+  }
+
+  .extra-note {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin-bottom: var(--space-24);
+    font-style: italic;
+  }
+
+  .body-text {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin-bottom: var(--space-24);
+  }
+
+  .btn-demo {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 40px;
+    border: 2px solid rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.6);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-md);
+    cursor: default;
+  }
+
+  /* ─── SCREENSHOTS ─── */
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .screenshot-link { display: block; border-radius: var(--radius-md); overflow: hidden; }
+  .screenshot-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+  }
+  .screenshot-link:hover .screenshot-img { transform: scale(1.03); }
+
+  /* ─── CTA ─── */
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 15px; font-weight: 600; border-radius: var(--radius-md); transition: border-color var(--transition-base), color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } .engines-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } }
+  .cta-inner h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: var(--space-40);
+  }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact {
+    font-family: var(--font-primary);
+    font-size: clamp(22px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--brand-dark);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .two-col { grid-template-columns: 1fr; }
+    .screenshots-grid { grid-template-columns: 1fr 1fr; }
+    .intro-heading { text-align: left; }
+    .intro-text { text-align: left; margin-left: 0; margin-right: 0; }
+  }
+  @media (max-width: 480px) {
+    .app-hero-inner { padding-top: 100px; }
+    .screenshots-grid { grid-template-columns: 1fr; }
+  }
 </style>
