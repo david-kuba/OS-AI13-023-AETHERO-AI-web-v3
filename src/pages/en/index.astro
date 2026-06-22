@@ -840,11 +840,10 @@ const blogPosts = [
     font-size: clamp(20px, 3vw, 40px);
     font-weight: 600;
     color: var(--brand-dark);
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    text-decoration: none;
     transition: opacity 0.2s;
   }
-  .footer-cta-link:hover { opacity: 0.75; }
+  .footer-cta-link:hover { opacity: 0.75; text-decoration: underline; text-underline-offset: 4px; }
 
   /* RESPONSIVE */
   @media (max-width: 1100px) {
