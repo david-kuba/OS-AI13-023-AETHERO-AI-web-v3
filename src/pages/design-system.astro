@@ -439,27 +439,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>H1 · homepage hero</code>
+              <code>H1 · hero pages</code>
               <span>var(--font-primary) · 700</span>
               <span>clamp(56px, 7.8vw, 100px)</span>
               <span>lh 1.15 · ls 0</span>
-              <em>→ cs/index.astro</em>
+              <em>→ index, esyncer, ae-translator, co-umime</em>
             </div>
             <div class="ds-type-preview ds-bg-dark">
               <span style="font-family: var(--font-primary); font-size: clamp(40px,5.5vw,80px); font-weight: 700; line-height: 1.15; color: #fff; letter-spacing: 0;">Jsme<br />Shopify<br />specialisté</span>
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>H1 · app pages</code>
-              <span>var(--font-primary) · 700</span>
-              <span>clamp(56px, 9vw, 130px)</span>
-              <span>lh 1.0 · ls 0</span>
-              <em>→ esyncer, ae-translator, co-umime</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-primary); font-size: clamp(42px,6vw,90px); font-weight: 700; line-height: 1.0; color: #fff; letter-spacing: 0;">eSyncer</span>
             </div>
           </div>
 
@@ -561,31 +548,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section class="ds-section ds-section-warn" id="inconsistencies">
         <h2 class="ds-section-title ds-title-warn">⚠ Nekonzistence — nutno sjednotit</h2>
 
-        <!-- 1: H1 ve třech variantách -->
-        <h3 class="ds-subsection-title">1 · H1 má 3 různé clamp() hodnoty</h3>
+        <!-- 1: H1 varianty -->
+        <h3 class="ds-subsection-title">1 · H1 — dvě úrovně (sjednoceno)</h3>
         <div class="ds-incon-grid">
-          <div class="ds-incon-card ds-incon-bad">
-            <div class="ds-incon-label">Homepage hero <span class="ds-incon-file">cs/index.astro</span></div>
+          <div class="ds-incon-card" style="border-color: #4ECCA3;">
+            <div class="ds-incon-label" style="color: #4ECCA3;">Hero pages — všechny ✓ <span class="ds-incon-file">index, esyncer, ae-translator, co-umime</span></div>
             <div class="ds-incon-preview">
-              <span style="font-family: var(--font-primary); font-size: clamp(36px,4.5vw,60px); font-weight: 700; line-height: 1.15; color: #fff;">Héro<br />text</span>
+              <span style="font-family: var(--font-primary); font-size: clamp(36px,4.5vw,60px); font-weight: 700; line-height: 1.15; color: #fff;">Jsme<br />Shopify<br />specialisté</span>
             </div>
-            <code>clamp(56px, 7.8vw, 100px)</code>
-          </div>
-          <div class="ds-incon-card ds-incon-bad">
-            <div class="ds-incon-label">App pages <span class="ds-incon-file">esyncer / ae-translator</span></div>
-            <div class="ds-incon-preview">
-              <span style="font-family: var(--font-primary); font-size: clamp(36px,5vw,70px); font-weight: 700; line-height: 1.0; color: #fff;">eSyncer</span>
-            </div>
-            <code>clamp(56px, 9vw, 130px)</code>
+            <code style="color: #4ECCA3;">clamp(56px, 7.8vw, 100px) · lh 1.15</code>
           </div>
           <div class="ds-incon-card ds-incon-bad">
             <div class="ds-incon-label">Service hero <span class="ds-incon-file">ServiceHero.astro</span></div>
             <div class="ds-incon-preview">
               <span style="font-family: var(--font-primary); font-size: clamp(28px,3.2vw,52px); font-weight: 700; line-height: 1.1; color: #fff;">Potřebuji<br />brand</span>
             </div>
-            <code>clamp(40px, 5vw, 64px)</code>
+            <code>clamp(40px, 5vw, 64px) · lh 1.1</code>
           </div>
         </div>
+        <p class="ds-incon-note">Dvě úrovně jsou záměrné — velké hero stránky vs. menší servisní hero. Větší varianta sjednocena na jednu hodnotu.</p>
 
         <!-- 2: Font-size tokeny nepoužívány -->
         <h3 class="ds-subsection-title">2 · Font-size tokeny v tokens.css — nikde se nepoužívají</h3>
