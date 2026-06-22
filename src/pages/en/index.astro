@@ -329,20 +329,36 @@ const blogPosts = [
   <!-- BLOG -->
   <section class="blog-section">
     <div class="container-extended">
-      <h2 class="section-heading">Blog</h2>
-      <div class="blog-grid">
-        {blogPosts.map((post) => (
-          <a href={post.href} class="blog-card">
-            <div class="blog-card-img">
-              <img src={post.img} alt={post.title} width="837" height="450" loading="lazy" />
-              <span class="blog-time">⏱{post.time} min.</span>
-            </div>
-            <div class="blog-card-body">
-              <span class="blog-ago">{post.ago}</span>
-              <h3 class="blog-title">{post.title}</h3>
-            </div>
-          </a>
-        ))}
+      <div class="blog-header">
+        <h2 class="section-heading">Blog</h2>
+        <div class="blog-nav">
+          <button class="blog-btn" id="blog-prev" aria-label="Předchozí" disabled>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5L7 10L12 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="blog-btn" id="blog-next" aria-label="Další">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="blog-track-wrap">
+        <div class="blog-track" id="blog-track">
+          {blogPosts.map((post) => (
+            <a href={post.href} class="blog-card">
+              <div class="blog-card-img">
+                <img src={post.img} alt={post.title} width="837" height="450" loading="lazy" />
+                <span class="blog-time">⏱{post.time} min.</span>
+              </div>
+              <div class="blog-card-body">
+                <span class="blog-ago">{post.ago}</span>
+                <h3 class="blog-title">{post.title}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -784,13 +800,37 @@ const blogPosts = [
     background: #000326;
     padding: 100px 0;
   }
-  .blog-section .section-heading { margin-bottom: 48px; }
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+  .blog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+  .blog-header .section-heading { margin-bottom: 0; }
+  .blog-nav { display: flex; gap: 8px; }
+  .blog-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.04);
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, opacity 0.2s;
+  }
+  .blog-btn:hover:not(:disabled) { border-color: var(--action); color: var(--action); }
+  .blog-btn:disabled { opacity: 0.25; cursor: default; }
+  .blog-track-wrap { overflow: hidden; }
+  .blog-track {
+    display: flex;
     gap: 16px;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .blog-card {
+    flex: 0 0 calc((100% - 48px) / 4);
     display: flex;
     flex-direction: column;
     border-radius: 12px;
@@ -853,7 +893,7 @@ const blogPosts = [
   @media (max-width: 1100px) {
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .ae-services-grid { grid-template-columns: repeat(2, 1fr); }
-    .blog-grid { grid-template-columns: repeat(3, 1fr); }
+    .blog-card { flex: 0 0 calc((100% - 32px) / 3); }
     .stats-inner { padding: 0 40px; }
   }
   @media (max-width: 768px) {
@@ -868,7 +908,7 @@ const blogPosts = [
     .footer-cta-contacts { flex-direction: column; align-items: center; gap: 16px; }
     .service-item { min-width: 280px; }
     .ae-services-ctas { flex-direction: column; align-items: center; }
-    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-card { flex: 0 0 calc((100% - 16px) / 2); }
   }
   @media (max-width: 480px) {
     .hero-inner { padding-top: 50px; padding-bottom: 40px; }
@@ -891,8 +931,40 @@ const blogPosts = [
     .zk-logos { gap: 20px; }
     .zk-logo-text { font-size: 16px; }
     .blog-section { padding: 60px 0; }
-    .blog-grid { grid-template-columns: 1fr; }
+    .blog-card { flex: 0 0 calc(100vw - 48px); }
     .footer-cta { padding: 60px 0; }
     .footer-cta-contacts { gap: 12px; }
   }
 </style>
+
+<script>
+(function() {
+  const track = document.getElementById('blog-track');
+  const prevBtn = document.getElementById('blog-prev');
+  const nextBtn = document.getElementById('blog-next');
+  if (!track || !prevBtn || !nextBtn) return;
+  const cards = Array.from(track.querySelectorAll('.blog-card'));
+  const GAP = 16;
+  let current = 0;
+
+  function visibleCount() {
+    const w = window.innerWidth;
+    if (w <= 480) return 1;
+    if (w <= 768) return 2;
+    if (w <= 1100) return 3;
+    return 4;
+  }
+  function maxStep() { return Math.max(0, cards.length - visibleCount()); }
+  function update() {
+    if (!cards[0]) return;
+    const step = cards[0].offsetWidth + GAP;
+    track.style.transform = 'translateX(-' + (current * step) + 'px)';
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= maxStep();
+  }
+  prevBtn.addEventListener('click', () => { if (current > 0) { current--; update(); } });
+  nextBtn.addEventListener('click', () => { if (current < maxStep()) { current++; update(); } });
+  window.addEventListener('resize', () => { current = Math.min(current, maxStep()); update(); });
+  update();
+})();
+</script>
