@@ -960,6 +960,11 @@ const blogPosts = [
     .service-item { min-width: 280px; }
     .ae-services-ctas { flex-direction: column; align-items: center; }
     .blog-card { flex: 0 0 calc((100% - 16px) / 2); }
+    .blog-track-wrap { overflow-x: scroll; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .blog-track-wrap::-webkit-scrollbar { display: none; }
+    .blog-track { transform: none !important; }
+    .blog-card { scroll-snap-align: start; }
+    .blog-nav { display: none; }
   }
   @media (max-width: 480px) {
     .hero-inner { padding-top: 50px; padding-bottom: 40px; }
