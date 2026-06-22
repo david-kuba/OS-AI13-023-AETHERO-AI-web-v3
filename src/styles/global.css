@@ -32,6 +32,9 @@ img { max-width: 100%; height: auto; }
   margin: 0 auto;
   padding: 0 var(--space-24);
 }
+.text-maxi  { font-size: 22px; }
+.text-basic { font-size: 18px; }
+.text-mini  { font-size: 14px; }
 /* .container-full = žádný max-width, použij přímo element bez třídy */
 @media (max-width: 480px) {
   .container,
