@@ -1,15 +1,5 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-
-const features = [
-  { title: 'Precise Category Mapping', desc: 'From source feed directly into your store structure.' },
-  { title: 'Manual Additions Without Conflict', desc: 'Add products manually — the import will not overwrite them.' },
-  { title: 'Compatible with Other Tools', desc: 'Works alongside other import tools without collisions.' },
-  { title: 'Automatic Tag Assignment', desc: 'Tags are added automatically according to rules from the feed.' },
-  { title: 'Auto Deactivation / Deletion', desc: 'Product missing from XML? Automatically deactivated or deleted.' },
-  { title: 'Stock-based Activation', desc: 'Stock 0 = product offline. Stock > 0 = product online. Automatically.' },
-  { title: 'Fully Custom', desc: 'Every implementation matches your exact logic and feed structure.' },
-];
 ---
 
 <PageLayout title="eSyncer — Product Import & Sync for Shopify" description="Automate product data import and synchronisation from XML feeds directly into Shopify." lang="en">
@@ -21,49 +11,74 @@ const features = [
     <div class="container app-hero-inner">
       <img src="/es-sipky.svg" alt="eSyncer" class="app-hero-logo" />
       <h1>eSyncer</h1>
-      <p class="app-hero-sub">Product data import, sync &amp; automation (not only) for&nbsp;<strong>SHOPIFY</strong></p>
+      <p class="app-hero-sub">Import, synchronisation &amp; automation (not only) for&nbsp;<strong>SHOPIFY</strong></p>
     </div>
   </section>
 
+  <!-- INTRO -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">What eSyncer does</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
+      <h2 class="intro-heading">With our app, your up-to-date product data flows from your supplier's feed exactly where&nbsp;you&nbsp;need&nbsp;it!</h2>
+      <p class="intro-text">If you're looking for a way to automate XML feed imports, you're in the right place. We know how difficult it is to set up. We specialise in complex XML feeds, CSV files and API sources for e-commerce. We fine-tune every import personally — and then you run on autopilot.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS + WHY -->
+  <section class="section bg-secondary">
+    <div class="container two-col">
+      <div>
+        <h2 class="section-title">What are the advantages?</h2>
+        <ul class="benefit-list">
+          <li>Only selected source categories are imported into the relevant store categories.</li>
+          <li>You can add products manually without conflicting with imported products.</li>
+          <li>The module works alongside other import apps and manually added products.</li>
+          <li>Automatic tags can be set up.</li>
+          <li>Automatically remove or disable products that no longer exist in the XML feed.</li>
+          <li>The app deactivates products when stock reaches 0 and reactivates them when stock goes above 0.</li>
+          <li>The solution can be fully customised to your additional requirements.</li>
+        </ul>
+        <a href="https://www.aethero.cz/files/esyncer-shopify-demo.pdf" target="_blank" rel="noopener" class="btn-demo">DEMO</a>
+      </div>
+      <div>
+        <h2 class="section-title">Why not fully automatic?</h2>
+        <p class="body-text">Some apps come with preset feed parsing rules. But what if your feed is a bit more complex and a universal solution just doesn't cut it? The best approach is to show us the source feed and a sample of how you want the final product to look. We replicate the exact structure and behaviour and connect it to the sync tool. Your data will be exactly where you want it.</p>
+        <p class="body-text">After the initial integration is complete, you review everything and we incorporate any further requirements. You get your own dashboard offering additional configuration options and the ability to monitor the app's activity.</p>
       </div>
     </div>
   </section>
 
-  <section class="section bg-secondary">
-    <div class="container how-inner">
-      <div>
-        <h2 class="section-title">How it works</h2>
-        <p class="how-text">
-          We do not use generic preset rules — we specialise in complex XML feeds.
-          We review the source feed and the desired output format, replicate the entire structure in the sync tool
-          and after integration you get your own dashboard for configuration and monitoring.
-        </p>
-        <div class="how-ctas">
-          <a href="mailto:bara@aethero.cz" class="btn-primary">Write to Bára</a>
-          <a href="tel:+420776325440" class="btn-ghost">+420 776 325 440</a>
-        </div>
-      </div>
-      <div class="how-highlight">
-        <p class="highlight-label">WHO IS IT FOR</p>
-        <ul class="for-list">
-          <li>Stores with supplier XML/CSV feeds</li>
-          <li>Shopify projects with complex product structures</li>
-          <li>Clients who need automation without developers</li>
-          <li>Projects where standard import is not enough</li>
-        </ul>
+  <!-- SCREENSHOTS -->
+  <section class="section bg-elevated">
+    <div class="container">
+      <h2 class="section-title">App screenshots</h2>
+      <div class="screenshots-grid">
+        <a href="/esyncer-screen-1.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-1.png" alt="eSyncer dashboard" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/esyncer-screen-2.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-2.png" alt="eSyncer jobs" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/esyncer-screen-3.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-3.png" alt="eSyncer mappings" loading="lazy" class="screenshot-img" />
+        </a>
+        <a href="/esyncer-screen-4.png" target="_blank" class="screenshot-link">
+          <img src="/esyncer-screen-4.png" alt="eSyncer settings" loading="lazy" class="screenshot-img" />
+        </a>
       </div>
     </div>
   </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Got something to discuss?<br />Get in touch!</h2>
+      <div class="cta-contacts">
+        <a href="mailto:bara@aethero.cz" class="cta-contact">bara@aethero.cz</a>
+        <a href="tel:+420776325440" class="cta-contact">+420 776 325 440</a>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
 
 <style>
@@ -113,25 +128,104 @@ const features = [
     margin: 0;
   }
 
+  /* ─── SECTIONS ─── */
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-16); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .how-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .how-text { font-size: 18px; color: var(--neutral-300); line-height: 1.7; margin-bottom: var(--space-40); }
-  .how-ctas { display: flex; gap: var(--space-16); flex-wrap: wrap; }
-  .how-highlight { background: rgba(13,212,205,0.05); border: 1px solid rgba(13,212,205,0.15); border-radius: var(--radius-md); padding: var(--space-40); }
-  .highlight-label { font-size: 12px; font-weight: 700; letter-spacing: 0; color: var(--action); margin-bottom: var(--space-16); }
-  .for-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .for-list li { font-size: 16px; padding-left: 20px; position: relative; }
-  .for-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 16px; font-weight: 600; border-radius: var(--radius-sm); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 16px; font-weight: 600; border-radius: var(--radius-sm); transition: border-color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .how-inner { grid-template-columns: 1fr; } }
+
+  .intro-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(30px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-32);
+  }
+  .intro-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-80);
+  }
+  .section-title {
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--space-32);
+  }
+  .benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: var(--space-40);
+  }
+  .benefit-list li {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    padding-left: 24px;
+    position: relative;
+  }
+  .benefit-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); }
+  .btn-demo {
+    display: inline-flex;
+    padding: 14px 32px;
+    background: var(--action);
+    color: #000326;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-base);
+  }
+  .btn-demo:hover { background: rgba(22,190,207,0.8); }
+  .body-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: var(--space-24);
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-24);
+  }
+  .screenshot-link { display: block; border-radius: var(--radius-md); overflow: hidden; }
+  .screenshot-img { width: 100%; height: auto; display: block; transition: opacity 0.2s; }
+  .screenshot-link:hover .screenshot-img { opacity: 0.85; }
+
+  .cta-section {
+    padding: var(--space-120) 0;
+    background: #000326;
+  }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 {
+    font-size: clamp(30px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-40);
+  }
+  .cta-contacts { display: flex; gap: var(--space-24); justify-content: center; flex-wrap: wrap; }
+  .cta-contact {
+    font-family: var(--font-primary);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--action);
+    transition: color var(--transition-base);
+  }
+  .cta-contact:hover { color: #fff; }
+
+  @media (max-width: 768px) {
+    .two-col { grid-template-columns: 1fr; gap: var(--space-40); }
+    .screenshots-grid { grid-template-columns: 1fr; }
+    .app-hero-inner { padding-top: 100px; }
+  }
 </style>
