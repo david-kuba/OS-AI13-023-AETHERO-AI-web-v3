@@ -315,13 +315,13 @@ const blogPosts = [
       <h2 class="zk-heading">Experience</h2>
       <p class="zk-body">Over the years we have worked in this industry, we have built up an impressive roster of clients and the experience that comes with it. We have worked on many diverse projects, so the stories about collaborating with multinationals and others — we can happily share over coffee ;-D</p>
       <div class="zk-logos">
-        <span class="zk-logo-text">Genkia</span>
-        <span class="zk-logo-text">BU1</span>
-        <span class="zk-logo-text">GROOMO</span>
-        <span class="zk-logo-text">Havana Club</span>
-        <span class="zk-logo-text">e·on</span>
-        <span class="zk-logo-text">Jan Becher</span>
-        <span class="zk-logo-text">air/bank</span>
+        <img src="/icons/genkia-logo.svg" alt="Genkia" class="zk-logo-img" loading="lazy" />
+        <img src="/icons/bu1-logo.svg" alt="BU1" class="zk-logo-img" loading="lazy" />
+        <img src="/icons/groomo-logo.svg" alt="GROOMO" class="zk-logo-img" loading="lazy" />
+        <img src="/icons/havana-logo.png" alt="Havana Club" class="zk-logo-img" loading="lazy" />
+        <img src="/icons/eon-logo.png" alt="e·on" class="zk-logo-img" loading="lazy" />
+        <img src="/icons/becher-logo.png" alt="Jan Becher" class="zk-logo-img" loading="lazy" />
+        <img src="/icons/airbank-logo.png" alt="air/bank" class="zk-logo-img" loading="lazy" />
       </div>
     </div>
   </section>
@@ -769,14 +769,15 @@ const blogPosts = [
     gap: 56px;
     flex-wrap: wrap;
   }
-  .zk-logo-text {
-    font-family: var(--font-primary);
-    font-size: 22px;
-    font-weight: 700;
-    color: rgba(255,255,255,0.88);
-    letter-spacing: 0;
-    white-space: nowrap;
+  .zk-logo-img {
+    height: 44px;
+    width: auto;
+    max-width: 140px;
+    opacity: 0.85;
+    object-fit: contain;
+    transition: opacity 0.2s;
   }
+  .zk-logo-img:hover { opacity: 1; }
 
   /* BLOG */
   .blog-section {
