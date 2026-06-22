@@ -132,18 +132,18 @@ const relatedServices = [
     display: inline-flex;
     align-items: center;
     padding: 14px 32px;
-    border: 2px solid rgba(255,255,255,0.45);
-    color: #fff;
+    background: #fff;
+    color: var(--brand-dark);
     font-family: var(--font-primary);
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     border-radius: var(--radius-md);
-    transition: border-color var(--transition-base);
+    transition: background var(--transition-base), transform var(--transition-base);
     margin-top: var(--space-16);
   }
-  .intro-btn:hover { border-color: #fff; }
+  .intro-btn:hover { background: rgba(255,255,255,0.88); transform: translateY(-1px); }
 
   .pillar-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: var(--space-40); color: var(--action); }
   .brand-text-col { max-width: 760px; }
