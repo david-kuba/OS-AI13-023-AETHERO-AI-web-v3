@@ -174,14 +174,12 @@ const blogPosts = [
     <div class="services-track-wrap" id="services-track-wrap">
       <div class="services-track" id="services-track">
         {services.map((s, i) => (
-          <>
-            <a href={s.href} class="service-item">
-              <div class="service-content">
-                <span class="service-num">{s.num}</span>
-                <p class="service-text" set:html={s.pre}></p>
-                <h3 class="service-title" set:html={s.title}></h3>
-              </div>
-            </a>
+          <a href={s.href} class="service-item">
+            <div class="service-content">
+              <span class="service-num">{s.num}</span>
+              <p class="service-text" set:html={s.pre}></p>
+              <h3 class="service-title" set:html={s.title}></h3>
+            </div>
             {i < services.length - 1 && (
               <div class="svc-arrow" aria-hidden="true">
                 <svg class="svc-arrow-svg" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,7 +188,7 @@ const blogPosts = [
                 </svg>
               </div>
             )}
-          </>
+          </a>
         ))}
       </div>
     </div>
@@ -364,7 +362,7 @@ const blogPosts = [
   const track = document.getElementById('services-track') as HTMLElement | null;
   const trackWrap = document.getElementById('services-track-wrap') as HTMLElement | null;
   if (track && trackWrap) {
-    const STEP = 568;
+    const STEP = 600;
     const INTERVAL = 5000;
     let offset = 0;
 
@@ -480,8 +478,9 @@ const blogPosts = [
   }
   .service-item {
     display: flex;
-    flex-direction: column;
-    min-width: 520px;
+    flex-direction: row;
+    align-items: flex-start;
+    min-width: 600px;
     padding: 40px 48px;
     color: #fff;
     cursor: pointer;
@@ -489,7 +488,7 @@ const blogPosts = [
   }
   .service-item:first-child { padding-left: 0; }
   .service-item:hover { opacity: 0.85; }
-  .service-content { display: flex; flex-direction: column; gap: 8px; }
+  .service-content { flex: 1; display: flex; flex-direction: column; gap: 8px; }
   .service-num {
     font-family: var(--font-primary);
     font-size: 140px;
