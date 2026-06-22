@@ -39,11 +39,12 @@ const relatedServices = [
   />
 
   <!-- Intro -->
-  <section class="section-intro bg-elevated">
+  <section class="section bg-elevated">
     <div class="container">
-      <h2 class="intro-heading">Do you have a plan for <span class="text-action">INTERNATIONAL EXPANSION</span>?</h2>
-      <p class="intro-text">With Shopify we open the path to growth that simply is not possible on local platforms. Make customers from anywhere in the world your customers.</p>
-      <a href="tel:+420776067663" class="btn-action">Shall we expand?</a>
+      <h2 class="intro-h2">Do you have a plan for <span class="accent-purple">INTERNATIONAL EXPANSION</span>?</h2>
+      <p class="intro-text">With Shopify, we'll open the door to growth that <strong class="hl">simply isn't possible on local platforms</strong>. Take the decisive step forward into international markets and global e-commerce.</p>
+      <p class="intro-text">You'll get <strong class="hl">one global platform built from the ground up for international selling</strong> — enabling multiple currencies, languages, and localised customer experiences.</p>
+      <a href="#cta" class="intro-btn">Let's expand →</a>
     </div>
   </section>
 
@@ -115,7 +116,7 @@ const relatedServices = [
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section" id="cta">
     <div class="container cta-inner">
       <h2>Shall we EXPAND?<br />Get in touch</h2>
       <div class="cta-contacts">
@@ -130,7 +131,12 @@ const relatedServices = [
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); }
   .text-action { color: var(--action); }
-  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-24); }
+  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-40); }
+  .accent-purple { color: var(--text-secondary); }
+  .hl { color: var(--text-secondary); font-weight: 900; }
+  .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
+  .intro-btn { display: inline-flex; align-items: center; padding: 14px 32px; background: #fff; color: var(--brand-dark); font-family: var(--font-primary); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-md); transition: background var(--transition-base), transform var(--transition-base); margin-top: var(--space-16); }
+  .intro-btn:hover { background: rgba(255,255,255,0.88); transform: translateY(-1px); }
   .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin-top: var(--space-16); transition: background var(--transition-base); }
   .btn-action:hover { background: var(--action-hover); }
 

@@ -61,11 +61,12 @@ const relatedServices = [
   />
 
   <!-- Stop guessing -->
-  <section class="section-intro bg-elevated">
+  <section class="section bg-elevated">
     <div class="container">
-      <h2 class="intro-heading">Stop guessing,<br /><span class="text-action">FIND OUT WHY</span></h2>
-      <p class="intro-text">Your store is telling you something. <strong>Are you listening?</strong> Every store has a story hidden inside its data — where it earns, where it bleeds, why some customers stay and others disappear after the first purchase. You already have that data — nobody is reading it. And someone should. It takes experience and a bit of technical voodoo, but then we sit down with your data, plans and a tamed AI, connect them to what is needed: Google Ads, Analytics, Meta and your email client — and hand you back a strategy with numbers against every recommendation: how much it will earn, how much it will save, when to switch it on.</p>
-      <a href="tel:+420776067663" class="btn-action">WANT AN ANALYSIS? CALL OR WRITE</a>
+      <h2 class="intro-h2">Stop guessing, <span class="accent-purple">FIND OUT WHY</span></h2>
+      <p class="intro-text">Your store is telling you something. <strong class="hl">Are you listening?</strong> Every store has a story hidden inside its data — where it earns, where it bleeds, why some customers stay and others disappear after the first purchase. <strong class="hl">You already have that data — nobody is reading it.</strong> And someone should.</p>
+      <p class="intro-text">It takes experience and a bit of technical voodoo, but then we sit down with your data, plans and a tamed AI, connect them to what is needed: Google Ads, Analytics, Meta and your email client — and <strong class="hl">hand you back a strategy with numbers against every recommendation</strong>: how much it will earn, how much it will save, when to switch it on.</p>
+      <a href="#cta" class="intro-btn">Want an analysis? Call or write →</a>
     </div>
   </section>
 
@@ -204,7 +205,7 @@ const relatedServices = [
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section" id="cta">
     <div class="container cta-inner">
       <h2>I want an analysis —<br />calling, writing!</h2>
       <div class="cta-contacts">
@@ -219,7 +220,12 @@ const relatedServices = [
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); }
   .text-action { color: var(--action); }
-  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-24); }
+  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-40); }
+  .accent-purple { color: var(--text-secondary); }
+  .hl { color: var(--text-secondary); font-weight: 900; }
+  .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
+  .intro-btn { display: inline-flex; align-items: center; padding: 14px 32px; background: #fff; color: var(--brand-dark); font-family: var(--font-primary); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-md); transition: background var(--transition-base), transform var(--transition-base); margin-top: var(--space-16); }
+  .intro-btn:hover { background: rgba(255,255,255,0.88); transform: translateY(-1px); }
   .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin-top: var(--space-32); transition: background var(--transition-base); }
   .btn-action:hover { background: var(--action-hover); }
 

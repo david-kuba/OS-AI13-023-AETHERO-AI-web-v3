@@ -37,13 +37,12 @@ const relatedServices = [
   />
 
   <!-- Intro -->
-  <section class="section-intro bg-elevated">
+  <section class="section bg-elevated">
     <div class="container">
-      <h2 class="intro-heading"><span class="text-action">WHAT DO YOU NEED HELP WITH</span><br />on your Shopify project?</h2>
-      <p class="intro-text"><strong>Sometimes searching videos to solve a problem simply is not enough — you need deeper technical insight, experience from multiple real projects and the ability to find broader connections.</strong></p>
-      <p class="intro-text">We want you to know that even after several years we have not grown a big nose — and if we can help, we will.</p>
-      <p class="intro-text">Developing and supporting Shopify projects does not end at store launch. We know that not every problem has a solution in a tutorial or video — often you need deeper technical insight, experience from real projects and the ability to find wider context.</p>
-      <a href="#what-we-do" class="intro-link">Let's get to it ➝</a>
+      <h2 class="intro-h2"><span class="accent-purple">WHAT DO YOU NEED HELP WITH</span> on your Shopify project?</h2>
+      <p class="intro-text"><strong class="hl">Sometimes searching for tutorial videos just isn't enough.</strong> What you need is deeper technical insight, experience from multiple real-world projects, and the ability to connect the dots.</p>
+      <p class="intro-text">We want you to know that even after years in this field, <strong class="hl">we haven't lost our humility</strong> — and when we can help, we will. Developing and supporting a Shopify project doesn't end at launch.</p>
+      <a href="#cta" class="intro-btn">Let's get to it →</a>
     </div>
   </section>
 
@@ -89,7 +88,7 @@ const relatedServices = [
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section" id="cta">
     <div class="container cta-inner">
       <h2>Can we help?<br />Get in touch</h2>
       <div class="cta-contacts">
@@ -104,7 +103,12 @@ const relatedServices = [
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); max-width: 760px; }
   .text-action { color: var(--action); }
-  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-24); }
+  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-40); }
+  .accent-purple { color: var(--text-secondary); }
+  .hl { color: var(--text-secondary); font-weight: 900; }
+  .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
+  .intro-btn { display: inline-flex; align-items: center; padding: 14px 32px; background: #fff; color: var(--brand-dark); font-family: var(--font-primary); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-md); transition: background var(--transition-base), transform var(--transition-base); margin-top: var(--space-16); }
+  .intro-btn:hover { background: rgba(255,255,255,0.88); transform: translateY(-1px); }
   .intro-link { display: inline-block; margin-top: var(--space-24); color: var(--action); font-size: 16px; font-weight: 600; text-decoration: none; }
   .intro-link:hover { opacity: 0.75; }
 

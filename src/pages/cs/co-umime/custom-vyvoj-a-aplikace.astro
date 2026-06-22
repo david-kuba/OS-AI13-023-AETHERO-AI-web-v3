@@ -76,10 +76,11 @@ const relatedServices = [
 
   <!-- Potřebujete APPKU nebo CUSTOM ÚPRAVU? -->
   <section class="section bg-elevated">
-    <div class="container intro-wrap">
-      <h2 class="section-title">Potřebujete APPKU nebo CUSTOM ÚPRAVU?</h2>
-      <p class="section-text">Lze říci, že tato část naší práce je, na straně jedné, úžasně jednoduchá — na vysvětlování, ale také dosti nepředvídatelná na straně druhé — při realizaci. V ideálním případě za námi přijdete s definicí problému a odcházíte od nás s řešením. A někde mezitím my to řešení najdeme nebo vytvoříme a vy zaplatíte. Je to srozumitelné? A máte pro nás něco připraveného?</p>
-      <p class="section-text">Zkontrolujeme zda opravdu někde není nějaké řešení hotové a pak společně rozebereme váš problém na kousky, abychom ho mohli vyřešit. Někdy je to jedna drobná úprava, která zvedne konverze. Jindy je to napojení, které vám srovná data v celém provozu. A občas je to aplikace, bez které to prostě nepůjde. Ideálně za námi přijdete s problémem a odcházíte s řešením. Někde mezi tím to spolu rozkreslíme, postavíme, otestujeme a nasadíme.</p>
+    <div class="container">
+      <h2 class="intro-h2">Potřebujete <span class="accent-purple">APPKU</span> nebo CUSTOM ÚPRAVU?</h2>
+      <p class="intro-text">Tato část naší práce je, na straně jedné, úžasně jednoduchá — na vysvětlování, ale také <strong class="hl">dosti nepředvídatelná na straně druhé — při realizaci</strong>. V ideálním případě za námi přijdete s definicí problému a odcházíte od nás s řešením. Je to srozumitelné?</p>
+      <p class="intro-text">Zkontrolujeme zda opravdu někde není nějaké řešení hotové a pak společně rozebereme váš problém na kousky, abychom ho mohli vyřešit. Někdy je to jedna drobná úprava, která zvedne konverze. Jindy je to napojení, které vám <strong class="hl">srovná data v celém provozu</strong>. A občas je to aplikace, bez které to prostě nepůjde.</p>
+      <a href="#cta" class="intro-btn">Super, sem s tím →</a>
     </div>
   </section>
 
@@ -219,7 +220,7 @@ const relatedServices = [
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section" id="cta">
     <div class="container cta-inner">
       <h2>Jdeme spolu něco vytvořit?<br />Dejte vědět</h2>
       <div class="cta-contacts">
@@ -234,6 +235,12 @@ const relatedServices = [
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
+  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-40); }
+  .accent-purple { color: var(--text-secondary); }
+  .hl { color: var(--text-secondary); font-weight: 900; }
+  .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
+  .intro-btn { display: inline-flex; align-items: center; padding: 14px 32px; background: #fff; color: var(--brand-dark); font-family: var(--font-primary); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-md); transition: background var(--transition-base), transform var(--transition-base); margin-top: var(--space-16); }
+  .intro-btn:hover { background: rgba(255,255,255,0.88); transform: translateY(-1px); }
   .section-title { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: var(--space-24); max-width: 760px; }
 

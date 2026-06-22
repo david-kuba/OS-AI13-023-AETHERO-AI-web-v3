@@ -43,14 +43,12 @@ const relatedServices = [
   />
 
   <!-- Intro -->
-  <section class="section-intro bg-elevated">
+  <section class="section bg-elevated">
     <div class="container">
-      <h2 class="intro-heading">Odstartujeme váš<br /><span class="text-action">PŘECHOD NA SHOPIFY</span></h2>
-      <p class="intro-text">Narážíte na limity Shoptetu nebo WooCommerce? Shopify je otevřená globální platforma navržená pro růst — multi-měna, vícejazyčnost, integrace externích systémů a propojení online i offline prodeje přes POS.</p>
-      <p class="intro-text">Pomůžeme vám přejít plynule — se zachováním SEO, dat i zákaznické zkušenosti.</p>
-      <a href="tel:+420776067663" class="btn-action">Zavolejme si zdarma</a>
-      <p class="intro-text intro-text--spaced">Spolupracujeme s e-shopy od startupů po velké hráče. Přecházíme z různých platforem — Shoptet, WooCommerce, Magento nebo custom řešení. Víme, na co si dát pozor a jak neztrácet čas ani peníze.</p>
-      <a href="#proc-migrace" class="intro-link">Ano, chceme migraci ➝</a>
+      <h2 class="intro-h2">Odstartujeme váš <span class="accent-purple">PŘECHOD NA SHOPIFY</span></h2>
+      <p class="intro-text">Narážíte na limity Shoptetu nebo WooCommerce? <strong class="hl">Shopify je otevřená globální platforma navržená pro růst</strong> — multi-měna, vícejazyčnost, integrace externích systémů a propojení online i offline prodeje přes POS.</p>
+      <p class="intro-text">Pomůžeme vám <strong class="hl">přejít plynule — se zachováním SEO, dat i zákaznické zkušenosti</strong>. Spolupracujeme s e-shopy od startupů po velké hráče a víme, na co si dát pozor a jak neztrácet čas ani peníze.</p>
+      <a href="#cta" class="intro-btn">Ano, chceme migraci →</a>
     </div>
   </section>
 
@@ -127,7 +125,7 @@ const relatedServices = [
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section" id="cta">
     <div class="container cta-inner">
       <h2>Je na čase to rozjet?<br />Dejte vědět</h2>
       <div class="cta-contacts">
@@ -142,7 +140,12 @@ const relatedServices = [
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.15; margin-bottom: var(--space-40); max-width: 760px; }
   .text-action { color: var(--action); }
-  .intro-text { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.75; max-width: 720px; margin-bottom: var(--space-16); }
+  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.1; margin-bottom: var(--space-40); }
+  .accent-purple { color: var(--text-secondary); }
+  .hl { color: var(--text-secondary); font-weight: 900; }
+  .intro-btn { display: inline-flex; align-items: center; padding: 14px 32px; background: #fff; color: var(--brand-dark); font-family: var(--font-primary); font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border-radius: var(--radius-md); transition: background var(--transition-base), transform var(--transition-base); margin-top: var(--space-16); }
+  .intro-btn:hover { background: rgba(255,255,255,0.88); transform: translateY(-1px); }
+  .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
   .intro-text--spaced { margin-top: var(--space-40); }
   .btn-action { display: inline-flex; padding: 16px 40px; background: var(--action); color: #000; font-family: var(--font-primary); font-size: 15px; font-weight: 700; border-radius: var(--radius-md); text-decoration: none; margin: var(--space-32) 0; transition: background var(--transition-base); }
   .btn-action:hover { background: var(--action-hover); }
