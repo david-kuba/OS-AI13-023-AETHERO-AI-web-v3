@@ -328,7 +328,7 @@ const blogPosts = [
 
   <!-- BLOG -->
   <section class="blog-section">
-    <div class="container-extended">
+    <div class="blog-wide">
       <div class="blog-header">
         <h2 class="section-heading">Blog</h2>
         <div class="blog-nav">
@@ -803,7 +803,12 @@ const blogPosts = [
     background: #000326;
     padding: 100px 0;
   }
+  .blog-wide {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
   .blog-header {
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -826,7 +831,7 @@ const blogPosts = [
   }
   .blog-btn:hover:not(:disabled) { border-color: var(--action); color: var(--action); }
   .blog-btn:disabled { opacity: 0.25; cursor: default; }
-  .blog-track-wrap { overflow: hidden; }
+  .blog-track-wrap { overflow: hidden; padding: 0 24px; }
   .blog-track {
     display: flex;
     gap: 16px;
