@@ -938,7 +938,19 @@ const blogPosts = [
     .hero-right { display: none; }
     .hero-heading { font-size: clamp(40px, 10vw, 64px); }
     .features-grid { grid-template-columns: 1fr; }
-    .ae-services-grid { grid-template-columns: 1fr; }
+    .ae-services-grid {
+      grid-template-columns: unset;
+      grid-template-rows: auto auto;
+      grid-auto-flow: column;
+      grid-auto-columns: 65vw;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      gap: 20px 16px;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .ae-services-grid::-webkit-scrollbar { display: none; }
+    .ae-service-item:nth-child(odd) { scroll-snap-align: start; }
     .ae-service-item { flex-direction: column; }
     .ref-grid { grid-template-columns: 1fr; }
     .stats-inner { flex-direction: column; text-align: center; padding: 0 24px; }
