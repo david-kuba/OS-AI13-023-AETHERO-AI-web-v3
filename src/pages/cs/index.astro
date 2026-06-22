@@ -770,14 +770,15 @@ const blogPosts = [
     margin: 0 auto;
   }
   .blog-header {
-    padding: 0 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+    padding: 0 40px;
     margin-bottom: 48px;
   }
   .blog-header .section-heading { margin-bottom: 0; }
-  .blog-nav { display: flex; gap: 8px; }
+  .blog-nav { display: flex; gap: 8px; position: absolute; right: 40px; top: 50%; transform: translateY(-50%); }
   .blog-btn {
     display: flex;
     align-items: center;
