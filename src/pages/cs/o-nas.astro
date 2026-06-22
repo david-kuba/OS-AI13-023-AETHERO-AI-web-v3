@@ -79,7 +79,7 @@ const team = [
 
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Zavolejte, napište!<br /><span style="color:var(--action)">Nekoušeme.</span></h2>
+      <h2>Zavolejte, napište!<br />Nekoušeme.</h2>
       <div class="cta-contacts">
         <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
         <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
@@ -131,12 +131,12 @@ const team = [
   .story-text { display: flex; flex-direction: column; gap: var(--space-24); }
   .story-text p { font-size: 18px; color: var(--neutral-300); line-height: 1.7; }
 
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-elevated); }
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: var(--text-h2); font-weight: 600; margin-bottom: var(--space-40); }
+  .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
-  .cta-link { font-size: var(--text-h3); color: var(--text-primary); font-family: var(--font-primary); font-weight: 600; transition: color var(--transition-base); }
-  .cta-link:hover { color: var(--action); }
+  .cta-link { font-size: clamp(22px, 3vw, 40px); color: var(--brand-dark); font-family: var(--font-primary); font-weight: 700; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-link:hover { opacity: 0.75; }
 
   @media (max-width: 768px) {
     .team-grid { grid-template-columns: 1fr; }
