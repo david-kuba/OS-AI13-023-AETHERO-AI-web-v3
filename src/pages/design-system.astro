@@ -14,6 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="#typography">Typografie</a>
         <a href="#spacing">Spacing</a>
         <a href="#components">Komponenty</a>
+        <a href="#inconsistencies" style="color: #FF5252;">⚠ Nekonzistence</a>
       </div>
     </nav>
 
@@ -165,82 +166,275 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section class="ds-section" id="typography">
         <h2 class="ds-section-title">Typografie</h2>
 
+        <h3 class="ds-subsection-title">Fonty</h3>
+        <div class="ds-font-stack">
+          <div class="ds-font-card">
+            <span class="ds-font-var"><code>--font-primary</code></span>
+            <span class="ds-font-name" style="font-family: var(--font-primary);">Kanit</span>
+            <span class="ds-font-weights" style="font-family: var(--font-primary);">
+              <span style="font-weight:400;">400 Regular</span>
+              <span style="font-weight:500;">500 Medium</span>
+              <span style="font-weight:600;">600 SemiBold</span>
+              <span style="font-weight:700;">700 Bold</span>
+              <span style="font-weight:900;">900 Black</span>
+            </span>
+            <span class="ds-font-use">Nadpisy, navigace, tlačítka, čísla</span>
+          </div>
+          <div class="ds-font-card">
+            <span class="ds-font-var"><code>--font-secondary</code></span>
+            <span class="ds-font-name" style="font-family: var(--font-secondary);">Montserrat</span>
+            <span class="ds-font-weights" style="font-family: var(--font-secondary);">
+              <span style="font-weight:400;">400 Regular</span>
+              <span style="font-weight:500;">500 Medium</span>
+              <span style="font-weight:600;">600 SemiBold</span>
+            </span>
+            <span class="ds-font-use">Body text, popisky, metadata</span>
+          </div>
+        </div>
+
+        <h3 class="ds-subsection-title">Typografická škála — skutečně používáno</h3>
         <div class="ds-type-specimens">
+
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>--text-h1</code><br />
-              Kanit 700 · 100px · lh 1.15
+              <code>H1 · homepage hero</code>
+              <span>var(--font-primary) · 700</span>
+              <span>clamp(56px, 7.8vw, 100px)</span>
+              <span>lh 1.15 · ls 0</span>
+              <em>→ cs/index.astro</em>
             </div>
             <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(40px,6vw,100px); font-weight: 700; line-height: 1.15; color: #fff;">Jsme<br />Shopify<br />specialisté</span>
+              <span style="font-family: var(--font-primary); font-size: clamp(40px,5.5vw,80px); font-weight: 700; line-height: 1.15; color: #fff; letter-spacing: 0;">Jsme<br />Shopify<br />specialisté</span>
             </div>
           </div>
 
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>--text-h2</code><br />
-              Kanit 600 · 70px · lh 1.4
+              <code>H1 · app pages</code>
+              <span>var(--font-primary) · 700</span>
+              <span>clamp(56px, 9vw, 130px)</span>
+              <span>lh 1.0 · ls 0</span>
+              <em>→ esyncer, ae-translator, co-umime</em>
             </div>
             <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(32px,4.5vw,70px); font-weight: 600; line-height: 1.4; color: #fff;">Reference</span>
+              <span style="font-family: var(--font-primary); font-size: clamp(42px,6vw,90px); font-weight: 700; line-height: 1.0; color: #fff; letter-spacing: 0;">eSyncer</span>
             </div>
           </div>
 
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>--text-h2-vp</code><br />
-              Kanit 600 · 54px · lh 1.2<br />
-              <em>Value prop sekce</em>
+              <code>H1 · service pages</code>
+              <span>var(--font-primary) · 700</span>
+              <span>clamp(40px, 5vw, 64px)</span>
+              <span>lh 1.1</span>
+              <em>→ ServiceHero.astro</em>
             </div>
             <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(28px,3.5vw,54px); font-weight: 600; line-height: 1.2; color: #fff;">Shopify dodá technologii,<br /><em style="color: #7C3AED;">aethero</em> strategii.</span>
+              <span style="font-family: var(--font-primary); font-size: clamp(32px,3.8vw,64px); font-weight: 700; line-height: 1.1; color: #fff;">Potřebuji<br />brand</span>
             </div>
           </div>
 
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>--text-h3</code><br />
-              Kanit 600 · 40px · lh 1.1<br />
-              <em>Service carousel titles</em>
+              <code>H2 · sekce nadpis</code>
+              <span>var(--font-primary) · 700</span>
+              <span>clamp(32px, 3.6vw, 52px)</span>
+              <span>lh 1.15–1.2</span>
+              <em>→ index.astro, service pages</em>
             </div>
             <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: 'Kanit', sans-serif; font-size: clamp(24px,3vw,40px); font-weight: 600; line-height: 1.1; color: #fff;">NOVÝ SHOPIFY<br />E-SHOP</span>
+              <span style="font-family: var(--font-primary); font-size: clamp(26px,3vw,48px); font-weight: 700; line-height: 1.15; color: #fff;">Reference<br />a případovky</span>
             </div>
           </div>
 
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>--text-section-body</code><br />
-              Montserrat 400 · 22px · lh 1.4<br />
-              <em>Value prop, sekce tělo</em>
+              <code>H2 · value prop</code>
+              <span>var(--font-primary) · 600</span>
+              <span>clamp(26px, 3.5vw, 48px)</span>
+              <span>lh 1.2</span>
+              <em>→ index.astro .value-heading</em>
             </div>
             <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 400; line-height: 1.4; color: rgba(255,255,255,0.75);">Od výběru projektu přes design a vývoj<br />až po první objednávku — a dál.</span>
+              <span style="font-family: var(--font-primary); font-size: clamp(22px,2.8vw,44px); font-weight: 600; line-height: 1.2; color: #fff;">Shopify dodá technologii,<br /><span style="color: var(--ds-accent);">aethero</span> strategii.</span>
             </div>
           </div>
 
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>--text-nav</code><br />
-              Kanit 500 · 20px · ls 0.06em
+              <code>H3 · service title</code>
+              <span>var(--font-primary) · 900</span>
+              <span>clamp(24px, 3vw, 40px)</span>
+              <span>lh 1.1 · uppercase</span>
+              <em>→ index.astro .service-title</em>
             </div>
-            <div class="ds-type-preview ds-bg-dark" style="gap: 0;">
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: var(--font-primary); font-size: clamp(20px,2.5vw,36px); font-weight: 900; line-height: 1.1; color: #fff; text-transform: uppercase;">NOVÝ SHOPIFY<br />E-SHOP</span>
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>Body · section</code>
+              <span>var(--font-secondary) · 400</span>
+              <span>18–22px</span>
+              <span>lh 1.6–1.75</span>
+              <em>→ service pages, index</em>
+            </div>
+            <div class="ds-type-preview ds-bg-dark">
+              <span style="font-family: var(--font-secondary); font-size: 18px; font-weight: 400; line-height: 1.7; color: rgba(255,255,255,0.75);">Od výběru projektu přes design a vývoj<br />až po první objednávku — a dál.</span>
+            </div>
+          </div>
+
+          <div class="ds-type-row">
+            <div class="ds-type-meta">
+              <code>Nav</code>
+              <span>var(--font-primary) · 500</span>
+              <span>16px · ls 0</span>
+              <em>→ Header.astro</em>
+            </div>
+            <div class="ds-type-preview ds-bg-dark" style="gap: 0; flex-wrap: nowrap;">
               {['ÚVOD', 'CO UMÍME', 'APLIKACE', 'O NÁS', 'KONTAKT'].map(item => (
-                <span style="font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 500; letter-spacing: 0; color: #fff; padding: 0 30px;">{item}</span>
+                <span style="font-family: var(--font-primary); font-size: 16px; font-weight: 500; letter-spacing: 0; color: #fff; padding: 0 20px; white-space: nowrap;">{item}</span>
               ))}
             </div>
           </div>
 
           <div class="ds-type-row">
             <div class="ds-type-meta">
-              <code>--text-small</code><br />
-              Montserrat 400 · 14px
+              <code>Small / meta</code>
+              <span>var(--font-secondary) · 400</span>
+              <span>13–14px</span>
+              <em>→ footer, labels, notes</em>
             </div>
             <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #A0A3BD;">Česká Shopify agentura. Design, strategie, technologie.</span>
+              <span style="font-family: var(--font-secondary); font-size: 14px; color: rgba(160,163,189,1);">Česká Shopify agentura. Design, strategie, technologie.</span>
             </div>
           </div>
+
         </div>
+      </section>
+
+      <!-- NEKONZISTENCE -->
+      <section class="ds-section ds-section-warn" id="inconsistencies">
+        <h2 class="ds-section-title ds-title-warn">⚠ Nekonzistence — nutno sjednotit</h2>
+
+        <!-- 1: H1 ve třech variantách -->
+        <h3 class="ds-subsection-title">1 · H1 má 3 různé clamp() hodnoty</h3>
+        <div class="ds-incon-grid">
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">Homepage hero <span class="ds-incon-file">cs/index.astro</span></div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-primary); font-size: clamp(36px,4.5vw,60px); font-weight: 700; line-height: 1.15; color: #fff;">Héro<br />text</span>
+            </div>
+            <code>clamp(56px, 7.8vw, 100px)</code>
+          </div>
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">App pages <span class="ds-incon-file">esyncer / ae-translator</span></div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-primary); font-size: clamp(36px,5vw,70px); font-weight: 700; line-height: 1.0; color: #fff;">eSyncer</span>
+            </div>
+            <code>clamp(56px, 9vw, 130px)</code>
+          </div>
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">Service hero <span class="ds-incon-file">ServiceHero.astro</span></div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-primary); font-size: clamp(28px,3.2vw,52px); font-weight: 700; line-height: 1.1; color: #fff;">Potřebuji<br />brand</span>
+            </div>
+            <code>clamp(40px, 5vw, 64px)</code>
+          </div>
+        </div>
+
+        <!-- 2: Font-size tokeny nepoužívány -->
+        <h3 class="ds-subsection-title">2 · Font-size tokeny v tokens.css — nikde se nepoužívají</h3>
+        <div class="ds-token-unused-grid">
+          {[
+            { token: '--text-h1', val: '100px' },
+            { token: '--text-h2', val: '70px' },
+            { token: '--text-h2-vp', val: '54px' },
+            { token: '--text-h3', val: '40px' },
+            { token: '--text-body', val: '16px' },
+            { token: '--text-section-body', val: '22px' },
+            { token: '--text-label', val: '18px' },
+            { token: '--text-small', val: '14px' },
+          ].map(t => (
+            <div class="ds-unused-token">
+              <code>{t.token}</code>
+              <span class="ds-unused-val">{t.val}</span>
+              <span class="ds-unused-badge">NEPOUŽITO</span>
+            </div>
+          ))}
+        </div>
+        <p class="ds-incon-note">Místo těchto tokenů se všude píší hardcoded <code>clamp()</code> hodnoty. Buď tokeny smazat, nebo kód přepsat aby je používal.</p>
+
+        <!-- 3: font-weight outlier -->
+        <h3 class="ds-subsection-title">3 · font-weight 900 — osamocený outlier</h3>
+        <div class="ds-incon-grid">
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">Service title <span class="ds-incon-file">index.astro .service-title</span></div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 900; color: #fff; text-transform: uppercase;">NOVÝ E-SHOP</span>
+            </div>
+            <code>font-weight: 900 ← jediný výskyt</code>
+          </div>
+          <div class="ds-incon-card">
+            <div class="ds-incon-label">Všechny ostatní nadpisy</div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: #fff;">Nadpis sekce</span>
+            </div>
+            <code>font-weight: 700 ← standard</code>
+          </div>
+        </div>
+
+        <!-- 4: line-height -->
+        <h3 class="ds-subsection-title">4 · line-height — stejný element, různá hodnota</h3>
+        <div class="ds-incon-grid">
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">H1 v index.astro <span class="ds-incon-file">line-height: 1.15</span></div>
+            <div class="ds-incon-preview" style="line-height: 1.15;">
+              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: #fff; line-height: 1.15;">První řádek<br />Druhý řádek<br />Třetí řádek</span>
+            </div>
+            <code>line-height: 1.15</code>
+          </div>
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">H1 v ServiceHero.astro <span class="ds-incon-file">line-height: 1.1</span></div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: #fff; line-height: 1.1;">První řádek<br />Druhý řádek<br />Třetí řádek</span>
+            </div>
+            <code>line-height: 1.1</code>
+          </div>
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">Body text index.astro <span class="ds-incon-file">line-height: 1.6</span></div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-secondary); font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6;">Od výběru projektu přes design<br />a vývoj až po první objednávku<br />a dál.</span>
+            </div>
+            <code>line-height: 1.6</code>
+          </div>
+          <div class="ds-incon-card ds-incon-bad">
+            <div class="ds-incon-label">Body text CaseStudy/Blog <span class="ds-incon-file">line-height: 1.8</span></div>
+            <div class="ds-incon-preview">
+              <span style="font-family: var(--font-secondary); font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.8;">Od výběru projektu přes design<br />a vývoj až po první objednávku<br />a dál.</span>
+            </div>
+            <code>line-height: 1.8</code>
+          </div>
+        </div>
+
+        <!-- 5: hardcoded font-family v design-system -->
+        <h3 class="ds-subsection-title">5 · Hardcoded font-family místo tokenů — jen v tomto souboru</h3>
+        <div class="ds-code-diff">
+          <div class="ds-diff-bad">
+            <span class="ds-diff-label">❌ Co tu je (11× výskyt)</span>
+            <pre><code>font-family: 'Kanit', sans-serif;
+font-family: 'Montserrat', sans-serif;</code></pre>
+          </div>
+          <div class="ds-diff-good">
+            <span class="ds-diff-label">✓ Jak to má být</span>
+            <pre><code>font-family: var(--font-primary);
+font-family: var(--font-secondary);</code></pre>
+          </div>
+        </div>
+        <p class="ds-incon-note">V komponentách (Header, Footer, ServiceHero) a pages se tokeny používají správně. Tento soubor je výjimka.</p>
+
       </section>
 
       <!-- SPACING -->
@@ -744,6 +938,120 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     text-decoration: none;
     white-space: nowrap;
   }
+
+  /* FONT STACK */
+  .ds-font-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .ds-font-card {
+    background: var(--ds-surface);
+    border: 1px solid var(--ds-border);
+    border-radius: 10px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ds-font-var code { font-size: 12px; color: var(--ds-accent); }
+  .ds-font-name { font-size: 40px; font-weight: 700; color: #fff; line-height: 1; }
+  .ds-font-weights { display: flex; gap: 16px; flex-wrap: wrap; }
+  .ds-font-weights span { font-size: 14px; color: rgba(255,255,255,0.6); }
+  .ds-font-use { font-size: 12px; color: var(--ds-muted); font-style: italic; }
+
+  /* TYPE META — nový layout */
+  .ds-type-meta {
+    font-size: 12px;
+    color: var(--ds-muted);
+    line-height: 1.6;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .ds-type-meta code { font-size: 13px; font-weight: 700; color: var(--ds-accent); font-family: monospace; margin-bottom: 4px; }
+  .ds-type-meta span { color: rgba(255,255,255,0.55); }
+  .ds-type-meta em { font-style: italic; color: var(--ds-accent); opacity: 0.6; font-size: 11px; margin-top: 4px; }
+
+  /* INCONSISTENCIES */
+  .ds-section-warn { border-color: rgba(255,82,82,0.2); background: rgba(255,82,82,0.02); }
+  .ds-title-warn { color: #FF5252 !important; }
+  .ds-incon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .ds-incon-card {
+    background: var(--ds-surface);
+    border: 1px solid var(--ds-border);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ds-incon-card.ds-incon-bad { border-color: rgba(255,82,82,0.35); }
+  .ds-incon-label { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--ds-muted); letter-spacing: 0.03em; }
+  .ds-incon-file { display: block; color: rgba(255,82,82,0.8); font-weight: 400; text-transform: none; margin-top: 2px; font-family: monospace; font-size: 10px; }
+  .ds-incon-preview { background: #000326; border-radius: 6px; padding: 16px; min-height: 60px; display: flex; align-items: center; }
+  .ds-incon-card code { font-size: 11px; color: rgba(255,82,82,0.9); font-family: monospace; }
+
+  .ds-token-unused-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .ds-unused-token {
+    background: var(--ds-surface);
+    border: 1px solid rgba(255,82,82,0.3);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .ds-unused-token code { font-size: 11px; color: var(--ds-accent); font-family: monospace; }
+  .ds-unused-val { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.5); }
+  .ds-unused-badge { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #FF5252; margin-top: 4px; }
+
+  .ds-code-diff {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .ds-diff-bad, .ds-diff-good {
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ds-diff-bad { background: rgba(255,82,82,0.08); border: 1px solid rgba(255,82,82,0.3); }
+  .ds-diff-good { background: rgba(78,204,163,0.08); border: 1px solid rgba(78,204,163,0.3); }
+  .ds-diff-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ds-diff-bad .ds-diff-label { color: #FF5252; }
+  .ds-diff-good .ds-diff-label { color: #4ECCA3; }
+  .ds-diff-bad pre, .ds-diff-good pre { margin: 0; }
+  .ds-diff-bad code, .ds-diff-good code { font-size: 12px; font-family: monospace; line-height: 1.7; }
+  .ds-diff-bad code { color: rgba(255,82,82,0.9); }
+  .ds-diff-good code { color: #4ECCA3; }
+
+  .ds-incon-note {
+    font-size: 12px;
+    color: var(--ds-muted);
+    line-height: 1.6;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid rgba(255,82,82,0.4);
+    border-radius: 0 4px 4px 0;
+    margin-top: 4px;
+  }
+  .ds-incon-note code { color: var(--ds-accent); font-family: monospace; }
 
   /* FOOTER */
   .ds-footer {
