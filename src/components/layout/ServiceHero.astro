@@ -59,6 +59,15 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
     object-position: center;
     display: block;
   }
+  .hero-bg-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    background: linear-gradient(to bottom, transparent 0%, #000326 100%);
+  }
   .hero-blob {
     position: absolute;
     top: -20%;
