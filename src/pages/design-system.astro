@@ -609,29 +609,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <!-- 4: line-height -->
-        <h3 class="ds-subsection-title">4 · line-height — stejný element, různá hodnota</h3>
+        <!-- 4: line-height — VYŘEŠENO -->
+        <h3 class="ds-subsection-title">4 · line-height — stejný element, různá hodnota ✓ vyřešeno</h3>
         <div class="ds-incon-grid">
-          <div class="ds-incon-card ds-incon-bad">
-            <div class="ds-incon-label">H1 v index.astro <span class="ds-incon-file">line-height: 1.15</span></div>
-            <div class="ds-incon-preview" style="line-height: 1.15;">
-              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: #fff; line-height: 1.15;">První řádek<br />Druhý řádek<br />Třetí řádek</span>
+          <div class="ds-incon-card ds-incon-ok">
+            <div class="ds-incon-label">Všechny nadpisy (H1–H3) <span class="ds-incon-file">✓ sjednoceno na 1.2</span></div>
+            <div class="ds-incon-preview" style="line-height: 1.2;">
+              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: #fff; line-height: 1.2;">První řádek<br />Druhý řádek<br />Třetí řádek</span>
             </div>
-            <code>line-height: 1.15</code>
+            <code>line-height: 1.2 ← standard</code>
           </div>
-          <div class="ds-incon-card ds-incon-bad">
-            <div class="ds-incon-label">H1 v ServiceHero.astro <span class="ds-incon-file">line-height: 1.1</span></div>
-            <div class="ds-incon-preview">
-              <span style="font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: #fff; line-height: 1.1;">První řádek<br />Druhý řádek<br />Třetí řádek</span>
-            </div>
-            <code>line-height: 1.1</code>
-          </div>
-          <div class="ds-incon-card" style="border-color: #4ECCA3;">
-            <div class="ds-incon-label" style="color: #4ECCA3;">Body text — všechny soubory <span class="ds-incon-file">✓ sjednoceno na 1.6</span></div>
+          <div class="ds-incon-card ds-incon-ok">
+            <div class="ds-incon-label">Body text — všechny soubory <span class="ds-incon-file">✓ sjednoceno na 1.6</span></div>
             <div class="ds-incon-preview">
               <span style="font-family: var(--font-secondary); font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6;">Od výběru projektu přes design<br />a vývoj až po první objednávku<br />a dál.</span>
             </div>
-            <code style="color: #4ECCA3;">line-height: 1.6</code>
+            <code>line-height: 1.6 ← standard</code>
           </div>
         </div>
 
