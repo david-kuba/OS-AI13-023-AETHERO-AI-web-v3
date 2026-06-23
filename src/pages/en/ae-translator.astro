@@ -1,27 +1,5 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-
-const steps = [
-  { step: '01', title: 'Export from Shopify', desc: 'Export products, collections or pages to CSV or ZIP format.' },
-  { step: '02', title: 'Upload to AE Translator', desc: 'Upload the file to the app — no coding, no configuration.' },
-  { step: '03', title: 'Bulk AI Translation', desc: 'Choose your AI engine and run the translation. DeepL, Claude or DeepSeek.' },
-  { step: '04', title: 'Import Back to Shopify', desc: 'Download the translated file and reimport into Shopify admin.' },
-];
-
-const features = [
-  { title: 'AI Engine Selection', desc: 'DeepL, Claude or DeepSeek — choose based on quality and cost.' },
-  { title: 'Pay-per-Token', desc: 'Pay only for tokens of the chosen AI provider. No subscription.' },
-  { title: 'Custom Prompts', desc: 'Set translation instructions — tone of voice, terminology, exceptions.' },
-  { title: 'Multilingual Glossary', desc: 'Define terms that should never be translated or are translated differently.' },
-  { title: 'Selective Exclusion', desc: 'Exclude specific values from translation — product codes, SKUs, URLs.' },
-  { title: 'Automatic URL Translation', desc: 'Handle is automatically translated from the translated product name.' },
-];
-
-const engines = [
-  { name: 'DeepL', desc: 'Best quality for European languages. Fast and accurate.' },
-  { name: 'Claude', desc: 'Advanced instructions and nuance. Great for marketing and copywriting.' },
-  { name: 'DeepSeek', desc: 'Most cost-effective option for large volumes.' },
-];
 ---
 
 <PageLayout title="AE Translator — AI Translation for Shopify" description="Bulk AI translation of products, collections and pages in Shopify for a fraction of the cost." lang="en">
@@ -37,45 +15,36 @@ const engines = [
     </div>
   </section>
 
+  <!-- INTRO -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">How it works</h2>
-      <div class="steps-grid">
-        {steps.map((s) => (
-          <div class="step-card">
-            <span class="step-num">{s.step}</span>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-          </div>
-        ))}
-      </div>
+      <h2 class="intro-heading">Translate with&nbsp;AI for&nbsp;a&nbsp;fraction&nbsp;of&nbsp;the&nbsp;cost.</h2>
+      <p class="intro-text">The Shopify App Store offers a large number of translation apps — some even use AI or connect to translation services. But the cost can easily reach thousands, especially if your store has hundreds or thousands of products.</p>
+      <p class="intro-text process-text">Our app uses Shopify's native export and import: <strong>export your products, collections or pages to CSV or ZIP, upload the file and bulk-translate everything with AI</strong> (DeepL, Claude or DeepSeek). <strong>Download the translated file and reimport it back into Shopify admin.</strong></p>
     </div>
   </section>
 
+  <!-- BENEFITS + WHY -->
   <section class="section bg-secondary">
-    <div class="container">
-      <h2 class="section-title">Features</h2>
-      <div class="features-grid">
-        {features.map((f) => (
-          <div class="feature-card">
-            <h3>{f.title}</h3>
-            <p>{f.desc}</p>
-          </div>
-        ))}
+    <div class="container two-col">
+      <div>
+        <h2 class="section-title">What are the advantages?</h2>
+        <ul class="benefit-list">
+          <li>Export your entire store content to CSV and run it through AI translation in one go</li>
+          <li>Choose the AI model you want to use for translation</li>
+          <li>Pay only the token cost of your chosen AI provider — no subscription</li>
+          <li>Fine-tune the user prompt exactly to your needs</li>
+          <li>Easily review all translated values in the exported file before importing</li>
+          <li>Set up a glossary for different languages</li>
+          <li>Exclude specific values from translation — product codes, SKUs, URLs</li>
+          <li>Optionally translate URL handles, auto-generated from the translated product name</li>
+        </ul>
+        <p class="extra-note">If you need a model not currently in the app — let us know and we'll add it.</p>
+        <a href="#" class="btn-demo">DEMO COMING SOON</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Available AI engines</h2>
-      <div class="engines-grid">
-        {engines.map((e) => (
-          <div class="engine-card">
-            <h3>{e.name}</h3>
-            <p>{e.desc}</p>
-          </div>
-        ))}
+      <div>
+        <h2 class="section-title">Why not fully automatic?</h2>
+        <p class="body-text">AE Translator does exactly what it says. It's a practical tool that helps you achieve great results at a low cost. We've solved the common AI translation pitfalls for you. All you need to do is tune the prompt to match your expectations — add context and rules, and you're ready to translate.</p>
       </div>
     </div>
   </section>
@@ -83,7 +52,7 @@ const engines = [
   <!-- SCREENSHOTS -->
   <section class="section bg-elevated">
     <div class="container">
-      <h2 class="section-title">App screenshots</h2>
+      <h2 class="section-title-large">App screenshots</h2>
       <div class="screenshots-grid">
         <a href="/aet-screen-1.png" class="screenshot-link">
           <img src="/aet-screen-1.png" alt="AE Translator — translation overview" loading="lazy" class="screenshot-img" />
@@ -104,16 +73,17 @@ const engines = [
     <img id="lightbox-img" src="" alt="" class="lightbox-img" />
   </div>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Want to try it?</h2>
-      <p>Contact Bára — she will set it up for your store.</p>
-      <div class="cta-links">
-        <a href="mailto:bara@aethero.cz" class="btn-primary">bara@aethero.cz</a>
-        <a href="tel:+420776325440" class="btn-ghost">+420 776 325 440</a>
+      <h2>Got something to discuss?<br />Get in touch!</h2>
+      <div class="cta-contacts">
+        <a href="mailto:bara@aethero.cz" class="cta-contact">bara@aethero.cz</a>
+        <a href="tel:+420776325440" class="cta-contact">+420 776 325 440</a>
       </div>
     </div>
   </section>
+
 </PageLayout>
 
 <style>
@@ -164,36 +134,98 @@ const engines = [
   }
   .app-hero-sub-hi { color: var(--action); }
 
+  /* ─── SECTIONS ─── */
   .section { padding: var(--space-120) 0; }
   .bg-elevated { background: var(--bg-elevated); }
   .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
-  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .step-num { font-size: 48px; font-weight: 700; color: var(--text-secondary); line-height: 1; display: block; margin-bottom: var(--space-16); }
-  .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
-  .step-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .feature-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
-  .feature-card h3 { font-size: 18px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
-  .feature-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .engines-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .engine-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-40); }
-  .engine-card h3 { font-size: 24px; font-weight: 700; color: var(--action); margin-bottom: var(--space-16); }
-  .engine-card p { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
-  .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-16); }
-  .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
-  .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 16px; font-weight: 600; border-radius: var(--radius-sm); transition: background var(--transition-base); }
-  .btn-primary:hover { background: var(--action-hover); }
-  .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 16px; font-weight: 600; border-radius: var(--radius-sm); transition: border-color var(--transition-base); }
-  .btn-ghost:hover { border-color: var(--action); color: var(--action); }
-  .screenshots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
+
+  .intro-heading {
+    font-family: var(--font-primary);
+    font-size: clamp(30px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-32);
+    text-align: center;
+  }
+  .intro-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto var(--space-24);
+    text-align: center;
+  }
+  .process-text strong { color: var(--action); }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-80);
+  }
+  .section-title {
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--space-32);
+  }
+  .benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: var(--space-24);
+  }
+  .benefit-list li {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    padding-left: 24px;
+    position: relative;
+  }
+  .benefit-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); }
+  .extra-note {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: var(--space-32);
+    font-style: italic;
+  }
+  .btn-demo {
+    display: inline-flex;
+    padding: 14px 40px;
+    border: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-demo:hover { border-color: var(--action); color: var(--action); }
+  .body-text {
+    font-size: 18px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: var(--space-24);
+  }
+
+  .section-title-large {
+    font-family: var(--font-primary);
+    font-size: clamp(26px, 3.5vw, 48px);
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: var(--space-40);
+  }
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-24);
+  }
   .screenshot-link { display: block; border-radius: var(--radius-md); overflow: hidden; }
-  .screenshot-img { width: 100%; height: auto; display: block; transition: opacity 0.2s; }
-  .screenshot-link:hover .screenshot-img { opacity: 0.85; }
+  .screenshot-img { width: 100%; height: auto; display: block; transition: transform 0.3s; }
+  .screenshot-link:hover .screenshot-img { transform: scale(1.03); }
 
   /* ─── LIGHTBOX ─── */
   .lightbox {
@@ -235,7 +267,39 @@ const engines = [
     box-shadow: 0 20px 80px rgba(0,0,0,0.6);
   }
 
-  @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } .engines-grid { grid-template-columns: 1fr; } .screenshots-grid { grid-template-columns: 1fr; } }
+  /* ─── CTA ─── */
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: var(--space-40);
+  }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact {
+    font-family: var(--font-primary);
+    font-size: clamp(22px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--brand-dark);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .two-col { grid-template-columns: 1fr; }
+    .screenshots-grid { grid-template-columns: 1fr 1fr; }
+    .intro-heading { text-align: left; }
+    .intro-text { text-align: left; margin-left: 0; margin-right: 0; }
+  }
+  @media (max-width: 480px) {
+    .app-hero-inner { padding-top: 100px; }
+    .screenshots-grid { grid-template-columns: 1fr; }
+  }
 </style>
 
 <script>
