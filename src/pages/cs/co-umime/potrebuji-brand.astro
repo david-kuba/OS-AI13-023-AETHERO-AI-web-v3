@@ -71,7 +71,10 @@ const workCards = [
         <a href="tel:+420776067663" class="btn-action">Ozvěte se nám</a>
       </div>
       <div class="analogy-ref">
-        <img src="/groomo-ref-na-vysku.webp" alt="GROOMO — reference aethero" class="ref-img" loading="lazy" />
+        <div class="ref-card">
+          <img src="/groomo-ref-na-vysku.webp" alt="GROOMO — reference aethero" class="ref-img" loading="lazy" />
+          <a href="/cs/groomo-cz-na-shopify" class="ref-card-cta">Přečtěte si<br/>případovou studii</a>
+        </div>
       </div>
     </div>
   </section>
@@ -122,7 +125,22 @@ const workCards = [
   .analogy-text { max-width: 700px; }
   .analogy-heading { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; margin-bottom: var(--space-32); }
   .analogy-ref { display: flex; justify-content: center; }
-  .ref-img { width: 100%; max-width: 380px; border-radius: var(--radius-md); display: block; }
+  .ref-card { position: relative; max-width: 380px; width: 100%; border-radius: var(--radius-md); overflow: hidden; }
+  .ref-img { width: 100%; display: block; border-radius: 0; }
+  .ref-card-cta {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px 24px;
+    background: rgba(0,3,38,0.78);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(13,212,205,0.35);
+    color: var(--action);
+    font-family: var(--font-primary); font-size: 16px; font-weight: 300;
+    text-transform: uppercase; text-align: center; line-height: 1.45;
+    text-decoration: none;
+    transition: background 0.25s, color 0.25s;
+  }
+  .ref-card-cta:hover { background: rgba(13,212,205,0.22); color: #fff; }
   @media (max-width: 900px) {
     .analogy-split { grid-template-columns: 1fr; gap: var(--space-40); }
     .ref-img { max-width: 300px; margin: 0 auto; }
