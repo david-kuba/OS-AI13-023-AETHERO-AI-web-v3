@@ -8,7 +8,7 @@ const services = [
     anchor: 'brand',
     title: 'We breathe design! We create <span class="t-ac">SHOPIFY&nbsp;BRANDS</span> with&nbsp;DX that customers never forget!',
     desc: '<strong class="ac">YOUR STORE\'S BRAND</strong> — personality, story, emotion and promise connected to you, and <strong class="ac">Digital Experience:</strong> everything the world discovers when it looks you up online. Whether that\'s an ad, a video, a banner, a LinkedIn photo or a forgotten tweet — we can create and align it all.',
-    cta: 'I want to know more ➝',
+    cta: 'I want to know more',
     href: '/en/co-umime/potrebuji-brand',
   },
   {
@@ -17,7 +17,7 @@ const services = [
     anchor: 'new-store',
     title: 'We build great <a href="/en/co-umime/novy-shopify-e-shop" class="t-ac">SHOPIFY STORES</a> — from design and setup, through launch, to long-term support.',
     desc: '<strong class="ac">Choose Shopify – the best tool available.</strong> No limits on where you sell or in how many currencies. A platform with incredible scalability, support and momentum. Shopify is built to grow with you from&nbsp;StartUp to international mega-project.',
-    cta: 'Alright, tell me more ➝',
+    cta: 'Alright, tell me more',
     href: '/en/co-umime/novy-shopify-e-shop',
   },
   {
@@ -26,7 +26,7 @@ const services = [
     anchor: 'migration',
     title: 'We\'ll kick off your <span class="t-ac">SHOPIFY&nbsp;MIGRATION</span>. We understand it\'s a big decision and nothing can go wrong.',
     desc: '<strong class="ac">Sure, the better you\'re doing now, the bigger the risk.</strong> But don\'t worry — we have multiple ways to handle everything safely. And it\'s worth exploring. From SEO analysis through redirect maps, UX design, all the way to data and system integrations including a direct line to Shopify.',
-    cta: 'Show me how ➝',
+    cta: 'Show me how',
     href: '/en/co-umime/prechod-na-shopify',
   },
   {
@@ -35,7 +35,7 @@ const services = [
     anchor: 'expansion',
     title: 'Planning <span class="t-ac">INTERNATIONAL&nbsp;EXPANSION</span>? Got a plan? Let\'s refine it together and leverage what Shopify offers.',
     desc: 'Cross-border e-commerce is growing 18&nbsp;% annually. The fact that your home market is doing well is great — but why stop there? <strong class="ac">If your domestic market isn\'t enough, let\'s expand together</strong> with Shopify Markets — one admin for all markets, currencies, languages and taxes.',
-    cta: 'Show me how ➝',
+    cta: 'Show me how',
     href: '/en/co-umime/expanze-do-zahranici',
   },
   {
@@ -44,7 +44,7 @@ const services = [
     anchor: 'support',
     title: '<span class="t-ac">DEVELOPMENT &amp; SUPPORT</span> — whether you need technical help, a plan, or just extra hands, we\'re here.',
     desc: 'We know not every problem has a solution in a tutorial or a video — sometimes you need deeper technical insight and experience from multiple real projects to find the right path forward. <strong class="ac">Get in touch and we\'ll find the solution together.</strong>',
-    cta: 'OK, I need help ➝',
+    cta: 'OK, I need help',
     href: '/en/co-umime/rozvoj-a-podpora',
   },
   {
@@ -53,7 +53,7 @@ const services = [
     anchor: 'analytics',
     title: '<span class="t-ac">ANALYTICS &amp; STRATEGY</span> — stop guessing. Find out why.',
     desc: 'Your store\'s data tells you more than you think. We analyse GA4, ads, emails and deliver a strategy with concrete next steps. <strong class="ac">Clear numbers, clear priorities, clear plan.</strong>',
-    cta: 'I want an audit ➝',
+    cta: 'I want an audit',
     href: '/en/co-umime/analyza-a-strategie',
   },
   {
@@ -62,20 +62,11 @@ const services = [
     anchor: 'custom',
     title: '<span class="t-ac">CUSTOM DEVELOPMENT &amp; APPS</span> — when you need something new, local, or complex that no app currently solves.',
     desc: 'This part of our work is, on one hand, wonderfully simple to explain — and quite unpredictable on the other. <strong class="ac">In an ideal scenario you come to us with a problem definition and leave with a solution&nbsp;:o)</strong> Somewhere in between, we find or build that solution and you pay.',
-    cta: 'Let\'s go ➝',
+    cta: 'Let\'s go',
     href: '/en/co-umime/custom-vyvoj-a-aplikace',
   },
 ];
 
-const quickNav = [
-  { label: 'BRAND', anchor: 'brand' },
-  { label: 'NEW STORE', anchor: 'new-store' },
-  { label: 'MIGRATION', anchor: 'migration' },
-  { label: 'EXPANSION', anchor: 'expansion' },
-  { label: 'SUPPORT', anchor: 'support' },
-  { label: 'ANALYTICS', anchor: 'analytics' },
-  { label: 'CUSTOM DEV', anchor: 'custom' },
-];
 ---
 
 <PageLayout
@@ -93,17 +84,6 @@ const quickNav = [
       <a href="#brand" class="co-hero-cta">So what shall we work on together?</a>
     </div>
   </section>
-
-  <!-- QUICK NAV -->
-  <nav class="quick-nav" aria-label="Jump to section">
-    <div class="container">
-      <ul class="quick-nav-list">
-        {quickNav.map((item) => (
-          <li><a href={`#${item.anchor}`} class="quick-nav-link">{item.label}</a></li>
-        ))}
-      </ul>
-    </div>
-  </nav>
 
   <!-- SERVICES -->
   {services.map((s, i) => (
@@ -184,9 +164,10 @@ const quickNav = [
   }
   .co-hero-inner {
     position: absolute;
-    bottom: 150px;
+    top: 50%;
     left: 0;
     right: 0;
+    transform: translateY(-50%);
   }
   .co-hero h1 {
     font-size: clamp(56px, 7.8vw, 100px);
@@ -199,7 +180,7 @@ const quickNav = [
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    border: 2px solid rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.3);
     border-radius: var(--radius-sm);
     font-family: var(--font-primary);
     font-size: 16px;
@@ -207,41 +188,22 @@ const quickNav = [
     letter-spacing: 0;
     text-transform: uppercase;
     color: #fff;
-    transition: border-color 0.2s, color 0.2s;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 4px 24px rgba(0,0,0,0.2);
+    transition: background 0.2s, border-color 0.2s;
   }
-  .co-hero-cta:hover { border-color: #fff; color: #fff; }
+  .co-hero-cta:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.5);
+  }
 
-  /* ─── QUICK NAV ─── */
-  .quick-nav {
-    background: var(--bg-elevated);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 0;
-  }
-  .quick-nav-list {
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    gap: 0;
-    margin: 0; padding: 0;
-  }
-  .quick-nav-link {
-    display: block;
-    padding: 18px 20px;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: rgba(255,255,255,0.55);
-    text-transform: uppercase;
-    transition: color 0.2s;
-    white-space: nowrap;
-  }
-  .quick-nav-link:hover { color: var(--action); }
 
   /* ─── SERVICE SECTIONS ─── */
+  .co-hero + .svc-section { padding-top: 24px; }
   .svc-section {
     padding: 100px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
   .svc-section:nth-child(odd) { background: var(--bg-primary); }
   .svc-section:nth-child(even) { background: #000326; }
@@ -310,18 +272,26 @@ const quickNav = [
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 32px;
-    background: #fff;
-    color: #000326;
+    padding: 10px 28px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(13,212,205,0.4);
+    color: var(--action);
     font-family: var(--font-primary);
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 300;
     text-transform: uppercase;
     border-radius: var(--radius-sm);
     text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s;
   }
-  .svc-cta:hover { background: rgba(255,255,255,0.88); transform: translateY(-1px); }
+  .svc-cta:hover {
+    background: rgba(13,212,205,0.33);
+    border-color: rgba(13,212,205,0.75);
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 0 10px rgba(13,212,205,0.12);
+  }
 
   /* ─── APPS ─── */
   .apps-section {
@@ -390,13 +360,11 @@ const quickNav = [
     .svc-num-img { max-width: 280px; }
     .svc-section { padding: 60px 0; }
     .apps-grid { grid-template-columns: 1fr; }
-    .quick-nav-link { font-size: 12px; padding: 14px 12px; }
   }
   @media (max-width: 600px) {
     .co-hero { min-height: 60vh; }
     .co-hero-inner { padding-bottom: 48px; }
     .svc-num-img { max-width: 200px; }
     .svc-section { padding: 48px 0; }
-    .quick-nav-link { font-size: 11px; padding: 12px 10px; }
   }
 </style>
