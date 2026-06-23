@@ -53,35 +53,34 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <section class="section bg-elevated section-screenshots">
     <div class="container">
       <h2 class="section-title">Náhledy aplikace</h2>
-      <div class="gallery">
-        <a href="/esyncer-screen-1.png" class="gallery-main" aria-label="Zobrazit větší">
-          <img src="/esyncer-screen-1.png" alt="eSyncer dashboard" class="gallery-main-img" />
-          <div class="gallery-zoom-hint" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-          </div>
+      <div class="gallery-grid">
+        <a href="/esyncer-screen-1.png" class="gallery-item" data-index="0">
+          <img src="/esyncer-screen-1.png" alt="eSyncer dashboard" loading="lazy" class="gallery-img" />
+          <div class="gallery-overlay" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
         </a>
-        <div class="gallery-thumbs">
-          <button class="gallery-thumb is-active" data-src="/esyncer-screen-1.png" data-alt="eSyncer dashboard" data-href="/esyncer-screen-1.png">
-            <img src="/esyncer-screen-1.png" alt="eSyncer dashboard" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" data-src="/esyncer-screen-2.png" data-alt="eSyncer jobs" data-href="/esyncer-screen-2.png">
-            <img src="/esyncer-screen-2.png" alt="eSyncer jobs" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" data-src="/esyncer-screen-3.png" data-alt="eSyncer mappings" data-href="/esyncer-screen-3.png">
-            <img src="/esyncer-screen-3.png" alt="eSyncer mappings" loading="lazy" />
-          </button>
-          <button class="gallery-thumb" data-src="/esyncer-screen-4.png" data-alt="eSyncer settings" data-href="/esyncer-screen-4.png">
-            <img src="/esyncer-screen-4.png" alt="eSyncer settings" loading="lazy" />
-          </button>
-        </div>
+        <a href="/esyncer-screen-2.png" class="gallery-item" data-index="1">
+          <img src="/esyncer-screen-2.png" alt="eSyncer jobs" loading="lazy" class="gallery-img" />
+          <div class="gallery-overlay" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </a>
+        <a href="/esyncer-screen-3.png" class="gallery-item" data-index="2">
+          <img src="/esyncer-screen-3.png" alt="eSyncer mappings" loading="lazy" class="gallery-img" />
+          <div class="gallery-overlay" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </a>
+        <a href="/esyncer-screen-4.png" class="gallery-item" data-index="3">
+          <img src="/esyncer-screen-4.png" alt="eSyncer settings" loading="lazy" class="gallery-img" />
+          <div class="gallery-overlay" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galerie snímků">
     <button class="lightbox-close" aria-label="Zavřít">✕</button>
+    <button class="lightbox-prev" aria-label="Předchozí">&#8249;</button>
+    <button class="lightbox-next" aria-label="Další">&#8250;</button>
     <img id="lightbox-img" src="" alt="" class="lightbox-img" />
+    <div class="lightbox-counter" id="lightbox-counter"></div>
   </div>
 
   <!-- CTA -->
@@ -268,58 +267,62 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   /* ─── GALLERY ─── */
   .section-screenshots { padding-bottom: 80px; }
-  .gallery { margin-top: var(--space-40); }
-  .gallery-main {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: var(--space-40);
+  }
+  .gallery-item {
     display: block;
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
-    background: var(--bg-secondary);
-    aspect-ratio: 16 / 9;
-    margin-bottom: 10px;
+    aspect-ratio: 16 / 10;
     cursor: zoom-in;
   }
-  .gallery-main-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center top;
+  .gallery-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
     display: block;
-    transition: transform 0.35s, opacity 0.18s;
+    transition: transform 0.3s;
   }
-  .gallery-main:hover .gallery-main-img { transform: scale(1.015); }
-  .gallery-zoom-hint {
-    position: absolute;
-    bottom: 14px;
-    right: 14px;
-    width: 40px; height: 40px;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
-    border-radius: 50%;
+  .gallery-item:hover .gallery-img { transform: scale(1.05); }
+  .gallery-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,3,38,0.5);
     display: flex; align-items: center; justify-content: center;
+    color: #fff;
     opacity: 0;
-    transition: opacity 0.2s;
-    pointer-events: none;
+    transition: opacity 0.22s;
   }
-  .gallery-main:hover .gallery-zoom-hint { opacity: 1; }
-  .gallery-thumbs {
-    display: flex;
-    gap: 10px;
-  }
-  .gallery-thumb {
-    flex: 1;
-    border: 2px solid transparent;
-    padding: 0;
-    background: none;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+  /* ─── LIGHTBOX NAV ─── */
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    border: none; color: #fff;
+    font-size: 44px; line-height: 1;
+    width: 60px; height: 60px;
+    border-radius: 50%;
     cursor: pointer;
-    opacity: 0.45;
-    transition: opacity 0.2s, border-color 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+    z-index: 1;
   }
-  .gallery-thumb:hover { opacity: 0.75; }
-  .gallery-thumb.is-active { opacity: 1; border-color: rgba(255,255,255,0.7); }
-  .gallery-thumb img { width: 100%; height: auto; display: block; }
+  .lightbox-prev { left: 24px; }
+  .lightbox-next { right: 24px; }
+  .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.28); }
+  .lightbox-counter {
+    position: absolute;
+    bottom: 20px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.55);
+    font-family: var(--font-primary);
+    font-size: 13px; letter-spacing: 0.08em;
+  }
 
   /* ─── CTA ─── */
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
@@ -344,26 +347,35 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   /* ─── RESPONSIVE ─── */
-  @media (max-width: 1024px) {
-    .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
-  }
   @media (max-width: 768px) {
     .two-col { grid-template-columns: 1fr; }
-    .screenshots-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 480px) {
     .app-hero-inner { padding-top: 100px; }
-    .gallery-thumbs { flex-wrap: wrap; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 
 <script>
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
+  const lbCounter = document.getElementById('lightbox-counter');
+  const items = [...document.querySelectorAll('.gallery-item')];
+  const images = items.map(item => ({
+    src: item.href,
+    alt: item.querySelector('img')?.alt || ''
+  }));
+  let current = 0;
 
-  function openLightbox(src, alt) {
-    lbImg.src = src;
-    lbImg.alt = alt;
+  function show(index) {
+    current = (index + images.length) % images.length;
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].alt;
+    lbCounter.textContent = `${current + 1} / ${images.length}`;
+  }
+  function openLightbox(index) {
+    show(index);
     lb.classList.add('is-open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -375,30 +387,18 @@ import PageLayout from '../../layouts/PageLayout.astro';
     document.body.style.overflow = '';
   }
 
-  const mainLink = document.querySelector('.gallery-main');
-  const mainImg = document.querySelector('.gallery-main-img');
-  const thumbs = document.querySelectorAll('.gallery-thumb');
-
-  thumbs.forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      mainImg.style.opacity = '0';
-      setTimeout(() => {
-        mainImg.src = thumb.dataset.src;
-        mainImg.alt = thumb.dataset.alt;
-        mainLink.href = thumb.dataset.href;
-        mainImg.style.opacity = '1';
-      }, 160);
-      thumbs.forEach(t => t.classList.remove('is-active'));
-      thumb.classList.add('is-active');
-    });
-  });
-
-  mainLink?.addEventListener('click', e => {
-    e.preventDefault();
-    openLightbox(mainLink.href, mainImg.alt);
+  items.forEach((item, i) => {
+    item.addEventListener('click', e => { e.preventDefault(); openLightbox(i); });
   });
 
   lb.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  lb.querySelector('.lightbox-prev').addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+  lb.querySelector('.lightbox-next').addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+  lb.addEventListener('click', e => { if (e.target === lb || e.target === lbImg) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') show(current - 1);
+    if (e.key === 'ArrowRight') show(current + 1);
+  });
 </script>
