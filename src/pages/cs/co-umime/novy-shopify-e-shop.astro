@@ -75,14 +75,6 @@ const capabilities = [
   'Multi-jazyk a multi-měna',
 ];
 
-const relatedServices = [
-  { href: '/cs/co-umime/potrebuji-brand', label: 'Potřebuji brand' },
-  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
-  { href: '/cs/co-umime/expanze-do-zahranici', label: 'Expanze do zahraničí' },
-  { href: '/cs/co-umime/rozvoj-a-podpora', label: 'Rozvoj a podpora' },
-  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
-  { href: '/cs/co-umime/custom-vyvoj-a-aplikace', label: 'Custom vývoj a aplikace' },
-];
 ---
 
 <PageLayout title="Nový Shopify e-shop | aethero" description="Spustíme váš nový e-shop na Shopify — od návrhu přes vývoj až po první objednávku. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává." lang="cs">
@@ -179,25 +171,6 @@ const relatedServices = [
           </div>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Další služby -->
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Další služby</h2>
-      <ul class="related-services">
-        {relatedServices.map((s) => (
-          <li>
-            <a href={s.href} class="related-link">
-              <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
     </div>
   </section>
 
@@ -312,21 +285,6 @@ const relatedServices = [
   .groomo-label { padding: var(--space-24); }
   .groomo-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-8); }
   .groomo-label p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0; }
-
-  /* Related */
-  .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-16) 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 16px;
-    color: var(--neutral-300);
-    transition: color var(--transition-base);
-    text-decoration: none;
-  }
-  .related-link:hover { color: var(--action); }
 
   /* CTA */
   .cta-section { padding: var(--space-120) 0; background: var(--action); }

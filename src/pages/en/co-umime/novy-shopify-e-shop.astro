@@ -75,14 +75,6 @@ const capabilities = [
   'Multi-language and multi-currency',
 ];
 
-const relatedServices = [
-  { href: '/en/co-umime/potrebuji-brand', label: 'I need a brand' },
-  { href: '/en/co-umime/prechod-na-shopify', label: 'Migration to Shopify' },
-  { href: '/en/co-umime/expanze-do-zahranici', label: 'International expansion' },
-  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
-  { href: '/en/co-umime/analyza-a-strategie', label: 'Strategy & analytics' },
-  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
-];
 ---
 
 <PageLayout title="New Shopify Store | aethero" description="We launch your new store on Shopify — from design through development to the first order. We skip the dead ends and launch a store that sells." lang="en">
@@ -180,25 +172,6 @@ const relatedServices = [
           </div>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Other services -->
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Other services</h2>
-      <ul class="related-services">
-        {relatedServices.map((s) => (
-          <li>
-            <a href={s.href} class="related-link">
-              <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
     </div>
   </section>
 
@@ -313,21 +286,6 @@ const relatedServices = [
   .groomo-label { padding: var(--space-24); }
   .groomo-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-8); }
   .groomo-label p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0; }
-
-  /* Related */
-  .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-16) 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 16px;
-    color: var(--neutral-300);
-    transition: color var(--transition-base);
-    text-decoration: none;
-  }
-  .related-link:hover { color: var(--action); }
 
   /* CTA */
   .cta-section { padding: var(--space-120) 0; background: var(--action); }

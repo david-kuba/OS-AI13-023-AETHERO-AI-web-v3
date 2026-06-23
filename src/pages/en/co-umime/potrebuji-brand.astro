@@ -10,14 +10,6 @@ const workCards = [
   { title: 'Growth through marketing', desc: 'Preparation for performance campaigns and expansion. SEO, analytics, localisation, marketing tool integration and further growth.' },
 ];
 
-const relatedServices = [
-  { href: '/en/co-umime/novy-shopify-e-shop', label: 'New Shopify store' },
-  { href: '/en/co-umime/prechod-na-shopify', label: 'Migration to Shopify' },
-  { href: '/en/co-umime/expanze-do-zahranici', label: 'International expansion' },
-  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
-  { href: '/en/co-umime/analyza-a-strategie', label: 'Strategy & analytics' },
-  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
-];
 ---
 
 <PageLayout title="I need a brand | aethero" description="We build brands that resonate across cultures. Brand, visual identity and digital experience for your Shopify store." lang="en">
@@ -87,25 +79,6 @@ const relatedServices = [
     </div>
   </section>
 
-  <!-- Related services -->
-  <section class="section bg-secondary">
-    <div class="container">
-      <h2 class="section-title">What else can we do for you around Shopify?</h2>
-      <ul class="related-services">
-        {relatedServices.map((s) => (
-          <li>
-            <a href={s.href} class="related-link">
-              <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta-section" id="cta">
     <div class="container cta-inner">
@@ -155,10 +128,6 @@ const relatedServices = [
   .quote-section { padding: var(--space-80) 0; }
   .kent-quote { font-size: clamp(20px, 2.5vw, 32px); font-style: italic; color: rgba(255,255,255,0.9); text-align: center; line-height: 1.5; max-width: 720px; margin: 0 auto; }
   .kent-quote cite { display: block; font-size: 16px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-24); }
-
-  .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 16px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
-  .related-link:hover { color: var(--action); }
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }

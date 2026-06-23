@@ -14,14 +14,6 @@ const features = [
   { title: 'Automation', desc: 'With growing order volumes, manual management stops making sense. Automation lets you move key processes — from order and customer management through pricing and inventory to marketing scenarios — into controlled, predictable flows. The result is less dependence on manual intervention, lower error rates and the ability to scale without constantly growing the team.', img: '/flow-automation.webp', reverse: false },
 ];
 
-const relatedServices = [
-  { href: '/en/co-umime/potrebuji-brand', label: 'I need a brand' },
-  { href: '/en/co-umime/novy-shopify-e-shop', label: 'New Shopify store' },
-  { href: '/en/co-umime/prechod-na-shopify', label: 'Migration to Shopify' },
-  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
-  { href: '/en/co-umime/analyza-a-strategie', label: 'Strategy & analytics' },
-  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
-];
 ---
 
 <PageLayout title="International Expansion | aethero" description="One Shopify store, the whole world. We help you expand into international markets using Shopify Markets." lang="en">
@@ -96,25 +88,6 @@ const relatedServices = [
     </div>
   </section>
 
-  <!-- Related -->
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Other services</h2>
-      <ul class="related-services">
-        {relatedServices.map((s) => (
-          <li>
-            <a href={s.href} class="related-link">
-              <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta-section" id="cta">
     <div class="container cta-inner">
@@ -165,10 +138,6 @@ const relatedServices = [
 
   .tady-heading { font-size: clamp(26px, 3.5vw, 48px); font-weight: 600; margin-bottom: var(--space-24); }
   .tady-text { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.6; }
-
-  .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 16px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
-  .related-link:hover { color: var(--action); }
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }

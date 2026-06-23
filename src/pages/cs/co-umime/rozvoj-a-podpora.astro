@@ -12,14 +12,6 @@ const features = [
   { title: 'Technické konzultace i dlouhodobý support', desc: 'Jsme váš technický partner pro kontinuální rozvoj – od auditů a code review až po strategická rozhodnutí o dalším směřování Shopify řešení.', img: '/longtime-support.jpg', reverse: false },
 ];
 
-const relatedServices = [
-  { href: '/cs/co-umime/potrebuji-brand', label: 'Potřebuji brand' },
-  { href: '/cs/co-umime/novy-shopify-e-shop', label: 'Nový Shopify e-shop' },
-  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
-  { href: '/cs/co-umime/expanze-do-zahranici', label: 'Expanze do zahraničí' },
-  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
-  { href: '/cs/co-umime/custom-vyvoj-a-aplikace', label: 'Custom vývoj a aplikace' },
-];
 ---
 
 <PageLayout title="Rozvoj a podpora | aethero" description="Dlouhodobý technický partner pro váš Shopify projekt. Jsme tu pro support, rozvoj, integrace i strategii." lang="cs">
@@ -67,25 +59,6 @@ const relatedServices = [
     </section>
   ))}
 
-  <!-- Related -->
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Další služby</h2>
-      <ul class="related-services">
-        {relatedServices.map((s) => (
-          <li>
-            <a href={s.href} class="related-link">
-              <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta-section" id="cta">
     <div class="container cta-inner">
@@ -125,10 +98,6 @@ const relatedServices = [
   .feature-desc { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.6; }
   .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
   .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
-
-  .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 16px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
-  .related-link:hover { color: var(--action); }
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }

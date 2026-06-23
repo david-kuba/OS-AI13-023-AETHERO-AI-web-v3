@@ -10,21 +10,13 @@ const workCards = [
   { title: 'Růst skrze marketing', desc: 'Příprava pro výkonové kampaně a expanzi. SEO, analytika, lokalizace, napojení na marketingové nástroje a další růst.' },
 ];
 
-const relatedServices = [
-  { href: '/cs/co-umime/novy-shopify-e-shop', label: 'Nový Shopify e-shop' },
-  { href: '/cs/co-umime/prechod-na-shopify', label: 'Přechod na Shopify' },
-  { href: '/cs/co-umime/expanze-do-zahranici', label: 'Expanze do zahraničí' },
-  { href: '/cs/co-umime/rozvoj-a-podpora', label: 'Rozvoj a podpora' },
-  { href: '/cs/co-umime/analyza-a-strategie', label: 'Analýza a strategie' },
-  { href: '/cs/co-umime/custom-vyvoj-a-aplikace', label: 'Custom vývoj a aplikace' },
-];
 ---
 
 <PageLayout title="Potřebuji brand | aethero" description="Budujeme brandy, které rezonují napříč kulturami. Značka, vizuální identita a digitální zkušenost pro váš Shopify e-shop." lang="cs">
   <ServiceHero
     label="Brand & Identity"
     title="Potřebuji <span style='color:var(--action)'>BRAND</span>"
-    subtitle="A skrze něj i místo v myslích a srdcích zákazníků"
+    subtitle="A skrze něj získat místo v myslích a srdcích zákazníků"
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
     image="/triangle.webp"
@@ -86,25 +78,6 @@ const relatedServices = [
     </div>
   </section>
 
-  <!-- Related services -->
-  <section class="section bg-secondary">
-    <div class="container">
-      <h2 class="section-title">Co pro vás okolo Shopify můžeme udělat?</h2>
-      <ul class="related-services">
-        {relatedServices.map((s) => (
-          <li>
-            <a href={s.href} class="related-link">
-              <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta-section" id="cta">
     <div class="container cta-inner">
@@ -162,10 +135,6 @@ const relatedServices = [
   .quote-section { padding: var(--space-80) 0; }
   .kent-quote { font-size: clamp(20px, 2.5vw, 32px); font-style: italic; color: rgba(255,255,255,0.9); text-align: center; line-height: 1.5; max-width: 720px; margin: 0 auto; }
   .kent-quote cite { display: block; font-size: 16px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-24); }
-
-  .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 16px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
-  .related-link:hover { color: var(--action); }
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }

@@ -36,14 +36,6 @@ const steps = [
   { num: '4. Strategy document + plan', desc: 'You receive a clear online strategy document with a complete analysis and a clickable 365-day plan. Prepared online, accessible any time.' },
 ];
 
-const relatedServices = [
-  { href: '/en/co-umime/potrebuji-brand', label: 'I need a brand' },
-  { href: '/en/co-umime/novy-shopify-e-shop', label: 'New Shopify store' },
-  { href: '/en/co-umime/prechod-na-shopify', label: 'Migration to Shopify' },
-  { href: '/en/co-umime/expanze-do-zahranici', label: 'International expansion' },
-  { href: '/en/co-umime/rozvoj-a-podpora', label: 'Development & support' },
-  { href: '/en/co-umime/custom-vyvoj-a-aplikace', label: 'Custom development & apps' },
-];
 ---
 
 <PageLayout title="Analytics & Strategy | aethero" description="Stop guessing — find out why your store is not growing. We connect your data and deliver a strategy that works right away." lang="en">
@@ -185,25 +177,6 @@ const relatedServices = [
     </div>
   </section>
 
-  <!-- Related -->
-  <section class="section bg-elevated">
-    <div class="container">
-      <h2 class="section-title">Other services</h2>
-      <ul class="related-services">
-        {relatedServices.map((s) => (
-          <li>
-            <a href={s.href} class="related-link">
-              <span>{s.label}</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta-section" id="cta">
     <div class="container cta-inner">
@@ -266,10 +239,6 @@ const relatedServices = [
   .for-who-list { list-style: none; display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto; }
   .for-who-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; }
   .for-who-list svg { flex-shrink: 0; margin-top: 2px; }
-
-  .related-services { list-style: none; display: flex; flex-direction: column; }
-  .related-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 16px; color: var(--neutral-300); transition: color var(--transition-base); text-decoration: none; }
-  .related-link:hover { color: var(--action); }
 
   .testimonials-label { font-size: clamp(18px, 2vw, 24px); font-weight: 600; margin-bottom: var(--space-40); text-align: center; }
   .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-40); }
