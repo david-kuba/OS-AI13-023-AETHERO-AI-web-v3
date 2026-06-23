@@ -54,18 +54,24 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <div class="container">
       <h2 class="section-title-large">Náhledy aplikace</h2>
       <div class="screenshots-grid">
-        <a href="/aet-screen-1.png" target="_blank" class="screenshot-link">
+        <a href="/aet-screen-1.png" class="screenshot-link">
           <img src="/aet-screen-1.png" alt="AE Translator — přehled překladů" loading="lazy" class="screenshot-img" />
         </a>
-        <a href="/aet-screen-2.png" target="_blank" class="screenshot-link">
+        <a href="/aet-screen-2.png" class="screenshot-link">
           <img src="/aet-screen-2.png" alt="AE Translator — nastavení" loading="lazy" class="screenshot-img" />
         </a>
-        <a href="/aet-screen-3.png" target="_blank" class="screenshot-link">
+        <a href="/aet-screen-3.png" class="screenshot-link">
           <img src="/aet-screen-3.png" alt="AE Translator — slovník" loading="lazy" class="screenshot-img" />
         </a>
       </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox-close" aria-label="Zavřít">✕</button>
+    <img id="lightbox-img" src="" alt="" class="lightbox-img" />
+  </div>
 
   <!-- CTA -->
   <section class="cta-section">
@@ -270,4 +276,75 @@ import PageLayout from '../../layouts/PageLayout.astro';
     .app-hero-inner { padding-top: 100px; }
     .screenshots-grid { grid-template-columns: 1fr; }
   }
+
+  /* ─── LIGHTBOX ─── */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  .lightbox.is-open { display: flex; }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff;
+    font-size: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+    line-height: 1;
+  }
+  .lightbox-close:hover { border-color: #fff; color: #fff; }
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    cursor: default;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+  }
 </style>
+
+<script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.screenshot-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const img = link.querySelector('img');
+      openLightbox(link.href, img ? img.alt : '');
+    });
+  });
+
+  lb.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
