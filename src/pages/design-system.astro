@@ -673,17 +673,22 @@ font-family: var(--font-secondary);</code></pre>
 
         <!-- Buttons -->
         <h3 class="ds-subsection-title">Tlačítka</h3>
-        <div class="ds-component-row ds-bg-dark" style="padding: 40px; gap: 20px; flex-wrap: wrap;">
-          <a href="#" class="btn-hero-demo">DO ČEHO SE SPOLU PUSTÍME?</a>
+        <div class="ds-component-row ds-bg-dark" style="padding: 40px; gap: 20px; flex-wrap: wrap; background: url('/a-multitvar-bgr-v33.webp') center/cover;">
+          <a href="#" class="btn-hero-demo">DO ČEHO SE PUSTÍME SPOLU?</a>
+          <a href="#" class="btn-glass-primary-demo">ZAVOLEJME SI</a>
+          <a href="#" class="btn-glass-ghost-demo">ZJISTĚTE JAK</a>
           <a href="#" class="btn-teal-demo">CHCI KONZULTACI</a>
           <a href="#" class="btn-outline-demo">VÍCE O TOM JAK PRACUJEME</a>
           <a href="#" class="btn-ref-demo">PŘEJÍT NA BU1</a>
         </div>
         <div class="ds-component-notes">
-          <code>.btn-hero</code> — 22px Kanit 600, border 2px solid white, radius 6px, pad 9px 35px<br />
+          <code>.btn-hero</code> / <code>.co-hero-cta</code> — glassmorphism, bg rgba(255,255,255,0.1), blur(12px), border rgba(255,255,255,0.3), inset highlight<br />
+          <code>.btn-primary</code> (ServiceHero) — glassmorphism silnější, bg rgba(255,255,255,0.18), primární CTA<br />
+          <code>.btn-ghost</code> (ServiceHero) — glassmorphism slabší, bg rgba(255,255,255,0.08), sekundární CTA<br />
           <code>.btn-teal</code> — 13px Kanit 700, bg #0DD4CD, color #000, radius 100px, pad 14px 32px<br />
           <code>.btn-outline</code> — 13px Kanit 700, border 2px rgba(255,255,255,0.3), radius 100px<br />
-          <code>.btn-ref</code> (reference CTA) — outline, align-self flex-start
+          <code>.btn-ref</code> (reference CTA) — outline, align-self flex-start<br />
+          <span style="color: rgba(255,255,255,0.4); font-size: 12px;">Fallback (původní styl před glass): memory/project_hero_btn_fallback.md</span>
         </div>
 
         <!-- Header -->
@@ -1226,18 +1231,44 @@ font-family: var(--font-secondary);</code></pre>
     display: inline-flex;
     align-items: center;
     padding: 9px 35px;
-    border: 2px solid #fff;
+    border: 1px solid rgba(255,255,255,0.3);
     color: #fff;
     font-family: 'Kanit', sans-serif;
     font-size: 22px;
     font-weight: 600;
     letter-spacing: 0;
     border-radius: 6px;
-    transition: background 0.2s;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 4px 24px rgba(0,0,0,0.2);
+    transition: background 0.2s, border-color 0.2s;
     white-space: nowrap;
     text-decoration: none;
   }
-  .btn-hero-demo:hover { background: rgba(255,255,255,0.1); }
+  .btn-hero-demo:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.5); }
+  .btn-glass-primary-demo {
+    display: inline-flex; align-items: center;
+    padding: 14px 32px;
+    background: rgba(255,255,255,0.18); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.45); color: #fff;
+    font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700;
+    text-transform: uppercase; border-radius: 4px; text-decoration: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 24px rgba(0,0,0,0.2);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-glass-primary-demo:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.65); }
+  .btn-glass-ghost-demo {
+    display: inline-flex; align-items: center;
+    padding: 14px 32px;
+    background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.25); color: #fff;
+    font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700;
+    text-transform: uppercase; border-radius: 4px; text-decoration: none;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 24px rgba(0,0,0,0.2);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-glass-ghost-demo:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.45); }
   .btn-teal-demo {
     display: inline-flex;
     align-items: center;

@@ -453,7 +453,7 @@ const blogPosts = [
     display: inline-flex;
     align-items: center;
     padding: 9px 35px;
-    border: 2px solid #fff;
+    border: 1px solid rgba(255,255,255,0.3);
     color: #fff;
     font-family: var(--font-primary);
     font-size: 22px;
@@ -461,10 +461,14 @@ const blogPosts = [
     letter-spacing: 0;
     text-transform: uppercase;
     border-radius: 6px;
-    transition: border-color 0.2s, background 0.2s;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 4px 24px rgba(0,0,0,0.2);
+    transition: background 0.2s, border-color 0.2s;
     white-space: nowrap;
   }
-  .btn-hero:hover { background: rgba(255,255,255,0.1); }
+  .btn-hero:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.5); }
   .hero-right { display: flex; justify-content: flex-end; align-items: center; overflow: visible; }
   .hero-shape {
     width: 110%;
