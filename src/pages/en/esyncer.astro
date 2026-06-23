@@ -128,10 +128,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
     margin: 0;
   }
   .app-hero-sub {
-    font-size: clamp(16px, 2vw, 22px);
+    font-size: clamp(18px, 2.5vw, 28px);
     color: rgba(255,255,255,0.85);
-    line-height: 1.5;
-    max-width: 640px;
+    line-height: 1.4;
+    max-width: 680px;
     margin: 0;
   }
 
@@ -182,17 +182,19 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .benefit-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); }
   .btn-demo {
     display: inline-flex;
-    padding: 14px 32px;
-    background: var(--action);
-    color: #000326;
+    align-items: center;
+    padding: 14px 40px;
+    border: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     border-radius: var(--radius-sm);
-    transition: background var(--transition-base);
+    transition: border-color 0.2s, background 0.2s;
   }
-  .btn-demo:hover { background: rgba(22,190,207,0.8); }
+  .btn-demo:hover { border-color: var(--action); color: var(--action); }
   .body-text {
     font-size: 18px;
     color: rgba(255,255,255,0.75);
@@ -202,7 +204,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   .screenshots-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-24);
   }
   .screenshot-link { display: block; border-radius: var(--radius-md); overflow: hidden; }
@@ -249,26 +251,26 @@ import PageLayout from '../../layouts/PageLayout.astro';
     box-shadow: 0 20px 80px rgba(0,0,0,0.6);
   }
 
-  .cta-section {
-    padding: var(--space-120) 0;
-    background: #000326;
-  }
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
   .cta-inner h2 {
-    font-size: clamp(30px, 4vw, 56px);
+    font-family: var(--font-primary);
+    font-size: clamp(40px, 5vw, 70px);
     font-weight: 700;
+    color: #fff;
     line-height: 1.2;
     margin-bottom: var(--space-40);
   }
-  .cta-contacts { display: flex; gap: var(--space-24); justify-content: center; flex-wrap: wrap; }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
   .cta-contact {
     font-family: var(--font-primary);
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--action);
-    transition: color var(--transition-base);
+    font-size: clamp(22px, 3vw, 40px);
+    font-weight: 700;
+    color: var(--brand-dark);
+    text-decoration: none;
+    transition: opacity 0.2s;
   }
-  .cta-contact:hover { color: #fff; }
+  .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 768px) {
     .two-col { grid-template-columns: 1fr; gap: var(--space-40); }
