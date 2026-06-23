@@ -1,108 +1,262 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-
-const services = [
-  { label: 'I need a brand', href: '/en/co-umime/potrebuji-brand' },
-  { label: 'I want a new Shopify store', href: '/en/co-umime/novy-shopify-e-shop' },
-  { label: 'I want to migrate to Shopify', href: '/en/co-umime/prechod-na-shopify' },
-  { label: 'We are planning international expansion', href: '/en/co-umime/expanze-do-zahranici' },
-  { label: 'Looking for a development partner', href: '/en/co-umime/rozvoj-a-podpora' },
-  { label: 'I need custom development or an app', href: '/en/co-umime/custom-vyvoj-a-aplikace' },
-];
 ---
 
-<PageLayout title="Contact" description="Call or write. We don't bite. info@aethero.cz · +420 776 067 663" lang="en">
+<PageLayout title="Contact | aethero" description="Call or write. We don't bite. info@aethero.cz · +420 776 067 663" lang="en">
 
   <section class="kontakt-hero">
     <div class="hero-blob" aria-hidden="true"></div>
-    <div class="container">
-      <h1>Call, write!</h1>
-      <p class="hero-sub">We don't bite. At least we'll get to know each other.</p>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Get in<br />touch</h1>
+        <p class="hero-sub">Call or write. We don't bite.<br />Let's at least get to know each other.</p>
+      </div>
+      <div class="hero-img-wrap" aria-hidden="true">
+        <img src="/chain.webp" alt="" class="hero-img" loading="eager" />
+      </div>
     </div>
+    <img src="/a-blob-bgr-v31.webp" alt="" class="hero-bg-img" aria-hidden="true" loading="eager" />
   </section>
 
   <section class="section bg-elevated">
-    <div class="container kontakt-grid">
-
-      <div class="contact-main">
-        <div class="contact-item">
-          <p class="contact-label">EMAIL</p>
-          <a href="mailto:info@aethero.cz" class="contact-value">info@aethero.cz</a>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-primary">
+          <div class="contact-item">
+            <a href="tel:+420776067663" class="contact-value">+420 776 067 663</a>
+          </div>
+          <div class="contact-item">
+            <a href="mailto:info@aethero.cz" class="contact-value">info@aethero.cz</a>
+          </div>
         </div>
-        <div class="contact-item">
-          <p class="contact-label">PHONE</p>
-          <a href="tel:+420776067663" class="contact-value">+420 776 067 663</a>
-        </div>
-        <div class="contact-item">
-          <p class="contact-label">CORRESPONDENCE ADDRESS</p>
-          <address class="contact-address">
-            Budovcova 700/14<br />
-            370 01 České Budějovice, CZ
-          </address>
-        </div>
-        <div class="contact-item">
-          <p class="contact-label">BILLING ADDRESS</p>
-          <address class="contact-address">
-            Kurzova 2222/16<br />
-            155 00 Praha 5, CZ
-          </address>
-        </div>
-        <div class="contact-item">
-          <p class="contact-label">COMPANY</p>
-          <p class="contact-address">AETHERO s.r.o. · IČO: 05288762</p>
+        <div class="contact-secondary">
+          <div class="contact-item">
+            <p class="contact-label">COMPANY</p>
+            <p class="contact-address">AETHERO s.r.o. · IČO: 05288762</p>
+          </div>
+          <div class="contact-item">
+            <p class="contact-label">CORRESPONDENCE ADDRESS</p>
+            <address class="contact-address">
+              Budovcova 700/14<br />
+              370 01 České Budějovice, CZ
+            </address>
+          </div>
+          <div class="contact-item">
+            <p class="contact-label">BILLING ADDRESS</p>
+            <address class="contact-address">
+              Kurzova 2222/16<br />
+              155 00 Praha 5, CZ
+            </address>
+          </div>
         </div>
       </div>
-
-      <div class="contact-services">
-        <p class="services-label">WHAT CAN WE DO FOR YOU?</p>
-        <ul class="services-list">
-          {services.map((s) => (
-            <li>
-              <a href={s.href} class="service-link">
-                {s.label}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
     </div>
   </section>
 
+  <div id="contact-map" role="region" aria-label="aethero office location map"></div>
+
 </PageLayout>
 
+<script is:inline>
+  (function () {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+
+    function initMap() {
+      var map = L.map('contact-map', {
+        center: [50.0481, 14.3104],
+        zoom: 4,
+        zoomControl: true,
+        scrollWheelZoom: false,
+      });
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19,
+      }).addTo(map);
+
+      var icon = L.divIcon({
+        className: '',
+        html: '<div style="width:20px;height:20px;background:#16BECF;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 5px rgba(22,190,207,0.25),0 0 24px rgba(22,190,207,0.6)"></div>',
+        iconSize: [20, 20],
+        iconAnchor: [10, 10],
+        popupAnchor: [0, -16],
+      });
+
+      L.marker([50.0481, 14.3104], { icon })
+        .addTo(map)
+        .bindPopup('æ');
+
+      map.getPanes().tilePane.style.filter = 'sepia(1) hue-rotate(210deg) saturate(3) brightness(0.65)';
+    }
+
+    function loadLeaflet() {
+      var s = document.createElement('script');
+      s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      s.onload = initMap;
+      document.head.appendChild(s);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadLeaflet);
+    } else {
+      loadLeaflet();
+    }
+  })();
+</script>
+
 <style>
-  .kontakt-hero { position: relative; padding: 130px 0 80px; background: var(--bg-primary-alt); overflow: hidden; }
-  .hero-blob { position: absolute; top: -20%; right: -5%; width: 500px; height: 500px; background: radial-gradient(ellipse, rgba(13,212,205,0.12) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-  .kontakt-hero .container { position: relative; }
-  .kontakt-hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; }
-  .hero-sub { font-size: 22px; color: var(--text-secondary); margin-top: var(--space-16); }
-  .section { padding: var(--space-120) 0; }
+  /* ── Hero ── */
+  .kontakt-hero {
+    position: relative;
+    padding: 130px 0 100px;
+    background: var(--bg-primary-alt);
+    overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute;
+    top: -15%;
+    right: -5%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(80, 20, 160, 0.45) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-64);
+    align-items: center;
+  }
+  .hero-text h1 {
+    font-size: clamp(56px, 8vw, 110px);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: var(--space-32);
+  }
+  .hero-sub {
+    font-size: clamp(18px, 1.8vw, 24px);
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.55;
+  }
+  .hero-img {
+    width: clamp(180px, 26vw, 400px);
+    height: auto;
+    display: block;
+  }
+  .hero-bg-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    display: block;
+  }
+
+  /* ── Contact section ── */
+  .section { padding: calc(var(--space-120) - 40px) 0 var(--space-120); }
   .bg-elevated { background: var(--bg-elevated); }
-  .kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); }
-  .contact-main { display: flex; flex-direction: column; gap: var(--space-40); }
-  .contact-label { font-family: var(--font-primary); font-size: 11px; font-weight: 600; letter-spacing: 0; color: var(--text-secondary); text-transform: uppercase; margin-bottom: var(--space-8); }
-  .contact-value { font-family: var(--font-primary); font-size: 28px; font-weight: 700; color: var(--text-primary); transition: color var(--transition-base); }
+  .section-title {
+    font-size: clamp(30px, 4vw, 56px);
+    font-weight: 700;
+    margin-bottom: var(--space-64);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-80);
+    align-items: start;
+  }
+  .contact-primary { display: flex; flex-direction: column; gap: var(--space-48); }
+  .contact-secondary { display: flex; flex-direction: column; gap: var(--space-40); }
+  .contact-label {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-8);
+  }
+  .contact-value {
+    font-family: var(--font-primary);
+    font-size: clamp(26px, 3vw, 44px);
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: color var(--transition-base);
+    display: block;
+    text-decoration: none;
+  }
   .contact-value:hover { color: var(--action); }
-  .contact-address { font-style: normal; font-size: 16px; color: var(--neutral-300); line-height: 1.6; }
-  .services-label { font-family: var(--font-primary); font-size: 11px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-24); }
-  .services-list { list-style: none; display: flex; flex-direction: column; }
-  .service-link { display: flex; align-items: center; justify-content: space-between; padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 16px; color: var(--neutral-300); gap: var(--space-16); transition: color var(--transition-base); }
-  .service-link:hover { color: var(--action); }
-  .service-link svg { flex-shrink: 0; opacity: 0.5; transition: opacity var(--transition-base), transform var(--transition-base); }
-  .service-link:hover svg { opacity: 1; transform: translateX(3px); }
+  .contact-address {
+    font-style: normal;
+    font-size: 17px;
+    color: var(--neutral-300);
+    line-height: 1.65;
+  }
+
+  /* ── Map ── */
+  #contact-map {
+    width: 100%;
+    height: 800px;
+    display: block;
+  }
+
+  /* Leaflet dark theme overrides */
+  :global(.leaflet-popup-content-wrapper) {
+    background: #13132a !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6) !important;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  :global(.leaflet-popup-tip) {
+    background: #13132a !important;
+  }
+  :global(.leaflet-popup-close-button) {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  :global(.leaflet-popup-close-button:hover) {
+    color: #fff !important;
+  }
+  :global(.leaflet-control-attribution) {
+    background: rgba(0, 0, 0, 0.45) !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+  }
+  :global(.leaflet-control-attribution a) {
+    color: rgba(255, 255, 255, 0.45) !important;
+  }
+  :global(.leaflet-control-zoom a) {
+    background: #13132a !important;
+    color: #fff !important;
+    border-color: rgba(255,255,255,0.1) !important;
+  }
+  :global(.leaflet-control-zoom a:hover) {
+    background: #1e1e40 !important;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: var(--space-48); }
+  }
   @media (max-width: 768px) {
-    .kontakt-grid { grid-template-columns: 1fr; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-img-wrap { display: none; }
     .kontakt-hero { padding: 90px 0 60px; }
-    .hero-sub { font-size: 18px; }
+    #contact-map { height: 320px; }
   }
   @media (max-width: 480px) {
     .kontakt-hero { padding: 70px 0 48px; }
-    .kontakt-hero h1 { font-size: clamp(32px, 9vw, 48px); }
-    .hero-sub { font-size: 16px; }
     .section { padding: var(--space-80) 0; }
   }
 </style>
