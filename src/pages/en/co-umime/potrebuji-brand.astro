@@ -64,11 +64,16 @@ const workCards = [
 
   <!-- Why you should not do it alone -->
   <section class="section bg-secondary">
-    <div class="container brand-analogy">
-      <h3 class="analogy-heading">And why do we think you definitely should not do this alone?</h3>
-      <p class="section-text">Building a brand is like building a new house. At first glance, everything seems obvious to everyone. After all, everyone knows there will be a kitchen and a bathroom. But it is only when you start figuring out "how to fit out that kitchen, connect it to the dining room, and at the same time find the right tile style for the bathroom and the right type of bathtub..." — that is when it really gets demanding. And then you wish you had help at hand!</p>
-      <p class="section-text"><strong>And that is exactly why we are here.</strong></p>
-      <a href="tel:+420776067663" class="btn-action">Get in touch</a>
+    <div class="container analogy-split">
+      <div class="analogy-text">
+        <h3 class="analogy-heading">And why do we think you definitely should not do this alone?</h3>
+        <p class="section-text">Building a brand is like building a new house. At first glance, everything seems obvious to everyone. After all, everyone knows there will be a kitchen and a bathroom. But it is only when you start figuring out "how to fit out that kitchen, connect it to the dining room, and at the same time find the right tile style for the bathroom and the right type of bathtub..." — that is when it really gets demanding. And then you wish you had help at hand!</p>
+        <p class="section-text"><strong>And that is exactly why we are here.</strong></p>
+        <a href="tel:+420776067663" class="btn-action">Get in touch</a>
+      </div>
+      <div class="analogy-ref">
+        <img src="/groomo-ref-na-vysku.webp" alt="GROOMO — aethero reference" class="ref-img" loading="lazy" />
+      </div>
     </div>
   </section>
 
@@ -116,8 +121,15 @@ const workCards = [
   .work-card-title { font-size: 16px; font-weight: 700; color: var(--action); margin-bottom: var(--space-12); }
   .work-card-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
-  .brand-analogy { max-width: 760px; }
+  .analogy-split { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
+  .analogy-text { max-width: 700px; }
   .analogy-heading { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; margin-bottom: var(--space-32); }
+  .analogy-ref { display: flex; justify-content: center; }
+  .ref-img { width: 100%; max-width: 380px; border-radius: var(--radius-md); display: block; }
+  @media (max-width: 900px) {
+    .analogy-split { grid-template-columns: 1fr; gap: var(--space-40); }
+    .ref-img { max-width: 300px; margin: 0 auto; }
+  }
 
   .quote-section { padding: var(--space-80) 0; }
   .kent-quote { font-size: clamp(20px, 2.5vw, 32px); font-style: italic; color: rgba(255,255,255,0.9); text-align: center; line-height: 1.5; max-width: 720px; margin: 0 auto; }
