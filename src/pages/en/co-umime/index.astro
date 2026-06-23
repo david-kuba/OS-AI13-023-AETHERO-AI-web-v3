@@ -130,20 +130,18 @@ const quickNav = [
       <h2 class="section-label">APPS</h2>
       <div class="apps-grid">
         <a href="/en/esyncer" class="app-card">
-          <div class="app-card-header" style="background-image: url('/header-image-esyncer.webp')">
-            <img src="/es-sipky.svg" alt="eSyncer" class="app-logo" />
-          </div>
+          <div class="app-card-header" style="background-image: url('/header-image-esyncer.webp')"></div>
           <div class="app-card-body">
+            <img src="/es-sipky.svg" alt="eSyncer" class="app-logo" />
             <h3>eSyncer</h3>
             <p>Product data import, sync & automation for Shopify and beyond.</p>
             <span class="app-link">Learn more about eSyncer →</span>
           </div>
         </a>
         <a href="/en/ae-translator" class="app-card">
-          <div class="app-card-header" style="background-image: url('/ae-translator-hero.webp')">
-            <img src="/ae-translate-znak.svg" alt="AE Translator" class="app-logo" />
-          </div>
+          <div class="app-card-header" style="background-image: url('/ae-translator-hero.webp')"></div>
           <div class="app-card-body">
+            <img src="/ae-translate-znak.svg" alt="AE Translator" class="app-logo" />
             <h3>AE Translator</h3>
             <p>AI-powered Shopify content translation. DeepL, Claude or DeepSeek — your choice.</p>
             <span class="app-link">Learn more about AE Translator →</span>
@@ -156,10 +154,10 @@ const quickNav = [
   <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-inner">
-      <h2>Not sure where to start?<br /><span class="cta-accent">Let's talk.</span></h2>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="btn-primary">info@aethero.cz</a>
-        <a href="/en/kontakt" class="btn-ghost">Contact</a>
+      <h2>Have something to discuss?<br />Get in touch.</h2>
+      <div class="cta-contacts">
+        <a href="mailto:info@aethero.cz" class="cta-contact">info@aethero.cz</a>
+        <a href="tel:+420776067663" class="cta-contact">+420 776 067 663</a>
       </div>
     </div>
   </section>
@@ -355,72 +353,29 @@ const quickNav = [
   }
   .app-card:hover { border-color: rgba(13,212,205,0.3); transform: translateY(-2px); }
   .app-card-header {
-    height: 220px;
+    height: 260px;
     background-size: cover;
-    background-position: center bottom;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .app-card-header::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,3,38,0.45);
+    background-position: center top;
   }
   .app-logo {
-    position: relative;
-    z-index: 1;
-    width: clamp(80px, 10vw, 140px);
-    height: auto;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
-    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+    display: block;
+    margin-bottom: 16px;
   }
-  .app-card-body { padding: 32px 40px 40px; flex: 1; display: flex; flex-direction: column; }
-  .app-card-body h3 { font-size: clamp(22px, 3vw, 36px); font-weight: 600; margin-bottom: 12px; }
-  .app-card-body p { font-size: 18px; color: var(--neutral-300); line-height: 1.6; margin-bottom: 24px; flex: 1; }
-  .app-link { color: var(--action); font-size: 16px; font-weight: 500; }
+  .app-card-body { padding: 28px 32px 36px; flex: 1; display: flex; flex-direction: column; }
+  .app-card-body h3 { font-size: clamp(20px, 2.5vw, 30px); font-weight: 600; margin-bottom: 10px; }
+  .app-card-body p { font-size: 16px; color: var(--neutral-300); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+  .app-link { color: var(--action); font-size: 15px; font-weight: 500; }
 
   /* ─── CTA ─── */
-  .cta-section {
-    background: var(--bg-primary-alt);
-    padding: 100px 0;
-  }
+  .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: 40px; }
-  .cta-accent { color: var(--action); }
-  .cta-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 32px;
-    background: #fff;
-    color: #000326;
-    font-family: var(--font-primary);
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: var(--radius-sm);
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: rgba(255,255,255,0.88); }
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 32px;
-    border: 2px solid rgba(255,255,255,0.55);
-    color: #fff;
-    font-family: var(--font-primary);
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: var(--radius-sm);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-ghost:hover { border-color: #fff; color: #fff; }
+  .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity 0.2s; }
+  .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {

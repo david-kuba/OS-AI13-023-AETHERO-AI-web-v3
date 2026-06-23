@@ -125,20 +125,18 @@ const quickNav = [
       <h2 class="section-label">APLIKACE</h2>
       <div class="apps-grid">
         <a href="/cs/esyncer" class="app-card">
-          <div class="app-card-header" style="background-image: url('/header-image-esyncer.webp')">
-            <img src="/es-sipky.svg" alt="eSyncer" class="app-logo" />
-          </div>
+          <div class="app-card-header" style="background-image: url('/header-image-esyncer.webp')"></div>
           <div class="app-card-body">
+            <img src="/es-sipky.svg" alt="eSyncer" class="app-logo" />
             <h3>eSyncer</h3>
             <p>Import, synchronizace & automatizace produktových dat (nejen) pro Shopify.</p>
             <span class="app-link">Více o eSyncer →</span>
           </div>
         </a>
         <a href="/cs/ae-translator" class="app-card">
-          <div class="app-card-header" style="background-image: url('/ae-translator-hero.webp')">
-            <img src="/ae-translate-znak.svg" alt="AE Translator" class="app-logo" />
-          </div>
+          <div class="app-card-header" style="background-image: url('/ae-translator-hero.webp')"></div>
           <div class="app-card-body">
+            <img src="/ae-translate-znak.svg" alt="AE Translator" class="app-logo" />
             <h3>AE Translator</h3>
             <p>AI překlad obsahu Shopify e-shopu. DeepL, Claude nebo DeepSeek — na výběr.</p>
             <span class="app-link">Více o AE Translator →</span>
@@ -346,32 +344,21 @@ const quickNav = [
   }
   .app-card:hover { border-color: rgba(13,212,205,0.3); transform: translateY(-2px); }
   .app-card-header {
-    position: relative;
-    height: 200px;
+    height: 260px;
     background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .app-card-header::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
+    background-position: center top;
   }
   .app-logo {
-    position: relative;
-    z-index: 1;
-    width: 80px;
-    height: 80px;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
-    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+    display: block;
+    margin-bottom: 16px;
   }
-  .app-card-body { padding: 32px 40px 40px; flex: 1; display: flex; flex-direction: column; }
-  .app-card-body h3 { font-size: clamp(22px, 3vw, 36px); font-weight: 600; margin-bottom: 12px; }
-  .app-card-body p { font-size: 18px; color: var(--neutral-300); line-height: 1.6; margin-bottom: 24px; flex: 1; }
-  .app-link { color: var(--action); font-size: 16px; font-weight: 500; }
+  .app-card-body { padding: 28px 32px 36px; flex: 1; display: flex; flex-direction: column; }
+  .app-card-body h3 { font-size: clamp(20px, 2.5vw, 30px); font-weight: 600; margin-bottom: 10px; }
+  .app-card-body p { font-size: 16px; color: var(--neutral-300); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+  .app-link { color: var(--action); font-size: 15px; font-weight: 500; }
 
   /* ─── CTA ─── */
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
