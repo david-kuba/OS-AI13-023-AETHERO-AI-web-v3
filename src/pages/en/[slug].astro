@@ -3,19 +3,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
   // TODO: Connect to Storyblok in Milestone 2.x
-  return [
-    {
-      params: { slug: 'groomo-cz-na-shopify' },
-      props: {
-        title: 'GROOMO.cz — from zero to Shopify',
-        category: 'Case Study',
-        client: 'GROOMO.cz',
-        tags: ['Brand', 'Shopify', 'E-shop'],
-        perex: 'Complete brand creation and Shopify e-shop development focused on the professional dog grooming market.',
-        content: 'Case study content will be added. Storyblok CMS integration in Milestone 2.x.',
-      },
-    },
-  ];
+  // groomo-cz-na-shopify has its own static page — see src/pages/en/groomo-cz-na-shopify.astro
+  return [];
 }
 
 const { title, category, client, tags, perex, content } = Astro.props;

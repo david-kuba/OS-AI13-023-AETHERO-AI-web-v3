@@ -3,20 +3,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
   // TODO: Napojit na Storyblok v Milestone 2.x
-  // Prozatím statické případové studie jako placeholders
-  return [
-    {
-      params: { slug: 'groomo-cz-na-shopify' },
-      props: {
-        title: 'GROOMO.cz — od nuly na Shopify',
-        category: 'Případová studie',
-        client: 'GROOMO.cz',
-        tags: ['Brand', 'Shopify', 'E-shop'],
-        perex: 'Kompletní tvorba brandu a vývoj Shopify e-shopu zaměřeného na profesionální trh péče o psy.',
-        content: 'Případová studie bude doplněna. Napojení na Storyblok CMS v Milestone 2.x.',
-      },
-    },
-  ];
+  // groomo-cz-na-shopify má vlastní statickou stránku — viz src/pages/cs/groomo-cz-na-shopify.astro
+  return [];
 }
 
 const { title, category, client, tags, perex, content } = Astro.props;
