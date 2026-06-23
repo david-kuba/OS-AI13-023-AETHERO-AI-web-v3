@@ -37,13 +37,15 @@ import PageLayout from '../../layouts/PageLayout.astro';
           <li>The app deactivates products when stock reaches 0 and reactivates them when stock goes above 0.</li>
           <li>The solution can be fully customised to your additional requirements.</li>
         </ul>
-        <a href="https://www.aethero.cz/files/esyncer-shopify-demo.pdf" target="_blank" rel="noopener" class="btn-demo">DEMO</a>
       </div>
       <div>
         <h2 class="section-title">Why not fully automatic?</h2>
         <p class="body-text">Some apps come with preset feed parsing rules. But what if your feed is a bit more complex and a universal solution just doesn't cut it? The best approach is to show us the source feed and a sample of how you want the final product to look. We replicate the exact structure and behaviour and connect it to the sync tool. Your data will be exactly where you want it.</p>
         <p class="body-text">After the initial integration is complete, you review everything and we incorporate any further requirements. You get your own dashboard offering additional configuration options and the ability to monitor the app's activity.</p>
       </div>
+    </div>
+    <div class="container btn-demo-row">
+      <a href="https://www.aethero.cz/files/esyncer-shopify-demo.pdf" target="_blank" rel="noopener" class="btn-demo">DEMO</a>
     </div>
   </section>
 
@@ -180,10 +182,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
     position: relative;
   }
   .benefit-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); }
+  .btn-demo-row { text-align: center; padding-top: var(--space-40); }
   .btn-demo {
-    display: block;
-    width: fit-content;
-    margin: var(--space-40) auto 0;
+    display: inline-flex;
+    align-items: center;
     padding: 14px 40px;
     background: #fff;
     border: 2px solid #fff;

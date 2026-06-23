@@ -40,12 +40,14 @@ import PageLayout from '../../layouts/PageLayout.astro';
           <li>Můžete si zvolit překlad url handles, které se automaticky vytvoří z přeloženého názvu</li>
         </ul>
         <p class="extra-note">Pokud chcete použít model, který není v současné nabídce aplikace, ozvěte se nám — přidáme ho.</p>
-        <a href="#" class="btn-demo">DEMO PŘIPRAVUJEME</a>
       </div>
       <div>
         <h2 class="section-title">Proč ne pouze automaticky?</h2>
         <p class="body-text">AE Translator aplikace si na nic nehraje. Je to šikovná vychytávka, která vám za málo peněz pomůže dosáhnout velkého výsledku. Odladili jsme za vás problémy, které by AI mohlo při překladech způsobovat. Na vás už je doladit si prompt tak, aby odpovídal vašim očekáváním. Dodejte kontext a pravidla, a můžete překládat.</p>
       </div>
+    </div>
+    <div class="container btn-demo-row">
+      <a href="#" class="btn-demo">DEMO PŘIPRAVUJEME</a>
     </div>
   </section>
 
@@ -210,10 +212,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
     margin-bottom: var(--space-24);
   }
 
+  .btn-demo-row { text-align: center; padding-top: var(--space-40); }
   .btn-demo {
-    display: block;
-    width: fit-content;
-    margin: var(--space-40) auto 0;
+    display: inline-flex;
+    align-items: center;
     padding: 14px 40px;
     background: #fff;
     border: 2px solid #fff;

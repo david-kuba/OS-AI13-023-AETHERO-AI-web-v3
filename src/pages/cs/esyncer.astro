@@ -37,13 +37,15 @@ import PageLayout from '../../layouts/PageLayout.astro';
           <li>Aplikace deaktivuje produkty, pokud je množství 0 a aktivuje, při počtu produktů vyšší než 0.</li>
           <li>Řešení lze plně upravit dle vašich dodatečných požadavků.</li>
         </ul>
-        <a href="https://www.aethero.cz/files/esyncer-shopify-demo.pdf" target="_blank" rel="noopener" class="btn-demo">DEMO</a>
       </div>
       <div>
         <h2 class="section-title">Proč ne vždy čistě automaticky?</h2>
         <p class="body-text">Existují aplikace s předem nastavenými pravidly pro parsování feedu. Ale co když je ten váš o něco komplikovanější a universální řešení na něj nestačí? Nejlepší způsob, jak vytvořit další funkce synchronizačního nástroje, je ukázat nám zdrojový feed a vzorový produkt, jak chcete, aby ve finále vypadal. Zkopírujeme strukturu a chování takové funkcionality a propojíme ji se synchronizačním nástrojem. Vaše data budou přesně tam, kde je chcete mít.</p>
         <p class="body-text">Po dokončení počáteční integrace vše zkontrolujete a případně zapracujeme vaše další požadavky. K dispozici je vám vlastní dashboard, který nabízí další možnosti konfigurace a mimo jiné umožňuje sledovat činnost aplikace.</p>
       </div>
+    </div>
+    <div class="container btn-demo-row">
+      <a href="https://www.aethero.cz/files/esyncer-shopify-demo.pdf" target="_blank" rel="noopener" class="btn-demo">DEMO</a>
     </div>
   </section>
 
@@ -198,10 +200,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
     margin-bottom: var(--space-24);
   }
 
+  .btn-demo-row { text-align: center; padding-top: var(--space-40); }
   .btn-demo {
-    display: block;
-    width: fit-content;
-    margin: var(--space-40) auto 0;
+    display: inline-flex;
+    align-items: center;
     padding: 14px 40px;
     background: #fff;
     border: 2px solid #fff;

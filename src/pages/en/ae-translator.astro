@@ -40,12 +40,14 @@ import PageLayout from '../../layouts/PageLayout.astro';
           <li>Optionally translate URL handles, auto-generated from the translated product name</li>
         </ul>
         <p class="extra-note">If you need a model not currently in the app — let us know and we'll add it.</p>
-        <a href="#" class="btn-demo">DEMO COMING SOON</a>
       </div>
       <div>
         <h2 class="section-title">Why not fully automatic?</h2>
         <p class="body-text">AE Translator does exactly what it says. It's a practical tool that helps you achieve great results at a low cost. We've solved the common AI translation pitfalls for you. All you need to do is tune the prompt to match your expectations — add context and rules, and you're ready to translate.</p>
       </div>
+    </div>
+    <div class="container btn-demo-row">
+      <a href="#" class="btn-demo">DEMO COMING SOON</a>
     </div>
   </section>
 
@@ -187,10 +189,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
     margin-bottom: var(--space-32);
     font-style: italic;
   }
+  .btn-demo-row { text-align: center; padding-top: var(--space-40); }
   .btn-demo {
-    display: block;
-    width: fit-content;
-    margin: var(--space-40) auto 0;
+    display: inline-flex;
+    align-items: center;
     padding: 14px 40px;
     background: #fff;
     border: 2px solid #fff;
