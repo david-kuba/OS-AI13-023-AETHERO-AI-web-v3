@@ -139,35 +139,35 @@ import PageLayout from '../../layouts/PageLayout.astro';
         <p class="body sec-text">The analysis ran as a live collaboration with the fleppi owner — interim results were shared in real time and the owner provided context (warehouse move, decisions about summer campaigns, assortment changes) that helped interpret the data correctly.</p>
         <div class="steps-list">
           <div class="step-row">
-            <div class="step-n">1</div>
+            <div class="step-n">01</div>
             <div>
               <strong>Data import & validation</strong>
               <p class="body step-desc">CSV exports from Shoptet and Leadhub — campaigns, automations and orders over a two-year horizon. Data cleaning, format standardisation, consistency verification.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">2</div>
+            <div class="step-n">02</div>
             <div>
               <strong>Year-on-year order comparison</strong>
               <p class="body step-desc">Every calendar month year after year — revenue, order count, average basket value, customers, retention. Precise identification of months and causes of decline.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">3</div>
+            <div class="step-n">03</div>
             <div>
               <strong>Email campaign analysis</strong>
               <p class="body step-desc">Hundreds of broadcast campaigns and automations over two years. Open rate, CTR, revenue and revenue per email sent — by month and by campaign. Identification of top performers and blind spots.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">4</div>
+            <div class="step-n">04</div>
             <div>
               <strong>Market basket analysis</strong>
               <p class="body step-desc">From tens of thousands of orders, identifying the most common product combinations — the foundation for cross-sell automations and product-focused newsletters.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">5</div>
+            <div class="step-n">05</div>
             <div>
               <strong>Strategy & 365-day plan</strong>
               <p class="body step-desc">All findings translated into a concrete action plan with rationale and estimated impact for every task.</p>
@@ -457,9 +457,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .steps-list { display: flex; flex-direction: column; gap: 32px; margin-top: var(--space-40); max-width: 720px; }
   .step-row { display: flex; gap: 20px; align-items: flex-start; }
   .step-n {
-    flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+    flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%;
     background: var(--text-secondary); color: #fff;
-    font-weight: 700; font-size: 15px;
+    font-family: var(--font-primary); font-weight: 900; font-size: 13px;
+    letter-spacing: 0.02em;
     display: flex; align-items: center; justify-content: center;
     margin-top: 2px;
   }

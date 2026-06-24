@@ -139,35 +139,35 @@ import PageLayout from '../../layouts/PageLayout.astro';
         <p class="body sec-text">Analýza probíhala jako živá spolupráce s majitelkou fleppi — průběžné výsledky byly sdíleny v reálném čase a majitelka doplňovala kontext (stěhování skladu, rozhodnutí o letních kampaních, vývoj sortimentu), který pomohl data správně interpretovat.</p>
         <div class="steps-list">
           <div class="step-row">
-            <div class="step-n">1</div>
+            <div class="step-n">01</div>
             <div>
               <strong>Import a validace dat</strong>
               <p class="body step-desc">CSV exporty ze Shoptetu a z Leadhub — kampaně, automations i objednávky za dvouletý horizont. Čistění dat, sjednocení formátů, ověření konzistence.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">2</div>
+            <div class="step-n">02</div>
             <div>
               <strong>Meziroční srovnání objednávek</strong>
               <p class="body step-desc">Každý kalendářní měsíc rok po roku — obrat, počet objednávek, průměrná hodnota košíku, zákazníci, retence. Přesná identifikace měsíců a příčin propadu.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">3</div>
+            <div class="step-n">03</div>
             <div>
               <strong>Analýza emailových kampaní</strong>
               <p class="body step-desc">Stovky broadcast kampaní a automations za dva roky. Open rate, CTR, revenue a revenue na odeslaný email — po měsících i po kampaních. Identifikace top performers a slepých skvrn.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">4</div>
+            <div class="step-n">04</div>
             <div>
               <strong>Market basket analýza</strong>
               <p class="body step-desc">Z desetitisíců objednávek identifikace nejčastějších produktových kombinací — základ pro cross-sell automations a produktově zaměřené newslettery.</p>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-n">5</div>
+            <div class="step-n">05</div>
             <div>
               <strong>Sestavení strategie a 365denního plánu</strong>
               <p class="body step-desc">Všechna zjištění přetavena do konkrétního akčního plánu s odůvodněním a odhadovaným přínosem každého úkolu.</p>
@@ -452,9 +452,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .steps-list { display: flex; flex-direction: column; gap: 32px; margin-top: var(--space-40); max-width: 720px; }
   .step-row { display: flex; gap: 20px; align-items: flex-start; }
   .step-n {
-    flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+    flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%;
     background: var(--text-secondary); color: #fff;
-    font-weight: 700; font-size: 15px;
+    font-family: var(--font-primary); font-weight: 900; font-size: 13px;
+    letter-spacing: 0.02em;
     display: flex; align-items: center; justify-content: center;
     margin-top: 2px;
   }
