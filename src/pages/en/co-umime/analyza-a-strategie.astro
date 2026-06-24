@@ -92,11 +92,13 @@ const steps = [
   <!-- Testimonials -->
   <section class="section bg-primary">
     <div class="container">
-      <h4 class="testimonials-label">What do store owners say about this service?</h4>
+      <h3 class="testimonials-label">References from e-shop owners</h3>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-top">
-            <img src="/ref-fleppi-logo.jpg" alt="fleppi" class="testimonial-logo testimonial-logo--light" />
+            <a href="https://www.fleppi.cz" target="_blank" rel="noopener" class="testimonial-logo-link">
+              <img src="/ref-fleppi-logo.jpg" alt="fleppi" class="testimonial-logo testimonial-logo--light" />
+            </a>
             <span class="testimonial-stars">⭐⭐⭐⭐⭐ Google</span>
           </div>
           <p class="testimonial-text">"The output was well-crafted, clear and above all full of specific insights we can immediately use to drive further growth for our store. No generic recommendations — solutions tailored specifically to us."</p>
@@ -104,20 +106,22 @@ const steps = [
             <img src="/ref-lucie.jpg" alt="Lucie" class="testimonial-avatar" />
             <div class="testimonial-person">
               <strong>Lucie</strong>
-              <span>Owner · fleppi.cz</span>
+              <span>Owner · <a href="https://www.fleppi.cz" target="_blank" rel="noopener" class="ref-inline-link">fleppi.cz</a></span>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
           <div class="testimonial-top">
-            <img src="/ref-bu1-logo.svg" alt="BU1" class="testimonial-logo" />
+            <a href="https://bu1.cz" target="_blank" rel="noopener" class="testimonial-logo-link">
+              <img src="/ref-bu1-logo.svg" alt="BU1" class="testimonial-logo" />
+            </a>
           </div>
           <p class="testimonial-text">"I am thrilled, because for the first time I have a complete picture of everything happening in the store, all in one place. The biggest thing is how the data connects with each other. I can see whether the content on the site actually engaged people and add info from the mailing — what people respond to best in emails. These overlaps, where I see the entire customer journey from search to purchase, allow me to make changes in Shopify that actually make sense."</p>
           <div class="testimonial-footer">
             <img src="/ref-petr.png" alt="Petr" class="testimonial-avatar" />
             <div class="testimonial-person">
               <strong>Petr</strong>
-              <span>Owner · BU1.cz</span>
+              <span>Owner · <a href="https://bu1.cz" target="_blank" rel="noopener" class="ref-inline-link">BU1.cz</a></span>
             </div>
           </div>
         </div>
@@ -295,8 +299,11 @@ const steps = [
     margin: 0;
     flex: 1;
   }
-  .testimonial-logo { height: 48px; width: auto; max-width: 140px; object-fit: contain; flex-shrink: 0; }
+  .testimonial-logo-link { display: inline-flex; flex-shrink: 0; }
+  .testimonial-logo { height: 58px; width: auto; max-width: 168px; object-fit: contain; flex-shrink: 0; }
   .testimonial-logo--light { background: rgba(255,255,255,0.95); border-radius: 8px; padding: 0; width: 120px; height: 120px; object-fit: contain; }
+  .ref-inline-link { color: var(--action); text-decoration: none; }
+  .ref-inline-link:hover { text-decoration: underline; }
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
