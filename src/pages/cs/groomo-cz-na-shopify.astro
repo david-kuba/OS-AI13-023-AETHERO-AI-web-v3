@@ -300,7 +300,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .brand-logo-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(4, 1fr);
+    height: 680px;
     gap: 2px;
     background: #07051B;
     border-radius: var(--radius-md);
@@ -329,7 +330,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   }
   .logo-cell--left .logo-img,
   .logo-cell--right .logo-img {
-    height: 240px;
+    height: 100%;
     width: auto;
     max-width: 100%;
   }
