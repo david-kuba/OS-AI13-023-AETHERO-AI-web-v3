@@ -439,8 +439,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .list-label--bad { color: rgba(255,100,100,0.9); }
   .list-label--good { color: var(--action); }
   .dot-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .dot-list li { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.55; padding-left: 16px; position: relative; }
-  .dot-list li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
+  .dot-list li { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.55; padding-left: 20px; position: relative; }
+  .dot-list li::before { content: '●'; position: absolute; left: 0; top: 1px; font-size: 1.15em; color: var(--text-secondary); line-height: 1; }
 
   /* Problem box */
   .problem-box {
@@ -458,7 +458,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .step-row { display: flex; gap: 20px; align-items: flex-start; }
   .step-n {
     flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
-    background: var(--action); color: #000326;
+    background: var(--text-secondary); color: #fff;
     font-weight: 700; font-size: 15px;
     display: flex; align-items: center; justify-content: center;
     margin-top: 2px;
