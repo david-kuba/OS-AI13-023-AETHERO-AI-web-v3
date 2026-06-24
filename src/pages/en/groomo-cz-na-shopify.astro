@@ -29,8 +29,25 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <section class="section bg-secondary">
     <div class="container-wide">
       <h2 class="section-center-heading">GROOMO brand</h2>
-      <div class="brand-img-wrap">
-        <img src="/hp-groomo-cz.png" alt="GROOMO.cz — homepage and visual identity" class="brand-img" loading="lazy" />
+      <div class="brand-logo-grid">
+        <div class="logo-cell logo-cell--portrait">
+          <img src="/groomo-logo-imgnavysku-wh.png" alt="GROOMO mascot — portrait" class="logo-img" loading="lazy" />
+        </div>
+        <div class="logo-cell">
+          <img src="/groomo-logo-imgbasictext-wh.png" alt="GROOMO logo with tagline" class="logo-img" loading="lazy" />
+        </div>
+        <div class="logo-cell">
+          <img src="/groomo-logo-basic-blu.png" alt="GROOMO wordmark" class="logo-img" loading="lazy" />
+        </div>
+        <div class="logo-cell logo-cell--portrait">
+          <img src="/groomoinstitut-logo-imgnavysku-wh-1.png" alt="GROOMO Institut logo" class="logo-img" loading="lazy" />
+        </div>
+        <div class="logo-cell">
+          <img src="/groomo-logo-imgbasic-wh.png" alt="GROOMO logo with icon" class="logo-img" loading="lazy" />
+        </div>
+        <div class="logo-cell">
+          <img src="/groomo-logo-basicsq-blu.png" alt="GROOMO GRO/OMO square" class="logo-img" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
@@ -275,8 +292,34 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .text-col { max-width: 780px; }
 
   /* ─── BRAND section ─── */
-  .brand-img-wrap { margin-bottom: 0; overflow: hidden; border-radius: var(--radius-md); max-width: 1100px; margin-left: auto; margin-right: auto; }
-  .brand-img { width: 100%; height: 600px; object-fit: cover; object-position: top; display: block; }
+  .brand-logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px;
+    background: #07051B;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: var(--space-48);
+  }
+  .logo-cell {
+    background: #000326;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px;
+    min-height: 200px;
+  }
+  .logo-cell--portrait {
+    grid-row: span 2;
+    min-height: 400px;
+  }
+  .logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
 
   /* ─── BRAND HERO IMAGE (CSS background) ─── */
   .brand-hero-wrap {
