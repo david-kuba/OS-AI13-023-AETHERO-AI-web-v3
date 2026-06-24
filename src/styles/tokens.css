@@ -1,18 +1,18 @@
 :root {
-  --bg-elevated: #000326;
-  --bg-secondary: #000326;
-  --bg-primary-alt: #030626;
+  --ae-bg-deep: #00021A;
+  --ae-bg-primary: #000326;
+  --ae-bg-raised: #0C0C42;
   --action: #16BECF;
   --action-hover: #0DD4CD;
   --text-primary: #FFFFFF;
   --text-secondary: #A081D1;
-  --accent-purple: #CB00D7;
-  --brand-dark: #092066;
+  --accent-purple: #552A9F;
+  --ae-straight-blue: #092066;
+  --card-button: #2F324D;
   --neutral-100: #F8F9F9;
   --neutral-300: #D2D2D2;
   --neutral-500: #A0A3BD;
   --neutral-700: #686868;
-  --neutral-900: #171A1C;
   --semantic-error: #FF5252;
   --semantic-success: #4ECCA3;
   --semantic-warning: #FFA940;

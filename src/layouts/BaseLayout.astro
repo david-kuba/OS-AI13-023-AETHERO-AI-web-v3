@@ -84,5 +84,20 @@ const schemas = [orgSchema, webPageSchema, ...(jsonLd ? (Array.isArray(jsonLd) ?
 </head>
 <body>
   <slot />
+  <script>
+    // Czech typography: non-breaking space after single-char prepositions/conjunctions
+    const SKIP = new Set(['H1','H2','H3','H4','H5','H6','SCRIPT','STYLE','CODE','PRE','TEXTAREA','INPUT']);
+    const RE = /\b([kvzsauioKVZSAUIO]) /g;
+
+    function fixNode(node) {
+      if (node.nodeType === 3) {
+        node.nodeValue = node.nodeValue.replace(RE, '$1 ');
+      } else if (node.nodeType === 1 && !SKIP.has(node.tagName)) {
+        node.childNodes.forEach(fixNode);
+      }
+    }
+
+    fixNode(document.body);
+  </script>
 </body>
 </html>
