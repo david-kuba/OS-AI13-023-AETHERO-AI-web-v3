@@ -13,7 +13,18 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <div class="container">
       <p class="cs-label">Případová studie · ANALÝZA e-mail marketing</p>
       <h1 class="cs-h1">Mailing strategie<br /><a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a> × <span class="hl-link">Leadhub</span> × <span class="hl-link">Shoptet</span></h1>
-      <p class="cs-perex">Jak jsme pomohli českému stationery e-shopu k <span class="perex-hl">odhalení příčin klesajícího výkonu emailového marketingu a sestavení konkrétního plánu obnovy</span> — vše na základě dvouletých dat, bez přístupu k API.</p>
+      <div class="cs-hero-split">
+        <p class="cs-perex">Jak jsme pomohli českému stationery e-shopu k <span class="perex-hl">odhalení příčin klesajícího výkonu emailového marketingu a sestavení konkrétního plánu obnovy</span> — vše na základě dvouletých dat, bez přístupu k API.</p>
+        <nav class="page-nav">
+          <a href="#s01" class="page-nav-item">01 · KLIENT</a>
+          <a href="#s02" class="page-nav-item">02 · VÝCHOZÍ STAV</a>
+          <a href="#s03" class="page-nav-item">03 · POSTUP</a>
+          <a href="#s04" class="page-nav-item">04 · ZJIŠTĚNÍ</a>
+          <a href="#s05" class="page-nav-item">05 · DOPORUČENÍ</a>
+          <a href="#s06" class="page-nav-item">06 · VÝSTUP</a>
+          <a href="#s07" class="page-nav-item">07 · REFERENCE</a>
+        </nav>
+      </div>
 
       <!-- Client info row -->
       <div class="client-row">
@@ -59,35 +70,22 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- 01 KLIENT -->
   <section class="cs-section" id="s01">
     <div class="container">
-      <div class="section-with-nav">
-        <div class="section-main">
-          <h2 class="sec-h2">Co je <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
-          <p class="sec-text">fleppi.cz je český e-shop zaměřený na plánování, bullet journaling a stationery. Cílová skupina jsou organizovaní lidé — především ženy 25–40 let, kteří hledají náplně do diářů, samolepky, razítka a doplňky pro osobní produktivitu.</p>
-          <p class="sec-text">E-shop provozuje na platformě Shoptet s tisíci SKU v několika stovkách produktových skupin. Emailový marketing zajišťuje nástroj Leadhub. Charakteristickým rysem sortimentu je absence jednoho dominantního produktu — zákazník nakupuje sadu komplementárních položek, kde hodnota spočívá v kombinaci a pravidelném doplňování.</p>
-          <div class="klient-grid">
-            <div class="klient-card">
-              <strong>Náplně do diářů:</strong> Největší kategorie dle obratu — pravidelná spotřeba, vysoká frekvence nákupu.
-            </div>
-            <div class="klient-card">
-              <strong>Samolepky:</strong> Největší objem kusů — impulzivní nákupy, ideální cross-sell položka.
-            </div>
-            <div class="klient-card">
-              <strong>Razítka a doplňky:</strong> Vyšší AOV, nižší frekvence — sezónní příležitost.
-            </div>
-            <div class="klient-card">
-              <strong>Email jako páteř:</strong> Email tvoří téměř polovinu celkového obratu e-shopu.
-            </div>
-          </div>
+      <h2 class="sec-h2">Co je <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
+      <p class="sec-text">fleppi.cz je český e-shop zaměřený na plánování, bullet journaling a stationery. Cílová skupina jsou organizovaní lidé — především ženy 25–40 let, kteří hledají náplně do diářů, samolepky, razítka a doplňky pro osobní produktivitu.</p>
+      <p class="sec-text">E-shop provozuje na platformě Shoptet s tisíci SKU v několika stovkách produktových skupin. Emailový marketing zajišťuje nástroj Leadhub. Charakteristickým rysem sortimentu je absence jednoho dominantního produktu — zákazník nakupuje sadu komplementárních položek, kde hodnota spočívá v kombinaci a pravidelném doplňování.</p>
+      <div class="klient-grid">
+        <div class="klient-card">
+          <strong>Náplně do diářů:</strong> Největší kategorie dle obratu — pravidelná spotřeba, vysoká frekvence nákupu.
         </div>
-        <nav class="page-nav">
-          <a href="#s01" class="page-nav-item">01 · KLIENT</a>
-          <a href="#s02" class="page-nav-item">02 · VÝCHOZÍ STAV</a>
-          <a href="#s03" class="page-nav-item">03 · POSTUP</a>
-          <a href="#s04" class="page-nav-item">04 · ZJIŠTĚNÍ</a>
-          <a href="#s05" class="page-nav-item">05 · DOPORUČENÍ</a>
-          <a href="#s06" class="page-nav-item">06 · VÝSTUP</a>
-          <a href="#s07" class="page-nav-item">07 · REFERENCE</a>
-        </nav>
+        <div class="klient-card">
+          <strong>Samolepky:</strong> Největší objem kusů — impulzivní nákupy, ideální cross-sell položka.
+        </div>
+        <div class="klient-card">
+          <strong>Razítka a doplňky:</strong> Vyšší AOV, nižší frekvence — sezónní příležitost.
+        </div>
+        <div class="klient-card">
+          <strong>Email jako páteř:</strong> Email tvoří téměř polovinu celkového obratu e-shopu.
+        </div>
       </div>
     </div>
   </section>
@@ -342,7 +340,13 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .cs-perex {
     font-family: var(--font-secondary); font-size: clamp(18px, 1.8vw, 22px);
     font-weight: 400; line-height: 1.65; color: rgba(255,255,255,0.9);
-    max-width: 700px; margin-bottom: 40px;
+  }
+  .cs-hero-split {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 40px;
   }
 
   /* Client row */
@@ -396,11 +400,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
     margin-bottom: var(--space-24); max-width: 720px;
   }
 
-  /* Section with page nav */
-  .section-with-nav { display: grid; grid-template-columns: 1fr 200px; gap: 64px; align-items: start; }
-  .section-main { min-width: 0; }
+  /* Page nav (hero TOC) */
   .page-nav {
-    position: sticky; top: 80px;
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-md);
@@ -516,7 +517,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
-    .section-with-nav { grid-template-columns: 1fr; }
+    .cs-hero-split { grid-template-columns: 1fr; }
     .page-nav { display: none; }
     .ref-split { grid-template-columns: 1fr; gap: var(--space-40); }
   }
