@@ -1411,6 +1411,15 @@ font-family: var(--font-secondary);</code></pre>
             </div>
           </div>
 
+          <div class="ds-incon-card ds-incon-ok">
+            <div class="ds-incon-label">K7 — Testimonial card</div>
+            <div class="ds-component-notes" style="margin-top:0;padding:0;border:none;font-size:11px;line-height:1.7">
+              BG var(--card-button) #2F324D · Radius var(--radius-md) · Padding 48px<br />
+              Flex column gap 32px · Logo (linked) + sep — quote italic flex:1 — avatar 96px + jméno + Google G + ★<br />
+              Grid 1fr 1fr align-items stretch · Použití: analyza-a-strategie (CS+EN)
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -1429,6 +1438,57 @@ font-family: var(--font-secondary);</code></pre>
               <div class="ds-spec-item"><code>img</code><span>width 100% · display block</span></div>
               <div class="ds-spec-item"><code>.ref-card-cta</code><span>absolute · bottom/left/right 30px · glass bg rgba(255,255,255,0.18) · backdrop-blur 12px · border 1px rgba(255,255,255,0.45) · color #000326 · Kanit 20px/600 · uppercase · text-align center</span></div>
               <div class="ds-spec-item"><code>:hover</code><span>bg rgba(255,255,255,0.28) · border rgba(255,255,255,0.65)</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- K7 — TESTIMONIAL CARD -->
+      <section class="ds-section" id="testimonial-card">
+        <h2 class="ds-section-title">K7 — Testimonial card</h2>
+        <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
+          <!-- Live demo -->
+          <div class="ds-tc-card">
+            <div class="ds-tc-top">
+              <a href="#" class="ds-tc-logo-link">
+                <img src="/ref-fleppi-logo.jpg" alt="fleppi" class="ds-tc-logo" />
+              </a>
+            </div>
+            <p class="ds-tc-text">„Výstup byl kvalitně zpracovaný, přehledný a hlavně plný konkrétních podnětů, které můžeme rovnou využít pro další růst e-shopu."</p>
+            <div class="ds-tc-footer">
+              <img src="/ref-lucie.jpg" alt="Lucie" class="ds-tc-avatar" />
+              <div class="ds-tc-person">
+                <strong>Lucie</strong>
+                <span>Majitelka · <span style="color:var(--action)">fleppi.cz</span></span>
+              </div>
+              <div class="ds-tc-google">
+                <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <div style="color:#FABB05;font-size:16px;letter-spacing:1px;line-height:1">★★★★★</div>
+              </div>
+            </div>
+          </div>
+          <!-- Spec -->
+          <div style="flex:1;min-width:240px">
+            <div class="ds-spec-grid" style="margin-top:0">
+              <div class="ds-spec-item"><code>.testimonial-card</code><span>BG var(--card-button) #2F324D · radius var(--radius-md) · padding 48px · flex column gap 32px</span></div>
+              <div class="ds-spec-item"><code>.testimonial-top</code><span>flex · padding-bottom 24px · border-bottom 1px rgba(255,255,255,0.08)</span></div>
+              <div class="ds-spec-item"><code>.testimonial-logo--light</code><span>white bg rgba(255,255,255,0.95) · radius 8px · 160×120px · object-fit cover</span></div>
+              <div class="ds-spec-item"><code>.testimonial-logo</code><span>height 67px · max-width 194px · object-fit contain (SVG loga)</span></div>
+              <div class="ds-spec-item"><code>.testimonial-text</code><span>18px · italic · font-secondary · color rgba(255,255,255,0.85) · line-height 1.75 · flex 1</span></div>
+              <div class="ds-spec-item"><code>.testimonial-footer</code><span>flex align-items center gap 20px · padding-top 24px · border-top 1px rgba(255,255,255,0.08)</span></div>
+              <div class="ds-spec-item"><code>.testimonial-avatar</code><span>96×96px · border-radius 50% · object-fit cover · object-position top center · border 3px rgba(255,255,255,0.15)</span></div>
+              <div class="ds-spec-item"><code>.testimonial-person strong</code><span>22px w700</span></div>
+              <div class="ds-spec-item"><code>.testimonial-person span</code><span>16px · rgba(255,255,255,0.5)</span></div>
+              <div class="ds-spec-item"><code>.google-review</code><span>flex column align-items center gap 4px · margin-left auto</span></div>
+              <div class="ds-spec-item"><code>.google-g-icon</code><span>28×28px SVG · multicolor</span></div>
+              <div class="ds-spec-item"><code>.google-stars</code><span>color #FABB05 · 18px · letter-spacing 1px</span></div>
+              <div class="ds-spec-item"><code>grid</code><span>1fr 1fr · gap 32px · align-items stretch</span></div>
             </div>
           </div>
         </div>
@@ -2187,6 +2247,18 @@ font-family: var(--font-secondary);</code></pre>
     transition: background var(--transition-base), border-color var(--transition-base);
   }
   .ds-ref-cta:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.65); }
+
+  /* K7 — TESTIMONIAL CARD */
+  .ds-tc-card { background: var(--card-button); border-radius: var(--radius-md); padding: 48px; display: flex; flex-direction: column; gap: 32px; width: 360px; flex-shrink: 0; }
+  .ds-tc-top { display: flex; align-items: center; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .ds-tc-logo-link { display: inline-flex; }
+  .ds-tc-logo { background: rgba(255,255,255,0.95); border-radius: 8px; width: 160px; height: 120px; object-fit: cover; object-position: center; }
+  .ds-tc-text { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.75; font-style: italic; font-family: var(--font-secondary); margin: 0; flex: 1; }
+  .ds-tc-footer { display: flex; align-items: center; gap: 20px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .ds-tc-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.15); }
+  .ds-tc-person strong { display: block; font-size: 18px; font-weight: 700; color: #fff; }
+  .ds-tc-person span { display: block; font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .ds-tc-google { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-left: auto; flex-shrink: 0; }
 
   /* CITÁT / CITACE */
   .ds-block-label {
