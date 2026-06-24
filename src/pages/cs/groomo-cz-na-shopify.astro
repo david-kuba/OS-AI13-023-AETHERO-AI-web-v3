@@ -59,7 +59,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <div class="container text-col">
       <h3 class="section-subheading">O názvu</h3>
       <p class="section-text">Brand i název nám dal zabrat. Museli jsme se rozhodnout mezi nápady jako třeba „psikrasa.cz", které sice hezky popisovaly o co se jedná, ale nedávaly moc šancí na ztvárnění loga — a vymyslet něco s anglickým světovým základem slova GROOMING, i když to není běžné slovo a domény jsou dávno pryč.</p>
-      <p class="section-text">Vybrat AI barevného psa jako avatara byl podobně kontroverzní krok, ale ve světě mnoha krásných fotografií psů jsme chtěli něco, co bude stranou všeho běžného a rovnou řekne, že tohle není jen obyčejný hoby „šopík" z předměstí. Postupně se ustálily barvy a přidali jsme geometrické tvary, aby bylo na čem stavět sociální sítě, vizitky a kartičky — no a celá show se rozjela.</p>
+      <p class="section-text">Vybrat do hero AI barevného psa jako avatara byl, jak jsme později zjistili, trochu kontroverzní krok, ale ve světě mnoha krásných fotografií psů jsme chtěli něco, co bude stranou všeho běžného a rovnou řekne, že tohle není jen obyčejný hoby „šopík" z předměstí. Postupně se ustálily barvy a přidali jsme geometrické tvary, aby bylo na čem stavět sociální sítě, vizitky a kartičky — no a celá show se rozjela.</p>
     </div>
   </section>
 
@@ -326,6 +326,12 @@ import PageLayout from '../../layouts/PageLayout.astro';
     height: 100%;
     object-fit: contain;
     display: block;
+  }
+  .logo-cell--left .logo-img,
+  .logo-cell--right .logo-img {
+    height: 240px;
+    width: auto;
+    max-width: 100%;
   }
 
   /* ─── BRAND HERO IMAGE (CSS background) ─── */
