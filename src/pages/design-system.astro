@@ -1398,6 +1398,45 @@ font-family: var(--font-secondary);</code></pre>
       </section>
 
 
+      <!-- CITÁT / CITACE -->
+      <section class="ds-section" id="quote">
+        <h2 class="ds-section-title">Citát / Citace</h2>
+
+        <!-- Varianta A: Inline s levým borderem (body sekce) -->
+        <div class="ds-block-label">A — Inline · levý border · uvnitř sekce</div>
+        <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px">
+          <blockquote class="quote-side">
+            <p>„Brand je to, co vám zůstane, když vám shoří továrna."</p>
+            <cite>— David Ogilvy</cite>
+          </blockquote>
+        </div>
+
+        <!-- Varianta B: Centrovaná s oddělovačem (standalone sekce) -->
+        <div class="ds-block-label">B — Centrovaná · top border · standalone sekce</div>
+        <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px;text-align:center">
+          <blockquote class="quote-center">
+            <p>„Nikdy jsme nečekali, že přechod proběhne takhle hladce. Výsledek překonal očekávání a zákazníci si změny pochvalují."</p>
+            <cite>— Dominika Elliot, GROOMO.cz</cite>
+          </blockquote>
+        </div>
+
+        <!-- Varianta C: Velká — hero citát (sekce na celou šíři) -->
+        <div class="ds-block-label">C — Hero citát · velké písmo · centered</div>
+        <div class="ds-bg-dark" style="padding:64px 48px;margin-bottom:24px;text-align:center">
+          <blockquote class="quote-hero">
+            <p>„Značka je slib. A dobrá značka je slib, který je vždy dodržen."</p>
+            <cite>— Muhtar Kent</cite>
+          </blockquote>
+        </div>
+
+        <div class="ds-spec-grid" style="margin-top:8px">
+          <div class="ds-spec-item"><code>quote-side</code><span>border-left cyan 3px · 18–24px italic · cite 14px muted</span></div>
+          <div class="ds-spec-item"><code>quote-center</code><span>border-top subtle · centered · 18–24px italic · cite 14px muted</span></div>
+          <div class="ds-spec-item"><code>quote-hero</code><span>no border · 24–36px italic · centered · max-width 800px</span></div>
+        </div>
+      </section>
+
+
       <!-- GALERIE & LIGHTBOX -->
       <section class="ds-section" id="gallery">
         <h2 class="ds-section-title">Galerie & Lightbox</h2>
@@ -2083,6 +2122,104 @@ font-family: var(--font-secondary);</code></pre>
     margin-top: 4px;
   }
   .ds-incon-note code { color: rgba(255,255,255,0.6); font-family: monospace; }
+
+  /* CITÁT / CITACE */
+  .ds-block-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  .ds-block-label:first-of-type { margin-top: 0; }
+
+  .ds-spec-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .ds-spec-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .ds-spec-item code {
+    font-family: monospace;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    white-space: nowrap;
+    min-width: 130px;
+  }
+  .ds-spec-item span { color: rgba(255,255,255,0.4); }
+
+  .quote-side {
+    border-left: 3px solid var(--action);
+    padding-left: 28px;
+    max-width: 600px;
+  }
+  .quote-side p {
+    font-size: clamp(18px, 2vw, 24px);
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.55;
+    margin-bottom: 14px;
+    font-family: var(--font-secondary);
+  }
+  .quote-side cite {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    display: block;
+    font-family: var(--font-secondary);
+  }
+
+  .quote-center {
+    max-width: 660px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 36px;
+  }
+  .quote-center p {
+    font-size: clamp(18px, 2vw, 24px);
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.55;
+    margin-bottom: 16px;
+    font-family: var(--font-secondary);
+  }
+  .quote-center cite {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    display: block;
+    font-family: var(--font-secondary);
+  }
+
+  .quote-hero {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .quote-hero p {
+    font-size: clamp(24px, 3vw, 36px);
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.45;
+    margin-bottom: 24px;
+    font-family: var(--font-secondary);
+  }
+  .quote-hero cite {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    display: block;
+    font-family: var(--font-secondary);
+  }
 
   /* FOOTER */
   .ds-footer {
