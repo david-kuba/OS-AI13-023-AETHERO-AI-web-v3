@@ -38,8 +38,13 @@ const intentLinks = lang === 'en'
         {lang === 'en' ? 'What can we do for you around Shopify?' : 'Co pro vás okolo Shopify můžeme udělat?'}
       </h5>
       <ul>
-        {intentLinks.map((l) => (
-          <li><a href={l.href}>{l.label} →</a></li>
+        {intentLinks.map((l, i) => (
+          <li>
+            <a href={l.href}>
+              <span class="footer-num">0{i + 1}</span>
+              {l.label} →
+            </a>
+          </li>
         ))}
       </ul>
     </div>
@@ -87,6 +92,9 @@ const intentLinks = lang === 'en'
   }
 
   ul a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 400;
@@ -95,6 +103,15 @@ const intentLinks = lang === 'en'
     transition: color var(--transition-base);
   }
   ul a:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+  .footer-num {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+  }
 
   @media (max-width: 768px) {
     .footer-inner {
