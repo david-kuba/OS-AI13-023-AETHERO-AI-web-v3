@@ -65,7 +65,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <div class="container">
       <div class="section-with-nav">
         <div class="section-main">
-          <p class="sec-num">01 · KLIENT</p>
           <h2 class="sec-h2">Co je <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
           <p class="sec-text">fleppi.cz je český e-shop zaměřený na plánování, bullet journaling a stationery. Cílová skupina jsou organizovaní lidé — především ženy 25–40 let, kteří hledají náplně do diářů, samolepky, razítka a doplňky pro osobní produktivitu.</p>
           <p class="sec-text">E-shop provozuje na platformě Shoptet s tisíci SKU v několika stovkách produktových skupin. Emailový marketing zajišťuje nástroj Leadhub. Charakteristickým rysem sortimentu je absence jednoho dominantního produktu — zákazník nakupuje sadu komplementárních položek, kde hodnota spočívá v kombinaci a pravidelném doplňování.</p>
@@ -100,7 +99,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- 02 VÝCHOZÍ STAV -->
   <section class="cs-section" id="s02">
     <div class="container">
-      <p class="sec-num">02 · VÝCHOZÍ STAV</p>
       <h2 class="sec-h2">Před analýzou</h2>
       <p class="sec-text">Měl fleppi funkční emailový marketing s uvítací sekvencí, pravidelným newsletterem a segmentací na Klub (loajální zákazníci) a širší zákaznickou databázi. Přesto meziročně klesal obrat i zájem zákazníků — bez jasné odpovědi proč.</p>
       <p class="sec-text">API přístup do Leadhub nebyl při zahájení projektu dostupný. Celá analýza proto proběhla nad CSV exporty z Leadhub a Shoptet — dvouletá data o stovkách kampaní a desítkách tisíc objednávek.</p>
@@ -138,7 +136,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- 03 POSTUP -->
   <section class="cs-section" id="s03">
     <div class="container">
-      <p class="sec-num">03 · POSTUP</p>
       <h2 class="sec-h2">Řešení</h2>
       <p class="sec-text">Analýza probíhala jako živá spolupráce s majitelkou fleppi — průběžné výsledky byly sdíleny v reálném čase a majitelka doplňovala kontext (stěhování skladu, rozhodnutí o letních kampaních, vývoj sortimentu), který pomohl data správně interpretovat.</p>
       <div class="steps-list">
@@ -184,7 +181,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- 04 ZJIŠTĚNÍ -->
   <section class="cs-section" id="s04">
     <div class="container">
-      <p class="sec-num">04 · ZJIŠTĚNÍ</p>
       <h2 class="sec-h2">Co ukázala data</h2>
       <p class="sec-text">Pokles výkonu nebyl náhodný ani plošný — měl konkrétní příčiny v konkrétních měsících. Data jasně ukázala, kde a proč.</p>
 
@@ -224,7 +220,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- 05 DOPORUČENÍ -->
   <section class="cs-section" id="s05">
     <div class="container">
-      <p class="sec-num">05 · DOPORUČENÍ</p>
       <h2 class="sec-h2">Co jsme navrhli</h2>
       <p class="sec-text">Každé doporučení vychází přímo z dat a je zakotveno v konkrétním zjištění. Vše je odvozeno od chování zákazníků fleppi.</p>
 
@@ -264,7 +259,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- 06 VÝSTUP -->
   <section class="cs-section" id="s06">
     <div class="container">
-      <p class="sec-num">06 · VÝSTUP PROJEKTU</p>
       <h2 class="sec-h2">Co klient dostal</h2>
       <p class="sec-text">Výstupem není obecný report, ale strategický dokument přizpůsobený přesně datům a situaci fleppi.</p>
       <div class="output-list">
@@ -293,7 +287,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- 07 REFERENCE -->
   <section class="cs-section" id="s07">
     <div class="container">
-      <p class="sec-num">07 · REFERENCE</p>
       <div class="ref-split">
         <div class="ref-left">
           <h2 class="sec-h2">Zpětná vazba<br />od klienta</h2>
@@ -397,10 +390,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
   /* ─── SECTIONS ─── */
   .cs-section { padding: var(--space-80) 0; background: var(--ae-bg-primary); }
 
-  .sec-num {
-    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
-    color: var(--action); text-transform: uppercase; margin-bottom: var(--space-16);
-  }
   .sec-h2 {
     font-family: var(--font-primary); font-size: clamp(28px, 3.5vw, 48px);
     font-weight: 700; color: #fff; margin-bottom: var(--space-32); line-height: 1.2;
