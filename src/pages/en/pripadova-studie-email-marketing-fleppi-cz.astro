@@ -55,8 +55,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
             <div class="metric-desc">in the action plan</div>
           </div>
         </div>
-        <div class="metric-wide">2 years of data, 249 campaigns, 20 000+ orders</div>
       </div>
+      <p class="h3-maxi cs-stats">2 years of data, 249 campaigns, 20 000+ orders</p>
     </div>
   </section>
 
@@ -350,7 +350,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .hl-link:hover { opacity: 0.8; }
   .cs-perex {
     font-size: clamp(16px, 1.5vw, 19px); color: rgba(255,255,255,0.72);
-    line-height: 1.65; max-width: 700px; margin-bottom: var(--space-48);
+    line-height: 1.65; max-width: 700px; margin-bottom: 40px;
   }
 
   /* Client row */
@@ -358,7 +358,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     display: flex; flex-wrap: wrap; gap: 0;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--radius-md);
-    margin-bottom: var(--space-32);
+    margin-bottom: 40px;
     overflow: hidden;
   }
   .client-cell {
@@ -378,7 +378,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
   }
   .metric-item {
-    background: var(--action);
+    background: #1E0B3B;
     padding: 24px 28px;
     border-radius: var(--radius-sm, 6px);
   }
@@ -387,11 +387,9 @@ import PageLayout from '../../layouts/PageLayout.astro';
     font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 6px;
   }
   .metric-desc { font-size: 14px; color: rgba(255,255,255,0.75); }
-  .metric-wide {
-    background: var(--action);
-    padding: 14px 28px;
-    border-radius: var(--radius-sm, 6px);
-    font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85);
+  .cs-stats {
+    color: var(--accent-purple);
+    margin-top: 16px;
   }
 
   /* ─── SECTIONS ─── */
