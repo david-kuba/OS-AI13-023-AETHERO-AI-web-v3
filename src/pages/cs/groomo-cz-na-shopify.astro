@@ -57,6 +57,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <!-- Brand text -->
   <section class="section bg-secondary">
     <div class="container text-col">
+      <h3 class="section-subheading">O názvu</h3>
       <p class="section-text">Brand i název nám dal zabrat. Museli jsme se rozhodnout mezi nápady jako třeba „psikrasa.cz", které sice hezky popisovaly o co se jedná, ale nedávaly moc šancí na ztvárnění loga — a vymyslet něco s anglickým světovým základem slova GROOMING, i když to není běžné slovo a domény jsou dávno pryč.</p>
       <p class="section-text">Vybrat AI barevného psa jako avatara byl podobně kontroverzní krok, ale ve světě mnoha krásných fotografií psů jsme chtěli něco, co bude stranou všeho běžného a rovnou řekne, že tohle není jen obyčejný hoby „šopík" z předměstí. Postupně se ustálily barvy a přidali jsme geometrické tvary, aby bylo na čem stavět sociální sítě, vizitky a kartičky — no a celá show se rozjela.</p>
     </div>
@@ -289,6 +290,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
     font-family: var(--font-primary); font-size: clamp(22px, 2.5vw, 38px);
     font-weight: 700; color: #fff; margin-bottom: var(--space-32);
   }
+  .section-subheading {
+    font-family: var(--font-primary); font-size: clamp(20px, 2vw, 30px);
+    font-weight: 700; color: var(--action); margin-bottom: var(--space-24);
+  }
   .text-col { max-width: 780px; }
 
   /* ─── BRAND section ─── */
@@ -312,8 +317,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
   }
   .logo-cell--left  { grid-column: 1; grid-row: 1 / 5; }
   .logo-cell--right { grid-column: 3; grid-row: 1 / 5; }
-  .logo-cell--c1    { grid-column: 2; grid-row: 1; }
-  .logo-cell--c2    { grid-column: 2; grid-row: 2; }
+  .logo-cell--c1    { grid-column: 2; grid-row: 2; }
+  .logo-cell--c2    { grid-column: 2; grid-row: 1; }
   .logo-cell--c3    { grid-column: 2; grid-row: 3; }
   .logo-cell--c4    { grid-column: 2; grid-row: 4; }
   .logo-img {
