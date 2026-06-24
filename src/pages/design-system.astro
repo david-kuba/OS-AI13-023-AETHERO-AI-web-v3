@@ -14,14 +14,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="#colors">Barvy</a>
         <a href="#rules">Pravidla</a>
         <a href="#typography">Typografie</a>
-        <a href="#global-classes">Globální třídy</a>
         <a href="#spacing">Spacing</a>
         <a href="#components">Tlačítka</a>
         <a href="#pills">Pills</a>
-        <a href="#links">Odkazy</a>
         <a href="#blocks">Bloky</a>
         <a href="#cards">Karty</a>
-        <a href="#inconsistencies" style="color: #FF5252;">⚠ Nekonzistence</a>
+        <a href="#gallery">Galerie</a>
       </div>
     </nav>
 
@@ -82,59 +80,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <h3 class="ds-subsection-title">Pozadí</h3>
         <div class="ds-color-grid">
+          <div class="ds-chip2" style="--chip-bg: #00021A;">
+            <div class="ds-chip2-swatch" style="background: #00021A;"></div>
+            <div class="ds-chip2-body">
+              <div class="ds-chip2-top">
+                <code>--ae-bg-deep</code>
+                <span class="ds-chip2-hex">#00021A</span>
+              </div>
+              <strong class="ds-chip2-name">Deep · darkest</strong>
+              <p class="ds-chip2-desc">Nejhlubší vrstva — podklady za gradienty, výjimečné použití.</p>
+            </div>
+          </div>
           <div class="ds-chip2" style="--chip-bg: #000326;">
             <div class="ds-chip2-swatch"></div>
             <div class="ds-chip2-body">
               <div class="ds-chip2-top">
-                <code>--bg-elevated</code>
+                <code>--ae-bg-primary</code>
                 <span class="ds-chip2-hex">#000326</span>
               </div>
-              <strong class="ds-chip2-name">Hlavní pozadí</strong>
-              <p class="ds-chip2-desc">Základní tmavé pozadí webu. Většina sekcí, karty, dropdowny, header po scrollu.</p>
+              <strong class="ds-chip2-name">Primary · canvas</strong>
+              <p class="ds-chip2-desc">Hlavní canvas webu. Většina sekcí, header po scrollu, dropdowny.</p>
             </div>
           </div>
-          <div class="ds-chip2" style="--chip-bg: #000326;">
-            <div class="ds-chip2-swatch" style="background: #000326; border: 1px dashed rgba(255,255,255,0.15);"></div>
+          <div class="ds-chip2" style="--chip-bg: #0C0C42;">
+            <div class="ds-chip2-swatch" style="background: #0C0C42;"></div>
             <div class="ds-chip2-body">
               <div class="ds-chip2-top">
-                <code>--bg-secondary</code>
-                <span class="ds-chip2-hex">#000326</span>
+                <code>--ae-bg-raised</code>
+                <span class="ds-chip2-hex">#0C0C42</span>
               </div>
-              <strong class="ds-chip2-name">Alternativní sekce</strong>
-              <p class="ds-chip2-desc">Sudé sekce na Co umíme a service pages — opticky odděluje obsah střídáním. V tuto chvíli stejná hodnota jako bg-elevated.</p>
+              <strong class="ds-chip2-name">Raised · cards</strong>
+              <p class="ds-chip2-desc">Karty, inputy, vyvýšené elementy — lehce světlejší než canvas.</p>
             </div>
           </div>
-          <div class="ds-chip2" style="--chip-bg: #030626;">
-            <div class="ds-chip2-swatch" style="background: #030626;"></div>
+          <div class="ds-chip2" style="--chip-bg: #2F324D;">
+            <div class="ds-chip2-swatch" style="background: #2F324D;"></div>
             <div class="ds-chip2-body">
               <div class="ds-chip2-top">
-                <code>--bg-primary-alt</code>
-                <span class="ds-chip2-hex">#030626</span>
+                <code>--card-button</code>
+                <span class="ds-chip2-hex">#2F324D</span>
               </div>
-              <strong class="ds-chip2-name">Přechodová tmavá</strong>
-              <p class="ds-chip2-desc">Mezivrstva nebo gradient start. Výjimečné použití.</p>
-            </div>
-          </div>
-          <div class="ds-chip2" style="--chip-bg: #171A1C;">
-            <div class="ds-chip2-swatch" style="background: #171A1C;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top">
-                <code>--neutral-900</code>
-                <span class="ds-chip2-hex">#171A1C</span>
-              </div>
-              <strong class="ds-chip2-name">Neutrální tmavá</strong>
-              <p class="ds-chip2-desc">Hero Co umíme, design system. Teplejší (šedavá) než navy pozadí — vhodná pro sekce s fotkou nebo grafickým hereem.</p>
-            </div>
-          </div>
-          <div class="ds-chip2" style="--chip-bg: #092066;">
-            <div class="ds-chip2-swatch" style="background: #092066;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top">
-                <code>--brand-dark</code>
-                <span class="ds-chip2-hex">#092066</span>
-              </div>
-              <strong class="ds-chip2-name">Brand Dark</strong>
-              <p class="ds-chip2-desc">Text na světlém nebo barevném pozadí — čísla ve stats baru, kontaktní info v cyan CTA bloku. Nikdy jako pozadí.</p>
+              <strong class="ds-chip2-name">Card / Button</strong>
+              <p class="ds-chip2-desc">Šedomodrá — pozadí karet, tlačítek a interaktivních prvků.</p>
             </div>
           </div>
         </div>
@@ -177,11 +164,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
           <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #CB00D7;"></div>
+            <div class="ds-chip2-swatch" style="background: #552A9F;"></div>
             <div class="ds-chip2-body">
               <div class="ds-chip2-top">
                 <code>--accent-purple</code>
-                <span class="ds-chip2-hex">#CB00D7</span>
+                <span class="ds-chip2-hex">#552A9F</span>
               </div>
               <strong class="ds-chip2-name">Gradient čísel SVG</strong>
               <p class="ds-chip2-desc">Výhradně v gradientu číslovacích SVG souborů sekcí (no-01.svg až no-07.svg). V textu na webu nepoužívat — příliš agresivní.</p>
@@ -198,91 +185,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <p class="ds-chip2-desc">Pouze pro Shopify branding — badge, ikona, explicitní zmínky o Shopify platformě.</p>
             </div>
           </div>
-        </div>
-
-        <h3 class="ds-subsection-title">Neutralní</h3>
-        <div class="ds-color-grid">
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #F8F9F9;"></div>
+          <div class="ds-chip2" style="--chip-bg: #092066;">
+            <div class="ds-chip2-swatch" style="background: #092066;"></div>
             <div class="ds-chip2-body">
               <div class="ds-chip2-top">
-                <code>--neutral-100</code>
-                <span class="ds-chip2-hex ds-chip2-hex-dark">#F8F9F9</span>
+                <code>--ae-straight-blue</code>
+                <span class="ds-chip2-hex">#092066</span>
               </div>
-              <strong class="ds-chip2-name ds-chip2-name-dark">Téměř bílá</strong>
-              <p class="ds-chip2-desc ds-chip2-desc-dark">Text nebo pozadí na světlých prvcích. Zatím nevyužito.</p>
-            </div>
-          </div>
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #D2D2D2;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top">
-                <code>--neutral-300</code>
-                <span class="ds-chip2-hex ds-chip2-hex-dark">#D2D2D2</span>
-              </div>
-              <strong class="ds-chip2-name ds-chip2-name-dark">Světle šedá</strong>
-              <p class="ds-chip2-desc ds-chip2-desc-dark">Sekundární text v kartách — popis pod názvem (app karty, reference karty).</p>
-            </div>
-          </div>
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #A0A3BD;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top">
-                <code>--neutral-500</code>
-                <span class="ds-chip2-hex ds-chip2-hex-dark">#A0A3BD</span>
-              </div>
-              <strong class="ds-chip2-name ds-chip2-name-dark">Středně šedá</strong>
-              <p class="ds-chip2-desc ds-chip2-desc-dark">Muted text — metadata, poznámky, nav linky v klidovém stavu.</p>
-            </div>
-          </div>
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #686868;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top">
-                <code>--neutral-700</code>
-                <span class="ds-chip2-hex">#686868</span>
-              </div>
-              <strong class="ds-chip2-name">Tmavě šedá</strong>
-              <p class="ds-chip2-desc">Velmi tlumený text. Zatím minimální využití.</p>
+              <strong class="ds-chip2-name">Straight Blue</strong>
+              <p class="ds-chip2-desc">Text na světlém nebo barevném pozadí — čísla ve stats baru, kontaktní info v cyan CTA bloku. Nikdy jako pozadí.</p>
             </div>
           </div>
         </div>
 
-        <h3 class="ds-subsection-title">Sémantické</h3>
-        <div class="ds-color-grid ds-color-grid-4">
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #FF5252;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top"><code>--semantic-error</code><span class="ds-chip2-hex">#FF5252</span></div>
-              <strong class="ds-chip2-name">Chyba</strong>
-              <p class="ds-chip2-desc">Chybové stavy formulářů, upozornění.</p>
-            </div>
-          </div>
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #4ECCA3;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top"><code>--semantic-success</code><span class="ds-chip2-hex">#4ECCA3</span></div>
-              <strong class="ds-chip2-name">Úspěch</strong>
-              <p class="ds-chip2-desc">Potvrzení, úspěšný stav.</p>
-            </div>
-          </div>
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #FFA940;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top"><code>--semantic-warning</code><span class="ds-chip2-hex">#FFA940</span></div>
-              <strong class="ds-chip2-name">Varování</strong>
-              <p class="ds-chip2-desc">Upozornění, nedokončený stav.</p>
-            </div>
-          </div>
-          <div class="ds-chip2">
-            <div class="ds-chip2-swatch" style="background: #5DADE2;"></div>
-            <div class="ds-chip2-body">
-              <div class="ds-chip2-top"><code>--semantic-info</code><span class="ds-chip2-hex">#5DADE2</span></div>
-              <strong class="ds-chip2-name">Info</strong>
-              <p class="ds-chip2-desc">Informační zprávy, tooltips.</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- PRAVIDLA -->
@@ -343,69 +258,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
 
-          <div class="ds-rule-card">
-            <div class="ds-rule-pill" style="background: #fff; color: #000326;">BÍLÁ</div>
-            <div class="ds-rule-body">
-              <strong>Bílá tlačítka = primární akce na tmavém pozadí</strong>
-              <p>Bílé solid tlačítko je nejvýraznější CTA na stránce. Používá se max. jednou za sekci — vždy pro nejdůležitější akci.</p>
-              <div class="ds-rule-cols">
-                <div class="ds-rule-ok">
-                  <span class="ds-rule-badge-ok">✓ správně</span>
-                  <ul>
-                    <li>Hlavní CTA v service sekcích Co umíme</li>
-                    <li>Primární call-to-action na hero</li>
-                  </ul>
-                </div>
-                <div class="ds-rule-bad">
-                  <span class="ds-rule-badge-bad">✗ špatně</span>
-                  <ul>
-                    <li>Dvě bílé tlačítka vedle sebe</li>
-                    <li>Sekundární nebo doplňková akce</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="ds-rule-card">
-            <div class="ds-rule-pill ds-rule-pill-outline">GHOST</div>
-            <div class="ds-rule-body">
-              <strong>Ghost tlačítko = sekundární nebo doplňková akce</strong>
-              <p>Průhledné tlačítko s border (2px solid white nebo rgba). Vždy v páru s primárním tlačítkem nebo samostatně jako méně důležitá akce.</p>
-              <div class="ds-rule-cols">
-                <div class="ds-rule-ok">
-                  <span class="ds-rule-badge-ok">✓ správně</span>
-                  <ul>
-                    <li>Hero sekce — "Jak pracujeme" vedle primárního CTA</li>
-                    <li>Demo tlačítko (DEMO PŘIPRAVUJEME)</li>
-                    <li>Odkaz na PDF nebo externí zdroj</li>
-                  </ul>
-                </div>
-                <div class="ds-rule-bad">
-                  <span class="ds-rule-badge-bad">✗ špatně</span>
-                  <ul>
-                    <li>Ghost jako jediné tlačítko v hero (bez primárního)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="ds-rule-card">
-            <div class="ds-rule-pill" style="background: linear-gradient(135deg,#CB00D7,#A081D1); color: #fff;">GRADIENT</div>
-            <div class="ds-rule-body">
-              <strong>Magenta (#CB00D7) patří jen do SVG čísel</strong>
-              <p>Výrazná neonová magenta se používá pouze v gradientu číslovacích SVG souborů (no-01.svg – no-07.svg). V UI textu nebo komponentách ji nepoužívat — je příliš agresivní a matoucí.</p>
-            </div>
-          </div>
-
-          <div class="ds-rule-card">
-            <div class="ds-rule-pill" style="background: var(--ds-surface); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5);">POZADÍ</div>
-            <div class="ds-rule-body">
-              <strong>Sekce se střídají pro vizuální rytmus</strong>
-              <p>Na Co umíme a service pages se liché a sudé sekce střídají mezi --bg-elevated a --bg-secondary. Vytváří to optický dech bez nutnosti přidávat oddělovače.</p>
-            </div>
-          </div>
 
         </div>
       </section>
@@ -440,119 +292,116 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <h3 class="ds-subsection-title">Typografická škála — skutečně používáno</h3>
-        <div class="ds-type-specimens">
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>H1 · hero pages</code>
-              <span>var(--font-primary) · 700</span>
-              <span>clamp(56px, 7.8vw, 100px)</span>
-              <span>lh 1.15 · ls 0</span>
-              <em>→ index, esyncer, ae-translator, co-umime</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-primary); font-size: clamp(40px,5.5vw,80px); font-weight: 700; line-height: 1.15; color: #fff; letter-spacing: 0;">Jsme<br />Shopify<br />specialisté</span>
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>H1 · service pages</code>
-              <span>var(--font-primary) · 700</span>
-              <span>clamp(40px, 5vw, 64px)</span>
-              <span>lh 1.1</span>
-              <em>→ ServiceHero.astro</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-primary); font-size: clamp(32px,3.8vw,64px); font-weight: 700; line-height: 1.1; color: #fff;">Potřebuji<br />brand</span>
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>H2 · sekce nadpis</code>
-              <span>var(--font-primary) · 700</span>
-              <span>clamp(32px, 3.6vw, 52px)</span>
-              <span>lh 1.15–1.2</span>
-              <em>→ index.astro, service pages</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-primary); font-size: clamp(26px,3vw,48px); font-weight: 700; line-height: 1.15; color: #fff;">Reference<br />a případovky</span>
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>H2 · value prop</code>
-              <span>var(--font-primary) · 600</span>
-              <span>clamp(26px, 3.5vw, 48px)</span>
-              <span>lh 1.2</span>
-              <em>→ index.astro .value-heading</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-primary); font-size: clamp(22px,2.8vw,44px); font-weight: 600; line-height: 1.2; color: #fff;">Shopify dodá technologii,<br /><span style="color: var(--ds-accent);">aethero</span> strategii.</span>
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>H3 · service title</code>
-              <span>var(--font-primary) · 900</span>
-              <span>clamp(24px, 3vw, 40px)</span>
-              <span>lh 1.1 · uppercase</span>
-              <em>→ index.astro .service-title</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-primary); font-size: clamp(20px,2.5vw,36px); font-weight: 900; line-height: 1.1; color: #fff; text-transform: uppercase;">NOVÝ SHOPIFY<br />E-SHOP</span>
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>Body · section</code>
-              <span>var(--font-secondary) · 400</span>
-              <span>18–22px</span>
-              <span>lh 1.6</span>
-              <em>→ service pages, index</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-secondary); font-size: 18px; font-weight: 400; line-height: 1.7; color: rgba(255,255,255,0.75);">Od výběru projektu přes design a vývoj<br />až po první objednávku — a dál.</span>
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>Nav</code>
-              <span>var(--font-primary) · 500</span>
-              <span>16px · ls 0</span>
-              <em>→ Header.astro</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark" style="gap: 0; flex-wrap: nowrap;">
-              {['ÚVOD', 'CO UMÍME', 'APLIKACE', 'O NÁS', 'KONTAKT'].map(item => (
-                <span style="font-family: var(--font-primary); font-size: 16px; font-weight: 500; letter-spacing: 0; color: #fff; padding: 0 20px; white-space: nowrap;">{item}</span>
-              ))}
-            </div>
-          </div>
-
-          <div class="ds-type-row">
-            <div class="ds-type-meta">
-              <code>Small / meta</code>
-              <span>var(--font-secondary) · 400</span>
-              <span>13–14px</span>
-              <em>→ footer, labels, notes</em>
-            </div>
-            <div class="ds-type-preview ds-bg-dark">
-              <span style="font-family: var(--font-secondary); font-size: 14px; color: rgba(160,163,189,1);">Česká Shopify agentura. Design, strategie, technologie.</span>
-            </div>
-          </div>
-
+        <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:24px">
+          Definováno v <code style="color:#0DD4CD">global.css</code>. Nikdy nevytvářej lokální heading třídy — použij jednu z těchto.<br />
+          Každá třída má 3 varianty: <strong style="color:#fff">-maxi</strong> (větší), <strong style="color:#fff">bez suffixu</strong> (standard), <strong style="color:#fff">-mini</strong> (menší).
+        </p>
+        <table class="ds-gt-table">
+          <thead>
+            <tr><th>ID</th><th>Třída</th><th>Specifikace</th><th>Ukázka</th><th>Použití</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ds-gt-id">T1a</td>
+              <td><code class="ds-gt-class">.h1-maxi</code></td>
+              <td class="ds-gt-meta">Kanit 700<br/>clamp(56px, 7.8vw, 100px)<br/>lh 1.15</td>
+              <td class="ds-gt-preview"><span class="h1-maxi" style="color:#fff">Jsme specialisté</span></td>
+              <td class="ds-gt-use">Homepage, co-umime,<br/>esyncer, ae-translator,<br/>kontakt</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T1b</td>
+              <td><code class="ds-gt-class">.h1</code></td>
+              <td class="ds-gt-meta">Kanit 700<br/>clamp(40px, 5vw, 64px)<br/>lh 1.1</td>
+              <td class="ds-gt-preview"><span class="h1" style="color:#fff">Potřebuji brand</span></td>
+              <td class="ds-gt-use">Service subpages<br/>(ServiceHero),<br/>o-nas, groomo</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T1c</td>
+              <td><code class="ds-gt-class">.h1-mini</code></td>
+              <td class="ds-gt-meta">Kanit 700<br/>clamp(32px, 4.5vw, 56px)<br/>lh 1.1</td>
+              <td class="ds-gt-preview"><span class="h1-mini" style="color:#fff">Jak jsme stavěli</span></td>
+              <td class="ds-gt-use">Rezerva —<br/>zatím nepoužito</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T2a</td>
+              <td><code class="ds-gt-class">.h2-maxi</code></td>
+              <td class="ds-gt-meta">Kanit 700<br/>clamp(40px, 5vw, 70px)<br/>lh 1.15</td>
+              <td class="ds-gt-preview"><span class="h2-maxi" style="color:#fff">Brand, design</span></td>
+              <td class="ds-gt-use">CTA sekce,<br/>velké sekce tituly</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T2b</td>
+              <td><code class="ds-gt-class">.h2</code></td>
+              <td class="ds-gt-meta">Kanit 700<br/>clamp(32px, 3.6vw, 52px)<br/>lh 1.2</td>
+              <td class="ds-gt-preview"><span class="h2" style="color:#fff">Reference a případovky</span></td>
+              <td class="ds-gt-use">Standardní<br/>sekce nadpis</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T2c</td>
+              <td><code class="ds-gt-class">.h2-mini</code></td>
+              <td class="ds-gt-meta">Kanit 600<br/>clamp(26px, 3.5vw, 48px)<br/>lh 1.2</td>
+              <td class="ds-gt-preview"><span class="h2-mini" style="color:#fff">Shopify dodá technologii</span></td>
+              <td class="ds-gt-use">Value prop,<br/>sekundární nadpisy</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T3a</td>
+              <td><code class="ds-gt-class">.h3-maxi</code></td>
+              <td class="ds-gt-meta">Kanit 700<br/>clamp(28px, 3.2vw, 46px)<br/>lh 1.15</td>
+              <td class="ds-gt-preview"><span class="h3-maxi" style="color:#fff">E-shop pro páníčky</span></td>
+              <td class="ds-gt-use">Velký H3<br/>(ne uppercase)</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T3b</td>
+              <td><code class="ds-gt-class">.h3</code></td>
+              <td class="ds-gt-meta">Kanit 900<br/>clamp(24px, 3vw, 40px)<br/>UPPERCASE · lh 1.1</td>
+              <td class="ds-gt-preview"><span class="h3" style="color:#fff">Nový Shopify e-shop</span></td>
+              <td class="ds-gt-use">Service titles<br/>(co-umime), tribe</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T3c</td>
+              <td><code class="ds-gt-class">.h3-mini</code></td>
+              <td class="ds-gt-meta">Kanit 700<br/>clamp(20px, 2.5vw, 30px)<br/>lh 1.2</td>
+              <td class="ds-gt-preview"><span class="h3-mini" style="color:#fff">O našem přístupu</span></td>
+              <td class="ds-gt-use">Subheading<br/>v textu</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T4a</td>
+              <td><code class="ds-gt-class">.body-maxi</code></td>
+              <td class="ds-gt-meta">Montserrat 400<br/>clamp(18px, 1.8vw, 22px)<br/>lh 1.65</td>
+              <td class="ds-gt-preview"><span class="body-maxi" style="color:rgba(255,255,255,0.8)">Zkušená groomerka, která chtěla rozšířit své služby.</span></td>
+              <td class="ds-gt-use">Perex, case study<br/>intro, hero subtitle</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T4b</td>
+              <td><code class="ds-gt-class">.body</code></td>
+              <td class="ds-gt-meta">Montserrat 400<br/>clamp(16px, 1.4vw, 18px)<br/>lh 1.65</td>
+              <td class="ds-gt-preview"><span class="body" style="color:rgba(255,255,255,0.75)">Brand i název nám dal zabrat. Museli jsme se rozhodnout.</span></td>
+              <td class="ds-gt-use">Standardní<br/>sekce text</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T4c</td>
+              <td><code class="ds-gt-class">.body-mini</code></td>
+              <td class="ds-gt-meta">Montserrat 500<br/>14px · lh 1.5</td>
+              <td class="ds-gt-preview"><span class="body-mini" style="color:rgba(255,255,255,0.5)">Projekt realizován v Q4 2024 · klient: GROOMO.cz</span></td>
+              <td class="ds-gt-use">Caption, meta,<br/>datum</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id">T5</td>
+              <td><code class="ds-gt-class">.label</code></td>
+              <td class="ds-gt-meta">Kanit 600<br/>14px · ls 0.08em<br/>UPPERCASE</td>
+              <td class="ds-gt-preview"><span class="label" style="color:rgba(255,255,255,0.7)">Brand & Identity</span></td>
+              <td class="ds-gt-use">Eyebrow nad<br/>nadpisem, kategorie</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="ds-component-notes" style="margin-top:16px">
+          ⚡ Pravidlo: Lokální CSS smí přepsat <code>max-width</code> nebo <code>grid-template</code>, ale NIKDY nesmí lokálně redefinovat <code>font-size</code> na headinzích — to patří výhradně do globální škály.
         </div>
       </section>
 
-      <!-- NEKONZISTENCE -->
-      <section class="ds-section ds-section-warn" id="inconsistencies">
-        <h2 class="ds-section-title ds-title-warn">⚠ Nekonzistence — nutno sjednotit</h2>
+      <!-- NEKONZISTENCE - odstraněno, vše sjednoceno -->
+      <section class="ds-section" id="inconsistencies" style="display:none">
+        <h2 class="ds-section-title">Nekonzistence</h2>
 
         <!-- 1: H1 varianty -->
         <h3 class="ds-subsection-title">1 · H1 — dvě úrovně (sjednoceno)</h3>
@@ -652,6 +501,17 @@ font-family: var(--font-secondary);</code></pre>
 
       </section>
 
+      <!-- ZVÝRAZNĚNÍ TEXTU -->
+      <section class="ds-section ds-section--text-demo">
+        <h2 class="ds-section-title">Zvýraznění v textu</h2>
+        <p class="ds-text-demo-note">Fialová <code>--text-secondary</code> · <code>#A081D1</code> · weight +2 úrovně (400 → 600) · třída <code>.ac</code></p>
+        <div class="ds-text-demo-block">
+          <p class="ds-text-demo">
+            Vybrali jsme Shopify, protože je to <strong class="ds-ac">ten nejlepší nástroj na trhu.</strong> Bez omezení toho, kde prodáváte a v kolika měnách. <strong class="ds-ac">Platformu s neskutečnou škálovatelností,</strong> podporou a drivem. Shopify je nastaveno tak, aby s vámi rostlo od&nbsp;StartUpu až po mezinárodní mega projekt.
+          </p>
+        </div>
+      </section>
+
       <!-- SPACING -->
       <section class="ds-section" id="spacing">
         <h2 class="ds-section-title">Spacing</h2>
@@ -679,22 +539,65 @@ font-family: var(--font-secondary);</code></pre>
 
         <!-- Buttons -->
         <h3 class="ds-subsection-title">Tlačítka</h3>
-        <div class="ds-component-row ds-bg-dark" style="padding: 40px; gap: 20px; flex-wrap: wrap; background: url('/a-multitvar-bgr-v33.webp') center/cover;">
-          <a href="#" class="btn-hero-demo">DO ČEHO SE PUSTÍME SPOLU?</a>
-          <a href="#" class="btn-glass-primary-demo">ZAVOLEJME SI</a>
-          <a href="#" class="btn-glass-ghost-demo">ZJISTĚTE JAK</a>
-          <a href="#" class="btn-teal-demo">CHCI KONZULTACI</a>
-          <a href="#" class="btn-outline-demo">VÍCE O TOM JAK PRACUJEME</a>
-          <a href="#" class="btn-ref-demo">PŘEJÍT NA BU1</a>
+
+        <!-- GROUP 1: Hero bg-image (homepage + co-umime hero) -->
+        <div class="ds-btn-group-label">BG: hero sekce — bg-image tmavá (homepage, co-umime)</div>
+        <div class="ds-btn-row" style="background: url('/a-multitvar-bgr-v33.webp') center/cover;">
+          <div class="ds-btn-item">
+            <a href="#" class="btn-hero">DO ČEHO SE PUSTÍME SPOLU?</a>
+            <span class="ds-btn-tag">.btn-hero</span>
+            <span class="ds-btn-note">22px · weight 500 · glass blur(12px) · Homepage hero CTA</span>
+          </div>
         </div>
+
+        <!-- GROUP 2: Service hero — dark blob bg (#000326) -->
+        <div class="ds-btn-group-label">BG: Service Hero — #000326 s blob gradientem</div>
+        <div class="ds-btn-row" style="background: #000326;">
+          <div class="ds-btn-item">
+            <a href="#" class="btn-primary">ZAVOLEJME SI</a>
+            <span class="ds-btn-tag">.btn-primary</span>
+            <span class="ds-btn-note">22px · weight 500 · glass silnější · Primární CTA v ServiceHero</span>
+          </div>
+          <div class="ds-btn-item">
+            <a href="#" class="btn-ghost">ZJISTĚTE JAK</a>
+            <span class="ds-btn-tag">.btn-ghost</span>
+            <span class="ds-btn-note">22px · weight 500 · transparent → glass on hover · Sekundární CTA v ServiceHero</span>
+          </div>
+        </div>
+
+        <!-- GROUP 3: Service list / in-content — #000326 -->
+        <div class="ds-btn-group-label">BG: svc-section + content sekce — #000326 (var(--ae-bg-primary))</div>
+        <div class="ds-btn-row" style="background: #000326;">
+          <div class="ds-btn-item">
+            <a href="#" class="btn-secondary">ZJISTIT VÍCE</a>
+            <span class="ds-btn-tag">.btn-secondary</span>
+            <span class="ds-btn-note">16px · weight 300 · cyan border rgba(13,212,205,0.4) · hover: cyan fill · Sloučeno z .svc-cta + .intro-btn</span>
+          </div>
+          <div class="ds-btn-item">
+            <a href="#" class="btn-teal">CHCI KONZULTACI</a>
+            <span class="ds-btn-tag">.btn-teal</span>
+            <span class="ds-btn-note">16px · weight 500 · solid cyan bg → hover: action-hover · Compact primární CTA (ae-services)</span>
+          </div>
+          <div class="ds-btn-item">
+            <a href="#" class="btn-outline">VÍCE O TOM JAK PRACUJEME</a>
+            <span class="ds-btn-tag">.btn-outline</span>
+            <span class="ds-btn-note">16px · weight 500 · border 2px #fff · Sekundární CTA vedle btn-teal</span>
+          </div>
+        </div>
+
+        <!-- GROUP 4: service subpages — #000326 dark bg -->
+        <div class="ds-btn-group-label">BG: service subpages — #000326 · cyan solid tlačítko (nejsilnější CTA)</div>
+        <div class="ds-btn-row" style="background: #000326;">
+          <div class="ds-btn-item">
+            <a href="#" class="btn-action">OZVĚTE SE NÁM</a>
+            <span class="ds-btn-tag">.btn-action</span>
+            <span class="ds-btn-note">16px · weight 700 · solid cyan (#16BECF) · potřebuji-brand, prechod-na-shopify, custom-vyvoj</span>
+          </div>
+        </div>
+
         <div class="ds-component-notes">
-          <code>.btn-hero</code> / <code>.co-hero-cta</code> — glassmorphism, bg rgba(255,255,255,0.1), blur(12px), border rgba(255,255,255,0.3), inset highlight<br />
-          <code>.btn-primary</code> (ServiceHero) — glassmorphism silnější, bg rgba(255,255,255,0.18), primární CTA<br />
-          <code>.btn-ghost</code> (ServiceHero) — glassmorphism slabší, bg rgba(255,255,255,0.08), sekundární CTA<br />
-          <code>.btn-teal</code> — 13px Kanit 700, bg #0DD4CD, color #000, radius 100px, pad 14px 32px<br />
-          <code>.btn-outline</code> — 13px Kanit 700, border 2px rgba(255,255,255,0.3), radius 100px<br />
-          <code>.btn-ref</code> (reference CTA) — outline, align-self flex-start<br />
-          <span style="color: rgba(255,255,255,0.4); font-size: 12px;">Fallback (původní styl před glass): memory/project_hero_btn_fallback.md</span>
+          ⚡ Kulatá tlačítka (border-radius 100px) na webu NEEXISTUJÍ — používáme pouze <code>.pill</code><br />
+          Každé tlačítko musí být zobrazováno na tom BG, na kterém reálně existuje — přenos na jiné pozadí mění vizuální dojem!
         </div>
 
         <!-- Header -->
@@ -704,7 +607,7 @@ font-family: var(--font-secondary);</code></pre>
             <img src="/ae-logo.svg" alt="æthero" height="28" />
             <div style="display: flex; gap: 0;">
               {['ÚVOD', 'CO UMÍME', 'APLIKACE', 'O NÁS', 'KONTAKT'].map(item => (
-                <span style="font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0; color: #fff; padding: 0 20px; white-space: nowrap;">{item}</span>
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0; color: #fff; padding: 0 20px; white-space: nowrap;">{item}</span>
               ))}
             </div>
             <div></div>
@@ -716,20 +619,20 @@ font-family: var(--font-secondary);</code></pre>
 
         <!-- Stats Bar -->
         <h3 class="ds-subsection-title">Stats Bar</h3>
-        <div class="ds-component-row" style="background: #A081D1; padding: 48px 40px; gap: 60px; flex-wrap: wrap; justify-content: space-around;">
+        <div class="ds-component-row" style="background: #A081D1; padding: 64px 80px; gap: 40px; flex-wrap: wrap; justify-content: space-between; max-width: 1400px; margin: 0 auto;">
           {[
             { num: '4,8 mil', label: 'e-shopů fungujících ve světě' },
             { num: '175 zemí', label: 'kde můžete prodávat' },
             { num: '3 500 vývojářů', label: 'z celkových cca 8 000 zaměstnanců' },
           ].map(s => (
-            <div style="text-align: left;">
-              <div style="font-family: 'Kanit', sans-serif; font-size: clamp(24px,3vw,48px); font-weight: 700; color: #092066; line-height: 1;">{s.num}</div>
-              <div style="font-size: 13px; color: #092066; opacity: 0.6; margin-top: 6px;">{s.label}</div>
+            <div style="text-align: left; flex: 1; min-width: 160px;">
+              <div style="font-family: var(--font-primary); font-size: clamp(32px, 3.5vw, 52px); font-weight: 700; color: var(--stats-num-color); line-height: 1; margin-bottom: 8px;">{s.num}</div>
+              <div style="font-family: var(--font-primary); font-size: 16px; font-weight: 600; color: var(--stats-num-color); opacity: 0.6; line-height: 1.4;">{s.label}</div>
             </div>
           ))}
         </div>
         <div class="ds-component-notes">
-          bg: #A081D1 (--text-secondary) · čísla: #092066 (--stats-num-color) · Kanit 700 48px
+          bg: #A081D1 (--text-secondary) · čísla: var(--stats-num-color) #060838 · Kanit 700 · clamp(32px, 3.5vw, 52px)
         </div>
 
         <!-- Footer CTA -->
@@ -737,52 +640,116 @@ font-family: var(--font-secondary);</code></pre>
         <div class="ds-component-row" style="background: #16BECF; padding: 80px 40px; flex-direction: column; align-items: center; text-align: center; gap: 32px;">
           <div style="font-family: 'Kanit', sans-serif; font-size: clamp(24px,4vw,52px); font-weight: 700; color: #fff; line-height: 1.2;">Máme spolu co probrat? Dejte vědět</div>
           <div style="display: flex; gap: 48px; flex-wrap: wrap; justify-content: center;">
-            <span style="font-family: 'Kanit', sans-serif; font-size: 22px; font-weight: 600; color: rgba(0,50,60,0.7); text-decoration: underline;">info@aethero.cz</span>
-            <span style="font-family: 'Kanit', sans-serif; font-size: 22px; font-weight: 600; color: rgba(0,50,60,0.7); text-decoration: underline;">+420 776 067 663</span>
+            <a href="mailto:info@aethero.cz" class="ds-cta-link" style="font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: #092066; text-decoration: none;">info@aethero.cz</a>
+            <a href="tel:+420776067663" class="ds-cta-link" style="font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: #092066; text-decoration: none;">+420 776 067 663</a>
           </div>
         </div>
         <div class="ds-component-notes">
-          bg: #16BECF (--action-hover) · H2: Kanit 700 · kontakty: Kanit 600 22px · color: rgba(0,50,60,0.7) (tmavá teal)
+          bg: #16BECF (--action-hover) · H2: Kanit 700 · kontakty: Kanit 600 · font-size: clamp(20px, 3vw, 40px) · color: #092066 (--ae-straight-blue) · hover: underline
         </div>
 
         <!-- Radii -->
         <h3 class="ds-subsection-title">Border-radius</h3>
-        <div class="ds-component-row" style="background: transparent; padding: 0; gap: 24px; flex-wrap: wrap;">
-          <div style="background: #0C0C42; border-radius: 6px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 12px; color: #fff;">6px<br/>btn-hero</span>
+        <div class="ds-component-row" style="background: transparent; padding: 0; gap: 16px; flex-wrap: wrap; align-items: flex-end;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+            <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:6px;width:100px;height:56px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Kanit',sans-serif;font-size:11px;color:#fff;font-weight:500;text-transform:uppercase">Tlačítko</span>
+            </div>
+            <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.4)">6px · --radius-sm</span>
           </div>
-          <div style="background: #0C0C42; border-radius: 10px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 12px; color: #fff;">10px<br/>dropdown</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;width:100px;height:56px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.6);font-weight:500">Dropdown</span>
+            </div>
+            <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.4)">10px · --radius-md</span>
           </div>
-          <div style="background: #0C0C42; border-radius: 12px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 12px; color: #fff;">12px<br/>img cards</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+            <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;width:100px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
+              <div style="position:absolute;top:0;left:0;right:0;height:36px;background:rgba(255,255,255,0.07)"></div>
+              <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.6);position:relative;z-index:1">Img card</span>
+            </div>
+            <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.4)">12px · blog cards</span>
           </div>
-          <div style="background: #0C0C42; border-radius: 16px; width: 100px; height: 60px; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 12px; color: #fff;">16px<br/>ref cards</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+            <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;width:100px;height:72px;display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.6)">Ref card</span>
+            </div>
+            <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.4)">16px · ref cards</span>
           </div>
-          <div style="background: #0C0C42; border-radius: 100px; width: 120px; height: 60px; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 12px; color: #fff;">100px<br/>btn-teal</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+            <div style="padding:6px 20px;border-radius:100px;border:1px solid rgba(22,190,207,0.4);background:rgba(22,190,207,0.07);color:#16BECF;font-family:'Kanit',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.03em;white-space:nowrap">
+              E-shop
+            </div>
+            <span style="font-family:'Kanit',sans-serif;font-size:11px;color:rgba(255,255,255,0.4)">100px · pouze pills</span>
           </div>
         </div>
 
         <!-- Shadows -->
         <h3 class="ds-subsection-title">Shadows</h3>
-        <div class="ds-component-row" style="background: #0C0C42; padding: 40px; gap: 32px; flex-wrap: wrap;">
+        <div class="ds-component-row" style="background: var(--ds-bg); padding: 40px 24px; gap: 24px; flex-wrap: wrap; align-items: flex-end;">
           {[
-            { name: '--shadow-sm', val: '0 1px 2px rgba(0,0,0,0.20)', shadow: '0 1px 2px rgba(0,0,0,0.20)' },
-            { name: '--shadow-md', val: '0 4px 8px + 1px 2px', shadow: '0 4px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15)' },
-            { name: '--shadow-lg', val: '0 12px 24px + 4px 8px', shadow: '0 12px 24px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.20)' },
-            { name: '--shadow-xl', val: '0 24px 48px + 12px 16px', shadow: '0 24px 48px rgba(0,0,0,0.35), 0 12px 16px rgba(0,0,0,0.25)' },
+            { name: '--shadow-sm', shadow: '0 1px 2px rgba(0,0,0,0.20)' },
+            { name: '--shadow-md', shadow: '0 4px 8px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15)' },
+            { name: '--shadow-lg', shadow: '0 12px 24px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.20)' },
+            { name: '--shadow-xl', shadow: '0 24px 48px rgba(0,0,0,0.35), 0 12px 16px rgba(0,0,0,0.25)' },
           ].map(s => (
-            <div style={"background:#171A1C;border-radius:10px;padding:24px 32px;box-shadow:" + s.shadow + ";text-align:center"}>
-              <code style="font-size: 11px; color: #0DD4CD;">{s.name}</code>
-              <p style="font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px;">{s.val}</p>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+              <div style={"background:rgba(255,255,255,0.9);border-radius:10px;width:120px;height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:" + s.shadow}>
+                <div style="width:48px;height:4px;background:#000326;border-radius:2px;opacity:0.25"></div>
+                <div style="width:64px;height:4px;background:#000326;border-radius:2px;opacity:0.15"></div>
+              </div>
+              <code style="font-size:11px;color:#0DD4CD">{s.name}</code>
             </div>
           ))}
         </div>
 
         <!-- Motion -->
-        <h3 class="ds-subsection-title">Motion / Transition</h3>
+        <!-- Odkaz pravidla — živé ukázky -->
+        <h3 class="ds-subsection-title">Odkaz pravidla</h3>
+        <table class="ds-links-table">
+          <tbody>
+            <tr>
+              <td class="ds-lt-type">Globální reset</td>
+              <td><code style="color:#0DD4CD">{"a { color: inherit; text-decoration: none; }"}</code></td>
+              <td class="ds-lt-note">Každý odkaz začíná bez barvy a bez podtržení</td>
+            </tr>
+            <tr>
+              <td class="ds-lt-type">Nav link</td>
+              <td>
+                <a href="#" class="ds-nav-link-demo">CO UMÍME</a>
+              </td>
+              <td class="ds-lt-note">Montserrat 600 18px uppercase · hover = cyan + underline offset 5px · lang-switch také Montserrat</td>
+            </tr>
+            <tr>
+              <td class="ds-lt-type">Footer odkaz</td>
+              <td>
+                <a href="#" class="ds-footer-link-demo">Potřebuji brand →</a>
+              </td>
+              <td class="ds-lt-note">Montserrat 16px cyan · hover = #fff + underline offset 3px</td>
+            </tr>
+            <tr>
+              <td class="ds-lt-type">Inline odkaz</td>
+              <td>
+                <a href="#" class="intro-link" style="margin-top:0;display:inline">Přečíst více →</a>
+              </td>
+              <td class="ds-lt-note"><code>.intro-link</code> · cyan · hover opacity 0.75</td>
+            </tr>
+            <tr style="background:#16BECF">
+              <td class="ds-lt-type" style="color:#000326">CTA odkaz</td>
+              <td>
+                <a href="#" class="ds-cta-link-demo">info@aethero.cz</a>
+              </td>
+              <td class="ds-lt-note" style="color:#092066">Kanit 700 clamp(22–40px) · --ae-straight-blue · na cyan bg · hover = underline</td>
+            </tr>
+            <tr style="background:rgba(255,82,82,0.05)">
+              <td class="ds-lt-type" style="color:#FF5252">⚡ Zakázáno</td>
+              <td style="font-family:var(--font-primary);font-size:18px;font-weight:700;color:#16BECF;cursor:default">O názvu</td>
+              <td class="ds-lt-note" style="color:#FF5252">Cyan barva na neklikatelném textu = vždy CHYBA</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="ds-subsection-title" style="margin-top:24px">Motion / Transition</h3>
         <div class="ds-component-notes" style="margin-top: 0;">
           <code>--transition-base: 0.2s ease</code> — používáno na: color, background, opacity, border-color, transform<br />
           Hero rotate: fade-out 0.3s ease (opacity + translateY 8px)<br />
@@ -824,117 +791,50 @@ font-family: var(--font-secondary);</code></pre>
         <div class="ds-component-notes" style="margin-top: 16px;">
           Všechny kontejnery: padding <code>0 24px</code> · Mobile (≤480px): padding <code>0 16px</code> · Bez horizontálního scrollu
         </div>
-      </section>
 
-      <!-- GLOBÁLNÍ TŘÍDY -->
-      <section class="ds-section" id="global-classes">
-        <h2 class="ds-section-title">Globální typografické třídy</h2>
-        <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:24px">
-          Definováno v <code style="color:#0DD4CD">global.css</code>. Nikdy nevytvářej lokální heading třídy — použij jednu z těchto.<br />
-          Každá třída má 3 varianty: <strong style="color:#fff">-maxi</strong> (větší), <strong style="color:#fff">bez suffixu</strong> (standard), <strong style="color:#fff">-mini</strong> (menší).
-        </p>
-        <table class="ds-gt-table">
-          <thead>
-            <tr><th>ID</th><th>Třída</th><th>Ukázka</th><th>Specifikace</th><th>Použití</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="ds-gt-id">T1a</td>
-              <td><code class="ds-gt-class">.h1-maxi</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.15;color:#fff">Jsme</span></td>
-              <td class="ds-gt-meta">Kanit 700 · clamp(56, 7.8vw, 100px) · lh 1.15</td>
-              <td class="ds-gt-use">Homepage hero, fullscreen</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T1b</td>
-              <td><code class="ds-gt-class">.h1</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(26px,3vw,40px);font-weight:700;line-height:1.1;color:#fff">Potřebuji brand</span></td>
-              <td class="ds-gt-meta">Kanit 700 · clamp(40, 5vw, 64px) · lh 1.1</td>
-              <td class="ds-gt-use">Service page hero</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T1c</td>
-              <td><code class="ds-gt-class">.h1-mini</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(22px,2.5vw,36px);font-weight:700;line-height:1.1;color:#fff">Jak jsme stavěli GROOMO.cz</span></td>
-              <td class="ds-gt-meta">Kanit 700 · clamp(32, 4.5vw, 56px) · lh 1.1</td>
-              <td class="ds-gt-use">Case study hero, app, o-nas</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T2a</td>
-              <td><code class="ds-gt-class">.h2-maxi</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(24px,2.8vw,44px);font-weight:700;line-height:1.15;color:#fff">Brand, design, máme co probrat?</span></td>
-              <td class="ds-gt-meta">Kanit 700 · clamp(40, 5vw, 70px) · lh 1.15</td>
-              <td class="ds-gt-use">CTA sekce, velké sekce tituly</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T2b</td>
-              <td><code class="ds-gt-class">.h2</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(20px,2.2vw,36px);font-weight:700;line-height:1.2;color:#fff">Reference a případovky</span></td>
-              <td class="ds-gt-meta">Kanit 700 · clamp(32, 3.6vw, 52px) · lh 1.2</td>
-              <td class="ds-gt-use">Standardní sekce nadpis</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T2c</td>
-              <td><code class="ds-gt-class">.h2-mini</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(18px,2vw,30px);font-weight:600;line-height:1.2;color:#fff">Shopify dodá technologii, aethero strategii.</span></td>
-              <td class="ds-gt-meta">Kanit 600 · clamp(26, 3.5vw, 48px) · lh 1.2</td>
-              <td class="ds-gt-use">Value prop, sekundární nadpisy</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T3a</td>
-              <td><code class="ds-gt-class">.h3-maxi</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(18px,2vw,32px);font-weight:700;line-height:1.15;color:#fff">E-shop i pro profi páníčky</span></td>
-              <td class="ds-gt-meta">Kanit 700 · clamp(28, 3.2vw, 46px) · lh 1.15</td>
-              <td class="ds-gt-use">Velký H3 (ne uppercase)</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T3b</td>
-              <td><code class="ds-gt-class">.h3</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(16px,1.8vw,26px);font-weight:900;line-height:1.1;color:#fff;text-transform:uppercase">Nový Shopify e-shop</span></td>
-              <td class="ds-gt-meta">Kanit 900 · clamp(24, 3vw, 40px) · UPPERCASE · lh 1.1</td>
-              <td class="ds-gt-use">Service titles (co-umime), tribe</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T3c</td>
-              <td><code class="ds-gt-class">.h3-mini</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:clamp(14px,1.5vw,22px);font-weight:700;line-height:1.2;color:#fff">O názvu</span></td>
-              <td class="ds-gt-meta">Kanit 700 · clamp(20, 2.5vw, 30px) · lh 1.2</td>
-              <td class="ds-gt-use">Subheading v textu</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T4a</td>
-              <td><code class="ds-gt-class">.body-maxi</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-secondary);font-size:16px;font-weight:400;line-height:1.65;color:rgba(255,255,255,0.8)">Zkušená groomerka, která chtěla rozšířit své služby.</span></td>
-              <td class="ds-gt-meta">Montserrat 400 · clamp(18, 1.8vw, 22px) · lh 1.65</td>
-              <td class="ds-gt-use">Perex, case study intro, hero subtitle</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T4b</td>
-              <td><code class="ds-gt-class">.body</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-secondary);font-size:15px;font-weight:400;line-height:1.65;color:rgba(255,255,255,0.75)">Brand i název nám dal zabrat. Museli jsme se rozhodnout.</span></td>
-              <td class="ds-gt-meta">Montserrat 400 · clamp(16, 1.4vw, 18px) · lh 1.65</td>
-              <td class="ds-gt-use">Standardní sekce text</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T4c</td>
-              <td><code class="ds-gt-class">.body-mini</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-secondary);font-size:14px;font-weight:400;line-height:1.5;color:rgba(255,255,255,0.5)">Projekt realizován v Q4 2024</span></td>
-              <td class="ds-gt-meta">Montserrat 400 · 14px · lh 1.5</td>
-              <td class="ds-gt-use">Caption, meta, datum</td>
-            </tr>
-            <tr>
-              <td class="ds-gt-id">T5</td>
-              <td><code class="ds-gt-class">.label</code></td>
-              <td class="ds-gt-preview"><span style="font-family:var(--font-primary);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#16BECF">Brand & Identity</span></td>
-              <td class="ds-gt-meta">Kanit 600 · 13px · ls 0.08em · UPPERCASE</td>
-              <td class="ds-gt-use">Eyebrow nad nadpisem, kategorie</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="ds-component-notes" style="margin-top:16px">
-          ⚡ Pravidlo: Lokální CSS smí přepsat <code>max-width</code> nebo <code>grid-template</code>, ale NIKDY nesmí lokálně redefinovat <code>font-size</code> na headinzích — to patří výhradně do globální škály.
+        <!-- Vizuální diagram kontejnerů -->
+        <div class="ds-vp-diagram">
+          <div class="ds-vp-browser">
+            <div class="ds-vp-browser-bar">
+              <span class="ds-vp-dot"></span><span class="ds-vp-dot"></span><span class="ds-vp-dot"></span>
+              <span class="ds-vp-url">aethero.cz</span>
+            </div>
+            <div class="ds-vp-stage">
+              <div class="ds-vp-layer ds-vp-layer-ext">
+                <span class="ds-vp-layer-label">.container-extended</span>
+                <span class="ds-vp-layer-val">1 600 px</span>
+              </div>
+              <div class="ds-vp-layer ds-vp-layer-wide">
+                <span class="ds-vp-layer-label">.container-wide</span>
+                <span class="ds-vp-layer-val">1 440 px</span>
+              </div>
+              <div class="ds-vp-layer ds-vp-layer-std">
+                <span class="ds-vp-layer-label">.container ★ standard</span>
+                <span class="ds-vp-layer-val">1 280 px</span>
+              </div>
+              <div class="ds-vp-layer ds-vp-layer-read">
+                <span class="ds-vp-layer-label">.container čtecí (případovky)</span>
+                <span class="ds-vp-layer-val">1 024 px</span>
+              </div>
+            </div>
+          </div>
+          <div class="ds-vp-bp-row">
+            <div class="ds-vp-bp">
+              <div class="ds-vp-bp-line"></div>
+              <div class="ds-vp-bp-tag">≤ 768px<br/>Tablet</div>
+            </div>
+            <div class="ds-vp-bp">
+              <div class="ds-vp-bp-line"></div>
+              <div class="ds-vp-bp-tag">≤ 480px<br/>Mobil</div>
+            </div>
+          </div>
+          <div class="ds-vp-bp-desc">
+            <span><b>Tablet ≤768px</b> — 1 sloupec, nav collapse, skrytí dekorativních obrázků</span>
+            <span><b>Mobil ≤480px</b> — padding 16px, zmenšení fontů přes clamp()</span>
+          </div>
         </div>
       </section>
+
 
       <!-- PILLS -->
       <section class="ds-section" id="pills">
@@ -973,44 +873,7 @@ font-family: var(--font-secondary);</code></pre>
         </div>
       </section>
 
-      <!-- LINKS -->
-      <section class="ds-section" id="links">
-        <h2 class="ds-section-title">Pravidla odkazů</h2>
-        <table class="ds-links-table">
-          <tbody>
-            <tr>
-              <td class="ds-lt-type">Globální reset</td>
-              <td><code style="color:#0DD4CD">{"a { color: inherit; text-decoration: none; }"}</code></td>
-              <td class="ds-lt-note">Každý odkaz začíná bez barvy a bez podtržení</td>
-            </tr>
-            <tr>
-              <td class="ds-lt-type">Nav link</td>
-              <td style="font-family:var(--font-primary);font-size:16px;font-weight:500;text-transform:uppercase;color:rgba(255,255,255,0.85)">CO UMÍME</td>
-              <td class="ds-lt-note">Kanit 500 16px uppercase · hover = cyan + underline offset 5px</td>
-            </tr>
-            <tr>
-              <td class="ds-lt-type">Footer link</td>
-              <td><a style="color:#16BECF;font-family:var(--font-secondary);font-size:16px;pointer-events:none">Potřebuji brand →</a></td>
-              <td class="ds-lt-note">Montserrat 16px cyan · hover = #fff + underline offset 3px</td>
-            </tr>
-            <tr>
-              <td class="ds-lt-type">Inline odkaz</td>
-              <td><a class="intro-link" href="#links" style="margin-top:0;display:inline">Přečíst více →</a></td>
-              <td class="ds-lt-note"><code>.intro-link</code> · cyan text · hover opacity 0.75</td>
-            </tr>
-            <tr>
-              <td class="ds-lt-type">CTA odkaz velký</td>
-              <td style="font-family:var(--font-primary);font-size:22px;font-weight:700;color:#092066">info@aethero.cz</td>
-              <td class="ds-lt-note">Kanit 700 clamp(22–40px) brand-dark color · na cyan pozadí CTA sekce</td>
-            </tr>
-            <tr style="background:rgba(255,82,82,0.05)">
-              <td class="ds-lt-type" style="color:#FF5252">⚡ Zakázáno</td>
-              <td style="font-family:var(--font-primary);font-size:18px;font-weight:700;color:#16BECF">O názvu</td>
-              <td class="ds-lt-note" style="color:#FF5252">Cyan barva na neklikatelném textu = vždy CHYBA</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      <!-- LINKS — sloučeno do KOMPONENTY sekce výše, tato sekce nahrazena inline ukázkami -->
 
       <!-- NUMBERED BLOCK LIBRARY -->
       <section class="ds-section" id="blocks">
@@ -1021,249 +884,448 @@ font-family: var(--font-secondary);</code></pre>
         </p>
         <div class="ds-blocks-grid">
 
+          <!-- 01a Hero — Homepage -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">01a</span><span class="ds-block-ttl">Hero — Homepage</span><span class="ds-block-file">index.astro</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;height:60px">
-                <div style="background:rgba(255,255,255,0.05);border-radius:3px;display:flex;flex-direction:column;justify-content:flex-end;padding:6px;gap:3px">
-                  <div style="height:6px;background:#fff;border-radius:2px;width:70%"></div>
-                  <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:90%"></div>
-                  <div style="height:10px;background:rgba(255,255,255,0.15);border-radius:2px;width:55%;margin-top:3px"></div>
+              <div class="ds-block-thumb" style="height:100px;background:linear-gradient(135deg,#000326 55%,#0C0C42 100%);border-radius:6px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.2fr 0.9fr;padding:10px 10px 10px 12px;gap:6px">
+                <div style="position:absolute;top:-15px;right:-10px;width:90px;height:90px;background:radial-gradient(ellipse,rgba(160,40,200,0.55) 0%,transparent 65%);filter:blur(16px);pointer-events:none"></div>
+                <div style="display:flex;flex-direction:column;justify-content:center;gap:4px;z-index:1">
+                  <div style="height:9px;background:#fff;border-radius:2px;width:88%"></div>
+                  <div style="height:7px;background:#fff;border-radius:2px;width:70%"></div>
+                  <div style="height:3px;background:rgba(255,255,255,0.35);border-radius:2px;width:95%;margin-top:2px"></div>
+                  <div style="height:3px;background:rgba(255,255,255,0.25);border-radius:2px;width:80%"></div>
+                  <div style="display:flex;gap:5px;margin-top:6px">
+                    <div style="height:14px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);border-radius:3px;width:44px"></div>
+                    <div style="height:14px;background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:3px;width:44px"></div>
+                  </div>
                 </div>
-                <div style="background:rgba(255,255,255,0.08);border-radius:3px"></div>
+                <div style="background:rgba(255,255,255,0.06);border-radius:4px;z-index:1"></div>
               </div>
               <div class="ds-block-meta"><b>Grid 1fr 1fr</b> · H1: .h1-maxi (T1a) · Typewriter · Blob magenta · BG gradient · Full-height viewport · 2× .btn-hero</div>
             </div>
           </div>
 
+          <!-- 01b Hero — Service -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">01b</span><span class="ds-block-ttl">Hero — Service</span><span class="ds-block-file">ServiceHero.astro</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="height:60px;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:8px">
-                <div style="height:3px;background:#16BECF;border-radius:2px;width:40%"></div>
-                <div style="height:8px;background:#fff;border-radius:2px;width:60%"></div>
-                <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:80%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:linear-gradient(135deg,#000326 60%,#0C0C42 100%);border-radius:6px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.3fr 0.8fr;padding:12px 10px 12px 14px;gap:8px">
+                <div style="position:absolute;bottom:-10px;right:20px;width:70px;height:70px;background:radial-gradient(ellipse,rgba(22,190,207,0.2) 0%,transparent 70%);filter:blur(14px);pointer-events:none"></div>
+                <div style="display:flex;flex-direction:column;justify-content:center;gap:4px;z-index:1">
+                  <div style="height:3px;background:#16BECF;border-radius:2px;width:42%;margin-bottom:2px"></div>
+                  <div style="height:9px;background:#fff;border-radius:2px;width:80%"></div>
+                  <div style="height:6px;background:#fff;border-radius:2px;width:60%"></div>
+                  <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:90%;margin-top:2px"></div>
+                  <div style="display:flex;gap:5px;margin-top:6px">
+                    <div style="height:14px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);border-radius:3px;width:40px"></div>
+                    <div style="height:14px;border:1px solid rgba(255,255,255,0.2);border-radius:3px;width:40px"></div>
+                  </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.05);border-radius:4px;z-index:1;display:flex;align-items:center;justify-content:center">
+                  <div style="width:60%;height:55%;background:rgba(255,255,255,0.06);border-radius:3px"></div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>Reusable component</b> · .label (T5) + H1 .h1 (T1b) + subtitle + .btn-primary + .btn-ghost · Opt. obrázek vpravo · Blob BG</div>
             </div>
           </div>
 
+          <!-- 01c Hero — Případovka -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">01c</span><span class="ds-block-ttl">Hero — Případovka</span><span class="ds-block-file">[slug].astro</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="height:60px;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:8px">
-                <div style="height:3px;background:#16BECF;border-radius:2px;width:35%"></div>
-                <div style="height:6px;background:#fff;border-radius:2px;width:75%"></div>
-                <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:60%"></div>
-                <div style="display:flex;gap:3px;margin-top:3px">{["","",""].map(()=><div style="height:12px;background:rgba(22,190,207,0.2);border:1px solid rgba(22,190,207,0.4);border-radius:10px;width:36px"></div>)}</div>
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:5px">
+                <div style="height:3px;background:#16BECF;border-radius:2px;width:38%"></div>
+                <div style="height:8px;background:#fff;border-radius:2px;width:75%"></div>
+                <div style="height:5px;background:#fff;border-radius:2px;width:58%"></div>
+                <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:85%;margin-top:1px"></div>
+                <div style="height:3px;background:rgba(255,255,255,0.2);border-radius:2px;width:70%"></div>
+                <div style="display:flex;gap:4px;margin-top:4px">
+                  <div style="height:13px;background:rgba(22,190,207,0.12);border:1px solid rgba(22,190,207,0.45);border-radius:100px;width:38px"></div>
+                  <div style="height:13px;background:rgba(22,190,207,0.12);border:1px solid rgba(22,190,207,0.45);border-radius:100px;width:42px"></div>
+                  <div style="height:13px;background:rgba(22,190,207,0.12);border:1px solid rgba(22,190,207,0.45);border-radius:100px;width:30px"></div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>Case study header</b> · .label + H1 .h1-mini (T1c) + perex .body-maxi (T4a) + .pill-action tagy · Čtecí viewport (1024px)</div>
             </div>
           </div>
 
+          <!-- 01d Hero — App stránka -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">01d</span><span class="ds-block-ttl">Hero — App stránka</span><span class="ds-block-file">esyncer.astro</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="background:rgba(255,255,255,0.08);border-radius:4px;height:60px;position:relative">
-                <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,3,38,0.8),transparent);border-radius:0 0 4px 4px;padding:8px">
-                  <div style="height:4px;background:#fff;border-radius:2px;width:60%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#0C0C42;border-radius:6px;position:relative;overflow:hidden">
+                <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.025) 0px,rgba(255,255,255,0.025) 1px,transparent 1px,transparent 12px)"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,3,38,0.1) 0%,rgba(0,3,38,0.75) 60%,#000326 100%)"></div>
+                <div style="position:absolute;bottom:14px;left:14px">
+                  <div style="height:7px;background:#fff;border-radius:2px;width:90px;margin-bottom:4px"></div>
+                  <div style="height:5px;background:#fff;border-radius:2px;width:65px;margin-bottom:4px"></div>
+                  <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:110px"></div>
                 </div>
               </div>
               <div class="ds-block-meta"><b>Full-width BG image + dark overlay</b> · Logo + H1 .h1-mini (T1c) · min-height clamp(400px, 68vh, 700px) · padding-top 150px</div>
             </div>
           </div>
 
+          <!-- 02a Text — Centered -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">02a</span><span class="ds-block-ttl">Text — Centered</span><span class="ds-block-file">section.bg-*</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px">
-                <div style="height:5px;background:#fff;border-radius:2px;width:50%"></div>
-                <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:70%"></div>
-                <div style="height:3px;background:rgba(255,255,255,0.2);border-radius:2px;width:60%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:14px">
+                <div style="height:8px;background:#fff;border-radius:2px;width:55%"></div>
+                <div style="height:5px;background:#fff;border-radius:2px;width:42%"></div>
+                <div style="height:3px;background:rgba(255,255,255,0.3);border-radius:2px;width:72%;margin-top:3px"></div>
+                <div style="height:3px;background:rgba(255,255,255,0.22);border-radius:2px;width:65%"></div>
+                <div style="height:3px;background:rgba(255,255,255,0.18);border-radius:2px;width:58%"></div>
               </div>
               <div class="ds-block-meta"><b>.container text-align center</b> · H2 .h2 (T2b) · .body (T4b) · Padding var(--space-120) 0</div>
             </div>
           </div>
 
+          <!-- 02b Text — Čtecí sloupec -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">02b</span><span class="ds-block-ttl">Text — Čtecí sloupec</span><span class="ds-block-file">.text-col</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="height:60px;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:8px">
-                <div style="height:4px;background:#fff;border-radius:2px;width:30%"></div>
-                <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:80%"></div>
-                <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:90%"></div>
-                <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:70%"></div>
-                <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:85%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:flex;justify-content:center;align-items:center;padding:12px">
+                <div style="width:60%;display:flex;flex-direction:column;gap:3px">
+                  <div style="height:5px;background:#fff;border-radius:2px;width:55%;margin-bottom:3px"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.25);border-radius:2px;width:100%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:90%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.25);border-radius:2px;width:95%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.18);border-radius:2px;width:80%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.22);border-radius:2px;width:100%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:70%"></div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>.container max-width 780px</b> · Čtecí viewport (1024px) · H3 .h3-mini (T3c) + .body (T4b)</div>
             </div>
           </div>
 
+          <!-- 03a Split Text|Img -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">03a</span><span class="ds-block-ttl">Split — Text ← | Obr. →</span><span class="ds-block-file">.content-split</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;height:60px">
-                <div style="background:rgba(255,255,255,0.04);border-radius:3px;padding:6px;display:flex;flex-direction:column;gap:3px;justify-content:center">
-                  <div style="height:4px;background:#fff;border-radius:2px;width:70%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:12px">
+                <div style="display:flex;flex-direction:column;justify-content:center;gap:4px">
+                  <div style="height:6px;background:#fff;border-radius:2px;width:75%"></div>
+                  <div style="height:5px;background:#fff;border-radius:2px;width:58%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.25);border-radius:2px;width:95%;margin-top:3px"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:80%"></div>
                   <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:90%"></div>
+                  <div style="height:12px;background:rgba(22,190,207,0.15);border:1px solid rgba(22,190,207,0.35);border-radius:3px;width:55%;margin-top:5px"></div>
                 </div>
-                <div style="background:rgba(255,255,255,0.08);border-radius:3px"></div>
+                <div style="background:rgba(255,255,255,0.07);border-radius:5px;border:1px solid rgba(255,255,255,0.08)"></div>
               </div>
               <div class="ds-block-meta"><b>Grid 1fr 480px</b> · H2 .h2 nebo H3 .h3-maxi · gap 60px · Mobile: 1 sloupec</div>
             </div>
           </div>
 
+          <!-- 03b Split Img|Text -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">03b</span><span class="ds-block-ttl">Split — Obr. ← | Text →</span><span class="ds-block-file">.content-split.reverse</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;height:60px">
-                <div style="background:rgba(255,255,255,0.08);border-radius:3px"></div>
-                <div style="background:rgba(255,255,255,0.04);border-radius:3px;padding:6px;display:flex;flex-direction:column;gap:3px;justify-content:center">
-                  <div style="height:4px;background:#fff;border-radius:2px;width:70%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:12px">
+                <div style="background:rgba(255,255,255,0.07);border-radius:5px;border:1px solid rgba(255,255,255,0.08)"></div>
+                <div style="display:flex;flex-direction:column;justify-content:center;gap:4px">
+                  <div style="height:6px;background:#fff;border-radius:2px;width:75%"></div>
+                  <div style="height:5px;background:#fff;border-radius:2px;width:58%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.25);border-radius:2px;width:95%;margin-top:3px"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:80%"></div>
                   <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:90%"></div>
+                  <div style="height:12px;background:rgba(22,190,207,0.15);border:1px solid rgba(22,190,207,0.35);border-radius:3px;width:55%;margin-top:5px"></div>
                 </div>
               </div>
               <div class="ds-block-meta"><b>Zrcadlo 03a</b> · Střídá se se 03a na service stránkách (sudý index = obr. vlevo)</div>
             </div>
           </div>
 
+          <!-- 04a Cards 4-col features -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">04a</span><span class="ds-block-ttl">Cards — 4 sloupce features</span><span class="ds-block-file">.features-grid</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:repeat(4,1fr);gap:3px;height:60px">
-                {[1,2,3,4].map(()=><div style="background:rgba(255,255,255,0.05);border-radius:3px"></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:10px">
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:6px;display:flex;flex-direction:column;gap:3px">
+                  <div style="width:10px;height:10px;background:#16BECF;border-radius:2px;opacity:0.7"></div>
+                  <div style="height:3px;background:#fff;border-radius:2px;width:80%;margin-top:2px"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:100%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:90%"></div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:6px;display:flex;flex-direction:column;gap:3px">
+                  <div style="width:10px;height:10px;background:#16BECF;border-radius:2px;opacity:0.7"></div>
+                  <div style="height:3px;background:#fff;border-radius:2px;width:70%;margin-top:2px"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:100%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:80%"></div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:6px;display:flex;flex-direction:column;gap:3px">
+                  <div style="width:10px;height:10px;background:#16BECF;border-radius:2px;opacity:0.7"></div>
+                  <div style="height:3px;background:#fff;border-radius:2px;width:90%;margin-top:2px"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:100%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:75%"></div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:6px;display:flex;flex-direction:column;gap:3px">
+                  <div style="width:10px;height:10px;background:#16BECF;border-radius:2px;opacity:0.7"></div>
+                  <div style="height:3px;background:#fff;border-radius:2px;width:75%;margin-top:2px"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:100%"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:85%"></div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>repeat(4, 1fr)</b> · ikona + title + seznam · 1100px→2-col · 768px→1-col</div>
             </div>
           </div>
 
+          <!-- 04b Cards 3-col team -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">04b</span><span class="ds-block-ttl">Cards — 3 sloupce team</span><span class="ds-block-file">.team-grid</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px;height:60px">
-                {[1,2,3].map(()=><div style="background:rgba(255,255,255,0.05);border-radius:3px"></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:10px">
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:7px;display:flex;flex-direction:column;align-items:center;gap:3px">
+                  <div style="width:20px;height:20px;background:rgba(255,255,255,0.12);border-radius:50%;border:1px solid rgba(255,255,255,0.15)"></div>
+                  <div style="height:3px;background:#fff;border-radius:2px;width:70%"></div>
+                  <div style="height:2px;background:#16BECF;border-radius:2px;width:50%;opacity:0.7"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:90%"></div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:7px;display:flex;flex-direction:column;align-items:center;gap:3px">
+                  <div style="width:20px;height:20px;background:rgba(255,255,255,0.12);border-radius:50%;border:1px solid rgba(255,255,255,0.15)"></div>
+                  <div style="height:3px;background:#fff;border-radius:2px;width:80%"></div>
+                  <div style="height:2px;background:#16BECF;border-radius:2px;width:60%;opacity:0.7"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:80%"></div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:7px;display:flex;flex-direction:column;align-items:center;gap:3px">
+                  <div style="width:20px;height:20px;background:rgba(255,255,255,0.12);border-radius:50%;border:1px solid rgba(255,255,255,0.15)"></div>
+                  <div style="height:3px;background:#fff;border-radius:2px;width:65%"></div>
+                  <div style="height:2px;background:#16BECF;border-radius:2px;width:55%;opacity:0.7"></div>
+                  <div style="height:2px;background:rgba(255,255,255,0.15);border-radius:2px;width:95%"></div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>repeat(3, 1fr)</b> · Avatar + jméno + role (cyan) + popis + kontakty · border 1px rgba(255,255,255,0.08)</div>
             </div>
           </div>
 
+          <!-- 04c Cards 2-col reference -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">04c</span><span class="ds-block-ttl">Cards — 2 sloupce reference</span><span class="ds-block-file">.ref-grid</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:1fr 1fr;gap:3px;height:60px">
-                {[1,2].map(()=><div style="background:rgba(255,255,255,0.05);border-radius:3px"></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px">
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden;display:flex;flex-direction:column">
+                  <div style="flex:1;background:rgba(255,255,255,0.05)"></div>
+                  <div style="padding:6px;display:flex;flex-direction:column;gap:2px">
+                    <div style="height:3px;background:#fff;border-radius:2px;width:75%"></div>
+                    <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:90%"></div>
+                    <div style="height:10px;background:rgba(22,190,207,0.2);border:1px solid rgba(22,190,207,0.4);border-radius:3px;width:60%;margin-top:3px"></div>
+                  </div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden;display:flex;flex-direction:column">
+                  <div style="flex:1;background:rgba(255,255,255,0.05)"></div>
+                  <div style="padding:6px;display:flex;flex-direction:column;gap:2px">
+                    <div style="height:3px;background:#fff;border-radius:2px;width:80%"></div>
+                    <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:70%"></div>
+                    <div style="height:10px;background:rgba(22,190,207,0.2);border:1px solid rgba(22,190,207,0.4);border-radius:3px;width:55%;margin-top:3px"></div>
+                  </div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>1fr 1fr</b> · H3 + popis + obrázek s overlay + CTA inset 30px · border-radius 16px</div>
             </div>
           </div>
 
+          <!-- 04d Cards 2-col apps -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">04d</span><span class="ds-block-ttl">Cards — 2 sloupce apps</span><span class="ds-block-file">.apps-grid</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:1fr 1fr;gap:3px;height:60px">
-                {[1,2].map(()=><div style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);border-radius:3px"></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px">
+                <div style="background:rgba(255,255,255,0.05);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+                  <div style="height:30px;background:linear-gradient(135deg,rgba(22,190,207,0.25),rgba(12,12,66,0.8));border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;padding:0 6px">
+                    <div style="width:12px;height:12px;background:rgba(255,255,255,0.2);border-radius:2px"></div>
+                  </div>
+                  <div style="padding:5px;flex:1;display:flex;flex-direction:column;gap:2px;justify-content:center">
+                    <div style="height:3px;background:#fff;border-radius:2px;width:70%"></div>
+                    <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:90%"></div>
+                  </div>
+                </div>
+                <div style="background:rgba(255,255,255,0.05);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:6px;overflow:hidden;display:flex;flex-direction:column">
+                  <div style="height:30px;background:linear-gradient(135deg,rgba(160,100,200,0.3),rgba(12,12,66,0.8));border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;padding:0 6px">
+                    <div style="width:12px;height:12px;background:rgba(255,255,255,0.2);border-radius:2px"></div>
+                  </div>
+                  <div style="padding:5px;flex:1;display:flex;flex-direction:column;gap:2px;justify-content:center">
+                    <div style="height:3px;background:#fff;border-radius:2px;width:80%"></div>
+                    <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:75%"></div>
+                  </div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>Glassmorphism cards</b> · Header BG 260px + logo + title + popis + link · hover translateY(-2px)</div>
             </div>
           </div>
 
+          <!-- 04e Blog carousel -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">04e</span><span class="ds-block-ttl">Blog carousel</span><span class="ds-block-file">.blog-carousel</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:flex;gap:3px;height:60px;overflow:hidden">
-                {[1,2,3,4].map(()=><div style="flex:0 0 23%;background:rgba(255,255,255,0.05);border-radius:3px"></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:flex;gap:5px;padding:10px;overflow:hidden">
+                <div style="flex:0 0 28%;background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;display:flex;flex-direction:column;overflow:hidden">
+                  <div style="height:40px;background:rgba(255,255,255,0.06);position:relative">
+                    <div style="position:absolute;top:4px;left:4px;height:8px;background:#16BECF;border-radius:2px;width:22px;opacity:0.5"></div>
+                  </div>
+                  <div style="padding:5px;display:flex;flex-direction:column;gap:2px">
+                    <div style="height:3px;background:#fff;border-radius:2px;width:90%"></div>
+                    <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:75%"></div>
+                  </div>
+                </div>
+                <div style="flex:0 0 28%;background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;display:flex;flex-direction:column;overflow:hidden">
+                  <div style="height:40px;background:rgba(255,255,255,0.06)"></div>
+                  <div style="padding:5px;display:flex;flex-direction:column;gap:2px">
+                    <div style="height:3px;background:#fff;border-radius:2px;width:80%"></div>
+                    <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:60%"></div>
+                  </div>
+                </div>
+                <div style="flex:0 0 28%;background:#0C0C42;border:1px solid rgba(255,255,255,0.07);border-radius:5px;display:flex;flex-direction:column;overflow:hidden">
+                  <div style="height:40px;background:rgba(255,255,255,0.06)"></div>
+                  <div style="padding:5px;display:flex;flex-direction:column;gap:2px">
+                    <div style="height:3px;background:#fff;border-radius:2px;width:95%"></div>
+                    <div style="height:2px;background:rgba(255,255,255,0.2);border-radius:2px;width:70%"></div>
+                  </div>
+                </div>
+                <div style="flex:0 0 14%;background:#0C0C42;border:1px solid rgba(255,255,255,0.04);border-radius:5px;opacity:0.4"></div>
               </div>
               <div class="ds-block-meta"><b>Flex carousel + scroll-snap</b> · 4→3→2→1 dle breakpointu · Image 1:1 + time badge + title + excerpt · Šipky prev/next</div>
             </div>
           </div>
 
+          <!-- 05a CTA Full cyan -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">05a</span><span class="ds-block-ttl">CTA — Full cyan sekce</span><span class="ds-block-file">.cta-section</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="background:#16BECF;border-radius:4px;height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px">
-                <div style="height:5px;background:rgba(0,0,0,0.15);border-radius:2px;width:60%"></div>
-                <div style="height:3px;background:rgba(0,0,0,0.1);border-radius:2px;width:40%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#16BECF;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px;position:relative;overflow:hidden">
+                <div style="position:absolute;top:-20px;left:-20px;width:80px;height:80px;background:rgba(255,255,255,0.1);border-radius:50%;filter:blur(20px)"></div>
+                <div style="height:9px;background:rgba(0,0,0,0.2);border-radius:2px;width:58%"></div>
+                <div style="height:6px;background:rgba(0,0,0,0.15);border-radius:2px;width:44%"></div>
+                <div style="display:flex;gap:6px;margin-top:4px">
+                  <div style="height:5px;background:rgba(0,0,0,0.18);border-radius:2px;width:55px"></div>
+                  <div style="height:5px;background:rgba(0,0,0,0.12);border-radius:2px;width:40px"></div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>BG var(--action)</b> · H2 .h2-maxi (T2a) · kontakty jako links · Padding var(--space-120) 0</div>
             </div>
           </div>
 
+          <!-- 05b CTA Ref card -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">05b</span><span class="ds-block-ttl">CTA — Ref card (s obrázkem)</span><span class="ds-block-file">.ref-card-cta</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="background:rgba(255,255,255,0.08);border-radius:4px;height:60px;position:relative">
-                <div style="position:absolute;bottom:0;left:0;right:0;padding:6px">
-                  <div style="background:#000326;border-radius:3px;height:20px;display:flex;align-items:center;justify-content:center">
-                    <div style="height:3px;background:#16BECF;border-radius:2px;width:50%"></div>
+              <div class="ds-block-thumb" style="height:100px;background:rgba(255,255,255,0.06);border-radius:6px;border:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden">
+                <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,0.02) 0px,rgba(255,255,255,0.02) 1px,transparent 1px,transparent 8px)"></div>
+                <div style="position:absolute;bottom:10px;left:10px;right:10px;background:#000326;border-radius:5px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;border:1px solid rgba(22,190,207,0.3)">
+                  <div style="display:flex;flex-direction:column;gap:3px">
+                    <div style="height:4px;background:#fff;border-radius:2px;width:70px"></div>
+                    <div style="height:3px;background:rgba(255,255,255,0.25);border-radius:2px;width:50px"></div>
                   </div>
+                  <div style="height:16px;background:#16BECF;border-radius:3px;width:30px;opacity:0.8"></div>
                 </div>
               </div>
               <div class="ds-block-meta"><b>Inset CTA nad obrázkem</b> · position absolute bottom 30px inset 30px · hover swap barvy</div>
             </div>
           </div>
 
+          <!-- 06a Stats Bar -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">06a</span><span class="ds-block-ttl">Stats — Bar fialová</span><span class="ds-block-file">.stats-bar</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="background:#A081D1;border-radius:4px;height:60px;display:flex;align-items:center;justify-content:space-around;padding:0 8px">
-                {[1,2,3].map(()=><div style="text-align:center"><div style="height:8px;background:#060838;border-radius:2px;width:28px;margin:0 auto 3px"></div><div style="height:3px;background:rgba(6,8,56,0.4);border-radius:2px;width:36px;margin:0 auto"></div></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#A081D1;border-radius:6px;display:flex;align-items:center;justify-content:space-around;padding:0 12px;position:relative;overflow:hidden">
+                <div style="position:absolute;right:0;top:50%;transform:translateY(-50%);height:100%;width:60px;background:rgba(6,8,56,0.12);display:flex;align-items:center;justify-content:center">
+                  <div style="width:32px;height:20px;background:rgba(6,8,56,0.3);border-radius:2px"></div>
+                </div>
+                <div style="text-align:center">
+                  <div style="height:16px;background:#060838;border-radius:2px;width:36px;margin:0 auto 5px;opacity:0.8"></div>
+                  <div style="height:4px;background:rgba(6,8,56,0.4);border-radius:2px;width:44px;margin:0 auto 2px"></div>
+                  <div style="height:3px;background:rgba(6,8,56,0.25);border-radius:2px;width:36px;margin:0 auto"></div>
+                </div>
+                <div style="text-align:center">
+                  <div style="height:16px;background:#060838;border-radius:2px;width:44px;margin:0 auto 5px;opacity:0.8"></div>
+                  <div style="height:4px;background:rgba(6,8,56,0.4);border-radius:2px;width:52px;margin:0 auto 2px"></div>
+                  <div style="height:3px;background:rgba(6,8,56,0.25);border-radius:2px;width:40px;margin:0 auto"></div>
+                </div>
+                <div style="text-align:center">
+                  <div style="height:16px;background:#060838;border-radius:2px;width:40px;margin:0 auto 5px;opacity:0.8"></div>
+                  <div style="height:4px;background:rgba(6,8,56,0.4);border-radius:2px;width:48px;margin:0 auto 2px"></div>
+                  <div style="height:3px;background:rgba(6,8,56,0.25);border-radius:2px;width:36px;margin:0 auto"></div>
+                </div>
               </div>
               <div class="ds-block-meta"><b>BG #A081D1</b> · Čísla clamp(32, 3.5vw, 52px) Kanit 700 #060838 · max-width 1400px · Shopify logo vpravo</div>
             </div>
           </div>
 
+          <!-- 07a Gallery 4-col -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">07a</span><span class="ds-block-ttl">Gallery — Screenshot 4-col</span><span class="ds-block-file">.gallery-grid</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;height:60px">
-                {[1,2,3,4].map(()=><div style="background:rgba(255,255,255,0.08);border-radius:2px"></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:10px">
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.06);border-radius:4px;position:relative;overflow:hidden">
+                  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(22,190,207,0.06) 0%,rgba(12,12,66,0.3) 100%)"></div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.06);border-radius:4px"></div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.06);border-radius:4px;position:relative;overflow:hidden">
+                  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(160,100,200,0.08) 0%,rgba(12,12,66,0.3) 100%)"></div>
+                </div>
+                <div style="background:#0C0C42;border:1px solid rgba(255,255,255,0.06);border-radius:4px"></div>
               </div>
               <div class="ds-block-meta"><b>repeat(4, 1fr)</b> · aspect-ratio 16:10 · Hover: scale + overlay + lupa · Lightbox modal · 768px→2-col</div>
             </div>
           </div>
 
+          <!-- 07b Logo řada -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">07b</span><span class="ds-block-ttl">Gallery — Logo řada</span><span class="ds-block-file">.zk-logos</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:flex;gap:8px;justify-content:center;align-items:center;height:60px;padding:8px">
-                {[1,2,3,4,5].map(()=><div style="background:rgba(255,255,255,0.15);border-radius:3px;height:20px;width:36px"></div>)}
+              <div class="ds-block-thumb" style="height:100px;background:#000326;border-radius:6px;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;flex-wrap:wrap">
+                <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.08);border-radius:4px;height:22px;width:44px"></div>
+                <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.08);border-radius:4px;height:22px;width:56px"></div>
+                <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.08);border-radius:4px;height:22px;width:38px"></div>
+                <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.08);border-radius:4px;height:22px;width:50px"></div>
+                <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.08);border-radius:4px;height:22px;width:42px"></div>
               </div>
               <div class="ds-block-meta"><b>Flex center flex-wrap</b> · Loga height 44px (výjimka 90px) · Opacity 0.85→1 hover · Partneři / Zkušenosti</div>
             </div>
           </div>
 
+          <!-- 08a Banner Tribe -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">08a</span><span class="ds-block-ttl">Banner — Tribe / Colored BG</span><span class="ds-block-file">.tribe-banner</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="background:var(--action);border-radius:4px;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 12px">
-                <div style="height:6px;background:rgba(0,0,0,0.2);border-radius:2px;width:40%;font-family:var(--font-primary)"></div>
-                <div style="background:rgba(0,0,0,0.15);border-radius:3px;width:40px;height:36px"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#16BECF;border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:relative;overflow:hidden">
+                <div style="position:absolute;right:-10px;top:-10px;width:70px;height:70px;background:rgba(255,255,255,0.12);border-radius:50%;filter:blur(12px)"></div>
+                <div style="display:flex;flex-direction:column;gap:4px;z-index:1">
+                  <div style="height:8px;background:rgba(0,0,0,0.25);border-radius:2px;width:90px"></div>
+                  <div style="height:6px;background:rgba(0,0,0,0.2);border-radius:2px;width:70px"></div>
+                  <div style="height:5px;background:rgba(0,0,0,0.15);border-radius:2px;width:110px;margin-top:2px"></div>
+                </div>
+                <div style="background:rgba(0,0,0,0.15);border-radius:5px;width:50px;height:52px;z-index:1"></div>
               </div>
               <div class="ds-block-meta"><b>Full-width colored BG</b> · H3 .h3 (T3b, uppercase) · text vlevo, obrázek/CTA vpravo</div>
             </div>
           </div>
 
+          <!-- 09a CS Brand logo grid -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">09a</span><span class="ds-block-ttl">CS — Brand logo grid</span><span class="ds-block-file">.brand-logo-grid</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="display:grid;grid-template-columns:0.85fr 1.3fr 0.85fr;grid-template-rows:repeat(3,1fr);gap:2px;height:60px;background:#07051B;border-radius:4px;overflow:hidden">
-                <div style="background:#000326;grid-row:1/4"></div>
-                <div style="background:#000326"></div>
-                <div style="background:#000326;grid-row:1/4"></div>
-                <div style="background:#000326"></div>
-                <div style="background:#000326"></div>
+              <div class="ds-block-thumb" style="height:100px;background:#00021A;border-radius:6px;display:grid;grid-template-columns:0.85fr 1.3fr 0.85fr;grid-template-rows:repeat(3,1fr);gap:3px;overflow:hidden">
+                <div style="background:#0C0C42;grid-row:1/4;border-right:1px solid rgba(255,255,255,0.05)"></div>
+                <div style="background:#0C0C42;border-bottom:1px solid rgba(255,255,255,0.05)"></div>
+                <div style="background:#0C0C42;grid-row:1/4;border-left:1px solid rgba(255,255,255,0.05)"></div>
+                <div style="background:#0C0C42;border-bottom:1px solid rgba(255,255,255,0.05)"></div>
+                <div style="background:#0C0C42"></div>
               </div>
               <div class="ds-block-meta"><b>Grid 0.85fr 1.3fr 0.85fr × 3 řady</b> · Výška 400px · Portréty span 1/4 · .container-wide</div>
             </div>
           </div>
 
+          <!-- 09b CS Brand hero -->
           <div class="ds-block-card">
             <div class="ds-block-hd"><span class="ds-block-num">09b</span><span class="ds-block-ttl">CS — Brand hero image</span><span class="ds-block-file">.brand-hero-wrap</span></div>
             <div class="ds-block-bd">
-              <div class="ds-block-thumb" style="background:rgba(255,255,255,0.1);border-radius:4px;height:60px;position:relative">
-                <div style="position:absolute;top:50%;left:10px;transform:translateY(-50%)">
-                  <div style="height:4px;background:#fff;border-radius:2px;width:80px;margin-bottom:3px"></div>
-                  <div style="height:3px;background:rgba(255,255,255,0.4);border-radius:2px;width:60px"></div>
+              <div class="ds-block-thumb" style="height:100px;background:rgba(255,255,255,0.06);border-radius:6px;border:1px solid rgba(255,255,255,0.07);position:relative;overflow:hidden">
+                <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,2,26,0.7) 0%,rgba(0,2,26,0.1) 50%,rgba(0,2,26,0.0) 100%)"></div>
+                <div style="position:absolute;top:50%;left:14px;transform:translateY(-50%);display:flex;flex-direction:column;gap:4px">
+                  <div style="height:6px;background:#fff;border-radius:2px;width:80px"></div>
+                  <div style="height:4px;background:rgba(255,255,255,0.4);border-radius:2px;width:60px"></div>
                 </div>
               </div>
               <div class="ds-block-meta"><b>Relative 480px výška</b> · CSS BG cover · Caption vlevo vertikálně centrovaný · margin-top var(--space-40)</div>
@@ -1336,6 +1398,85 @@ font-family: var(--font-secondary);</code></pre>
       </section>
 
 
+      <!-- GALERIE & LIGHTBOX -->
+      <section class="ds-section" id="gallery">
+        <h2 class="ds-section-title">Galerie & Lightbox</h2>
+        <p style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:24px">
+          Komponenta s vlastními pravidly. Funkční náhled níže — klikni na obrázek.
+        </p>
+
+        <!-- PRAVIDLA -->
+        <div class="ds-rule-grid" style="margin-bottom:32px">
+          <div class="ds-rule-card">
+            <div class="ds-rule-label">Grid</div>
+            <div class="ds-rule-body">4 sloupce desktop · 2 tablet · 1+1 mobile<br />Gap 12px · margin-top var(--space-40)</div>
+          </div>
+          <div class="ds-rule-card">
+            <div class="ds-rule-label">Thumbnail</div>
+            <div class="ds-rule-body">aspect-ratio 16/10 · object-fit cover<br />border-radius var(--radius-md) · hover scale(1.05)</div>
+          </div>
+          <div class="ds-rule-card">
+            <div class="ds-rule-label">Overlay</div>
+            <div class="ds-rule-body">rgba(0,3,38,0.5) · ikona zoom SVG 28px<br />opacity 0 → 1 při hoveru (0.22s)</div>
+          </div>
+          <div class="ds-rule-card">
+            <div class="ds-rule-label">Lightbox</div>
+            <div class="ds-rule-body">fixed inset:0 · rgba(0,0,0,0.92) · z-index 9999<br />max 90vw/90vh · border-radius var(--radius-md)</div>
+          </div>
+          <div class="ds-rule-card">
+            <div class="ds-rule-label">Navigace</div>
+            <div class="ds-rule-body">← → klávesy · Escape zavřít<br />Prev/Next buttony ⌀ 60px · counter font-size 13px</div>
+          </div>
+          <div class="ds-rule-card">
+            <div class="ds-rule-label">Použití</div>
+            <div class="ds-rule-body">esyncer.astro · ae-translator.astro<br />Vždy s JS lightboxem — bez něj nefunguje</div>
+          </div>
+        </div>
+
+        <!-- FUNKČNÍ NÁHLED -->
+        <div class="ds-gallery-preview">
+          <div class="ds-gallery-grid">
+            <a href="/esyncer-screen-1.png" class="ds-gallery-item" data-ds-idx="0">
+              <img src="/esyncer-screen-1.png" alt="eSyncer dashboard" loading="lazy" class="ds-gallery-img" />
+              <div class="ds-gallery-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </a>
+            <a href="/esyncer-screen-2.png" class="ds-gallery-item" data-ds-idx="1">
+              <img src="/esyncer-screen-2.png" alt="eSyncer jobs" loading="lazy" class="ds-gallery-img" />
+              <div class="ds-gallery-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </a>
+            <a href="/esyncer-screen-3.png" class="ds-gallery-item" data-ds-idx="2">
+              <img src="/esyncer-screen-3.png" alt="eSyncer mappings" loading="lazy" class="ds-gallery-img" />
+              <div class="ds-gallery-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </a>
+            <a href="/esyncer-screen-4.png" class="ds-gallery-item" data-ds-idx="3">
+              <img src="/esyncer-screen-4.png" alt="eSyncer settings" loading="lazy" class="ds-gallery-img" />
+              <div class="ds-gallery-overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- DS lightbox overlay (scoped, nezasahuje do jiných stránek) -->
+        <div id="ds-lightbox" class="ds-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+          <button class="ds-lb-close" aria-label="Zavřít">✕</button>
+          <button class="ds-lb-prev" aria-label="Předchozí">&#8249;</button>
+          <button class="ds-lb-next" aria-label="Další">&#8250;</button>
+          <img id="ds-lb-img" src="" alt="" class="ds-lb-img" />
+          <div class="ds-lb-counter" id="ds-lb-counter"></div>
+        </div>
+
+        <div class="ds-component-notes" style="margin-top:24px">
+          ⚡ Pravidlo: Lightbox JS vždy lokální v příslušné stránce (ne shared component) — každá stránka má svůj vlastní <code>#lightbox</code> overlay s unikátním ID. Galerie bez JS = jen grid bez zoom efektu.
+        </div>
+      </section>
+
       <span>aethero web design system · v3.1 · 2026</span>
     </footer>
 
@@ -1346,8 +1487,8 @@ font-family: var(--font-secondary);</code></pre>
   @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
 
   :root {
-    --ds-bg: #0A0A1A;
-    --ds-surface: #12122A;
+    --ds-bg: #00021A;
+    --ds-surface: #000326;
     --ds-border: rgba(255,255,255,0.06);
     --ds-text: #fff;
     --ds-muted: rgba(255,255,255,0.45);
@@ -1355,7 +1496,6 @@ font-family: var(--font-secondary);</code></pre>
     --ds-purple: #A081D1;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--ds-bg); color: var(--ds-text); }
 
   .ds-page {
@@ -1382,7 +1522,7 @@ font-family: var(--font-secondary);</code></pre>
     gap: 40px;
   }
   .ds-nav-logo {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ds-muted);
     text-decoration: none;
     transition: color 0.2s;
@@ -1394,7 +1534,7 @@ font-family: var(--font-secondary);</code></pre>
     gap: 32px;
   }
   .ds-nav-links a {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0;
     text-transform: uppercase;
@@ -1420,11 +1560,11 @@ font-family: var(--font-secondary);</code></pre>
     flex-wrap: wrap;
   }
   .ds-label {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--ds-accent);
+    color: #fff;
     margin-bottom: 12px;
   }
   .ds-title {
@@ -1453,15 +1593,15 @@ font-family: var(--font-secondary);</code></pre>
     gap: 12px;
   }
   .ds-meta-label {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ds-muted);
     min-width: 80px;
   }
   .ds-meta-val {
-    font-size: 13px;
+    font-size: 15px;
     font-family: 'Kanit', sans-serif;
     color: #fff;
   }
@@ -1480,17 +1620,17 @@ font-family: var(--font-secondary);</code></pre>
   }
   .ds-section-title {
     font-family: 'Kanit', sans-serif;
-    font-size: 11px;
+    font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--ds-accent);
+    color: #fff;
     margin-bottom: 40px;
   }
   .ds-subsection-title {
-    font-size: 11px;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--ds-muted);
     margin: 48px 0 16px;
@@ -1516,7 +1656,7 @@ font-family: var(--font-secondary);</code></pre>
   .ds-bg-teal { background: #0DD4CD; }
   .ds-bg-white { background: #fff; }
   .ds-swatch-label {
-    font-size: 11px;
+    font-size: 13px;
     color: rgba(255,255,255,0.4);
   }
   .ds-label-dark { color: rgba(0,0,0,0.4); }
@@ -1559,27 +1699,27 @@ font-family: var(--font-secondary);</code></pre>
     margin-bottom: 2px;
   }
   .ds-chip2-top code {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--ds-cyan);
     background: rgba(22,190,207,0.08);
-    padding: 2px 6px;
+    padding: 2px 7px;
     border-radius: 4px;
   }
   .ds-chip2-hex {
-    font-size: 11px;
+    font-size: 13px;
     color: rgba(255,255,255,0.35);
     font-family: monospace;
   }
   .ds-chip2-hex-dark { color: rgba(0,0,0,0.35); }
   .ds-chip2-name {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: #fff;
     line-height: 1.3;
   }
   .ds-chip2-name-dark { color: rgba(0,0,0,0.75); }
   .ds-chip2-desc {
-    font-size: 12px;
+    font-size: 14px;
     color: rgba(255,255,255,0.45);
     line-height: 1.55;
     margin: 0;
@@ -1588,7 +1728,7 @@ font-family: var(--font-secondary);</code></pre>
   .ds-chip2-rule {
     display: inline-block;
     margin-top: 6px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 4px;
@@ -1622,7 +1762,7 @@ font-family: var(--font-secondary);</code></pre>
     flex-shrink: 0;
     padding: 6px 14px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -1640,13 +1780,13 @@ font-family: var(--font-secondary);</code></pre>
     gap: 8px;
   }
   .ds-rule-body strong {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     color: #fff;
     display: block;
   }
   .ds-rule-body > p {
-    font-size: 13px;
+    font-size: 15px;
     color: rgba(255,255,255,0.55);
     line-height: 1.6;
     margin: 0;
@@ -1661,14 +1801,14 @@ font-family: var(--font-secondary);</code></pre>
     background: rgba(255,255,255,0.03);
     border-radius: 8px;
     padding: 10px 12px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
   }
   .ds-rule-ok { border-left: 3px solid #4ECCA3; }
   .ds-rule-bad { border-left: 3px solid #FF5252; }
   .ds-rule-badge-ok, .ds-rule-badge-bad {
     display: block;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
@@ -1696,7 +1836,7 @@ font-family: var(--font-secondary);</code></pre>
     align-items: stretch;
   }
   .ds-type-meta {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--ds-muted);
     line-height: 1.6;
     padding: 24px 0;
@@ -1705,7 +1845,7 @@ font-family: var(--font-secondary);</code></pre>
     gap: 4px;
   }
   .ds-type-meta code {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--ds-accent);
     font-family: monospace;
@@ -1713,7 +1853,7 @@ font-family: var(--font-secondary);</code></pre>
   .ds-type-meta em {
     font-style: italic;
     color: var(--ds-muted);
-    font-size: 11px;
+    font-size: 13px;
   }
   .ds-type-preview {
     border-radius: 10px;
@@ -1724,6 +1864,13 @@ font-family: var(--font-secondary);</code></pre>
     border: 1px solid var(--ds-border);
     overflow: hidden;
   }
+
+  /* TEXT DEMO */
+  .ds-text-demo-note { font-size: 14px; color: rgba(255,255,255,0.4); font-family: monospace; margin-bottom: 20px; }
+  .ds-text-demo-note code { color: rgba(255,255,255,0.6); }
+  .ds-text-demo-block { background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: 10px; padding: 32px 40px; }
+  .ds-text-demo { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 400; line-height: 1.65; color: rgba(255,255,255,0.75); }
+  .ds-ac { color: #A081D1; font-weight: 600; font-style: normal; }
 
   /* SPACING */
   .ds-spacing-grid {
@@ -1743,13 +1890,13 @@ font-family: var(--font-secondary);</code></pre>
     flex-shrink: 0;
   }
   .ds-spacing-item code {
-    font-size: 12px;
-    color: var(--ds-accent);
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
     min-width: 120px;
     font-family: monospace;
   }
   .ds-spacing-val {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--ds-muted);
   }
 
@@ -1762,101 +1909,65 @@ font-family: var(--font-secondary);</code></pre>
     overflow: hidden;
   }
   .ds-component-notes {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--ds-muted);
     line-height: 1.7;
     padding: 16px 0;
     border-bottom: 1px solid var(--ds-border);
   }
   .ds-component-notes code {
-    color: var(--ds-accent);
+    color: rgba(255,255,255,0.6);
     font-family: monospace;
   }
 
-  /* Demo buttons */
-  .btn-hero-demo {
-    display: inline-flex;
-    align-items: center;
-    padding: 9px 35px;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
+  /* Button groups */
+  .ds-btn-group-label {
     font-family: 'Kanit', sans-serif;
-    font-size: 22px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0;
-    border-radius: 6px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 4px 24px rgba(0,0,0,0.2);
-    transition: background 0.2s, border-color 0.2s;
-    white-space: nowrap;
-    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #A081D1;
+    padding: 14px 0 8px;
+    border-top: 1px solid var(--ds-border);
+    margin-top: 16px;
   }
-  .btn-hero-demo:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.5); }
-  .btn-glass-primary-demo {
-    display: inline-flex; align-items: center;
-    padding: 14px 32px;
-    background: rgba(255,255,255,0.18); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.45); color: #fff;
-    font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700;
-    text-transform: uppercase; border-radius: 4px; text-decoration: none;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 24px rgba(0,0,0,0.2);
-    transition: background 0.2s, border-color 0.2s;
+  .ds-btn-row {
+    border-radius: 10px;
+    padding: 36px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 4px;
   }
-  .btn-glass-primary-demo:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.65); }
-  .btn-glass-ghost-demo {
-    display: inline-flex; align-items: center;
-    padding: 14px 32px;
-    background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.25); color: #fff;
-    font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700;
-    text-transform: uppercase; border-radius: 4px; text-decoration: none;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 24px rgba(0,0,0,0.2);
-    transition: background 0.2s, border-color 0.2s;
+  .ds-btn-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
   }
-  .btn-glass-ghost-demo:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.45); }
-  .btn-teal-demo {
-    display: inline-flex;
-    align-items: center;
-    padding: 14px 32px;
-    background: #0DD4CD;
-    color: #000;
-    font-family: 'Kanit', sans-serif;
+  .ds-btn-tag {
+    font-family: monospace;
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0;
-    border-radius: 100px;
-    text-decoration: none;
-    white-space: nowrap;
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.08);
+    padding: 2px 8px;
+    border-radius: 4px;
   }
-  .btn-outline-demo {
-    display: inline-flex;
-    align-items: center;
-    padding: 13px 32px;
-    border: 2px solid rgba(255,255,255,0.3);
-    color: #fff;
-    font-family: 'Kanit', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0;
-    border-radius: 100px;
-    text-decoration: none;
-    white-space: nowrap;
+  .ds-btn-tag--dark {
+    color: #000326;
+    background: rgba(0,3,38,0.15);
   }
-  .btn-ref-demo {
-    display: inline-flex;
-    align-items: center;
-    padding: 13px 32px;
-    border: 2px solid rgba(255,255,255,0.3);
-    color: #fff;
-    font-family: 'Kanit', sans-serif;
+  .ds-btn-note {
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0;
-    border-radius: 100px;
-    text-decoration: none;
-    white-space: nowrap;
+    color: rgba(255,255,255,0.45);
+    max-width: 280px;
+    line-height: 1.5;
+  }
+  .ds-btn-note--dark {
+    color: rgba(0,3,38,0.6);
   }
 
   /* FONT STACK */
@@ -1875,15 +1986,15 @@ font-family: var(--font-secondary);</code></pre>
     flex-direction: column;
     gap: 12px;
   }
-  .ds-font-var code { font-size: 12px; color: var(--ds-accent); }
+  .ds-font-var code { font-size: 14px; color: #fff; }
   .ds-font-name { font-size: 40px; font-weight: 700; color: #fff; line-height: 1; }
   .ds-font-weights { display: flex; gap: 16px; flex-wrap: wrap; }
-  .ds-font-weights span { font-size: 14px; color: rgba(255,255,255,0.6); }
-  .ds-font-use { font-size: 12px; color: var(--ds-muted); font-style: italic; }
+  .ds-font-weights span { font-size: 14px; color: #fff; }
+  .ds-font-use { font-size: 14px; color: rgba(255,255,255,0.5); font-style: italic; }
 
   /* TYPE META — nový layout */
   .ds-type-meta {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--ds-muted);
     line-height: 1.6;
     padding: 24px 0;
@@ -1891,9 +2002,9 @@ font-family: var(--font-secondary);</code></pre>
     flex-direction: column;
     gap: 3px;
   }
-  .ds-type-meta code { font-size: 13px; font-weight: 700; color: var(--ds-accent); font-family: monospace; margin-bottom: 4px; }
+  .ds-type-meta code { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.85); font-family: monospace; margin-bottom: 4px; }
   .ds-type-meta span { color: rgba(255,255,255,0.55); }
-  .ds-type-meta em { font-style: italic; color: var(--ds-accent); opacity: 0.6; font-size: 11px; margin-top: 4px; }
+  .ds-type-meta em { font-style: italic; color: rgba(255,255,255,0.4); font-size: 13px; margin-top: 4px; }
 
   /* INCONSISTENCIES */
   .ds-section-warn { border-color: rgba(255,82,82,0.2); background: rgba(255,82,82,0.02); }
@@ -1914,10 +2025,10 @@ font-family: var(--font-secondary);</code></pre>
     gap: 12px;
   }
   .ds-incon-card.ds-incon-bad { border-color: rgba(255,82,82,0.35); }
-  .ds-incon-label { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--ds-muted); letter-spacing: 0.03em; }
-  .ds-incon-file { display: block; color: rgba(255,82,82,0.8); font-weight: 400; text-transform: none; margin-top: 2px; font-family: monospace; font-size: 10px; }
+  .ds-incon-label { font-size: 14px; font-weight: 600; text-transform: uppercase; color: var(--ds-muted); letter-spacing: 0.03em; }
+  .ds-incon-file { display: block; color: rgba(255,82,82,0.8); font-weight: 400; text-transform: none; margin-top: 2px; font-family: monospace; font-size: 13px; }
   .ds-incon-preview { background: #000326; border-radius: 6px; padding: 16px; min-height: 60px; display: flex; align-items: center; }
-  .ds-incon-card code { font-size: 11px; color: rgba(255,82,82,0.9); font-family: monospace; }
+  .ds-incon-card code { font-size: 13px; color: rgba(255,82,82,0.9); font-family: monospace; }
 
   .ds-token-unused-grid {
     display: grid;
@@ -1934,9 +2045,9 @@ font-family: var(--font-secondary);</code></pre>
     flex-direction: column;
     gap: 4px;
   }
-  .ds-unused-token code { font-size: 11px; color: var(--ds-accent); font-family: monospace; }
-  .ds-unused-val { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.5); }
-  .ds-unused-badge { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #FF5252; margin-top: 4px; }
+  .ds-unused-token code { font-size: 13px; color: rgba(255,255,255,0.6); font-family: monospace; }
+  .ds-unused-val { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.5); }
+  .ds-unused-badge { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #FF5252; margin-top: 4px; }
 
   .ds-code-diff {
     display: grid;
@@ -1953,16 +2064,16 @@ font-family: var(--font-secondary);</code></pre>
   }
   .ds-diff-bad { background: rgba(255,82,82,0.08); border: 1px solid rgba(255,82,82,0.3); }
   .ds-diff-good { background: rgba(78,204,163,0.08); border: 1px solid rgba(78,204,163,0.3); }
-  .ds-diff-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ds-diff-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
   .ds-diff-bad .ds-diff-label { color: #FF5252; }
   .ds-diff-good .ds-diff-label { color: #4ECCA3; }
   .ds-diff-bad pre, .ds-diff-good pre { margin: 0; }
-  .ds-diff-bad code, .ds-diff-good code { font-size: 12px; font-family: monospace; line-height: 1.7; }
+  .ds-diff-bad code, .ds-diff-good code { font-size: 14px; font-family: monospace; line-height: 1.7; }
   .ds-diff-bad code { color: rgba(255,82,82,0.9); }
   .ds-diff-good code { color: #4ECCA3; }
 
   .ds-incon-note {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--ds-muted);
     line-height: 1.6;
     padding: 10px 14px;
@@ -1971,36 +2082,172 @@ font-family: var(--font-secondary);</code></pre>
     border-radius: 0 4px 4px 0;
     margin-top: 4px;
   }
-  .ds-incon-note code { color: var(--ds-accent); font-family: monospace; }
+  .ds-incon-note code { color: rgba(255,255,255,0.6); font-family: monospace; }
 
   /* FOOTER */
   .ds-footer {
     border-top: 1px solid var(--ds-border);
     padding: 24px 40px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--ds-muted);
   }
 
   /* VIEWPORTS */
   .ds-vp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  /* VP diagram */
+  .ds-vp-diagram { margin-top: 28px; }
+  .ds-vp-browser {
+    background: #0C0C42; border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; overflow: hidden;
+  }
+  .ds-vp-browser-bar {
+    background: rgba(255,255,255,0.04); padding: 8px 14px;
+    display: flex; align-items: center; gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .ds-vp-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.12); display: inline-block; }
+  .ds-vp-url { font-family: monospace; font-size: 13px; color: rgba(255,255,255,0.25); margin-left: 8px; }
+  .ds-vp-stage { padding: 24px 0 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .ds-vp-layer {
+    display: flex; align-items: center; justify-content: space-between;
+    border-radius: 4px; padding: 7px 14px;
+    font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 500;
+  }
+  .ds-vp-layer-ext  { width: 100%; background: rgba(22,190,207,0.06); border: 1px solid rgba(22,190,207,0.15); }
+  .ds-vp-layer-wide { width: 90%;  background: rgba(22,190,207,0.09); border: 1px solid rgba(22,190,207,0.22); }
+  .ds-vp-layer-std  { width: 80%;  background: rgba(22,190,207,0.14); border: 1px solid rgba(22,190,207,0.35); }
+  .ds-vp-layer-read { width: 64%;  background: rgba(22,190,207,0.19); border: 1px solid rgba(22,190,207,0.50); }
+  .ds-vp-layer-label { color: rgba(255,255,255,0.75); }
+  .ds-vp-layer-val   { color: rgba(255,255,255,0.6); font-family: monospace; font-size: 13px; }
+  .ds-vp-layer-std .ds-vp-layer-label { color: #fff; font-weight: 700; }
+  .ds-vp-bp-row { display: flex; gap: 0; margin-top: 12px; padding: 0 0 0 24px; }
+  .ds-vp-bp { display: flex; align-items: center; gap: 8px; margin-right: 32px; }
+  .ds-vp-bp-line { width: 1px; height: 24px; background: rgba(255,255,255,0.2); }
+  .ds-vp-bp-tag { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.4; }
+  .ds-vp-bp-desc { display: flex; gap: 32px; margin-top: 10px; font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+  .ds-vp-bp-desc b { color: rgba(255,255,255,0.6); }
   .ds-vp-card { background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: 10px; padding: 18px 20px; }
   .ds-vp-card-active { border-color: rgba(22,190,207,0.35); }
-  .ds-vp-name { font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-  .ds-vp-val { font-family: monospace; font-size: 16px; font-weight: 700; color: var(--ds-accent); margin-bottom: 4px; }
-  .ds-vp-class { font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
-  .ds-vp-desc { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5; }
+  .ds-vp-name { font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .ds-vp-val { font-family: monospace; font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .ds-vp-class { font-family: monospace; font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+  .ds-vp-desc { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.5; }
 
   /* GLOBAL CLASSES TABLE */
-  .ds-gt-table { width: 100%; border-collapse: collapse; }
-  .ds-gt-table th { font-family: 'Kanit', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.3); padding: 6px 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .ds-gt-table td { padding: 14px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
+  .ds-gt-table { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+  .ds-gt-table th { font-family: 'Kanit', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.3); padding: 8px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .ds-gt-table td { padding: 20px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
   .ds-gt-table tr:last-child td { border-bottom: none; }
-  .ds-gt-id { font-family: 'Kanit', sans-serif; font-size: 10px; font-weight: 700; color: var(--ds-accent); white-space: nowrap; }
-  .ds-gt-class { font-family: monospace; font-size: 11px; color: var(--ds-accent); background: rgba(22,190,207,0.07); padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
-  .ds-gt-preview { max-width: 280px; }
-  .ds-gt-meta { font-family: monospace; font-size: 10px; color: rgba(255,255,255,0.3); white-space: nowrap; }
-  .ds-gt-use { font-size: 11px; color: rgba(255,255,255,0.35); }
+  .ds-gt-table th:nth-child(1), .ds-gt-table td:nth-child(1) { width: 52px; }
+  .ds-gt-table th:nth-child(2), .ds-gt-table td:nth-child(2) { width: 130px; }
+  .ds-gt-table th:nth-child(3), .ds-gt-table td:nth-child(3) { width: 180px; }
+  .ds-gt-table th:nth-child(5), .ds-gt-table td:nth-child(5) { width: 160px; }
+  .ds-gt-id { font-family: 'Kanit', sans-serif; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.45); }
+  .ds-gt-class { font-family: monospace; font-size: 14px; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
+  .ds-gt-preview { background: #000326; border-radius: 8px; padding: 20px 28px; }
+
+  /* LINK DEMOS */
+  .ds-nav-link-demo {
+    font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600;
+    text-transform: uppercase; color: rgba(255,255,255,0.85); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .ds-nav-link-demo:hover { color: #16BECF; text-decoration: underline; text-underline-offset: 5px; }
+  .ds-footer-link-demo {
+    font-family: 'Montserrat', sans-serif; font-size: 16px; color: #16BECF; text-decoration: none;
+    transition: color 0.2s;
+  }
+  .ds-footer-link-demo:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  .ds-cta-link-demo {
+    font-family: 'Kanit', sans-serif; font-size: clamp(18px, 2.5vw, 32px); font-weight: 700;
+    color: #092066; text-decoration: none; transition: text-decoration 0.2s;
+  }
+  .ds-cta-link-demo:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* GALLERY RULES */
+  .ds-rule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .ds-rule-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 14px 16px; }
+  .ds-rule-label { font-family: 'Kanit', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+  .ds-rule-body { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* GALERIE */
+  .ds-gallery-preview { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; }
+  .ds-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .ds-gallery-item {
+    display: block;
+    position: relative;
+    border-radius: var(--radius-md, 8px);
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    cursor: zoom-in;
+    text-decoration: none;
+  }
+  .ds-gallery-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+  }
+  .ds-gallery-item:hover .ds-gallery-img { transform: scale(1.05); }
+  .ds-gallery-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,3,38,0.5);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.22s;
+  }
+  .ds-gallery-item:hover .ds-gallery-overlay { opacity: 1; }
+
+  /* DS LIGHTBOX */
+  .ds-lightbox {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+  }
+  .ds-lightbox.is-open { display: flex; }
+  .ds-lb-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: 2px solid rgba(255,255,255,0.5);
+    color: #fff; font-size: 20px;
+    width: 48px; height: 48px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s; line-height: 1;
+  }
+  .ds-lb-close:hover { border-color: #fff; }
+  .ds-lb-img {
+    max-width: 90vw; max-height: 90vh;
+    object-fit: contain; border-radius: 8px;
+    cursor: default; box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+  }
+  .ds-lb-prev, .ds-lb-next {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.12); border: none; color: #fff;
+    font-size: 44px; line-height: 1;
+    width: 60px; height: 60px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s; z-index: 1;
+  }
+  .ds-lb-prev { left: 24px; }
+  .ds-lb-next { right: 24px; }
+  .ds-lb-prev:hover, .ds-lb-next:hover { background: rgba(255,255,255,0.28); }
+  .ds-lb-counter {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.55);
+    font-family: var(--font-primary, 'Kanit', sans-serif);
+    font-size: 13px; letter-spacing: 0.08em;
+  }
+  .ds-gt-meta { font-family: monospace; font-size: 14px; color: rgba(255,255,255,0.3); line-height: 1.8; width: 220px; }
+  .ds-gt-use { font-size: 14px; color: rgba(255,255,255,0.35); }
 
   /* PILLS (global classes used directly) */
   .ds-incon-card.ds-incon-ok { border-color: rgba(78,204,163,0.25); }
@@ -2009,21 +2256,21 @@ font-family: var(--font-secondary);</code></pre>
   .ds-links-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
   .ds-links-table tr { background: rgba(255,255,255,0.02); }
   .ds-links-table tr:nth-child(even) { background: rgba(255,255,255,0.01); }
-  .ds-links-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.04); font-family: 'Montserrat', sans-serif; font-size: 13px; color: rgba(255,255,255,0.75); vertical-align: middle; }
+  .ds-links-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.04); font-family: 'Montserrat', sans-serif; font-size: 15px; color: rgba(255,255,255,0.75); vertical-align: middle; }
   .ds-links-table tr:last-child td { border-bottom: none; }
-  .ds-lt-type { font-family: monospace; font-size: 11px; color: rgba(22,190,207,0.7); width: 150px; vertical-align: middle; }
-  .ds-lt-note { font-size: 11px; color: rgba(255,255,255,0.3); }
+  .ds-lt-type { font-family: monospace; font-size: 13px; color: rgba(22,190,207,0.7); width: 150px; vertical-align: middle; }
+  .ds-lt-note { font-size: 13px; color: rgba(255,255,255,0.3); }
 
   /* BLOCKS GRID */
   .ds-blocks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
   .ds-block-card { background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: 10px; overflow: hidden; }
   .ds-block-hd { padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 8px; }
-  .ds-block-num { font-family: 'Kanit', sans-serif; font-size: 13px; font-weight: 700; color: var(--ds-accent); min-width: 32px; }
-  .ds-block-ttl { font-family: 'Kanit', sans-serif; font-size: 13px; font-weight: 600; color: #fff; flex: 1; }
-  .ds-block-file { font-family: monospace; font-size: 10px; color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
+  .ds-block-num { font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.45); min-width: 32px; }
+  .ds-block-ttl { font-family: 'Kanit', sans-serif; font-size: 15px; font-weight: 600; color: #fff; flex: 1; }
+  .ds-block-file { font-family: monospace; font-size: 13px; color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
   .ds-block-bd { padding: 12px 14px; }
   .ds-block-thumb { background: rgba(0,3,38,0.6); border-radius: 6px; margin-bottom: 10px; }
-  .ds-block-meta { font-family: 'Montserrat', sans-serif; font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6; }
+  .ds-block-meta { font-family: 'Montserrat', sans-serif; font-size: 14px; color: rgba(255,255,255,0.3); line-height: 1.6; }
   .ds-block-meta b { color: rgba(255,255,255,0.55); font-weight: 600; }
 
   /* RESPONSIVE */
@@ -2038,5 +2285,40 @@ font-family: var(--font-secondary);</code></pre>
     .ds-gt-table th:nth-child(4), .ds-gt-table th:nth-child(5),
     .ds-gt-table td:nth-child(4), .ds-gt-table td:nth-child(5) { display: none; }
     .ds-blocks-grid { grid-template-columns: 1fr; }
+    .ds-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
+
+<script>
+  // DS Lightbox — standalone, nezasahuje do ostatních stránek
+  (function () {
+    const lb = document.getElementById('ds-lightbox');
+    if (!lb) return;
+    const lbImg = document.getElementById('ds-lb-img');
+    const lbCounter = document.getElementById('ds-lb-counter');
+    const items = [...document.querySelectorAll('.ds-gallery-item')];
+    const images = items.map(item => ({ src: item.getAttribute('href'), alt: item.querySelector('img')?.alt || '' }));
+    let current = 0;
+
+    function show(index) {
+      current = (index + images.length) % images.length;
+      lbImg.src = images[current].src;
+      lbImg.alt = images[current].alt;
+      lbCounter.textContent = `${current + 1} / ${images.length}`;
+    }
+    function open(index) { show(index); lb.classList.add('is-open'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+    function close() { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden', 'true'); lbImg.src = ''; document.body.style.overflow = ''; }
+
+    items.forEach((item, i) => item.addEventListener('click', e => { e.preventDefault(); open(i); }));
+    lb.querySelector('.ds-lb-close').addEventListener('click', close);
+    lb.querySelector('.ds-lb-prev').addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+    lb.querySelector('.ds-lb-next').addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+    lb.addEventListener('click', e => { if (e.target === lb || e.target === lbImg) close(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+</script>
