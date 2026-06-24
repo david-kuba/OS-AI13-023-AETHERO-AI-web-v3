@@ -412,15 +412,15 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   /* Page nav (hero TOC) */
   .page-nav {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--card-button);
     border-radius: var(--radius-md);
     padding: 16px;
     display: flex; flex-direction: column; gap: 8px;
   }
   .page-nav-item {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
-    color: rgba(255,255,255,0.8); text-transform: uppercase;
+    font-family: var(--font-primary);
+    font-size: 14px; font-weight: 600; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7); text-transform: uppercase;
     text-decoration: none; padding: 4px 0;
     transition: color 0.2s;
   }
