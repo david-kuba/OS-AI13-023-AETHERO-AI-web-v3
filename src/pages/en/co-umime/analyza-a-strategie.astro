@@ -96,11 +96,25 @@ const steps = [
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <p class="testimonial-text">"The output was well-crafted, clear and above all full of specific insights we can immediately use to drive further growth for our store. No generic recommendations — solutions tailored specifically to us."</p>
-          <p class="testimonial-author">— <strong>Lucie, owner of fleppi.cz</strong> · ⭐⭐⭐⭐⭐ Google</p>
+          <div class="testimonial-footer">
+            <img src="/ref-lucie.jpg" alt="Lucie" class="testimonial-avatar" />
+            <div class="testimonial-meta">
+              <strong>Lucie</strong>
+              <span>owner of fleppi.cz · ⭐⭐⭐⭐⭐ Google</span>
+            </div>
+            <img src="/ref-fleppi-logo.jpg" alt="fleppi" class="testimonial-logo testimonial-logo--light" />
+          </div>
         </div>
         <div class="testimonial-card">
           <p class="testimonial-text">"I am thrilled, because for the first time I have a complete picture of everything happening in the store, all in one place. The biggest thing is how the data connects with each other. I can see whether the content on the site actually engaged people and add info from the mailing — what people respond to best in emails. These overlaps, where I see the entire customer journey from search to purchase, allow me to make changes in Shopify that actually make sense."</p>
-          <p class="testimonial-author">— <strong>Petr, owner of BU1.cz</strong></p>
+          <div class="testimonial-footer">
+            <img src="/ref-petr.png" alt="Petr" class="testimonial-avatar" />
+            <div class="testimonial-meta">
+              <strong>Petr</strong>
+              <span>owner of BU1.cz</span>
+            </div>
+            <img src="/ref-bu1-logo.svg" alt="BU1" class="testimonial-logo" />
+          </div>
         </div>
       </div>
     </div>
@@ -237,9 +251,15 @@ const steps = [
 
   .testimonials-label { font-size: clamp(18px, 2vw, 24px); font-weight: 600; margin-bottom: var(--space-40); text-align: center; }
   .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-40); }
-  .testimonial-card { background: rgb(232, 222, 255); border-radius: var(--radius-md); padding: var(--space-32); }
-  .testimonial-text { font-size: 16px; color: #1a1a2e; line-height: 1.7; margin-bottom: var(--space-16); font-style: italic; }
-  .testimonial-author { font-size: 14px; color: #1a1a2e; opacity: 0.85; }
+  .testimonial-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-32); display: flex; flex-direction: column; }
+  .testimonial-text { font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: var(--space-24); font-style: italic; font-family: var(--font-secondary); flex: 1; }
+  .testimonial-footer { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: top; flex-shrink: 0; }
+  .testimonial-meta { flex: 1; }
+  .testimonial-meta strong { display: block; font-size: 14px; color: #fff; font-weight: 600; line-height: 1.4; }
+  .testimonial-meta span { font-size: 12px; color: rgba(255,255,255,0.45); }
+  .testimonial-logo { height: 26px; width: auto; object-fit: contain; flex-shrink: 0; }
+  .testimonial-logo--light { background: #fff; border-radius: 4px; padding: 4px 8px; height: 32px; }
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
