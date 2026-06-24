@@ -8,322 +8,338 @@ import PageLayout from '../../layouts/PageLayout.astro';
   lang="en"
 >
 
-  <!-- HERO -->
-  <section class="cs-hero">
-    <div class="container">
+  <!-- 2-col layout: sidebar LEFT + content RIGHT -->
+  <div class="cs-layout">
+
+    <!-- ROW 1: label + H1 (right column only) -->
+    <div class="cs-hero-head">
       <p class="cs-label">Case Study · EMAIL MARKETING ANALYSIS</p>
       <h1 class="cs-h1">Mailing strategy<br /><a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a> × <span class="hl-link">Leadhub</span> × <span class="hl-link">Shoptet</span></h1>
-      <div class="cs-hero-split">
+    </div>
+
+    <!-- ROW 2 LEFT: sticky nav (aligned with perex) -->
+    <aside class="cs-aside">
+      <nav class="page-nav">
+        <a href="#s01" class="page-nav-item">01 · CLIENT</a>
+        <a href="#s02" class="page-nav-item">02 · BASELINE</a>
+        <a href="#s03" class="page-nav-item">03 · PROCESS</a>
+        <a href="#s04" class="page-nav-item">04 · FINDINGS</a>
+        <a href="#s05" class="page-nav-item">05 · RECOMMENDATIONS</a>
+        <a href="#s06" class="page-nav-item">06 · OUTPUT</a>
+        <a href="#s07" class="page-nav-item">07 · REFERENCE</a>
+      </nav>
+    </aside>
+
+    <!-- ROW 2 RIGHT: perex + content -->
+    <main class="cs-main">
+
+      <!-- Hero -->
+      <div class="cs-hero-inner">
         <p class="cs-perex">How we helped a Czech stationery e-shop <span class="perex-hl">identify the causes of declining email marketing performance and build a concrete recovery plan</span> — all based on two years of data, without API access.</p>
-        <nav class="page-nav">
-          <a href="#s01" class="page-nav-item">01 · CLIENT</a>
-          <a href="#s02" class="page-nav-item">02 · BASELINE</a>
-          <a href="#s03" class="page-nav-item">03 · PROCESS</a>
-          <a href="#s04" class="page-nav-item">04 · FINDINGS</a>
-          <a href="#s05" class="page-nav-item">05 · RECOMMENDATIONS</a>
-          <a href="#s06" class="page-nav-item">06 · OUTPUT</a>
-          <a href="#s07" class="page-nav-item">07 · REFERENCE</a>
-        </nav>
-      </div>
 
-      <!-- Client info row -->
-      <div class="client-row">
-        <div class="client-cell">
-          <span class="client-key">Market segment:</span>
-          <span class="client-val">Stationery / Planning</span>
-        </div>
-        <div class="client-cell">
-          <span class="client-key">Platform:</span>
-          <span class="client-val">Shoptet</span>
-        </div>
-        <div class="client-cell">
-          <span class="client-key">Analysis scope:</span>
-          <span class="client-val">2 years of data</span>
-        </div>
-        <div class="client-cell">
-          <span class="client-key">Mailing tool:</span>
-          <span class="client-val">Leadhub</span>
-        </div>
-      </div>
-
-      <!-- Metrics -->
-      <div class="metrics-block">
-        <div class="metrics-row">
-          <div class="metric-item">
-            <div class="metric-val">+25–35 %</div>
-            <div class="metric-desc">summer email revenue</div>
+        <!-- Client info row -->
+        <div class="client-row">
+          <div class="client-cell">
+            <span class="client-key">Market segment:</span>
+            <span class="client-val">Stationery / Planning</span>
           </div>
-          <div class="metric-item">
-            <div class="metric-val">+5–7× higher</div>
-            <div class="metric-desc">revenue for club segment</div>
+          <div class="client-cell">
+            <span class="client-key">Platform:</span>
+            <span class="client-val">Shoptet</span>
           </div>
-          <div class="metric-item">
-            <div class="metric-val">40+ tasks</div>
-            <div class="metric-desc">in the action plan</div>
+          <div class="client-cell">
+            <span class="client-key">Analysis scope:</span>
+            <span class="client-val">2 years of data</span>
+          </div>
+          <div class="client-cell">
+            <span class="client-key">Mailing tool:</span>
+            <span class="client-val">Leadhub</span>
           </div>
         </div>
-      </div>
-      <p class="h3-maxi cs-stats">2 years of data, 249 campaigns, 20 000+ orders</p>
-    </div>
-  </section>
 
-  <!-- 01 CLIENT -->
-  <section class="cs-section" id="s01">
-    <div class="container">
-      <h2 class="sec-h2">What is <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
-      <p class="sec-text">fleppi.cz is a Czech e-shop focused on planning, bullet journaling and stationery. The target group are organised people — primarily women aged 25–40 who look for diary inserts, stickers, stamps and accessories for personal productivity.</p>
-      <p class="sec-text">The e-shop operates on the Shoptet platform with thousands of SKUs across several hundred product groups. Email marketing is handled by Leadhub. A key characteristic of the assortment is the absence of a single dominant product — customers buy a set of complementary items where the value lies in the combination and regular replenishment.</p>
-      <div class="klient-grid">
-        <div class="klient-card">
-          <strong>Diary inserts:</strong> Largest category by revenue — regular consumption, high purchase frequency.
-        </div>
-        <div class="klient-card">
-          <strong>Stickers:</strong> Highest unit volume — impulse purchases, ideal cross-sell item.
-        </div>
-        <div class="klient-card">
-          <strong>Stamps & accessories:</strong> Higher AOV, lower frequency — seasonal opportunity.
-        </div>
-        <div class="klient-card">
-          <strong>Email as backbone:</strong> Email accounts for almost half of the e-shop's total revenue.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 BASELINE -->
-  <section class="cs-section" id="s02">
-    <div class="container">
-      <h2 class="sec-h2">Before the analysis</h2>
-      <p class="sec-text">fleppi had a functioning email marketing setup with a welcome sequence, regular newsletters and segmentation into Club (loyal customers) and the broader customer database. Yet revenue and customer engagement were declining year-on-year — without a clear answer as to why.</p>
-      <p class="sec-text">API access to Leadhub was not available at the start of the project. The entire analysis was therefore conducted on CSV exports from Leadhub and Shoptet — two years of data covering hundreds of campaigns and tens of thousands of orders.</p>
-
-      <div class="two-col-lists">
-        <div>
-          <h3 class="list-label list-label--bad">What was missing</h3>
-          <ul class="dot-list">
-            <li>Year-on-year view of performance — no visibility into where and why things were declining.</li>
-            <li>Understanding of the link between email activity and monthly revenue.</li>
-            <li>Quantification of the impact of individual automations.</li>
-            <li>Cross-sell opportunities identified from order data.</li>
-            <li>Comparison of Club vs. customer database performance.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="list-label list-label--good">What was working</h3>
-          <ul class="dot-list">
-            <li>Welcome sequence with high open rate and conversion.</li>
-            <li>Club newsletter — consistently the strongest format.</li>
-            <li>Regular sends throughout the year.</li>
-            <li>Abandoned cart automations in three steps.</li>
-            <li>Seasonal campaigns in Q4.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="problem-box">
-        <p class="problem-label">Core problem:</p>
-        <p class="problem-text">Customers were opening emails but stopped clicking — this directly translated declining email performance into revenue loss. Email accounts for almost half of total sales, so every dip in the email channel is felt immediately in the numbers.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 03 PROCESS -->
-  <section class="cs-section" id="s03">
-    <div class="container">
-      <h2 class="sec-h2">Solution</h2>
-      <p class="sec-text">The analysis ran as a live collaboration with the fleppi owner — interim results were shared in real time and the owner provided context (warehouse move, decisions about summer campaigns, assortment changes) that helped interpret the data correctly.</p>
-      <div class="steps-list">
-        <div class="step-row">
-          <div class="step-n">1</div>
-          <div>
-            <strong>Data import & validation</strong>
-            <p class="step-desc">CSV exports from Shoptet and Leadhub — campaigns, automations and orders over a two-year horizon. Data cleaning, format standardisation, consistency verification.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">2</div>
-          <div>
-            <strong>Year-on-year order comparison</strong>
-            <p class="step-desc">Every calendar month year after year — revenue, order count, average basket value, customers, retention. Precise identification of months and causes of decline.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">3</div>
-          <div>
-            <strong>Email campaign analysis</strong>
-            <p class="step-desc">Hundreds of broadcast campaigns and automations over two years. Open rate, CTR, revenue and revenue per email sent — by month and by campaign. Identification of top performers and blind spots.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">4</div>
-          <div>
-            <strong>Market basket analysis</strong>
-            <p class="step-desc">From tens of thousands of orders, identifying the most common product combinations — the foundation for cross-sell automations and product-focused newsletters.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">5</div>
-          <div>
-            <strong>Strategy & 365-day plan</strong>
-            <p class="step-desc">All findings translated into a concrete action plan with rationale and estimated impact for every task.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 FINDINGS -->
-  <section class="cs-section" id="s04">
-    <div class="container">
-      <h2 class="sec-h2">What the data revealed</h2>
-      <p class="sec-text">The performance decline was neither random nor across the board — it had specific causes in specific months. The data clearly showed where and why.</p>
-
-      <div class="findings-list">
-        <div class="finding">
-          <h3 class="finding-title">Email activity = revenue:</h3>
-          <p class="sec-text">In months with significantly higher email activity, revenue was provably higher — and vice versa. Campaign gaps in summer were immediately reflected in sales.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Missing one email = permanent loss:</h3>
-          <p class="sec-text">A loss that can't be recovered. The summer period uncovered untapped potential. A direct comparison of the same summer months across two years showed that where there were fewer campaigns, revenue was significantly lower. The 2024 summer mystery box generated revenue from a single email comparable to entire average campaign batches — and in 2025 it had no replacement.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Club newsletter — golden asset:</h3>
-          <p class="sec-text">The segmented Club newsletter generates significantly higher revenue per email sent than standard broadcasts — consistently and across the entire observed period. This segment is the most valuable asset in the entire database.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Welcome sequence as the strongest automation:</h3>
-          <p class="sec-text">The first welcome email with a code has an open rate above 60% and generates revenue per email far exceeding any broadcast campaign. Emails 2–4 have significant room for optimisation — timing and content can substantially improve their performance.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Cross-sell = hidden opportunity:</h3>
-          <p class="sec-text">More than a third of orders contain two key categories simultaneously — yet there is no automation to actively direct customers towards complementary products after their first purchase.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Declining engagement with campaign content:</h3>
-          <p class="sec-text">Open rate remained well above the industry average, but CTR declined year-on-year to less than half. Customers remain in contact with the brand — but the content or CTA stopped being sufficiently persuasive.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Positive signal:</h3>
-          <p class="sec-text">Months where email activity grew — "birthday series", "campaign for small businesses" — showed year-on-year revenue growth. Customers respond. The problem is not the database, it's content and frequency.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 RECOMMENDATIONS -->
-  <section class="cs-section" id="s05">
-    <div class="container">
-      <h2 class="sec-h2">What we proposed</h2>
-      <p class="sec-text">Every recommendation is grounded directly in the data and anchored to a specific finding. Everything is derived from fleppi's customer behaviour.</p>
-
-      <div class="reco-list">
-        <div class="reco-item">
-          <h3 class="reco-title">Summer mystery box</h3>
-          <p class="sec-text">Bring it back to the campaign calendar: 2024 data clearly shows what a single well-prepared summer email can achieve.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Teaser → last call series</h3>
-          <p class="sec-text">Launch → last call can restore the summer peak that was missing in 2025.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Back-to-school series</h3>
-          <p class="sec-text">August as a strategic month: August is a natural purchase trigger for the target group. Data shows that a campaign gap in this month directly caused a significant revenue decline — a series of 4–5 emails is the fastest path to recovery.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Cross-sell automation</h3>
-          <p class="sec-text">Connect the strongest categories: A third of customers buy both key categories, yet no automation exists. A post-purchase email within 7 days featuring specific complementary products can activate latent interest.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Club newsletter</h3>
-          <p class="sec-text">Increase frequency and invest in content: The best rev/email in the entire portfolio, yet only monthly. Adding one extra Club email while maintaining quality is the surest short-term step towards revenue growth.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Address CTR decline</h3>
-          <p class="sec-text">Systematic testing of subject lines (A/B testing) and CTA across three campaigns will reveal where the click is being lost. Open rate is healthy — the problem is content or the call to action, not the database.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">RFM segmentation</h3>
-          <p class="sec-text">Personalisation by purchase activity: Splitting the database into active customers, customers at risk of churning and dormant contacts allows sending relevant content and reducing unsubscribes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 OUTPUT -->
-  <section class="cs-section" id="s06">
-    <div class="container">
-      <h2 class="sec-h2">What the client received</h2>
-      <p class="sec-text">The output is not a generic report, but a strategic document tailored precisely to fleppi's data and situation.</p>
-      <div class="output-list">
-        <div class="output-item">
-          <strong>Two-year analysis with year-on-year comparison:</strong> Every month, every campaign.
-        </div>
-        <div class="output-item">
-          <strong>What grew, what fell and why:</strong> Identification of decline causes: specific months, specific missing campaigns, specific link to revenue — not guesswork, but data.
-        </div>
-        <div class="output-item">
-          <strong>Top campaigns & automations analysis:</strong> What works, what doesn't and why, with recommendations on how to replicate the strongest formats.
-        </div>
-        <div class="output-item">
-          <strong>Cross-sell map from real data:</strong> Most frequent product combinations from customers, the foundation for automations and product newsletters.
-        </div>
-        <div class="output-item">
-          <strong>General marketing recommendations:</strong> RFM segmentation, NPS, SEO, Pinterest, attribution model — beyond email.
-        </div>
-        <div class="output-item">
-          <strong>365-day action plan:</strong> 40+ concrete tasks with priority, category and rationale for expected impact.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 REFERENCE -->
-  <section class="cs-section" id="s07">
-    <div class="container">
-      <div class="ref-split">
-        <div class="ref-left">
-          <h2 class="sec-h2">Client<br />feedback</h2>
-          <p class="sec-text">What does fleppi say about the analysis?</p>
-        </div>
-        <div class="ref-card">
-          <div class="ref-card-logo">
-            <img src="/ref-fleppi-logo.jpg" alt="fleppi.cz" class="ref-logo-img" />
-          </div>
-          <p class="ref-quote">"If you are looking for a partner who can truly immerse themselves in things, think about them in a broader context and at the same time deliver clear, practical recommendations, I can definitely recommend working with aethero. They carried out an email marketing analysis for us and I am truly delighted with the whole experience. The output was well-crafted, clear and above all full of concrete insights we can immediately put to use for the further growth of our e-shop. No generic recommendations — solutions tailored precisely to us."</p>
-          <div class="ref-author">
-            <img src="/ref-lucie.jpg" alt="Lucie" class="ref-avatar" />
-            <div>
-              <strong>Lucie, owner of fleppi.cz</strong>
-              <span class="ref-source">Google review 5/5</span>
+        <!-- Metrics -->
+        <div class="metrics-block">
+          <div class="metrics-row">
+            <div class="metric-item">
+              <div class="metric-val">+25–35 %</div>
+              <div class="metric-desc">summer email revenue</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-val">+5–7× higher</div>
+              <div class="metric-desc">revenue for club segment</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-val">40+ tasks</div>
+              <div class="metric-desc">in the action plan</div>
             </div>
           </div>
         </div>
+        <p class="h3-maxi cs-stats">2 years of data, 249 campaigns, 20 000+ orders</p>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cs-cta">
-    <div class="container cta-inner">
-      <h2>Want your $$$ from email? Get in touch.</h2>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
-      </div>
-    </div>
-  </section>
+      <!-- 01 CLIENT -->
+      <section class="cs-section" id="s01">
+        <h2 class="sec-h2">What is <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
+        <p class="sec-text">fleppi.cz is a Czech e-shop focused on planning, bullet journaling and stationery. The target group are organised people — primarily women aged 25–40 who look for diary inserts, stickers, stamps and accessories for personal productivity.</p>
+        <p class="sec-text">The e-shop operates on the Shoptet platform with thousands of SKUs across several hundred product groups. Email marketing is handled by Leadhub. A key characteristic of the assortment is the absence of a single dominant product — customers buy a set of complementary items where the value lies in the combination and regular replenishment.</p>
+        <div class="klient-grid">
+          <div class="klient-card">
+            <strong>Diary inserts:</strong> Largest category by revenue — regular consumption, high purchase frequency.
+          </div>
+          <div class="klient-card">
+            <strong>Stickers:</strong> Highest unit volume — impulse purchases, ideal cross-sell item.
+          </div>
+          <div class="klient-card">
+            <strong>Stamps & accessories:</strong> Higher AOV, lower frequency — seasonal opportunity.
+          </div>
+          <div class="klient-card">
+            <strong>Email as backbone:</strong> Email accounts for almost half of the e-shop's total revenue.
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 BASELINE -->
+      <section class="cs-section" id="s02">
+        <h2 class="sec-h2">Before the analysis</h2>
+        <p class="sec-text">fleppi had a functioning email marketing setup with a welcome sequence, regular newsletters and segmentation into Club (loyal customers) and the broader customer database. Yet revenue and customer engagement were declining year-on-year — without a clear answer as to why.</p>
+        <p class="sec-text">API access to Leadhub was not available at the start of the project. The entire analysis was therefore conducted on CSV exports from Leadhub and Shoptet — two years of data covering hundreds of campaigns and tens of thousands of orders.</p>
+
+        <div class="two-col-lists">
+          <div>
+            <h3 class="list-label list-label--bad">What was missing</h3>
+            <ul class="dot-list">
+              <li>Year-on-year view of performance — no visibility into where and why things were declining.</li>
+              <li>Understanding of the link between email activity and monthly revenue.</li>
+              <li>Quantification of the impact of individual automations.</li>
+              <li>Cross-sell opportunities identified from order data.</li>
+              <li>Comparison of Club vs. customer database performance.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="list-label list-label--good">What was working</h3>
+            <ul class="dot-list">
+              <li>Welcome sequence with high open rate and conversion.</li>
+              <li>Club newsletter — consistently the strongest format.</li>
+              <li>Regular sends throughout the year.</li>
+              <li>Abandoned cart automations in three steps.</li>
+              <li>Seasonal campaigns in Q4.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="problem-box">
+          <p class="problem-label">Core problem:</p>
+          <p class="problem-text">Customers were opening emails but stopped clicking — this directly translated declining email performance into revenue loss. Email accounts for almost half of total sales, so every dip in the email channel is felt immediately in the numbers.</p>
+        </div>
+      </section>
+
+      <!-- 03 PROCESS -->
+      <section class="cs-section" id="s03">
+        <h2 class="sec-h2">Solution</h2>
+        <p class="sec-text">The analysis ran as a live collaboration with the fleppi owner — interim results were shared in real time and the owner provided context (warehouse move, decisions about summer campaigns, assortment changes) that helped interpret the data correctly.</p>
+        <div class="steps-list">
+          <div class="step-row">
+            <div class="step-n">1</div>
+            <div>
+              <strong>Data import & validation</strong>
+              <p class="step-desc">CSV exports from Shoptet and Leadhub — campaigns, automations and orders over a two-year horizon. Data cleaning, format standardisation, consistency verification.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">2</div>
+            <div>
+              <strong>Year-on-year order comparison</strong>
+              <p class="step-desc">Every calendar month year after year — revenue, order count, average basket value, customers, retention. Precise identification of months and causes of decline.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">3</div>
+            <div>
+              <strong>Email campaign analysis</strong>
+              <p class="step-desc">Hundreds of broadcast campaigns and automations over two years. Open rate, CTR, revenue and revenue per email sent — by month and by campaign. Identification of top performers and blind spots.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">4</div>
+            <div>
+              <strong>Market basket analysis</strong>
+              <p class="step-desc">From tens of thousands of orders, identifying the most common product combinations — the foundation for cross-sell automations and product-focused newsletters.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">5</div>
+            <div>
+              <strong>Strategy & 365-day plan</strong>
+              <p class="step-desc">All findings translated into a concrete action plan with rationale and estimated impact for every task.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 FINDINGS -->
+      <section class="cs-section" id="s04">
+        <h2 class="sec-h2">What the data revealed</h2>
+        <p class="sec-text">The performance decline was neither random nor across the board — it had specific causes in specific months. The data clearly showed where and why.</p>
+
+        <div class="findings-list">
+          <div class="finding">
+            <h3 class="finding-title">Email activity = revenue:</h3>
+            <p class="sec-text">In months with significantly higher email activity, revenue was provably higher — and vice versa. Campaign gaps in summer were immediately reflected in sales.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Missing one email = permanent loss:</h3>
+            <p class="sec-text">A loss that can't be recovered. The summer period uncovered untapped potential. A direct comparison of the same summer months across two years showed that where there were fewer campaigns, revenue was significantly lower. The 2024 summer mystery box generated revenue from a single email comparable to entire average campaign batches — and in 2025 it had no replacement.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Club newsletter — golden asset:</h3>
+            <p class="sec-text">The segmented Club newsletter generates significantly higher revenue per email sent than standard broadcasts — consistently and across the entire observed period. This segment is the most valuable asset in the entire database.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Welcome sequence as the strongest automation:</h3>
+            <p class="sec-text">The first welcome email with a code has an open rate above 60% and generates revenue per email far exceeding any broadcast campaign. Emails 2–4 have significant room for optimisation — timing and content can substantially improve their performance.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Cross-sell = hidden opportunity:</h3>
+            <p class="sec-text">More than a third of orders contain two key categories simultaneously — yet there is no automation to actively direct customers towards complementary products after their first purchase.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Declining engagement with campaign content:</h3>
+            <p class="sec-text">Open rate remained well above the industry average, but CTR declined year-on-year to less than half. Customers remain in contact with the brand — but the content or CTA stopped being sufficiently persuasive.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Positive signal:</h3>
+            <p class="sec-text">Months where email activity grew — "birthday series", "campaign for small businesses" — showed year-on-year revenue growth. Customers respond. The problem is not the database, it's content and frequency.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 RECOMMENDATIONS -->
+      <section class="cs-section" id="s05">
+        <h2 class="sec-h2">What we proposed</h2>
+        <p class="sec-text">Every recommendation is grounded directly in the data and anchored to a specific finding. Everything is derived from fleppi's customer behaviour.</p>
+
+        <div class="reco-list">
+          <div class="reco-item">
+            <h3 class="reco-title">Summer mystery box</h3>
+            <p class="sec-text">Bring it back to the campaign calendar: 2024 data clearly shows what a single well-prepared summer email can achieve.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Teaser → last call series</h3>
+            <p class="sec-text">Launch → last call can restore the summer peak that was missing in 2025.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Back-to-school series</h3>
+            <p class="sec-text">August as a strategic month: August is a natural purchase trigger for the target group. Data shows that a campaign gap in this month directly caused a significant revenue decline — a series of 4–5 emails is the fastest path to recovery.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Cross-sell automation</h3>
+            <p class="sec-text">Connect the strongest categories: A third of customers buy both key categories, yet no automation exists. A post-purchase email within 7 days featuring specific complementary products can activate latent interest.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Club newsletter</h3>
+            <p class="sec-text">Increase frequency and invest in content: The best rev/email in the entire portfolio, yet only monthly. Adding one extra Club email while maintaining quality is the surest short-term step towards revenue growth.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Address CTR decline</h3>
+            <p class="sec-text">Systematic testing of subject lines (A/B testing) and CTA across three campaigns will reveal where the click is being lost. Open rate is healthy — the problem is content or the call to action, not the database.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">RFM segmentation</h3>
+            <p class="sec-text">Personalisation by purchase activity: Splitting the database into active customers, customers at risk of churning and dormant contacts allows sending relevant content and reducing unsubscribes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 OUTPUT -->
+      <section class="cs-section" id="s06">
+        <h2 class="sec-h2">What the client received</h2>
+        <p class="sec-text">The output is not a generic report, but a strategic document tailored precisely to fleppi's data and situation.</p>
+        <div class="output-list">
+          <div class="output-item">
+            <strong>Two-year analysis with year-on-year comparison:</strong> Every month, every campaign.
+          </div>
+          <div class="output-item">
+            <strong>What grew, what fell and why:</strong> Identification of decline causes: specific months, specific missing campaigns, specific link to revenue — not guesswork, but data.
+          </div>
+          <div class="output-item">
+            <strong>Top campaigns & automations analysis:</strong> What works, what doesn't and why, with recommendations on how to replicate the strongest formats.
+          </div>
+          <div class="output-item">
+            <strong>Cross-sell map from real data:</strong> Most frequent product combinations from customers, the foundation for automations and product newsletters.
+          </div>
+          <div class="output-item">
+            <strong>General marketing recommendations:</strong> RFM segmentation, NPS, SEO, Pinterest, attribution model — beyond email.
+          </div>
+          <div class="output-item">
+            <strong>365-day action plan:</strong> 40+ concrete tasks with priority, category and rationale for expected impact.
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 REFERENCE -->
+      <section class="cs-section" id="s07">
+        <div class="ref-split">
+          <div class="ref-left">
+            <h2 class="sec-h2">Client<br />feedback</h2>
+            <p class="sec-text">What does fleppi say about the analysis?</p>
+          </div>
+          <div class="ref-card">
+            <div class="ref-card-logo">
+              <img src="/ref-fleppi-logo.jpg" alt="fleppi.cz" class="ref-logo-img" />
+            </div>
+            <p class="ref-quote">"If you are looking for a partner who can truly immerse themselves in things, think about them in a broader context and at the same time deliver clear, practical recommendations, I can definitely recommend working with aethero. They carried out an email marketing analysis for us and I am truly delighted with the whole experience. The output was well-crafted, clear and above all full of concrete insights we can immediately put to use for the further growth of our e-shop. No generic recommendations — solutions tailored precisely to us."</p>
+            <div class="ref-author">
+              <img src="/ref-lucie.jpg" alt="Lucie" class="ref-avatar" />
+              <div>
+                <strong>Lucie, owner of fleppi.cz</strong>
+                <span class="ref-source">Google review 5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cs-cta">
+        <h2>Want your $$$ from email? Get in touch.</h2>
+        <div class="cta-links">
+          <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
+          <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
 </PageLayout>
 
 <style>
-  .container { max-width: 1024px; margin: 0 auto; padding: 0 var(--space-24); }
-
-  /* ─── HERO ─── */
-  .cs-hero {
-    background: var(--ae-bg-primary);
-    padding: 160px 0 80px;
+  /* ─── 2-ROW × 2-COL LAYOUT ─── */
+  .cs-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-areas:
+      ". hero-head"
+      "aside main";
+    column-gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 160px var(--space-24) 80px;
   }
+  .cs-hero-head {
+    grid-area: hero-head;
+    padding-bottom: var(--space-32);
+  }
+  .cs-aside {
+    grid-area: aside;
+    position: sticky;
+    top: 88px;
+    align-self: start;
+  }
+  .cs-main { grid-area: main; min-width: 0; }
+  .cs-hero-inner { padding-bottom: var(--space-80); }
+
+  /* ─── TYPOGRAPHY ─── */
   .cs-label {
     font-family: var(--font-primary); font-size: 14px; font-weight: 600;
     letter-spacing: 0.08em; text-transform: uppercase;
@@ -331,22 +347,16 @@ import PageLayout from '../../layouts/PageLayout.astro';
   }
   .cs-h1 {
     font-size: clamp(36px, 4.5vw, 60px); font-weight: 700; line-height: 1.15;
-    color: #fff; margin-bottom: var(--space-24);
+    color: #fff; margin-bottom: 0;
   }
   .perex-hl { color: var(--text-secondary); font-weight: 700; }
   .hl-link { color: var(--action); text-decoration: none; }
   .hl-link:hover { opacity: 0.8; }
   .cs-h1 .hl-link { color: var(--text-secondary); }
   .cs-perex {
-    font-family: var(--font-secondary); font-size: clamp(18px, 1.8vw, 22px);
-    font-weight: 400; line-height: 1.65; color: rgba(255,255,255,0.9);
-  }
-  .cs-hero-split {
-    display: grid;
-    grid-template-columns: 1fr 220px;
-    gap: 64px;
-    align-items: start;
-    margin-bottom: 40px;
+    font-family: var(--font-secondary); font-size: clamp(15px, 1.4vw, 17px);
+    font-weight: 400; line-height: 1.65; color: rgba(255,255,255,0.85);
+    margin-bottom: var(--space-32);
   }
 
   /* Client row */
@@ -501,11 +511,11 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .ref-source { display: block; font-size: 12px; color: rgba(26,26,46,0.55); margin-top: 2px; }
 
   /* CTA */
-  .cs-cta { padding: var(--space-80) 0; background: var(--action); }
-  .cta-inner { text-align: center; }
-  .cta-inner h2 {
+  .cs-cta { padding: var(--space-80) 0; background: var(--action); margin: 0 calc(-1 * var(--space-24)); border-radius: 0; }
+  .cs-cta h2 {
     font-family: var(--font-primary); font-size: clamp(28px, 4vw, 52px);
     font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-32);
+    text-align: center;
   }
   .cta-links { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
   .cta-link {
@@ -516,12 +526,15 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
-    .cs-hero-split { grid-template-columns: 1fr; }
-    .page-nav { display: none; }
+    .cs-layout {
+      grid-template-columns: 1fr;
+      grid-template-areas: "hero-head" "main";
+      padding-top: 120px;
+    }
+    .cs-aside { display: none; }
     .ref-split { grid-template-columns: 1fr; gap: var(--space-40); }
   }
   @media (max-width: 768px) {
-    .cs-hero { padding: 120px 0 60px; }
     .metrics-row { grid-template-columns: 1fr; }
     .two-col-lists { grid-template-columns: 1fr; gap: var(--space-32); }
     .klient-grid { grid-template-columns: 1fr; }

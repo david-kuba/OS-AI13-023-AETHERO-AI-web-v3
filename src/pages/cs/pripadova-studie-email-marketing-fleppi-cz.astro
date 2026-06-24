@@ -8,346 +8,356 @@ import PageLayout from '../../layouts/PageLayout.astro';
   lang="cs"
 >
 
-  <!-- HERO -->
-  <section class="cs-hero">
-    <div class="container">
+  <!-- 2-col layout: sidebar LEFT + content RIGHT -->
+  <div class="cs-layout">
+
+    <!-- ROW 1: label + H1 (pravý sloupec, bez nav) -->
+    <div class="cs-hero-head">
       <p class="cs-label">Případová studie · ANALÝZA e-mail marketing</p>
       <h1 class="cs-h1">Mailing strategie<br /><a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a> × <span class="hl-link">Leadhub</span> × <span class="hl-link">Shoptet</span></h1>
-      <div class="cs-hero-split">
+    </div>
+
+    <!-- ROW 2 LEFT: sticky nav (zarovnaný s perexem) -->
+    <aside class="cs-aside">
+      <nav class="page-nav">
+        <a href="#s01" class="page-nav-item">01 · KLIENT</a>
+        <a href="#s02" class="page-nav-item">02 · VÝCHOZÍ STAV</a>
+        <a href="#s03" class="page-nav-item">03 · POSTUP</a>
+        <a href="#s04" class="page-nav-item">04 · ZJIŠTĚNÍ</a>
+        <a href="#s05" class="page-nav-item">05 · DOPORUČENÍ</a>
+        <a href="#s06" class="page-nav-item">06 · VÝSTUP</a>
+        <a href="#s07" class="page-nav-item">07 · REFERENCE</a>
+      </nav>
+    </aside>
+
+    <!-- ROW 2 RIGHT: perex + obsah -->
+    <main class="cs-main">
+
+      <!-- Hero -->
+      <div class="cs-hero-inner">
         <p class="cs-perex">Jak jsme pomohli českému stationery e-shopu k <span class="perex-hl">odhalení příčin klesajícího výkonu emailového marketingu a sestavení konkrétního plánu obnovy</span> — vše na základě dvouletých dat, bez přístupu k API.</p>
-        <nav class="page-nav">
-          <a href="#s01" class="page-nav-item">01 · KLIENT</a>
-          <a href="#s02" class="page-nav-item">02 · VÝCHOZÍ STAV</a>
-          <a href="#s03" class="page-nav-item">03 · POSTUP</a>
-          <a href="#s04" class="page-nav-item">04 · ZJIŠTĚNÍ</a>
-          <a href="#s05" class="page-nav-item">05 · DOPORUČENÍ</a>
-          <a href="#s06" class="page-nav-item">06 · VÝSTUP</a>
-          <a href="#s07" class="page-nav-item">07 · REFERENCE</a>
-        </nav>
-      </div>
 
-      <!-- Client info row -->
-      <div class="client-row">
-        <div class="client-cell">
-          <span class="client-key">Segment trhu:</span>
-          <span class="client-val">Stationery / Plánování</span>
-        </div>
-        <div class="client-cell">
-          <span class="client-key">Platforma:</span>
-          <span class="client-val">Shoptet</span>
-        </div>
-        <div class="client-cell">
-          <span class="client-key">Rozsah analýzy:</span>
-          <span class="client-val">2 roky dat</span>
-        </div>
-        <div class="client-cell">
-          <span class="client-key">Mailing nástroj:</span>
-          <span class="client-val">Leadhub</span>
-        </div>
-      </div>
-
-      <!-- Metrics -->
-      <div class="metrics-block">
-        <div class="metrics-row">
-          <div class="metric-item">
-            <div class="metric-val">+25–35 %</div>
-            <div class="metric-desc">letní email revenue</div>
+        <!-- Client info row -->
+        <div class="client-row">
+          <div class="client-cell">
+            <span class="client-key">Segment trhu:</span>
+            <span class="client-val">Stationery / Plánování</span>
           </div>
-          <div class="metric-item">
-            <div class="metric-val">+5–7× vyšší</div>
-            <div class="metric-desc">revenue u segmentu klubu</div>
+          <div class="client-cell">
+            <span class="client-key">Platforma:</span>
+            <span class="client-val">Shoptet</span>
           </div>
-          <div class="metric-item">
-            <div class="metric-val">40+ úkolů</div>
-            <div class="metric-desc">v akčním plánu</div>
+          <div class="client-cell">
+            <span class="client-key">Rozsah analýzy:</span>
+            <span class="client-val">2 roky dat</span>
+          </div>
+          <div class="client-cell">
+            <span class="client-key">Mailing nástroj:</span>
+            <span class="client-val">Leadhub</span>
           </div>
         </div>
-      </div>
-      <p class="h3-maxi cs-stats">2 roky dat, 249 kampaní, 20 000+ objednávek</p>
-    </div>
-  </section>
 
-  <!-- 01 KLIENT -->
-  <section class="cs-section" id="s01">
-    <div class="container">
-      <h2 class="sec-h2">Co je <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
-      <p class="sec-text">fleppi.cz je český e-shop zaměřený na plánování, bullet journaling a stationery. Cílová skupina jsou organizovaní lidé — především ženy 25–40 let, kteří hledají náplně do diářů, samolepky, razítka a doplňky pro osobní produktivitu.</p>
-      <p class="sec-text">E-shop provozuje na platformě Shoptet s tisíci SKU v několika stovkách produktových skupin. Emailový marketing zajišťuje nástroj Leadhub. Charakteristickým rysem sortimentu je absence jednoho dominantního produktu — zákazník nakupuje sadu komplementárních položek, kde hodnota spočívá v kombinaci a pravidelném doplňování.</p>
-      <div class="klient-grid">
-        <div class="klient-card">
-          <strong>Náplně do diářů:</strong> Největší kategorie dle obratu — pravidelná spotřeba, vysoká frekvence nákupu.
-        </div>
-        <div class="klient-card">
-          <strong>Samolepky:</strong> Největší objem kusů — impulzivní nákupy, ideální cross-sell položka.
-        </div>
-        <div class="klient-card">
-          <strong>Razítka a doplňky:</strong> Vyšší AOV, nižší frekvence — sezónní příležitost.
-        </div>
-        <div class="klient-card">
-          <strong>Email jako páteř:</strong> Email tvoří téměř polovinu celkového obratu e-shopu.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 VÝCHOZÍ STAV -->
-  <section class="cs-section" id="s02">
-    <div class="container">
-      <h2 class="sec-h2">Před analýzou</h2>
-      <p class="sec-text">Měl fleppi funkční emailový marketing s uvítací sekvencí, pravidelným newsletterem a segmentací na Klub (loajální zákazníci) a širší zákaznickou databázi. Přesto meziročně klesal obrat i zájem zákazníků — bez jasné odpovědi proč.</p>
-      <p class="sec-text">API přístup do Leadhub nebyl při zahájení projektu dostupný. Celá analýza proto proběhla nad CSV exporty z Leadhub a Shoptet — dvouletá data o stovkách kampaní a desítkách tisíc objednávek.</p>
-
-      <div class="two-col-lists">
-        <div>
-          <h3 class="list-label list-label--bad">Co chybělo</h3>
-          <ul class="dot-list">
-            <li>Meziroční pohled na výkon — nebylo vidět kde a proč klesá.</li>
-            <li>Pochopení vazby mezi emailovou aktivitou a obratem po měsících.</li>
-            <li>Kvantifikace dopadu jednotlivých automations.</li>
-            <li>Cross-sell příležitosti identifikované z dat objednávek.</li>
-            <li>Srovnání výkonu Klub vs. zákaznická databáze.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="list-label list-label--good">Co fungovalo</h3>
-          <ul class="dot-list">
-            <li>Uvítací sekvence s vysokým open rate a konverzí.</li>
-            <li>Klub newsletter — konzistentně nejsilnější formát.</li>
-            <li>Pravidelné rozesílky v průběhu roku.</li>
-            <li>Abandoned cart automations ve třech krocích.</li>
-            <li>Sezónní kampaně v Q4.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="problem-box">
-        <p class="problem-label">Zásadní problém:</p>
-        <p class="problem-text">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb, takže každý výkyv v email kanálu je okamžitě cítit v číslech.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 03 POSTUP -->
-  <section class="cs-section" id="s03">
-    <div class="container">
-      <h2 class="sec-h2">Řešení</h2>
-      <p class="sec-text">Analýza probíhala jako živá spolupráce s majitelkou fleppi — průběžné výsledky byly sdíleny v reálném čase a majitelka doplňovala kontext (stěhování skladu, rozhodnutí o letních kampaních, vývoj sortimentu), který pomohl data správně interpretovat.</p>
-      <div class="steps-list">
-        <div class="step-row">
-          <div class="step-n">1</div>
-          <div>
-            <strong>Import a validace dat</strong>
-            <p class="step-desc">CSV exporty ze Shoptetu a z Leadhub — kampaně, automations i objednávky za dvouletý horizont. Čistění dat, sjednocení formátů, ověření konzistence.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">2</div>
-          <div>
-            <strong>Meziroční srovnání objednávek</strong>
-            <p class="step-desc">Každý kalendářní měsíc rok po roku — obrat, počet objednávek, průměrná hodnota košíku, zákazníci, retence. Přesná identifikace měsíců a příčin propadu.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">3</div>
-          <div>
-            <strong>Analýza emailových kampaní</strong>
-            <p class="step-desc">Stovky broadcast kampaní a automations za dva roky. Open rate, CTR, revenue a revenue na odeslaný email — po měsících i po kampaních. Identifikace top performers a slepých skvrn.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">4</div>
-          <div>
-            <strong>Market basket analýza</strong>
-            <p class="step-desc">Z desetitisíců objednávek identifikace nejčastějších produktových kombinací — základ pro cross-sell automations a produktově zaměřené newslettery.</p>
-          </div>
-        </div>
-        <div class="step-row">
-          <div class="step-n">5</div>
-          <div>
-            <strong>Sestavení strategie a 365denního plánu</strong>
-            <p class="step-desc">Všechna zjištění přetavena do konkrétního akčního plánu s odůvodněním a odhadovaným přínosem každého úkolu.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 ZJIŠTĚNÍ -->
-  <section class="cs-section" id="s04">
-    <div class="container">
-      <h2 class="sec-h2">Co ukázala data</h2>
-      <p class="sec-text">Pokles výkonu nebyl náhodný ani plošný — měl konkrétní příčiny v konkrétních měsících. Data jasně ukázala, kde a proč.</p>
-
-      <div class="findings-list">
-        <div class="finding">
-          <h3 class="finding-title">Emailová aktivita = obrat:</h3>
-          <p class="sec-text">V měsících s výrazně vyšší emailovou aktivitou byl obrat prokazatelně vyšší a naopak. Výpadky kampaní v létě se okamžitě projevily na tržbách.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Absence jednoho emailu = ztráta:</h3>
-          <p class="sec-text">Ztráta, která se nedohoní. Letní sezóna nám odkryla nevyužitý potenciál. Přímé srovnání stejných letních měsíců ze dvou let ukázalo, že tam kde bylo méně kampaní, byl obrat výrazně nižší. Letní mystery box z roku 2024 přinesl z jednoho emailu výsledek srovnatelný s celými průměrnými kampaněmi a v roce 2025 neměl náhradu.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Klub newsletter — zlaté aktivum:</h3>
-          <p class="sec-text">Segmentovaný Klub newsletter generuje výrazně vyšší revenue na odeslaný email než standardní rozesílky — konzistentně a napříč celým sledovaným obdobím. Tento segment je nejhodnotnějším aktivem celé databáze.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Uvítací sekvence jako nejsilnější automation:</h3>
-          <p class="sec-text">První uvítací email s kódem má open rate přes 60 % a generuje revenue na email výrazně přesahující jakoukoliv broadcast kampaň. Emaily 2–4 mají velký prostor pro optimalizaci — timing a obsah mohou výrazně zlepšit jejich výkon.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Cross-sell = skrytá příležitost:</h3>
-          <p class="sec-text">Více než třetina objednávek obsahuje zároveň dvě klíčové kategorie — přesto neexistuje automation, která by zákazníka po prvním nákupu aktivně nasměrovala na komplementární produkty.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Klesající zájem o obsah kampaní:</h3>
-          <p class="sec-text">Open rate zůstal výrazně nad oborovým průměrem, ale CTR meziročně klesl na méně než polovinu. Zákazníci jsou s brandem v kontaktu — ale obsah nebo CTA přestal být dostatečně přesvědčivý.</p>
-        </div>
-        <div class="finding">
-          <h3 class="finding-title">Pozitivní signál:</h3>
-          <p class="sec-text">Měsíce, kde emailová aktivita naopak rostla: „narozeninová série", „akce pro malé firmy" — vykázaly meziroční růst obratu. Zákazníci reagují. Problém není databáze, je to obsah a frekvence.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 DOPORUČENÍ -->
-  <section class="cs-section" id="s05">
-    <div class="container">
-      <h2 class="sec-h2">Co jsme navrhli</h2>
-      <p class="sec-text">Každé doporučení vychází přímo z dat a je zakotveno v konkrétním zjištění. Vše je odvozeno od chování zákazníků fleppi.</p>
-
-      <div class="reco-list">
-        <div class="reco-item">
-          <h3 class="reco-title">Letní mystery box</h3>
-          <p class="sec-text">Vrátit do kampaňového kalendáře: Data 2024 jasně ukazují, co jeden dobře připravený letní email dokáže.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Série teaser → last call</h3>
-          <p class="sec-text">Spuštění → last call může obnovit letní peak, který v 2025 chyběl.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Back-to-school série</h3>
-          <p class="sec-text">Srpen jako strategický měsíc: Srpen je přirozeným nákupním triggerem pro cílovou skupinu. Data ukazují, že výpadek kampaní v tomto měsíci přímo způsobil výrazný propad obratu — série 4–5 emailů je nejrychlejší cesta k nápravě.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Cross-sell automation</h3>
-          <p class="sec-text">Propojit nejsilnější kategorie: Třetina zákazníků kupuje obě klíčové kategorie, ale automation neexistuje. Post-purchase email do 7 dní s konkrétními komplementárními produkty může probudit latentní zájem.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Klub newsletter</h3>
-          <p class="sec-text">Zvýšit frekvenci a investici do obsahu: Nejlepší rev/email v celém portfoliu, přesto pouze jednou měsíčně. Přidání jednoho Klub emailu navíc při zachování kvality je nejjistější krátkodobý krok k růstu revenue.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">Adresovat propad CTR</h3>
-          <p class="sec-text">Systematické testování předmětů (A/B testování) a CTA na třech kampaních odhalí, kde se ztrácí proklik. Open rate je zdravý — problém je v obsahu nebo výzvě k akci, ne v databázi.</p>
-        </div>
-        <div class="reco-item">
-          <h3 class="reco-title">RFM segmentace</h3>
-          <p class="sec-text">Personalizace dle nákupní aktivity: Rozdělení databáze na aktivní zákazníky, zákazníky v riziku odchodu a spící kontakty umožní posílat relevantní obsah a snížit odhlašování.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 VÝSTUP -->
-  <section class="cs-section" id="s06">
-    <div class="container">
-      <h2 class="sec-h2">Co klient dostal</h2>
-      <p class="sec-text">Výstupem není obecný report, ale strategický dokument přizpůsobený přesně datům a situaci fleppi.</p>
-      <div class="output-list">
-        <div class="output-item">
-          <strong>Dvouletá analýza s meziročním srovnáním:</strong> Každý měsíc, každá kampaň.
-        </div>
-        <div class="output-item">
-          <strong>Co rostlo, co padlo a proč:</strong> Identifikace příčin poklesu: konkrétní měsíce, konkrétní chybějící kampaně, konkrétní vazba na obrat — ne dohady, ale data.
-        </div>
-        <div class="output-item">
-          <strong>Analýza top kampaní a automations:</strong> Co funguje, co nefunguje a proč, s doporučeními jak replikovat nejsilnější formáty.
-        </div>
-        <div class="output-item">
-          <strong>Cross-sell mapa z reálných dat:</strong> Nejčastější produktové kombinace zákazníků, základ pro automations a produktové newslettery.
-        </div>
-        <div class="output-item">
-          <strong>Obecná marketingová doporučení:</strong> RFM segmentace, NPS, SEO, Pinterest, atribuční model — nad rámec emailu.
-        </div>
-        <div class="output-item">
-          <strong>365denní akční plán:</strong> 40+ konkrétních úkolů s prioritou, kategorií a odůvodněním přínosu.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 REFERENCE -->
-  <section class="cs-section" id="s07">
-    <div class="container">
-      <div class="ref-split">
-        <div class="ref-left">
-          <h2 class="sec-h2">Zpětná vazba<br />od klienta</h2>
-          <p class="sec-text">Co na analýzu říká fleppi?</p>
-        </div>
-        <div class="ref-card">
-          <div class="ref-card-logo">
-            <img src="/ref-fleppi-logo.jpg" alt="fleppi.cz" class="ref-logo-img" />
-          </div>
-          <p class="ref-quote">„Pokud hledáte partnera, který se do věcí dokáže opravdu ponořit, přemýšlel nad nimi v širších souvislostech a zároveň dokáže předat srozumitelná a prakticky využitelná doporučení, spolupráci s aethero mohu rozhodně doporučit. Zpracovávali nám marketingovou analýzu e-mailingu a z celé zkušenosti jsem opravdu nadšená. Výstup byl kvalitně zpracovaný, přehledný a hlavně plný konkrétních podnětů, které můžeme rovnou využít pro další růst našeho e-shopu. Žádná obecná doporučení, ale řešení šitá nám na míru."</p>
-          <div class="ref-author">
-            <img src="/ref-lucie.jpg" alt="Lucie" class="ref-avatar" />
-            <div>
-              <strong>Lucie, majitelka fleppi.cz</strong>
-              <span class="ref-source">Google recenze 5/5</span>
+        <!-- Metrics -->
+        <div class="metrics-block">
+          <div class="metrics-row">
+            <div class="metric-item">
+              <div class="metric-val">+25–35 %</div>
+              <div class="metric-desc">letní email revenue</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-val">+5–7× vyšší</div>
+              <div class="metric-desc">revenue u segmentu klubu</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-val">40+ úkolů</div>
+              <div class="metric-desc">v akčním plánu</div>
             </div>
           </div>
         </div>
+        <p class="h3-maxi cs-stats">2 roky dat, 249 kampaní, 20 000+ objednávek</p>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cs-cta">
-    <div class="container cta-inner">
-      <h2>Chcete svoje $$$ z emailingu? Tak se ozvěte.</h2>
-      <div class="cta-links">
-        <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
-        <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
-      </div>
-    </div>
-  </section>
+      <!-- 01 KLIENT -->
+      <section class="cs-section" id="s01">
+        <h2 class="sec-h2">Co je <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
+        <p class="sec-text">fleppi.cz je český e-shop zaměřený na plánování, bullet journaling a stationery. Cílová skupina jsou organizovaní lidé — především ženy 25–40 let, kteří hledají náplně do diářů, samolepky, razítka a doplňky pro osobní produktivitu.</p>
+        <p class="sec-text">E-shop provozuje na platformě Shoptet s tisíci SKU v několika stovkách produktových skupin. Emailový marketing zajišťuje nástroj Leadhub. Charakteristickým rysem sortimentu je absence jednoho dominantního produktu — zákazník nakupuje sadu komplementárních položek, kde hodnota spočívá v kombinaci a pravidelném doplňování.</p>
+        <div class="klient-grid">
+          <div class="klient-card">
+            <strong>Náplně do diářů:</strong> Největší kategorie dle obratu — pravidelná spotřeba, vysoká frekvence nákupu.
+          </div>
+          <div class="klient-card">
+            <strong>Samolepky:</strong> Největší objem kusů — impulzivní nákupy, ideální cross-sell položka.
+          </div>
+          <div class="klient-card">
+            <strong>Razítka a doplňky:</strong> Vyšší AOV, nižší frekvence — sezónní příležitost.
+          </div>
+          <div class="klient-card">
+            <strong>Email jako páteř:</strong> Email tvoří téměř polovinu celkového obratu e-shopu.
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 VÝCHOZÍ STAV -->
+      <section class="cs-section" id="s02">
+        <h2 class="sec-h2">Před analýzou</h2>
+        <p class="sec-text">Měl fleppi funkční emailový marketing s uvítací sekvencí, pravidelným newsletterem a segmentací na Klub (loajální zákazníci) a širší zákaznickou databázi. Přesto meziročně klesal obrat i zájem zákazníků — bez jasné odpovědi proč.</p>
+        <p class="sec-text">API přístup do Leadhub nebyl při zahájení projektu dostupný. Celá analýza proto proběhla nad CSV exporty z Leadhub a Shoptet — dvouletá data o stovkách kampaní a desítkách tisíc objednávek.</p>
+
+        <div class="two-col-lists">
+          <div>
+            <h3 class="list-label list-label--bad">Co chybělo</h3>
+            <ul class="dot-list">
+              <li>Meziroční pohled na výkon — nebylo vidět kde a proč klesá.</li>
+              <li>Pochopení vazby mezi emailovou aktivitou a obratem po měsících.</li>
+              <li>Kvantifikace dopadu jednotlivých automations.</li>
+              <li>Cross-sell příležitosti identifikované z dat objednávek.</li>
+              <li>Srovnání výkonu Klub vs. zákaznická databáze.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="list-label list-label--good">Co fungovalo</h3>
+            <ul class="dot-list">
+              <li>Uvítací sekvence s vysokým open rate a konverzí.</li>
+              <li>Klub newsletter — konzistentně nejsilnější formát.</li>
+              <li>Pravidelné rozesílky v průběhu roku.</li>
+              <li>Abandoned cart automations ve třech krocích.</li>
+              <li>Sezónní kampaně v Q4.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="problem-box">
+          <p class="problem-label">Zásadní problém:</p>
+          <p class="problem-text">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb, takže každý výkyv v email kanálu je okamžitě cítit v číslech.</p>
+        </div>
+      </section>
+
+      <!-- 03 POSTUP -->
+      <section class="cs-section" id="s03">
+        <h2 class="sec-h2">Řešení</h2>
+        <p class="sec-text">Analýza probíhala jako živá spolupráce s majitelkou fleppi — průběžné výsledky byly sdíleny v reálném čase a majitelka doplňovala kontext (stěhování skladu, rozhodnutí o letních kampaních, vývoj sortimentu), který pomohl data správně interpretovat.</p>
+        <div class="steps-list">
+          <div class="step-row">
+            <div class="step-n">1</div>
+            <div>
+              <strong>Import a validace dat</strong>
+              <p class="step-desc">CSV exporty ze Shoptetu a z Leadhub — kampaně, automations i objednávky za dvouletý horizont. Čistění dat, sjednocení formátů, ověření konzistence.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">2</div>
+            <div>
+              <strong>Meziroční srovnání objednávek</strong>
+              <p class="step-desc">Každý kalendářní měsíc rok po roku — obrat, počet objednávek, průměrná hodnota košíku, zákazníci, retence. Přesná identifikace měsíců a příčin propadu.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">3</div>
+            <div>
+              <strong>Analýza emailových kampaní</strong>
+              <p class="step-desc">Stovky broadcast kampaní a automations za dva roky. Open rate, CTR, revenue a revenue na odeslaný email — po měsících i po kampaních. Identifikace top performers a slepých skvrn.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">4</div>
+            <div>
+              <strong>Market basket analýza</strong>
+              <p class="step-desc">Z desetitisíců objednávek identifikace nejčastějších produktových kombinací — základ pro cross-sell automations a produktově zaměřené newslettery.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-n">5</div>
+            <div>
+              <strong>Sestavení strategie a 365denního plánu</strong>
+              <p class="step-desc">Všechna zjištění přetavena do konkrétního akčního plánu s odůvodněním a odhadovaným přínosem každého úkolu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 ZJIŠTĚNÍ -->
+      <section class="cs-section" id="s04">
+        <h2 class="sec-h2">Co ukázala data</h2>
+        <p class="sec-text">Pokles výkonu nebyl náhodný ani plošný — měl konkrétní příčiny v konkrétních měsících. Data jasně ukázala, kde a proč.</p>
+
+        <div class="findings-list">
+          <div class="finding">
+            <h3 class="finding-title">Emailová aktivita = obrat:</h3>
+            <p class="sec-text">V měsících s výrazně vyšší emailovou aktivitou byl obrat prokazatelně vyšší a naopak. Výpadky kampaní v létě se okamžitě projevily na tržbách.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Absence jednoho emailu = ztráta:</h3>
+            <p class="sec-text">Ztráta, která se nedohoní. Letní sezóna nám odkryla nevyužitý potenciál. Přímé srovnání stejných letních měsíců ze dvou let ukázalo, že tam kde bylo méně kampaní, byl obrat výrazně nižší. Letní mystery box z roku 2024 přinesl z jednoho emailu výsledek srovnatelný s celými průměrnými kampaněmi a v roce 2025 neměl náhradu.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Klub newsletter — zlaté aktivum:</h3>
+            <p class="sec-text">Segmentovaný Klub newsletter generuje výrazně vyšší revenue na odeslaný email než standardní rozesílky — konzistentně a napříč celým sledovaným obdobím. Tento segment je nejhodnotnějším aktivem celé databáze.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Uvítací sekvence jako nejsilnější automation:</h3>
+            <p class="sec-text">První uvítací email s kódem má open rate přes 60 % a generuje revenue na email výrazně přesahující jakoukoliv broadcast kampaň. Emaily 2–4 mají velký prostor pro optimalizaci — timing a obsah mohou výrazně zlepšit jejich výkon.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Cross-sell = skrytá příležitost:</h3>
+            <p class="sec-text">Více než třetina objednávek obsahuje zároveň dvě klíčové kategorie — přesto neexistuje automation, která by zákazníka po prvním nákupu aktivně nasměrovala na komplementární produkty.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Klesající zájem o obsah kampaní:</h3>
+            <p class="sec-text">Open rate zůstal výrazně nad oborovým průměrem, ale CTR meziročně klesl na méně než polovinu. Zákazníci jsou s brandem v kontaktu — ale obsah nebo CTA přestal být dostatečně přesvědčivý.</p>
+          </div>
+          <div class="finding">
+            <h3 class="finding-title">Pozitivní signál:</h3>
+            <p class="sec-text">Měsíce, kde emailová aktivita naopak rostla: „narozeninová série", „akce pro malé firmy" — vykázaly meziroční růst obratu. Zákazníci reagují. Problém není databáze, je to obsah a frekvence.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 DOPORUČENÍ -->
+      <section class="cs-section" id="s05">
+        <h2 class="sec-h2">Co jsme navrhli</h2>
+        <p class="sec-text">Každé doporučení vychází přímo z dat a je zakotveno v konkrétním zjištění. Vše je odvozeno od chování zákazníků fleppi.</p>
+
+        <div class="reco-list">
+          <div class="reco-item">
+            <h3 class="reco-title">Letní mystery box</h3>
+            <p class="sec-text">Vrátit do kampaňového kalendáře: Data 2024 jasně ukazují, co jeden dobře připravený letní email dokáže.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Série teaser → last call</h3>
+            <p class="sec-text">Spuštění → last call může obnovit letní peak, který v 2025 chyběl.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Back-to-school série</h3>
+            <p class="sec-text">Srpen jako strategický měsíc: Srpen je přirozeným nákupním triggerem pro cílovou skupinu. Data ukazují, že výpadek kampaní v tomto měsíci přímo způsobil výrazný propad obratu — série 4–5 emailů je nejrychlejší cesta k nápravě.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Cross-sell automation</h3>
+            <p class="sec-text">Propojit nejsilnější kategorie: Třetina zákazníků kupuje obě klíčové kategorie, ale automation neexistuje. Post-purchase email do 7 dní s konkrétními komplementárními produkty může probudit latentní zájem.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Klub newsletter</h3>
+            <p class="sec-text">Zvýšit frekvenci a investici do obsahu: Nejlepší rev/email v celém portfoliu, přesto pouze jednou měsíčně. Přidání jednoho Klub emailu navíc při zachování kvality je nejjistější krátkodobý krok k růstu revenue.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">Adresovat propad CTR</h3>
+            <p class="sec-text">Systematické testování předmětů (A/B testování) a CTA na třech kampaních odhalí, kde se ztrácí proklik. Open rate je zdravý — problém je v obsahu nebo výzvě k akci, ne v databázi.</p>
+          </div>
+          <div class="reco-item">
+            <h3 class="reco-title">RFM segmentace</h3>
+            <p class="sec-text">Personalizace dle nákupní aktivity: Rozdělení databáze na aktivní zákazníky, zákazníky v riziku odchodu a spící kontakty umožní posílat relevantní obsah a snížit odhlašování.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 VÝSTUP -->
+      <section class="cs-section" id="s06">
+        <h2 class="sec-h2">Co klient dostal</h2>
+        <p class="sec-text">Výstupem není obecný report, ale strategický dokument přizpůsobený přesně datům a situaci fleppi.</p>
+        <div class="output-list">
+          <div class="output-item">
+            <strong>Dvouletá analýza s meziročním srovnáním:</strong> Každý měsíc, každá kampaň.
+          </div>
+          <div class="output-item">
+            <strong>Co rostlo, co padlo a proč:</strong> Identifikace příčin poklesu: konkrétní měsíce, konkrétní chybějící kampaně, konkrétní vazba na obrat — ne dohady, ale data.
+          </div>
+          <div class="output-item">
+            <strong>Analýza top kampaní a automations:</strong> Co funguje, co nefunguje a proč, s doporučeními jak replikovat nejsilnější formáty.
+          </div>
+          <div class="output-item">
+            <strong>Cross-sell mapa z reálných dat:</strong> Nejčastější produktové kombinace zákazníků, základ pro automations a produktové newslettery.
+          </div>
+          <div class="output-item">
+            <strong>Obecná marketingová doporučení:</strong> RFM segmentace, NPS, SEO, Pinterest, atribuční model — nad rámec emailu.
+          </div>
+          <div class="output-item">
+            <strong>365denní akční plán:</strong> 40+ konkrétních úkolů s prioritou, kategorií a odůvodněním přínosu.
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 REFERENCE -->
+      <section class="cs-section" id="s07">
+        <div class="ref-split">
+          <div class="ref-left">
+            <h2 class="sec-h2">Zpětná vazba<br />od klienta</h2>
+            <p class="sec-text">Co na analýzu říká fleppi?</p>
+          </div>
+          <div class="ref-card">
+            <div class="ref-card-logo">
+              <img src="/ref-fleppi-logo.jpg" alt="fleppi.cz" class="ref-logo-img" />
+            </div>
+            <p class="ref-quote">„Pokud hledáte partnera, který se do věcí dokáže opravdu ponořit, přemýšlel nad nimi v širších souvislostech a zároveň dokáže předat srozumitelná a prakticky využitelná doporučení, spolupráci s aethero mohu rozhodně doporučit. Zpracovávali nám marketingovou analýzu e-mailingu a z celé zkušenosti jsem opravdu nadšená. Výstup byl kvalitně zpracovaný, přehledný a hlavně plný konkrétních podnětů, které můžeme rovnou využít pro další růst našeho e-shopu. Žádná obecná doporučení, ale řešení šitá nám na míru."</p>
+            <div class="ref-author">
+              <img src="/ref-lucie.jpg" alt="Lucie" class="ref-avatar" />
+              <div>
+                <strong>Lucie, majitelka fleppi.cz</strong>
+                <span class="ref-source">Google recenze 5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cs-cta">
+        <h2>Chcete svoje $$$ z emailingu? Tak se ozvěte.</h2>
+        <div class="cta-links">
+          <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
+          <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
 </PageLayout>
 
 <style>
-  .container { max-width: 1024px; margin: 0 auto; padding: 0 var(--space-24); }
-
-  /* ─── HERO ─── */
-  .cs-hero {
-    background: var(--ae-bg-primary);
-    padding: 160px 0 80px;
+  /* ─── 2-ROW × 2-COL LAYOUT ─── */
+  .cs-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-areas:
+      ". hero-head"
+      "aside main";
+    column-gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 160px var(--space-24) 80px;
   }
+  .cs-hero-head {
+    grid-area: hero-head;
+    padding-bottom: var(--space-32);
+  }
+  .cs-aside {
+    grid-area: aside;
+    position: sticky;
+    top: 88px;
+    align-self: start;
+  }
+  .cs-main { grid-area: main; min-width: 0; }
+  .cs-hero-inner { padding-bottom: var(--space-80); }
+
+  /* ─── TYPOGRAPHY ─── */
   .cs-label {
     font-family: var(--font-primary); font-size: 14px; font-weight: 600;
     letter-spacing: 0.08em; text-transform: uppercase;
     margin-bottom: var(--space-24);
   }
-  .cs-h1 {
-    font-size: clamp(36px, 4.5vw, 60px); font-weight: 700; line-height: 1.15;
-    color: #fff; margin-bottom: var(--space-24);
+  .cs-perex {
+    font-family: var(--font-secondary); font-size: clamp(15px, 1.4vw, 17px);
+    font-weight: 400; line-height: 1.65; color: rgba(255,255,255,0.85);
+    margin-bottom: var(--space-32);
   }
-  .perex-hl { color: var(--text-secondary); font-weight: 700; }
+  .perex-hl { color: var(--text-secondary); font-weight: 600; }
   .hl-link { color: var(--action); text-decoration: none; }
   .hl-link:hover { opacity: 0.8; }
+  .cs-h1 {
+    font-size: clamp(36px, 4.5vw, 60px); font-weight: 700; line-height: 1.15;
+    color: #fff; margin-bottom: 0;
+  }
   .cs-h1 .hl-link { color: var(--text-secondary); }
-  .cs-perex {
-    font-family: var(--font-secondary); font-size: clamp(18px, 1.8vw, 22px);
-    font-weight: 400; line-height: 1.65; color: rgba(255,255,255,0.9);
-  }
-  .cs-hero-split {
-    display: grid;
-    grid-template-columns: 1fr 220px;
-    gap: 64px;
-    align-items: start;
-    margin-bottom: 40px;
-  }
 
   /* Client row */
   .client-row {
@@ -502,9 +512,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .ref-source { display: block; font-size: 12px; color: rgba(26,26,46,0.55); margin-top: 2px; }
 
   /* CTA */
-  .cs-cta { padding: var(--space-80) 0; background: var(--action); }
-  .cta-inner { text-align: center; }
-  .cta-inner h2 {
+  .cs-cta { padding: var(--space-80) 0; background: var(--action); text-align: center; }
+  .cs-cta h2 {
     font-family: var(--font-primary); font-size: clamp(28px, 4vw, 52px);
     font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-32);
   }
@@ -517,12 +526,15 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
-    .cs-hero-split { grid-template-columns: 1fr; }
-    .page-nav { display: none; }
+    .cs-layout {
+      grid-template-columns: 1fr;
+      grid-template-areas: "hero-head" "main";
+      padding-top: 120px;
+    }
+    .cs-aside { display: none; }
     .ref-split { grid-template-columns: 1fr; gap: var(--space-40); }
   }
   @media (max-width: 768px) {
-    .cs-hero { padding: 120px 0 60px; }
     .metrics-row { grid-template-columns: 1fr; }
     .two-col-lists { grid-template-columns: 1fr; gap: var(--space-32); }
     .klient-grid { grid-template-columns: 1fr; }
