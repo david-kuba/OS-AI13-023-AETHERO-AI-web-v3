@@ -16,7 +16,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   </section>
 
   <!-- INTRO -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="intro-heading">Translate with&nbsp;AI for&nbsp;a&nbsp;fraction&nbsp;of&nbsp;the&nbsp;cost.</h2>
       <p class="intro-text">The Shopify App Store offers a large number of translation apps — some even use AI or connect to translation services. But the cost can easily reach thousands, especially if your store has hundreds or thousands of products.</p>
@@ -25,7 +25,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   </section>
 
   <!-- BENEFITS + WHY -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container two-col">
       <div>
         <h2 class="section-title">What are the advantages?</h2>
@@ -52,7 +52,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   </section>
 
   <!-- SCREENSHOTS -->
-  <section class="section bg-elevated section-screenshots">
+  <section class="section bg-primary section-screenshots">
     <div class="container">
       <h2 class="section-title-large">App screenshots</h2>
       <div class="gallery-grid">
@@ -139,12 +139,12 @@ import PageLayout from '../../layouts/PageLayout.astro';
     max-width: 640px;
     margin: 0;
   }
-  .app-hero-sub-hi { color: var(--action); }
+  .app-hero-sub-hi { color: #A081D1; }
 
   /* ─── SECTIONS ─── */
   .section { padding: 40px 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
 
   .intro-heading {
     font-family: var(--font-primary);
@@ -188,7 +188,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     padding-left: 24px;
     position: relative;
   }
-  .benefit-list li::before { content: '→'; position: absolute; left: 0; color: var(--action); }
+  .benefit-list li::before { content: '→'; position: absolute; left: 0; color: rgba(255,255,255,0.55); }
   .extra-note {
     font-size: 14px;
     color: rgba(255,255,255,0.5);
@@ -202,7 +202,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     padding: 14px 40px;
     background: #fff;
     border: 2px solid #fff;
-    color: var(--brand-dark, #000326);
+    color: var(--ae-straight-blue, #000326);
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 700;
@@ -342,7 +342,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     font-family: var(--font-primary);
     font-size: clamp(22px, 3vw, 40px);
     font-weight: 700;
-    color: var(--brand-dark);
+    color: var(--ae-straight-blue);
     text-decoration: none;
     transition: opacity 0.2s;
   }

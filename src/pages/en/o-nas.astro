@@ -36,7 +36,7 @@ const team = [
     </div>
   </section>
 
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title">Team</h2>
       <div class="team-grid">
@@ -60,7 +60,7 @@ const team = [
     </div>
   </section>
 
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container mission-inner">
       <div>
         <h2 class="section-title">What drives us</h2>
@@ -104,12 +104,12 @@ const team = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
-  .cta-link { font-size: clamp(22px, 3vw, 40px); color: var(--brand-dark); font-family: var(--font-primary); font-weight: 700; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-link { font-size: clamp(22px, 3vw, 40px); color: var(--ae-straight-blue); font-family: var(--font-primary); font-weight: 700; text-decoration: none; transition: opacity var(--transition-base); }
   .cta-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   .o-nas-hero {
     position: relative; overflow: hidden;
-    background: var(--bg-primary-alt);
+    background: var(--ae-bg-primary-alt);
     padding: 130px 0 80px;
   }
   .hero-blob {
@@ -119,17 +119,17 @@ const team = [
     border-radius: 50%; filter: blur(60px);
     pointer-events: none;
   }
-  .o-nas-hero h1 { font-size: clamp(56px,7vw,100px); font-weight: 700; margin-bottom: 24px; }
+  .o-nas-hero h1 { font-size: clamp(40px, 5vw, 64px); font-weight: 700; margin-bottom: 24px; }
   .hero-sub { font-size: 22px; color: rgba(255,255,255,0.75); max-width: 600px; line-height: 1.5; }
 
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
 
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .team-card {
-    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+    background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-md); padding: var(--space-40);
     display: flex; flex-direction: column; gap: 8px;
   }
@@ -141,7 +141,7 @@ const team = [
   }
   .team-avatar span { font-size: 32px; font-weight: 700; color: #fff; }
   .team-name { font-size: 24px; font-weight: 700; }
-  .team-role { font-size: 14px; color: var(--action); font-weight: 500; letter-spacing: 0; }
+  .team-role { font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0; }
   .team-desc { font-size: 16px; color: var(--neutral-300); line-height: 1.6; flex: 1; }
   .team-contact { font-size: 14px; color: var(--text-secondary); transition: color var(--transition-base); }
   .team-contact:hover { color: var(--action); }
@@ -150,7 +150,7 @@ const team = [
   .mission-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.7; }
   .mission-values { display: flex; flex-direction: column; gap: var(--space-24); }
   .value-item { padding: var(--space-24); background: rgba(13,212,205,0.08); border: 1px solid rgba(13,212,205,0.22); border-radius: var(--radius-md); }
-  .value-item h3 { font-size: 20px; font-weight: 700; color: var(--action); margin-bottom: 8px; }
+  .value-item h3 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 8px; }
   .value-item p { font-size: 16px; color: var(--neutral-300); }
 
   @media (max-width: 768px) {

@@ -161,7 +161,7 @@ const blogPosts = [
             </script>
           </div>
         </div>
-        <a href="/cs/kontakt" class="btn-hero">Do čeho se spolu pustíme?</a>
+        <a href="#cta" class="btn-hero">Do čeho se spolu pustíme?</a>
       </div>
       <div class="hero-right" aria-hidden="true">
         <img src="/hero-glass.webp" alt="" width="704" height="630" class="hero-shape" loading="eager" />
@@ -179,7 +179,7 @@ const blogPosts = [
             <div class="service-content">
               <span class="service-num">{s.num}</span>
               <p class="service-text" set:html={s.pre}></p>
-              <h3 class="service-title" set:html={s.title}></h3>
+              <h3 class="h2-mini service-title" set:html={s.title}></h3>
             </div>
             {i < services.length - 1 && (
               <div class="svc-arrow" aria-hidden="true">
@@ -217,7 +217,7 @@ const blogPosts = [
       <div class="features-grid">
         {features.map((col) => (
           <div class="feature-col">
-            <h5 class="feature-col-title">{col.title}</h5>
+            <h3 class="h3-mini feature-col-title">{col.title}</h3>
             <ul class="feature-list">
               {col.items.map((item) => (
                 <li class="feature-item">
@@ -282,7 +282,7 @@ const blogPosts = [
   <!-- REFERENCES -->
   <section class="references">
     <div class="container">
-      <h2 class="section-heading">Reference</h2>
+      <h2 class="h2-maxi section-heading">Reference</h2>
       <div class="ref-grid">
         <div class="ref-card">
           <h3 class="ref-title"><a href="https://bu1.cz" target="_blank" rel="noopener">BU1.cz, BU1sport.com</a></h3>
@@ -313,7 +313,7 @@ const blogPosts = [
   <!-- ZKUŠENOSTI -->
   <section class="zkusenosti">
     <div class="container zk-inner">
-      <h2 class="zk-heading">Zkušenosti</h2>
+      <h2 class="h2 zk-heading">Zkušenosti</h2>
       <p class="zk-body">Za dobu, kdy pracujeme v tomto oboru, jsme společně nashromáždili působivou sbírku klientů a tím i zkušeností. Pracovali jsme na mnoha na různých projektech, takže veselé historky o spolupráci s nadnárodními a jinými firmami, spolu můžem klidně probrat u kafe ;-D</p>
       <div class="zk-logos">
         <img src="/icons/genkia-logo.svg" alt="Genkia" class="zk-logo-img" loading="lazy" />
@@ -331,7 +331,7 @@ const blogPosts = [
   <section class="blog-section">
     <div class="blog-wide">
       <div class="blog-header">
-        <h2 class="section-heading">Blog</h2>
+        <h2 class="h2-maxi section-heading">Blog</h2>
         <div class="blog-nav">
           <button class="blog-btn" id="blog-prev" aria-label="Předchozí" disabled>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -367,9 +367,9 @@ const blogPosts = [
   </section>
 
   <!-- FOOTER CTA -->
-  <section class="footer-cta">
+  <section class="footer-cta" id="cta">
     <div class="container footer-cta-inner">
-      <h2 class="footer-cta-heading">Máme spolu co probrat? Dejte vědět</h2>
+      <h2 class="h2-maxi footer-cta-heading">Máme spolu co probrat? Dejte vědět</h2>
       <div class="footer-cta-contacts">
         <a href="mailto:info@aethero.cz" class="footer-cta-link">info@aethero.cz</a>
         <a href="tel:+420776067663" class="footer-cta-link">+420 776 067 663</a>
@@ -510,15 +510,8 @@ const blogPosts = [
     margin: 0;
   }
   .service-title {
-    font-family: var(--font-primary);
-    font-size: clamp(26px, 3.5vw, 48px);
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--action);
+    color: #fff;
     margin: 4px 0 0;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 1px;
   }
   .svc-arrow {
     display: flex;
@@ -679,12 +672,8 @@ const blogPosts = [
   .references .section-heading { text-align: center; }
   .ref-card { text-align: left; }
   .section-heading {
-    font-family: var(--font-primary);
-    font-size: clamp(40px, 5.5vw, 70px);
-    font-weight: 600;
     color: #fff;
     margin-bottom: 56px;
-    line-height: 1.4;
   }
   .ref-grid {
     display: grid;
@@ -880,7 +869,7 @@ const blogPosts = [
     font-family: var(--font-primary);
     font-size: clamp(20px, 3vw, 40px);
     font-weight: 600;
-    color: var(--brand-dark);
+    color: var(--ae-straight-blue);
     text-decoration: none;
     transition: opacity 0.2s;
   }

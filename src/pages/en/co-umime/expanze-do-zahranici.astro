@@ -20,7 +20,7 @@ const features = [
   <ServiceHero
     lang="en"
     label="International Expansion"
-    title="INTERNATIONAL<br /><span style='color:var(--action)'>EXPANSION</span>"
+    title="INTERNATIONAL<br /><span style='color:#fff'>EXPANSION</span>"
     subtitle="Time to go full throttle — Europe? The whole world? Absolutely, we are going in with you."
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
@@ -31,17 +31,17 @@ const features = [
   />
 
   <!-- Intro -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="intro-h2">Do you have a plan for<br /><span class="accent-purple">INTERNATIONAL EXPANSION</span>?</h2>
       <p class="intro-text">With Shopify, we'll open the door to growth that <strong class="hl">simply isn't possible on local platforms</strong>. Take the decisive step forward into international markets and global e-commerce.</p>
       <p class="intro-text">You'll get <strong class="hl">one global platform built from the ground up for international selling</strong> — enabling multiple currencies, languages, and localised customer experiences.</p>
-      <a href="#cta" class="intro-btn">Let's expand →</a>
+      <a href="#cta" class="btn-secondary">Let's expand →</a>
     </div>
   </section>
 
   <!-- Stats -->
-  <section class="section bg-secondary" id="expansion-why">
+  <section class="section bg-primary" id="expansion-why">
     <div class="container two-col">
       <div>
         <h2 class="section-title">What does expansion with Shopify bring you?</h2>
@@ -81,7 +81,7 @@ const features = [
   ))}
 
   <!-- You are in the right place -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container" style="text-align: center; max-width: 720px; margin: 0 auto;">
       <h3 class="tady-heading">You are in the right place!</h3>
       <p class="tady-text">When it comes to global expansion, the question is not whether — but when. Shopify gives you the technological foundation so you can focus on growth instead of working around platform limitations. Is now the right time, and do you want to take your store further with us?</p>
@@ -103,21 +103,21 @@ const features = [
 <style>
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
-  .text-action { color: var(--action); }
+  .text-action { color: #fff; }
   .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(24px, 3vw, 36px); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
 
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .intro-highlights { display: flex; flex-direction: column; gap: var(--space-40); padding-top: var(--space-8); }
   .highlight-item { display: flex; flex-direction: column; gap: var(--space-8); border-left: 2px solid var(--action); padding-left: var(--space-24); }
-  .highlight-num { font-size: 48px; font-weight: 700; color: var(--action); line-height: 1; font-family: var(--font-primary); }
+  .highlight-num { font-size: 48px; font-weight: 700; color: #fff; line-height: 1; font-family: var(--font-primary); }
   .highlight-label { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.5; }
 
   .feature-section { padding: var(--space-120) 0; }
@@ -126,7 +126,7 @@ const features = [
   .feature-section--reverse .feature-text,
   .feature-section--reverse .feature-img-wrap { direction: ltr; }
   .feature-logo { height: 48px; width: auto; display: block; margin-bottom: var(--space-24); object-fit: contain; }
-  .feature-title { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); color: var(--action); }
+  .feature-title { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); color: #fff; }
   .feature-desc { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.6; }
   .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
   .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
@@ -138,7 +138,7 @@ const features = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

@@ -24,7 +24,7 @@ const { title, category, client, tags, perex, content } = Astro.props;
     </div>
   </section>
 
-  <article class="section bg-elevated">
+  <article class="section bg-primary">
     <div class="container article-inner">
       <p class="article-content">{content}</p>
     </div>
@@ -44,24 +44,24 @@ const { title, category, client, tags, perex, content } = Astro.props;
 </PageLayout>
 
 <style>
-  .case-hero { position: relative; padding: 160px 0 80px; background: var(--bg-primary-alt); overflow: hidden; }
+  .case-hero { position: relative; padding: 160px 0 80px; background: var(--ae-bg-primary-alt); overflow: hidden; }
   .hero-blob { position: absolute; top: -20%; right: -5%; width: 500px; height: 500px; background: radial-gradient(ellipse, rgba(203,0,215,0.15) 0%, transparent 70%); border-radius: 50%; filter: blur(60px); pointer-events: none; }
   .case-hero-inner { position: relative; max-width: 760px; }
-  .case-label { font-family: var(--font-primary); font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-24); }
+  .case-label { font-family: var(--font-primary); font-size: 14px; font-weight: 600; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: var(--space-24); }
   .case-hero h1 { font-size: clamp(40px, 5vw, 64px); font-weight: 700; margin-bottom: var(--space-24); }
   .case-perex { font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-24); }
   .case-tags { display: flex; gap: var(--space-8); flex-wrap: wrap; }
   .tag { padding: 6px 14px; background: rgba(13,212,205,0.1); border: 1px solid rgba(13,212,205,0.2); border-radius: 20px; font-size: 14px; color: var(--action); }
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .article-inner { max-width: 760px; }
   .article-content { font-size: 18px; color: var(--neutral-300); line-height: 1.6; }
-  .cta-section { padding: var(--space-120) 0; background: var(--bg-secondary); }
+  .cta-section { padding: var(--space-120) 0; background: var(--ae-bg-primary); }
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-16); }
   .cta-inner p { color: var(--neutral-300); margin-bottom: var(--space-40); }
   .cta-links { display: flex; gap: var(--space-16); justify-content: center; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--bg-elevated); font-family: var(--font-primary); font-size: 16px; font-weight: 600; border-radius: var(--radius-sm); transition: background var(--transition-base); }
+  .btn-primary { display: inline-flex; padding: 14px 32px; background: var(--action); color: var(--ae-bg-primary); font-family: var(--font-primary); font-size: 16px; font-weight: 600; border-radius: var(--radius-sm); transition: background var(--transition-base); }
   .btn-primary:hover { background: var(--action-hover); }
   .btn-ghost { display: inline-flex; padding: 14px 32px; border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-family: var(--font-primary); font-size: 16px; font-weight: 600; border-radius: var(--radius-sm); transition: border-color var(--transition-base), color var(--transition-base); }
   .btn-ghost:hover { border-color: var(--action); color: var(--action); }

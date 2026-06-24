@@ -36,16 +36,16 @@ const team = [
     </div>
   </section>
 
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="section-title">Tým</h2>
+      <h2 class="h2 section-title">Tým</h2>
       <div class="team-grid">
         {team.map((member) => (
           <div class="team-card">
             <div class="team-avatar" aria-hidden="true">
               <span>{member.name[0]}</span>
             </div>
-            <h3 class="team-name">{member.name}</h3>
+            <h3 class="h3-mini team-name">{member.name}</h3>
             <p class="team-role">{member.role}</p>
             <p class="team-desc">{member.desc}</p>
             <div class="team-contacts">
@@ -58,9 +58,9 @@ const team = [
     </div>
   </section>
 
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container story-inner">
-      <h2 class="section-title">Jak to u nás funguje</h2>
+      <h2 class="h2 section-title">Jak to u nás funguje</h2>
       <div class="story-text">
         <p>
           Nejsme velká agentura s desítkami zaměstnanců a neosobními procesy.
@@ -92,7 +92,7 @@ const team = [
 <style>
   .o-nas-hero {
     position: relative; padding: 130px 0 80px;
-    background: var(--bg-primary-alt); overflow: hidden;
+    background: var(--ae-bg-primary-alt); overflow: hidden;
   }
   .hero-blob {
     position: absolute; top: -20%; right: -5%; width: 500px; height: 500px;
@@ -100,28 +100,28 @@ const team = [
     border-radius: 50%; filter: blur(60px); pointer-events: none;
   }
   .o-nas-hero .container { position: relative; }
-  .o-nas-hero h1 { font-size: clamp(48px, 6vw, 80px); font-weight: 700; }
+  .o-nas-hero h1 { font-size: clamp(40px, 5vw, 64px); font-weight: 700; }
   .hero-sub { font-size: 20px; color: var(--text-secondary); margin-top: var(--space-24); max-width: 600px; line-height: 1.6; }
 
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .section-title { margin-bottom: var(--space-40); }
 
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .team-card {
-    background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08);
+    background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-md); padding: var(--space-40);
     display: flex; flex-direction: column; gap: var(--space-16);
   }
   .team-avatar {
     width: 64px; height: 64px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--brand-dark), var(--accent-purple));
+    background: linear-gradient(135deg, var(--ae-straight-blue), var(--accent-purple));
     display: flex; align-items: center; justify-content: center;
   }
   .team-avatar span { font-family: var(--font-primary); font-size: 24px; font-weight: 700; color: #fff; }
-  .team-name { font-size: 22px; font-weight: 700; }
-  .team-role { font-size: var(--text-small); color: var(--action); font-weight: 500; }
+  .team-name { }
+  .team-role { font-size: var(--text-small); color: rgba(255,255,255,0.6); font-weight: 500; }
   .team-desc { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; flex: 1; }
   .team-contacts { display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
   .contact-pill { font-size: 14px; color: var(--neutral-500); transition: color var(--transition-base); }
@@ -135,7 +135,7 @@ const team = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
-  .cta-link { font-size: clamp(22px, 3vw, 40px); color: var(--brand-dark); font-family: var(--font-primary); font-weight: 700; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-link { font-size: clamp(22px, 3vw, 40px); color: var(--ae-straight-blue); font-family: var(--font-primary); font-weight: 700; text-decoration: none; transition: opacity var(--transition-base); }
   .cta-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 768px) {

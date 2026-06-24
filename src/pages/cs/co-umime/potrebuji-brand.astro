@@ -15,7 +15,7 @@ const workCards = [
 <PageLayout title="Potřebuji brand | aethero" description="Budujeme brandy, které rezonují napříč kulturami. Značka, vizuální identita a digitální zkušenost pro váš Shopify e-shop." lang="cs">
   <ServiceHero
     label="Brand & Identity"
-    title="Potřebuji <span style='color:var(--action)'>BRAND</span>"
+    title="Potřebuji <span style='color:#fff'>BRAND</span>"
     subtitle="A skrze něj získat místo v myslích a srdcích zákazníků"
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
@@ -24,19 +24,19 @@ const workCards = [
   />
 
   <!-- Intro hero text -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="intro-h2">Budujeme <span class="accent-purple">BRANDY</span>, které rezonují napříč kulturami</h2>
+      <h2 class="h1 intro-h2">Budujeme <span class="accent-purple">BRANDY</span>, které rezonují napříč kulturami</h2>
       <p class="intro-text">Stavíte e-commerce firmu, <strong class="hl">stvořte svou značku a rozjeďte to na plno</strong>. Jděte s kůží na trh! Brand bude v budoucnu vaším štítem i brněním. V době hyperkonkurence <strong class="hl">máte okolo 2 vteřin zákazníkovy pozornosti</strong>. Musíte <strong>zaujmout „na první dobrou"</strong> a pak být přímočaří, srozumitelní, konzistentní a zapamatovatelní.</p>
       <p class="intro-text"><strong class="hl">Ultimátním řešením které nabízíme, je vytvoření dotaženého brandu se kterým bude umět pracovat i vaše AI.</strong> Nejde ani o snadné ani levné řešení, ale je to jediná dlouhodobě fungující cesta.</p>
-      <a href="#cta" class="intro-btn">Jdeme vytvořit brand →</a>
+      <a href="#cta" class="btn-secondary">Jdeme vytvořit brand →</a>
     </div>
   </section>
 
   <!-- Brand pillar -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
-      <h3 class="pillar-heading">BRAND, je prvním pilířem vašeho úspěchu.</h3>
+      <h3 class="h2 pillar-heading">BRAND, je prvním pilířem vašeho úspěchu.</h3>
       <div class="brand-text-col">
         <p class="section-text">Ptáte se proč tu řešíme takovou obyčejnou a zdálo by se možná i základní věc, jako je BRAND? Protože ho můžete záměrně stvořit malý a prostinký, ale nesmíte ho postavit špatně a pak ho ukázat světu. Zde naplno platí, že nedostanete druhou šanci učinit první dojem.</p>
         <p class="section-text">Váš BRAND je energií celého e-commerce stroje. A stejně jako například elektřina, vám neodpustí hrubou chybu. BRAND je naprosto zásadní ingrediencí a musíte ho brát vážně, chcete-li mít úspěch.</p>
@@ -47,9 +47,9 @@ const workCards = [
   </section>
 
   <!-- Na čem můžeme spolu pracovat -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="work-heading">NA ČEM MŮŽEME SPOLU — PRACOVAT</h2>
+      <h2 class="h2-mini work-heading">NA ČEM MŮŽEME SPOLU — PRACOVAT</h2>
       <div class="work-grid">
         {workCards.map((c) => (
           <div class="work-card">
@@ -62,10 +62,10 @@ const workCards = [
   </section>
 
   <!-- A proč si myslíme -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container analogy-split">
       <div class="analogy-text">
-        <h3 class="analogy-heading">A proč si myslíme, že v tom určitě nemáte být sami?</h3>
+        <h3 class="h2-mini analogy-heading">A proč si myslíme, že v tom určitě nemáte být sami?</h3>
         <p class="section-text">Tvorba brandu, je jako stavba nového domu. Na první pohled je všem všechno jasné. Každý přece ví, že budete mít kuchyň i koupelnu. Ale až teprve ve chvíli, kdy začnete zjišťovat „jak tu kuchyň vybavit, propojit s jídelnou a k tomu zkoušíte najít správný styl obložení koupelny i vhodný typ vany...", tak tehdy to začne být doopravdy náročné... A pak si přejete mít pomoc nadosah!</p>
         <p class="section-text"><strong>No a od toho tu jsme my.</strong></p>
         <a href="tel:+420776067663" class="btn-action">Ozvěte se nám</a>
@@ -80,7 +80,7 @@ const workCards = [
   </section>
 
   <!-- Muhtar Kent quote -->
-  <section class="section bg-elevated quote-section">
+  <section class="section bg-primary quote-section">
     <div class="container">
       <blockquote class="kent-quote">„Značka je slib. A dobrá značka je slib, který je vždy dodržen"<cite>— Muhtar Kent</cite></blockquote>
     </div>
@@ -100,25 +100,25 @@ const workCards = [
 
 <style>
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: var(--space-24); max-width: 760px; }
 
-  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
+  .intro-h2 { margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: var(--space-24); max-width: 860px; }
   .hl { color: var(--text-secondary); font-weight: 900; }
-  .pillar-heading { font-size: clamp(26px, 3.5vw, 48px); font-weight: 600; margin-bottom: var(--space-40); color: var(--action); }
+  .pillar-heading { margin-bottom: var(--space-40); color: #fff; }
   .brand-text-col { max-width: 760px; }
 
   .ogilvy-quote { margin-top: var(--space-64); font-size: clamp(18px, 2vw, 24px); font-style: italic; color: rgba(255,255,255,0.9); border-left: 3px solid var(--action); padding-left: var(--space-32); line-height: 1.5; }
   .ogilvy-quote cite { display: block; font-size: 14px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-16); }
 
-  .work-heading { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; letter-spacing: 0; margin-bottom: var(--space-48); color: var(--action); text-transform: uppercase; }
+  .work-heading { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; letter-spacing: 0; margin-bottom: var(--space-48); color: #fff; text-transform: uppercase; }
   .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .work-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .work-card-title { font-size: 16px; font-weight: 700; color: var(--action); margin-bottom: var(--space-12); }
+  .work-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .work-card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: var(--space-12); }
   .work-card-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
   .analogy-split { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
@@ -152,7 +152,7 @@ const workCards = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

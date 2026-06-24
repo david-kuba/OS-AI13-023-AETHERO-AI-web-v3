@@ -80,7 +80,7 @@ const capabilities = [
 <PageLayout title="Nový Shopify e-shop | aethero" description="Spustíme váš nový e-shop na Shopify — od návrhu přes vývoj až po první objednávku. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává." lang="cs">
   <ServiceHero
     label="Nový e-shop"
-    title="NOVÝ E-SHOP<br /><span style='color:var(--action)'>NA SHOPIFY</span>"
+    title="NOVÝ E-SHOP<br /><span style='color:#fff'>NA SHOPIFY</span>"
     subtitle="Spusťte váš e-commerce projekt na mezinárodní superplatformě. Přeskočíme slepé uličky a rovnou spustíme e-shop, který vydělává."
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
@@ -91,21 +91,21 @@ const capabilities = [
   />
 
   <!-- Pojďme rozběhnout -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="intro-h2">Pojďme rozběhnout váš<br /><span class="accent-purple">NOVÝ E-SHOP</span> na Shopify</h2>
+      <h2 class="h1 intro-h2">Pojďme rozběhnout váš<br /><span class="accent-purple">NOVÝ E-SHOP</span> na Shopify</h2>
       <p class="intro-text">Všechno začíná stejně — skvělý nápad, mlhavá představa o tom, jak ho spustit. Budete stavět sami, nebo s námi? <strong class="hl">Pokud si myslíte Shopify je pro vás velký, přesvědčíme vás o opaku.</strong></p>
       <p class="intro-text">Pokud váš projekt myslíte vážně, <strong class="hl">víme, jak na to</strong>. Rádi spolupracujeme s lidmi, kteří přicházejí s plány — ne s otázkami, jestli to vůbec půjde. Zkušenosti a intuici přineseme my. Přijdete s cílem a my najdeme cestu.</p>
-      <a href="#cta" class="intro-btn">Tak pojďme na to →</a>
+      <a href="#cta" class="btn-secondary">Tak pojďme na to →</a>
     </div>
   </section>
 
   <!-- Co spolu se Shopify dostaneme -->
-  <section class="section bg-secondary" id="shopify-proc">
+  <section class="section bg-primary" id="shopify-proc">
     <div class="container">
       <div class="two-col-capabilities">
         <div>
-          <h2 class="section-title">Ptáte se, co spolu s Shopify dostaneme?</h2>
+          <h2 class="h2 section-title">Ptáte se, co spolu s Shopify dostaneme?</h2>
           <p class="section-text">Moderní e-commerce platforma, která má za sebou desítky milionů obchodníků a roky vývoje — technologická infrastruktura, globální distribuce, PCI DSS compliance a více než 10 000 aplikací.</p>
           <p class="section-text">Shopify investuje desítky miliard dolarů ročně do infrastruktury. Tím pádem, že se vás netýkají výpadky, bezpečnostní incidenty nebo zaostávání za konkurencí.</p>
           <a href="#features" class="section-link">Co to jsou? →</a>
@@ -130,7 +130,7 @@ const capabilities = [
       <div class="container feature-inner">
         <div class="feature-text">
           {f.logo && <img src={f.logo} alt={f.title} class="feature-logo" loading="lazy" />}
-          <h2 class="feature-title">{f.title}</h2>
+          <h2 class="h3-mini feature-title">{f.title}</h2>
           <p class="feature-desc">{f.desc}</p>
         </div>
         {f.img && (
@@ -146,10 +146,10 @@ const capabilities = [
   ))}
 
   <!-- Proč Shopify + Groomo -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container two-col-groomo">
       <div>
-        <h2 class="section-title">PROČ začít na platformě Shopify?</h2>
+        <h2 class="h2 section-title">PROČ začít na platformě Shopify?</h2>
         <p class="section-text">Pojď nám říct proč nejpopulárnější e-commerce platforma na světě je ideální volbou pro vaše podnikání — bez ohledu na velikost ani produkty.</p>
         <ul class="reasons-list">
           {reasons.map((r) => (
@@ -196,8 +196,8 @@ const capabilities = [
     margin-bottom: var(--space-40);
     max-width: 760px;
   }
-  .text-action { color: var(--action); }
-  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
+  .text-action { color: #fff; }
+  .intro-h2 { margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text {
@@ -210,9 +210,9 @@ const capabilities = [
   .intro-text--spaced { margin-top: var(--space-40); }
   /* Capabilities section */
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .section-title { margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
   .section-link { color: var(--action); font-size: 16px; font-weight: 600; text-decoration: none; }
   .section-link:hover { opacity: 0.75; }
@@ -233,7 +233,7 @@ const capabilities = [
   .feature-section--reverse .feature-text { direction: ltr; }
   .feature-section--reverse .feature-img-wrap { direction: ltr; }
   .feature-logo { display: block; height: 32px; width: auto; margin-bottom: var(--space-24); }
-  .feature-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); }
+  .feature-title { margin-bottom: var(--space-24); }
   .feature-desc { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.6; }
   .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
   .feature-img-wrap--empty { min-height: 200px; }
@@ -251,11 +251,11 @@ const capabilities = [
   .reasons-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.5; }
   .reasons-list svg { flex-shrink: 0; margin-top: 2px; }
   .groomo-wrap { display: flex; align-items: flex-start; }
-  .groomo-card { display: block; text-decoration: none; border-radius: var(--radius-md); overflow: hidden; background: var(--bg-elevated); transition: transform var(--transition-base); }
+  .groomo-card { display: block; text-decoration: none; border-radius: var(--radius-md); overflow: hidden; background: var(--ae-bg-primary); transition: transform var(--transition-base); }
   .groomo-card:hover { transform: translateY(-4px); }
   .groomo-img { display: block; width: 100%; height: auto; }
   .groomo-label { padding: var(--space-24); }
-  .groomo-tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-8); }
+  .groomo-tag { display: inline-block; font-size: 14px; font-weight: 600; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: var(--space-8); }
   .groomo-label p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0; }
 
   /* CTA */
@@ -263,7 +263,7 @@ const capabilities = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   /* Responsive */

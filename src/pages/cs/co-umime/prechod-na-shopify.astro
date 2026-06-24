@@ -24,7 +24,7 @@ const features = [
 <PageLayout title="Přechod na Shopify | aethero" description="Migrujte z Shoptetu, WooCommerce nebo jiné platformy na Shopify bez ztráty SEO, dat a zákazníků." lang="cs">
   <ServiceHero
     label="Migrace"
-    title="PŘECHOD<br /><span style='color:var(--action)'>NA SHOPIFY</span>"
+    title="PŘECHOD<br /><span style='color:#fff'>NA SHOPIFY</span>"
     subtitle="Váháte? Chcete poradit? Nebo už jste rozhodnutí? Tak pojďme na to s vámi."
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
@@ -35,20 +35,20 @@ const features = [
   />
 
   <!-- Intro -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="intro-h2">Odstartujeme váš<br /><span class="accent-purple">PŘECHOD NA SHOPIFY</span></h2>
+      <h2 class="h1 intro-h2">Odstartujeme váš<br /><span class="accent-purple">PŘECHOD NA SHOPIFY</span></h2>
       <p class="intro-text">Narážíte na limity Shoptetu nebo WooCommerce? <strong class="hl">Shopify je otevřená globální platforma navržená pro růst</strong> — multi-měna, vícejazyčnost, integrace externích systémů a propojení online i offline prodeje přes POS.</p>
       <p class="intro-text">Pomůžeme vám <strong class="hl">přejít plynule — se zachováním SEO, dat i zákaznické zkušenosti</strong>. Spolupracujeme s e-shopy od startupů po velké hráče a víme, na co si dát pozor a jak neztrácet čas ani peníze.</p>
-      <a href="#cta" class="intro-btn">Ano, chceme migraci →</a>
+      <a href="#cta" class="btn-secondary">Ano, chceme migraci →</a>
     </div>
   </section>
 
   <!-- 2-col: text + checklist -->
-  <section class="section bg-secondary" id="proc-migrace">
+  <section class="section bg-primary" id="proc-migrace">
     <div class="container two-col-check">
       <div>
-        <h2 class="section-title">Shopify Edition Zima 2026</h2>
+        <h2 class="h2 section-title">Shopify Edition Zima 2026</h2>
         <p class="section-text">Shopify vydává velké funkční updaty 2× ročně. Každé vydání přináší nové funkce pro obchodníky, vývojáře i zákazníky — a Shopify vás neúčtuje zvlášť za upgrade. Na to jste s jinými platformami zvyklí?</p>
         <div class="edition-img-wrap">
           <img src="/shopify-update-winter-2026.webp" alt="Shopify Edition Zima 2026" class="edition-img" loading="lazy" />
@@ -56,7 +56,7 @@ const features = [
         <p class="section-text">Jako Shopify partner dostáváme přístup k novinkám dřív než ostatní — a přenášíme je přímo do vašeho e-shopu. <a href="https://www.shopify.com/editions" target="_blank" rel="noopener" class="section-link">Shopify Editions Zima 2026</a> — co přináší nového, implementujeme přímo do vašeho projektu.</p>
       </div>
       <div>
-        <h2 class="section-title">Jak to začít</h2>
+        <h2 class="h2 section-title">Jak to začít</h2>
         <ul class="check-list">
           {checkItems.map((c) => (
             <li>
@@ -75,9 +75,9 @@ const features = [
   </section>
 
   <!-- Feature heading -->
-  <section class="section-heading bg-elevated">
+  <section class="section-heading bg-primary">
     <div class="container">
-      <h2 class="feature-section-heading">Funkce co vás potěší:</h2>
+      <h2 class="h2-mini feature-section-heading">Funkce co vás potěší:</h2>
       <p class="section-text">Pokud se okolo standartních e-shopů pohybujete už delší dobu, tak tyto funkce a možnosti, které jsou rovnou v základu, určite oceníte</p>
     </div>
   </section>
@@ -87,7 +87,7 @@ const features = [
     <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
       <div class="container feature-inner">
         <div class="feature-text">
-          <h2 class="feature-title">{f.title}</h2>
+          <h3 class="h3-mini feature-title">{f.title}</h3>
           <p class="feature-desc">{f.desc}</p>
         </div>
         <div class="feature-img-wrap">
@@ -112,16 +112,16 @@ const features = [
 <style>
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); max-width: 760px; }
-  .text-action { color: var(--action); }
-  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
+  .text-action { color: #fff; }
+  .intro-h2 { margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
   .intro-text--spaced { margin-top: var(--space-40); }
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .section-title { margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
   .section-link { color: var(--action); text-decoration: none; font-weight: 600; }
   .section-link:hover { opacity: 0.75; }
@@ -134,7 +134,7 @@ const features = [
   .check-list svg { flex-shrink: 0; margin-top: 2px; }
 
   .section-heading { padding: var(--space-80) 0 var(--space-40); }
-  .feature-section-heading { font-size: clamp(26px, 3.5vw, 48px); font-weight: 600; margin-bottom: var(--space-16); }
+  .feature-section-heading { margin-bottom: var(--space-16); }
 
   .feature-section { padding: var(--space-120) 0; }
   .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
@@ -150,7 +150,7 @@ const features = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

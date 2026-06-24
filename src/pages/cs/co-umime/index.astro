@@ -77,7 +77,8 @@ const services = [
     <div class="co-hero-overlay"></div>
     <div class="container co-hero-inner">
       <h1>Co umíme</h1>
-      <a href="#brand" class="co-hero-cta">A do čeho se pustíme spolu?</a>
+      <p class="co-hero-sub">Vyberte si oblast která vás zajímá, zkontaktujte nás.</p>
+      <a href="#cta" class="btn-hero">A můžeme začít</a>
     </div>
   </section>
 
@@ -94,7 +95,7 @@ const services = [
         <div class="svc-text-col">
           <h2 class="svc-title" set:html={s.title} />
           <p class="svc-desc" set:html={s.desc} />
-          <a href={s.href} class="svc-cta">{s.cta}</a>
+          <a href={s.href} class="btn-secondary">{s.cta}</a>
         </div>
       </div>
     </section>
@@ -146,7 +147,7 @@ const services = [
     position: relative;
     min-height: 68vh;
     overflow: hidden;
-    background: #171a1c;
+    background: #000326;
   }
   .co-hero-bg {
     position: absolute; inset: 0;
@@ -169,7 +170,15 @@ const services = [
     font-size: clamp(56px, 7.8vw, 100px);
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+  .co-hero-sub {
+    font-family: var(--font-secondary);
+    font-size: clamp(18px, 1.8vw, 22px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    margin-bottom: 36px;
   }
 
   /* ─── SERVICE SECTIONS ─── */
@@ -177,7 +186,7 @@ const services = [
   .svc-section {
     padding: 100px 0;
   }
-  .svc-section:nth-child(odd) { background: var(--bg-primary); }
+  .svc-section:nth-child(odd) { background: var(--ae-bg-primary); }
   .svc-section:nth-child(even) { background: #000326; }
 
   .svc-grid {
@@ -221,6 +230,10 @@ const services = [
     margin-bottom: 24px;
   }
   .svc-title :global(.t-ac) {
+    color: #fff;
+    text-decoration: none;
+  }
+  .svc-title :global(a.t-ac) {
     color: var(--action);
     text-decoration: underline;
     text-underline-offset: 5px;
@@ -238,7 +251,7 @@ const services = [
   }
   /* ─── APPS ─── */
   .apps-section {
-    background: var(--bg-secondary);
+    background: var(--ae-bg-primary);
     padding: 100px 0;
   }
   .section-label {
@@ -289,7 +302,7 @@ const services = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity 0.2s; }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity 0.2s; }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {

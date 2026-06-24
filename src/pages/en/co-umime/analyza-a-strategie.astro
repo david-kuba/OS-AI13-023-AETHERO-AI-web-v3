@@ -42,7 +42,7 @@ const steps = [
   <ServiceHero
     lang="en"
     label="Analytics & Strategy"
-    title="ANALYTICS<br /><span style='color:var(--action)'>& STRATEGY</span>"
+    title="ANALYTICS<br /><span style='color:#fff'>& STRATEGY</span>"
     subtitle="Do you know why your store is growing? And why it sometimes is not? We connect your data, apply AI + context — and the results are truly impressive."
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
@@ -53,17 +53,17 @@ const steps = [
   />
 
   <!-- Stop guessing -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="intro-h2">Stop guessing,<br /><span class="accent-purple">FIND OUT WHY</span></h2>
       <p class="intro-text">Your store is telling you something. <strong class="hl">Are you listening?</strong> Every store has a story hidden inside its data — where it earns, where it bleeds, why some customers stay and others disappear after the first purchase. <strong class="hl">You already have that data — nobody is reading it.</strong> And someone should.</p>
       <p class="intro-text">It takes experience and a bit of technical voodoo, but then we sit down with your data, plans and a tamed AI, connect them to what is needed: Google Ads, Analytics, Meta and your email client — and <strong class="hl">hand you back a strategy with numbers against every recommendation</strong>: how much it will earn, how much it will save, when to switch it on.</p>
-      <a href="#cta" class="intro-btn">Want an analysis? Call or write →</a>
+      <a href="#cta" class="btn-secondary">Want an analysis? Call or write →</a>
     </div>
   </section>
 
   <!-- Your data says more -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
       <div class="two-col-analyze">
         <div>
@@ -90,7 +90,7 @@ const steps = [
   </section>
 
   <!-- Testimonials -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
       <h4 class="testimonials-label">What do store owners say about this service?</h4>
       <div class="testimonials-grid">
@@ -107,7 +107,7 @@ const steps = [
   </section>
 
   <!-- Output / Case study -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title-center">Output <span class="text-action">you can use straight away.</span></h2>
       <div class="output-col">
@@ -138,7 +138,7 @@ const steps = [
   </section>
 
   <!-- 4 steps -->
-  <section class="section bg-secondary" id="how-it-works">
+  <section class="section bg-primary" id="how-it-works">
     <div class="container">
       <h2 class="section-title-center"><strong>4 steps</strong> to a finished strategy</h2>
       <div class="steps-grid">
@@ -153,7 +153,7 @@ const steps = [
   </section>
 
   <!-- For whom -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title-center">This service is for you, <span class="text-action">if...</span></h2>
       <ul class="for-who-list">
@@ -170,7 +170,7 @@ const steps = [
   </section>
 
   <!-- Find out where -->
-  <section class="section-mid bg-secondary">
+  <section class="section-mid bg-primary">
     <div class="container">
       <h2 class="section-title-center">Find out where your store is losing customers<br />and how to turn it around</h2>
       <p class="section-text-center">Tell us what you want to understand and what you are working with. Leave the rest to us.</p>
@@ -192,15 +192,15 @@ const steps = [
 <style>
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
-  .text-action { color: var(--action); }
+  .text-action { color: #fff; }
   .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
   .section { padding: var(--space-120) 0; }
   .section-mid { padding: var(--space-80) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .section-title-center { font-size: clamp(26px, 3.5vw, 48px); font-weight: 600; margin-bottom: var(--space-40); text-align: center; }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: var(--space-24); }
@@ -209,7 +209,7 @@ const steps = [
   .section-link:hover { opacity: 0.75; }
 
   .two-col-analyze { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .analyze-label { font-family: var(--font-primary); font-size: 12px; font-weight: 700; letter-spacing: 0; color: var(--action); text-transform: uppercase; margin-bottom: var(--space-24); }
+  .analyze-label { font-family: var(--font-primary); font-size: 14px; font-weight: 700; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: var(--space-24); }
   .analyze-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
   .analyze-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.5; }
   .analyze-list svg { flex-shrink: 0; margin-top: 2px; }
@@ -220,14 +220,14 @@ const steps = [
   .deliverables-list svg { flex-shrink: 0; margin-top: 2px; }
 
   .case-study-wrap { display: flex; }
-  .case-study-card { display: block; text-decoration: none; border-radius: var(--radius-md); overflow: hidden; background: var(--bg-secondary); transition: transform var(--transition-base); }
+  .case-study-card { display: block; text-decoration: none; border-radius: var(--radius-md); overflow: hidden; background: var(--ae-bg-primary); transition: transform var(--transition-base); }
   .case-study-card:hover { transform: translateY(-4px); }
   .case-study-img { display: block; width: 100%; height: auto; }
   .case-study-label { padding: var(--space-16); }
-  .case-tag { font-size: 11px; font-weight: 700; letter-spacing: 0; color: var(--action); text-transform: uppercase; }
+  .case-tag { font-size: 14px; font-weight: 700; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; }
 
   .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-24); }
-  .step-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .step-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
   .step-num { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-12); }
   .step-card p { font-size: 14px; color: var(--neutral-300); line-height: 1.6; }
 
@@ -245,7 +245,7 @@ const steps = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

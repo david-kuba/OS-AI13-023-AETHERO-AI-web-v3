@@ -18,7 +18,7 @@ const features = [
   <ServiceHero
     lang="en"
     label="Development & Support"
-    title="DEVELOPMENT<br /><span style='color:var(--action)'>& SUPPORT</span>"
+    title="DEVELOPMENT<br /><span style='color:#fff'>& SUPPORT</span>"
     subtitle="Shopify project? We are ready where help is needed. Missing people, time, knowledge? Write, call."
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
@@ -29,17 +29,17 @@ const features = [
   />
 
   <!-- Intro -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="intro-h2"><span class="accent-purple">WHAT DO YOU NEED HELP WITH</span><br />on your Shopify project?</h2>
       <p class="intro-text"><strong class="hl">Sometimes searching for tutorial videos just isn't enough.</strong> What you need is deeper technical insight, experience from multiple real-world projects, and the ability to connect the dots.</p>
       <p class="intro-text">We want you to know that even after years in this field, <strong class="hl">we haven't lost our humility</strong> — and when we can help, we will. Developing and supporting a Shopify project doesn't end at launch.</p>
-      <a href="#cta" class="intro-btn">Let's get to it →</a>
+      <a href="#cta" class="btn-secondary">Let's get to it →</a>
     </div>
   </section>
 
   <!-- What we will do for you -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title" id="what-we-do">What we can do for you as part of our technical support</h2>
     </div>
@@ -75,14 +75,14 @@ const features = [
 <style>
   .section-intro { padding: var(--space-120) 0; }
   .intro-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); max-width: 760px; }
-  .text-action { color: var(--action); }
+  .text-action { color: #fff; }
   .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(26px, 3.5vw, 48px); font-weight: 600; margin-bottom: var(--space-40); text-align: center; }
 
   .feature-section { padding: var(--space-120) 0; }
@@ -90,7 +90,7 @@ const features = [
   .feature-section--reverse .feature-inner { direction: rtl; }
   .feature-section--reverse .feature-text,
   .feature-section--reverse .feature-img-wrap { direction: ltr; }
-  .feature-title { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); color: var(--action); }
+  .feature-title { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); color: #fff; }
   .feature-desc { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.6; }
   .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
   .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
@@ -99,7 +99,7 @@ const features = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

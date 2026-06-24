@@ -56,7 +56,7 @@ const apps = [
 <PageLayout title="Custom vývoj a aplikace | aethero" description="Vlastní Shopify aplikace, integrace a úpravy šablon přesně pro vaše potřeby." lang="cs">
   <ServiceHero
     label="Custom vývoj"
-    title="APLIKACE &<br /><span style='color:var(--action)'>CUSTOM VÝVOJ</span>"
+    title="APLIKACE &<br /><span style='color:#fff'>CUSTOM VÝVOJ</span>"
     subtitle="Máte pocit, jste vyčerpali všechny možnosti okolo aplikací nebo máte něco atypického? OK, tak pojďme na to!"
     ctaLabel="Zavolejme si"
     ctaHref="tel:+420776067663"
@@ -67,19 +67,19 @@ const apps = [
   />
 
   <!-- Potřebujete APPKU nebo <span class="accent-purple">CUSTOM ÚPRAVU</span>? -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="intro-h2">Potřebujete <span class="accent-purple">APPKU</span><br />nebo <span class="accent-purple">CUSTOM ÚPRAVU</span>?</h2>
+      <h2 class="h1 intro-h2">Potřebujete <span class="accent-purple">APPKU</span><br />nebo <span class="accent-purple">CUSTOM ÚPRAVU</span>?</h2>
       <p class="intro-text">Tato část naší práce je, na straně jedné, úžasně jednoduchá — na vysvětlování, ale také <strong class="hl">dosti nepředvídatelná na straně druhé — při realizaci</strong>. V ideálním případě za námi přijdete s definicí problému a odcházíte od nás s řešením. Je to srozumitelné?</p>
       <p class="intro-text">Zkontrolujeme zda opravdu někde není nějaké řešení hotové a pak společně rozebereme váš problém na kousky, abychom ho mohli vyřešit. Někdy je to jedna drobná úprava, která zvedne konverze. Jindy je to napojení, které vám <strong class="hl">srovná data v celém provozu</strong>. A občas je to aplikace, bez které to prostě nepůjde.</p>
-      <a href="#cta" class="intro-btn">Super, sem s tím →</a>
+      <a href="#cta" class="btn-secondary">Super, sem s tím →</a>
     </div>
   </section>
 
   <!-- Kdy je čas na custom -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="section-title">Kdy už je čas na „custom" ?</h2>
+      <h2 class="h2 section-title">Kdy už je čas na „custom" ?</h2>
       <h3 class="when-subhead">Appka občas nestačí když</h3>
       <ul class="when-list">
         {whenCustom.map((item) => (
@@ -96,9 +96,9 @@ const apps = [
   </section>
 
   <!-- Custom úpravy, integrace i vlastní aplikace -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="section-title">Custom úpravy, integrace i vlastní aplikace</h2>
+      <h2 class="h2 section-title">Custom úpravy, integrace i vlastní aplikace</h2>
       <ul class="deliverables-list">
         {deliverables.map((d) => (
           <li class="deliverable-item">
@@ -113,9 +113,9 @@ const apps = [
   </section>
 
   <!-- Nejdřív porozumět, pak řešit -->
-  <section class="section bg-secondary" id="jak-to-delame">
+  <section class="section bg-primary" id="jak-to-delame">
     <div class="container">
-      <h2 class="section-title">Nejdřív porozumět, pak řešit.</h2>
+      <h2 class="h2 section-title">Nejdřív porozumět, pak řešit.</h2>
       <p class="section-text">Aby custom řešení nespálila váš rozpočet ani nervy, držíme se jednoduché logiky: nejprve pochopit problém, pak teprve něco stavět.</p>
       <div class="process-list">
         {steps.map((s) => (
@@ -132,9 +132,9 @@ const apps = [
   </section>
 
   <!-- Typické složitější oříšky -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="section-title">Typické „složitější oříšky"</h2>
+      <h2 class="h2 section-title">Typické „složitější oříšky"</h2>
       <div class="hard-grid">
         {hardCases.map((h) => (
           <div class="hard-card">
@@ -147,9 +147,9 @@ const apps = [
   </section>
 
   <!-- Proč s námi -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="section-title">Proč s námi</h2>
+      <h2 class="h2 section-title">Proč s námi</h2>
       <div class="why-grid">
         {whyUs.map((w) => (
           <div class="why-card">
@@ -162,9 +162,9 @@ const apps = [
   </section>
 
   <!-- FAQ -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="section-title">FAQ (rychle a bez omáčky)</h2>
+      <h2 class="h2 section-title">FAQ (rychle a bez omáčky)</h2>
       <div class="faq-list">
         {faq.map((f) => (
           <div class="faq-item">
@@ -177,9 +177,9 @@ const apps = [
   </section>
 
   <!-- Naše současné aplikace -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
-      <h2 class="section-title">Naše současné aplikace</h2>
+      <h2 class="h2 section-title">Naše současné aplikace</h2>
       <div class="apps-list">
         {apps.map((a) => (
           <a href={a.href} class="app-card">
@@ -206,18 +206,18 @@ const apps = [
 
 <style>
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
-  .intro-h2 { font-size: clamp(40px, 6vw, 80px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .intro-h2 { margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-title { margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: var(--space-24); max-width: 760px; }
 
   .intro-wrap { max-width: 800px; }
 
-  .when-subhead { font-size: 18px; font-weight: 600; color: var(--action); margin-bottom: var(--space-24); }
+  .when-subhead { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: var(--space-24); }
   .when-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: var(--space-40); }
   .when-item { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
   .when-item svg { flex-shrink: 0; margin-top: 3px; }
@@ -229,18 +229,18 @@ const apps = [
   .process-list { display: flex; flex-direction: column; gap: 0; max-width: 760px; }
   .process-item { display: flex; gap: var(--space-16); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .process-item:last-child { border-bottom: none; }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 14px; font-weight: 600; color: var(--action); flex-shrink: 0; width: 28px; padding-top: 2px; }
+  .step-num { display: block; font-family: var(--font-primary); font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.45); flex-shrink: 0; width: 28px; padding-top: 2px; }
   .process-title { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
   .process-desc { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
 
   .hard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .hard-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .hard-title { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-12); }
+  .hard-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .hard-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: var(--space-12); }
   .hard-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
   .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); max-width: 800px; }
-  .why-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .why-title { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .why-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .why-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: var(--space-8); }
   .why-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
   .faq-list { display: flex; flex-direction: column; gap: var(--space-32); max-width: 760px; }
@@ -249,7 +249,7 @@ const apps = [
   .faq-a { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.6; }
 
   .apps-list { display: flex; flex-direction: column; gap: var(--space-16); max-width: 760px; }
-  .app-card { display: block; background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); transition: border-color var(--transition-base); text-decoration: none; }
+  .app-card { display: block; background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); transition: border-color var(--transition-base); text-decoration: none; }
   .app-card:hover { border-color: rgba(13,212,205,0.3); }
   .app-name { display: block; font-size: 16px; font-weight: 700; margin-bottom: var(--space-8); color: var(--text-primary); }
   .app-desc { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: var(--space-8); line-height: 1.6; }
@@ -259,7 +259,7 @@ const apps = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

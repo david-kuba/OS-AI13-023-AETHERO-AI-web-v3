@@ -57,7 +57,7 @@ const apps = [
   <ServiceHero
     lang="en"
     label="Custom Development"
-    title="APPS &<br /><span style='color:var(--action)'>CUSTOM DEVELOPMENT</span>"
+    title="APPS &<br /><span style='color:#fff'>CUSTOM DEVELOPMENT</span>"
     subtitle="Feel like you have exhausted all app options or have something atypical? OK — let's tackle it!"
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
@@ -68,17 +68,17 @@ const apps = [
   />
 
   <!-- Do you need an APP or a <span class="accent-purple">CUSTOM MODIFICATION</span>? -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="intro-h2">Do you need an <span class="accent-purple">APP</span><br />or a <span class="accent-purple">CUSTOM MODIFICATION</span>?</h2>
       <p class="intro-text">This part of our work is, on one hand, wonderfully simple to explain — and on the other, <strong class="hl">quite unpredictable to actually build</strong>. In the ideal scenario, you come to us with a problem and leave with a solution. Somewhere in between, we find or build that solution, and you pay for it. Makes sense?</p>
       <p class="intro-text">We'll first check whether a ready-made solution already exists — then we'll break your problem down together so we can actually solve it. Sometimes it's one small tweak that lifts conversions. Other times it's an integration that <strong class="hl">straightens out data across your entire operation</strong>. And sometimes it's an app you simply can't do without.</p>
-      <a href="#cta" class="intro-btn">Let's go →</a>
+      <a href="#cta" class="btn-secondary">Let's go →</a>
     </div>
   </section>
 
   <!-- When is it time for custom? -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title">When is it time for "custom"?</h2>
       <h3 class="when-subhead">An app sometimes is not enough when</h3>
@@ -97,7 +97,7 @@ const apps = [
   </section>
 
   <!-- Custom modifications, integrations and custom apps -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title">Custom modifications, integrations and custom apps</h2>
       <ul class="deliverables-list">
@@ -114,7 +114,7 @@ const apps = [
   </section>
 
   <!-- Understand first, then solve -->
-  <section class="section bg-secondary" id="how-we-do-it">
+  <section class="section bg-primary" id="how-we-do-it">
     <div class="container">
       <h2 class="section-title">Understand first, then solve.</h2>
       <p class="section-text">So that a custom solution does not burn through your budget or your nerves, we follow a simple logic: first understand the problem, then build anything.</p>
@@ -133,7 +133,7 @@ const apps = [
   </section>
 
   <!-- Typical trickier nuts to crack -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title">Typical "trickier nuts to crack"</h2>
       <div class="hard-grid">
@@ -148,7 +148,7 @@ const apps = [
   </section>
 
   <!-- Why us -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title">Why us</h2>
       <div class="why-grid">
@@ -163,7 +163,7 @@ const apps = [
   </section>
 
   <!-- FAQ -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title">FAQ (quick and no fluff)</h2>
       <div class="faq-list">
@@ -178,7 +178,7 @@ const apps = [
   </section>
 
   <!-- Our current apps -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title">Our current apps</h2>
       <div class="apps-list">
@@ -207,8 +207,8 @@ const apps = [
 
 <style>
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: var(--space-24); max-width: 760px; }
 
@@ -218,7 +218,7 @@ const apps = [
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
   .intro-wrap { max-width: 800px; }
 
-  .when-subhead { font-size: 18px; font-weight: 600; color: var(--action); margin-bottom: var(--space-24); }
+  .when-subhead { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: var(--space-24); }
   .when-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: var(--space-40); }
   .when-item { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
   .when-item svg { flex-shrink: 0; margin-top: 3px; }
@@ -230,18 +230,18 @@ const apps = [
   .process-list { display: flex; flex-direction: column; gap: 0; max-width: 760px; }
   .process-item { display: flex; gap: var(--space-16); padding: var(--space-16) 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .process-item:last-child { border-bottom: none; }
-  .step-num { display: block; font-family: var(--font-primary); font-size: 14px; font-weight: 600; color: var(--action); flex-shrink: 0; width: 28px; padding-top: 2px; }
+  .step-num { display: block; font-family: var(--font-primary); font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.45); flex-shrink: 0; width: 28px; padding-top: 2px; }
   .process-title { font-size: 16px; font-weight: 600; margin-bottom: var(--space-8); }
   .process-desc { font-size: var(--text-small); color: var(--neutral-300); line-height: 1.6; }
 
   .hard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .hard-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .hard-title { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-12); }
+  .hard-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .hard-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: var(--space-12); }
   .hard-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
   .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-24); max-width: 800px; }
-  .why-card { background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .why-title { font-size: 16px; font-weight: 600; color: var(--action); margin-bottom: var(--space-8); }
+  .why-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .why-title { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: var(--space-8); }
   .why-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
   .faq-list { display: flex; flex-direction: column; gap: var(--space-32); max-width: 760px; }
@@ -250,7 +250,7 @@ const apps = [
   .faq-a { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.6; }
 
   .apps-list { display: flex; flex-direction: column; gap: var(--space-16); max-width: 760px; }
-  .app-card { display: block; background: var(--bg-elevated); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); transition: border-color var(--transition-base); text-decoration: none; }
+  .app-card { display: block; background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); transition: border-color var(--transition-base); text-decoration: none; }
   .app-card:hover { border-color: rgba(13,212,205,0.3); }
   .app-name { display: block; font-size: 16px; font-weight: 700; margin-bottom: var(--space-8); color: var(--text-primary); }
   .app-desc { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: var(--space-8); line-height: 1.6; }
@@ -260,7 +260,7 @@ const apps = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

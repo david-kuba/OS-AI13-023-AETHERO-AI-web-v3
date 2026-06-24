@@ -16,7 +16,7 @@ const workCards = [
   <ServiceHero
     lang="en"
     label="Brand & Identity"
-    title="I need a <span style='color:var(--action)'>BRAND</span>"
+    title="I need a <span style='color:#fff'>BRAND</span>"
     subtitle="And through it — a place in the minds and hearts of customers"
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
@@ -25,17 +25,17 @@ const workCards = [
   />
 
   <!-- Intro hero text -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="intro-h2">We build <span class="accent-purple">BRANDS</span> that resonate across cultures</h2>
       <p class="intro-text">Building an e-commerce business? <strong class="hl">Create your brand and go all in.</strong> Put yourself out there! Your brand will be your shield and armour. In an age of hyper-competition, <strong class="hl">you have around 2 seconds of your customer's attention.</strong> You need to <strong>captivate right from the start</strong> — then be straightforward, clear, consistent, and memorable.</p>
       <p class="intro-text"><strong class="hl">The ultimate solution we offer is building a rock-solid brand together.</strong> It's neither easy nor cheap — but it's a proven path that works.</p>
-      <a href="#cta" class="intro-btn">Let's do it →</a>
+      <a href="#cta" class="btn-secondary">Let's do it →</a>
     </div>
   </section>
 
   <!-- Brand pillar -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container">
       <h3 class="pillar-heading">BRAND is the first pillar of your success.</h3>
       <div class="brand-text-col">
@@ -48,7 +48,7 @@ const workCards = [
   </section>
 
   <!-- What we can work on together -->
-  <section class="section bg-elevated">
+  <section class="section bg-primary">
     <div class="container">
       <h2 class="work-heading">WHAT WE CAN — WORK ON TOGETHER</h2>
       <div class="work-grid">
@@ -63,7 +63,7 @@ const workCards = [
   </section>
 
   <!-- Why you should not do it alone -->
-  <section class="section bg-secondary">
+  <section class="section bg-primary">
     <div class="container analogy-split">
       <div class="analogy-text">
         <h3 class="analogy-heading">And why do we think you definitely should not do this alone?</h3>
@@ -81,7 +81,7 @@ const workCards = [
   </section>
 
   <!-- Muhtar Kent quote -->
-  <section class="section bg-elevated quote-section">
+  <section class="section bg-primary quote-section">
     <div class="container">
       <blockquote class="kent-quote">"A brand is a promise. And a great brand is a promise kept."<cite>— Muhtar Kent</cite></blockquote>
     </div>
@@ -101,8 +101,8 @@ const workCards = [
 
 <style>
   .section { padding: var(--space-120) 0; }
-  .bg-elevated { background: var(--bg-elevated); }
-  .bg-secondary { background: var(--bg-secondary); }
+  .bg-primary { background: var(--ae-bg-primary); }
+  .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { font-size: 18px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: var(--space-24); max-width: 760px; }
 
@@ -112,16 +112,16 @@ const workCards = [
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
-  .pillar-heading { font-size: clamp(26px, 3.5vw, 48px); font-weight: 600; margin-bottom: var(--space-40); color: var(--action); }
+  .pillar-heading { font-size: clamp(26px, 3.5vw, 48px); font-weight: 600; margin-bottom: var(--space-40); color: #fff; }
   .brand-text-col { max-width: 760px; }
 
   .ogilvy-quote { margin-top: var(--space-64); font-size: clamp(18px, 2vw, 24px); font-style: italic; color: rgba(255,255,255,0.9); border-left: 3px solid var(--action); padding-left: var(--space-32); line-height: 1.5; }
   .ogilvy-quote cite { display: block; font-size: 14px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-16); }
 
-  .work-heading { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; letter-spacing: 0; margin-bottom: var(--space-48); color: var(--action); text-transform: uppercase; }
+  .work-heading { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; letter-spacing: 0; margin-bottom: var(--space-48); color: #fff; text-transform: uppercase; }
   .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
-  .work-card { background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
-  .work-card-title { font-size: 16px; font-weight: 700; color: var(--action); margin-bottom: var(--space-12); }
+  .work-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
+  .work-card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: var(--space-12); }
   .work-card-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
   .analogy-split { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
@@ -155,7 +155,7 @@ const workCards = [
   .cta-inner { text-align: center; }
   .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--brand-dark); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {
