@@ -299,17 +299,17 @@ import PageLayout from '../../layouts/PageLayout.astro';
         </div>
       </section>
 
-      <!-- CTA -->
-      <section class="cs-cta">
-        <h2>Chcete svoje $$$ z emailingu? Tak se ozvěte.</h2>
-        <div class="cta-links">
-          <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
-          <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
-        </div>
-      </section>
-
     </main>
   </div>
+
+  <!-- CTA — full width, outside grid -->
+  <section class="cs-cta">
+    <h2>Chcete svoje $$$ z emailingu? Tak se ozvěte.</h2>
+    <div class="cta-links">
+      <a href="mailto:info@aethero.cz" class="cta-link">info@aethero.cz</a>
+      <a href="tel:+420776067663" class="cta-link">+420 776 067 663</a>
+    </div>
+  </section>
 
 </PageLayout>
 
@@ -512,7 +512,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .ref-source { display: block; font-size: 12px; color: rgba(26,26,46,0.55); margin-top: 2px; }
 
   /* CTA */
-  .cs-cta { padding: var(--space-80) 0; background: var(--action); text-align: center; }
+  .cs-cta { padding: var(--space-80) var(--space-24); background: var(--action); text-align: center; }
   .cs-cta h2 {
     font-family: var(--font-primary); font-size: clamp(28px, 4vw, 52px);
     font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-32);
