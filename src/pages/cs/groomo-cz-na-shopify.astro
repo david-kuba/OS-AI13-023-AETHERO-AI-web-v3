@@ -49,14 +49,12 @@ import PageLayout from '../../layouts/PageLayout.astro';
           <img src="/groomoinstitut-logo-imgnavysku-wh-1.png" alt="GROOMO Institut logo" class="logo-img" loading="lazy" />
         </div>
       </div>
+      <div class="brand-hero-wrap">
+        <div class="brand-hero-bg"></div>
+        <h4 class="brand-hero-caption">Brand a e-shop vytvořený<br />z lásky ke psům.</h4>
+      </div>
     </div>
   </section>
-
-  <!-- Brand hero image -->
-  <div class="brand-hero-wrap">
-    <div class="brand-hero-bg"></div>
-    <p class="brand-hero-caption">Brand a e-shop vytvořený z lásky ke psům.</p>
-  </div>
 
   <!-- Brand text -->
   <section class="section bg-secondary">
@@ -337,11 +335,13 @@ import PageLayout from '../../layouts/PageLayout.astro';
     background-size: cover; background-position: center top;
   }
   .brand-hero-caption {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    text-align: center; padding: 48px 24px 28px;
-    background: linear-gradient(to top, rgba(0,3,38,0.88) 0%, transparent 100%);
-    font-family: var(--font-primary); font-size: 21px; font-weight: 500;
-    font-style: italic; color: rgba(255,255,255,0.92);
+    position: absolute; top: 50%; left: 48px;
+    transform: translateY(-50%);
+    font-family: var(--font-primary); font-size: clamp(20px, 2.2vw, 32px);
+    font-weight: 700; font-style: normal;
+    color: #fff; line-height: 1.25; margin: 0;
+    text-shadow: 0 2px 12px rgba(0,3,38,0.5);
+    max-width: 340px;
   }
 
   /* ─── CONTENT SPLIT ─── */
