@@ -13,7 +13,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <div class="container">
       <p class="cs-label">Case Study · EMAIL MARKETING ANALYSIS</p>
       <h1 class="cs-h1">Mailing strategy<br /><a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a> × <span class="hl-link">Leadhub</span> × <span class="hl-link">Shoptet</span></h1>
-      <p class="cs-perex">How we helped a Czech stationery e-shop identify the causes of declining email marketing performance and build a concrete recovery plan — all based on two years of data, without API access.</p>
+      <p class="cs-perex">How we helped a Czech stationery e-shop <span class="perex-hl">identify the causes of declining email marketing performance and build a concrete recovery plan</span> — all based on two years of data, without API access.</p>
 
       <!-- Client info row -->
       <div class="client-row">
@@ -346,6 +346,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     font-size: clamp(36px, 4.5vw, 60px); font-weight: 700; line-height: 1.15;
     color: #fff; margin-bottom: var(--space-24);
   }
+  .perex-hl { color: var(--text-secondary); font-weight: 700; }
   .hl-link { color: var(--action); text-decoration: none; }
   .hl-link:hover { opacity: 0.8; }
   .cs-h1 .hl-link { color: var(--text-secondary); }
