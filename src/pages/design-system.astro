@@ -1403,7 +1403,7 @@ font-family: var(--font-secondary);</code></pre>
         <h2 class="ds-section-title">Citát / Citace</h2>
 
         <!-- Varianta A: Inline s levým borderem (body sekce) -->
-        <div class="ds-block-label">A — Inline · levý border · uvnitř sekce</div>
+        <div class="ds-block-label">A — Inline · uvnitř sekce</div>
         <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px">
           <blockquote class="quote-side">
             <p>„Brand je to, co vám zůstane, když vám shoří továrna."</p>
@@ -1430,7 +1430,7 @@ font-family: var(--font-secondary);</code></pre>
         </div>
 
         <div class="ds-spec-grid" style="margin-top:8px">
-          <div class="ds-spec-item"><code>quote-side</code><span>border-left cyan 3px · 18–24px italic · cite 14px muted</span></div>
+          <div class="ds-spec-item"><code>quote-side</code><span>18–24px italic · cite 14px muted · inline uvnitř sekce</span></div>
           <div class="ds-spec-item"><code>quote-center</code><span>border-top subtle · centered · 18–24px italic · cite 14px muted</span></div>
           <div class="ds-spec-item"><code>quote-hero</code><span>no border · 24–36px italic · centered · max-width 800px</span></div>
         </div>
@@ -2156,8 +2156,6 @@ font-family: var(--font-secondary);</code></pre>
   .ds-spec-item span { color: rgba(255,255,255,0.4); }
 
   .quote-side {
-    border-left: 3px solid var(--action);
-    padding-left: 28px;
     max-width: 600px;
   }
   .quote-side p {
