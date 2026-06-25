@@ -510,8 +510,14 @@ const blogPosts = [
     margin: 0;
   }
   .service-title {
-    color: #fff;
+    color: var(--action);
     margin: 4px 0 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .service-title::after {
+    content: ' →';
+    display: inline-block;
   }
   .svc-arrow {
     display: flex;

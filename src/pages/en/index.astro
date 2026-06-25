@@ -513,8 +513,14 @@ const blogPosts = [
     font-size: clamp(26px, 3.5vw, 48px);
     font-weight: 600;
     line-height: 1.2;
-    color: #fff;
+    color: var(--action);
     margin: 4px 0 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .service-title::after {
+    content: ' →';
+    display: inline-block;
   }
   .svc-arrow {
     display: flex;
