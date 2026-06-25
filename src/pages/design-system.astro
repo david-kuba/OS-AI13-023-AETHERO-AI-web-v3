@@ -338,17 +338,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         </div>
 
-        <!-- Problem-box / Error callout -->
-        <div class="ds-block-label" style="margin-top:24px">Problem-box — error callout s ikonou Lucide TriangleAlert</div>
-        <div class="ds-bg-dark" style="padding:40px 48px">
+        <!-- Info-box / callout varianty -->
+        <div class="ds-block-label ds-locked" style="margin-top:24px">info-box — 4 barevné varianty (error · success · warning · info)</div>
+        <div class="ds-bg-dark" style="padding:40px 48px;display:flex;flex-direction:column;gap:20px">
+
+          <!-- error -->
           <div style="border-left:4px solid var(--semantic-error);padding:20px 24px;background:rgba(255,82,82,0.13);border-radius:0 8px 8px 0;max-width:640px">
             <p style="font-family:var(--font-primary);font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--semantic-error);margin:0 0 8px;display:flex;align-items:center;gap:8px">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-              Zásadní problém:
+              Not OK — Chyba:
             </p>
             <p style="font-size:clamp(16px,1.4vw,18px);font-weight:500;color:rgba(255,255,255,0.85);margin:0;line-height:1.65">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb.</p>
           </div>
-          <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:20px">CSS: <code>{"border-left:4px solid var(--semantic-error); background:rgba(255,82,82,0.13)"}</code> · ikona Lucide <code>TriangleAlert</code> 20px · text font-weight 500</p>
+
+          <!-- success -->
+          <div style="border-left:4px solid var(--semantic-success);padding:20px 24px;background:rgba(78,204,163,0.13);border-radius:0 8px 8px 0;max-width:640px">
+            <p style="font-family:var(--font-primary);font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--semantic-success);margin:0 0 8px;display:flex;align-items:center;gap:8px">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              OK — Úspěch:
+            </p>
+            <p style="font-size:clamp(16px,1.4vw,18px);font-weight:500;color:rgba(255,255,255,0.85);margin:0;line-height:1.65">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb.</p>
+          </div>
+
+          <!-- warning -->
+          <div style="border-left:4px solid var(--semantic-warning);padding:20px 24px;background:rgba(255,168,68,0.13);border-radius:0 8px 8px 0;max-width:640px">
+            <p style="font-family:var(--font-primary);font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--semantic-warning);margin:0 0 8px;display:flex;align-items:center;gap:8px">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Upozornění:
+            </p>
+            <p style="font-size:clamp(16px,1.4vw,18px);font-weight:500;color:rgba(255,255,255,0.85);margin:0;line-height:1.65">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb.</p>
+          </div>
+
+          <!-- info -->
+          <div style="border-left:4px solid var(--semantic-info);padding:20px 24px;background:rgba(82,77,227,0.13);border-radius:0 8px 8px 0;max-width:640px">
+            <p style="font-family:var(--font-primary);font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--semantic-info);margin:0 0 8px;display:flex;align-items:center;gap:8px">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              Info — Poznámka:
+            </p>
+            <p style="font-size:clamp(16px,1.4vw,18px);font-weight:500;color:rgba(255,255,255,0.85);margin:0;line-height:1.65">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb.</p>
+          </div>
+
+          <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px">CSS: <code>{"border-left:4px solid var(--semantic-*); background:rgba(*,0.13)"}</code> · ikony Lucide 20px · text font-weight 500</p>
         </div>
       </section>
 

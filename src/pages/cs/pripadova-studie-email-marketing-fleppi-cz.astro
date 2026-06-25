@@ -127,7 +127,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
           </div>
         </div>
 
-        <div class="problem-box">
+        <div class="info-box">
           <p class="label problem-label"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:8px;margin-top:-3px"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Zásadní problém:</p>
           <p class="body problem-text">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb, takže každý výkyv v email kanálu je okamžitě cítit v číslech.</p>
         </div>
@@ -438,7 +438,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .list-label--good ~ .dot-list li::before { color: var(--action); }
 
   /* Problem box */
-  .problem-box {
+  .info-box {
     border-left: 4px solid var(--semantic-error);
     padding: 20px 24px;
     background: rgba(255,82,82,0.13);
