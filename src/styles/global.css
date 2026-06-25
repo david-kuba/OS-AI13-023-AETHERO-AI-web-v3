@@ -122,6 +122,18 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 12px;
 }
 
+/* ─── H4 ─── */
+/* h4  →  kategorie nadpisy, uppercase grid tituly */
+.h4 {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
 /* ─── BODY TEXT ─── */
 /* body-maxi  →  perex, úvodní odstavec, intro text */
 .body-maxi {
