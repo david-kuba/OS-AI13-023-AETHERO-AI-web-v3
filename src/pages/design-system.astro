@@ -812,7 +812,8 @@ font-family: var(--font-secondary);</code></pre>
 
         <!-- Textové odkazy -->
         <h3 class="ds-subsection-title">Textové odkazy</h3>
-        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:24px">Globální reset: <code style="color:#0DD4CD">{"a { color: inherit; text-decoration: none; }"}</code> — každý odkaz začíná bez barvy a bez podtržení.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:8px">Globální reset: <code style="color:#0DD4CD">{"a { color: inherit; text-decoration: none; }"}</code> — každý odkaz začíná bez barvy a bez podtržení.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:24px">Všechny inline textové odkazy sdílejí třídu <code style="color:#0DD4CD">.text-link</code> — barva <code>var(--action)</code>, hover: underline offset 3px. Velikost a tloušťka se dědí z kontextu.</p>
 
         <div style="display:flex;flex-direction:column;gap:3px">
 
@@ -822,7 +823,7 @@ font-family: var(--font-secondary);</code></pre>
             <div style="padding:0 16px">
               <a href="#" class="ds-nav-link-demo">CO UMÍME</a>
             </div>
-            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Montserrat 600 · 18px · uppercase · hover: cyan + underline</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Montserrat 600 · 18px · uppercase · hover: cyan + underline · vlastní třída nav</span>
           </div>
 
           <!-- Footer odkaz -->
@@ -831,44 +832,44 @@ font-family: var(--font-secondary);</code></pre>
             <div style="padding:0 16px">
               <a href="#" class="ds-footer-link-demo">Potřebuji brand →</a>
             </div>
-            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Montserrat 16px · cyan · hover: bílá + underline offset 3px</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Montserrat 16px · cyan · hover: bílá + underline · vlastní třída footer</span>
           </div>
 
-          <!-- hl-link — inline v nadpisu -->
+          <!-- .text-link inline v nadpisu -->
           <div style="display:grid;grid-template-columns:160px 1fr 1fr;align-items:center;gap:0;background:rgba(255,255,255,0.025);padding:20px 24px">
-            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.hl-link</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.text-link</span>
             <div style="padding:0 16px">
-              <span style="font-family:var(--font-primary);font-size:22px;font-weight:700;color:rgba(255,255,255,0.9)">Strategie <a href="#" class="hl-link">fleppi.cz</a> × <span class="hl-link">Leadhub</span></span>
+              <span style="font-family:var(--font-primary);font-size:22px;font-weight:700;color:rgba(255,255,255,0.9)">Strategie <a href="#" class="text-link">fleppi.cz</a> × Leadhub</span>
             </div>
-            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Teal · inline v nadpisu (h1/h2) · hover: opacity 0.8 · bez underline</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Inline v nadpisu — dědí 22px/700 z rodiče · hover: underline</span>
           </div>
 
-          <!-- section-link — inline v body -->
+          <!-- .text-link inline v body -->
           <div style="display:grid;grid-template-columns:160px 1fr 1fr;align-items:center;gap:0;background:#000326;padding:20px 24px">
-            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.section-link</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.text-link</span>
             <div style="padding:0 16px">
-              <span style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.6">Přinášíme novinky z <a href="#" class="section-link">Shopify Editions Winter 2026</a> přímo do vašeho projektu.</span>
+              <span style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.6">Přinášíme novinky z <a href="#" class="text-link">Shopify Editions Winter 2026</a> přímo do vašeho projektu.</span>
             </div>
-            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Teal · weight 600 · bez underline · hover: opacity 0.75 · inline v odstavcích</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Inline v odstavci — dědí 16px z rodiče · hover: underline</span>
           </div>
 
-          <!-- intro-link / app-link — šipkový -->
+          <!-- .text-link v referenci -->
           <div style="display:grid;grid-template-columns:160px 1fr 1fr;align-items:center;gap:0;background:rgba(255,255,255,0.025);padding:20px 24px">
-            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.intro-link</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.text-link</span>
+            <div style="padding:0 16px">
+              <span style="font-size:15px;color:rgba(255,255,255,0.65)">Majitel · <a href="#" class="text-link">BU1.cz</a></span>
+            </div>
+            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Inline v referenci — dědí 15px z rodiče · hover: underline</span>
+          </div>
+
+          <!-- .text-link--arrow — šipkový -->
+          <div style="display:grid;grid-template-columns:160px 1fr 1fr;align-items:center;gap:0;background:#000326;padding:20px 24px">
+            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.text-link--arrow</span>
             <div style="padding:0 16px;display:flex;flex-direction:column;gap:8px">
-              <a href="#" class="intro-link" style="margin-top:0;display:inline">Zjistit více →</a>
-              <a href="#" class="app-link">Více o eSyncer →</a>
+              <a href="#" class="text-link--arrow" style="font-size:15px;font-weight:500"><span>Zjistit více</span> →</a>
+              <a href="#" class="text-link--arrow" style="font-size:14px"><span>Více o eSyncer</span> →</a>
             </div>
-            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Teal · šipkový CTA text · .intro-link 15px/500, .app-link 14px/400 · hover: opacity 0.75</span>
-          </div>
-
-          <!-- ref-inline-link — referenční -->
-          <div style="display:grid;grid-template-columns:160px 1fr 1fr;align-items:center;gap:0;background:#000326;padding:20px 24px">
-            <span style="font-size:11px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em">.ref-inline-link</span>
-            <div style="padding:0 16px">
-              <span style="font-size:15px;color:rgba(255,255,255,0.65)">Majitel · <a href="#" class="ref-inline-link">BU1.cz</a></span>
-            </div>
-            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Teal · bez underline · hover: underline · reference a citace</span>
+            <span style="font-size:12px;color:rgba(255,255,255,0.4)">Šipka se nepodtrhuje · hover: underline jen na <code>{"<span>"}</code> · šipka vně spanu</span>
           </div>
 
           <!-- CTA odkaz na cyan bg -->
@@ -878,7 +879,7 @@ font-family: var(--font-secondary);</code></pre>
               <a href="#" class="ds-cta-link-demo">info@aethero.cz</a>
               <a href="#" class="ds-cta-link-demo">+420 776 067 663</a>
             </div>
-            <span style="font-size:12px;color:rgba(0,3,38,0.5)">Kanit 700 · clamp(22–40px) · --ae-straight-blue · na cyan bg · hover: underline</span>
+            <span style="font-size:12px;color:rgba(0,3,38,0.5)">Kanit 700 · clamp(22–40px) · --ae-straight-blue · na cyan bg · hover: underline · vlastní třída</span>
           </div>
 
         </div>
@@ -2710,14 +2711,7 @@ font-family: var(--font-secondary);</code></pre>
     color: #092066; text-decoration: none; transition: text-decoration 0.2s;
   }
   .ds-cta-link-demo:hover { text-decoration: underline; text-underline-offset: 4px; }
-  .ref-inline-link { color: var(--action); text-decoration: none; }
-  .ref-inline-link:hover { text-decoration: underline; text-underline-offset: 2px; }
-  .section-link { color: var(--action); text-decoration: none; font-weight: 600; }
-  .section-link:hover { opacity: 0.75; }
-  .hl-link { color: var(--action); text-decoration: none; }
-  .hl-link:hover { opacity: 0.8; }
-  .app-link { color: var(--action); font-size: 15px; font-weight: 500; text-decoration: none; }
-  .app-link:hover { opacity: 0.75; }
+  /* text-link a --arrow jsou globální v global.css — zde jen pro DS demo */
 
   /* GALLERY RULES */
   .ds-rule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }

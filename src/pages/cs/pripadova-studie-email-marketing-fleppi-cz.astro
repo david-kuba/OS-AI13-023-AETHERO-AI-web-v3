@@ -14,7 +14,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <!-- ROW 1: label + H1 (pravý sloupec, bez nav) -->
     <div class="cs-hero-head">
       <p class="label cs-label">Případová studie · ANALÝZA e-mail marketing</p>
-      <h1 class="cs-h1">Mailing strategie<br /><a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a> × <span class="hl-link">Leadhub</span> × <span class="hl-link">Shoptet</span></h1>
+      <h1 class="cs-h1">Mailing strategie<br /><a href="https://www.fleppi.cz" class="text-link" target="_blank" rel="noopener">fleppi.cz</a> × <span class="hl-link">Leadhub</span> × <span class="hl-link">Shoptet</span></h1>
     </div>
 
     <!-- ROW 2 LEFT: sticky nav (zarovnaný s perexem) -->
@@ -79,7 +79,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
       <!-- 01 KLIENT -->
       <section class="cs-section" id="s01">
-        <h2 class="h2-mini sec-h2">Co je <a href="https://www.fleppi.cz" class="hl-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
+        <h2 class="h2-mini sec-h2">Co je <a href="https://www.fleppi.cz" class="text-link" target="_blank" rel="noopener">fleppi.cz</a></h2>
         <p class="body sec-text">fleppi.cz je český e-shop zaměřený na plánování, bullet journaling a stationery. Cílová skupina jsou organizovaní lidé — především ženy 25–40 let, kteří hledají náplně do diářů, samolepky, razítka a doplňky pro osobní produktivitu.</p>
         <p class="body sec-text">E-shop provozuje na platformě Shoptet s tisíci SKU v několika stovkách produktových skupin. Emailový marketing zajišťuje nástroj Leadhub. Charakteristickým rysem sortimentu je absence jednoho dominantního produktu — zákazník nakupuje sadu komplementárních položek, kde hodnota spočívá v kombinaci a pravidelném doplňování.</p>
         <div class="klient-grid">
@@ -347,8 +347,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
     margin-bottom: var(--space-40);
   }
   .perex-hl { color: var(--text-secondary); font-weight: 600; }
-  .hl-link { color: var(--action); text-decoration: none; }
-  .hl-link:hover { opacity: 0.8; }
   .cs-h1 {
     font-size: clamp(36px, 4.5vw, 60px); font-weight: 700; line-height: 1.15;
     color: #fff; margin-bottom: 0;
