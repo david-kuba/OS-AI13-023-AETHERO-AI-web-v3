@@ -105,13 +105,12 @@ img { max-width: 100%; height: auto; }
   line-height: 1.15;
   margin-bottom: 16px;
 }
-/* h3  →  service titles, uppercase bold  */
+/* h3  →  service titles, bold */
 .h3 {
   font-family: var(--font-primary);
   font-size: clamp(24px, 3vw, 40px);
   font-weight: 900;
   line-height: 1.1;
-  text-transform: uppercase;
   margin-bottom: 14px;
 }
 /* h3-mini  →  subheading v textu (O názvu, nadpis odstavce) */
