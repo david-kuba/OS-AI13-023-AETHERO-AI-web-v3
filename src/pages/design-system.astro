@@ -1728,7 +1728,7 @@ font-family: var(--font-secondary);</code></pre>
         <h2 class="ds-section-title">Případovky — listy & kroky</h2>
 
         <!-- dot-list: ➔ levandule -->
-        <div class="ds-block-label">dot-list — ➔ levandulové šipky</div>
+        <div class="ds-block-label ds-locked">dot-list — ➔ levandulové šipky</div>
         <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px">
           <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;max-width:560px">
             <li style="font-size:clamp(16px,1.4vw,18px);color:rgba(255,255,255,0.75);line-height:1.55;padding-left:24px;position:relative">
@@ -1748,7 +1748,7 @@ font-family: var(--font-secondary);</code></pre>
         </div>
 
         <!-- output-item: ➔ levandule + tučný label -->
-        <div class="ds-block-label">output-item — ➔ levandule + strong label</div>
+        <div class="ds-block-label ds-locked">output-item — ➔ levandule + strong label</div>
         <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px">
           <div style="display:flex;flex-direction:column;gap:20px;max-width:560px">
             <div style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.6;padding-left:24px;position:relative">
@@ -1793,7 +1793,7 @@ font-family: var(--font-secondary);</code></pre>
         </div>
 
         <!-- two-col-lists: šipky podle signální barvy nadpisu -->
-        <div class="ds-block-label" style="margin-top:24px">two-col-lists — šipky kopírují barvu nadpisu (NOT OK / OK)</div>
+        <div class="ds-block-label ds-locked" style="margin-top:24px">two-col-lists — šipky kopírují barvu nadpisu (NOT OK / OK)</div>
         <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:780px">
             <div>
@@ -1835,7 +1835,7 @@ font-family: var(--font-secondary);</code></pre>
         </div>
 
         <!-- two-col-lists varianta 2: × červené / ✓ zelené -->
-        <div class="ds-block-label" style="margin-top:24px">two-col-lists — × červené / ✓ zelené (NOT OK / OK)</div>
+        <div class="ds-block-label ds-locked" style="margin-top:24px">two-col-lists — × červené / ✓ zelené (NOT OK / OK)</div>
         <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:780px">
             <div>
@@ -1877,7 +1877,7 @@ font-family: var(--font-secondary);</code></pre>
         </div>
 
         <!-- levandulové tečky ● a šipky ➔ -->
-        <div class="ds-block-label">Levandulové tečky ● &amp; šipky ➔ — var(--text-secondary)</div>
+        <div class="ds-block-label ds-locked">Levandulové tečky ● &amp; šipky ➔ — var(--text-secondary)</div>
         <div class="ds-bg-dark" style="padding:40px 48px">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:780px">
             <div>
@@ -2659,6 +2659,7 @@ font-family: var(--font-secondary);</code></pre>
     margin-top: 20px;
   }
   .ds-block-label:first-of-type { margin-top: 0; }
+  .ds-locked::before { content: '🔒'; margin-right: 6px; font-size: 10px; }
 
   .ds-spec-grid {
     display: flex;
