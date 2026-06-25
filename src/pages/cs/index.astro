@@ -422,32 +422,57 @@ const blogPosts = [
     let timer = setInterval(advance, INTERVAL);
 
     let dragStartX = 0;
+    let dragStartY = 0;
     let dragStartPos = 0;
     let dragging = false;
     let dragMoved = false;
+    let dragLocked = false; // true = potvrzeno horizontální, pointer zachycen
 
     track.addEventListener('pointerdown', (e: PointerEvent) => {
       dragging = true;
       dragMoved = false;
+      dragLocked = false;
       dragStartX = e.clientX;
+      dragStartY = e.clientY;
       dragStartPos = pos;
-      track.style.transition = 'none';
-      track.setPointerCapture(e.pointerId);
-      track.classList.add('is-dragging');
+      // Pointer zatím NEZACHYCUJEME — čekáme na potvrzení směru
       clearInterval(timer);
     });
 
     track.addEventListener('pointermove', (e: PointerEvent) => {
       if (!dragging) return;
+      const dx = Math.abs(e.clientX - dragStartX);
+      const dy = Math.abs(e.clientY - dragStartY);
+
+      if (!dragLocked) {
+        if (dx < 6 && dy < 6) return; // příliš malý pohyb, čekej
+        if (dy > dx) {
+          // Vertikální scroll — předáme prohlížeči
+          dragging = false;
+          timer = setInterval(advance, INTERVAL);
+          return;
+        }
+        // Horizontální drag potvrzeno — teprve teď zachytíme pointer
+        dragLocked = true;
+        track.style.transition = 'none';
+        track.setPointerCapture(e.pointerId);
+        track.classList.add('is-dragging');
+      }
+
       const delta = dragStartX - e.clientX;
       if (Math.abs(delta) > 5) dragMoved = true;
       pos = dragStartPos + delta;
       track.style.transform = `translateX(-${pos}px)`;
     });
 
-    track.addEventListener('pointerup', () => {
+    const finishDrag = () => {
       if (!dragging) return;
       dragging = false;
+      if (!dragLocked) {
+        // Žádný pohyb nebo vertikální — žádný snap
+        timer = setInterval(advance, INTERVAL);
+        return;
+      }
       track.classList.remove('is-dragging');
       const w = itemW();
       pos = Math.round(pos / w) * w;
@@ -457,22 +482,10 @@ const blogPosts = [
         normalize();
         timer = setInterval(advance, INTERVAL);
       }, DUR + 50);
-    });
+    };
 
-    // Pokud prohlížeč převezme scroll (pointercancel), snapni na nejbližší položku
-    track.addEventListener('pointercancel', () => {
-      if (!dragging) return;
-      dragging = false;
-      track.classList.remove('is-dragging');
-      const w = itemW();
-      pos = Math.round(pos / w) * w;
-      track.style.transition = EASE;
-      track.style.transform = `translateX(-${pos}px)`;
-      setTimeout(() => {
-        normalize();
-        timer = setInterval(advance, INTERVAL);
-      }, DUR + 50);
-    });
+    track.addEventListener('pointerup', finishDrag);
+    track.addEventListener('pointercancel', finishDrag);
 
     // Zablokuj klik na odkaz po dragu
     track.addEventListener('click', (e: MouseEvent) => {
@@ -961,14 +974,13 @@ const blogPosts = [
     .stats-inner { padding: 0 40px; }
   }
   @media (max-width: 768px) {
-    .hero-inner { grid-template-columns: 1fr; padding-top: 24px; position: relative; }
+    .hero-inner { grid-template-columns: 1fr; padding-top: 70px; position: relative; }
     .hero-right {
       display: block;
       position: absolute;
-      right: -40px;
-      top: -10px;
-      width: 62%;
-      opacity: 1;
+      right: -30px;
+      top: 0;
+      width: 55%;
       pointer-events: none;
     }
     .hero-shape { width: 100%; max-width: none; margin-right: 0; }
@@ -1004,7 +1016,7 @@ const blogPosts = [
     .blog-nav { display: none; }
   }
   @media (max-width: 480px) {
-    .hero-inner { padding-top: 20px; padding-bottom: 40px; }
+    .hero-inner { padding-top: 90px; padding-bottom: 40px; }
     .hero-heading { font-size: clamp(34px, 10vw, 48px); }
     .service-text br { display: none; }
     .value-prop { padding: 60px 0; }
