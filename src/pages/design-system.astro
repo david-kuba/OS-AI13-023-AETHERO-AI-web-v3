@@ -1672,6 +1672,91 @@ font-family: var(--font-secondary);</code></pre>
           </div>
           <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:20px">CSS: <code>width/height:38px; border-radius:50%; background:var(--text-secondary); font-family:var(--font-primary); font-weight:900; font-size:13px</code></p>
         </div>
+
+        <!-- two-col-lists: šipky podle signální barvy nadpisu -->
+        <div class="ds-block-label" style="margin-top:24px">two-col-lists — šipky kopírují barvu nadpisu (NOT OK / OK)</div>
+        <div class="ds-bg-dark" style="padding:40px 48px;margin-bottom:24px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:780px">
+            <div>
+              <h3 style="font-family:var(--font-secondary);font-size:14px;font-weight:700;color:rgba(255,100,100,0.9);margin-bottom:16px">Co chybělo</h3>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;color:rgba(255,100,100,0.9);line-height:1.55">➔</span>
+                  Meziroční pohled na výkon — nebylo vidět kde a proč klesá.
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;color:rgba(255,100,100,0.9);line-height:1.55">➔</span>
+                  Kvantifikace dopadu jednotlivých automations.
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;color:rgba(255,100,100,0.9);line-height:1.55">➔</span>
+                  Cross-sell příležitosti z dat objednávek.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-secondary);font-size:14px;font-weight:700;color:var(--action);margin-bottom:16px">Co fungovalo</h3>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;color:var(--action);line-height:1.55">➔</span>
+                  Uvítací sekvence s vysokým open rate a konverzí.
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;color:var(--action);line-height:1.55">➔</span>
+                  Klub newsletter — konzistentně nejsilnější formát.
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;color:var(--action);line-height:1.55">➔</span>
+                  Sezónní kampaně v Q4.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:24px">CSS: <code>{".list-label--bad ~ .dot-list li::before { color: rgba(255,100,100,0.9) }"}</code> · <code>{".list-label--good ~ .dot-list li::before { color: var(--action) }"}</code></p>
+        </div>
+
+        <!-- levandulové tečky ● a šipky ➔ -->
+        <div class="ds-block-label">Levandulové tečky ● &amp; šipky ➔ — var(--text-secondary)</div>
+        <div class="ds-bg-dark" style="padding:40px 48px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:780px">
+            <div>
+              <p style="font-size:12px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px">Tečky ●</p>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;font-size:1.15em;color:var(--text-secondary);line-height:1.35">●</span>
+                  První položka seznamu
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;font-size:1.15em;color:var(--text-secondary);line-height:1.35">●</span>
+                  Druhá položka seznamu
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;font-size:1.15em;color:var(--text-secondary);line-height:1.35">●</span>
+                  Třetí položka seznamu
+                </li>
+              </ul>
+              <p style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:16px;font-family:monospace">content:'●'; font-size:1.15em; color:var(--text-secondary)</p>
+            </div>
+            <div>
+              <p style="font-size:12px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px">Šipky ➔</p>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;font-size:1em;color:var(--text-secondary);line-height:1.55">➔</span>
+                  První položka seznamu
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;font-size:1em;color:var(--text-secondary);line-height:1.55">➔</span>
+                  Druhá položka seznamu
+                </li>
+                <li style="font-size:16px;color:rgba(255,255,255,0.75);line-height:1.55;padding-left:22px;position:relative">
+                  <span style="position:absolute;left:0;top:0;font-size:1em;color:var(--text-secondary);line-height:1.55">➔</span>
+                  Třetí položka seznamu
+                </li>
+              </ul>
+              <p style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:16px;font-family:monospace">content:'➔'; font-size:1em; color:var(--text-secondary)</p>
+            </div>
+          </div>
+        </div>
       </section>
 
 
