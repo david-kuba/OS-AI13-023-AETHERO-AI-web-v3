@@ -76,6 +76,10 @@ const navItems = lang === 'en'
     </a>
 
     <nav id="nav-menu" role="navigation" aria-label={lang === 'en' ? 'Main navigation' : 'Hlavní navigace'}>
+      <button class="nav-close" id="nav-close" aria-label={lang === 'en' ? 'Close menu' : 'Zavřít menu'}>
+        <span></span>
+        <span></span>
+      </button>
       <ul class="nav-list">
         {navItems.map((item) => (
           <li class={item.dropdown ? 'has-dropdown' : ''}>
@@ -141,6 +145,16 @@ const navItems = lang === 'en'
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  const closeMenu = () => {
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.classList.remove('open');
+    navMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  // Close button inside panel
+  document.getElementById('nav-close')?.addEventListener('click', closeMenu);
+
   // Hamburger toggle
   hamburger.addEventListener('click', () => {
     const open = hamburger.getAttribute('aria-expanded') === 'true';
@@ -152,12 +166,7 @@ const navItems = lang === 'en'
 
   // Close mobile menu on nav link click
   navMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      hamburger.setAttribute('aria-expanded', 'false');
-      hamburger.classList.remove('open');
-      navMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
   });
 
   // Desktop dropdown: keyboard accessibility (Escape closes)
@@ -351,6 +360,9 @@ const navItems = lang === 'en'
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+  /* Close button inside nav panel — hidden on desktop */
+  .nav-close { display: none; }
+
   /* Mobile lang switch inside nav — hidden on desktop */
   .mobile-lang-li { display: none; }
 
@@ -426,6 +438,33 @@ const navItems = lang === 'en'
       padding: 5px 0;
     }
     .dropdown-link:hover { color: var(--action); background: transparent; }
+
+    .nav-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-close span {
+      display: block;
+      position: absolute;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: background var(--transition-base);
+    }
+    .nav-close span:nth-child(1) { transform: rotate(45deg); }
+    .nav-close span:nth-child(2) { transform: rotate(-45deg); }
+    .nav-close:hover span { background: var(--action); }
 
     /* Mobile lang switch visible inside nav */
     .mobile-lang-li {
