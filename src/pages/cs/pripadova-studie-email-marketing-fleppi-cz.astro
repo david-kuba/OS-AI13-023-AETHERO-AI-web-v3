@@ -454,12 +454,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .steps-list { display: flex; flex-direction: column; gap: 32px; margin-top: var(--space-40); max-width: 720px; }
   .step-row { display: flex; gap: 20px; align-items: flex-start; }
   .step-n {
-    flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%;
-    background: var(--text-secondary); color: #fff;
-    font-family: var(--font-primary); font-weight: 900; font-size: 13px;
-    letter-spacing: 0.02em;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 2px;
+    flex-shrink: 0; width: 40px;
+    font-family: var(--font-primary); font-weight: 900; font-size: 26px;
+    letter-spacing: 0.02em; color: var(--text-secondary);
+    line-height: 1; padding-top: 4px;
   }
   .step-row strong { display: block; color: #fff; margin-bottom: 6px; }
   .step-desc { color: rgba(255,255,255,0.65); margin: 0; }
