@@ -386,29 +386,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <section class="ds-section" id="typography">
         <h2 class="ds-section-title">Typografie</h2>
 
-        <h3 class="ds-subsection-title">Fonty</h3>
-        <div class="ds-font-stack">
-          <div class="ds-font-card">
-            <span class="ds-font-var"><code>--font-primary</code></span>
-            <span class="ds-font-name" style="font-family: var(--font-primary);">Kanit</span>
-            <span class="ds-font-weights" style="font-family: var(--font-primary);">
-              <span style="font-weight:400;">400 Regular</span>
-              <span style="font-weight:500;">500 Medium</span>
-              <span style="font-weight:600;">600 SemiBold</span>
-              <span style="font-weight:700;">700 Bold</span>
-              <span style="font-weight:900;">900 Black</span>
-            </span>
-            <span class="ds-font-use">Nadpisy, navigace, tlačítka, čísla</span>
+        <h3 class="ds-subsection-title ds-locked">Fonty</h3>
+
+        <!-- Kanit weights -->
+        <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-top:1px solid rgba(255,255,255,0.08);margin-bottom:2px">
+          <div style="padding:32px 24px 32px 0">
+            <p style="font-family:var(--font-primary);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin:0 0 8px">Kanit Weights</p>
+            <p style="font-size:11px;color:rgba(255,255,255,0.3);margin:0;line-height:1.5">brand files · 100 → 900 · roman + italic</p>
           </div>
-          <div class="ds-font-card">
-            <span class="ds-font-var"><code>--font-secondary</code></span>
-            <span class="ds-font-name" style="font-family: var(--font-secondary);">Montserrat</span>
-            <span class="ds-font-weights" style="font-family: var(--font-secondary);">
-              <span style="font-weight:400;">400 Regular</span>
-              <span style="font-weight:500;">500 Medium</span>
-              <span style="font-weight:600;">600 SemiBold</span>
-            </span>
-            <span class="ds-font-use">Body text, popisky, metadata</span>
+          <div style="padding:32px 32px;border-left:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:100;color:#fff">Kanit Thin 100</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:200;color:#fff">ExtraLight 200</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:300;color:#fff">Light 300</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:400;color:#fff">Regular 400 · h4</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:500;color:#fff">Medium 500 · buttons</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:600;color:#fff">SemiBold 600 · h2/h3</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:700;color:#fff">Bold 700 · h1</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:800;color:#fff">ExtraBold 800</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:900;color:#fff">Black 900</span>
+          </div>
+          <div style="padding:32px 32px;border-left:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:100;font-style:italic;color:#fff">Thin Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:200;font-style:italic;color:#fff">ExtraLight Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:300;font-style:italic;color:#fff">Light Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:400;font-style:italic;color:#fff">Regular Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:500;font-style:italic;color:#fff">Medium Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:600;font-style:italic;color:#fff">SemiBold Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:700;font-style:italic;color:#fff">Bold Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:800;font-style:italic;color:#fff">ExtraBold Italic</span>
+            <span style="font-family:var(--font-primary);font-size:22px;font-weight:900;font-style:italic;color:#fff">Black Italic</span>
+          </div>
+        </div>
+
+        <!-- Montserrat weights -->
+        <div style="display:grid;grid-template-columns:160px 1fr 1fr;border-top:1px solid rgba(255,255,255,0.08);margin-bottom:32px">
+          <div style="padding:32px 24px 32px 0">
+            <p style="font-family:var(--font-primary);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin:0 0 8px">Montserrat Weights</p>
+            <p style="font-size:11px;color:rgba(255,255,255,0.3);margin:0;line-height:1.5">brand files · 100 → 900 · roman + italic</p>
+          </div>
+          <div style="padding:32px 32px;border-left:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:100;color:#fff">Thin 100</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:200;color:#fff">ExtraLight 200</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:300;color:#fff">Light 300 · body default</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:400;color:#fff">Regular 400</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:500;color:#fff">Medium 500 · nav/links</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:600;color:#fff">SemiBold 600</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:700;color:#fff">Bold 700 · labels</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:800;color:#fff">ExtraBold 800</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:900;color:#fff">Black 900</span>
+          </div>
+          <div style="padding:32px 32px;border-left:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:100;font-style:italic;color:#fff">Thin Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:200;font-style:italic;color:#fff">ExtraLight Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:300;font-style:italic;color:#fff">Light Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:400;font-style:italic;color:#fff">Regular Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:500;font-style:italic;color:#fff">Medium Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:600;font-style:italic;color:#fff">SemiBold Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:700;font-style:italic;color:#fff">Bold Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:800;font-style:italic;color:#fff">ExtraBold Italic</span>
+            <span style="font-family:var(--font-secondary);font-size:22px;font-weight:900;font-style:italic;color:#fff">Black Italic</span>
           </div>
         </div>
 
