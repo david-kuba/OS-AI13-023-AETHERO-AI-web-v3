@@ -106,7 +106,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
         <div class="two-col-lists">
           <div>
-            <h3 class="body-mini list-label list-label--bad">Co chybělo</h3>
+            <h3 class="label list-label list-label--bad">Co chybělo</h3>
             <ul class="dot-list">
               <li>Meziroční pohled na výkon — nebylo vidět kde a proč klesá.</li>
               <li>Pochopení vazby mezi emailovou aktivitou a obratem po měsících.</li>
@@ -116,7 +116,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
             </ul>
           </div>
           <div>
-            <h3 class="body-mini list-label list-label--good">Co fungovalo</h3>
+            <h3 class="label list-label list-label--good">Co fungovalo</h3>
             <ul class="dot-list">
               <li>Uvítací sekvence s vysokým open rate a konverzí.</li>
               <li>Klub newsletter — konzistentně nejsilnější formát.</li>
@@ -128,7 +128,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
         </div>
 
         <div class="problem-box">
-          <p class="problem-label">Zásadní problém:</p>
+          <p class="label problem-label">Zásadní problém:</p>
           <p class="body problem-text">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb, takže každý výkyv v email kanálu je okamžitě cítit v číslech.</p>
         </div>
       </section>
@@ -447,7 +447,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     margin-top: var(--space-40);
   }
-  .problem-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--semantic-error); margin-bottom: 8px; }
+  .problem-label { color: var(--semantic-error); margin-bottom: 8px; }
   .problem-text { color: rgba(255,255,255,0.85); margin: 0; }
 
   /* Steps */

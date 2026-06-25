@@ -106,7 +106,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
         <div class="two-col-lists">
           <div>
-            <h3 class="body-mini list-label list-label--bad">What was missing</h3>
+            <h3 class="label list-label list-label--bad">What was missing</h3>
             <ul class="dot-list">
               <li>Year-on-year view of performance — no visibility into where and why things were declining.</li>
               <li>Understanding of the link between email activity and monthly revenue.</li>
@@ -116,7 +116,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
             </ul>
           </div>
           <div>
-            <h3 class="body-mini list-label list-label--good">What was working</h3>
+            <h3 class="label list-label list-label--good">What was working</h3>
             <ul class="dot-list">
               <li>Welcome sequence with high open rate and conversion.</li>
               <li>Club newsletter — consistently the strongest format.</li>
@@ -128,7 +128,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
         </div>
 
         <div class="problem-box">
-          <p class="problem-label">Core problem:</p>
+          <p class="label problem-label">Core problem:</p>
           <p class="body problem-text">Customers were opening emails but stopped clicking — this directly translated declining email performance into revenue loss. Email accounts for almost half of total sales, so every dip in the email channel is felt immediately in the numbers.</p>
         </div>
       </section>
@@ -452,7 +452,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     margin-top: var(--space-40);
   }
-  .problem-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--semantic-error); margin-bottom: 8px; }
+  .problem-label { color: var(--semantic-error); margin-bottom: 8px; }
   .problem-text { color: rgba(255,255,255,0.85); margin: 0; }
 
   /* Steps */
