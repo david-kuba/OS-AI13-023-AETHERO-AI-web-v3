@@ -373,124 +373,108 @@ const blogPosts = [
 
 <script>
   const track = document.getElementById('services-track') as HTMLElement | null;
+  const wrap = document.getElementById('services-track-wrap') as HTMLElement | null;
 
-  if (track) {
-    const DUR = 900;
-    const EASE = `transform ${DUR}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+  if (track && wrap) {
     const INTERVAL = 5000;
 
-    const originals = Array.from(track.children) as HTMLElement[];
-    const N = originals.length;
+    if (window.innerWidth <= 640) {
+      // MOBIL: natívny CSS scroll-snap — prehliadač rieši momentum sám
+      let autoTimer = setInterval(autoAdvance, INTERVAL);
 
-    // Prepend clones of all items (reversed) — umožní drag vlevo za začátek
-    [...originals].reverse().forEach(el => track.insertBefore(el.cloneNode(true), track.firstChild));
-    // Append clones pro auto-advance za konec
-    originals.forEach(el => track.appendChild(el.cloneNode(true)));
-    // Pořadí: [N start-clones] + [N originals] + [N end-clones]
-
-    const itemW = () => (track.children[N] as HTMLElement).offsetWidth;
-
-    let pos = N * itemW();
-    track.style.transition = 'none';
-    track.style.transform = `translateX(-${pos}px)`;
-    track.offsetWidth; // force reflow
-    track.style.transition = EASE;
-
-    const moveTo = (p: number, animated: boolean) => {
-      pos = p;
-      if (!animated) {
-        track.style.transition = 'none';
-        track.style.transform = `translateX(-${p}px)`;
-        track.offsetWidth;
-        track.style.transition = EASE;
-      } else {
-        track.style.transform = `translateX(-${p}px)`;
-      }
-    };
-
-    const normalize = () => {
-      const w = itemW();
-      if (pos >= 2 * N * w) moveTo(pos - N * w, false);
-      else if (pos < N * w) moveTo(pos + N * w, false);
-    };
-
-    const advance = () => {
-      moveTo(pos + itemW(), true);
-      setTimeout(normalize, DUR + 50);
-    };
-
-    let timer = setInterval(advance, INTERVAL);
-
-    let dragStartX = 0;
-    let dragStartY = 0;
-    let dragStartPos = 0;
-    let dragging = false;
-    let dragMoved = false;
-    let dragLocked = false; // true = potvrzeno horizontální, pointer zachycen
-
-    track.addEventListener('pointerdown', (e: PointerEvent) => {
-      dragging = true;
-      dragMoved = false;
-      dragLocked = false;
-      dragStartX = e.clientX;
-      dragStartY = e.clientY;
-      dragStartPos = pos;
-      // Pointer zatím NEZACHYCUJEME — čekáme na potvrzení směru
-      clearInterval(timer);
-    });
-
-    track.addEventListener('pointermove', (e: PointerEvent) => {
-      if (!dragging) return;
-      const dx = Math.abs(e.clientX - dragStartX);
-      const dy = Math.abs(e.clientY - dragStartY);
-
-      if (!dragLocked) {
-        if (dx < 6 && dy < 6) return; // příliš malý pohyb, čekej
-        if (dy > dx) {
-          // Vertikální scroll — předáme prohlížeči
-          dragging = false;
-          timer = setInterval(advance, INTERVAL);
-          return;
-        }
-        // Horizontální drag potvrzeno — teprve teď zachytíme pointer
-        dragLocked = true;
-        track.style.transition = 'none';
-        track.setPointerCapture(e.pointerId);
-        track.classList.add('is-dragging');
+      function autoAdvance() {
+        const item = track!.children[0] as HTMLElement | null;
+        if (!item) return;
+        const itemW = item.offsetWidth;
+        const max = wrap!.scrollWidth - wrap!.clientWidth;
+        const next = wrap!.scrollLeft + itemW;
+        wrap!.scrollTo({ left: next > max ? 0 : next, behavior: 'smooth' });
       }
 
-      const delta = dragStartX - e.clientX;
-      if (Math.abs(delta) > 5) dragMoved = true;
-      pos = dragStartPos + delta;
+      wrap.addEventListener('touchstart', () => clearInterval(autoTimer), { passive: true });
+      wrap.addEventListener('touchend', () => { autoTimer = setInterval(autoAdvance, INTERVAL); }, { passive: true });
+
+    } else {
+      // DESKTOP: clone-based infinite loop + pointer drag
+      const DUR = 900;
+      const EASE = `transform ${DUR}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+
+      const originals = Array.from(track.children) as HTMLElement[];
+      const N = originals.length;
+      [...originals].reverse().forEach(el => track.insertBefore(el.cloneNode(true), track.firstChild));
+      originals.forEach(el => track.appendChild(el.cloneNode(true)));
+
+      const itemW = () => (track.children[N] as HTMLElement).offsetWidth;
+      let pos = N * itemW();
+      track.style.transition = 'none';
       track.style.transform = `translateX(-${pos}px)`;
-    });
-
-    const finishDrag = () => {
-      if (!dragging) return;
-      dragging = false;
-      if (!dragLocked) {
-        // Žádný pohyb nebo vertikální — žádný snap
-        timer = setInterval(advance, INTERVAL);
-        return;
-      }
-      track.classList.remove('is-dragging');
-      const w = itemW();
-      pos = Math.round(pos / w) * w;
+      track.offsetWidth;
       track.style.transition = EASE;
-      track.style.transform = `translateX(-${pos}px)`;
-      setTimeout(() => {
-        normalize();
-        timer = setInterval(advance, INTERVAL);
-      }, DUR + 50);
-    };
 
-    track.addEventListener('pointerup', finishDrag);
-    track.addEventListener('pointercancel', finishDrag);
+      const moveTo = (p: number, animated: boolean) => {
+        pos = p;
+        if (!animated) {
+          track.style.transition = 'none';
+          track.style.transform = `translateX(-${p}px)`;
+          track.offsetWidth;
+          track.style.transition = EASE;
+        } else {
+          track.style.transform = `translateX(-${p}px)`;
+        }
+      };
 
-    // Zablokuj klik na odkaz po dragu
-    track.addEventListener('click', (e: MouseEvent) => {
-      if (dragMoved) e.preventDefault();
-    }, true);
+      const normalize = () => {
+        const w = itemW();
+        if (pos >= 2 * N * w) moveTo(pos - N * w, false);
+        else if (pos < N * w) moveTo(pos + N * w, false);
+      };
+
+      const advance = () => { moveTo(pos + itemW(), true); setTimeout(normalize, DUR + 50); };
+      let timer = setInterval(advance, INTERVAL);
+
+      let dragStartX = 0, dragStartY = 0, dragStartPos = 0;
+      let dragging = false, dragMoved = false, dragLocked = false;
+
+      track.addEventListener('pointerdown', (e: PointerEvent) => {
+        dragging = true; dragMoved = false; dragLocked = false;
+        dragStartX = e.clientX; dragStartY = e.clientY; dragStartPos = pos;
+        clearInterval(timer);
+      });
+
+      track.addEventListener('pointermove', (e: PointerEvent) => {
+        if (!dragging) return;
+        const dx = Math.abs(e.clientX - dragStartX);
+        const dy = Math.abs(e.clientY - dragStartY);
+        if (!dragLocked) {
+          if (dx < 6 && dy < 6) return;
+          if (dy > dx) { dragging = false; timer = setInterval(advance, INTERVAL); return; }
+          dragLocked = true;
+          track.style.transition = 'none';
+          track.setPointerCapture(e.pointerId);
+          track.classList.add('is-dragging');
+        }
+        const delta = dragStartX - e.clientX;
+        if (Math.abs(delta) > 5) dragMoved = true;
+        pos = dragStartPos + delta;
+        track.style.transform = `translateX(-${pos}px)`;
+      });
+
+      const finishDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        if (!dragLocked) { timer = setInterval(advance, INTERVAL); return; }
+        track.classList.remove('is-dragging');
+        const w = itemW();
+        pos = Math.round(pos / w) * w;
+        track.style.transition = EASE;
+        track.style.transform = `translateX(-${pos}px)`;
+        setTimeout(() => { normalize(); timer = setInterval(advance, INTERVAL); }, DUR + 50);
+      };
+
+      track.addEventListener('pointerup', finishDrag);
+      track.addEventListener('pointercancel', finishDrag);
+      track.addEventListener('click', (e: MouseEvent) => { if (dragMoved) e.preventDefault(); }, true);
+    }
   }
 </script>
 
@@ -613,8 +597,16 @@ const blogPosts = [
     display: inline-block;
   }
   @media (max-width: 640px) {
-    .services-track-wrap { padding: 0 16px 0 21px; }
-    .service-item { min-width: 76vw; padding: 24px 20px 32px; }
+    .services-track-wrap {
+      padding: 0 16px 0 21px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .services-track-wrap::-webkit-scrollbar { display: none; }
+    .services-track { transform: none !important; touch-action: auto; }
+    .service-item { min-width: 76vw; padding: 24px 20px 32px; scroll-snap-align: start; }
     .service-num { font-size: 160px; margin-left: -5px; }
     .service-text { font-size: 24px; line-height: 1.3; }
   }
