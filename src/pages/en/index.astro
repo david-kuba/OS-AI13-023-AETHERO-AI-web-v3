@@ -180,14 +180,6 @@ const blogPosts = [
               <p class="service-text" set:html={s.pre}></p>
               <h3 class="service-title" set:html={s.title}></h3>
             </div>
-            {i < services.length - 1 && (
-              <div class="svc-arrow" aria-hidden="true">
-                <svg class="svc-arrow-svg" viewBox="0 0 80 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="0" y1="8" x2="70" y2="8" stroke="#A081D1" stroke-width="1.5"/>
-                  <polyline points="62,2 76,8 62,14" stroke="#A081D1" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
-                </svg>
-              </div>
-            )}
           </a>
         ))}
       </div>
@@ -380,25 +372,92 @@ const blogPosts = [
 
 <script>
   const track = document.getElementById('services-track') as HTMLElement | null;
-  const trackWrap = document.getElementById('services-track-wrap') as HTMLElement | null;
-  if (track && trackWrap) {
-    const STEP = 600;
-    const INTERVAL = 5000;
-    let offset = 0;
 
-    setInterval(() => {
-      const maxOffset = track.scrollWidth - trackWrap.clientWidth;
-      offset += STEP;
-      if (offset > maxOffset) {
-        offset = 0;
+  if (track) {
+    const DUR = 900;
+    const EASE = `transform ${DUR}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+    const INTERVAL = 5000;
+
+    const originals = Array.from(track.children) as HTMLElement[];
+    const N = originals.length;
+
+    [...originals].reverse().forEach(el => track.insertBefore(el.cloneNode(true), track.firstChild));
+    originals.forEach(el => track.appendChild(el.cloneNode(true)));
+
+    const itemW = () => (track.children[N] as HTMLElement).offsetWidth;
+
+    let pos = N * itemW();
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${pos}px)`;
+    track.offsetWidth;
+    track.style.transition = EASE;
+
+    const moveTo = (p: number, animated: boolean) => {
+      pos = p;
+      if (!animated) {
         track.style.transition = 'none';
-        track.style.transform = 'translateX(0)';
+        track.style.transform = `translateX(-${p}px)`;
         track.offsetWidth;
-        requestAnimationFrame(() => { track.style.transition = ''; });
+        track.style.transition = EASE;
       } else {
-        track.style.transform = `translateX(-${offset}px)`;
+        track.style.transform = `translateX(-${p}px)`;
       }
-    }, INTERVAL);
+    };
+
+    const normalize = () => {
+      const w = itemW();
+      if (pos >= 2 * N * w) moveTo(pos - N * w, false);
+      else if (pos < N * w) moveTo(pos + N * w, false);
+    };
+
+    const advance = () => {
+      moveTo(pos + itemW(), true);
+      setTimeout(normalize, DUR + 50);
+    };
+
+    let timer = setInterval(advance, INTERVAL);
+
+    let dragStartX = 0;
+    let dragStartPos = 0;
+    let dragging = false;
+    let dragMoved = false;
+
+    track.addEventListener('pointerdown', (e: PointerEvent) => {
+      dragging = true;
+      dragMoved = false;
+      dragStartX = e.clientX;
+      dragStartPos = pos;
+      track.style.transition = 'none';
+      track.setPointerCapture(e.pointerId);
+      track.classList.add('is-dragging');
+      clearInterval(timer);
+    });
+
+    track.addEventListener('pointermove', (e: PointerEvent) => {
+      if (!dragging) return;
+      const delta = dragStartX - e.clientX;
+      if (Math.abs(delta) > 5) dragMoved = true;
+      pos = dragStartPos + delta;
+      track.style.transform = `translateX(-${pos}px)`;
+    });
+
+    track.addEventListener('pointerup', () => {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove('is-dragging');
+      const w = itemW();
+      pos = Math.round(pos / w) * w;
+      track.style.transition = EASE;
+      track.style.transform = `translateX(-${pos}px)`;
+      setTimeout(() => {
+        normalize();
+        timer = setInterval(advance, INTERVAL);
+      }, DUR + 50);
+    });
+
+    track.addEventListener('click', (e: MouseEvent) => {
+      if (dragMoved) e.preventDefault();
+    }, true);
   }
 </script>
 
@@ -479,7 +538,11 @@ const blogPosts = [
     width: max-content;
     transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+    touch-action: none;
+    user-select: none;
+    cursor: grab;
   }
+  .services-track.is-dragging { cursor: grabbing; }
   .service-item {
     display: flex;
     flex-direction: row;
@@ -487,10 +550,8 @@ const blogPosts = [
     min-width: 600px;
     padding: 40px 48px;
     color: #fff;
-    cursor: pointer;
     transition: opacity 0.2s;
   }
-  .service-item:first-child { padding-left: 0; }
   .service-item:hover { opacity: 0.85; }
   .service-content { flex: 1; display: flex; flex-direction: column; gap: 8px; }
   .service-num {
@@ -522,19 +583,6 @@ const blogPosts = [
     content: '➔'; margin-left: 5px;
     display: inline-block;
   }
-  .svc-arrow {
-    display: flex;
-    align-items: center;
-    align-self: flex-start;
-    padding-top: 102px;
-    flex-shrink: 0;
-  }
-  .svc-arrow-svg {
-    width: 80px;
-    height: 16px;
-    display: block;
-  }
-
   /* VALUE PROP */
   .value-prop {
     background: #000326;
