@@ -75,12 +75,7 @@ const steps = [
           <h3 class="analyze-label">CO ANALYZUJEME</h3>
           <ul class="analyze-list">
             {analyzeItems.map((a) => (
-              <li>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8l4 4 6-7" stroke="var(--semantic-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>{a}</span>
-              </li>
+              <li>{a}</li>
             ))}
           </ul>
         </div>
@@ -145,10 +140,7 @@ const steps = [
           <p class="section-text">Žádné tabulky v Excelu, které si nikdo neotevře. Výsledkem je živý strategický dokument dostupný online — přehledný, konkrétní, s klikacím akčním plánem.</p>
           <ul class="deliverables-list">
             {deliverables.map((d) => (
-              <li>
-                <span class="dl-arrow">→</span>
-                <span>{d}</span>
-              </li>
+              <li>{d}</li>
             ))}
           </ul>
           <a href="/cs/groomo-cz-na-shopify" class="text-link">OK, zkuste si příklady</a>
@@ -184,12 +176,7 @@ const steps = [
       <h2 class="h2-mini section-title-center">Služba je pro vás, <span class="text-action">pokud...</span></h2>
       <ul class="for-who-list">
         {forWho.map((f) => (
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8l4 4 6-7" stroke="var(--semantic-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>{f}</span>
-          </li>
+          <li>{f}</li>
         ))}
       </ul>
     </div>
@@ -235,13 +222,13 @@ const steps = [
   .two-col-analyze { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .analyze-label { font-family: var(--font-primary); font-size: 14px; font-weight: 700; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: var(--space-24); }
   .analyze-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .analyze-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.5; }
-  .analyze-list svg { flex-shrink: 0; margin-top: 2px; }
+  .analyze-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.55; }
+  .analyze-list li::before { content: '→'; color: var(--text-secondary); flex-shrink: 0; line-height: 1.55; }
 
   .output-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .deliverables-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-32); }
-  .deliverables-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.5; }
-  .deliverables-list .dl-arrow { color: var(--action); flex-shrink: 0; line-height: 1.5; }
+  .deliverables-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.55; }
+  .deliverables-list li::before { content: '→'; color: var(--text-secondary); flex-shrink: 0; line-height: 1.55; }
 
   .case-study-wrap { display: flex; }
   .case-study-card { position: relative; border-radius: var(--radius-md); overflow: hidden; }
@@ -265,8 +252,8 @@ const steps = [
   .step-card p { font-size: 14px; color: var(--neutral-300); line-height: 1.6; }
 
   .for-who-list { list-style: none; display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto; }
-  .for-who-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; }
-  .for-who-list svg { flex-shrink: 0; margin-top: 2px; }
+  .for-who-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+  .for-who-list li::before { content: '→'; color: var(--text-secondary); flex-shrink: 0; line-height: 1.55; }
 
   .testimonials-label { margin-bottom: var(--space-40); text-align: center; }
   .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
