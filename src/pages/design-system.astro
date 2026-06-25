@@ -337,6 +337,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
         </div>
+
+        <!-- Problem-box / Error callout -->
+        <div class="ds-block-label" style="margin-top:24px">Problem-box — error callout s ikonou Lucide TriangleAlert</div>
+        <div class="ds-bg-dark" style="padding:40px 48px">
+          <div style="border-left:4px solid var(--semantic-error);padding:20px 24px;background:rgba(255,82,82,0.13);border-radius:0 8px 8px 0;max-width:640px">
+            <p style="font-family:var(--font-primary);font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--semantic-error);margin:0 0 8px;display:flex;align-items:center;gap:8px">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+              Zásadní problém:
+            </p>
+            <p style="font-size:clamp(16px,1.4vw,18px);font-weight:500;color:rgba(255,255,255,0.85);margin:0;line-height:1.65">Zákazníci emaily otvírali, ale přestávali klikat — tím se propad v emailovém výkonu přímo přenášel do obratu. Email přitom tvoří téměř polovinu celkových tržeb.</p>
+          </div>
+          <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:20px">CSS: <code>{"border-left:4px solid var(--semantic-error); background:rgba(255,82,82,0.13)"}</code> · ikona Lucide <code>TriangleAlert</code> 20px · text font-weight 500</p>
+        </div>
       </section>
 
       <!-- TYPOGRAPHY -->
