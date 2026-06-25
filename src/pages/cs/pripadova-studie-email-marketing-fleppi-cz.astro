@@ -291,7 +291,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
             <div class="ref-author">
               <img src="/ref-lucie.jpg" alt="Lucie" class="ref-avatar" />
               <div>
-                <strong>Lucie, majitelka fleppi.cz</strong>
+                <strong>Lucie,</strong>
+                <span class="ref-role">majitelka <a href="https://www.fleppi.cz" class="text-link" target="_blank" rel="noopener">Fleppi.cz</a></span>
                 <span class="ref-source">Google recenze 5/5</span>
               </div>
             </div>
@@ -497,6 +498,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .ref-author { display: flex; align-items: center; gap: 16px; }
   .ref-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: top; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.15); }
   .ref-author strong { display: block; font-size: 14px; color: #fff; font-weight: 700; }
+  .ref-role { display: block; font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 2px; }
   .ref-source { display: block; font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 2px; }
 
   /* CTA */
