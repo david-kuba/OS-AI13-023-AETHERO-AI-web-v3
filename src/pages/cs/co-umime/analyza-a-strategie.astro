@@ -91,7 +91,7 @@ const steps = [
   <!-- Testimonials -->
   <section class="section bg-primary">
     <div class="container">
-      <h2 class="h3 testimonials-label">Reference majitelů e-shopů</h2>
+      <h2 class="h3-mini testimonials-label">Reference majitelů e-shopů</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="testimonial-top">
@@ -103,9 +103,8 @@ const steps = [
           <div class="testimonial-footer">
             <img src="/ref-lucie.jpg" alt="Lucie" class="testimonial-avatar" />
             <div class="testimonial-person">
-              <strong>Lucie,</strong>
-              <span>Majitelka</span>
-              <span><a href="https://www.fleppi.cz" target="_blank" rel="noopener" class="text-link">Fleppi.cz</a></span>
+              <span>Lucie, majitelka</span>
+              <a href="https://www.fleppi.cz" target="_blank" rel="noopener" class="text-link">Fleppi.cz</a>
             </div>
             <div class="google-review">
               <svg class="google-g-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
@@ -128,9 +127,8 @@ const steps = [
           <div class="testimonial-footer">
             <img src="/ref-petr.png" alt="Petr" class="testimonial-avatar" />
             <div class="testimonial-person">
-              <strong>Petr,</strong>
-              <span>Majitel</span>
-              <span><a href="https://bu1.cz" target="_blank" rel="noopener" class="text-link">BU1.cz</a></span>
+              <span>Petr, majitel</span>
+              <a href="https://bu1.cz" target="_blank" rel="noopener" class="text-link">BU1.cz</a>
             </div>
           </div>
         </div>
@@ -148,9 +146,7 @@ const steps = [
           <ul class="deliverables-list">
             {deliverables.map((d) => (
               <li>
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <span class="dl-arrow">→</span>
                 <span>{d}</span>
               </li>
             ))}
@@ -245,7 +241,7 @@ const steps = [
   .output-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .deliverables-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-32); }
   .deliverables-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.5; }
-  .deliverables-list svg { flex-shrink: 0; margin-top: 2px; }
+  .deliverables-list .dl-arrow { color: var(--action); flex-shrink: 0; line-height: 1.5; }
 
   .case-study-wrap { display: flex; }
   .case-study-card { position: relative; border-radius: var(--radius-md); overflow: hidden; }
@@ -293,8 +289,8 @@ const steps = [
     border: 3px solid rgba(255,255,255,0.15);
   }
   .testimonial-person { min-width: 0; }
-  .testimonial-person strong { display: block; font-size: 22px; font-weight: 700; color: #fff; line-height: 1.3; }
-  .testimonial-person span { display: block; font-size: 16px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+  .testimonial-person span { display: block; font-size: 16px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .testimonial-person .text-link { display: block; font-size: 16px; margin-top: 4px; }
   .testimonial-text {
     font-size: 18px;
     color: rgba(255,255,255,0.85);
