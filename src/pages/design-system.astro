@@ -489,6 +489,69 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </section>
 
+      <!-- TYPOGRAFICKÝ RYTMUS -->
+      <section class="ds-section" id="typo-rhythm">
+        <h2 class="ds-section-title">Typografický rytmus — nadpis + text</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:40px">Navrhované <code>margin-bottom</code> za každým nadpisem. Mezi sekcemi fixní gap 40px.</p>
+
+        <div class="tr-demo">
+
+          <!-- H2-MAXI -->
+          <div class="tr-block">
+            <span class="tr-tag">h2-maxi · margin-bottom: 24px</span>
+            <h2 class="h2-maxi tr-heading" style="margin-bottom:0">Chcete e-shop, který prodává?</h2>
+            <div class="tr-spacer" style="--sp:24px"><span>24px</span></div>
+            <p class="body tr-body">Pomáháme e-shopům přejít na Shopify a skutečně z toho těžit. Analýza, migrace, rozvoj — vše pod jednou střechou s týmem, který platformě rozumí do hloubky.</p>
+          </div>
+          <div class="tr-gap"><span>40px · mezisekční gap</span></div>
+
+          <!-- H2 -->
+          <div class="tr-block">
+            <span class="tr-tag">h2 · margin-bottom: 20px</span>
+            <h2 class="h2 tr-heading" style="margin-bottom:0">Proč Shopify?</h2>
+            <div class="tr-spacer" style="--sp:20px"><span>20px</span></div>
+            <p class="body tr-body">Shopify je dnes nejrychleji rostoucí e-commerce platforma na světě. Rychlé nasazení, spolehlivé hostování a tisíce prověřených integrací.</p>
+          </div>
+          <div class="tr-gap"><span>40px · mezisekční gap</span></div>
+
+          <!-- H2-MINI -->
+          <div class="tr-block">
+            <span class="tr-tag">h2-mini · margin-bottom: 16px</span>
+            <h2 class="h2-mini tr-heading" style="margin-bottom:0">Migrace bez výpadku</h2>
+            <div class="tr-spacer" style="--sp:16px"><span>16px</span></div>
+            <p class="body tr-body">Přechod na Shopify provedeme bez ztráty dat, SEO pozic ani zákazníků. Celý proces je naplánovaný dopředu a probíhá na pozadí.</p>
+          </div>
+          <div class="tr-gap"><span>40px · mezisekční gap</span></div>
+
+          <!-- H3-MAXI -->
+          <div class="tr-block">
+            <span class="tr-tag">h3-maxi · margin-bottom: 16px</span>
+            <h3 class="h3-maxi tr-heading" style="margin-bottom:0">Analýza a strategie</h3>
+            <div class="tr-spacer" style="--sp:16px"><span>16px</span></div>
+            <p class="body tr-body">Před každým projektem zjistíme, kde jsou největší příležitosti. Zbytečně neutrácíte za věci, které výsledky nepřinesou.</p>
+          </div>
+          <div class="tr-gap"><span>40px · mezisekční gap</span></div>
+
+          <!-- H3 -->
+          <div class="tr-block">
+            <span class="tr-tag">h3 · margin-bottom: 14px</span>
+            <h3 class="h3 tr-heading" style="margin-bottom:0">Shopify rozvoj</h3>
+            <div class="tr-spacer" style="--sp:14px"><span>14px</span></div>
+            <p class="body tr-body">Kontinuální optimalizace, A/B testování a nové funkce — e-shop roste s vaším businessem, nestagnuje.</p>
+          </div>
+          <div class="tr-gap"><span>40px · mezisekční gap</span></div>
+
+          <!-- H3-MINI -->
+          <div class="tr-block">
+            <span class="tr-tag">h3-mini · margin-bottom: 12px</span>
+            <h3 class="h3-mini tr-heading" style="margin-bottom:0">Podpora a správa</h3>
+            <div class="tr-spacer" style="--sp:12px"><span>12px</span></div>
+            <p class="body tr-body">Technická podpora, aktualizace a monitoring — o provoz se staráme my, vy se soustředíte na byznys.</p>
+          </div>
+
+        </div>
+      </section>
+
       <!-- NEKONZISTENCE - odstraněno, vše sjednoceno -->
       <section class="ds-section" id="inconsistencies" style="display:none">
         <h2 class="ds-section-title">Nekonzistence</h2>
@@ -2836,6 +2899,31 @@ font-family: var(--font-secondary);</code></pre>
     .ds-blocks-grid { grid-template-columns: 1fr; }
     .ds-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   }
+
+  /* ── Typografický rytmus demo ── */
+  .tr-demo { max-width: 680px; }
+  .tr-block { }
+  .tr-tag { display: inline-block; font-size: 12px; font-family: var(--font-primary); letter-spacing: 0.06em; text-transform: uppercase; color: var(--action); margin-bottom: 12px; }
+  .tr-heading { color: #fff; }
+  .tr-spacer {
+    height: var(--sp);
+    background: repeating-linear-gradient(90deg, rgba(22,190,207,0.25) 0px, rgba(22,190,207,0.25) 4px, transparent 4px, transparent 12px);
+    border-top: 1px dashed rgba(22,190,207,0.5);
+    border-bottom: 1px dashed rgba(22,190,207,0.5);
+    display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+    margin-bottom: 0;
+  }
+  .tr-spacer span { font-size: 11px; font-family: monospace; color: var(--action); background: var(--ae-bg-primary); padding: 0 4px; }
+  .tr-body { color: rgba(255,255,255,0.75); max-width: 560px; }
+  .tr-gap {
+    height: 40px;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 4px, transparent 4px, transparent 12px);
+    border-top: 1px dashed rgba(255,255,255,0.15);
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0;
+  }
+  .tr-gap span { font-size: 11px; font-family: monospace; color: rgba(255,255,255,0.3); background: var(--ae-bg-primary); padding: 0 8px; }
 </style>
 
 <script>
