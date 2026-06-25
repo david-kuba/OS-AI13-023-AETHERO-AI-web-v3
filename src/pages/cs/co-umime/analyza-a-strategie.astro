@@ -67,8 +67,8 @@ const steps = [
       <div class="two-col-analyze">
         <div>
           <h2 class="h2 section-title">Vaše data říkají víc,<br />než si myslíte</h2>
-          <p class="section-text">API přístup, CSV exporty nebo crawling webu — dokážeme napojit téměř jakýkoliv zdroj dat. Propojíme data z vašeho e-shopu, emailové kampaně, GAds, Analytiku i sociální sítě. A vy pak dostanete konkrétní strategii s kvantifikovaným přínosem každého doporučení — žádné obecné rady.</p>
-          <p class="section-text"><strong>Nejčastěji pracujeme s e-shopy od 3M Kč ročního obratu na Shoptetu, Shopify a WooCommerce.</strong></p>
+          <p class="section-text body">API přístup, CSV exporty nebo crawling webu — dokážeme napojit téměř jakýkoliv zdroj dat. Propojíme data z vašeho e-shopu, emailové kampaně, GAds, Analytiku i sociální sítě. A vy pak dostanete konkrétní strategii s kvantifikovaným přínosem každého doporučení — žádné obecné rady.</p>
+          <p class="section-text body"><strong>Nejčastěji pracujeme s e-shopy od 3M Kč ročního obratu na Shoptetu, Shopify a WooCommerce.</strong></p>
           <a href="#jak-to-funguje" class="text-link">Co to jsou?</a>
         </div>
         <div>
@@ -137,7 +137,7 @@ const steps = [
       <h2 class="h2-mini section-title-center">Výstup, <span class="text-action">který rovnou použijete.</span></h2>
       <div class="output-col">
         <div>
-          <p class="section-text">Žádné tabulky v Excelu, které si nikdo neotevře. Výsledkem je živý strategický dokument dostupný online — přehledný, konkrétní, s klikacím akčním plánem.</p>
+          <p class="section-text body">Žádné tabulky v Excelu, které si nikdo neotevře. Výsledkem je živý strategický dokument dostupný online — přehledný, konkrétní, s klikacím akčním plánem.</p>
           <ul class="deliverables-list">
             {deliverables.map((d) => (
               <li>{d}</li>
@@ -164,7 +164,7 @@ const steps = [
           <div class="step-card">
             <div class="step-num">{s.num}</div>
             <strong class="step-title">{s.title}</strong>
-            <p>{s.desc}</p>
+            <p class="body">{s.desc}</p>
           </div>
         ))}
       </div>
@@ -187,7 +187,7 @@ const steps = [
   <section class="section-mid bg-primary">
     <div class="container">
       <h2 class="h2-mini section-title-center">Zjistěte kde váš e-shop ztrácí zákazníky<br />a jak to otočit</h2>
-      <p class="section-text-center">Napište nám co chcete pochopit, a na čem jedete. Zbytek nechte na nás.</p>
+      <p class="section-text-center body">Napište nám co chcete pochopit, a na čem jedete. Zbytek nechte na nás.</p>
     </div>
   </section>
 
@@ -217,8 +217,8 @@ const steps = [
   .bg-primary { background: var(--ae-bg-primary); }
   .section-title { margin-bottom: var(--space-40); }
   .section-title-center { margin-bottom: var(--space-40); text-align: center; }
-  .section-text { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: var(--space-24); }
-  .section-text-center { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; text-align: center; max-width: 600px; margin: 0 auto; }
+  .section-text { margin-bottom: var(--space-24); }
+  .section-text-center { text-align: center; max-width: 600px; margin: 0 auto; }
 
   .two-col-analyze { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .analyze-label { font-family: var(--font-primary); font-size: 14px; font-weight: 700; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: var(--space-24); }
@@ -251,7 +251,6 @@ const steps = [
   .step-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
   .step-num { width: 38px; height: 38px; border-radius: 50%; background: var(--text-secondary); color: #fff; font-family: var(--font-primary); font-weight: 900; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-16); }
   .step-title { display: block; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: var(--space-12); }
-  .step-card p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.6; }
 
   .for-who-list { list-style: none; display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto; }
   .for-who-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.55; }

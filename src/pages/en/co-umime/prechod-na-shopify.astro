@@ -50,11 +50,11 @@ const features = [
     <div class="container two-col-check">
       <div>
         <h2 class="section-title">Shopify Edition Winter 2026</h2>
-        <p class="section-text">Shopify releases major feature updates twice a year. Each release brings new features for merchants, developers and customers — and Shopify does not charge you separately for the upgrade. Are you used to that with other platforms?</p>
+        <p class="section-text body">Shopify releases major feature updates twice a year. Each release brings new features for merchants, developers and customers — and Shopify does not charge you separately for the upgrade. Are you used to that with other platforms?</p>
         <div class="edition-img-wrap">
           <img src="/shopify-update-winter-2026.webp" alt="Shopify Edition Winter 2026" class="edition-img" loading="lazy" />
         </div>
-        <p class="section-text">As a Shopify partner we get access to new features before others — and deliver them directly into your store. <a href="https://www.shopify.com/editions" target="_blank" rel="noopener" class="text-link">Shopify Editions Winter 2026</a> — we bring what's new straight to your project.</p>
+        <p class="section-text body">As a Shopify partner we get access to new features before others — and deliver them directly into your store. <a href="https://www.shopify.com/editions" target="_blank" rel="noopener" class="text-link">Shopify Editions Winter 2026</a> — we bring what's new straight to your project.</p>
       </div>
       <div>
         <h2 class="section-title">How to get started</h2>
@@ -79,7 +79,7 @@ const features = [
   <section class="section-heading bg-primary">
     <div class="container">
       <h2 class="feature-section-heading">Features you will love:</h2>
-      <p class="section-text">If you have been around standard stores for a while, you will certainly appreciate these features and capabilities that come built-in from the start</p>
+      <p class="section-text body">If you have been around standard stores for a while, you will certainly appreciate these features and capabilities that come built-in from the start</p>
     </div>
   </section>
 
@@ -89,7 +89,7 @@ const features = [
       <div class="container feature-inner">
         <div class="feature-text">
           <h2 class="feature-title">{f.title}</h2>
-          <p class="feature-desc">{f.desc}</p>
+          <p class="body">{f.desc}</p>
         </div>
         <div class="feature-img-wrap">
           <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />
@@ -123,7 +123,7 @@ const features = [
   .bg-primary { background: var(--ae-bg-primary); }
   .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
-  .section-text { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: var(--space-24); }
+  .section-text { margin-bottom: var(--space-24); }
 
   .two-col-check { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .edition-img-wrap { margin-bottom: var(--space-24); }
@@ -141,7 +141,6 @@ const features = [
   .feature-section--reverse .feature-text,
   .feature-section--reverse .feature-img-wrap { direction: ltr; }
   .feature-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); }
-  .feature-desc { font-size: 18px; color: rgba(255,255,255,0.85); line-height: 1.6; }
   .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
   .feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
 

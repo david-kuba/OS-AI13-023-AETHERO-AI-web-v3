@@ -98,7 +98,7 @@ const services = [
         </div>
         <div class="svc-text-col">
           <h2 class="svc-title" set:html={s.title} />
-          <p class="svc-desc" set:html={s.desc} />
+          <p class="svc-desc body" set:html={s.desc} />
           <a href={s.href} class="btn-secondary">{s.cta}</a>
         </div>
       </div>
@@ -242,9 +242,6 @@ const services = [
     margin-bottom: 24px;
   }
   .svc-desc {
-    font-size: 18px;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.85);
     margin-bottom: 32px;
   }
   .svc-desc :global(.ac) {
