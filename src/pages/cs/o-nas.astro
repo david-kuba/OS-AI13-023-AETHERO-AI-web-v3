@@ -100,7 +100,7 @@ const team = [
     border-radius: 50%; filter: blur(60px); pointer-events: none;
   }
   .o-nas-hero .container { position: relative; }
-  .o-nas-hero h1 { font-size: clamp(40px, 5vw, 64px); font-weight: 700; }
+  .o-nas-hero h1 { font-size: var(--fs-64); font-weight: 700; }
   .hero-sub { font-size: 20px; color: var(--text-secondary); margin-top: var(--space-24); max-width: 600px; line-height: 1.6; }
 
   .section { padding: var(--space-120) 0; }
@@ -133,9 +133,9 @@ const team = [
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-inner h2 { font-family: var(--font-primary); font-size: var(--fs-70); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; justify-content: center; gap: var(--space-40); flex-wrap: wrap; }
-  .cta-link { font-size: clamp(22px, 3vw, 40px); color: var(--ae-straight-blue); font-family: var(--font-primary); font-weight: 700; text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-link { font-size: var(--fs-40); color: var(--ae-straight-blue); font-family: var(--font-primary); font-weight: 700; text-decoration: none; transition: opacity var(--transition-base); }
   .cta-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 768px) {
@@ -146,7 +146,7 @@ const team = [
   }
   @media (max-width: 480px) {
     .o-nas-hero { padding: 70px 0 48px; }
-    .o-nas-hero h1 { font-size: clamp(32px, 9vw, 48px); }
+    .o-nas-hero h1 { font-size: var(--fs-48); }
     .hero-sub { font-size: 16px; }
     .section { padding: var(--space-80) 0; }
     .story-text p { font-size: 16px; }

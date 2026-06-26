@@ -102,20 +102,20 @@ const workCards = [
   .section { padding: var(--space-120) 0; }
   .bg-primary { background: var(--ae-bg-primary); }
   .bg-primary { background: var(--ae-bg-primary); }
-  .section-title { font-size: clamp(32px, 5vw, 70px); font-weight: 600; margin-bottom: var(--space-40); }
+  .section-title { font-size: var(--fs-70); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { margin-bottom: var(--space-24); max-width: 760px; }
 
   .intro-h2 { margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
-  .intro-text { font-size: clamp(16px, 1.4vw, 20px); color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: var(--space-24); max-width: 860px; }
+  .intro-text { font-size: var(--fs-20); color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: var(--space-24); max-width: 860px; }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .pillar-heading { margin-bottom: var(--space-40); color: #fff; }
   .brand-text-col { max-width: 760px; }
 
-  .ogilvy-quote { margin-top: var(--space-64); font-size: clamp(18px, 2vw, 24px); font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.5; }
+  .ogilvy-quote { margin-top: var(--space-64); font-size: var(--fs-24); font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.5; }
   .ogilvy-quote cite { display: block; font-size: 14px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-16); }
 
-  .work-heading { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; letter-spacing: 0; margin-bottom: var(--space-48); color: #fff; text-transform: uppercase; }
+  .work-heading { font-size: var(--fs-32); font-weight: 700; letter-spacing: 0; margin-bottom: var(--space-48); color: #fff; text-transform: uppercase; }
   .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-24); }
   .work-card { background: var(--ae-bg-primary); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: var(--space-24); }
   .work-card-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: var(--space-12); }
@@ -123,7 +123,7 @@ const workCards = [
 
   .analogy-split { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
   .analogy-text { max-width: 700px; }
-  .analogy-heading { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; margin-bottom: var(--space-32); }
+  .analogy-heading { font-size: var(--fs-32); font-weight: 700; margin-bottom: var(--space-32); }
   .analogy-ref { display: flex; justify-content: center; }
   .ref-card { position: relative; max-width: 380px; width: 100%; border-radius: 6px; overflow: hidden; }
   .ref-img { width: 100%; display: block; }
@@ -149,14 +149,14 @@ const workCards = [
   }
 
   .quote-section { padding: var(--space-80) 0; }
-  .kent-quote { font-size: clamp(20px, 2.5vw, 32px); font-style: italic; color: rgba(255,255,255,0.9); text-align: center; line-height: 1.5; max-width: 720px; margin: 0 auto; }
+  .kent-quote { font-size: var(--fs-32); font-style: italic; color: rgba(255,255,255,0.9); text-align: center; line-height: 1.5; max-width: 720px; margin: 0 auto; }
   .kent-quote cite { display: block; font-size: 16px; font-style: normal; color: rgba(255,255,255,0.5); margin-top: var(--space-24); }
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-inner h2 { font-family: var(--font-primary); font-size: var(--fs-70); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
+  .cta-contact { font-family: var(--font-primary); font-size: var(--fs-40); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity var(--transition-base); }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {

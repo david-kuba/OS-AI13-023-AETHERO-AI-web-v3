@@ -517,7 +517,7 @@ const blogPosts = [
   .hero-left { display: flex; flex-direction: column; align-items: flex-start; }
   .hero-heading {
     font-family: var(--font-primary);
-    font-size: clamp(56px, 7.8vw, 100px);
+    font-size: var(--fs-100);
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0;
@@ -587,7 +587,7 @@ const blogPosts = [
   }
   .service-title {
     font-family: var(--font-primary);
-    font-size: clamp(26px, 3.5vw, 48px);
+    font-size: var(--fs-48);
     font-weight: 600;
     line-height: 1.2;
     color: var(--action);
@@ -622,7 +622,7 @@ const blogPosts = [
   .value-inner { max-width: 1200px; margin: 0 auto; }
   .value-heading {
     font-family: var(--font-primary);
-    font-size: clamp(32px, 3.6vw, 52px);
+    font-size: var(--fs-52);
     font-weight: 700;
     line-height: 1.2;
     color: #fff;
@@ -696,7 +696,7 @@ const blogPosts = [
   .stat-num {
     display: block;
     font-family: var(--font-primary);
-    font-size: clamp(32px, 3.5vw, 52px);
+    font-size: var(--fs-52);
     font-weight: 700;
     color: var(--stats-num-color);
     line-height: 1;
@@ -760,7 +760,7 @@ const blogPosts = [
   .ref-card { text-align: left; }
   .section-heading {
     font-family: var(--font-primary);
-    font-size: clamp(40px, 5.5vw, 70px);
+    font-size: var(--fs-70);
     font-weight: 600;
     color: #fff;
     margin-bottom: 56px;
@@ -948,7 +948,7 @@ const blogPosts = [
   .footer-cta-inner { text-align: center; }
   .footer-cta-heading {
     font-family: var(--font-primary);
-    font-size: clamp(40px, 5vw, 70px);
+    font-size: var(--fs-70);
     font-weight: 700;
     color: #fff;
     margin-bottom: 40px;
@@ -957,7 +957,7 @@ const blogPosts = [
   .footer-cta-contacts { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
   .footer-cta-link {
     font-family: var(--font-primary);
-    font-size: clamp(20px, 3vw, 40px);
+    font-size: var(--fs-40);
     font-weight: 600;
     color: var(--ae-straight-blue);
     text-decoration: none;
@@ -984,7 +984,7 @@ const blogPosts = [
     }
     .hero-shape { width: 100%; max-width: none; margin-right: 0; display: block; }
     .hero-left { padding: 28px 21px 48px; }
-    .hero-heading { font-size: clamp(40px, 10vw, 64px); }
+    .hero-heading { font-size: var(--fs-64); }
     .features-grid { grid-template-columns: 1fr; }
     .ae-services-grid {
       grid-template-columns: unset;
@@ -1004,8 +1004,8 @@ const blogPosts = [
     .stats-inner { flex-direction: column; text-align: center; padding: 0 24px; }
     .shopify-stats-logo { margin: 0 auto; }
     .footer-cta-contacts { flex-direction: column; align-items: center; gap: 16px; }
-    .service-text { font-size: clamp(28px, 7vw, 40px); line-height: 1.25; }
-    .service-title { font-size: clamp(28px, 7vw, 40px); }
+    .service-text { font-size: var(--fs-40); line-height: 1.25; }
+    .service-title { font-size: var(--fs-40); }
     .ae-services-ctas { flex-direction: column; align-items: center; }
     .blog-card { flex: 0 0 calc((100% - 16px) / 2); }
     .blog-track-wrap { overflow-x: scroll; scroll-snap-type: x mandatory; scrollbar-width: none; }
@@ -1017,7 +1017,7 @@ const blogPosts = [
   @media (max-width: 480px) {
     .hero-right { padding-top: 56px; }
     .hero-left { padding-bottom: 40px; }
-    .hero-heading { font-size: clamp(34px, 10vw, 48px); }
+    .hero-heading { font-size: var(--fs-48); }
     .service-text br { display: none; }
     .value-prop { padding: 60px 0; }
     .value-body { font-size: 22px; }

@@ -137,18 +137,18 @@ import PageLayout from '../../layouts/PageLayout.astro';
     align-items: center;
   }
   .hero-text h1 {
-    font-size: clamp(56px, 7.8vw, 100px);
+    font-size: var(--fs-100);
     font-weight: 700;
     line-height: 1.05;
     margin-bottom: var(--space-32);
   }
   .hero-sub {
-    font-size: clamp(18px, 2.5vw, 28px);
+    font-size: var(--fs-28);
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.55;
   }
   .hero-img {
-    width: clamp(180px, 26vw, 400px);
+    width: 400px;
     height: auto;
     display: block;
   }
@@ -167,7 +167,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .section { padding: calc(var(--space-120) - 40px) 0 var(--space-120); }
   .bg-primary { background: var(--ae-bg-primary); }
   .section-title {
-    font-size: clamp(30px, 4vw, 56px);
+    font-size: var(--fs-56);
     font-weight: 700;
     margin-bottom: var(--space-64);
   }
@@ -190,7 +190,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   }
   .contact-value {
     font-family: var(--font-primary);
-    font-size: clamp(26px, 3vw, 44px);
+    font-size: var(--fs-44);
     font-weight: 700;
     color: var(--text-primary);
     transition: color var(--transition-base);
@@ -264,7 +264,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
       text-align: center;
     }
     .hero-img {
-      width: clamp(140px, 45vw, 220px);
+      width: 200px;
       margin: 0 auto;
       display: block;
     }

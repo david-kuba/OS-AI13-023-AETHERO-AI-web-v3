@@ -102,7 +102,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     position: relative;
     display: block;
     overflow: hidden;
-    min-height: clamp(400px, 68vh, 700px);
+    min-height: 700px;
   }
   .app-hero-bg {
     position: absolute; inset: 0;
@@ -123,20 +123,20 @@ import PageLayout from '../../layouts/PageLayout.astro';
     padding-bottom: 48px;
   }
   .app-hero-logo {
-    width: clamp(120px, 14vw, 220px);
+    width: 220px;
     height: auto;
     object-fit: contain;
   }
   .app-hero h1 {
     font-family: var(--font-primary);
-    font-size: clamp(56px, 7.8vw, 100px);
+    font-size: var(--fs-100);
     font-weight: 700;
     line-height: 1.2;
     color: #fff;
     margin: 0;
   }
   .app-hero-sub {
-    font-size: clamp(18px, 2.5vw, 28px);
+    font-size: var(--fs-28);
     color: rgba(255,255,255,0.85);
     line-height: 1.4;
     max-width: 680px;
@@ -154,7 +154,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     max-width: 900px;
   }
   .intro-text {
-    font-size: clamp(16px, 1.4vw, 20px);
+    font-size: var(--fs-20);
     color: rgba(255,255,255,0.85);
     line-height: 1.6;
     max-width: 800px;
@@ -320,7 +320,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .cta-inner { text-align: center; }
   .cta-inner h2 {
     font-family: var(--font-primary);
-    font-size: clamp(40px, 5vw, 70px);
+    font-size: var(--fs-70);
     font-weight: 700;
     color: #fff;
     line-height: 1.2;
@@ -329,7 +329,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
   .cta-contact {
     font-family: var(--font-primary);
-    font-size: clamp(22px, 3vw, 40px);
+    font-size: var(--fs-40);
     font-weight: 700;
     color: var(--ae-straight-blue);
     text-decoration: none;

@@ -21,15 +21,45 @@
 
   --font-primary: 'Kanit', system-ui, sans-serif;
   --font-secondary: 'Montserrat', system-ui, sans-serif;
-  --text-h1: 100px;
-  --text-h2: 70px;
-  --text-h2-vp: 54px;
-  --text-h3: 40px;
-  --text-body: 16px;
-  --text-section-body: 22px;
-  --text-label: 18px;
-  --text-small: 14px;
   --stats-num-color: #060838;
+
+  /* ── Type scale — desktop values ── */
+  /* Pravidlo: mobile = desktop × 0.8, minimum 16px. ≤16px = beze změny. */
+  --fs-160: 160px;   /* velká stats čísla */
+  --fs-100: 100px;   /* display / hero H1 */
+  --fs-80:   80px;
+  --fs-72:   72px;
+  --fs-70:   70px;   /* primární H1 */
+  --fs-64:   64px;
+  --fs-60:   60px;
+  --fs-56:   56px;
+  --fs-52:   52px;
+  --fs-48:   48px;
+  --fs-46:   46px;
+  --fs-44:   44px;
+  --fs-42:   42px;
+  --fs-40:   40px;   /* H2 */
+  --fs-38:   38px;
+  --fs-36:   36px;
+  --fs-32:   32px;
+  --fs-30:   30px;
+  --fs-28:   28px;
+  --fs-24:   24px;
+  --fs-22:   22px;   /* section body */
+  --fs-21:   21px;
+  --fs-20:   20px;
+  --fs-18:   18px;   /* label */
+  /* ≤16px: --text-body / --text-small — bez mobile override */
+  --text-body: 16px;
+  --text-small: 14px;
+
+  /* ── Deprecated semantic font aliases (zachovány pro zpětnou kompatibilitu) ── */
+  --text-h1: var(--fs-100);
+  --text-h2: var(--fs-70);
+  --text-h2-vp: var(--fs-52);
+  --text-h3: var(--fs-40);
+  --text-section-body: var(--fs-22);
+  --text-label: var(--fs-18);
 
   --space-8: 8px;
   --space-16: 16px;
@@ -56,5 +86,31 @@
   :root {
     --space-80: 48px;
     --space-120: 64px;
+
+    /* ── Type scale — mobile values (desktop × 0.8, min 16px) ── */
+    --fs-160: 128px;
+    --fs-100:  80px;
+    --fs-80:   64px;
+    --fs-72:   58px;
+    --fs-70:   56px;
+    --fs-64:   52px;
+    --fs-60:   48px;
+    --fs-56:   44px;
+    --fs-52:   42px;
+    --fs-48:   38px;
+    --fs-46:   36px;
+    --fs-44:   36px;
+    --fs-42:   34px;
+    --fs-40:   32px;
+    --fs-38:   30px;
+    --fs-36:   28px;
+    --fs-32:   26px;
+    --fs-30:   24px;
+    --fs-28:   22px;
+    --fs-24:   20px;
+    --fs-22:   18px;
+    --fs-21:   17px;
+    --fs-20:   16px;
+    --fs-18:   16px;
   }
 }

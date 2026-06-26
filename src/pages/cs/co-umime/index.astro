@@ -167,14 +167,14 @@ const services = [
     transform: translateY(-50%);
   }
   .co-hero h1 {
-    font-size: clamp(56px, 7.8vw, 100px);
+    font-size: var(--fs-100);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
   }
   .co-hero-sub {
     font-family: var(--font-secondary);
-    font-size: clamp(18px, 1.8vw, 22px);
+    font-size: var(--fs-22);
     font-weight: 400;
     color: rgba(255,255,255,0.85);
     line-height: 1.5;
@@ -214,7 +214,7 @@ const services = [
 
   .svc-num-text {
     font-family: var(--font-primary);
-    font-size: clamp(80px, 12vw, 160px);
+    font-size: var(--fs-160);
     font-weight: 700;
     line-height: 1;
     color: rgba(255,255,255,0.12);
@@ -223,7 +223,7 @@ const services = [
 
   .svc-title {
     font-family: var(--font-primary);
-    font-size: clamp(26px, 3.5vw, 48px);
+    font-size: var(--fs-48);
     font-weight: 600;
     line-height: 1.2;
     color: #fff;
@@ -253,7 +253,7 @@ const services = [
   }
   .section-label {
     font-family: var(--font-primary);
-    font-size: clamp(26px, 3.5vw, 48px);
+    font-size: var(--fs-48);
     font-weight: 600;
     color: #fff;
     line-height: 1.2;
@@ -290,16 +290,16 @@ const services = [
     margin-bottom: 16px;
   }
   .app-card-body { padding: 28px 32px 36px; flex: 1; display: flex; flex-direction: column; }
-  .app-card-body h3 { font-size: clamp(20px, 2.5vw, 30px); font-weight: 600; margin-bottom: 10px; }
+  .app-card-body h3 { font-size: var(--fs-30); font-weight: 600; margin-bottom: 10px; }
   .app-card-body p { font-size: 16px; color: var(--neutral-300); line-height: 1.6; margin-bottom: 20px; flex: 1; }
   .app-link { color: var(--action); font-size: 15px; font-weight: 500; }
 
   /* ─── CTA ─── */
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }
-  .cta-inner h2 { font-family: var(--font-primary); font-size: clamp(40px, 5vw, 70px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
+  .cta-inner h2 { font-family: var(--font-primary); font-size: var(--fs-70); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: var(--space-40); }
   .cta-contacts { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
-  .cta-contact { font-family: var(--font-primary); font-size: clamp(22px, 3vw, 40px); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity 0.2s; }
+  .cta-contact { font-family: var(--font-primary); font-size: var(--fs-40); font-weight: 700; color: var(--ae-straight-blue); text-decoration: none; transition: opacity 0.2s; }
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
