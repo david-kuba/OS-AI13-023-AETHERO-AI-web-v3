@@ -178,7 +178,7 @@ const blogPosts = [
             <div class="service-content">
               <span class="service-num">{s.num}</span>
               <p class="service-text" set:html={s.pre}></p>
-              <h3 class="service-title" set:html={s.title}></h3>
+              <h2 class="service-title" set:html={s.title}></h2>
             </div>
           </a>
         ))}
@@ -208,7 +208,7 @@ const blogPosts = [
       <div class="features-grid">
         {features.map((col) => (
           <div class="feature-col">
-            <h5 class="feature-col-title">{col.title}</h5>
+            <h3 class="feature-col-title">{col.title}</h3>
             <ul class="feature-list">
               {col.items.map((item) => (
                 <li class="feature-item">
@@ -250,7 +250,7 @@ const blogPosts = [
     <div class="container">
       <div class="ae-services-header">
         <img src="/ae-znak.svg" alt="aethero" class="ae-znak" width="120" height="120" loading="lazy" />
-        <h5 class="ae-services-title">COMPREHENSIVE SHOPIFY SUPPORT</h5>
+        <p class="ae-services-title">COMPREHENSIVE SHOPIFY SUPPORT</p>
       </div>
       <div class="ae-services-grid">
         {allServices.map((s) => (
