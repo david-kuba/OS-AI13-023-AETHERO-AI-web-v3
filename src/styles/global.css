@@ -361,3 +361,40 @@ img { max-width: 100%; height: auto; }
 /* text-link--arrow — šipka se nepodtrhuje, pouze text ve <span> */
 .text-link--arrow { color: var(--action); text-decoration: none; }
 .text-link--arrow:hover span { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ─── QUOTE — znovupoužitelný citát (dekorativní glyf „ + jemný glow, serif kurzíva) ─── */
+.quote {
+  position: relative;
+  max-width: 660px;
+  padding: calc(var(--space-16) + 10px) 0 0 calc(var(--space-40) + 10px);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-24);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+.quote::before {
+  content: '\201E';
+  position: absolute; top: -0.42em; left: -0.06em;
+  font-family: var(--font-serif); font-style: italic; font-weight: 400;
+  font-size: var(--fs-100); line-height: 1;
+  color: var(--text-secondary); opacity: 0.9;
+  text-shadow: 0 0 28px rgba(160,129,209,0.5);
+  pointer-events: none;
+}
+.quote p { margin-bottom: var(--space-16); }
+.quote cite {
+  font-family: var(--font-secondary);
+  font-size: 14px; font-style: normal; font-weight: 600;
+  color: rgba(255,255,255,0.55); display: block;
+  margin-top: var(--space-16);
+}
+
+/* Vycentrovaná varianta (hero citát) — glyf nahoře na střed */
+.quote--center {
+  max-width: 760px; margin-left: auto; margin-right: auto;
+  text-align: center; font-size: var(--fs-32);
+  padding: 0 var(--space-24);
+}
+.quote--center::before { content: none; }
+.quote--center cite { font-size: 16px; margin-top: var(--space-24); }

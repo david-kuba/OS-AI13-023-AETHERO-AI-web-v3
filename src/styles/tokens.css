@@ -21,6 +21,7 @@
 
   --font-primary: 'Kanit', system-ui, sans-serif;
   --font-secondary: 'Montserrat', system-ui, sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
   --stats-num-color: #060838;
 
   /* ── Type scale — desktop values ── */
@@ -64,7 +65,9 @@
   --space-8: 8px;
   --space-16: 16px;
   --space-24: 24px;
+  --space-32: 32px;
   --space-40: 40px;
+  --space-64: 64px;
   --space-80: 80px;
   --space-120: 120px;
 
