@@ -1,6 +1,15 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
+import WorkSidebar from '../../../components/layout/WorkSidebar.astro';
+
+// TODO: placeholder — obsah dovymyslíme
+const placeholderItems = [
+  { icon: '<circle cx="12" cy="12" r="10"/>', title: 'Doplnit', desc: 'Obsah doplníme.' },
+  { icon: '<circle cx="12" cy="12" r="10"/>', title: 'Doplnit', desc: 'Obsah doplníme.' },
+  { icon: '<circle cx="12" cy="12" r="10"/>', title: 'Doplnit', desc: 'Obsah doplníme.' },
+  { icon: '<circle cx="12" cy="12" r="10"/>', title: 'Doplnit', desc: 'Obsah doplníme.' },
+];
 
 const features = [
   { title: 'Technický support & troubleshooting', desc: 'Řešíme komplexní technické problémy v Liquid šablonách, custom aplikacích, Shopify Functions, checkoutu i napojených službách. Identifikujeme příčiny chyb, ne jen jejich symptomy.', img: '/support.jpg', reverse: false },
@@ -27,20 +36,23 @@ const features = [
     imageAlt="Rozvoj a podpora Shopify"
   />
 
-  <!-- Intro -->
+  <!-- Intro + sidebar (placeholder) -->
   <section class="section bg-primary">
-    <div class="container">
-      <h2 class="h1 intro-h2"><span class="accent-purple">S ČÍM CHCETE POMOCI</span><br />na Shopify projektu?</h2>
-      <p class="intro-text"><strong class="hl">Někdy hledání videí k řešení problému prostě nestačí</strong> a je potřeba hlubší technický vhled, zkušenost z více reálných projektů a tím možnost najít širší souvislosti.</p>
-      <p class="intro-text">Chceme abyste věděli, že ani po pár letech <strong class="hl">nemáme nos nahoru a když to půjde pomůžeme vám</strong>. Rozvoj a podpora Shopify projektů nekončí spuštěním e-shopu.</p>
-      <a href="#cta" class="btn-secondary">Tak pojďme na to</a>
+    <div class="container intro-layout">
+      <div class="intro-main">
+        <h2 class="h1 intro-h2"><span class="accent-purple">S ČÍM CHCETE POMOCI</span><br />na Shopify projektu?</h2>
+        <p class="intro-text"><strong class="hl">Někdy hledání videí k řešení problému prostě nestačí</strong> a je potřeba hlubší technický vhled, zkušenost z více reálných projektů a tím možnost najít širší souvislosti.</p>
+        <p class="intro-text">Chceme abyste věděli, že ani po pár letech <strong class="hl">nemáme nos nahoru a když to půjde pomůžeme vám</strong>. Rozvoj a podpora Shopify projektů nekončí spuštěním e-shopu.</p>
+        <a href="#cta" class="btn-secondary">Tak pojďme na to</a>
+      </div>
+      <WorkSidebar heading="JAK ZAČNEME" items={placeholderItems} />
     </div>
   </section>
 
   <!-- Co pro vás uděláme -->
   <section class="section bg-primary">
     <div class="container">
-      <h2 class="h2-mini section-title" id="co-udelame">Co pro vás můžeme v rámci naší technické podpory udělat</h2>
+      <h2 class="h2-mini section-title" id="co-udelame">Co pro vás můžeme v rámci<br />naší technické podpory udělat</h2>
     </div>
   </section>
 
@@ -76,6 +88,11 @@ const features = [
   .intro-heading { font-size: var(--fs-52); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); max-width: 760px; }
   .text-action { color: #fff; }
   .intro-h2 { margin-bottom: var(--space-40); }
+  /* Intro + sidebar = 2 sloupce */
+  .intro-layout { display: grid; grid-template-columns: 1fr 355px; gap: var(--space-64); align-items: start; }
+  .intro-main { min-width: 0; }
+  .intro-main .intro-text { max-width: none; }
+  @media (max-width: 900px) { .intro-layout { grid-template-columns: 1fr; gap: var(--space-40); } }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: var(--fs-20); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }

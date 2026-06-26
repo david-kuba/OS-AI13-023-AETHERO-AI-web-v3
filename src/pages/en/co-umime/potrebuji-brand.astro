@@ -84,7 +84,7 @@ const workCards = [
   <!-- Muhtar Kent quote -->
   <section class="section bg-primary quote-section">
     <div class="container">
-      <blockquote class="quote quote--center kent-quote">"A brand is a promise. And a great brand is a promise kept."<cite>— Muhtar Kent</cite></blockquote>
+      <blockquote class="quote-display">"A brand is a promise.<br />And a great brand<br />is a promise kept."<cite>— Muhtar Kent</cite></blockquote>
     </div>
   </section>
 
@@ -126,7 +126,7 @@ const workCards = [
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: var(--radius-md); padding: var(--space-32);
   }
-  .work-heading { font-size: var(--fs-18); font-weight: 700; letter-spacing: 0.08em; margin-bottom: var(--space-24); color: rgba(255,255,255,0.55); text-transform: uppercase; line-height: 1.3; }
+  .work-heading { font-size: var(--fs-18); font-weight: 700; letter-spacing: 0.08em; margin-bottom: var(--space-24); color: #fff; text-transform: uppercase; line-height: 1.3; padding-left: calc(42px + var(--space-16)); }
   .work-list { display: flex; flex-direction: column; }
   .work-item {
     display: flex; gap: var(--space-16); align-items: flex-start;
@@ -177,7 +177,7 @@ const workCards = [
   }
 
   .quote-section { padding: var(--space-80) 0; }
-  /* kent-quote: styling from global .quote.quote--center */
+  /* kontrastní citát: styl z globálního .quote-display */
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
   .cta-inner { text-align: center; }

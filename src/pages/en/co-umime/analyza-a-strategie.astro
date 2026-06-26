@@ -73,15 +73,10 @@ const steps = [
           <a href="#how-it-works" class="text-link">What are those?</a>
         </div>
         <div>
-          <h3 class="analyze-label">WHAT WE ANALYSE</h3>
-          <ul class="analyze-list">
+          <h4 class="h4">WHAT WE ANALYSE</h4>
+          <ul class="arrow-list">
             {analyzeItems.map((a) => (
-              <li>
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>{a}</span>
-              </li>
+              <li>{a}</li>
             ))}
           </ul>
         </div>
@@ -144,14 +139,9 @@ const steps = [
       <div class="output-col">
         <div>
           <p class="section-text body">No Excel tables that nobody opens. The result is a live strategy document available online — clear, specific, with a clickable action plan.</p>
-          <ul class="deliverables-list">
+          <ul class="arrow-list" style="margin-bottom: var(--space-32)">
             {deliverables.map((d) => (
-              <li>
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>{d}</span>
-              </li>
+              <li>{d}</li>
             ))}
           </ul>
           <a href="/en/groomo-cz-na-shopify" class="text-link">OK, check out the examples</a>
@@ -185,14 +175,9 @@ const steps = [
   <section class="section bg-primary">
     <div class="container">
       <h2 class="section-title-center">This service is for you, <span class="text-action">if...</span></h2>
-      <ul class="for-who-list">
+      <ul class="arrow-list arrow-list--center">
         {forWho.map((f) => (
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>{f}</span>
-          </li>
+          <li>{f}</li>
         ))}
       </ul>
     </div>
@@ -236,15 +221,9 @@ const steps = [
   .section-text-center { text-align: center; max-width: 600px; margin: 0 auto; }
 
   .two-col-analyze { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .analyze-label { font-family: var(--font-primary); font-size: 14px; font-weight: 700; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: var(--space-24); }
-  .analyze-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .analyze-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.5; }
-  .analyze-list svg { flex-shrink: 0; margin-top: 2px; }
+  /* WHAT WE ANALYSE nadpis → .h4; seznamy → globální .arrow-list */
 
   .output-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .deliverables-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-32); }
-  .deliverables-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.5; }
-  .deliverables-list svg { flex-shrink: 0; margin-top: 2px; }
 
   .case-study-wrap { display: flex; }
   .case-study-card { position: relative; border-radius: var(--radius-md); overflow: hidden; }
@@ -267,9 +246,6 @@ const steps = [
   .step-num { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-12); }
   .step-card p { font-size: 14px; color: var(--neutral-300); line-height: 1.6; }
 
-  .for-who-list { list-style: none; display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto; }
-  .for-who-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
-  .for-who-list svg { flex-shrink: 0; margin-top: 2px; }
 
   .testimonials-label { font-size: var(--fs-24); font-weight: 600; margin-bottom: var(--space-40); text-align: center; }
   .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }

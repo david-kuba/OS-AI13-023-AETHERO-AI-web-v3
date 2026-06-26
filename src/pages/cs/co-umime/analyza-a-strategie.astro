@@ -1,6 +1,14 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
+import WorkSidebar from '../../../components/layout/WorkSidebar.astro';
+
+const processItems = [
+  { icon: '<path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" x2="16" y1="12" y2="12"/>', title: 'Napojení dat', desc: 'Pošlete nám exporty nebo API přístup. Bez přístupu pomůžeme — data vytáhneme sami, diskrétně.' },
+  { icon: '<line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/>', title: 'Analýza', desc: 'Projdeme data do hloubky: objednávky, kampaně, zákazníci. Typicky 1–3 dny podle rozsahu.' },
+  { icon: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>', title: 'Živá spolupráce', desc: 'Výsledky procházíme s vámi v reálném čase. Strategie šitá na míru — žádné šablony.' },
+  { icon: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/>', title: 'Strategický dokument + plán', desc: 'Online dokument s analýzou a klikacím 365denním plánem, kdykoli přístupný.' },
+];
 
 const analyzeItems = [
   'E-mail marketing — Leadhub, Klaviyo, Mailchimp, Ecomail a další. Kampaně, automations, segmenty, open rate, CTR, revenue na email.',
@@ -51,13 +59,17 @@ const steps = [
     imageAlt="Analýza a strategie pro e-shop"
   />
 
-  <!-- Přestaňte hádat -->
+  <!-- Přestaňte hádat + JAK TO FUNGUJE sidebar -->
   <section class="section bg-primary">
-    <div class="container">
-      <h2 class="h1 intro-h2">Přestaňte hádat,<br /><span class="accent-purple">ZJISTĚTE PROČ</span></h2>
-      <p class="intro-text">Váš e-shop vám totiž něco říká. <strong class="hl">Posloucháte ho?</strong> Každý e-shop má v sobě a v datech schovaný příběh — kde vydělává, kde krvácí, proč někteří zákazníci zůstávají a jiní zmizí po prvním nákupu. <strong class="hl">Ta data už dávno máte, jen je nikdo nečte.</strong> A měl by.</p>
-      <p class="intro-text">Chce to zkušenost a trochu technického voo-doo, ale pak se s vašimi daty, plány a ochočenou AI posadíme, propojíme je s čím je potřeba: Google Ads, Analytics, Metou i s mailovým klientem a <strong class="hl">vrátíme vám strategii, která má čísla u každého doporučení</strong>: kolik to vydělá, kolik ušetří, kdy to zapnout.</p>
-      <a href="#cta" class="btn-secondary">Chcete analýzu? Zavolejte</a>
+    <div class="container intro-layout">
+      <div class="intro-main">
+        <h2 class="h1 intro-h2">Přestaňte hádat,<br /><span class="accent-purple">ZJISTĚTE PROČ</span></h2>
+        <p class="intro-text">Váš e-shop vám totiž něco říká. <strong class="hl">Posloucháte ho?</strong> Každý e-shop má v sobě a v datech schovaný příběh — kde vydělává, kde krvácí, proč někteří zákazníci zůstávají a jiní zmizí po prvním nákupu. <strong class="hl">Ta data už dávno máte, jen je nikdo nečte.</strong> A měl by.</p>
+        <p class="intro-text">Chce to zkušenost a trochu technického voo-doo, ale pak se s vašimi daty, plány a ochočenou AI posadíme, propojíme je s čím je potřeba: Google Ads, Analytics, Metou i s mailovým klientem a <strong class="hl">vrátíme vám strategii, která má čísla u každého doporučení</strong>: kolik to vydělá, kolik ušetří, kdy to zapnout.</p>
+        <a href="#cta" class="btn-secondary">Chcete analýzu? Zavolejte</a>
+      </div>
+      {/* TODO k dořešení (memory: todo_co_umime_lists): tento proces je duplicitní — stejné kroky jsou i dole jako steps-grid sekce. */}
+      <WorkSidebar heading="JAK TO FUNGUJE" items={processItems} />
     </div>
   </section>
 
@@ -72,8 +84,8 @@ const steps = [
           <a href="#jak-to-funguje" class="text-link">Co to jsou?</a>
         </div>
         <div>
-          <h3 class="analyze-label">CO ANALYZUJEME</h3>
-          <ul class="analyze-list">
+          <h4 class="h4">CO ANALYZUJEME</h4>
+          <ul class="arrow-list">
             {analyzeItems.map((a) => (
               <li>{a}</li>
             ))}
@@ -138,7 +150,7 @@ const steps = [
       <div class="output-col">
         <div>
           <p class="section-text body">Žádné tabulky v Excelu, které si nikdo neotevře. Výsledkem je živý strategický dokument dostupný online — přehledný, konkrétní, s klikacím akčním plánem.</p>
-          <ul class="deliverables-list">
+          <ul class="arrow-list" style="margin-bottom: var(--space-32)">
             {deliverables.map((d) => (
               <li>{d}</li>
             ))}
@@ -175,7 +187,7 @@ const steps = [
   <section class="section bg-primary">
     <div class="container">
       <h2 class="h2-mini section-title-center">Služba je pro vás, <span class="text-action">pokud...</span></h2>
-      <ul class="for-who-list">
+      <ul class="arrow-list arrow-list--center">
         {forWho.map((f) => (
           <li>{f}</li>
         ))}
@@ -208,6 +220,11 @@ const steps = [
   .intro-heading { font-size: var(--fs-52); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
   .text-action { color: #fff; }
   .intro-h2 { margin-bottom: var(--space-40); }
+  /* Intro + sidebar = 2 sloupce */
+  .intro-layout { display: grid; grid-template-columns: 1fr 355px; gap: var(--space-64); align-items: start; }
+  .intro-main { min-width: 0; }
+  .intro-main .intro-text { max-width: none; }
+  @media (max-width: 900px) { .intro-layout { grid-template-columns: 1fr; gap: var(--space-40); } }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: var(--fs-20); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
@@ -221,15 +238,9 @@ const steps = [
   .section-text-center { text-align: center; max-width: 600px; margin: 0 auto; }
 
   .two-col-analyze { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .analyze-label { font-family: var(--font-primary); font-size: 14px; font-weight: 700; letter-spacing: 0; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: var(--space-24); }
-  .analyze-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .analyze-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.55; }
-  .analyze-list li::before { content: '➔'; color: var(--text-secondary); flex-shrink: 0; line-height: 1.55; }
+  /* CO ANALYZUJEME nadpis → globální .h4; seznam → globální .arrow-list */
 
   .output-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .deliverables-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-32); }
-  .deliverables-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.55; }
-  .deliverables-list li::before { content: '➔'; color: var(--text-secondary); flex-shrink: 0; line-height: 1.55; }
 
   .case-study-wrap { display: flex; }
   .case-study-card { position: relative; border-radius: var(--radius-md); overflow: hidden; }
@@ -252,9 +263,6 @@ const steps = [
   .step-num { width: 38px; height: 38px; border-radius: 50%; background: var(--text-secondary); color: #fff; font-family: var(--font-primary); font-weight: 900; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-16); }
   .step-title { display: block; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: var(--space-12); }
 
-  .for-who-list { list-style: none; display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto; }
-  .for-who-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.55; }
-  .for-who-list li::before { content: '➔'; color: var(--text-secondary); flex-shrink: 0; line-height: 1.55; }
 
   .testimonials-label { margin-bottom: var(--space-40); text-align: center; }
   .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }

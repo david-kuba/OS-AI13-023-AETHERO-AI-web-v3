@@ -1,6 +1,14 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
+import WorkSidebar from '../../../components/layout/WorkSidebar.astro';
+
+const migrationSteps = [
+  { icon: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>', title: 'Start', desc: 'Rozhodli jste se pro přechod na Shopify s námi.' },
+  { icon: '<line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/>', title: 'Příprava', desc: 'Společně uděláme přípravu na migraci.' },
+  { icon: '<rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>', title: 'Data & SEO', desc: 'Zkontrolujeme vstupy a nastavíme výstupy dle očekávání.' },
+  { icon: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>', title: 'Migrace na Shopify', desc: 'Značka, narativ, barvy, digitální prezence, to vše hraje roli.' },
+];
 
 const checkItems = [
   'Multi-měna a vícejazyčnost bez pluginů',
@@ -34,13 +42,16 @@ const features = [
     imageAlt="Přechod na Shopify"
   />
 
-  <!-- Intro -->
+  <!-- Intro + JAK TO UDĚLÁME sidebar -->
   <section class="section bg-primary">
-    <div class="container">
-      <h2 class="h1 intro-h2">Odstartujeme váš<br /><span class="accent-purple">PŘECHOD NA SHOPIFY</span></h2>
-      <p class="intro-text">Narážíte na limity Shoptetu nebo WooCommerce? <strong class="hl">Shopify je otevřená globální platforma navržená pro růst</strong> — multi-měna, vícejazyčnost, integrace externích systémů a propojení online i offline prodeje přes POS.</p>
-      <p class="intro-text">Pomůžeme vám <strong class="hl">přejít plynule — se zachováním SEO, dat i zákaznické zkušenosti</strong>. Spolupracujeme s e-shopy od startupů po velké hráče a víme, na co si dát pozor a jak neztrácet čas ani peníze.</p>
-      <a href="#cta" class="btn-secondary">Ano, chceme migraci</a>
+    <div class="container intro-layout">
+      <div class="intro-main">
+        <h2 class="h1 intro-h2">Odstartujeme váš<br /><span class="accent-purple">PŘECHOD NA SHOPIFY</span></h2>
+        <p class="intro-text">Narážíte na limity Shoptetu nebo WooCommerce? <strong class="hl">Shopify je otevřená globální platforma navržená pro růst</strong> — multi-měna, vícejazyčnost, integrace externích systémů a propojení online i offline prodeje přes POS.</p>
+        <p class="intro-text">Pomůžeme vám <strong class="hl">přejít plynule — se zachováním SEO, dat i zákaznické zkušenosti</strong>. Spolupracujeme s e-shopy od startupů po velké hráče a víme, na co si dát pozor a jak neztrácet čas ani peníze.</p>
+        <a href="#cta" class="btn-secondary">Ano, chceme migraci</a>
+      </div>
+      <WorkSidebar heading="JAK TO UDĚLÁME" items={migrationSteps} />
     </div>
   </section>
 
@@ -59,12 +70,7 @@ const features = [
         <h2 class="h2 section-title">Jak to začít</h2>
         <ul class="check-list">
           {checkItems.map((c) => (
-            <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>{c}</span>
-            </li>
+            <li>{c}</li>
           ))}
         </ul>
       </div>
@@ -114,6 +120,11 @@ const features = [
   .intro-heading { font-size: var(--fs-52); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); max-width: 760px; }
   .text-action { color: #fff; }
   .intro-h2 { margin-bottom: var(--space-40); }
+  /* Intro + JAK TO UDĚLÁME sidebar = 2 sloupce */
+  .intro-layout { display: grid; grid-template-columns: 1fr 355px; gap: var(--space-64); align-items: start; }
+  .intro-main { min-width: 0; }
+  .intro-main .intro-text { max-width: none; }
+  @media (max-width: 900px) { .intro-layout { grid-template-columns: 1fr; gap: var(--space-40); } }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text { font-size: var(--fs-20); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
@@ -127,9 +138,7 @@ const features = [
   .two-col-check { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .edition-img-wrap { margin-bottom: var(--space-24); }
   .edition-img { width: 100%; max-width: 400px; height: auto; border-radius: var(--radius-md); display: block; }
-  .check-list { list-style: none; display: flex; flex-direction: column; gap: 16px; padding-top: var(--space-8); }
-  .check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; }
-  .check-list svg { flex-shrink: 0; margin-top: 2px; }
+  /* check-list → globální .check-list (global.css) */
 
   .section-heading { padding: var(--space-80) 0 var(--space-40); }
   .feature-section-heading { margin-bottom: var(--space-16); }

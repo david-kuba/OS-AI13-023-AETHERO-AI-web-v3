@@ -111,14 +111,9 @@ const capabilities = [
           <p class="section-text body">Shopify invests tens of billions of dollars annually in infrastructure. Which means you are not affected by outages, security incidents or falling behind the competition.</p>
           <a href="#features" class="text-link">What are those?</a>
         </div>
-        <ul class="capability-list" id="features">
+        <ul class="check-list" id="features">
           {capabilities.map((c) => (
-            <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>{c}</span>
-            </li>
+            <li>{c}</li>
           ))}
         </ul>
       </div>
@@ -213,9 +208,7 @@ const capabilities = [
   .section-title { font-size: var(--fs-70); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { margin-bottom: var(--space-24); }
   .two-col-capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .capability-list { list-style: none; display: flex; flex-direction: column; gap: 16px; padding-top: var(--space-8); }
-  .capability-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; }
-  .capability-list svg { flex-shrink: 0; margin-top: 1px; }
+  /* capability-list → globální .check-list */
 
   /* Feature sections */
   .feature-section { padding: var(--space-120) 0; }

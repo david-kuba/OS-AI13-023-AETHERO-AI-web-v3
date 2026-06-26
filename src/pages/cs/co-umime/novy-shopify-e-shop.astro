@@ -1,6 +1,15 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
+import WorkSidebar from '../../../components/layout/WorkSidebar.astro';
+
+const startSteps = [
+  { icon: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>', title: 'Vaše plány a požadavky', desc: 'Řekněte nám, jak si projekt představujete a jaké máte potřeby.' },
+  { icon: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>', title: 'Naše analýza, doporučení', desc: 'Projdeme podrobnosti, vyjasníme neznámé a vytvoříme doporučení rozsahu a možností.' },
+  { icon: '<path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/>', title: 'Nabídka → Smlouva', desc: 'Po zpřesnění z obou stran vzniká nabídka a z té pak smlouva.' },
+  { icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>', title: 'Projekt', desc: 'Rozbíháme projekt, společně s vámi nastavujeme, propojujeme a vytváříme.' },
+  { icon: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>', title: 'Správa a rozvoj', desc: 'Po spuštění práce nekončí, spíše začíná. Jste na cestě k úspěšnému e-commerce projektu.' },
+];
 
 const features = [
   {
@@ -92,11 +101,14 @@ const capabilities = [
 
   <!-- Pojďme rozběhnout -->
   <section class="section bg-primary">
-    <div class="container">
-      <h2 class="h1 intro-h2">Pojďme rozběhnout váš<br /><span class="accent-purple">NOVÝ E-SHOP</span> na Shopify</h2>
-      <p class="intro-text">Všechno začíná stejně — skvělý nápad, mlhavá představa o tom, jak ho spustit. Budete stavět sami, nebo s námi? <strong class="hl">Pokud si myslíte Shopify je pro vás velký, přesvědčíme vás o opaku.</strong></p>
-      <p class="intro-text">Pokud váš projekt myslíte vážně, <strong class="hl">víme, jak na to</strong>. Rádi spolupracujeme s lidmi, kteří přicházejí s plány — ne s otázkami, jestli to vůbec půjde. Zkušenosti a intuici přineseme my. Přijdete s cílem a my najdeme cestu.</p>
-      <a href="#cta" class="btn-secondary">Tak pojďme na to</a>
+    <div class="container intro-layout">
+      <div class="intro-main">
+        <h2 class="h1 intro-h2">Pojďme rozběhnout váš<br /><span class="accent-purple">NOVÝ E-SHOP</span> na Shopify</h2>
+        <p class="intro-text">Všechno začíná stejně — skvělý nápad, mlhavá představa o tom, jak ho spustit. Budete stavět sami, nebo s námi? <strong class="hl">Pokud si myslíte Shopify je pro vás velký, přesvědčíme vás o opaku.</strong></p>
+        <p class="intro-text">Pokud váš projekt myslíte vážně, <strong class="hl">víme, jak na to</strong>. Rádi spolupracujeme s lidmi, kteří přicházejí s plány — ne s otázkami, jestli to vůbec půjde. Zkušenosti a intuici přineseme my. Přijdete s cílem a my najdeme cestu.</p>
+        <a href="#cta" class="btn-secondary">Tak pojďme na to</a>
+      </div>
+      <WorkSidebar heading="JAK ZAČNEME" items={startSteps} />
     </div>
   </section>
 
@@ -110,14 +122,9 @@ const capabilities = [
           <p class="section-text body">Shopify investuje desítky miliard dolarů ročně do infrastruktury. Tím pádem, že se vás netýkají výpadky, bezpečnostní incidenty nebo zaostávání za konkurencí.</p>
           <a href="#features" class="text-link">Co to jsou?</a>
         </div>
-        <ul class="capability-list" id="features">
+        <ul class="check-list" id="features">
           {capabilities.map((c) => (
-            <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>{c}</span>
-            </li>
+            <li>{c}</li>
           ))}
         </ul>
       </div>
@@ -195,6 +202,11 @@ const capabilities = [
   }
   .text-action { color: #fff; }
   .intro-h2 { margin-bottom: var(--space-40); }
+  /* Intro + JAK ZAČNEME sidebar = 2 sloupce */
+  .intro-layout { display: grid; grid-template-columns: 1fr 355px; gap: var(--space-64); align-items: start; }
+  .intro-main { min-width: 0; }
+  .intro-main .intro-text { max-width: none; }
+  @media (max-width: 900px) { .intro-layout { grid-template-columns: 1fr; gap: var(--space-40); } }
   .accent-purple { color: var(--text-secondary); }
   .hl { color: var(--text-secondary); font-weight: 900; }
   .intro-text {
@@ -212,9 +224,7 @@ const capabilities = [
   .section-title { margin-bottom: var(--space-40); }
   .section-text { margin-bottom: var(--space-24); }
   .two-col-capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .capability-list { list-style: none; display: flex; flex-direction: column; gap: 16px; padding-top: var(--space-8); }
-  .capability-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.5; }
-  .capability-list svg { flex-shrink: 0; margin-top: 1px; }
+  /* capability-list → globální .check-list */
 
   /* Feature sections */
   .feature-section { padding: var(--space-120) 0; }

@@ -398,3 +398,35 @@ img { max-width: 100%; height: auto; }
 }
 .quote--center::before { content: none; }
 .quote--center cite { font-size: 16px; margin-top: var(--space-24); }
+
+/* Kontrastní display citát — tučný Kanit (bezpatkový), vlevo, těsné řádky */
+.quote-display {
+  font-family: var(--font-primary); font-weight: 700;
+  font-size: var(--fs-44); line-height: 1.15; color: #fff;
+  text-align: left; max-width: 860px;
+}
+.quote-display cite {
+  display: block; font-family: var(--font-secondary);
+  font-size: 16px; font-style: normal; font-weight: 600;
+  color: rgba(255,255,255,0.55); margin-top: var(--space-24);
+}
+
+/* ─── ARROW LIST — znovupoužitelný šipkový seznam (➔ + text) ─── */
+.arrow-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-16); }
+.arrow-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-family: var(--font-secondary);
+  font-size: var(--text-body); color: rgba(255,255,255,0.8); line-height: 1.6;
+}
+.arrow-list li::before { content: '➔'; color: var(--text-secondary); flex-shrink: 0; }
+/* vycentrovaná varianta (např. „pro koho") */
+.arrow-list--center { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+/* ─── CHECK LIST — znovupoužitelný checklist (✓ + text), feature/capability ─── */
+.check-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-16); }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-family: var(--font-secondary);
+  font-size: var(--text-body); color: rgba(255,255,255,0.8); line-height: 1.6;
+}
+.check-list li::before { content: '✓'; color: var(--action); font-weight: 700; flex-shrink: 0; }
