@@ -14,9 +14,35 @@ const { title, description, ogImage, lang } = Astro.props;
 ---
 
 <BaseLayout {title} {description} {ogImage} {lang}>
+  <a href="#main-content" class="skip-link">
+    {lang === 'en' ? 'Skip to content' : 'Přeskočit na obsah'}
+  </a>
   <Header lang={lang} />
-  <main>
+  <main id="main-content">
     <slot />
   </main>
   <Footer lang={lang} />
 </BaseLayout>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 9999;
+    padding: 12px 20px;
+    background: var(--action);
+    color: #000326;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 6px 6px;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus {
+    top: 0;
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+</style>
