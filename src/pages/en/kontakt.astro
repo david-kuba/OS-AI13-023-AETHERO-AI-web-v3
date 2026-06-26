@@ -251,13 +251,27 @@ import PageLayout from '../../layouts/PageLayout.astro';
     .contact-grid { grid-template-columns: 1fr; gap: var(--space-48); }
   }
   @media (max-width: 768px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-img-wrap { display: none; }
-    .kontakt-hero { padding: 90px 0 60px; }
+    .kontakt-hero { padding: 0 0 60px; }
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-img-wrap {
+      display: block;
+      order: -1;
+      width: 100%;
+      padding-top: 80px;
+      text-align: center;
+    }
+    .hero-img {
+      width: clamp(140px, 45vw, 220px);
+      margin: 0 auto;
+      display: block;
+    }
     #contact-map { height: 320px; }
   }
   @media (max-width: 480px) {
-    .kontakt-hero { padding: 70px 0 48px; }
+    .hero-img-wrap { padding-top: 64px; }
     .section { padding: var(--space-80) 0; }
   }
 </style>
