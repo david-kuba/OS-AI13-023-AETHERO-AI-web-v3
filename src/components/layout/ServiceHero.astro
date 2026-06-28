@@ -7,11 +7,12 @@ export interface Props {
   ctaHref?: string;
   cta2Label?: string;
   cta2Href?: string;
+  ctaLower?: boolean;
   lang?: 'cs' | 'en';
   image?: string;
   imageAlt?: string;
 }
-const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+420776067663', cta2Label, cta2Href, lang = 'cs', image, imageAlt = '' } = Astro.props;
+const { label, title, subtitle, ctaLabel = 'Zavolejme si', ctaHref = 'tel:+420776067663', cta2Label, cta2Href, ctaLower = true, lang = 'cs', image, imageAlt = '' } = Astro.props;
 const contactHref = cta2Href || `/${lang}/kontakt`;
 const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte jak');
 ---
@@ -26,8 +27,8 @@ const contactLabel = cta2Label || (lang === 'en' ? 'Find out how' : 'Zjistěte j
       <h1 set:html={title} />
       <p class="hero-sub">{subtitle}</p>
       <div class="hero-ctas">
-        <a href={ctaHref} class="btn-primary">{ctaLabel}</a>
-        <a href={contactHref} class="btn-ghost">{contactLabel}</a>
+        <a href={ctaHref} class={`btn-primary${ctaLower ? ' btn-primary--lower' : ''}`}>{ctaLabel}</a>
+        <a href={contactHref} class={`btn-ghost${ctaLower ? ' btn-ghost--lower' : ''}`}>{contactLabel}</a>
       </div>
     </div>
     {image && (

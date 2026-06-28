@@ -264,8 +264,8 @@ const blogPosts = [
         ))}
       </div>
       <div class="ae-services-ctas">
-        <a href="/en/kontakt" class="btn-teal">Book a consultation</a>
-        <a href="/en/co-umime" class="btn-outline">How we work</a>
+        <a href="/en/kontakt" class="btn-action btn-action--lg">Book a consultation</a>
+        <a href="/en/co-umime" class="btn-action btn-action--lg btn-action--ghost">How we work</a>
       </div>
     </div>
   </section>
@@ -276,7 +276,7 @@ const blogPosts = [
       <h2 class="section-heading">References</h2>
       <div class="ref-grid">
         <div class="ref-card">
-          <h3 class="ref-title"><a href="https://bu1.cz" target="_blank" rel="noopener noreferrer">BU1.cz, BU1sport.com</a></h3>
+          <h3 class="h3-mini ref-title"><a href="https://bu1.cz" target="_blank" rel="noopener noreferrer">BU1.cz, BU1sport.com</a></h3>
           <p class="ref-desc body">For <a href="https://bu1.cz" target="_blank" rel="noopener noreferrer" class="text-link">BU1.cz</a> we built an international Shopify store with a modern design focused on user experience. The solution supports multilingual selling and is ready for rapid growth.</p>
           <div class="ref-img-wrap">
             <img src="/ref-bu1.webp" alt="BU1 – Goalkeeper gloves and sportswear" width="800" height="450" loading="lazy" class="ref-img" />
@@ -284,10 +284,10 @@ const blogPosts = [
               <span class="ref-img-label">Goalkeeper gloves<br />and sportswear</span>
             </div>
           </div>
-          <a href="https://bu1.cz" target="_blank" rel="noopener noreferrer" class="btn-outline ref-cta">Visit BU1</a>
+          <a href="https://bu1.cz" target="_blank" rel="noopener noreferrer" class="btn-action btn-action--lg ref-cta">Visit BU1</a>
         </div>
         <div class="ref-card">
-          <h3 class="ref-title"><a href="/en/groomo-cz-na-shopify">GROOMO.cz</a></h3>
+          <h3 class="h3-mini ref-title"><a href="/en/groomo-cz-na-shopify">GROOMO.cz</a></h3>
           <p class="ref-desc body">GROOMO was built entirely in-house — from brand creation to Shopify development. The whole brand ecosystem is rooted in genuine passion, love for dogs and professionalism.</p>
           <div class="ref-img-wrap">
             <img src="/ref-groomo.webp" alt="GROOMO – For groomers and dog lovers" width="800" height="450" loading="lazy" class="ref-img" />
@@ -295,7 +295,7 @@ const blogPosts = [
               <span class="ref-img-label">For groomers<br />and dog lovers</span>
             </div>
           </div>
-          <a href="/en/groomo-cz-na-shopify" class="btn-outline ref-cta">GROOMO.cz Case Study</a>
+          <a href="/en/groomo-cz-na-shopify" class="btn-action btn-action--lg ref-cta">GROOMO.cz Case Study</a>
         </div>
       </div>
     </div>
@@ -780,9 +780,9 @@ const blogPosts = [
     flex-direction: column;
     gap: 24px;
   }
-  .ref-title { font-size: 20px; font-weight: 700; margin: 0; }
-  .ref-title a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
-  .ref-title a:hover { color: var(--action); }
+  .ref-title { margin: 0; }
+  .ref-title a { color: var(--action); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
+  .ref-title a:hover { color: var(--action-hover); }
   .ref-desc { font-weight: 500; margin: 0; }
   .ref-img-wrap {
     position: relative;

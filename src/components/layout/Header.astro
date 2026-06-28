@@ -32,7 +32,8 @@ const navItems = lang === 'en'
       },
       {
         label: 'APPS',
-        href: `${p}/esyncer`,
+        href: `${p}/co-umime/custom-vyvoj-a-aplikace`,
+        activeMatch: [`${p}/esyncer`, `${p}/ae-translator`],
         dropdown: [
           { label: 'eSyncer', href: `${p}/esyncer` },
           { label: 'AE Translator', href: `${p}/ae-translator` },
@@ -58,7 +59,8 @@ const navItems = lang === 'en'
       },
       {
         label: 'APLIKACE',
-        href: `${p}/esyncer`,
+        href: `${p}/co-umime/custom-vyvoj-a-aplikace`,
+        activeMatch: [`${p}/esyncer`, `${p}/ae-translator`],
         dropdown: [
           { label: 'eSyncer', href: `${p}/esyncer` },
           { label: 'AE Translator', href: `${p}/ae-translator` },
@@ -81,9 +83,12 @@ const navItems = lang === 'en'
         <span></span>
       </button>
       <ul class="nav-list">
-        {navItems.map((item) => (
+        {navItems.map((item) => {
+          const am = (item as { activeMatch?: string[] }).activeMatch;
+          const active = am ? am.some(isActive) : isActive(item.href);
+          return (
           <li class={item.dropdown ? 'has-dropdown' : ''}>
-            <a href={item.href} class={`nav-link${isActive(item.href) ? ' is-active' : ''}`}>
+            <a href={item.href} class={`nav-link${active ? ' is-active' : ''}`}>
               {item.label}
               {item.dropdown && (
                 <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -99,7 +104,8 @@ const navItems = lang === 'en'
               </ul>
             )}
           </li>
-        ))}
+          );
+        })}
         <!-- mobile-only lang switch inside nav overlay -->
         <li class="mobile-lang-li">
           <a href={otherPath} class="mobile-lang-link" aria-label={`Switch to ${otherLang.toUpperCase()}`}>
