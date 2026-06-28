@@ -194,12 +194,39 @@ const navItems = lang === 'en'
     z-index: 1000;
     transition: background var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base), transform 0.3s ease;
     padding: 22px 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%);
+    background: transparent;
+    /* fallback předchozí verze (ztmavující pruh): background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%); */
   }
 
+  /* Základní stav: glassmorphism strip — frosted nahoře, přes mask se vytrácí dolů.
+     V ::before, aby blur/mask nezasáhly text menu. Po scrollu se skryje. */
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 3, 38, 0.5) 0%, rgba(0, 3, 38, 0.12) 55%, transparent 100%);
+    backdrop-filter: blur(10px) saturate(1.3);
+    -webkit-backdrop-filter: blur(10px) saturate(1.3);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+  }
+  header.scrolled::before { opacity: 0; }
+
+  /* ──────────────────────────────────────────────────────────────
+     PŘEDCHOZÍ VERZE (fallback pro vrácení) — plná tmavá lišta přes celou šířku.
+     Pro návrat: nahradit blok „header.scrolled" + smazat „header.scrolled .header-inner"
+     a vrátit .header-inner bez border/border-radius/transition:
+        header.scrolled { background: rgba(0, 3, 38, 1); padding: 16px 0; }
+     (verze rovněž v gitu: commit 6567363, před glassmorphism lištou)
+     ────────────────────────────────────────────────────────────── */
+
+  /* Po scrollu: hlavička sama zprůhlední, plovoucí skleněná lišta je .header-inner */
   header.scrolled {
-    background: rgba(0, 3, 38, 1);
-    padding: 16px 0;
+    background: transparent;
+    padding: 12px 0;
   }
   header.nav-hidden {
     transform: translateY(-100%);
@@ -210,6 +237,19 @@ const navItems = lang === 'en'
     grid-template-columns: auto 1fr auto auto;
     align-items: center;
     gap: 0 24px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), padding var(--transition-base);
+  }
+
+  /* Plovoucí glassmorphism lišta (à la open-design, ale náš rounding + tmavý frost) */
+  header.scrolled .header-inner {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(14px) saturate(1.4);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 8px 32px rgba(0, 0, 0, 0.35);
+    padding: 4px var(--space-24);
   }
 
   /* Logo */
@@ -219,8 +259,10 @@ const navItems = lang === 'en'
     flex-shrink: 0;
     transition: opacity var(--transition-base);
   }
-  .logo img { display: block; }
+  .logo img { display: block; transition: width var(--transition-base); }
   .logo:hover { opacity: 0.8; }
+  /* Po odlepení zmenšit logo */
+  header.scrolled .logo img { width: 108px; height: auto; }
 
   /* Nav — col 2 (1fr, center) */
   nav {
@@ -235,6 +277,9 @@ const navItems = lang === 'en'
     list-style: none;
     margin: 0;
     padding: 0;
+    /* nav texty o 5px níž vůči liště (logo + jazyk beze změny) — relative, nemění výšku */
+    position: relative;
+    top: 5px;
   }
 
   li { position: relative; }
@@ -416,6 +461,7 @@ const navItems = lang === 'en'
       align-items: flex-start;
       gap: 4px;
       width: 100%;
+      top: 0; /* na mobilu žádný nudge */
     }
 
     .nav-link {
