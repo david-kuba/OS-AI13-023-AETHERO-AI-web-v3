@@ -37,6 +37,13 @@ img { max-width: 100%; height: auto; }
 .text-mini  { font-size: 14px; }
 /* .container-full = žádný max-width, použij přímo element bez třídy */
 
+/* ─── LAYOUT UTILITY (globální — dřív scoped na každé stránce, sjednoceno) ─── */
+.bg-primary { background: var(--ae-bg-primary); }
+.accent-purple { color: var(--text-secondary); }
+.text-action { color: #fff; }
+.section-intro { padding: var(--space-120) 0; }
+.cta-inner { text-align: center; }
+
 /* ═══════════════════════════════════════════════════════
    TYPOGRAFICKÁ ŠKÁLA — jediná pravda o fontech na webu
    Každá třída = exaktní hodnota ze specifikace.
