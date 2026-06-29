@@ -159,6 +159,12 @@ img { max-width: 100%; height: auto; }
   line-height: 1.5;
   color: rgba(255,255,255,0.8);
 }
+/* hl  →  zvýraznění v běžném textu: tučné + lavender. Inline <strong class="hl">…</strong>.
+   Globální (ne per-stránka) — platí i na obsah vložený přes set:html. */
+.hl {
+  color: var(--text-secondary);
+  font-weight: 900;
+}
 
 /* ─── LABEL / EYEBROW ─── */
 /* label  →  popisek nad nadpisem, kategorie */
@@ -339,12 +345,13 @@ img { max-width: 100%; height: auto; }
 }
 .btn-action--ghost:hover { background: #fff; color: #000; border-color: #fff; }
 
-/* text-link — sjednocená třída pro všechny textové inline odkazy */
-.text-link { color: var(--action); text-decoration: none; transition: opacity var(--transition-base); }
+/* text-link — sjednocená třída pro všechny textové inline odkazy.
+   Teal (--action) + o řez silnější (font-weight 500). Podtržení až na hover. */
+.text-link { color: var(--action); font-weight: 500; text-decoration: none; transition: color var(--transition-base); }
 .text-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* text-link--arrow — šipka se nepodtrhuje, pouze text ve <span> */
-.text-link--arrow { color: var(--action); text-decoration: none; }
+/* text-link--arrow — šipka se nepodtrhuje, pouze text ve <span> na hover */
+.text-link--arrow { color: var(--action); font-weight: 500; text-decoration: none; }
 .text-link--arrow:hover span { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ─── QUOTE — znovupoužitelný citát (dekorativní glyf „ + jemný glow, serif kurzíva) ─── */

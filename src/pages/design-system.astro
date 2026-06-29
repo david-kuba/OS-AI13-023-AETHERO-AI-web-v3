@@ -555,6 +555,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <td class="ds-gt-use">Caption, meta,<br/>datum</td>
             </tr>
             <tr>
+              <td class="ds-gt-id ds-locked">T4d</td>
+              <td><code class="ds-gt-class">.hl</code></td>
+              <td class="ds-gt-meta">font-weight 900<br/>color var(--text-secondary)<br/><em style="color:rgba(255,255,255,0.4);font-style:normal">inline &lt;strong class="hl"&gt;</em></td>
+              <td class="ds-gt-preview"><span class="body" style="color:rgba(255,255,255,0.8)">Funkce, které jsou <strong class="hl">u Shopify rovnou v základu</strong>, oceníte.</span></td>
+              <td class="ds-gt-use">Zvýraznění v běžném<br/>textu — tučné + lavender</td>
+            </tr>
+            <tr>
+              <td class="ds-gt-id ds-locked">T4e</td>
+              <td><code class="ds-gt-class">.text-link</code></td>
+              <td class="ds-gt-meta">font-weight 500<br/>color var(--action)<br/>podtržení až hover<br/><em style="color:rgba(255,255,255,0.4);font-style:normal">inline &lt;a class="text-link"&gt;</em></td>
+              <td class="ds-gt-preview"><span class="body" style="color:rgba(255,255,255,0.8)">Přečti si <a href="#text-link" class="text-link">náš přehled novinek</a> ze Shopify.</span></td>
+              <td class="ds-gt-use">Inline textové<br/>odkazy v textu</td>
+            </tr>
+            <tr>
               <td class="ds-gt-id ds-locked">T5</td>
               <td><code class="ds-gt-class">.label</code></td>
               <td class="ds-gt-meta">Kanit 600<br/>14px · ls 0.08em<br/>UPPERCASE<br/>rgba(255,255,255,0.7)<br/><em style="color:rgba(255,255,255,0.4);font-style:normal">barevný label → opacity 1</em></td>
@@ -564,7 +578,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </tbody>
         </table>
         <div class="ds-component-notes" style="margin-top:16px">
-          ⚡ Pravidlo: Lokální CSS smí přepsat <code>max-width</code> nebo <code>grid-template</code>, ale NIKDY nesmí lokálně redefinovat <code>font-size</code> na headinzích — to patří výhradně do globální škály.
+          ⚡ Pravidlo: Lokální CSS smí přepsat <code>max-width</code> nebo <code>grid-template</code>, ale NIKDY nesmí lokálně redefinovat <code>font-size</code> na headinzích ani <code>.hl</code> (bold lavender) — to patří výhradně do globální škály v <code>global.css</code>. Pro zvýraznění v textu vždy <code>&lt;strong class="hl"&gt;</code>, nikdy lokální obarvení.
         </div>
       </section>
 
@@ -960,7 +974,7 @@ font-family: var(--font-secondary);</code></pre>
         <!-- Textové odkazy -->
         <h3 class="ds-subsection-title">Textové odkazy</h3>
         <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:8px">Globální reset: <code style="color:#0DD4CD">{"a { color: inherit; text-decoration: none; }"}</code> — každý odkaz začíná bez barvy a bez podtržení.</p>
-        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:24px">Všechny inline textové odkazy sdílejí třídu <code style="color:#0DD4CD">.text-link</code> — barva <code>var(--action)</code>, hover: underline offset 3px. Velikost a tloušťka se dědí z kontextu.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:24px">Všechny inline textové odkazy sdílejí třídu <code style="color:#0DD4CD">.text-link</code> — barva <code>var(--action)</code>, <strong>font-weight 500</strong> (o řez silnější než text), podtržení až na hover (offset 3px). Velikost se dědí z kontextu.</p>
 
         <div style="display:flex;flex-direction:column;gap:3px">
 
