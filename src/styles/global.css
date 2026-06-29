@@ -38,6 +38,9 @@ img { max-width: 100%; height: auto; }
 /* .container-full = žádný max-width, použij přímo element bez třídy */
 
 /* ─── LAYOUT UTILITY (globální — dřív scoped na každé stránce, sjednoceno) ─── */
+/* .section base; esyncer/ae-translator (40px), kontakt (calc) a mobile @media si nechávají scoped override */
+.section { padding: var(--space-120) 0; }
+.section-text { margin-bottom: var(--space-24); }
 .bg-primary { background: var(--ae-bg-primary); }
 .accent-purple { color: var(--text-secondary); }
 .text-action { color: #fff; }
