@@ -15,62 +15,64 @@ const features = [
   {
     title: 'AI partner, right in your store',
     logo: '/shopify-sidekick-logo2.webp',
-    desc: 'Sidekick is an AI assistant integrated into the store admin that significantly speeds up your work in Shopify. It can handle operational tasks (create products, edit collections, analyse sales, prepare reports), help with marketing (writing descriptions, emails, SEO recommendations), propose and apply storefront modifications including appearance changes or edit the theme to order including Liquid code generation. Sidekick can explain how settings work in the admin, recommend steps for store growth, automate processes and suggest best practices. Answers are personalised based on your sales, customers and your store\'s specific configuration.',
+    logoText: 'Shopify<br />Sidekick',
+    desc: '<strong class="hl">Sidekick</strong> is an AI assistant integrated directly into your store\'s admin — and it will significantly speed up your work in Shopify. It can handle <strong class="hl">operational tasks</strong> (creating products, editing collections, analyzing sales, generating reports), support your <strong class="hl">marketing</strong> efforts (writing descriptions, emails, and SEO recommendations), and propose and apply <strong class="hl">storefront changes</strong> — including visual adjustments or theme edits based on your brief, right down to writing Liquid code. Sidekick can explain how admin settings work, recommend steps for growing your store, automate processes, and suggest best practices. Its responses are personalized based on your sales data, customers, and your store\'s specific configuration.',
     img: '/shopify-premium-story.webp',
     reverse: false,
   },
   {
-    title: 'A clear and modern admin',
+    title: 'Clean and modern admin',
     logo: null,
-    desc: 'An admin environment you get oriented in within minutes — even without technical knowledge. Products, orders, payments and content are all managed from one place, simply and logically. Instead of a complex system you get a tool that puts you in control of your store from day one. And don\'t worry — you can use it in English too.',
-    img: null,
+    desc: 'An admin interface you\'ll find your way around in no time — no technical knowledge required. Products, orders, payments, and content are all managed from one place, simply and intuitively. Instead of a complex system, you get a tool that puts you in control of your store from day one. And don\'t worry — you can use it in your local language too.',
+    img: '/shopify-admin.png',
     reverse: true,
   },
   {
-    title: 'Manage your store in the app',
+    title: 'Manage your store from the app',
     logo: null,
-    desc: 'The Shopify mobile app lets you manage the entire store from your phone. Track revenue in real time, process orders, respond to customers and monitor performance from anywhere in the world.',
+    desc: 'Shopify\'s native mobile app gives you full control over your store from anywhere. Track sales in real time, manage orders, add products, or communicate with customers — all from your phone. Whether you\'re on the road, in a meeting, or simply away from your desk, your store keeps running and you\'ve got it right in your pocket.',
     img: '/appka.webp',
     reverse: false,
   },
   {
-    title: 'Sell where life happens',
+    title: 'Sell where your customers are',
     logo: null,
-    desc: 'Instagram, TikTok, Facebook, Google Shopping, Amazon — all connected to a single Shopify admin. One warehouse, one source of truth for inventory, one hub for all orders.',
+    desc: 'Shopify lets you sell not just through your own store, but directly where your customers spend their time — on Instagram, TikTok, Facebook, Google Shopping, or Amazon. All channels are managed from one place, with orders, inventory, and analytics connected across the board. Instead of waiting for customers to come to you, you go to them.',
     img: '/prodej-kdekoliv.webp',
     reverse: true,
   },
   {
-    title: 'Analytics, marketing',
+    title: 'Analytics & marketing',
     logo: null,
-    desc: 'Clear dashboards, trend tracking and smart customer segmentation. Shopify Email, SMS marketing and integrations with Google Analytics, Meta Ads or Klaviyo — all without complex setup.',
+    desc: 'Shopify\'s analytics give you a clear picture of what\'s actually working in your marketing. <strong class="hl">With intuitive dashboards and smart reports, you can easily track revenue trends, customer behavior, and campaign performance.</strong> Integrations with tools like Google Analytics, ad platforms, and email services let you see the entire customer journey in context. The right measurement setup helps you respond quickly to changes, optimize budgets, and focus your energy where marketing has the greatest impact.',
     img: '/data-marketing.webp',
     reverse: false,
   },
   {
     title: 'Automation',
     logo: null,
-    desc: 'Shopify Flow responds to customer behaviour automatically. Order tagging, email sequences, discounts, warehouse notifications — set it once, then it runs without you.',
+    desc: 'In-store automation — built primarily on Shopify Flow and an event-driven architecture — lets you act on data in real time and turn it into concrete actions without manual intervention. Using pre-built or custom workflows, you can automatically respond to customer behavior, order changes, or campaign performance. The result: saved time, fewer errors, and marketing that runs smoothly even when the team is focused elsewhere.',
     img: '/flow-automation.webp',
     reverse: true,
   },
   {
     title: 'Shopify App Store',
     logo: null,
-    desc: 'Apps.shopify.com — an ecosystem into which someone has already invested millions of hours. The Shopify App Store is not "just a list of add-ons". It is one of the largest e-commerce ecosystems in the world — a place where developers, technology companies and Shopify itself have spent the last 15+ years systematically solving problems that would otherwise cost you months of development, testing and fine-tuning. You will find over ten thousand apps that extend Shopify with practically anything you can think of.',
+    desc: '<a href="https://apps.shopify.com/" target="_blank" rel="noopener noreferrer" class="text-link">Apps.shopify.com</a> <strong class="hl"> — an ecosystem millions of hours have already been invested in.</strong> The Shopify App Store isn\'t "just a list of add-ons." It\'s one of the largest e-commerce ecosystems in the world — <strong class="hl">a place where developers, technology companies, and Shopify itself have spent more than 15 years systematically solving problems</strong> that would otherwise cost you months of development, testing, and fine-tuning. You\'ll find <strong class="hl">over ten thousand apps</strong> that extend Shopify with virtually anything you can think of — <strong class="hl">and often things you didn\'t yet know you\'d need.</strong>',
     img: '/aplikace.webp',
     reverse: false,
   },
 ];
 
+const appStore = features[features.length - 1];
+const featuresMain = features.slice(0, -1);
+
 const reasons = [
-  'One of the 3 most-used e-commerce platforms in the world',
-  'A year ahead of European competitors in updates and features',
-  'Large international company — no dependence on a single local vendor',
-  'International scaling without platform migration',
-  'PCI DSS certified with top-tier security built in',
-  'Shopify Plus for enterprise with dedicated support',
-  'Community of partners and agencies worldwide',
+  '<strong class="hl">It\'s among the three most widely used e-commerce platforms in the world</strong> — which means more than enough flexibility for your products and your project.',
+  '<strong class="hl">Change in e-commerce moves fast</strong> — no question about it. <strong class="hl">You need a platform that\'s a year ahead of the European competition,</strong> not two years behind with a growing technical debt.',
+  '<strong class="hl">This isn\'t a relatively small, local company</strong> focused on selling in the Czech Republic and Slovakia — and maybe a little in Poland and Hungary.',
+  'You probably <strong class="hl">don\'t want to be dependent on a single service provider</strong> when something goes wrong — and by that, we mean us included.',
+  'Because in the beginning, you can handle a lot on your own and <strong class="hl">save money — and two years from now, you can have an international business</strong> on the same platform, with a choice of both apps and agencies to support you. No migration needed.',
 ];
 
 const capabilities = [
@@ -116,6 +118,7 @@ const capabilities = [
   <!-- What do we get with Shopify? -->
   <section class="section bg-primary" id="shopify-why">
     <div class="container">
+      <h2 class="section-title">Wondering what you actually get<br />with Shopify?</h2>
       <div class="two-col-capabilities">
         <ul class="plus-list" id="features">
           {capabilities.map((c) => (
@@ -123,26 +126,31 @@ const capabilities = [
           ))}
         </ul>
         <div>
-          <h2 class="section-title">Wondering what you get with Shopify?</h2>
-          <p class="section-text body">A modern e-commerce platform backed by tens of millions of merchants and years of development — technological infrastructure, global distribution, PCI DSS compliance and over 10,000 apps.</p>
-          <p class="section-text body">Shopify invests tens of billions of dollars annually in infrastructure. Which means you are not affected by outages, security incidents or falling behind the competition.</p>
-          <a href="#features" class="text-link">What are those?</a>
+          <p class="section-text body-maxi">A modern e-commerce platform with speed, stability, and security built in. The ability to sell globally without technical compromises. Native support for multiple languages, currencies, and markets. With Shopify, you can grow from your first orders all the way to an international brand — without rewriting your store every two years.</p>
+          <p class="section-text body">We probably should back up all that praise with something solid, shouldn't we? So let's take a look. We've picked out some features we consider essential — and that are, perhaps surprisingly, not all that common elsewhere.</p>
+          <p class="section-text body">At the end of this page, we've summed up why Shopify is the right platform to start on.</p>
+          <a href="#proc-zacit" class="btn-action btn-action--ghost">Why start on Shopify</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Feature sections - alternating image/text -->
-  {features.map((f) => (
+  {featuresMain.map((f) => (
     <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
       <div class="container feature-inner">
         <div class="feature-text">
-          {f.logo && <img src={f.logo} alt={f.title} class="feature-logo" loading="lazy" />}
           <h2 class="feature-title">{f.title}</h2>
-          <p class="body">{f.desc}</p>
+          <p class="body" set:html={f.desc}></p>
         </div>
         {f.img && (
           <div class="feature-img-wrap">
+            {f.logo && (
+              <div class="feature-logo-lockup">
+                <img src={f.logo} alt={f.title} class="feature-logo" loading="lazy" />
+                {f.logoText && <span class="feature-logo-text" set:html={f.logoText}></span>}
+              </div>
+            )}
             <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />
           </div>
         )}
@@ -153,27 +161,40 @@ const capabilities = [
     </section>
   ))}
 
-  <!-- Why Shopify + Groomo -->
-  <section class="section bg-primary">
-    <div class="container two-col-groomo">
-      <div>
-        <h2 class="section-title">WHY start on the Shopify platform?</h2>
-        <p class="section-text body">Let us tell you why the most popular e-commerce platform in the world is the ideal choice for your business — regardless of size or products.</p>
-        <ul class="reasons-list">
-          {reasons.map((r) => (
-            <li>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8l4 4 6-7" stroke="var(--action)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span>{r}</span>
-            </li>
-          ))}
-        </ul>
+  <!-- Shopify App Store — heading + text on top, icon grid full-width below -->
+  <section class="section bg-primary appstore-section">
+    <div class="container">
+      <div class="appstore-head">
+        <h2 class="appstore-title">Shopify<br />App Store</h2>
+        <p class="body appstore-text" set:html={appStore.desc}></p>
       </div>
-      <div class="groomo-wrap">
-        <div class="groomo-card">
-          <img src="/groomo-ref-na-vysku.webp" alt="Groomo — case study" class="groomo-img" loading="lazy" />
-          <a href="/en/groomo-cz-na-shopify" class="groomo-cta">Read the<br/>case study</a>
+      <div class="appstore-grid">
+        <img src={appStore.img} alt="Shopify App Store — app ecosystem" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Shopify + Groomo -->
+  <section class="section bg-primary" id="proc-zacit">
+    <div class="container">
+      <h2 class="section-title">WHY start<br />on the Shopify platform?</h2>
+      <div class="two-col-groomo">
+        <div>
+          <p class="section-text body">Find your own reasons to try Shopify with us</p>
+          <ul class="reasons-list">
+            {reasons.map((r) => (
+              <li>
+                <span class="reason-arrow" aria-hidden="true">➔</span>
+                <span set:html={r}></span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="groomo-wrap">
+          <div class="groomo-card">
+            <img src="/groomo-ref-na-vysku.webp" alt="Groomo — case study" class="groomo-img" loading="lazy" />
+            <a href="/en/groomo-cz-na-shopify" class="groomo-cta">Read the<br/>case study</a>
+          </div>
         </div>
       </div>
     </div>
@@ -220,15 +241,16 @@ const capabilities = [
   .intro-text--spaced { margin-top: var(--space-40); }
   /* Capabilities section */
   .section { padding: var(--space-120) 0; }
+  #shopify-why { padding-top: calc(var(--space-120) - var(--space-40)); }
   .bg-primary { background: var(--ae-bg-primary); }
   .bg-primary { background: var(--ae-bg-primary); }
   .section-title { font-size: var(--fs-70); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { margin-bottom: var(--space-24); }
-  .two-col-capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
+  .two-col-capabilities { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-80); align-items: start; }
   /* plus-list — odrážky „+" 22px levandule (lokální varianta check-listu) */
   .plus-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-16); }
   .plus-list li { display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-secondary); font-size: var(--text-body); color: rgba(255,255,255,0.8); line-height: 1.6; }
-  .plus-list li::before { content: '+'; color: var(--text-secondary); font-size: 22px; line-height: 1.3; flex-shrink: 0; }
+  .plus-list li::before { content: '+'; color: var(--text-secondary); font-size: 24px; font-weight: 700; line-height: 1.3; flex-shrink: 0; }
   /* capability-list → globální .check-list */
 
   /* Feature sections */
@@ -242,9 +264,11 @@ const capabilities = [
   .feature-section--reverse .feature-inner { direction: rtl; }
   .feature-section--reverse .feature-text { direction: ltr; }
   .feature-section--reverse .feature-img-wrap { direction: ltr; }
-  .feature-logo { display: block; height: 32px; width: auto; margin-bottom: var(--space-24); }
+  .feature-logo-lockup { display: flex; align-items: center; align-self: flex-start; gap: var(--space-16); }
+  .feature-logo { display: block; height: 64px; width: auto; transform: translateX(2px); }
+  .feature-logo-text { font-family: var(--font-primary); font-size: var(--fs-30); font-weight: 700; color: #fff; line-height: 1.05; }
   .feature-title { font-size: var(--fs-36); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-24); }
-  .feature-img-wrap { display: flex; align-items: center; justify-content: center; }
+  .feature-img-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-24); }
   .feature-img-wrap--empty { min-height: 200px; }
   .feature-img {
     width: 100%;
@@ -254,12 +278,19 @@ const capabilities = [
     display: block;
   }
 
+  /* Shopify App Store — heading + text on top, icon grid full-width below */
+  .appstore-head { display: grid; grid-template-columns: 280px 1fr; gap: var(--space-64); align-items: start; margin-bottom: var(--space-64); }
+  .appstore-title { font-family: var(--font-primary); font-size: var(--fs-40); font-weight: 700; color: #fff; line-height: 1.05; margin: 0; }
+  .appstore-text { max-width: 900px; }
+  .appstore-grid img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+  @media (max-width: 900px) { .appstore-head { grid-template-columns: 1fr; gap: var(--space-24); } }
+
   /* Why Shopify + Groomo */
   .two-col-groomo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
   .reasons-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: var(--space-24); }
   .reasons-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; }
-  .reasons-list svg { flex-shrink: 0; margin-top: 2px; }
-  .groomo-wrap { display: flex; justify-content: center; }
+  .reason-arrow { flex-shrink: 0; color: var(--text-secondary); }
+  .groomo-wrap { display: flex; justify-content: center; align-self: end; }
   .groomo-card { position: relative; max-width: 340px; width: 100%; border-radius: 6px; overflow: hidden; }
   .groomo-img { display: block; width: 100%; height: auto; }
   .groomo-cta {
