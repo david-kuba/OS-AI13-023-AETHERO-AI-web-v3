@@ -320,6 +320,7 @@ img { max-width: 100%; height: auto; }
 .btn-action {
   display: inline-flex;
   align-items: center;
+  margin-top: 1.5rem;
   padding: 16px 40px;
   background: var(--action);
   color: #000;
