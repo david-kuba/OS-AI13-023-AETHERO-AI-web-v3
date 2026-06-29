@@ -52,6 +52,12 @@ img { max-width: 100%; height: auto; }
 .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 .cta-links { display: flex; gap: var(--space-40); justify-content: center; flex-wrap: wrap; }
 
+/* ─── feature sekce (obrázek + text) + apps grid — globální base; --reverse / @media zůstávají scoped ─── */
+.feature-section { padding: var(--space-120) 0; }
+.feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
+.feature-img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius-md); display: block; }
+.apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
 /* ═══════════════════════════════════════════════════════
    TYPOGRAFICKÁ ŠKÁLA — jediná pravda o fontech na webu
    Každá třída = exaktní hodnota ze specifikace.
