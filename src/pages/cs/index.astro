@@ -186,6 +186,12 @@ const blogPosts = [
       </div>
     </div>
     </div>
+    <button class="svc-nav svc-nav--prev" id="svc-prev" type="button" aria-label="Předchozí">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="svc-nav svc-nav--next" id="svc-next" type="button" aria-label="Další">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
   </section>
 
   <!-- VALUE PROP -->
@@ -474,6 +480,15 @@ const blogPosts = [
       track.addEventListener('pointerup', finishDrag);
       track.addEventListener('pointercancel', finishDrag);
       track.addEventListener('click', (e: MouseEvent) => { if (dragMoved) e.preventDefault(); }, true);
+
+      // Ruční navigace na obě strany (šipky)
+      const stepBy = (dir: number) => {
+        clearInterval(timer);
+        moveTo(pos + dir * itemW(), true);
+        setTimeout(() => { normalize(); timer = setInterval(advance, INTERVAL); }, DUR + 50);
+      };
+      document.getElementById('svc-prev')?.addEventListener('click', () => stepBy(-1));
+      document.getElementById('svc-next')?.addEventListener('click', () => stepBy(1));
     }
   }
 </script>
@@ -545,6 +560,31 @@ const blogPosts = [
     max-width: 1920px;
     margin: 0 auto;
   }
+  /* Ruční navigace slideru (desktop) — glass čtverečky, náš radius-md */
+  .svc-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(12px) saturate(1.3);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 8px 24px rgba(0,0,0,0.35);
+    color: #fff;
+    cursor: pointer;
+    transition: background var(--transition-base), border-color var(--transition-base);
+  }
+  .svc-nav:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.3); }
+  .svc-nav--prev { left: 16px; }
+  .svc-nav--next { right: 16px; }
+  @media (min-width: 901px) { .svc-nav { display: flex; } }
   .services-track-wrap {
     overflow: hidden;
     padding: 0 24px;
@@ -564,7 +604,8 @@ const blogPosts = [
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    min-width: 600px;
+    width: 410px;
+    flex-shrink: 0;
     padding: 40px 48px;
     color: #fff;
     transition: opacity 0.2s;
@@ -606,7 +647,7 @@ const blogPosts = [
     }
     .services-track-wrap::-webkit-scrollbar { display: none; }
     .services-track { transform: none !important; touch-action: auto; }
-    .service-item { min-width: 76vw; padding: 24px 20px 32px; scroll-snap-align: start; }
+    .service-item { width: 76vw; min-width: 76vw; padding: 24px 20px 32px; scroll-snap-align: start; }
     .service-num { font-size: 160px; margin-left: -5px; }
     .service-text { font-size: 24px; line-height: 1.3; }
   }
