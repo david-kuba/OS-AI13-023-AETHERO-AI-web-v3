@@ -20,6 +20,7 @@ const workCards = [
     subtitle="And through it — a place in the minds and hearts of customers"
     ctaLabel="Let's talk"
     ctaHref="tel:+420776067663"
+    ctaLower={true}
     image="/triangle.webp"
     imageAlt="Brand and visual identity"
   />
@@ -27,7 +28,7 @@ const workCards = [
   <!-- Intro hero text -->
   <section class="section bg-primary">
     <div class="container">
-      <h2 class="intro-h2">We build <span class="accent-purple">BRANDS</span> that resonate across cultures</h2>
+      <h2 class="h1 intro-h2">We build <span class="accent-purple">BRANDS</span> that<br />resonate across cultures</h2>
       <p class="intro-text">Building an e-commerce business? <strong class="hl">Create your brand and go all in.</strong> Put yourself out there! Your brand will be your shield and armour. In an age of hyper-competition, <strong class="hl">you have around 2 seconds of your customer's attention.</strong> You need to <strong>captivate right from the start</strong> — then be straightforward, clear, consistent, and memorable.</p>
       <p class="intro-text"><strong class="hl">The ultimate solution we offer is building a rock-solid brand together.</strong> It's neither easy nor cheap — but it's a proven path that works.</p>
       <a href="#cta" class="btn-action btn-action--lg">Let's do it</a>
@@ -38,16 +39,18 @@ const workCards = [
   <section class="section bg-primary">
     <div class="container brand-layout">
       <div class="brand-main">
-        <h3 class="pillar-heading">BRAND is the first pillar of your success.</h3>
+        <h3 class="h2 pillar-heading">BRAND is the first pillar of your success.</h3>
         <div class="brand-text-col">
           <p class="section-text body">You might wonder why we are talking about something that seems so ordinary, even basic — BRAND? Because you can intentionally build it small and simple, but you must never build it wrong and then show it to the world. Here, the rule applies in full: you will not get a second chance to make a first impression.</p>
           <p class="section-text body">Your BRAND is the energy of the entire e-commerce machine. And just like electricity, it will not forgive a serious mistake. BRAND is an absolutely essential ingredient — you need to take it seriously if you want to succeed.</p>
           <p class="section-text body">Name, symbol — logo, domain, typography, colours... That is the part that is easy to talk about, yet so much harder to get right. And then there is the second area — the parts of the brand that can be described in lofty terms, but which emerge from deeper insight and feeling, and must be encoded into the company through a consistent approach to the brand: communication, values, vision, internal culture, people's motivation (the kind that will shine through in the long-term success of the company) and much more.</p>
         </div>
+        {/* Ogilvy quote — temporarily hidden on request, ready to restore:
         <blockquote class="quote ogilvy-quote">"A brand is what remains when the factory burns down..." <cite>— David Ogilvy</cite></blockquote>
+        */}
       </div>
       <aside class="work-aside">
-        <h2 class="work-heading">WHAT WE CAN — WORK ON TOGETHER</h2>
+        <h2 class="h2-mini work-heading">WHAT WE CAN — WORK ON TOGETHER</h2>
         <div class="work-list">
           {workCards.map((c) => (
             <div class="work-item">
@@ -63,28 +66,28 @@ const workCards = [
     </div>
   </section>
 
+  <!-- Muhtar Kent quote -->
+  <section class="section bg-primary quote-section">
+    <div class="container">
+      <blockquote class="quote-display">"A brand is a promise.<br />And a great brand<br />is a promise kept."<cite>— Muhtar Kent</cite></blockquote>
+    </div>
+  </section>
+
   <!-- Why you should not do it alone -->
   <section class="section bg-primary">
     <div class="container analogy-split">
-      <div class="analogy-text">
-        <h3 class="analogy-heading">And why do we think you definitely should not do this alone?</h3>
-        <p class="section-text body">Building a brand is like building a new house. At first glance, everything seems obvious to everyone. After all, everyone knows there will be a kitchen and a bathroom. But it is only when you start figuring out "how to fit out that kitchen, connect it to the dining room, and at the same time find the right tile style for the bathroom and the right type of bathtub..." — that is when it really gets demanding. And then you wish you had help at hand!</p>
-        <p class="section-text body"><strong>And that is exactly why we are here.</strong></p>
-        <a href="tel:+420776067663" class="btn-action">Get in touch</a>
-      </div>
       <div class="analogy-ref">
         <div class="ref-card">
           <img src="/groomo-ref-na-vysku.webp" alt="GROOMO — aethero reference" class="ref-img" loading="lazy" />
           <a href="/en/groomo-cz-na-shopify" class="ref-card-cta">Read the<br/>case study</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Muhtar Kent quote -->
-  <section class="section bg-primary quote-section">
-    <div class="container">
-      <blockquote class="quote-display">"A brand is a promise.<br />And a great brand<br />is a promise kept."<cite>— Muhtar Kent</cite></blockquote>
+      <div class="analogy-text">
+        <h3 class="h2-mini analogy-heading">And why do we think you definitely should not do this alone?</h3>
+        <p class="section-text body">Building a brand is like building a new house. At first glance, everything seems obvious to everyone. After all, everyone knows there will be a kitchen and a bathroom. But it is only when you start figuring out "how to fit out that kitchen, connect it to the dining room, and at the same time find the right tile style for the bathroom and the right type of bathtub..." — that is when it really gets demanding. And then you wish you had help at hand!</p>
+        <p class="section-text body"><strong>And that is exactly why we are here.</strong></p>
+        <a href="tel:+420776067663" class="btn-action">Get in touch</a>
+      </div>
     </div>
   </section>
 
@@ -107,37 +110,26 @@ const workCards = [
   .section-title { font-size: var(--fs-70); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { margin-bottom: var(--space-24); max-width: 760px; }
 
-  .intro-wrap { max-width: 800px; }
-  .intro-sub { font-size: var(--fs-24); font-weight: 400; color: rgba(255,255,255,0.7); line-height: 1.5; margin-bottom: var(--space-32); }
-  .intro-h2 { font-size: var(--fs-80); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
+  .intro-h2 { margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
+  .intro-text { font-size: var(--fs-20); color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: var(--space-24); max-width: 860px; }
   .hl { color: var(--text-secondary); font-weight: 900; }
-  .intro-text { font-size: var(--fs-20); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
-  .pillar-heading { font-size: var(--fs-48); font-weight: 600; margin-bottom: var(--space-40); color: #fff; }
+  .pillar-heading { margin-bottom: var(--space-40); color: #fff; }
   .brand-text-col { max-width: 760px; }
 
   .ogilvy-quote { margin-top: var(--space-64); }
 
   /* Brand pillar + work sidebar = 2 columns */
-  .brand-layout { display: grid; grid-template-columns: 1.7fr 1fr; gap: var(--space-64); align-items: start; }
+  .brand-layout { display: grid; grid-template-columns: 1fr 355px; gap: var(--space-64); align-items: start; }
   .brand-main { min-width: 0; }
   .work-aside {
-    background: linear-gradient(160deg, rgba(160,129,209,0.12), rgba(22,190,207,0.04));
+    background: var(--ae-bg-deep);
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: var(--radius-md); padding: var(--space-32);
   }
   .work-heading { font-size: var(--fs-18); font-weight: 700; letter-spacing: 0.08em; margin-bottom: var(--space-24); color: #fff; text-transform: uppercase; line-height: 1.3; padding-left: calc(42px + var(--space-16)); }
-  .work-list { display: flex; flex-direction: column; }
-  .work-item {
-    display: flex; gap: var(--space-16); align-items: flex-start;
-    padding: var(--space-24) var(--space-16);
-    margin: 0 calc(-1 * var(--space-16));
-    border-top: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-sm);
-    transition: background 0.2s ease;
-  }
-  .work-item:first-child { border-top: none; }
-  .work-item:hover { background: rgba(255,255,255,0.03); }
+  .work-list { display: flex; flex-direction: column; gap: var(--space-32); }
+  .work-item { display: flex; gap: var(--space-16); align-items: flex-start; }
   .work-item-icon {
     flex-shrink: 0; width: 42px; height: 42px;
     display: grid; place-items: center; border-radius: 10px;
@@ -149,7 +141,7 @@ const workCards = [
   .work-item-title { font-size: 15px; font-weight: 700; color: var(--text-secondary); margin-bottom: var(--space-8); }
   .work-item-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.55; }
 
-  .analogy-split { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
+  .analogy-split { display: grid; grid-template-columns: 420px 1fr; gap: 60px; align-items: center; }
   .analogy-text { max-width: 700px; }
   .analogy-heading { font-size: var(--fs-32); font-weight: 700; margin-bottom: var(--space-32); }
   .analogy-ref { display: flex; justify-content: center; }
@@ -176,7 +168,7 @@ const workCards = [
     .ref-img { max-width: 300px; margin: 0 auto; }
   }
 
-  .quote-section { padding: var(--space-80) 0; }
+  .quote-section { padding: var(--space-40) 0; margin-top: calc(-1 * var(--space-80)); }
   /* kontrastní citát: styl z globálního .quote-display */
 
   .cta-section { padding: var(--space-120) 0; background: var(--action); }
