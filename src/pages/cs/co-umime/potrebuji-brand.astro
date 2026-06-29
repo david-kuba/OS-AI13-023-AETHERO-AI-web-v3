@@ -146,22 +146,7 @@ const workCards = [
   .analogy-ref { display: flex; justify-content: center; }
   .ref-card { position: relative; max-width: 380px; width: 100%; border-radius: 6px; overflow: hidden; }
   .ref-img { width: 100%; display: block; }
-  .ref-card-cta {
-    position: absolute; bottom: 30px; left: 30px; right: 30px; border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    padding: 12px 24px;
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.45);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 24px rgba(0,0,0,0.2);
-    color: #000326;
-    font-family: var(--font-primary); font-size: 22px; font-weight: 700;
-    text-transform: none; text-align: center; line-height: 1.4;
-    text-decoration: none;
-    transition: background var(--transition-base), border-color var(--transition-base);
-  }
-  .ref-card-cta:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.65); color: #000326; }
+  /* .ref-card-cta — globální utilita (global.css) */
   @media (max-width: 900px) {
     .analogy-split { grid-template-columns: 1fr; gap: var(--space-40); }
     .ref-img { max-width: 300px; margin: 0 auto; }
