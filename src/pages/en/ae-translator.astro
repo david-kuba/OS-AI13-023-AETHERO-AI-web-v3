@@ -28,7 +28,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <section class="section bg-primary">
     <div class="container two-col">
       <div>
-        <h2 class="section-title">What are the advantages?</h2>
+        <h2 class="h3 section-title">What are the advantages?</h2>
         <ul class="arrow-list" style="margin-bottom: var(--space-40)">
           <li>Export your entire store content to CSV and run it through AI translation in one go</li>
           <li>Choose the AI model you want to use for translation</li>
@@ -42,7 +42,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
         <p class="extra-note">If you need a model not currently in the app — let us know and we'll add it.</p>
       </div>
       <div>
-        <h2 class="section-title">Why not fully automatic?</h2>
+        <h2 class="h3 section-title">Why not fully automatic?</h2>
         <p class="body-text body">AE Translator does exactly what it says. It's a practical tool that helps you achieve great results at a low cost. We've solved the common AI translation pitfalls for you. All you need to do is tune the prompt to match your expectations — add context and rules, and you're ready to translate.</p>
       </div>
     </div>
@@ -165,13 +165,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     grid-template-columns: 1fr 1fr;
     gap: var(--space-80);
   }
-  .section-title {
-    font-size: var(--fs-36);
-    font-weight: 600;
-    line-height: 1.2;
-    color: #A081D1;
-    margin-bottom: var(--space-32);
-  }
+  .section-title { color: #A081D1; margin-bottom: var(--space-32); }
   .benefit-list {
     list-style: none;
     display: flex;

@@ -158,6 +158,10 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 8px;
 }
 
+/* section-title — POUZE margin helper pro sekční nadpisy. Velikost VŽDY ze škála třídy
+   (h2-maxi/h2/h2-mini/h3…), párované v markupu: class="h2 section-title". Nikdy zde font-size. */
+.section-title { margin-bottom: var(--space-40); }
+
 /* ─── BODY TEXT ─── */
 /* body-maxi  →  perex, úvodní odstavec, intro text */
 .body-maxi {
