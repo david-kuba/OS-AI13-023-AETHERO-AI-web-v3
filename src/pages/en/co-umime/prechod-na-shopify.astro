@@ -4,11 +4,11 @@ import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
 
 const features = [
-  { title: 'Multichannel integration', desc: 'Sell from a single admin across all channels — Instagram, TikTok, Google Shopping, Amazon. One warehouse, one source of truth for inventory, everything from the Shopify admin.', img: '/shopify-chanels.webp', reverse: false },
-  { title: 'Social media integration', desc: 'Direct selling via Instagram, TikTok, Facebook and YouTube. Unified management of campaigns, products and orders from one place. Customers buy where they already are.', img: '/fbandinsta.webp', reverse: true },
-  { title: 'Taxonomy and categorisation', desc: 'Advanced product organisation with Shopify product taxonomy — over 10,000 standardised categories. Better search, SEO and customer experience.', img: '/shopify-produkt-taxonomy.webp', reverse: false },
-  { title: 'Show it to the world in the app', desc: 'The Shopify Shop App gives customers a branded mobile experience. Notifications, order tracking, personalised feed — in every customer\'s phone.', img: '/shopapp.webp', reverse: true },
-  { title: 'B2B pro solution', desc: 'Shopify Plus enables full B2B functionality — custom price lists, company accounts, approval processes, ERP connection and B2B checkout. Enterprise features without the enterprise price.', img: '/b2b.webp', reverse: false },
+  { title: 'Multichannel integration', desc: 'Sell <strong class="hl">from a single admin across all channels</strong> — Instagram, TikTok, Google Shopping, Amazon. One warehouse, one source of truth for inventory, everything from the Shopify admin.', img: '/shopify-chanels.webp', reverse: false },
+  { title: 'Social media integration', desc: '<strong class="hl">Direct selling via Instagram, TikTok, Facebook and YouTube.</strong> Unified management of campaigns, products and orders from one place. Customers buy where they already are.', img: '/fbandinsta.webp', reverse: true },
+  { title: 'Taxonomy and categorisation', desc: 'Advanced product organisation with Shopify product taxonomy — over 10,000 standardised categories. <strong class="hl">Better search, SEO and customer experience.</strong>', img: '/shopify-produkt-taxonomy.webp', reverse: false },
+  { title: 'Show it to the world in the app', desc: '<strong class="hl">The Shopify Shop App gives customers a branded mobile experience.</strong> Notifications, order tracking, personalised feed — in every customer\'s phone.', img: '/shopapp.webp', reverse: true },
+  { title: 'B2B pro solution', desc: 'Shopify Plus enables <strong class="hl">full B2B functionality — custom price lists, company accounts, approval processes, ERP connection and B2B checkout.</strong> Enterprise features without the enterprise price.', img: '/b2b.webp', reverse: false },
 ];
 
 ---
@@ -42,31 +42,30 @@ const features = [
     <div class="container edition-split">
       <div class="edition-media">
         <img src="/shopify-update-winter-2026.webp" alt="Shopify Edition Winter 2026" class="edition-img" loading="lazy" />
-        <a href="/en/blog/shopify-editions-winter-2026" class="edition-label">Shopify<br />Edition<br />Winter 26 <span class="edition-arrow">→</span></a>
+        <a href="/en/blog/shopify-editions-winter-2026" class="edition-square">
+          <h3 class="edition-square-title">Shopify<br />Edition<br />Winter 26 <span class="edition-arrow">➔</span></h3>
+        </a>
       </div>
       <div class="edition-text">
-        <h2 class="section-title">Shopify Edition Winter 2026</h2>
         <p class="section-text body">New features for speed, automation and international growth push Shopify another step ahead of local platforms. If you feel your store is held back by technology, now is the ideal time for a change. <a href="/en/blog/shopify-editions-winter-2026" class="text-link">Read our overview of the most important things from Shopify Edition Winter 2026</a> or take a look right away at <a href="https://www.shopify.com/editions" target="_blank" rel="noopener noreferrer" class="text-link">everything Shopify can newly do on the official site</a>.</p>
         <a href="tel:+420776067663" class="btn-action btn-action--lg">Get in touch</a>
       </div>
     </div>
   </section>
 
-  <!-- Feature heading -->
-  <section class="section-heading bg-primary">
-    <div class="container">
-      <h2 class="feature-section-heading">Features you will love:</h2>
-      <p class="section-text body">If you have been around standard stores for a while, you will certainly appreciate these features and capabilities that come built-in from the start</p>
-    </div>
-  </section>
-
   <!-- Feature sections -->
-  {features.map((f) => (
-    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}`}>
+  {features.map((f, i) => (
+    <section class={`feature-section${f.reverse ? ' feature-section--reverse' : ''}${i === 0 ? ' feature-section--first' : ''}`}>
       <div class="container feature-inner">
         <div class="feature-text">
+          {i === 0 && (
+            <div class="feature-lead">
+              <h2 class="h2 feature-section-heading">Features you will love:</h2>
+              <p class="body-maxi feature-lead-sub">If you have been around standard stores for a while, you will certainly appreciate these features and <strong class="hl">capabilities that come built-in with Shopify</strong></p>
+            </div>
+          )}
           <h2 class="feature-title">{f.title}</h2>
-          <p class="body">{f.desc}</p>
+          <p class="body" set:html={f.desc}></p>
         </div>
         <div class="feature-img-wrap">
           <img src={f.img} alt={f.title} class="feature-img" loading="lazy" />
@@ -93,7 +92,7 @@ const features = [
   .text-action { color: #fff; }
   .intro-h2 { font-size: var(--fs-80); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-40); }
   .accent-purple { color: var(--text-secondary); }
-  .hl { color: var(--text-secondary); font-weight: 900; }
+  /* .hl (bold lavender) — globální utilita v global.css */
   .intro-text { font-size: var(--fs-20); color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 860px; margin-bottom: var(--space-24); }
   .intro-text--spaced { margin-top: var(--space-40); }
   .section { padding: var(--space-120) 0; }
@@ -103,25 +102,32 @@ const features = [
   .section-text { margin-bottom: var(--space-24); }
 
   /* Shopify Edition blok — obrázek + fialový štítek vlevo, text+tlačítko vpravo */
+  /* obrázek = levá 1/3, čtverec přesahuje doprava až ke středu (1/2), text = pravá půlka */
   .edition-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
   .edition-media { position: relative; }
-  .edition-img { width: 100%; height: auto; border-radius: var(--radius-md); display: block; }
-  .edition-label {
-    position: absolute; top: 50%; right: -8%; left: auto; transform: translateY(-50%);
-    background: var(--accent-purple); color: #fff; text-decoration: none;
-    font-family: var(--font-primary); font-size: var(--fs-30); font-weight: 700; line-height: 1.1;
-    padding: var(--space-24) var(--space-32);
+  .edition-img { width: 72%; height: auto; border-radius: var(--radius-md); display: block; }
+  /* H3 nadpis ve fialovém čtverci — ukotvený k pravému okraji levé půlky (= střed) */
+  .edition-square {
+    position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+    width: 44%; aspect-ratio: 1 / 1;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent-purple); text-decoration: none;
+    padding: var(--space-16);
     box-shadow: 0 16px 40px rgba(0,0,0,0.4);
     transition: background var(--transition-base);
   }
-  .edition-label:hover { background: var(--text-secondary); }
+  .edition-square:hover { background: var(--text-secondary); }
+  .edition-square-title { margin: 0; color: #fff; font-family: var(--font-primary); font-size: var(--fs-40); font-weight: 700; line-height: 1.1; }
   .edition-arrow { display: block; margin-top: var(--space-16); }
   /* check-list → globální .check-list (global.css) */
 
-  .section-heading { padding: var(--space-80) 0 var(--space-40); }
-  .feature-section-heading { font-size: var(--fs-48); font-weight: 600; margin-bottom: var(--space-16); }
+  .feature-section-heading { margin-bottom: var(--space-16); }
+  /* lead text (sekční nadpis + perex) vložený do levého sloupce 1. bloku */
+  .feature-lead { margin-bottom: var(--space-40); }
+  .feature-lead-sub { margin-bottom: 0; }
 
   .feature-section { padding: var(--space-120) 0; }
+  .feature-section--first { padding-top: var(--space-40); }
   .feature-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
   .feature-section--reverse .feature-inner { direction: rtl; }
   .feature-section--reverse .feature-text,
