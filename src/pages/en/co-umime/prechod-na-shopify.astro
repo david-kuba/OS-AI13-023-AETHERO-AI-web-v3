@@ -2,14 +2,6 @@
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ServiceHero from '../../../components/layout/ServiceHero.astro';
 
-const checkItems = [
-  'Multi-currency and multilanguage without plugins',
-  'ERP, CRM and logistics integrations',
-  'Preserving SEO and URL structure',
-  'Online + offline via Shopify POS',
-  'Process automation via Shopify Flow',
-  'International expansion without platform migration',
-];
 
 const features = [
   { title: 'Multichannel integration', desc: 'Sell from a single admin across all channels — Instagram, TikTok, Google Shopping, Amazon. One warehouse, one source of truth for inventory, everything from the Shopify admin.', img: '/shopify-chanels.webp', reverse: false },
@@ -45,28 +37,18 @@ const features = [
     </div>
   </section>
 
-  <!-- 2-col: text + checklist -->
+  <!-- Shopify Edition Winter 2026 -->
   <section class="section bg-primary" id="why-migrate">
-    <div class="container two-col-check">
-      <div>
+    <div class="container edition-split">
+      <div class="edition-media">
+        <img src="/shopify-update-winter-2026.webp" alt="Shopify Edition Winter 2026" class="edition-img" loading="lazy" />
+        <a href="/en/blog/shopify-editions-winter-2026" class="edition-label">Shopify<br />Edition<br />Winter 26 <span class="edition-arrow">→</span></a>
+      </div>
+      <div class="edition-text">
         <h2 class="section-title">Shopify Edition Winter 2026</h2>
-        <p class="section-text body">Shopify releases major feature updates twice a year. Each release brings new features for merchants, developers and customers — and Shopify does not charge you separately for the upgrade. Are you used to that with other platforms?</p>
-        <div class="edition-img-wrap">
-          <img src="/shopify-update-winter-2026.webp" alt="Shopify Edition Winter 2026" class="edition-img" loading="lazy" />
-        </div>
-        <p class="section-text body">As a Shopify partner we get access to new features before others — and deliver them directly into your store. <a href="https://www.shopify.com/editions" target="_blank" rel="noopener noreferrer" class="text-link">Shopify Editions Winter 2026</a> — we bring what's new straight to your project.</p>
+        <p class="section-text body">New features for speed, automation and international growth push Shopify another step ahead of local platforms. If you feel your store is held back by technology, now is the ideal time for a change. <a href="/en/blog/shopify-editions-winter-2026" class="text-link">Read our overview of the most important things from Shopify Edition Winter 2026</a> or take a look right away at <a href="https://www.shopify.com/editions" target="_blank" rel="noopener noreferrer" class="text-link">everything Shopify can newly do on the official site</a>.</p>
+        <a href="tel:+420776067663" class="btn-action btn-action--lg">Get in touch</a>
       </div>
-      <div>
-        <h2 class="section-title">How to get started</h2>
-        <ul class="check-list">
-          {checkItems.map((c) => (
-            <li>{c}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-    <div class="container" style="margin-top: var(--space-64); text-align: center;">
-      <a href="tel:+420776067663" class="btn-action">Get in touch</a>
     </div>
   </section>
 
@@ -120,9 +102,20 @@ const features = [
   .section-title { font-size: var(--fs-70); font-weight: 600; margin-bottom: var(--space-40); }
   .section-text { margin-bottom: var(--space-24); }
 
-  .two-col-check { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: start; }
-  .edition-img-wrap { margin-bottom: var(--space-24); }
-  .edition-img { width: 100%; max-width: 400px; height: auto; border-radius: var(--radius-md); display: block; }
+  /* Shopify Edition blok — obrázek + fialový štítek vlevo, text+tlačítko vpravo */
+  .edition-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-80); align-items: center; }
+  .edition-media { position: relative; }
+  .edition-img { width: 100%; height: auto; border-radius: var(--radius-md); display: block; }
+  .edition-label {
+    position: absolute; top: 50%; left: 38%; transform: translateY(-50%);
+    background: var(--accent-purple); color: #fff; text-decoration: none;
+    font-family: var(--font-primary); font-size: var(--fs-30); font-weight: 700; line-height: 1.1;
+    padding: var(--space-24) var(--space-32);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    transition: background var(--transition-base);
+  }
+  .edition-label:hover { background: var(--text-secondary); }
+  .edition-arrow { display: block; margin-top: var(--space-16); }
   /* check-list → globální .check-list (global.css) */
 
   .section-heading { padding: var(--space-80) 0 var(--space-40); }
@@ -145,7 +138,7 @@ const features = [
   .cta-contact:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (max-width: 1024px) {
-    .two-col-check { grid-template-columns: 1fr; }
+    .edition-split { grid-template-columns: 1fr; gap: var(--space-40); }
     .feature-inner { grid-template-columns: 1fr; }
     .feature-section--reverse .feature-inner { direction: ltr; }
     .feature-img-wrap { display: none; }
