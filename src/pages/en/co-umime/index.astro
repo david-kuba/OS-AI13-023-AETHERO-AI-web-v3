@@ -130,6 +130,16 @@ const services = [
             <span class="btn-action btn-action--lg app-cta">Learn more about AE Translator</span>
           </div>
         </a>
+        <a href="/en/kontakt" class="app-card app-card--teaser">
+          <div class="app-card-header app-card-header--teaser">
+            <svg class="app-logo" width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+          </div>
+          <div class="app-card-body">
+            <h3 class="h3-mini">What about your app</h3>
+            <p>Got an idea for your own app or need something custom? Get in touch and we can start.</p>
+            <span class="btn-action btn-action--lg app-cta">Get in touch</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -263,9 +273,16 @@ const services = [
   }
   .apps-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
+  /* teaser karta — gradient místo fotky + bílá plus ikona */
+  .app-card-header.app-card-header--teaser {
+    background-image: url('/a-multitvar-bgr-v33.webp');
+    background-size: 200%;          /* ~2× za hranici fitu = zoom */
+    background-position: right -50px top -50px;  /* fokus na pravý horní roh */
+  }
+  .app-card-header--teaser .app-logo { color: #fff; }
   .app-card {
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(12px);
